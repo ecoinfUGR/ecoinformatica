@@ -1,0 +1,18 @@
+---
+listing: 
+  id: equipo
+  type: grid
+  sort: sortby
+  image-height: 225px
+  grid-columns: 3
+  fields: [image, title, categories]
+  grid-item-align: center
+  categories: false
+toc: false
+---
+  
+## Profesores
+      
+:::{#miembros}
+:::
+          

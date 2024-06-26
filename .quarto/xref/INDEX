@@ -4,5 +4,17 @@
   },
   "about.qmd": {
     "about.html": "831cb16b"
+  },
+  "equipo/index.qmd": {
+    "index.html": "fc97b870"
+  },
+  "equipo/perez_luque/index.qmd": {
+    "index.html": "af4748f4"
+  },
+  "equipo/martinez_lopez/index.qmd": {
+    "index.html": "0ee25638"
+  },
+  "equipo/suarez_munoz/index.qmd": {
+    "index.html": "6c8fc9a0"
   }
 }

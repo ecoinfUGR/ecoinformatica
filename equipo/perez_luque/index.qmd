@@ -1,0 +1,38 @@
+---
+title: "Antonio J. Pérez-Luque"
+email: "antonio.perez@inia.csic.es"
+sortby: "2"
+image: avatar_perez_luque.jpg
+page-layout: full
+about: 
+  id: person-profile
+  template: trestles
+  image-shape: round
+  image: avatar_perez_luque.jpg
+  links:
+    - icon: envelope
+      text: Email
+      href: antonio.perez@inia.csic.es
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0000-0002-1747-0469
+    - text: "{{< fa globe >}} Personal web"
+      href: http://ajperezluque.com/
+categories: [Programación, Datos Primarios, Reproducibilidad]
+---
+ 
+<hr>
+
+:::{#person-profile}
+
+## Módulos 
+- Programación
+- Datos Primarios
+- Reproducibilidad en Ciencia
+
+## Contacto
+- Grupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal. 
+- **Instituto de Ciencias Forestales**, [Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas](https://www.inia.es/)
+
+## Tutorías 
+- Lunes 10:00 - 13:00
+:::

@@ -1,0 +1,36 @@
+---
+title: "María Suárez Muñoz"
+email: "msuamun@ugr.es"
+sortby: "3"
+image: avatar_suarez_munoz.jpg
+page-layout: full
+about: 
+  id: person-profile
+  template: trestles
+  image-shape: round
+  image: avatar_suarez_munoz.jpg
+  links:
+    - icon: envelope
+      text: Email
+      href: msuamun@ugr.es
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0000-0003-1765-6885
+    - text: "{{< fa globe >}} Personal web"
+      href: https://www.researchgate.net/profile/Maria-Suarez-Munoz
+categories: [Bases de Datos, Sistemas de Información Geográfica]
+---
+ 
+<hr>
+
+:::{#person-profile}
+
+## Módulos 
+- Bases de Datos
+- Sistemas de Información Geográfica
+
+## Contacto
+- Departamento de Botánica, Ecología y Fisiología Vegetal. Universidad de Córdoba
+
+## Tutorías 
+- Lunes 10:00 - 13:00
+:::

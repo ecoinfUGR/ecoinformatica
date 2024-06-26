@@ -1,0 +1,37 @@
+---
+title: "Javier Martínez-López"
+email: "javier.martinez@ugr.es"
+sortby: "1"
+image: avatar_martinez_lopez.jpg
+page-layout: full
+about: 
+  id: person-profile
+  template: trestles
+  image-shape: round
+  image: avatar_martinez_lopez.jpg
+  links:
+    - icon: envelope
+      text: Email
+      href: javier.martinez@ugr.es
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0000-0002-0825-7252
+    - text: "{{< fa globe >}} Personal web"
+      href: https://www.ugr.es/personal/javier-martinez-lopez 
+categories: [Teledetección, Sistemas de Información Geográfica]
+---
+ 
+<hr>
+
+:::{#person-profile}
+
+## Módulos 
+- Teledetección
+- Sistemas de Información Geográfica
+
+## Contacto
+Contratado de Investigación Postdoctoral
+Departamento de Ecología - Universidad de Granada 
+
+## Tutorías 
+- Lunes 10:00 - 13:00
+:::
