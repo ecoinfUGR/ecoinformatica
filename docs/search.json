@@ -54,9 +54,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "ecoinformatica",
+    "title": "Ciclo de Gestión de los Datos. Ecoinformática",
     "section": "",
-    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.",
+    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.\nAhora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores).",
     "crumbs": [
       "Home"
     ]
@@ -81,5 +81,15 @@
     "title": "María Suárez Muñoz",
     "section": "Tutorías",
     "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "calendario.html",
+    "href": "calendario.html",
+    "title": "Sesiones",
+    "section": "",
+    "text": "date\ntime\nsite\n\n\n\n\n2025-01-07\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-08\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-09\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-10\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-14\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-15\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-17\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-20\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-21\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-23\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-24\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-01-28\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-03\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-04\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-06\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-07\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-11\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-13\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-14\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-17\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-18\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-02-19\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-03-03\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-03-04\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-04-06\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-03-10\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-04-12\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-04-19\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-04-24\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias\n\n\n2025-04-25\n18:00-20:00\nAula 003 Informática. Facultad de Ciencias",
+    "crumbs": [
+      "Calendario"
+    ]
   }
 ]
