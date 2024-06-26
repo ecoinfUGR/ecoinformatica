@@ -1,0 +1,24 @@
+---
+title: "Sesiones"
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(kableExtra)
+h <- read.csv("assets/horarios_24_25.csv") |> 
+  unite("time", c("time_start", "time_end"), sep = "-") |> 
+  dplyr::select(date, time, site)
+```
+
+```{r}
+#| echo: false
+
+h |> 
+  kbl() |> 
+  kable_styling()
+```
+

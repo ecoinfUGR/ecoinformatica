@@ -1,6 +1,10 @@
 ---
-title: "ecoinformatica"
 ---
+
+
+![](assets/images/logo-azul.png){fig-align="center" width=40%}
+
 
 Bienvenido a la web de la Asignatura ***Ciclo de Gestión de los Datos. Ecoinformática*** perteneciente al [Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad](https://www.ugr.es/estudiantes/master-doctorados/master-universitario-conservacion-gestion-restauracion-biodiversidad) (M64/56/2) de la [Universidad de Granada](https://www.ugr.es/).
 
+Ahora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores). 
