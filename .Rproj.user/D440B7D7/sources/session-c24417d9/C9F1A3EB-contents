@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ciclo de Gestión de los Datos. Ecoinformática"
+  navbar:
+    background: "#5e7a97"
+    tools:
+     - icon: github
+       href: https://github.com/ecoinfugr/
+       text: GitHub
+  sidebar:
+    # background: "#5e7a97"
+    # logo: "images/logo-no-background.png"
+    pinned: true
+    align: center
+    style: docked
+    contents:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: flatly
+    # css: styles.css
+    toc: true

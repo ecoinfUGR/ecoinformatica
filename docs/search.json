@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ecoinformatica",
+    "section": "",
+    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]
