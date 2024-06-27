@@ -1,5 +1,7 @@
 ---
-title: "Sesiones"
+title: Calendario Clases curso 2024 / 2025
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -9,16 +11,51 @@ title: "Sesiones"
 
 library(tidyverse)
 library(kableExtra)
-h <- read.csv("assets/horarios_24_25.csv") |> 
-  unite("time", c("time_start", "time_end"), sep = "-") |> 
-  dplyr::select(date, time, site)
+library(toastui) 
+
+h <- read_csv("assets/horarios_24_25.csv", show_col_types = FALSE)
+
+
+d <- h |> 
+  mutate(start = as_datetime(paste(date, time_start, sep = " "),tz="Europe/Madrid"),
+         end = as_datetime(paste(date, time_end, sep = " "),tz="Europe/Madrid"),
+         calendarId = 1, 
+         title = "Clase Ciclo Gestión de Datos",
+         body = paste("Sesion", sesion, " "), 
+         recurrenceRule = '', 
+         category = "time", 
+         backgroundColor = '#5e7a97', 
+         color = '', 
+         borderColor = '') |> 
+  dplyr::select(
+    calendarId, title, body, recurrenceRule, start, end, category, location = site, 
+    backgroundColor, color, borderColor
+  )
+
 ```
 
 ```{r}
 #| echo: false
-
+#| eval: false
 h |> 
   kbl() |> 
   kable_styling()
+```
+
+
+```{r}
+#| echo: false
+toastui::calendar(d, view = "month", 
+         navigation = TRUE,
+         isReadOnly = TRUE,
+         defaultDate=as.Date("2025-01-06")) |> 
+  cal_month_options(
+    startDayOfWeek = 1)
+
+# cal_week_options(cal = o,
+#                   workweek = TRUE,
+#                   startDayOfWeek = 1, 
+#                  hourStart=8, hourEnd=21, 
+#                  showNowIndicator = TRUE)
 ```
 
