@@ -29,7 +29,7 @@ categories: [Bases de Datos, Sistemas de Información Geográfica]
 - Sistemas de Información Geográfica
 
 ## Contacto
-- Departamento de Botánica, Ecología y Fisiología Vegetal. Universidad de Córdoba
+- Departamento de Ingeniería Forestal. Universidad de Córdoba
 
 ## Tutorías 
 - Lunes 10:00 - 13:00
