@@ -23,7 +23,8 @@ website:
         text: Calendario
       - href: equipo/index.qmd
         text: Profesores
-      - about.qmd
+      - href: guia_docente.qmd
+        text: Guía Docente
 
 format:
   html:

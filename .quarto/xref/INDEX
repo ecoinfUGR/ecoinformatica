@@ -22,5 +22,8 @@
   },
   "modulos/prueba.qmd": {
     "prueba.html": "641cd58c"
+  },
+  "guia_docente.qmd": {
+    "guia_docente.html": "faaf9e5c"
   }
 }

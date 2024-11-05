@@ -98,5 +98,102 @@
     "crumbs": [
       "Calendario"
     ]
+  },
+  {
+    "objectID": "guia_docente.html",
+    "href": "guia_docente.html",
+    "title": "Guía Docente",
+    "section": "",
+    "text": "Enlace a la Guía Docente Oficial aprobada para el curso 2024-2025.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#breve-descripción-de-contenidos",
+    "href": "guia_docente.html#breve-descripción-de-contenidos",
+    "title": "Guía Docente",
+    "section": "Breve descripción de contenidos",
+    "text": "Breve descripción de contenidos\nEsta materia organiza sus contenidos en torno al concepto de ciclo de gestión del dato (Michener and Jones 2012). Se trata de mejorar la capacidad de los estudiantes para manejar la información desde que es capturada en campo hasta que es utilizada por gestores, científicos o el público en general. Se abordarán varias fases: captura de datos (diseño experimental, fotointerpretación), almacenamiento de información (metadatos y bases de datos geográficas), análisis de datos (análisis estadístico y modelización de procesos) y divulgación de contenidos (web, portales de datos, reproducibilidad, etc.). En cada una de las fases anteriores se adquirirán competencias relacionadas con el manejo de información ecológica: programación, bases de datos relacionales, teledetección, técnicas de reproducibilidad, acceso a datos primarios de biodiversidad, etc.\nLa metodología docente de la asignatura se basa en el aprendizaje basado en proyectos. Se plantearán a los estudiantes preguntas relacionadas con la gestión de recursos naturales. Para responder esas preguntas se requieren habilidades de investigación y también conocimiento sobre gestión de recursos. En el proceso de realizar este proyecto (y por tanto de responder a una pregunta en concreto), los estudiantes irán adquiriendo una serie de competencias relacionadas con los aspectos mostrados anteriormente del ciclo de gestión del dato.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#prerrequisitos-yo-recomendaciones",
+    "href": "guia_docente.html#prerrequisitos-yo-recomendaciones",
+    "title": "Guía Docente",
+    "section": "Prerrequisitos y/o Recomendaciones",
+    "text": "Prerrequisitos y/o Recomendaciones\nEs altamente recomendable que los alumnos matriculados tengan un conocimiento medio-alto de informática, o gran interés por adquirirlo. Deberán entender la estructura del sistema operativo Windows, Mac o Linux, moverse bien por las carpetas, instalar aplicaciones, etc.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#resultados-de-aprendizaje-objetivos",
+    "href": "guia_docente.html#resultados-de-aprendizaje-objetivos",
+    "title": "Guía Docente",
+    "section": "Resultados de aprendizaje (Objetivos)",
+    "text": "Resultados de aprendizaje (Objetivos)\nEl alumno sabrá/comprenderá:\n\nLa importancia del manejo de la información ambiental y de la biodiversidad para su desempeño profesional.\nDeberá entender los distintos pasos que hay que dar para obtener conocimiento útil a partir de los datos originales tomados en el campo.\nTambién comprenderá el concepto de big data y la necesidad de contar con herramientas avanzadas para manejar grandes volúmenes de información. La componente espacial de la información ambiental, así como la temporal también serán conceptos clave en esta asignatura.\n\nEl alumno será capaz de:\n\nIdentificar los distintos pasos del ciclo de gestión del dato de manera específica para cualquier problema relacionado con la biología de la conservación en la que haya información ambiental implicada.\nDiseñar una base de datos relacional para almacenar datos a partir de un diseño experimental dado.\nDocumentar los datos tomados mediante distintos estándares existentes.\nConsultar y descargar datos especializados de distintos portales específicos relacionados con biología de la conservación.\nManejar, procesar y analizar información geoespacial.\nAplicar técnicas de análisis de datos relacionados con la gestión y estudio de la biodiversidad en un contexto de cambio global (por ejemplo series temporales, etc).\nComprender elementos básicos de teledetección, así como utilizar productos disponibles online.\nEntender e implementar elementos básicos de programación útiles para desarrollar su actividad profesional (bucles, iteración de procesos, conexión con bases de datos, etc.).\nAplicar metodologías y aproximaciones que permitan tener un flujo de trabajo reproducible, así como usar repositorios para almacenar y compartir flujos de trabajo y código (GitHub, GitLab).",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#programa-de-contenidos-teóricos-y-prácticos",
+    "href": "guia_docente.html#programa-de-contenidos-teóricos-y-prácticos",
+    "title": "Guía Docente",
+    "section": "Programa de contenidos teóricos y prácticos",
+    "text": "Programa de contenidos teóricos y prácticos\n\nTeórico\nDebido al carácter eminentemente práctico de la asignatura, no resulta del todo útil describirla siguiendo el clásico esquema de temas. No obstante, se presentan a continuación una serie de elementos teórico-prácticos que serán impartidos en la asignatura. El orden descrito aquí es flexible y dependerá de la configuración de la clase y de otros factores.\n\nPresentación de la asignatura. Generalidades sobre la ecoinformática. Necesidad de habilidades para manejar información. Concepto de flujo de trabajo como herramienta para planificar el abordaje de problemas.\nReproducibilidad en ciencia. Generalidades sobre reproducibilidad en ciencia. Uso de herramientas para facilitar que nuestro trabajo sea reproducible, por otros y por nosotros mismos. Creación de documentos reproducibles. Control de versiones.\nIntroducción a la programación (nociones de R).\nCaptura y Almacenamiento de información. Identificación de las fuentes de datos necesarias para abordar el problema seleccionado.\nHerramientas para almacenar y representar información geoespacial: Bases de datos relacionales. Sistemas de Información geográfica.\nFuentes de información disponibles. Portales integrados de acceso a información ambiental y datos sobre biodiversidad.\nProcesamiento/integración de información y análisis de resultados: análisis de series temporales, evaluación multicriterio, álgebra de mapas, etc.\nTeledetección: Aspectos generales. Series temporales. Variables ambientales relevantes. Introducción a Google Earth Engine.\nDatos primarios de biodiversidad e integración de datos en repositorios. Repositorios de información sobre biodiversidad. Se analizarán los principales repositorios existentes para almacenar datos sobre biodiversidad. También se estudiará el concepto de datapaper como herramienta básica para documentar y poner a disposición de la sociedad los datos científicos.\n\n\n\nPráctico\nLa asignatura combina los contenidos teóricos con los prácticos. Usamos la técnica docente de “aprendizaje basado en proyectos”. Esto implica que los alumnos aprenden una serie de contenidos teóricos a partir de su aplicación a problemas reales. Durante la asignatura trataremos diversos temas y trabajaremos con herramientas que nos permitirán abordar una problemática relacionada con la toma de decisiones en la gestión del medio natural. La problemática o el proyecto concreto a abordar estará abierto a los intereses del alumnado. El planteamiento del proyecto se presentará al resto del grupo, momento en el que se darán pautas y recomendaciones para su ejecución y presentación final.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#bibliografía-recomendada",
+    "href": "guia_docente.html#bibliografía-recomendada",
+    "title": "Guía Docente",
+    "section": "Bibliografía Recomendada",
+    "text": "Bibliografía Recomendada"
+  },
+  {
+    "objectID": "guia_docente.html#enlaces-recomendados",
+    "href": "guia_docente.html#enlaces-recomendados",
+    "title": "Guía Docente",
+    "section": "Enlaces recomendados",
+    "text": "Enlaces recomendados\n\nhttps://aprendiendo-r-intro.netlify.app/que-es-r\n\nhttps://ajpelu.github.io/diveRpine/\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nhttps://book.the-turing-way.org/index.html",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final",
+    "href": "guia_docente.html#evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final",
+    "title": "Guía Docente",
+    "section": "Evaluación (instrumentos de evaluación, criterios de evaluación y porcentaje sobre la calificación final)",
+    "text": "Evaluación (instrumentos de evaluación, criterios de evaluación y porcentaje sobre la calificación final)\n\nEvaluación ordinaria\nEl artículo 17 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que la convocatoria ordinaria estará basada preferentemente en la evaluación continua del estudiante, excepto para quienes se le haya reconocido el derecho a la evaluación única final.\nEn esta asignatura se promueve la evaluación continua y se usan los siguientes instrumentos (descritos en el documento VERIFICA)\n\nActividades de evaluación continua. Durante el desarrollo de la asignatura se realizan actividades calificables que permiten poner en práctica lo aprendido durante las clases. Deben de completarlas cada semana o cada dos semanas. Estas actividades suponen un 30% de la calificación final y corresponden con los siguientes instrumentos de evaluación de VERIFICA:\n\nPruebas, ejercicios y problemas, resueltos en clase o individualmente a lo largo del curso.\nMemorias\n\nTrabajo final realizado en grupo o de forma individual para cuya realización es necesario poner en práctica buena parte de las competencias adquiridas durante la asignatura. Se trata de un trabajo sintético que tiene un valor en la calificación final del 60%. Corresponde con las siguientes actividades de VERIFICA:\n\nValoración final de informes, trabajos, proyectos, etc.\nMemorias.\nPruebas escritas.\n\nParticipación en clase. Con este instrumento se pretende evaluar la implicación del estudiante en la asignatura. Tiene un peso del 10% de la calificación final. Corresponde con los siguientes instrumentos del documento VERIFICA del máster:\n\nPresentaciones orales.\nAportaciones del estudiante en sesiones de discusión y actitud del estudiante en las diferentes actividades desarrolladas.\n\n\n\n\nEvaluación extraordinaria\nEl artículo 19 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que los estudiantes que no hayan superado la asignatura en la convocatoria ordinaria dispondrán de una convocatoria extraordinaria. A ella podrán concurrir todos los estudiantes, con independencia de haber seguido o no un proceso de evaluación continua. De esta forma, el estudiante que no haya realizado la evaluación continua tendrá la posibilidad de obtener el 100% de la calificación mediante la realización de un trabajo o examen individual. En dicho examen se evaluarán las competencias propias de la asignatura. Aquellos estudiantes que hayan fallado en alguna de las pruebas descritas anteriormente, deberán repetirlas y volver a entregarlas dentro los plazos previamente acordados con los profesores.\n\n\nEvaluación única final\nEl artículo 8 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que podrán acogerse a la evaluación única final, el estudiante que no pueda cumplir con el método de evaluación continua por causas justificadas. Para acogerse a la evaluación única final, el estudiante, en las dos primeras semanas de impartición de la asignatura o en las dos semanas siguientes a su matriculación si ésta se ha producido con posterioridad al inicio de las clases, lo solicitará, a través del procedimiento electrónico, a la Coordinación del Máster, quien dará traslado al profesorado correspondiente, alegando y acreditando las razones que le asisten para no poder seguir el sistema de evaluación continua.\nLa evaluación en tal caso consistirá en:\n\nRealización de un trabajo de tema libre que esté relacionado con el objeto de la asignatura. El tema del trabajo será consensuado con los profesores, que orientarán a los estudiantes en el proceso de elaboración del mismo. Este trabajo supondrá el 50% de la nota final.\nExamen práctico que contendrá ejercicios de manejo de información y análisis de datos relacionados con los contenidos de la asignatura. El estudiante deberá completarlos usando su ordenador o uno dispuesto por la UGR. Este examen supondrá el 50% de la calificación final.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#información-adicional",
+    "href": "guia_docente.html#información-adicional",
+    "title": "Guía Docente",
+    "section": "Información adicional",
+    "text": "Información adicional\nLa asignatura de Ciclo de Gestión de los datos: Ecoinformática está coordinada con las asignaturas de Funciones y Servicios de los Ecosistemas (FySE) y Diseño y Gestión de Áreas Protegidas (DyGAP), dentro de las posibles narrativas transversales podrían estar las siguientes:\n\nGestión adaptativa para la naturalización de pinares\n\nSe mostrarán algunos de los problemas que pueden presentar las masas de pinares monoespecíficas, coetáneas y muy densas: decaimiento, baja resiliencia, y empobrecimiento.\nSe reflexionará sobre la necesidad de promover acciones de adaptación de los pinares para potenciar su papel como espacios protectores del bienestar humano frente al cambio global.\nIdentificación mediante SIG y teledetección de rodales que estén sufriendo decaimiento y sobre los que deberían realizarse actuaciones para aumentar su resiliencia y biodiversidad.\nPrincipios de la gestión adaptativa y análisis de resultados obtenidos en las prácticas de Ecoinformática para incorporar los criterios de gestión de masas forestales en los planes de gestión de las áreas protegidas para hacerlas más biodiversas y resilientes.\n\nIncorporación de la perspectiva de funciones y servicios de los ecosistemas en el diseño y gestión de áreas protegidas promoviendo la interfaz ciencia-gestión-sociedad.\n\nPotencialidades que tiene la perspectiva de funciones y servicios de los ecosistemas y de la interfaz ciencia-gestión-sociedad para el diseño y gestión de áreas protegidas.\nCaracterización de la diversidad funcional a nivel de ecosistema mediante teledetección (e.g., https://obsnev.es/apps/efts_SN.html).\nSe incorporarán a los criterios biofísicos centrados en especies y hábitats, los criterios de riqueza y rareza de ecosistemas funcionales para la identificación de huecos en la Red Natura 2000. Se evaluará el grado de complementariedad y redundancia entre las prioridades basadas en hábitats y especies, y basadas en funciones y servicios de los ecosistemas.\n\n\nNOTA: Es aconsejable cursar las tres asignaturas, aunque no es imprescindible.",
+    "crumbs": [
+      "Guía Docente"
+    ]
+  },
+  {
+    "objectID": "guia_docente.html#software-libre-usado",
+    "href": "guia_docente.html#software-libre-usado",
+    "title": "Guía Docente",
+    "section": "Software Libre usado:",
+    "text": "Software Libre usado:\n\nR\nRStudio\nQGIS\nGit",
+    "crumbs": [
+      "Guía Docente"
+    ]
   }
 ]
