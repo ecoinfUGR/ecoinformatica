@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/prueba.html</loc>
-    <lastmod>2024-11-05T11:01:40.831Z</lastmod>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/guia_docente.html</loc>
+    <lastmod>2024-11-05T17:03:46.560Z</lastmod>
   </url>
   <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/about.html</loc>
-    <lastmod>2024-11-05T11:01:40.780Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/martinez_lopez/index.html</loc>
-    <lastmod>2024-11-05T11:01:40.828Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/index.html</loc>
-    <lastmod>2024-11-05T11:01:40.827Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/suarez_munoz/index.html</loc>
-    <lastmod>2024-11-05T11:01:40.830Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/perez_luque/index.html</loc>
-    <lastmod>2024-11-05T11:01:40.829Z</lastmod>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/calendario.html</loc>
+    <lastmod>2024-11-05T15:53:46.047Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/index.html</loc>
     <lastmod>2024-11-05T11:01:40.831Z</lastmod>
   </url>
   <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/calendario.html</loc>
-    <lastmod>2024-11-05T15:53:46.047Z</lastmod>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/perez_luque/index.html</loc>
+    <lastmod>2024-11-05T11:01:40.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/suarez_munoz/index.html</loc>
+    <lastmod>2024-11-05T11:01:40.830Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/index.html</loc>
+    <lastmod>2024-11-05T11:01:40.827Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/martinez_lopez/index.html</loc>
+    <lastmod>2024-11-05T11:01:40.828Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/about.html</loc>
+    <lastmod>2024-11-05T11:01:40.780Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/prueba.html</loc>
+    <lastmod>2024-11-05T11:01:40.831Z</lastmod>
   </url>
 </urlset>
