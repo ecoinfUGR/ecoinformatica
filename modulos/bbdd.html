@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="María Suárez-Muñoz">
 
-<title>Módulos – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Bases de Datos – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +21,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,20 +91,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-modulos .list');
+    const listingTargetEl = window.document.querySelector('#listing-sesiones .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-modulos'] = new List('listing-modulos', options);
+    window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -136,7 +157,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
     </a>
   </div>
@@ -151,7 +172,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulos.html">Módulos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bases de Datos</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -165,31 +186,31 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calendario.html" class="sidebar-item-text sidebar-link">
+  <a href="../calendario.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendario</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modulos.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Módulos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./equipo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../equipo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profesores</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guia_docente.html" class="sidebar-item-text sidebar-link">
+  <a href="../guia_docente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía Docente</span></a>
   </div>
 </li>
@@ -198,21 +219,38 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
+  <li><a href="#ejercicios-prácticos" id="toc-ejercicios-prácticos" class="nav-link" data-scroll-target="#ejercicios-prácticos">Ejercicios prácticos</a>
+  <ul class="collapse">
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
+  </ul></li>
+  <li><a href="#bibliografía-complementaria" id="toc-bibliografía-complementaria" class="nav-link" data-scroll-target="#bibliografía-complementaria">Bibliografía complementaria</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Módulos</h1>
+<h1 class="title">Bases de Datos</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>María Suárez-Muñoz </p>
+          </div>
+  </div>
     
   
     
@@ -223,77 +261,55 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-modulos">
+<section id="sesiones" class="level1">
+<h1>Sesiones</h1>
+<div id="listing-sesiones" class="quarto-listing quarto-listing-container-table">
 <table class="quarto-listing-table table">
 <thead>
 <tr>
 <th>
+Sesión
+</th>
+<th>
 Nombre
 </th>
 <th>
-Profesores
+Fecha
 </th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Bases de Datos" data-listing-filename-sort="bbdd.qmd">
+<tr data-index="0" data-listing-date-sort="1736294400000" data-listing-file-modified-sort="1730886509747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="654" data-listing-title-sort="Reproducibilidad en Ciencia" data-listing-filename-sort="repro_intro_slides.qmd">
 <td>
-<a href="./modulos/bbdd.html" class="title listing-title">Bases de Datos</a>
+<span class="listing-sesion">1</span>
 </td>
 <td>
-<span class="listing-author">María Suárez-Muñoz</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Datos Primarios de Biodiversidad" data-listing-filename-sort="datos_primarios.qmd">
-<td>
-<a href="./modulos/datos_primarios.html" class="title listing-title">Datos Primarios de Biodiversidad</a>
+<a href="../sesiones/repro/repro_intro_slides.html" class="title listing-title">Reproducibilidad en Ciencia</a>
 </td>
 <td>
-<span class="listing-author">Antonio J. Pérez-Luque</span>
+<span class="listing-date">Wed, Jan 08</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Introducción a la Programación" data-listing-filename-sort="programacion.qmd">
+<tr data-index="1" data-listing-date-sort="1736380800000" data-listing-file-modified-sort="1730886509747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1978" data-listing-title-sort="Documentos Reproducibles con Rmarkdown (slides)" data-listing-filename-sort="repro_reproducible_documents_slides.qmd">
 <td>
-<a href="./modulos/programacion.html" class="title listing-title">Introducción a la Programación</a>
+<span class="listing-sesion">2</span>
 </td>
 <td>
-<span class="listing-author">Javier Martínez-López, Antonio J. Pérez-Luque</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Reproducibilidad" data-listing-filename-sort="reproducibilidad.qmd">
-<td>
-<a href="./modulos/reproducibilidad.html" class="title listing-title">Reproducibilidad</a>
+<a href="../sesiones/repro/repro_reproducible_documents_slides.html" class="title listing-title">Documentos Reproducibles con Rmarkdown (slides)</a>
 </td>
 <td>
-<span class="listing-author">Antonio J. Pérez-Luque</span>
+<span class="listing-date">Thu, Jan 09</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Sistemas de Información Geográfica" data-listing-filename-sort="sig.qmd">
+<tr data-index="2" data-listing-date-sort="1736380800000" data-listing-file-modified-sort="1730886509747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1919" data-listing-title-sort="Documentos Reproducibles con Rmarkdown" data-listing-filename-sort="repro_reproducible_documents.qmd">
 <td>
-<a href="./modulos/sig.html" class="title listing-title">Sistemas de Información Geográfica</a>
+<span class="listing-sesion">3</span>
 </td>
 <td>
-<span class="listing-author">Antonio J. Pérez-Luque, María Suárez-Muñoz</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Teledetección" data-listing-filename-sort="teledeteccion.qmd">
-<td>
-<a href="./modulos/teledeteccion.html" class="title listing-title">Teledetección</a>
+<a href="../sesiones/repro/repro_reproducible_documents.html" class="title listing-title">Documentos Reproducibles con Rmarkdown</a>
 </td>
 <td>
-<span class="listing-author">Javier Martínez-López, Antonio J. Pérez-Luque</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-file-modified-sort="1730886509715" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Trabajo Grupal" data-listing-filename-sort="trabajo_grupal.qmd">
-<td>
-<a href="./modulos/trabajo_grupal.html" class="title listing-title">Trabajo Grupal</a>
-</td>
-<td>
-<span class="listing-author">María Suárez-Muñoz</span>
+<span class="listing-date">Thu, Jan 09</span>
 </td>
 </tr>
 </tbody>
@@ -301,7 +317,33 @@ Profesores
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="ejercicios-prácticos" class="level1">
+<h1>Ejercicios prácticos</h1>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+</section>
+</section>
+<section id="bibliografía-complementaria" class="level1">
+
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía complementaria</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-AlstonRick2021BeginnersGuide" class="csl-entry" role="listitem">
+Alston, J. M., and J. A. Rick. 2021. <a href="https://doi.org/10.1002/bes2.1801">A <span>Beginner</span>’s <span>Guide</span> to <span>Conducting Reproducible Research</span></a>. The Bulletin of the Ecological Society of America 102:e01801.
+</div>
+<div id="ref-10141/622618" class="csl-entry" role="listitem">
+Cooper, N., and P.-Y. Hsing, editors. 2017. <a href="http://hdl.handle.net/10141/622618">A guide to reproducible code in ecology and evolution</a>. British Ecological Society.
+</div>
+<div id="ref-RodriguezSanchezetal2016CienciaReproducible" class="csl-entry" role="listitem">
+Rodríguez-Sanchez, F., A. J. Pérez-Luque, I. Bartomeus, and S. Varela. 2016. <a href="https://doi.org/10.7818/ECOS.2016.25-2.11">Ciencia reproducible: Qué, por qué, cómo?</a> Ecosistemas 25:83–92.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

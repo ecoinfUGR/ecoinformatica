@@ -10,6 +10,48 @@
     ]
   },
   {
+    "objectID": "modulos/bbdd.html",
+    "href": "modulos/bbdd.html",
+    "title": "Bases de Datos",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/bbdd.html#recursos",
+    "href": "modulos/bbdd.html#recursos",
+    "title": "Bases de Datos",
+    "section": "Recursos",
+    "text": "Recursos"
+  },
+  {
+    "objectID": "modulos/programacion.html",
+    "href": "modulos/programacion.html",
+    "title": "Introducción a la Programación",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/programacion.html#recursos",
+    "href": "modulos/programacion.html#recursos",
+    "title": "Introducción a la Programación",
+    "section": "Recursos",
+    "text": "Recursos"
+  },
+  {
+    "objectID": "modulos/trabajo_grupal.html",
+    "href": "modulos/trabajo_grupal.html",
+    "title": "Trabajo Grupal",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/trabajo_grupal.html#recursos",
+    "href": "modulos/trabajo_grupal.html#recursos",
+    "title": "Trabajo Grupal",
+    "section": "Recursos",
+    "text": "Recursos"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ciclo de Gestión de los Datos. Ecoinformática",
@@ -24,7 +66,7 @@
     "href": "modulos.html",
     "title": "Módulos",
     "section": "",
-    "text": "Nombre\n\n\nFecha\n\n\nTopic\n\n\n\n\n\n\nMódulo Reproducibilidad\n\n\n\n\n\n \n\n\n\n\n\nNo matching items",
+    "text": "Nombre\n\n\nProfesores\n\n\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nAntonio J. Pérez-Luque, María Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nTrabajo Grupal\n\n\nMaría Suárez-Muñoz\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Módulos"
     ]
@@ -230,7 +272,7 @@
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#alguna-duda",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents.html",
@@ -400,10 +442,59 @@
     ]
   },
   {
+    "objectID": "modulos/sig.html",
+    "href": "modulos/sig.html",
+    "title": "Sistemas de Información Geográfica",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/sig.html#recursos",
+    "href": "modulos/sig.html#recursos",
+    "title": "Sistemas de Información Geográfica",
+    "section": "Recursos",
+    "text": "Recursos"
+  },
+  {
     "objectID": "modulos/reproducibilidad.html",
     "href": "modulos/reproducibilidad.html",
-    "title": "Módulo Reproducibilidad",
+    "title": "Reproducibilidad",
     "section": "",
-    "text": "Sesiones\n\n\n\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 18\n\n\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 18\n\n\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n\nNo matching items\n\n\n\n\nEjercicios prácticos\n\n\nBibliografía complementaria\n\n\nRecursos\n\nIntroducción a la Reproducibilidad: reproducibilidad en Ciencia\nDocumentos reproducibles con Rmarkdown"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/reproducibilidad.html#recursos",
+    "href": "modulos/reproducibilidad.html#recursos",
+    "title": "Reproducibilidad",
+    "section": "Recursos",
+    "text": "Recursos\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media"
+  },
+  {
+    "objectID": "modulos/teledeteccion.html",
+    "href": "modulos/teledeteccion.html",
+    "title": "Teledetección",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/teledeteccion.html#recursos",
+    "href": "modulos/teledeteccion.html#recursos",
+    "title": "Teledetección",
+    "section": "Recursos",
+    "text": "Recursos"
+  },
+  {
+    "objectID": "modulos/datos_primarios.html",
+    "href": "modulos/datos_primarios.html",
+    "title": "Datos Primarios de Biodiversidad",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/datos_primarios.html#recursos",
+    "href": "modulos/datos_primarios.html#recursos",
+    "title": "Datos Primarios de Biodiversidad",
+    "section": "Recursos",
+    "text": "Recursos"
   }
 ]
