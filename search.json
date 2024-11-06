@@ -1,5 +1,315 @@
 [
   {
+    "objectID": "calendario.html",
+    "href": "calendario.html",
+    "title": "Calendario Clases curso 2024 / 2025",
+    "section": "",
+    "text": "Today",
+    "crumbs": [
+      "Calendario"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ciclo de Gestión de los Datos. Ecoinformática",
+    "section": "",
+    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.\nAhora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores).",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "modulos.html",
+    "href": "modulos.html",
+    "title": "Módulos",
+    "section": "",
+    "text": "Nombre\n\n\nFecha\n\n\nTopic\n\n\n\n\n\n\nMódulo Reproducibilidad\n\n\n\n\n\n \n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Módulos"
+    ]
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#módulos",
+    "href": "equipo/suarez_munoz/index.html#módulos",
+    "title": "María Suárez Muñoz",
+    "section": "Módulos",
+    "text": "Módulos\n\nBases de Datos\nSistemas de Información Geográfica"
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#contacto",
+    "href": "equipo/suarez_munoz/index.html#contacto",
+    "title": "María Suárez Muñoz",
+    "section": "Contacto",
+    "text": "Contacto\n\nDepartamento de Ingeniería Forestal. Universidad de Córdoba"
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#tutorías",
+    "href": "equipo/suarez_munoz/index.html#tutorías",
+    "title": "María Suárez Muñoz",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#módulos",
+    "href": "equipo/martinez_lopez/index.html#módulos",
+    "title": "Javier Martínez-López",
+    "section": "Módulos",
+    "text": "Módulos\n\nTeledetección\nSistemas de Información Geográfica"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#contacto",
+    "href": "equipo/martinez_lopez/index.html#contacto",
+    "title": "Javier Martínez-López",
+    "section": "Contacto",
+    "text": "Contacto\nContratado de Investigación Postdoctoral Departamento de Ecología - Universidad de Granada"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#tutorías",
+    "href": "equipo/martinez_lopez/index.html#tutorías",
+    "title": "Javier Martínez-López",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#cómo-definirías-la-ciencia",
+    "href": "sesiones/repro/repro_intro_slides.html#cómo-definirías-la-ciencia",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Cómo definirías la ciencia?",
+    "text": "¿Cómo definirías la ciencia?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#ciencia",
+    "href": "sesiones/repro/repro_intro_slides.html#ciencia",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Ciencia",
+    "text": "Ciencia\n\n\nConjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales   RAE\n\n\n\nLa ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico.   Mario Bugne 1957, La ciencia: su método y su filosofía"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#crisis-de-reproducibilidad",
+    "href": "sesiones/repro/repro_intro_slides.html#crisis-de-reproducibilidad",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Crisis de Reproducibilidad",
+    "text": "Crisis de Reproducibilidad\n\nBaker 2016\n\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#mismos-datos-mismos-resultados",
+    "href": "sesiones/repro/repro_intro_slides.html#mismos-datos-mismos-resultados",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿mismos datos = mismos resultados?",
+    "text": "¿mismos datos = mismos resultados?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#problema-actual",
+    "href": "sesiones/repro/repro_intro_slides.html#problema-actual",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿problema actual?",
+    "text": "¿problema actual?\n\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
+    "href": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Investigación Reproducible",
+    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\nThe Turing way\n\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
+    "href": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Gradiente de Reproducibilidad",
+    "text": "Gradiente de Reproducibilidad\n\nRodríguez-Sánchez et al. 2016"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
+    "href": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Reproducibilidad: Barreras",
+    "text": "Reproducibilidad: Barreras\n\nFuente: Kirstie Whitaker"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-costes",
+    "href": "sesiones/repro/repro_intro_slides.html#reproducibilidad-costes",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Reproducibilidad: Costes",
+    "text": "Reproducibilidad: Costes"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#cuándo-y-dónde-ser-reproducible",
+    "href": "sesiones/repro/repro_intro_slides.html#cuándo-y-dónde-ser-reproducible",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Cuándo y Dónde ser reproducible?",
+    "text": "¿Cuándo y Dónde ser reproducible?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nLista de recursos sobre Ciencia Reproducible\nRodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) Ciencia reproducible: qué, por qué, cómo. Ecosistemas, 25(2): 83-92.\nA Beginner’s Guide to Conducting Reproducible Research\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nA Guide to Reproducible Code in Ecology and Evolution"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos-1",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos-1",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\n\n\n\n\n\nCooper & Hsing (2017)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos-2",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos-2",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\nAlston & Rick 2021"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#alguna-duda",
+    "href": "sesiones/repro/repro_intro_slides.html#alguna-duda",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#crear-un-archivo-.rmd",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#crear-un-archivo-.rmd",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Crear un archivo .Rmd",
+    "text": "Crear un archivo .Rmd\nDentro de R-Studio, haz clic en Archivo → Nuevo archivo → Rmarkdown\n\n\n\n\n\n\n\n\n\n(a) Crea archivo Rmd\n\n\n\n\n\n\n\n\n\n(b) Define detalles generales Rmd\n\n\n\n\n\nFigura 2. Crea archivo Rmd"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#encabezado-yaml",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#encabezado-yaml",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Encabezado YAML",
+    "text": "Encabezado YAML\n\nYAML, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\n\nDelimitado por tres guiones (---) al inicio y al final (a modo de bloque)\nEstructura anidada\nContiene metadatos del documento: título del documento, autor, los formatos de salida, etc)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\n\nFigura 3. Encabezado YAML"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Narrativa (Texto del documento)",
+    "text": "Narrativa (Texto del documento)\n\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown."
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Trozos de código (chunks)",
+    "text": "Trozos de código (chunks)\n\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca.\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc."
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Tejer y Renderizar",
+    "text": "Tejer y Renderizar\n\n\nAl terminar nuestro.Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.\nKnit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\n\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\n\n\nFigura 5. Opciones Knit"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Resumen del Flujo de Trabajo",
+    "text": "Resumen del Flujo de Trabajo\nResumen de los pasos que sigue RMarkdown para llegar al documento renderizado\n\n\nCrear un informe .Rmd que incluya las especificaciones YAML, trozos de código R (chunks) y narraciones markdown\nPasar el archivo .Rmd a knitr para que ejecute los trozos de código R y cree un nuevo archivo .md\n\n\n\nKnitr es un paquete dentro de R que permite la integración de código R en documentos RMarkdown renderizados como HTML, latex, pdf, word, entre otros tipos de documentos."
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo-1",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo-1",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Resumen del Flujo de Trabajo",
+    "text": "Resumen del Flujo de Trabajo\nResumen de los pasos que sigue RMarkdown para llegar al documento renderizado\n\nEl archivo .md generado se entrega a pandoc, que creará el documento final renderizado (por ejemplo, html, Microsoft word, pdf, etc.). Pandoc es un convertidor universal de documentos y permite la conversión de un tipo de documento (en este caso: .Rmd) a otro (en este caso: HTML)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#sec-recursos",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#sec-recursos",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nR for Data Science en especial los capítulos 27 a 29 en su versión en castellano.\nR for Reproducible Scientific Analysis (RMarkdown / knitr)\nReproducible reports with R markdown\nR para Análisis Científicos Reproducibles\nLevel up in R Markdown\nIntroducing RStudio and R Markdown\nCurso de Introducción a R\nEscribir un Trabajo Fin de Estudios con R Markdown\n… Existen muchos más"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#alguna-duda",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#alguna-duda",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html",
+    "href": "sesiones/repro/repro_reproducible_documents.html",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "",
+    "text": "En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (Rmd)(Figura 1). Vamos a trabajar con R, Rstudio (ahora llamado posit), y utilizaremos al menos el paquete rmarkdown.\nPara la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado Recursos se encuentran listados todos los que se han utilizado.\n\n\n\n\n\n\nFigura 1. Esquema general de Rmd. Fuente: @allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#crear-un-archivo-.rmd",
+    "href": "sesiones/repro/repro_reproducible_documents.html#crear-un-archivo-.rmd",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "1.1 Crear un archivo .Rmd",
+    "text": "1.1 Crear un archivo .Rmd\nDentro de R-Studio, haz clic en Archivo → Nuevo archivo → Rmarkdown (Figura 2).\n\n\n\n\n\n\n\n\n\n\n\n(a) Crea archivo Rmd\n\n\n\n\n\n\n\n\n\n\n\n(b) Define detalles generales Rmd\n\n\n\n\n\n\n\nFigura 2. Crea archivo Rmd"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#encabezado-yaml",
+    "href": "sesiones/repro/repro_reproducible_documents.html#encabezado-yaml",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "2.1 Encabezado YAML",
+    "text": "2.1 Encabezado YAML\nYAML1, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\nEl encabezado YAML presenta estructura de lista anidada y contiene diferentes metadatos del documento (como el título del documento, el autor, los formatos de salida, etc). Todos estos argumentos quedan delimitados por tres guiones --- al inicio y al final (a modo de bloque).\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\n\nFigura 3. Encabezado YAML\n\n\n\nExisten diferenes parámetros que se pueden especificar en el encabezado YAML, que van a definir algunas características del documento.\n\ntitle: Título del documento\nauthor: Autor del documento\noutput: Formatos de salida del documento (pdf, word, html, etc). Mas información aquí\ndate: Fecha del documento\n\nAlgunos parámetros van a estar condicionados por el tipo de formato de salida. Por ejemplo:\n\ntoc: true Mostrar la tabla de contenidos cuando la salida sea de tipo html.\nTambién podemos especificar una plantilla de word.\n\n---\noutput:\n  word_document:\n    reference_docx: \"template.docx\"\n---\nExisten diferentes formatos de salida de documentos. En el ejemplo (Figura 3) hemos usado html, pero podemos especificar diferentes formatos de salida (word, pdf, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con html_document, podemos usar el comando ?rmarkdown::html_document. Así, por ejemplo:\n\n?rmarkdown::word_document\n\nword_document(\n  toc = FALSE,\n  toc_depth = 3,\n  number_sections = FALSE,\n  fig_width = 5,\n  fig_height = 4,\n  fig_caption = TRUE,\n  df_print = \"default\",\n  highlight = \"default\",\n  reference_docx = \"default\",\n  keep_md = FALSE,\n  md_extensions = NULL,\n  pandoc_args = NULL\n)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#narrativa-texto-del-documento",
+    "href": "sesiones/repro/repro_reproducible_documents.html#narrativa-texto-del-documento",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "2.2 Narrativa (Texto del documento)",
+    "text": "2.2 Narrativa (Texto del documento)\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown.\n\n\n\nFormato\nSintáxis\nEjemplo\n\n\n\n\nCursiva\n*Texto*\nEsto es cursiva\n\n\nNegrita\n**Negrita**\nEsto es negrita\n\n\nLink\n[Descripción del texto](url)\nUn link\n\n\nImágenes\n![Descripción](url a la imagen)\nUna imagen \n\n\n\nPara crear encabezados de secciones y subsecciones has de utilizar el simbolo #. De tal forma:\n# Título\n## Sección principal\n### Subsección\n#### Sub-subsección\nTambién se pueden incluir superíndices escribiendo R^2^ lo que produce R2, o subíndices, escribiendo CO~2~ que produce CO2.\nA veces puede interesarnos escribir ecuaciones. Para ello vamos a usar el lenguaje LaTeX. Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo este.\nLas ecuaciones pueden incluirse en la misma línea, para lo cual incluimos la ecuación entre simbolos $...$. Por ejemplo:\nEn nuestro estudio utilizamos una regresión de acuerdo a \\(y_i=a_i+b_iX\\).\nPara obtener esta ecuación hemos escrito $y_i=a_i+b_iX$\nTambién podemos incluir ecuaciones mas complejas en párrafo aparte usando $$...$$. Por ejemplo para obtener \\[y = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\\]\nescribimos $$y = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon$$\nExisten muchos recursos en la web sobre sintáxis markdown. Por ejemplo aquí o aquí puedes encontrar una lista completa de la sintáxis markdown"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#trozos-de-código",
+    "href": "sesiones/repro/repro_reproducible_documents.html#trozos-de-código",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "2.3 Trozos de código",
+    "text": "2.3 Trozos de código\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca.\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc.\n\n\n2.3.1 a. Código R en línea\nPara incluir código en líneas hay que utilizar la siguiente sintaxis `r `, en la que incluiremos nuestro código después de la letra r. Por ejemplo si escribimos: la media de nuestro grupo es `r mean(c(1,3))`, aparece como: la media de nuestro grupo es 2. De esta forma podemos incluir resultados de análisis (e.g. p.valor de un análisis) sin tener que copiarlos a mano, reduciendo la generación de errores.\n\n\n2.3.2 b. Bloques de código (chunks)\nLos trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración. Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: shell/bash, python, SQL, R, etc.)\nPara insertar un trozo de código en R, puedes escribirlo manualmente escribiendo ```{r} seguido de ``` en la siguiente línea. Esto producirá el siguiente fragmento de código:\n\nn &lt;- 5\nseq(n)\n\n[1] 1 2 3 4 5\n\n\nKnitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.\nEn la siguiente animación (Figura 4) puedes ver la anatomía de un trozo de código.\n\n\n\n\n\n\nFigura 4. Anatomía de un trozo de Código. Fuente: Shannon Pileggi\n\n\n\nExisten varias formas de insertar un chunk de código:\n\nUsando “Insert” en la barra de Edición\nEscribiendo manualmente ```{r} y ```\nUsando un atajo de teclado:\n\nCtrl + Alt + I (Windows)\nCmd + Alt + I (OS)\n\n\n\n\n2.3.3 Opciones y nombres de los bloques\nCuando creamos un documento reproducible es importante identificar los diferentes trozos de código para poder ejecutarlos a lo largo de todo el documento. Esta aproximación tiene varias ventajas:\n\nSe puede navegar mas cómodamente a los bloques específicos usando el navegador de código desplegable abajo a la izquierda en el editor de script:\n\n\n\nEn caso de que el bloque de código produzca un gráfico, se usará el nombre del bloque para nomobrar los gráficos facilitando la reutilización de estos gráficos.\nGuardar bloques específicos de código complejo y costoso de ejecutar en la caché.\n\nEn nuestro ejemplo anterior podemos añadir el nombre del chunk como 1-numero-aleatorio:\n\n```{r 1-numero-aleatorio}\nn &lt;- 5\nseq(n)\n```\n\n[1] 1 2 3 4 5\n\n\nLas salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suminustran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas aquí. Las principales son:\n\neval = FALSE evita que el código sea evaluado. (Y, obviamente, si el código no es ejecutado no se generaran resultados). Esto es útil para mostrar códigos de ejemplo, o para deshabilitar un gran bloque de código sin comentar cada línea.\ninclude = FALSE ejecuta el código, pero no muestra el código o los resultados en el documento final. Se puede usar para aligerar el aspecto final de nuestro documento.\necho = FALSE evita que se vea el código, pero sí muestra los resultados en el archivo final.\nmessage = FALSE o warning = FALSE evita que aparezcan mensajes o advertencias en el archivo final.\nesults = 'hide' oculta el output impreso\nfig.show = 'hide' oculta los gráficos producidos\nerror = TRUE permite que se siga renderizando el documento a pesar de que exista un error en el código. Puede ser útil durante el proceso de creación de un documento reproducible\n\n\n\n2.3.4 Incluir Tablas\nUn aspecto muy intersante de los documentos reproducibles es la inclusión de tablas. Para incluir una tabla existen diferentes opciones, siendo la función knitr::kable la que nos permite incluir tablas de la forma mas sencilla (mas información aquí). Así por ejemplo, si escribimos\n``` {{r}}\nknitr::kable(\n  mtcars[1:5, ]\n)\n```\nobtenemos la Tabla 1\n\n\n\n\nTabla 1. Ejemplo de Tabla con kable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#tejer-y-renderizar",
+    "href": "sesiones/repro/repro_reproducible_documents.html#tejer-y-renderizar",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "2.4 Tejer y Renderizar",
+    "text": "2.4 Tejer y Renderizar\nFinalmente, una vez que tenemos nuestro documento .Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento. Knit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\n\nFigura 5. Opciones Knit\n\n\n\n\n\n\n\n\n\nFigura 6. Knit (Tejer) un documento. Fuente: Shannon Pileggi"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents.html#footnotes",
+    "href": "sesiones/repro/repro_reproducible_documents.html#footnotes",
+    "title": "Documentos Reproducibles con Rmarkdown",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYAML Ain’t Markup Language↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#módulos",
+    "href": "equipo/perez_luque/index.html#módulos",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Módulos",
+    "text": "Módulos\n\nProgramación\nDatos Primarios\nReproducibilidad en Ciencia"
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#contacto",
+    "href": "equipo/perez_luque/index.html#contacto",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Contacto",
+    "text": "Contacto\n\nGrupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal.\nInstituto de Ciencias Forestales, Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas"
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#tutorías",
+    "href": "equipo/perez_luque/index.html#tutorías",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
     "objectID": "guia_docente.html",
     "href": "guia_docente.html",
     "title": "Guía Docente",
@@ -90,100 +400,10 @@
     ]
   },
   {
-    "objectID": "calendario.html",
-    "href": "calendario.html",
-    "title": "Calendario Clases curso 2024 / 2025",
+    "objectID": "modulos/reproducibilidad.html",
+    "href": "modulos/reproducibilidad.html",
+    "title": "Módulo Reproducibilidad",
     "section": "",
-    "text": "Today",
-    "crumbs": [
-      "Calendario"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ciclo de Gestión de los Datos. Ecoinformática",
-    "section": "",
-    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.\nAhora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores).",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#módulos",
-    "href": "equipo/perez_luque/index.html#módulos",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Módulos",
-    "text": "Módulos\n\nProgramación\nDatos Primarios\nReproducibilidad en Ciencia"
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#contacto",
-    "href": "equipo/perez_luque/index.html#contacto",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Contacto",
-    "text": "Contacto\n\nGrupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal.\nInstituto de Ciencias Forestales, Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas"
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#tutorías",
-    "href": "equipo/perez_luque/index.html#tutorías",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#módulos",
-    "href": "equipo/suarez_munoz/index.html#módulos",
-    "title": "María Suárez Muñoz",
-    "section": "Módulos",
-    "text": "Módulos\n\nBases de Datos\nSistemas de Información Geográfica"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#contacto",
-    "href": "equipo/suarez_munoz/index.html#contacto",
-    "title": "María Suárez Muñoz",
-    "section": "Contacto",
-    "text": "Contacto\n\nDepartamento de Ingeniería Forestal. Universidad de Córdoba"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#tutorías",
-    "href": "equipo/suarez_munoz/index.html#tutorías",
-    "title": "María Suárez Muñoz",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#módulos",
-    "href": "equipo/martinez_lopez/index.html#módulos",
-    "title": "Javier Martínez-López",
-    "section": "Módulos",
-    "text": "Módulos\n\nTeledetección\nSistemas de Información Geográfica"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#contacto",
-    "href": "equipo/martinez_lopez/index.html#contacto",
-    "title": "Javier Martínez-López",
-    "section": "Contacto",
-    "text": "Contacto\nContratado de Investigación Postdoctoral Departamento de Ecología - Universidad de Granada"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#tutorías",
-    "href": "equipo/martinez_lopez/index.html#tutorías",
-    "title": "Javier Martínez-López",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "modulos/prueba.html",
-    "href": "modulos/prueba.html",
-    "title": "index",
-    "section": "",
-    "text": "ejemplo"
+    "text": "Sesiones\n\n\n\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 18\n\n\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 18\n\n\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n\nNo matching items\n\n\n\n\nEjercicios prácticos\n\n\nBibliografía complementaria\n\n\nRecursos\n\nIntroducción a la Reproducibilidad: reproducibilidad en Ciencia\nDocumentos reproducibles con Rmarkdown"
   }
 ]
