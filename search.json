@@ -1,95 +1,5 @@
 [
   {
-    "objectID": "calendario.html",
-    "href": "calendario.html",
-    "title": "Calendario Clases curso 2024 / 2025",
-    "section": "",
-    "text": "Today",
-    "crumbs": [
-      "Calendario"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ciclo de Gestión de los Datos. Ecoinformática",
-    "section": "",
-    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.\nAhora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores).",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#módulos",
-    "href": "equipo/perez_luque/index.html#módulos",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Módulos",
-    "text": "Módulos\n\nProgramación\nDatos Primarios\nReproducibilidad en Ciencia"
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#contacto",
-    "href": "equipo/perez_luque/index.html#contacto",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Contacto",
-    "text": "Contacto\n\nGrupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal.\nInstituto de Ciencias Forestales, Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas"
-  },
-  {
-    "objectID": "equipo/perez_luque/index.html#tutorías",
-    "href": "equipo/perez_luque/index.html#tutorías",
-    "title": "Antonio J. Pérez-Luque",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#módulos",
-    "href": "equipo/martinez_lopez/index.html#módulos",
-    "title": "Javier Martínez-López",
-    "section": "Módulos",
-    "text": "Módulos\n\nTeledetección\nSistemas de Información Geográfica"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#contacto",
-    "href": "equipo/martinez_lopez/index.html#contacto",
-    "title": "Javier Martínez-López",
-    "section": "Contacto",
-    "text": "Contacto\nContratado de Investigación Postdoctoral Departamento de Ecología - Universidad de Granada"
-  },
-  {
-    "objectID": "equipo/martinez_lopez/index.html#tutorías",
-    "href": "equipo/martinez_lopez/index.html#tutorías",
-    "title": "Javier Martínez-López",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#módulos",
-    "href": "equipo/suarez_munoz/index.html#módulos",
-    "title": "María Suárez Muñoz",
-    "section": "Módulos",
-    "text": "Módulos\n\nBases de Datos\nSistemas de Información Geográfica"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#contacto",
-    "href": "equipo/suarez_munoz/index.html#contacto",
-    "title": "María Suárez Muñoz",
-    "section": "Contacto",
-    "text": "Contacto\n\nDepartamento de Ingeniería Forestal. Universidad de Córdoba"
-  },
-  {
-    "objectID": "equipo/suarez_munoz/index.html#tutorías",
-    "href": "equipo/suarez_munoz/index.html#tutorías",
-    "title": "María Suárez Muñoz",
-    "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00"
-  },
-  {
     "objectID": "guia_docente.html",
     "href": "guia_docente.html",
     "title": "Guía Docente",
@@ -178,6 +88,96 @@
     "crumbs": [
       "Guía Docente"
     ]
+  },
+  {
+    "objectID": "calendario.html",
+    "href": "calendario.html",
+    "title": "Calendario Clases curso 2024 / 2025",
+    "section": "",
+    "text": "Today",
+    "crumbs": [
+      "Calendario"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ciclo de Gestión de los Datos. Ecoinformática",
+    "section": "",
+    "text": "Bienvenido a la web de la Asignatura Ciclo de Gestión de los Datos. Ecoinformática perteneciente al Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad (M64/56/2) de la Universidad de Granada.\nAhora mismo estamos preparando el material para el próximo curso, que promete ser apasionante (como los anteriores).",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#módulos",
+    "href": "equipo/perez_luque/index.html#módulos",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Módulos",
+    "text": "Módulos\n\nProgramación\nDatos Primarios\nReproducibilidad en Ciencia"
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#contacto",
+    "href": "equipo/perez_luque/index.html#contacto",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Contacto",
+    "text": "Contacto\n\nGrupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal.\nInstituto de Ciencias Forestales, Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas"
+  },
+  {
+    "objectID": "equipo/perez_luque/index.html#tutorías",
+    "href": "equipo/perez_luque/index.html#tutorías",
+    "title": "Antonio J. Pérez-Luque",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#módulos",
+    "href": "equipo/suarez_munoz/index.html#módulos",
+    "title": "María Suárez Muñoz",
+    "section": "Módulos",
+    "text": "Módulos\n\nBases de Datos\nSistemas de Información Geográfica"
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#contacto",
+    "href": "equipo/suarez_munoz/index.html#contacto",
+    "title": "María Suárez Muñoz",
+    "section": "Contacto",
+    "text": "Contacto\n\nDepartamento de Ingeniería Forestal. Universidad de Córdoba"
+  },
+  {
+    "objectID": "equipo/suarez_munoz/index.html#tutorías",
+    "href": "equipo/suarez_munoz/index.html#tutorías",
+    "title": "María Suárez Muñoz",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#módulos",
+    "href": "equipo/martinez_lopez/index.html#módulos",
+    "title": "Javier Martínez-López",
+    "section": "Módulos",
+    "text": "Módulos\n\nTeledetección\nSistemas de Información Geográfica"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#contacto",
+    "href": "equipo/martinez_lopez/index.html#contacto",
+    "title": "Javier Martínez-López",
+    "section": "Contacto",
+    "text": "Contacto\nContratado de Investigación Postdoctoral Departamento de Ecología - Universidad de Granada"
+  },
+  {
+    "objectID": "equipo/martinez_lopez/index.html#tutorías",
+    "href": "equipo/martinez_lopez/index.html#tutorías",
+    "title": "Javier Martínez-López",
+    "section": "Tutorías",
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "modulos/prueba.html",
