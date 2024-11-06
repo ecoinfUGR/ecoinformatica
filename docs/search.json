@@ -185,5 +185,103 @@
     "title": "index",
     "section": "",
     "text": "ejemplo"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#cómo-definirías-la-ciencia",
+    "href": "sesiones/repro/repro_intro_slides.html#cómo-definirías-la-ciencia",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Cómo definirías la ciencia?",
+    "text": "¿Cómo definirías la ciencia?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#ciencia",
+    "href": "sesiones/repro/repro_intro_slides.html#ciencia",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Ciencia",
+    "text": "Ciencia\n\n\nConjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales   RAE\n\n\n\nLa ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico.   Mario Bugne 1957, La ciencia: su método y su filosofía"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#crisis-de-reproducibilidad",
+    "href": "sesiones/repro/repro_intro_slides.html#crisis-de-reproducibilidad",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Crisis de Reproducibilidad",
+    "text": "Crisis de Reproducibilidad\n\nBaker 2016\n\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#mismos-datos-mismos-resultados",
+    "href": "sesiones/repro/repro_intro_slides.html#mismos-datos-mismos-resultados",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿mismos datos = mismos resultados?",
+    "text": "¿mismos datos = mismos resultados?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#problema-actual",
+    "href": "sesiones/repro/repro_intro_slides.html#problema-actual",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿problema actual?",
+    "text": "¿problema actual?\n\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
+    "href": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Investigación Reproducible",
+    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\nThe Turing way\n\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
+    "href": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Gradiente de Reproducibilidad",
+    "text": "Gradiente de Reproducibilidad\n\nRodríguez-Sánchez et al. 2016"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
+    "href": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Reproducibilidad: Barreras",
+    "text": "Reproducibilidad: Barreras\n\nFuente: Kirstie Whitaker"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-costes",
+    "href": "sesiones/repro/repro_intro_slides.html#reproducibilidad-costes",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Reproducibilidad: Costes",
+    "text": "Reproducibilidad: Costes"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#cuándo-y-dónde-ser-reproducible",
+    "href": "sesiones/repro/repro_intro_slides.html#cuándo-y-dónde-ser-reproducible",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Cuándo y Dónde ser reproducible?",
+    "text": "¿Cuándo y Dónde ser reproducible?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nLista de recursos sobre Ciencia Reproducible\nRodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) Ciencia reproducible: qué, por qué, cómo. Ecosistemas, 25(2): 83-92.\nA Beginner’s Guide to Conducting Reproducible Research\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nA Guide to Reproducible Code in Ecology and Evolution"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos-1",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos-1",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\n\n\n\n\n\nCooper & Hsing (2017)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#recursos-2",
+    "href": "sesiones/repro/repro_intro_slides.html#recursos-2",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "Recursos",
+    "text": "Recursos\n\nAlston & Rick 2021"
+  },
+  {
+    "objectID": "sesiones/repro/repro_intro_slides.html#alguna-duda",
+    "href": "sesiones/repro/repro_intro_slides.html#alguna-duda",
+    "title": "Reproducibilidad en Ciencia",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   }
 ]

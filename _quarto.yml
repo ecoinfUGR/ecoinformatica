@@ -21,6 +21,8 @@ website:
         text: Home
       - href: calendario.qmd
         text: Calendario
+      - href: modulos.qmd
+        text: Módulos
       - href: equipo/index.qmd
         text: Profesores
       - href: guia_docente.qmd

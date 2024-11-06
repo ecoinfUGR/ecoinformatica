@@ -1,0 +1,239 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$code-block-font-size: 0.6em;
+$presentation-heading-color: #416ba3;
+$presentation-h2-font-size: 1.2em;
+
+// colors
+$white: #F7F7F7;
+$myblue: #416ba3;
+
+// $code-color: #5f5f5f;
+
+
+/*-- scss:rules --*/
+
+// bold in blue
+b, strong {
+  color: $myblue;
+  }
+
+// Reduce size of fig.caption
+.figcaption {
+  font-size: 0.25em;
+}
+
+
+
+
+
+/**********
+
+Title slide
+
+***********/
+
+.reveal .title {
+  position: center;
+  color: $myblue;
+  font-size: 2em;
+}
+
+
+
+
+.quarto-title-author-name {
+  color: $myblue;
+}
+
+
+
+details>summary {
+  font-size: 0.75em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.reveal .slide .in-out {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #E8E8E8;
+  font-family: $font-family-monospace;
+  font-size: 0.6em;
+}
+
+
+.reveal .slide .goal {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #ccddeb;
+}
+
+.figcaption {
+  font-size: 0.25em;
+}
+
+.quarto-title-author-name {
+  font-size: 0.8em;
+}
+
+.date {
+  font-size: 0.6em;
+}
+
+
+
+/*******
+
+Social media class
+
+********/
+
+.reveal .ai {
+  color: inherit !important;
+}
+
+.reveal .social a {
+  color: #558CAB;
+}
+
+.reveal .social a.email {
+  color: #558CAB !important;
+  background-color: $white !important;
+  border-color: #558CAB !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.email:hover {
+  background: #558CAB !important;
+  color: white !important;
+}
+
+.reveal .social a.website {
+  color: #558CAB !important;
+  background-color: $white !important;
+  border-color: #558CAB !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.website:hover {
+  background: #558CAB !important;
+  color: white !important;
+}
+
+.reveal .social a.twitter {
+  color: #1DA1F2 !important;
+  background-color: $white !important;
+  border-color: #1DA1F2 !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.twitter:hover {
+  background: #1DA1F2 !important;
+  color: white !important;
+}
+
+.reveal .social a.mastodon {
+  color: #6364FF !important;
+  background-color: $white !important;
+  border-color: #6364FF !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.mastodon:hover {
+  background: #6364FF !important;
+  color: white !important;
+}
+
+.reveal .social a.researchgate {
+  color: #00CCBB !important;
+  background-color: $white !important;
+  border-color: #00CCBB !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.researchgate:hover {
+  background: #00CCBB !important;
+  color: white !important;
+}
+
+.reveal .social a.orcid {
+  color: #A6CE39 !important;
+  background-color: $white !important;
+  border-color: #A6CE39 !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.orcid:hover {
+  background: #A6CE39 !important;
+  color: white !important;
+}
+
+.reveal .social a.github {
+  color: black !important;
+  background-color: $white !important;
+  border-color: black !important;
+  border-radius: 25px;
+  padding: 0.15rem 0.4rem;
+  background: white;
+  border: 2px solid transparent;
+  transition: background ease 0.3s, color ease 0.3s;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.reveal .social a.github:hover {
+  background: black !important;
+  color: white !important;
+}
+
+
+

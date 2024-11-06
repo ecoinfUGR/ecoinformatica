@@ -25,5 +25,8 @@
   },
   "guia_docente.qmd": {
     "guia_docente.html": "faaf9e5c"
+  },
+  "sesiones/repro/repro_intro_slides.qmd": {
+    "repro_intro_slides.html": "98edb358"
   }
 }

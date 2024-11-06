@@ -1,0 +1,19 @@
+---
+title: "Módulos"
+listing:
+  - id: modulos
+    contents:
+      - modulos/*.qmd
+    type: table
+    fields: [title, description, subtitle]
+    field-display-names:
+      title: "Nombre"
+      description: "Fecha"
+      subtitle: "Topic"
+    date-format: "MMMM DD, YYYY"
+    sort: [filename]
+    sort-ui: false
+    filter-ui: false
+ #tbl-colwidths: [5,20,50,25]
+editor: visual
+---
