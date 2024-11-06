@@ -28,5 +28,20 @@
   },
   "sesiones/repro/repro_intro_slides.qmd": {
     "repro_intro_slides.html": "98edb358"
+  },
+  "modulos/reproducibilidad.qmd": {
+    "reproducibilidad.html": "91a31f5d"
+  },
+  "sesiones/repro/repro_reproducible_documents.qmd": {
+    "repro_reproducible_documents.html": "befe5561"
+  },
+  "sesiones/repro/repro_reproducible_documents_slides.qmd": {
+    "repro_reproducible_documents_slides.html": "c43415fe"
+  },
+  "modulos.qmd": {
+    "modulos.html": "bea8d251"
+  },
+  "modulos/bbdd.qmd": {
+    "bbdd.html": "dbf13623"
   }
 }

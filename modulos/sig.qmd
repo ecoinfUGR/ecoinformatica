@@ -1,6 +1,6 @@
 ---
-title: "Reproducibilidad"
-author: "Antonio J. Pérez-Luque"
+title: "Sistemas de Información Geográfica"
+author: "Antonio J. Pérez-Luque, María Suárez-Muñoz"
 date: ""
 listing:
   - id: sesiones
@@ -32,8 +32,6 @@ nocite: |
 
 ## Recursos 
 
-- [The Turing Way handbook to reproducible, ethical and collaborative data science](https://the-turing-way.netlify.app/welcome.html).
-
-- [Awesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media](https://github.com/leipzig/awesome-reproducible-research)
 
 # Bibliografía complementaria 
+

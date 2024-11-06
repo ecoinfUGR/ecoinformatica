@@ -1,8 +1,12 @@
 ---
 title: "Documentos Reproducibles con Rmarkdown (slides)"
-author: "Antonio J. Pérez-Luque"
-institute: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
-date: 2024-01-18
+author: 
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-01-09
+sesion: 2
 format: 
   revealjs:
     auto-stretch: false 
@@ -407,8 +411,13 @@ Resumen de los pasos que sigue RMarkdown para llegar al documento renderizado
 - [@ajpelu](https://twitter.com/ajpelu)
 - [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
 
-::: small
-Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR
-::: 
 
-![](images/logo-jdc.png){fig-align="center"}
+<small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small>
+
+![](images/logo-jdc.png){fig-align="center" width=40%}
+
+
+::: {.callout-tip}
+## Si usas esta presentación puedes citarla como:
+<small>**Pérez-Luque, A.J. **(2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+:::

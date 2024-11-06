@@ -5,12 +5,10 @@ listing:
     contents:
       - modulos/*.qmd
     type: table
-    fields: [title, description, subtitle]
+    fields: [title, author]
     field-display-names:
       title: "Nombre"
-      description: "Fecha"
-      subtitle: "Topic"
-    date-format: "MMMM DD, YYYY"
+      author: "Profesores"
     sort: [filename]
     sort-ui: false
     filter-ui: false

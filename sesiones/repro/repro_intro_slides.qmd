@@ -6,6 +6,7 @@ author:
     email: antonio.perez@inia.csic.es
     affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
 date: 2025-01-08
+sesion: 1
 date-format: long
 format: 
   revealjs: 

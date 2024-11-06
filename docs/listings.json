@@ -6,5 +6,33 @@
       "/equipo/perez_luque/index.html",
       "/equipo/suarez_munoz/index.html"
     ]
+  },
+  {
+    "listing": "/modulos/reproducibilidad.html",
+    "items": [
+      "/sesiones/repro/repro_intro_slides.html",
+      "/sesiones/repro/repro_reproducible_documents_slides.html",
+      "/sesiones/repro/repro_reproducible_documents.html"
+    ]
+  },
+  {
+    "listing": "/modulos.html",
+    "items": [
+      "/modulos/bbdd.html",
+      "/modulos/datos_primarios.html",
+      "/modulos/programacion.html",
+      "/modulos/reproducibilidad.html",
+      "/modulos/sig.html",
+      "/modulos/teledeteccion.html",
+      "/modulos/trabajo_grupal.html"
+    ]
+  },
+  {
+    "listing": "/modulos/bbdd.html",
+    "items": [
+      "/sesiones/repro/repro_intro_slides.html",
+      "/sesiones/repro/repro_reproducible_documents_slides.html",
+      "/sesiones/repro/repro_reproducible_documents.html"
+    ]
   }
 ]

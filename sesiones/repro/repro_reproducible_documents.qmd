@@ -3,11 +3,13 @@ title: "Documentos Reproducibles con Rmarkdown"
 format: html
 number-sections: true
 number-depth: 4
-date: 2024-01-18
+date: 2025-01-09
+sesion: 3
 author: 
-  name: Antonio J. Pérez-Luque
-  orcid: 0000-0002-1747-0469
-editor: visual
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
 crossref:
   fig-title: Figura     # (default is "Figure")
   tbl-title: Tabla     # (default is "Table")
