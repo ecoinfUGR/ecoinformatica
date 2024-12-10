@@ -1,6 +1,6 @@
 ---
 title: "Bases de Datos"
-author: "[María Suárez-Muñoz](../../equipo/suarez_munoz)"
+author: "[María Suárez-Muñoz](../equipo/suarez_munoz)"
 date: ""
 modulo_order: 5
 listing:
