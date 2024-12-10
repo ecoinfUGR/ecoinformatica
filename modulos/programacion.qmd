@@ -1,6 +1,6 @@
 ---
 title: "Introducción a la Programación"
-author: "[Javier Martínez-López](../equipo/martinez_lopez), [Antonio J. Pérez-Luque](../equipo/perez_luque)"
+author: "[Javier Martínez-López](equipo/martinez_lopez), [Antonio J. Pérez-Luque](equipo/perez_luque)"
 date: ""
 modulo_order: 3
 listing:

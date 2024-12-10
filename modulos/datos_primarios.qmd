@@ -1,6 +1,6 @@
 ---
 title: "Datos Primarios de Biodiversidad"
-author: "[Antonio J. Pérez-Luque](../equipo/perez_luque)"
+author: "[Antonio J. Pérez-Luque](equipo/perez_luque)"
 date: ""
 modulo_order: 7
 listing:
