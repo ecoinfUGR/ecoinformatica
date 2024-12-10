@@ -275,6 +275,27 @@
     "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
+    "objectID": "sesiones/intro/intro_proyecto.html#objetivo",
+    "href": "sesiones/intro/intro_proyecto.html#objetivo",
+    "title": "Introducción al proyecto de la asignatura",
+    "section": "Objetivo",
+    "text": "Objetivo\nConstruir un flujo de trabajo que describa un proceso complejo de análisis y procesamiento de información ambiental. El proceso puede ser tu proyecto fin de máster, el trabajo de la asignatura o cualquier otro análisis en el que estés trabajando. Para describirlo debes elaborar un esquema acompañado, si lo ves necesario, de un pequeño texto. Puedes utilizar herramientas digitales (https://app.diagrams.net/, PowerPoint) o un simple esquema hecho a mano para elaborar el esquema."
+  },
+  {
+    "objectID": "sesiones/intro/intro_proyecto.html#aspectos-a-valorar",
+    "href": "sesiones/intro/intro_proyecto.html#aspectos-a-valorar",
+    "title": "Introducción al proyecto de la asignatura",
+    "section": "Aspectos a valorar",
+    "text": "Aspectos a valorar\n\nIdentificación de datos y fuentes de información a utilizar: ¿cuáles son los datos o la información con la que vas a trabajar? ¿de dónde proceden?\nIdentificación de procesos a llevar a cabo: ¿qué pasos o análisis realizarás?\nCaracterización de los procesos - ¿en qué consiste cada proceso de tu flujo de trabajo? Será importante describirlo con el nivel de detalle adecuado\nCoherencia de la secuencia: ¿en qué orden se realizarán los pasos?\nUso de simbología: ¿se utilizan símbolos para describir los distintos elementos del esquema? ¿son estándar o siguen una tipología claramente descrita?\nExpresión escrita: el texto que acompaña al esquema es claro y permite comprender el proceso en mayor detalle."
+  },
+  {
+    "objectID": "sesiones/intro/intro_proyecto.html#evaluación",
+    "href": "sesiones/intro/intro_proyecto.html#evaluación",
+    "title": "Introducción al proyecto de la asignatura",
+    "section": "Evaluación",
+    "text": "Evaluación\nTras la entrega inicial el trabajo entregado será devuelto con comentarios y sugerencias orientados a aclarar aspectos que se puedan mejorar. Tras ello se podrá hacer una segunda entrega que incorpore los aspectos mencionados en la primera evaluación. La segunda evaluación, por lo tanto, consistirá en analizar cómo se han incorporado mejoras o se ha aprendido del proceso."
+  },
+  {
     "objectID": "sesiones/repro/repro_reproducible_documents.html",
     "href": "sesiones/repro/repro_reproducible_documents.html",
     "title": "Documentos Reproducibles con Rmarkdown",
