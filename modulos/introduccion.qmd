@@ -1,11 +1,12 @@
 ---
-title: "Trabajo Grupal"
-author: "María Suárez-Muñoz"
+title: "Introducción"
+author: "[María Suárez-Muñoz](../../equipo/suarez_munoz)"
 date: ""
+modulo_order: 1
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/repro/*.qmd
+      - ../sesiones/intro/*.qmd
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"

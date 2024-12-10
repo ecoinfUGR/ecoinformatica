@@ -18,13 +18,13 @@
   {
     "listing": "/modulos.html",
     "items": [
-      "/modulos/bbdd.html",
-      "/modulos/datos_primarios.html",
-      "/modulos/programacion.html",
+      "/modulos/introduccion.html",
       "/modulos/reproducibilidad.html",
+      "/modulos/programacion.html",
       "/modulos/sig.html",
+      "/modulos/bbdd.html",
       "/modulos/teledeteccion.html",
-      "/modulos/trabajo_grupal.html"
+      "/modulos/datos_primarios.html"
     ]
   },
   {
@@ -73,6 +73,12 @@
       "/sesiones/repro/repro_intro_slides.html",
       "/sesiones/repro/repro_reproducible_documents_slides.html",
       "/sesiones/repro/repro_reproducible_documents.html"
+    ]
+  },
+  {
+    "listing": "/modulos/introduccion.html",
+    "items": [
+      "/sesiones/intro/intro_proyecto.html"
     ]
   }
 ]

@@ -9,9 +9,6 @@ listing:
     field-display-names:
       title: "Nombre"
       author: "Profesores"
-    sort: [filename]
-    sort-ui: false
     filter-ui: false
- #tbl-colwidths: [5,20,50,25]
-editor: visual
+    sort: modulo_order
 ---

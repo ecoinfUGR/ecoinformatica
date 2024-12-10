@@ -1,7 +1,8 @@
 ---
 title: "Reproducibilidad"
-author: "Antonio J. Pérez-Luque"
+author: "[Antonio J. Pérez-Luque](../../equipo/perez_luque)"
 date: ""
+modulo_order: 2
 listing:
   - id: sesiones
     contents:

@@ -1,7 +1,8 @@
 ---
 title: "Sistemas de Información Geográfica"
-author: "Antonio J. Pérez-Luque, María Suárez-Muñoz"
+author: "[Antonio J. Pérez-Luque](../../equipo/perez_luque), [María Suárez-Muñoz](../../equipo/suarez_munoz)"
 date: ""
+modulo_order: 4
 listing:
   - id: sesiones
     contents:

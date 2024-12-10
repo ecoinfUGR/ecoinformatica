@@ -274,29 +274,15 @@ window.Quarto = {
 
 <section id="introducción" class="level1 unnumbered">
 <h1 class="unnumbered">Introducción</h1>
-<p>En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (<code>Rmd</code>)(<a href="#fig-rmd-allison" class="quarto-xref">Figura&nbsp;2</a>). Vamos a trabajar con <a href="https://www.r-project.org/">R</a>, Rstudio (ahora llamado <a href="https://posit.co/">posit</a>), y utilizaremos al menos el paquete <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a>.</p>
-<p>Para la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado <a href="#sec-recursos">Recursos</a> se encuentran listados todos los que se han utilizado. Ver <a href="#fig-myplot" class="quarto-xref">Figura&nbsp;1</a></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-myplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-myplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="repro_reproducible_documents_files/figure-html/fig-myplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-myplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1. plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (<code>Rmd</code>)(<a href="#fig-rmd-allison" class="quarto-xref">Figura&nbsp;1</a>). Vamos a trabajar con <a href="https://www.r-project.org/">R</a>, Rstudio (ahora llamado <a href="https://posit.co/">posit</a>), y utilizaremos al menos el paquete <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a>.</p>
+<p>Para la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado <a href="#sec-recursos">Recursos</a> se encuentran listados todos los que se han utilizado.</p>
 <div id="fig-rmd-allison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/rmd-allison.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2. Esquema general de <code>Rmd</code>. Fuente: <a href="https://allisonhorst.com/allison-horst">@allison_horst</a>
+Figura&nbsp;1. Esquema general de <code>Rmd</code>. Fuente: <a href="https://allisonhorst.com/allison-horst">@allison_horst</a>
 </figcaption>
 </figure>
 </div>
@@ -312,7 +298,7 @@ Figura&nbsp;2. Esquema general de <code>Rmd</code>. Fuente: <a href="https://all
 <p><img src="images/rmd-workflow.png" class="img-fluid"></p>
 <section id="crear-un-archivo-.rmd" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="crear-un-archivo-.rmd"><span class="header-section-number">1.1</span> Crear un archivo <code>.Rmd</code></h2>
-<p>Dentro de R-Studio, haz clic en <strong>Archivo → Nuevo archivo → Rmarkdown</strong> (<a href="#fig-crea-rmd" class="quarto-xref">Figura&nbsp;3</a>).</p>
+<p>Dentro de R-Studio, haz clic en <strong>Archivo → Nuevo archivo → Rmarkdown</strong> (<a href="#fig-crea-rmd" class="quarto-xref">Figura&nbsp;2</a>).</p>
 <div id="fig-crea-rmd" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crea-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -344,7 +330,7 @@ Figura&nbsp;2. Esquema general de <code>Rmd</code>. Fuente: <a href="https://all
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crea-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3. Crea archivo <code>Rmd</code>
+Figura&nbsp;2. Crea archivo <code>Rmd</code>
 </figcaption>
 </figure>
 </div>
@@ -387,7 +373,7 @@ Figura&nbsp;3. Crea archivo <code>Rmd</code>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4. Encabezado YAML
+Figura&nbsp;3. Encabezado YAML
 </figcaption>
 </figure>
 </div>
@@ -408,7 +394,7 @@ Figura&nbsp;4. Encabezado YAML
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">reference_docx</span><span class="kw">:</span><span class="at"> </span><span class="st">"template.docx"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Existen diferentes formatos de salida de documentos. En el ejemplo (<a href="#fig-yaml" class="quarto-xref">Figura&nbsp;4</a>) hemos usado <code>html</code>, pero podemos especificar diferentes formatos de salida (<code>word</code>, <code>pdf</code>, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con <code>html_document</code>, podemos usar el comando <code>?rmarkdown::html_document</code>. Así, por ejemplo:</p>
+<p>Existen diferentes formatos de salida de documentos. En el ejemplo (<a href="#fig-yaml" class="quarto-xref">Figura&nbsp;3</a>) hemos usado <code>html</code>, pero podemos especificar diferentes formatos de salida (<code>word</code>, <code>pdf</code>, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con <code>html_document</code>, podemos usar el comando <code>?rmarkdown::html_document</code>. Así, por ejemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>?rmarkdown<span class="sc">::</span>word_document</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -500,14 +486,14 @@ Figura&nbsp;4. Encabezado YAML
 </div>
 </div>
 <p>Knitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.</p>
-<p>En la siguiente animación (<a href="#fig-chunk-anatomy" class="quarto-xref">Figura&nbsp;5</a>) puedes ver la anatomía de un trozo de código.</p>
+<p>En la siguiente animación (<a href="#fig-chunk-anatomy" class="quarto-xref">Figura&nbsp;4</a>) puedes ver la anatomía de un trozo de código.</p>
 <div id="fig-chunk-anatomy" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-chunk-anatomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="gif/chunk-anatomy.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chunk-anatomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5. Anatomía de un trozo de Código. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
+Figura&nbsp;4. Anatomía de un trozo de Código. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
 </figcaption>
 </figure>
 </div>
@@ -685,14 +671,14 @@ Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 <section id="tejer-y-renderizar" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="tejer-y-renderizar"><span class="header-section-number">2.4</span> Tejer y Renderizar</h2>
 <p>Finalmente, una vez que tenemos nuestro documento <code>.Rmd</code> escrito procedemos a tejer (<code>knit</code>) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento. <strong>Knit</strong> es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.</p>
-<p>Para ello en la parte superior del panel, hacer click en <code>Knit</code> directamente o desplegar las opciones de <code>Knit</code> y ejecutar la que mas nos convenga (<a href="#fig-knit" class="quarto-xref">Figura&nbsp;6</a>, ver animación en <a href="#fig-knitting" class="quarto-xref">Figura&nbsp;7</a>).</p>
+<p>Para ello en la parte superior del panel, hacer click en <code>Knit</code> directamente o desplegar las opciones de <code>Knit</code> y ejecutar la que mas nos convenga (<a href="#fig-knit" class="quarto-xref">Figura&nbsp;5</a>, ver animación en <a href="#fig-knitting" class="quarto-xref">Figura&nbsp;6</a>).</p>
 <div id="fig-knit" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/knit.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;6. Opciones Knit
+Figura&nbsp;5. Opciones Knit
 </figcaption>
 </figure>
 </div>
@@ -702,7 +688,7 @@ Figura&nbsp;6. Opciones Knit
 <img src="gif/knitting.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-knitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;7. Knit (Tejer) un documento. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
+Figura&nbsp;6. Knit (Tejer) un documento. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
 </figcaption>
 </figure>
 </div>

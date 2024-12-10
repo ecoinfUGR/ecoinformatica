@@ -25,8 +25,9 @@ categories: [Bases de Datos, Sistemas de Información Geográfica]
 :::{#person-profile}
 
 ## Módulos 
-- Bases de Datos
-- Sistemas de Información Geográfica
+- [Introducción a la Asignatura](../../modulos/introduccion.qmd)
+- [Bases de Datos](../../modulos/bbdd.qmd)
+- [Sistemas de Información Geográfica](../../modulos/sig.qmd)
 
 ## Contacto
 - Departamento de Ingeniería Forestal. Universidad de Córdoba

@@ -1,7 +1,8 @@
 ---
 title: "Teledetección"
-author: "Javier Martínez-López, Antonio J. Pérez-Luque"
+author: "[Javier Martínez-López](../../equipo/martinez_lopez), [Antonio J. Pérez-Luque](../../equipo/perez_luque)"
 date: ""
+modulo_order: 6
 listing:
   - id: sesiones
     contents:

@@ -1,7 +1,8 @@
 ---
 title: "Bases de Datos"
-author: "María Suárez-Muñoz"
+author: "[María Suárez-Muñoz](../../equipo/suarez_munoz)"
 date: ""
+modulo_order: 5
 listing:
   - id: sesiones
     contents:

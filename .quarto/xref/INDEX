@@ -58,5 +58,14 @@
   },
   "modulos/sig.qmd": {
     "sig.html": "9a5dcb4a"
+  },
+  "sesiones/intro/intro_proyecto.qmd": {
+    "intro_proyecto.html": "3d274e3f"
+  },
+  "sesiones/teledeteccion/gee_intro.qmd": {
+    "gee_intro.html": "4d2a4bd2"
+  },
+  "modulos/introduccion.qmd": {
+    "introduccion.html": "d7f47c9e"
   }
 }

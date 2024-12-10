@@ -23,7 +23,7 @@ citation: true
 
 # Presentación
 
-  [INSERTAR PDF: "intro_proyecto_presentacion_20241202.pdf"]
+- Aquí puedes ver el [pdf](nombre_archivo.pdf)
 
 # Entregable: flujo de trabajo
 
@@ -77,3 +77,6 @@ Tras la entrega inicial el trabajo entregado será devuelto con comentarios y su
 ::: {.callout-tip}
 # Si usas esta presentación puedes citarla como:
 <small>**Suárez-Muñoz, M. **(2025). Introducción a la asignatura Ciclo de Gestión de los Datos. Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+::: 
+
+

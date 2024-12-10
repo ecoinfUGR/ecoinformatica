@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="María Suárez-Muñoz">
 
-<title>Ciclo de Gestión de los Datos. Ecoinformática - Calendario Clases curso 2024 / 2025</title>
+<title>Ciclo de Gestión de los Datos. Ecoinformática - Introducción</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,24 +21,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -65,11 +88,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/calendar-binding-0.3.4/calendar.js"></script>
-<link href="site_libs/bttn-0.2.4/bttn.min.css" rel="stylesheet">
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-sesiones .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
     </a>
   </div>
@@ -95,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./calendario.html">Calendario</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introducción</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -109,31 +186,31 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calendario.html" class="sidebar-item-text sidebar-link active">
+  <a href="../calendario.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendario</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modulos.html" class="sidebar-item-text sidebar-link">
+  <a href="../modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Módulos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./equipo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../equipo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profesores</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guia_docente.html" class="sidebar-item-text sidebar-link">
+  <a href="../guia_docente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía Docente</span></a>
   </div>
 </li>
@@ -143,20 +220,37 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
+  <li><a href="#ejercicios-prácticos" id="toc-ejercicios-prácticos" class="nav-link" data-scroll-target="#ejercicios-prácticos">Ejercicios prácticos</a>
+  <ul class="collapse">
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
+  </ul></li>
+  <li><a href="#bibliografía-complementaria" id="toc-bibliografía-complementaria" class="nav-link" data-scroll-target="#bibliografía-complementaria">Bibliografía complementaria</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Calendario Clases curso 2024 / 2025</h1>
+<h1 class="title">Introducción</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="../../equipo/suarez_munoz">María Suárez-Muñoz</a> </p>
+          </div>
+  </div>
     
   
     
@@ -167,31 +261,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell">
-<div class="cell-output-display">
-<div class="toastui-calendar calendar html-widget html-fill-item" style="width:100%;height:600px;">
-<div id="htmlwidget-c66677e8a80518ea71a9_menu">
-<span id="htmlwidget-c66677e8a80518ea71a9_menu_navi">
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-c66677e8a80518ea71a9_today">Today</button>
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-c66677e8a80518ea71a9_prev">
-<i class="fa fa-chevron-left"></i>
-</button>
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-c66677e8a80518ea71a9_next">
-<i class="fa fa-chevron-right"></i>
-</button>
-</span>
-<span id="htmlwidget-c66677e8a80518ea71a9_renderRange" class="render-range"></span>
+<section id="sesiones" class="level1">
+<h1>Sesiones</h1>
+<div id="listing-sesiones" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Sesión
+</th>
+<th>
+Nombre
+</th>
+<th>
+Fecha
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1736204400000" data-listing-file-modified-sort="1733845437271" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="504" data-listing-title-sort="Introducción al proyecto de la asignatura" data-listing-filename-sort="intro_proyecto.qmd">
+<td>
+<span class="listing-sesion">1</span>
+</td>
+<td>
+<a href="../sesiones/intro/intro_proyecto.html" class="title listing-title">Introducción al proyecto de la asignatura</a>
+</td>
+<td>
+<span class="listing-date">Tue, Jan 07</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
-<br>
-<div id="htmlwidget-c66677e8a80518ea71a9" style="width:100%;height:600px;" class="calendar html-widget" width="100%" height="600px"></div>
 </div>
-<script type="application/json" data-for="htmlwidget-c66677e8a80518ea71a9">{"x":{"options":{"defaultView":"month","useDetailPopup":true,"useFormPopup":false,"isReadOnly":true,"usageStatistics":false,"month":{"startDayOfWeek":1}},"schedules":[{"category":"time","dueDateClass":"","id":"schedulecb48af7adc62eb6388d20779","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la asignatura  ","recurrenceRule":"","start":"2024-12-17T15:00:00Z","end":"2024-12-17T17:00:00Z","location":"ETSIE A02","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule7049e76c1cea0068e8aac6cc","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Proyecto y Flujo de Trabajo  ","recurrenceRule":"","start":"2025-01-07T17:00:00Z","end":"2025-01-07T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleb54001aed3d02c1facc958e9","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Reproducibilidad (I)  ","recurrenceRule":"","start":"2025-01-08T17:00:00Z","end":"2025-01-08T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule43a9a6936636378bb04055c9","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Reproducibilidad (II)  ","recurrenceRule":"","start":"2025-01-09T17:00:00Z","end":"2025-01-09T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule1d28f6c5c0db482de455ee76","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (I)  ","recurrenceRule":"","start":"2025-01-10T17:00:00Z","end":"2025-01-10T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule575dc93f187cd8130cdf39c8","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (II)  ","recurrenceRule":"","start":"2025-01-14T17:00:00Z","end":"2025-01-14T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulec6de88f73e03c82a8277403e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (III)  ","recurrenceRule":"","start":"2025-01-15T17:00:00Z","end":"2025-01-15T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleb45971f90c3b7c115bc87c8a","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (IV)  ","recurrenceRule":"","start":"2025-01-17T17:00:00Z","end":"2025-01-17T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule14b4bd07d5ea15751c8a3bb4","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Control de versiones  ","recurrenceRule":"","start":"2025-01-20T17:00:00Z","end":"2025-01-20T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule077f31ea1797d4afbeecdfe9","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Control de versiones  ","recurrenceRule":"","start":"2025-01-21T17:00:00Z","end":"2025-01-21T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule07e23861ae4a737322a7fe70","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los SIG  ","recurrenceRule":"","start":"2025-01-23T17:00:00Z","end":"2025-01-23T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulee87fd7be2abbffc29a86f841","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG con qGIS (I): usos y coberturas  ","recurrenceRule":"","start":"2025-01-24T17:00:00Z","end":"2025-01-24T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleea44f75447137772c3bf38e5","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG con qGIS (II): HIC  ","recurrenceRule":"","start":"2025-01-28T17:00:00Z","end":"2025-01-28T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulef9d9f1ec1c08d157ba9c8eba","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Trabajos en Grupo (feedback)  ","recurrenceRule":"","start":"2025-02-03T17:00:00Z","end":"2025-02-03T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule5c4eb128b9f7deaf86d93963","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Bases de datos (I)  ","recurrenceRule":"","start":"2025-02-04T17:00:00Z","end":"2025-02-04T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulecbfb31f7a8bbe6298132de1f","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Bases de datos (II)  ","recurrenceRule":"","start":"2025-02-06T17:00:00Z","end":"2025-02-06T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleaf59475efaf1b7eaa9f60424","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG programando (I)  ","recurrenceRule":"","start":"2025-02-07T17:00:00Z","end":"2025-02-07T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule5410067aeaa219c29cc6e765","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG programando (II)  ","recurrenceRule":"","start":"2025-02-11T17:00:00Z","end":"2025-02-11T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulebf3244b64112caf5c0bc5adc","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los datos LIDAR (I)  ","recurrenceRule":"","start":"2025-02-13T17:00:00Z","end":"2025-02-13T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule7b90b66da1e233df776dc6c9","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los datos LIDAR (II)  ","recurrenceRule":"","start":"2025-02-14T17:00:00Z","end":"2025-02-14T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulef020be47e293001ac8bf2993","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Generación de mapa de diversidad (I)  ","recurrenceRule":"","start":"2025-02-17T17:00:00Z","end":"2025-02-17T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulea8bbc4c925db17bca8e7619f","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Generación de mapa de diversidad (II)  ","recurrenceRule":"","start":"2025-02-18T17:00:00Z","end":"2025-02-18T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule55f4494bbc0b452130405b49","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Publicación de resultados: mapas en web  ","recurrenceRule":"","start":"2025-02-19T17:00:00Z","end":"2025-02-19T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule33bf156fa337e18173aea3d1","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (I)  ","recurrenceRule":"","start":"2025-03-03T17:00:00Z","end":"2025-03-03T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule81ed6c863e84d39faa154d5e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (II)  ","recurrenceRule":"","start":"2025-03-04T17:00:00Z","end":"2025-03-04T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleb9da3489d54dd9e518750c40","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (III)  ","recurrenceRule":"","start":"2025-03-06T17:00:00Z","end":"2025-03-06T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule170603543ec14d1639905ce2","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (I)  ","recurrenceRule":"","start":"2025-03-10T17:00:00Z","end":"2025-03-10T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule32aea37ca270b65dc5a3f65e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (II)  ","recurrenceRule":"","start":"2025-03-12T17:00:00Z","end":"2025-03-12T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule4b63cf3a3aaf02fc137745c8","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (III)  ","recurrenceRule":"","start":"2025-03-14T09:00:00Z","end":"2025-03-14T11:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule4589cabce97cfac5f8ff4cc3","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Presentación de resultados del trabajo  ","recurrenceRule":"","start":"2025-04-22T06:00:00Z","end":"2025-04-22T08:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""}],"navigation":true,"defaultDate":"2025-01-06","events":[],"navigationOptions":{"today_label":"Today","prev_label":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\" class=\"phosphor-svg\" height=\"1.33em\" fill=\"currentColor\" style=\"vertical-align:-0.25em;\">\n  <path d=\"M164.24,203.76a6,6,0,1,1-8.48,8.48l-80-80a6,6,0,0,1,0-8.48l80-80a6,6,0,0,1,8.48,8.48L88.49,128Z\"><\/path>\n  <title>caret-left-light<\/title>\n<\/svg>","next_label":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\" class=\"phosphor-svg\" height=\"1.33em\" fill=\"currentColor\" style=\"vertical-align:-0.25em;\">\n  <path d=\"M180.24,132.24l-80,80a6,6,0,0,1-8.48-8.48L167.51,128,91.76,52.24a6,6,0,0,1,8.48-8.48l80,80A6,6,0,0,1,180.24,132.24Z\"><\/path>\n  <title>caret-right-light<\/title>\n<\/svg>","class":" bttn-bordered bttn-sm bttn-primary","fmt_date":"YYYY-MM-DD","sep_date":" ~ "}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
+</section>
+<section id="ejercicios-prácticos" class="level1">
+<h1>Ejercicios prácticos</h1>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+</section>
+</section>
+<section id="bibliografía-complementaria" class="level1">
 
 
 
-</main> <!-- /main -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía complementaria</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-AlstonRick2021BeginnersGuide" class="csl-entry" role="listitem">
+Alston, J. M., and J. A. Rick. 2021. <a href="https://doi.org/10.1002/bes2.1801">A <span>Beginner</span>’s <span>Guide</span> to <span>Conducting Reproducible Research</span></a>. The Bulletin of the Ecological Society of America 102:e01801.
+</div>
+<div id="ref-10141/622618" class="csl-entry" role="listitem">
+Cooper, N., and P.-Y. Hsing, editors. 2017. <a href="http://hdl.handle.net/10141/622618">A guide to reproducible code in ecology and evolution</a>. British Ecological Society.
+</div>
+<div id="ref-RodriguezSanchezetal2016CienciaReproducible" class="csl-entry" role="listitem">
+Rodríguez-Sanchez, F., A. J. Pérez-Luque, I. Bartomeus, and S. Varela. 2016. <a href="https://doi.org/10.7818/ECOS.2016.25-2.11">Ciencia reproducible: Qué, por qué, cómo?</a> Ecosistemas 25:83–92.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
