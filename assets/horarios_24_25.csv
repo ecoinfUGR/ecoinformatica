@@ -1,31 +1,31 @@
-date,time_start,time_end,site,sesion,profe
-2025-01-07,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-08,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-09,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-10,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-14,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-15,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-17,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-20,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-21,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-23,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-24,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-01-28,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-03,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-04,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-06,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-07,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-11,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-13,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-14,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-17,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-18,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-02-19,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-03,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-04,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-06,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-10,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-12,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-19,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-24,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
-2025-03-25,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,,
+﻿date,time_start,time_end,site,sesion,profe,bloque
+2024-12-17,16:00,18:00,ETSIE A02,Introducción a la asignatura,Antonio,trabajo grupal
+2025-01-07,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Proyecto y Flujo de Trabajo,María,trabajo grupal
+2025-01-08,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Reproducibilidad (I),Antonio,reproducibilidad
+2025-01-09,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Reproducibilidad (II),Antonio,reproducibilidad
+2025-01-10,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a la programación (I),Javi,programación
+2025-01-14,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a la programación (II),"Javi, Antonio",programación
+2025-01-15,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a la programación (III),Antonio,programación
+2025-01-17,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a la programación (IV),Antonio,programación
+2025-01-20,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Control de versiones ,Antonio,reproducibilidad
+2025-01-21,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Control de versiones ,Antonio,reproducibilidad
+2025-01-23,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a los SIG,María,SIG
+2025-01-24,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,SIG con qGIS (I): usos y coberturas,María,SIG
+2025-01-28,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,SIG con qGIS (II): HIC,María,SIG
+2025-02-03,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Trabajos en Grupo (feedback),Javi,trabajo grupal
+2025-02-04,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Bases de datos (I),María,bases de datos
+2025-02-06,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Bases de datos (II),María,bases de datos
+2025-02-07,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,SIG programando (I),"María, Antonio",SIG
+2025-02-11,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,SIG programando (II),Antonio,SIG
+2025-02-13,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a los datos LIDAR (I),Antonio,teledetección
+2025-02-14,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Introducción a los datos LIDAR (II),Antonio,teledetección
+2025-02-17,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Generación de mapa de diversidad (I),Javi,análisis datos
+2025-02-18,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Generación de mapa de diversidad (II),Javi,análisis datos
+2025-02-19,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Publicación de resultados: mapas en web,Antonio,reproducibilidad
+2025-03-03,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Datos primarios e integración (I),Antonio,datos primarios
+2025-03-04,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Datos primarios e integración (II),Antonio,datos primarios
+2025-03-06,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Datos primarios e integración (III),Antonio,datos primarios
+2025-03-10,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Funcionamiento y tendencias de la vegetación (I),Javi,teledetección
+2025-03-12,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Funcionamiento y tendencias de la vegetación (II),Javi,teledetección
+2025-03-24,18:00,20:00,Aula 003 Informática. Facultad de Ciencias,Funcionamiento y tendencias de la vegetación (III),Javi,teledetección
+2025-04-22,08:00,10:00,Aula 003 Informática. Facultad de Ciencias,Presentación de resultados del trabajo,María,trabajo grupal

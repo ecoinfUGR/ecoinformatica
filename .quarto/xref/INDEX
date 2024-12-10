@@ -19,5 +19,44 @@
   },
   "calendario.qmd": {
     "calendario.html": "b0dd8d39"
+  },
+  "modulos/prueba.qmd": {
+    "prueba.html": "641cd58c"
+  },
+  "guia_docente.qmd": {
+    "guia_docente.html": "faaf9e5c"
+  },
+  "sesiones/repro/repro_intro_slides.qmd": {
+    "repro_intro_slides.html": "98edb358"
+  },
+  "modulos/reproducibilidad.qmd": {
+    "reproducibilidad.html": "91a31f5d"
+  },
+  "sesiones/repro/repro_reproducible_documents.qmd": {
+    "repro_reproducible_documents.html": "befe5561"
+  },
+  "sesiones/repro/repro_reproducible_documents_slides.qmd": {
+    "repro_reproducible_documents_slides.html": "c43415fe"
+  },
+  "modulos.qmd": {
+    "modulos.html": "bea8d251"
+  },
+  "modulos/bbdd.qmd": {
+    "bbdd.html": "dbf13623"
+  },
+  "modulos/datos_primarios.qmd": {
+    "datos_primarios.html": "3d65cce1"
+  },
+  "modulos/programacion.qmd": {
+    "programacion.html": "57fcd5f4"
+  },
+  "modulos/teledeteccion.qmd": {
+    "teledeteccion.html": "09188512"
+  },
+  "modulos/trabajo_grupal.qmd": {
+    "trabajo_grupal.html": "c9470c47"
+  },
+  "modulos/sig.qmd": {
+    "sig.html": "9a5dcb4a"
   }
 }
