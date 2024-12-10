@@ -228,72 +228,87 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-modulos">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-modulos-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-modulos'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Nombre
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Profesores
+        </option>
+     </select>
+  </div>
+</div>
 <table class="quarto-listing-table table">
 <thead>
 <tr>
 <th>
-Nombre
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Nombre</a>
 </th>
 <th>
-Profesores
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Profesores</a>
 </th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Bases de Datos" data-listing-filename-sort="bbdd.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Introducción" data-listing-filename-sort="introduccion.qmd">
 <td>
-<a href="./modulos/bbdd.html" class="title listing-title">Bases de Datos</a>
+<a href="./modulos/introduccion.html" class="title listing-title">Introducción</a>
 </td>
 <td>
-<span class="listing-author">María Suárez-Muñoz</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Datos Primarios de Biodiversidad" data-listing-filename-sort="datos_primarios.qmd">
-<td>
-<a href="./modulos/datos_primarios.html" class="title listing-title">Datos Primarios de Biodiversidad</a>
-</td>
-<td>
-<span class="listing-author">Antonio J. Pérez-Luque</span>
+<span class="listing-author"><a href="../../equipo/suarez_munoz">María Suárez-Muñoz</a></span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Introducción a la Programación" data-listing-filename-sort="programacion.qmd">
-<td>
-<a href="./modulos/programacion.html" class="title listing-title">Introducción a la Programación</a>
-</td>
-<td>
-<span class="listing-author">Javier Martínez-López, Antonio J. Pérez-Luque</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Reproducibilidad" data-listing-filename-sort="reproducibilidad.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Reproducibilidad" data-listing-filename-sort="reproducibilidad.qmd">
 <td>
 <a href="./modulos/reproducibilidad.html" class="title listing-title">Reproducibilidad</a>
 </td>
 <td>
-<span class="listing-author">Antonio J. Pérez-Luque</span>
+<span class="listing-author"><a href="../../equipo/perez_luque">Antonio J. Pérez-Luque</a></span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Sistemas de Información Geográfica" data-listing-filename-sort="sig.qmd">
+<tr data-index="2" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Introducción a la Programación" data-listing-filename-sort="programacion.qmd">
+<td>
+<a href="./modulos/programacion.html" class="title listing-title">Introducción a la Programación</a>
+</td>
+<td>
+<span class="listing-author"><a href="../../equipo/martinez_lopez">Javier Martínez-López</a>, <a href="../../equipo/perez_luque">Antonio J. Pérez-Luque</a></span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Sistemas de Información Geográfica" data-listing-filename-sort="sig.qmd">
 <td>
 <a href="./modulos/sig.html" class="title listing-title">Sistemas de Información Geográfica</a>
 </td>
 <td>
-<span class="listing-author">Antonio J. Pérez-Luque, María Suárez-Muñoz</span>
+<span class="listing-author"><a href="../../equipo/perez_luque">Antonio J. Pérez-Luque</a>, <a href="../../equipo/suarez_munoz">María Suárez-Muñoz</a></span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Teledetección" data-listing-filename-sort="teledeteccion.qmd">
+<tr data-index="4" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Bases de Datos" data-listing-filename-sort="bbdd.qmd">
+<td>
+<a href="./modulos/bbdd.html" class="title listing-title">Bases de Datos</a>
+</td>
+<td>
+<span class="listing-author"><a href="../../equipo/suarez_munoz">María Suárez-Muñoz</a></span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Teledetección" data-listing-filename-sort="teledeteccion.qmd">
 <td>
 <a href="./modulos/teledeteccion.html" class="title listing-title">Teledetección</a>
 </td>
 <td>
-<span class="listing-author">Javier Martínez-López, Antonio J. Pérez-Luque</span>
+<span class="listing-author"><a href="../../equipo/martinez_lopez">Javier Martínez-López</a>, <a href="../../equipo/perez_luque">Antonio J. Pérez-Luque</a></span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1733843704609" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Trabajo Grupal" data-listing-filename-sort="trabajo_grupal.qmd">
+<tr data-index="6" data-listing-file-modified-sort="1733848303409" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Datos Primarios de Biodiversidad" data-listing-filename-sort="datos_primarios.qmd">
 <td>
-<a href="./modulos/trabajo_grupal.html" class="title listing-title">Trabajo Grupal</a>
+<a href="./modulos/datos_primarios.html" class="title listing-title">Datos Primarios de Biodiversidad</a>
 </td>
 <td>
-<span class="listing-author">María Suárez-Muñoz</span>
+<span class="listing-author"><a href="../../equipo/perez_luque">Antonio J. Pérez-Luque</a></span>
 </td>
 </tr>
 </tbody>
