@@ -25,7 +25,7 @@ crossref:
 
 En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (`Rmd`)(@fig-rmd-allison). Vamos a trabajar con [R](https://www.r-project.org/), Rstudio (ahora llamado [posit](https://posit.co/)), y utilizaremos al menos el paquete [`rmarkdown`](https://rmarkdown.rstudio.com/).
 
-Para la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado [Recursos](#sec-recursos) se encuentran listados todos los que se han utilizado.
+Para la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado [Recursos](#sec-recursos) se encuentran listados todos los que se han utilizado. 
 
 ![Esquema general de `Rmd`. Fuente: [\@allison_horst](https://allisonhorst.com/allison-horst)](images/rmd-allison.png){#fig-rmd-allison}
 

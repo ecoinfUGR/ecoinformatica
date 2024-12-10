@@ -1,9 +1,13 @@
 {
     "sortOrder": [
         {
+            "columnIndex": 4,
+            "ascending": false
+        },
+        {
             "columnIndex": 2,
             "ascending": true
         }
     ],
-    "path": "~/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica/modulos"
+    "path": "~/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica"
 }
