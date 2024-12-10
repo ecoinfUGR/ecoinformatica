@@ -17,7 +17,7 @@ about:
       href: https://orcid.org/0000-0002-0825-7252
     - text: "{{< fa globe >}} Personal web"
       href: https://www.ugr.es/personal/javier-martinez-lopez 
-categories: [Teledetección, Sistemas de Información Geográfica]
+categories: [Teledetección, Programación]
 ---
  
 <hr>
