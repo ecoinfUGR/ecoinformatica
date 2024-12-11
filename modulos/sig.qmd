@@ -1,6 +1,6 @@
 ---
 title: "Sistemas de Información Geográfica"
-author: "[María Suárez-Muñoz](../equipo/suarez_munoz), [Antonio J. Pérez-Luque](../equipo/perez_luque)"
+author: "[María Suárez-Muñoz](equipo/suarez_munoz), [Antonio J. Pérez-Luque](equipo/perez_luque)"
 date: ""
 modulo_order: 4
 listing:
