@@ -552,5 +552,334 @@
     "title": "Introducción",
     "section": "Recursos",
     "text": "Recursos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
+    "href": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Qué es el control de versiones?",
+    "text": "¿Qué es el control de versiones?\nEl control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante\n\nSe puede utilizar sobre cualquier archivo.\nPermite:\n\nRevertir archivos (proyecto) a un estado anterior\nComparar cambios a lo largo del tiempo\n\n\nFacilita la identificación de errores"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registro-de-cambios",
+    "href": "sesiones/repro/repro_git.html#registro-de-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registro de cambios",
+    "text": "Registro de cambios"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registro-de-cambios-varios-usuarios",
+    "href": "sesiones/repro/repro_git.html#registro-de-cambios-varios-usuarios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registro de cambios (varios usuarios)",
+    "text": "Registro de cambios (varios usuarios)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#integración-de-cambios",
+    "href": "sesiones/repro/repro_git.html#integración-de-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Integración de cambios",
+    "text": "Integración de cambios"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
+    "href": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Sistemas para el control de versiones",
+    "text": "Sistemas para el control de versiones\n\n\n\n\n\nProGit book\nOtros:\n\nSubversion\nConcurrent Version System CVS"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#git",
+    "href": "sesiones/repro/repro_git.html#git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Git",
+    "text": "Git\n\nSistema avanzado de control de versiones distribuido\nPermite rastrear el progreso de un proyecto mediante capturas\n\n¿Qué cambios?\n¿Dónde?\n¿Quién los hizo?\n¿Por qué?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#github",
+    "href": "sesiones/repro/repro_git.html#github",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "GitHub",
+    "text": "GitHub\n\n\n\n\nUn website donde alojar repositorios\nInterfaz para explorar repositorios\nPermite colaborar de una forma más eficaz:\n\nCompartir repositorio\nVer cambios\nCorregir errores\nDiscutir y Revisar cambios\n\n\n\n\n\n\n\n\n\nhttps://github.com/"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#recursos-sobre-git",
+    "href": "sesiones/repro/repro_git.html#recursos-sobre-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos sobre Git",
+    "text": "Recursos sobre Git\n\n\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#ciclo-de-git",
+    "href": "sesiones/repro/repro_git.html#ciclo-de-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciclo de Git",
+    "text": "Ciclo de Git\n\nArtwork by Allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#ciclo-de-git-1",
+    "href": "sesiones/repro/repro_git.html#ciclo-de-git-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciclo de Git",
+    "text": "Ciclo de Git\n\nT. Meralus"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#instalar-git",
+    "href": "sesiones/repro/repro_git.html#instalar-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Instalar Git",
+    "text": "Instalar Git\n\n\nInstala Git en tu ordenador. Puedes usar la documentación oficial\n\n\n\nConfigurar Git\n\n\nCódigo\nEjemplo\n\n\n\ngit config --global user.name \ngit config --global user.email \n\n\ngit config --global user.name \"Fulanito Menganito\"\ngit config --global user.email micorreo@gmail.com\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nVamos a usar Github, por tanto la dirección de correo que indiques ha de ser la misma con la que te registres en GitHub.\n\n\n\n\nEn cualquier momento podemos ver las opciones de configuración\n\ngit config --list"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
+    "href": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crear un repositorio nuevo",
+    "text": "Crear un repositorio nuevo\n\nAbre la consola de comandos\n\nCrea un directorio nuevo y ábrelo1\n\n\nmkdir &lt;nombre_directorio&gt;\n\nmkdir datos\ncd datos\nAyuda sobre comandos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
+    "href": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Iniciar un repositorio",
+    "text": "Iniciar un repositorio\n\nPara iniciar un repositorio utilizamos el comando\n\ngit init nombrerepositorio\ngit init mi_primer_repositorio\n\n\n\n\n\n\nNote\n\n\n¿Que ha ocurrido en nuestro directorio?\n\n\n\n\nInspeccionar el directorio\n\ncd mi_primer_repositorio\nls -a \ncd .git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#añadir-cambios",
+    "href": "sesiones/repro/repro_git.html#añadir-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Añadir cambios",
+    "text": "Añadir cambios\n\nCrea un archivo de texto dentro del directorio, escribe algo y nómbralo miarchivo.txt\nAñade el archivo a la staging area\n\ngit add &lt;nombre_archivo&gt;\ngit add miarchivo.txt\n\nSi quiero añadir todos los archivos\n\ngit add ."
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registrar-cambios",
+    "href": "sesiones/repro/repro_git.html#registrar-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registrar cambios",
+    "text": "Registrar cambios\ngit commit -m \"Commit message\"\"\n\n\n\n\n\n\nImportant\n\n\nEl mensaje nos servirá para indicar lo que hemos hecho.\n\n\nRecomendaciones de buenas prácticas para commits\nAlgunas convenciones para commits\n\n\n\n\ngit commit -m \"Escribo mis datos personales en archivo\"\n\n[master (root-commit) 71fe224] Escribo mis datos personales en archivo\n 1 file changed, 2 insertions(+)\n create mode 100644 miarchivo.txt"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section",
+    "href": "sesiones/repro/repro_git.html#section",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "Allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section-1",
+    "href": "sesiones/repro/repro_git.html#section-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "Allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section-2",
+    "href": "sesiones/repro/repro_git.html#section-2",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "T. Meralus"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
+    "href": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enviar cambios a Repositorios Remotos",
+    "text": "Enviar cambios a Repositorios Remotos\n\nNuestros cambios están en el HEAD (copia local)\nQueremos enviar los cambios a un repositorio remoto\n\n\n\n\n\n\n\n\nCaution\n\n\nNecesitamos un repositorio remoto (GitHub):\n\nCrear\nClonar\n\n\n\n\ngit remote add origin &lt;url server&gt;\n\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#crear-repositorio-en-github",
+    "href": "sesiones/repro/repro_git.html#crear-repositorio-en-github",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crear repositorio en GitHub",
+    "text": "Crear repositorio en GitHub"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section-3",
+    "href": "sesiones/repro/repro_git.html#section-3",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "Julen Astigarraga"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section-4",
+    "href": "sesiones/repro/repro_git.html#section-4",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "Julen Astigarraga"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
+    "href": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enlazar repositorio local y remoto",
+    "text": "Enlazar repositorio local y remoto\n URL: https://github.com/ajpelu/teach_git_ejemplo.git\n\ngit remote add origin &lt;url server&gt;\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#enviar",
+    "href": "sesiones/repro/repro_git.html#enviar",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enviar",
+    "text": "Enviar\n\n\nPara enviar cambios (una vez conectados) a un repositorio remoto\nNos pedirá usuario y contraseña\n\n\ngit push origin master\n\n\n\n\n\n\nWarning\n\n\ngit push origin\ngit push origin master\n¿Qué rama queremos sincronizar?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio",
+    "href": "sesiones/repro/repro_git.html#clonar-un-repositorio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Clonar un repositorio",
+    "text": "Clonar un repositorio"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
+    "href": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Clonar un repositorio",
+    "text": "Clonar un repositorio\n\nImportante para reproducibilidad\nColaboración\nRepositorio remoto (GitHub)\n2 formas (diferencias)\n\n\n\nHTTPS\nSSH\n\n\n\n# git clone &lt;url&gt; \ngit clone https://github.com/ajpelu/teach_git_ejemplo.git \n\n\n# git clone username@host:/path/to/repository\ngit clone git@github.com:ajpelu/teach_git_ejemplo.git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
+    "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Actualizar un repositorio local",
+    "text": "Actualizar un repositorio local\n\nAllison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
+    "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Actualizar un repositorio local",
+    "text": "Actualizar un repositorio local\n\n¿Existe alguna información nueva en mi repositorio remoto?\n\ngit fetch  \n\n¿Existe alguna información nueva en mi repositorio remoto y quiero que esté en mi repositorio local?\n\ngit pull  \n\n\n\n\n\n\nWarning\n\n\n\nPrestar atención a la rama!!\n\ngit pull origin master"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#otros-comandos",
+    "href": "sesiones/repro/repro_git.html#otros-comandos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Otros comandos",
+    "text": "Otros comandos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: shell\n",
+    "text": "Anexo. Formas de usar git: shell\n\n\nGit for Windows"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: git-GUI\n",
+    "text": "Anexo. Formas de usar git: git-GUI\n\n\nClientes de git GUI (Guest User Interfaces)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: R-studio\n",
+    "text": "Anexo. Formas de usar git: R-studio\n\nhttps://happygitwithr.com/\n\n\n\n\nHappy Git and Gihub for the useR Tutorial - Posit"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#cómo-definirías-la-ciencia",
+    "href": "sesiones/repro/repro_git.html#cómo-definirías-la-ciencia",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Cómo definirías la ciencia?",
+    "text": "¿Cómo definirías la ciencia?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#ciencia",
+    "href": "sesiones/repro/repro_git.html#ciencia",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciencia",
+    "text": "Ciencia\n\n\nConjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales RAE\n\n\n\nLa ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico. Mario Bugne 1957, La ciencia: su método y su filosofía"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#crisis-de-reproducibilidad",
+    "href": "sesiones/repro/repro_git.html#crisis-de-reproducibilidad",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crisis de Reproducibilidad",
+    "text": "Crisis de Reproducibilidad\n\nBaker 2016\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#mismos-datos-mismos-resultados",
+    "href": "sesiones/repro/repro_git.html#mismos-datos-mismos-resultados",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿mismos datos = mismos resultados?",
+    "text": "¿mismos datos = mismos resultados?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#problema-actual",
+    "href": "sesiones/repro/repro_git.html#problema-actual",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿problema actual?",
+    "text": "¿problema actual?\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#investigación-reproducible",
+    "href": "sesiones/repro/repro_git.html#investigación-reproducible",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Investigación Reproducible",
+    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\nThe Turing way\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#gradiente-de-reproducibilidad",
+    "href": "sesiones/repro/repro_git.html#gradiente-de-reproducibilidad",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Gradiente de Reproducibilidad",
+    "text": "Gradiente de Reproducibilidad\n\nRodríguez-Sánchez et al. 2016"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#reproducibilidad-barreras",
+    "href": "sesiones/repro/repro_git.html#reproducibilidad-barreras",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Reproducibilidad: Barreras",
+    "text": "Reproducibilidad: Barreras\n\nFuente: Kirstie Whitaker"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#reproducibilidad-costes",
+    "href": "sesiones/repro/repro_git.html#reproducibilidad-costes",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Reproducibilidad: Costes",
+    "text": "Reproducibilidad: Costes"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#cuándo-y-dónde-ser-reproducible",
+    "href": "sesiones/repro/repro_git.html#cuándo-y-dónde-ser-reproducible",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Cuándo y Dónde ser reproducible?",
+    "text": "¿Cuándo y Dónde ser reproducible?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#recursos",
+    "href": "sesiones/repro/repro_git.html#recursos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nLista de recursos sobre Ciencia Reproducible\nRodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) Ciencia reproducible: qué, por qué, cómo. Ecosistemas, 25(2): 83-92.\nA Beginner’s Guide to Conducting Reproducible Research\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nA Guide to Reproducible Code in Ecology and Evolution"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#recursos-1",
+    "href": "sesiones/repro/repro_git.html#recursos-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\n\n\n\n\nCooper & Hsing (2017)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#recursos-2",
+    "href": "sesiones/repro/repro_git.html#recursos-2",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\nAlston & Rick 2021"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#alguna-duda",
+    "href": "sesiones/repro/repro_git.html#alguna-duda",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Control de Versiones con Git y GitHub. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#has-experimentado-alguna-de-estas-situaciones-en-tu-trabajo-diario",
+    "href": "sesiones/repro/repro_git.html#has-experimentado-alguna-de-estas-situaciones-en-tu-trabajo-diario",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?",
+    "text": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?"
   }
 ]
