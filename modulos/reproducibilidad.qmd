@@ -37,4 +37,16 @@ nocite: |
 
 - [Awesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media](https://github.com/leipzig/awesome-reproducible-research)
 
-# Bibliografía complementaria 
+- [Interactive Tutorial Git (CodeSchool)](https://try.github.io/levels/1/challenges/1)
+
+- [Git - the simple guide (Roger Dudler)](http://rogerdudler.github.io/git-guide/index.es.html)
+
+- [A basic tutorial to version control using git (Jon Lefcheck)](http://jonlefcheck.net/2013/11/04/a-basic-tutorial-to-version-control-using-git/)
+
+- [Git/Github guide a minimal tutorial (Karl Broman)](http://kbroman.org/github_tutorial/)
+
+- [Guía Visual de Git](https://marklodato.github.io/visual-git-guide/index-es.html)
+
+- [Introducción al funcionamiento y uso de git y github](https://juancuiule.github.io/intro-a-git/)
+
+# Bibliografía recomendada  
