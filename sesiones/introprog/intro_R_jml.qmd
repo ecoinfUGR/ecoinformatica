@@ -1,0 +1,718 @@
+---
+title: "Primeros pasos con R"
+format: html
+number-sections: false
+number-depth: 4
+date: "`r Sys.Date()`"
+sesion: x
+author: 
+  - name: "Javier Martínez-López"
+    orcid: 0000-0002-0825-7252
+    email: javier.martinez@ugr.es
+    affiliation: Departamento de Ecología, Universidad de Granada
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+---
+
+# Introducción a R {.unnumbered}
+
+## ¿Qué es **RStudio**?
+
+[RStudio](https://posit.co/download/rstudio-desktop/) es un entorno de desarrollo integrado (IDE) para R y Python.
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/c2/RStudio_202.04.2_Build_764_-_CuerdOS_1.1_Cessna.png)
+
+## ¿Qué es **R**?
+
+> [R](http://cran.r-project.org) es un **lenguaje de programación** principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como **software libre**.
+
+```{r}
+citation()
+```
+
+## [Librerías](https://cran.r-project.org/web/packages/)
+
+* Las funciones se agrupan por paquetes o librerías
+* Las Funciones más habituales se incluyen por defecto en R (base)
+* Las librerías se pueden instalar y cargar fácilmente (`install.packages()` y `library()`)
+
+## Librerías
+
+Por ejemplo [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html)
+
+```{r, eval=FALSE}
+install.packages('ggplot2')  # Instala el paquete 'ggplot2'
+
+library(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones
+
+library(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'
+
+browseVignettes()
+```
+
+Hay conjuntos de librerías según su temática llamadas [Task Views](http://cran.r-project.org/web/views)
+
+## Fuentes de información
+
+* [Manuales oficiales](https://cran.r-project.org/manuals.html)
+* [Manuales externos](https://cran.r-project.org/other-docs.html)
+* [Listas de correo](http://www.r-project.org/mail.html)
+* [R-bloggers](http://www.r-bloggers.com)
+* [Comunidad R-Hispano](http://r-es.org/)
+* [Apuntes de Luís Cayuela](http://luiscayuela.blogspot.com.es/)
+* [R Cookbook, 2nd Edition](https://rc2e.com/)
+* [Manipulación de datos e investigación reproducible en R](https://bookdown.org/content/bc094819-6bce-4648-83a2-c015ba9ef1aa/)
+
+## Ayuda
+
+```{r}
+help("aov") ## Ayuda sobre una función específica
+
+help('+') ## Ayuda sobre operadores matemáticos
+
+help.search('linear model') ## Búsqueda de palabras clave
+```
+
+# Elementos de R
+
+## Variables, constantes y operadores
+
+```{r}
+a <- 3.25  # Asigna el valor 3.25 a la variable 'a'
+
+a = 3.25  # Otra forma de asignar valores
+
+nombre <- 'Pepe'  # Asigna una cadena de texto a la variable: nombre
+```
+```{r}
+as.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha
+
+as.Date('2000-01-01') + 2  # Suma días a una fecha
+```
+
+### Constantes
+
+```{r}
+NULL ## Representa un objeto vacío
+
+NA ## Representa un valor faltante
+
+NaN ## Representa un valor no numérico (ejemplo: 1/0)
+
+pi ## Constante matemática predefinida
+```
+
+### Operadores
+
+```{r}
+a == 3.25  # Compara si 'a' es igual a 3.25
+
+a == 6  # Compara si 'a' es igual a 6
+
+nombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'
+
+nombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'
+
+a != 2  # Verifica si 'a' no es igual a 2
+
+5 < 6  # Verifica si 5 es menor que 6
+
+10 >= 5  # Verifica si 10 es mayor o igual a 5
+```
+
+#### Operadores aritméticos
+
+```{r}
+1 + 2  # Suma
+
+1 - 2  # Resta
+
+5 / 3  # División
+
+2 ^ 3  # Potencia
+
+sqrt(10)  # Raíz cuadrada
+
+runif(5, min = 0, max = 100) # Números aleatorios
+```
+
+## Vectores
+
+```{r}
+a <- NULL # Crea un vector vacío
+
+a <- 1:10 # Crea un vector con valores del 1 al 10
+
+c <- seq(1, 10, by = 0.5) # Crea un vector secuencial con incrementos de 0.5
+
+d <- c(0, 1, 1, 2, 3) # Crea un vector con valores específicos
+
+e <- c('b1', 'b2', 'b3') # Crea un vector de cadenas de texto
+
+f <- rep(5, 6) # Crea un vector repitiendo el número 5 seis veces
+
+d[1] # Obtiene el primer elemento del vector 'd'
+
+d[-1] # Excluye el primer elemento del vector 'd'
+```
+
+## Matrices
+
+```{r}
+mat <- matrix(1:12, 3, 4) # Crea una matriz con valores del 1 al 12, dispuestos en 3 filas y 4 columnas
+
+mat
+
+matrix(1:12, 3, 4, byrow = TRUE) # La matriz se rellena por filas
+
+rbind(1:5, 11:15, 21:25) # Une vectores como filas
+
+cbind(1:5, 11:15, 21:25) # Une vectores como columnas
+
+mat[1:2, 2:3] # Selecciona valores de las filas 1 y 2, columnas 2 y 3
+
+mat[, -2] # Excluye la segunda columna de la matriz
+
+t(mat) # Transpone la matriz
+```
+
+## Data frames
+
+```{r}
+mat <- matrix(1:30, 10) ## Crea una matriz con valores del 1 al 30 en 10 filas
+
+mat
+
+df_mat <- as.data.frame(mat) ## Convierte la matriz en un 'data.frame'
+```
+```{r}
+names(df_mat) # Muestra los nombres de las columnas
+
+df_mat[2, 1] # Selecciona un elemento específico (fila 2, columna 1)
+
+df_mat$V1 # Selecciona una columna por su nombre
+```
+
+# Gestión del espacio de trabajo
+
+```{r, eval=FALSE}
+data(cars) # Carga un conjunto de datos de ejemplo
+
+ls() # Lista los objetos en el entorno actual (en RStudio no hace falta)
+
+rm(a) # Borra el objeto 'a'
+
+rm(list = ls()) # Borra todos los objetos del entorno
+```
+
+# Importar y manejar mis datos
+
+```{r}
+data(iris) # Carga el conjunto de datos 'iris'
+
+head(iris) # Muestra las primeras filas del conjunto de datos
+
+tail(iris) # Muestra las últimas filas del conjunto de datos
+
+dim(iris) # Muestra las dimensiones (filas y columnas)
+
+names(iris) # Muestra los nombres de las columnas
+
+attach(iris) # Hace las columnas de 'iris' accesibles directamente
+
+by(Sepal.Length, Species, summary) # Genera resúmenes por especie
+
+by(Sepal.Length, Species, mean) # Genera la media por especie
+
+head(Sepal.Length) # Muestra las primeras observaciones de una columna
+
+# detach(iris) # Desvincula el conjunto de datos
+```
+
+## Primeros pasos
+
+```{r}
+names(df_mat) # Muestra los nombres de las columnas
+
+names(df_mat) <- c('B1', 'B2', 'B3') # Renombra las columnas
+
+rownames(df_mat) # Muestra los nombres de las filas
+
+rownames(df_mat) <- LETTERS[1:10] # Renombra las filas con letras en mayúscula
+
+head(df_mat) # Muestra las primeras filas del 'data.frame'
+```
+
+## Seleccionar de mis datos
+
+```{r}
+iris[, 1] # Selecciona la primera columna
+
+iris[1:6, -1] # Selecciona las primeras 6 filas excluyendo la primera columna
+
+iris[1:3, ] # Selecciona las primeras 3 filas
+
+iris[-1:-140, ] # Excluye las primeras 140 filas
+
+iris[1:6, c(1, 3)] # Selecciona las columnas 1 y 3 de las primeras 6 filas
+
+iris[1:6, -c(1, 3)] # Excluye las columnas 1 y 3 de las primeras 6 filas
+```
+
+## Estadísticos descriptivos
+
+```{r}
+table(Species) # Crea una tabla de frecuencia por especie
+
+summary(iris) # Resumen estadístico del conjunto 'iris'
+
+summary(cars) # Resumen estadístico del conjunto 'cars'
+
+sd(iris$Sepal.Length) # Desviación estándar de una variable
+```
+
+## Exportar datos
+
+Exportar un 'data.frame' como archivo CSV (valores separados por 'comas').
+
+```{r, eval=FALSE}
+write.table(df_mat, # data.frame
+            'df_mat.csv', # nombre del archivo de salida
+            sep=';', # Separador de columnas
+            dec=',', # Separador decimal
+            col.names=TRUE, # Mantener nombres de las columnas
+            row.names=FALSE) # No guardar nombres de las filas
+```
+
+#  Funciones 
+
+nombre_función<-function(argumentos){expresión}
+
+```{r}
+di_hola_mundo <- function() {
+  print('¡Hola Mundo!') # Imprime un mensaje en la consola
+}
+
+di_hola_mundo() # Llama a la función
+```
+```{r}
+a_euros <- function(pesetas) {
+  pesetas / 166.386 # Convierte pesetas a euros
+}
+
+a_euros(1000) # Convierte 1000 pesetas a euros
+
+a_pesetas <- function(euros) {
+  euros * 166.386 # Convierte euros a pesetas
+}
+
+a_pesetas(6) # Convierte 6 euros a pesetas
+```
+
+## ¿Cómo se haría la función 'Área del triángulo'?
+
+```{r}
+area_triangulo <- function(b = 3, h = 5) { # valores por defecto
+  b * h / 2 # Calcula el área de un triángulo
+}
+
+area_triangulo() # Usa los valores por defecto
+
+area_triangulo(b = 4) # Especifica un valor diferente para la base
+```
+
+# Gráficos 
+
+```{r}
+
+# Crea un gráfico con un título y etiquetas de ejes
+
+plot(
+  x = 1:10,
+  y = 1:10,
+  xlab = 'eje X',
+  ylab = 'eje Y',
+  main = 'Título' 
+)
+
+# Gráfico con líneas
+
+plot(
+  x = 1:10,
+  y = 1:10,
+  type = 'l',
+  xlab = 'eje X',
+  ylab = 'eje Y',
+  main = 'Título' 
+)
+
+# Gráfico con puntos y líneas
+
+plot(
+  x = 1:10,
+  y = 1:10,
+  type = 'o',
+  xlab = 'eje X',
+  ylab = 'eje Y',
+  main = 'Título' 
+)
+```
+
+## Leyendas (gráficos básicos)
+
+```{r}
+
+# Crea un gráfico de dispersión coloreado por especie
+
+plot(
+  Sepal.Length,
+  Petal.Length,
+  col = as.factor(Species),
+  xlab = 'Long. Sépalo',
+  ylab = 'Long. Pétalo' 
+)
+
+# Agrega una leyenda al gráfico
+
+legend(7, # Posición en el eje X
+       3, # Posición en el eje Y
+       col = c(1:3),
+       pch = 1, # Símbolo
+       legend = unique(Species)) # Valores únicos de la variable Species
+```
+
+## Usando ggplot2
+
+[Manual de ggplot2](https://ggplot2.tidyverse.org/reference/)
+
+```{r}
+library(ggplot2)
+
+ggplot(data=iris,
+       aes(x = Petal.Length,
+           y = Petal.Width)) +
+  geom_point(aes(color=Species))
+```
+
+## Histogramas (gráficos básicos)
+
+```{r}
+# Opción A
+
+indice_versicolor <- Species == 'versicolor' # Índice lógico para filtrar por especie
+
+hist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'
+
+# Opción B
+
+sl_versicolor <- subset(Sepal.Length, Species == 'versicolor') # Otra forma de filtrar
+
+hist(sl_versicolor) # Histograma del subconjunto filtrado
+```
+
+## Exportación de gráficos (agrupados)
+
+```{r}
+#jpeg('histogramas.jpg')
+
+par(mfrow = c(1, 2)) # Divide la ventana gráfica en una cuadrícula de 1x2
+
+hist(Sepal.Length) # Histograma de todas las longitudes de sépalo
+
+hist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'
+
+#dev.off() # Cierra el dispositivo gráfico (= guarda el fichero)
+```
+
+## Histogramas (ggplot2)
+
+```{r}
+ggplot(data = iris,
+       aes(x = Sepal.Length)) +
+  geom_histogram() +
+  labs( x = "Longitud del sépalo",
+        y = "Frecuencia",
+        title = "Histograma longitud del sépalo") +
+  theme_light()
+
+# ggsave('histograma.png')
+```
+
+## Diagramas de cajas (boxplots)
+
+```{r}
+boxplot(Sepal.Length ~ Species) # Diagrama de cajas de longitudes de sépalo por especie
+
+# boxplot usando ggplot2
+
+ggplot(data = iris,
+       aes(x = Species,
+           y = Sepal.Length,
+           fill = Species)) +
+  geom_boxplot() +
+  labs( x = "Especies",
+        y = "Longitud del sépalo",
+        title = "Gráfico de cajas y bigotes",
+        subtitle = "Longitud del sépalo por especies")
+```
+
+## Diagramas de barras y lectura de datos
+
+[bar1_data.csv](data/bar1_data.csv)
+
+```{r}
+bar1_data <- read.table('data/bar1_data.csv',
+                        sep = ',', # El separador de columnas es la coma
+                        header = T) # La primera fila es el encabezado
+
+str(bar1_data) # tipos de datos de las columnas del data.frame
+```
+
+```{r}
+barplot(bar1_data$value, names.arg = factor(bar1_data$Site)) # Crea un gráfico de barras
+
+# ggplot2
+
+ggplot(bar1_data,
+       aes(x = Site,
+           y = value)) +
+  geom_col()
+
+```
+
+* Ejercicio adicional: ¿Cómo leemos el archivo [iris.csv](data/iris.csv)?
+
+## Gráficos de regresión lineal
+
+```{r}
+lm_pl_sl <- lm(Petal.Length ~ Sepal.Length) # Ajusta un modelo lineal
+
+shapiro.test(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo
+
+hist(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo
+
+summary(lm_pl_sl) # Resumen del modelo
+```
+
+## Gráfico del modelo 
+
+```{r}
+# require(ggplot2) # Carga el paquete ggplot2
+
+c <- ggplot(iris,
+            aes(y = Petal.Length,
+                x = Sepal.Length)) # Define un gráfico base
+
+c + stat_smooth(method = lm,
+                colour = "black") +
+  geom_point(aes(col = factor(Species))) # Agrega capas al gráfico
+
+# ggsave('iris_lm.png') # Guardar gráfico
+```
+
+## Gráfico de barras agrupadas 
+
+**Ejercicio: lee el archivo 'data/bar2_data.csv'** (contiene más años)
+
+[bar2_data.csv](data/bar2_data.csv)
+
+```{r}
+bar2_data <- read.table('data/bar2_data.csv',
+                        sep = '|',
+                        header = T) 
+
+str(bar2_data)
+```
+
+```{r}
+ggplot(bar2_data,
+       aes(x = Site,
+           y = value,
+           fill = factor(year)) # Agrupamos por año
+       ) +
+  geom_col(position = position_dodge(preserve = "single"))
+```
+## Gráfico de barras en subfiguras 
+
+```{r}
+ggplot(bar2_data, aes(x = Site, y = value)) +
+  geom_col() +
+  facet_wrap( ~ year)
+```
+
+## Preparar datos para ggplot2
+
+[data.csv](data/data.csv)
+
+```{r}
+library(reshape2) # Carga la librería reshape
+
+data<-read.table('data/data.csv',
+                 sep = '\t',
+                 header = T) # Lee un archivo de datos
+
+head(data) # Muestra las primeras filas del conjunto de datos
+
+data_ggplot2 <- melt(data,
+                     id = c('site')) 
+
+data_ggplot2 # Muestra los datos transformados
+
+data_orginal<-dcast(data_ggplot2, site ~ variable) # convertir niveles de una variable en columnas
+
+head(data_orginal)
+
+help(dcast) # función de agregación (similar a tabla pivotante de Excel)
+
+```
+
+# Test de tendencias de series temporales ([Mann-Kendall](https://github.com/nxskok/mkac))
+
+## Análisis de la serie de datos 1
+
+Datos: [ts.csv](data/ts.csv)
+
+```{r}
+
+# devtools::install_github("nxskok/mkac")
+
+library(lubridate)
+library(mkac)
+
+# Cargar los datos
+data<-read.table('data/ts.csv', sep=',', header = TRUE)
+
+str(data)
+
+# Interpretar las fechas
+data$date <- as.Date(data$date, format = '%d/%m/%Y')
+
+str(data)
+
+plot(data$date, data$value)
+
+# Extraer mes del año en una nueva columna
+
+data$month <- month(data$date)
+
+head(data)
+
+table(data$month)
+
+# Nueva tabla de datos con medias mensuales
+
+data_monthly_mean <- aggregate(value ~ month, data, mean)
+
+plot(data_monthly_mean$month, data_monthly_mean$value)
+
+kendall_Z_adjusted(data_monthly_mean$value)
+
+theil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)
+
+# Alternativa (sin pendiente de Sen):
+
+# library(Kendall)
+
+# MannKendall(data_monthly_mean$value)
+```
+
+## Análisis de la serie de datos 2
+
+Datos: [ts2.csv](data/ts2.csv)
+
+```{r}
+# Cargar los datos
+data <- read.table('data/ts2.csv', sep = ',', header = TRUE)
+
+str(data)
+
+# Interpretar las fechas
+data$date <- as.Date(data$date, format = '%d/%m/%Y')
+
+str(data)
+
+plot(data$date, data$value)
+
+# Extraer mes del año en una nueva columna
+
+data$month <- month(data$date)
+
+head(data)
+
+# Nueva tabla de datos con medias mensuales
+
+data_monthly_mean <- aggregate(value ~ month, data, mean)
+
+plot(data_monthly_mean$month, data_monthly_mean$value)
+
+kendall_Z_adjusted(data_monthly_mean$value)
+
+theil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)
+```
+
+## Análisis de la serie de datos 2 (la manera [tidyverse](https://www.tidyverse.org/))
+
+```{r}
+# Cargar las librerías necesarias
+
+library(tidyverse)
+library(lubridate)
+
+# Cargar los datos
+
+# data <- read_csv('data/ts2.csv') # Crearía un tibble: https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html
+
+data <- read.table('data/ts2.csv', sep = ',', header = TRUE)
+
+# Inspeccionar la estructura de los datos
+
+glimpse(data)
+
+# Interpretar las fechas
+
+data <- data %>% 
+  mutate(date = dmy(date))
+
+glimpse(data)
+
+# Graficar la serie temporal
+
+data %>% 
+  ggplot(aes(x = date, y = value)) + 
+  geom_point() + 
+  labs(title = "Serie temporal", x = "Fecha", y = "Valor")
+
+# Extraer mes del año en una nueva columna
+
+data <- data %>% 
+  mutate(month = month(date))
+
+head(data)
+
+# Nueva tabla de datos con medias mensuales
+
+data_monthly_mean <- data %>% 
+  group_by(month) %>% 
+  summarise(value = mean(value, na.rm = TRUE))
+
+# Graficar las medias mensuales
+
+data_monthly_mean %>% 
+  ggplot(aes(x = month, y = value)) + 
+  geom_point() + 
+  labs(title = "Media mensual", x = "Mes", y = "Valor promedio")
+
+# Análisis de tendencia con funciones de Kendall y Theil-Sen
+
+kendall_Z_adjusted(data_monthly_mean$value)
+
+theil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)
+```
+
