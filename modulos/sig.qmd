@@ -1,12 +1,12 @@
 ---
 title: "Sistemas de Información Geográfica"
-author: "[María Suárez-Muñoz](equipo/suarez_munoz), [Antonio J. Pérez-Luque](equipo/perez_luque)"
+author: "[María Suárez-Muñoz](equipo/suarez_munoz), [Javier Martínez-López](equipo/martinez_lopez), [Antonio J. Pérez-Luque](equipo/perez_luque)"
 date: ""
 modulo_order: 4
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/repro/*.qmd
+      - ../sesiones/sig/*.qmd
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"

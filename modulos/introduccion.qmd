@@ -1,6 +1,6 @@
 ---
 title: "Introducción"
-author: "[María Suárez-Muñoz](equipo/suarez_munoz)"
+author: "[María Suárez-Muñoz](equipo/suarez_munoz), [Javier Martínez-López](equipo/martinez_lopez), [Antonio J. Pérez-Luque](equipo/perez_luque)"
 date: ""
 modulo_order: 1
 listing:

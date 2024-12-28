@@ -6,7 +6,7 @@ modulo_order: 5
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/repro/*.qmd
+      - ../sesiones/bbdd/*.qmd
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"
