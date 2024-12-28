@@ -1,21 +1,11 @@
 [
   {
     "listing": "/modulos/bbdd.html",
-    "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html"
-    ]
+    "items": []
   },
   {
     "listing": "/modulos/programacion.html",
-    "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html"
-    ]
+    "items": []
   },
   {
     "listing": "/modulos/introduccion.html",
@@ -46,10 +36,7 @@
   {
     "listing": "/modulos/sig.html",
     "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html"
+      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html"
     ]
   },
   {
@@ -64,19 +51,11 @@
   {
     "listing": "/modulos/teledeteccion.html",
     "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html"
+      "/sesiones/teledeteccion/gee_intro.html"
     ]
   },
   {
     "listing": "/modulos/datos_primarios.html",
-    "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html"
-    ]
+    "items": []
   }
 ]

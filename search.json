@@ -14,7 +14,7 @@
     "href": "modulos/bbdd.html",
     "title": "Bases de Datos",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/bbdd.html#recursos",
@@ -28,7 +28,7 @@
     "href": "modulos/programacion.html",
     "title": "Introducción a la Programación",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/programacion.html#recursos",
@@ -66,7 +66,7 @@
     "href": "modulos.html",
     "title": "Módulos",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nMaría Suárez-Muñoz, Antonio J. Pérez-Luque\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
+    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nMaría Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Módulos"
     ]
@@ -705,7 +705,7 @@
     "href": "modulos/sig.html",
     "title": "Sistemas de Información Geográfica",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\nx\n\n\nCreación de un mapa de biodiversidad de Sierra Nevada\n\n\nInvalid Date\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/sig.html#recursos",
@@ -733,7 +733,7 @@
     "href": "modulos/teledeteccion.html",
     "title": "Teledetección",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n \n\n\ngee_intro\n\n\n \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/teledeteccion.html#recursos",
@@ -747,7 +747,7 @@
     "href": "modulos/datos_primarios.html",
     "title": "Datos Primarios de Biodiversidad",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/datos_primarios.html#recursos",
