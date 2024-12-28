@@ -67,5 +67,8 @@
   },
   "modulos/introduccion.qmd": {
     "introduccion.html": "d7f47c9e"
+  },
+  "sesiones/repro/repro_git.qmd": {
+    "repro_git.html": "c5b31258"
   }
 }

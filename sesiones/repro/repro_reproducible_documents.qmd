@@ -4,7 +4,7 @@ format: html
 number-sections: true
 number-depth: 4
 date: 2025-01-09
-sesion: 3
+sesion: 2
 author: 
   - name: "Antonio J. Pérez-Luque"
     orcid: 0000-0002-1747-0469
