@@ -68,10 +68,7 @@
   "modulos/introduccion.qmd": {
     "introduccion.html": "d7f47c9e"
   },
-  "sesiones/introprog/intro_R_jml.qmd": {
-    "intro_R_jml.html": "f0ffa92b"
-  },
-  "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
-    "guion_practica_mapa_biodiversidad_jml.html": "1a706d6b"
+  "sesiones/repro/repro_git.qmd": {
+    "repro_git.html": "c5b31258"
   }
 }

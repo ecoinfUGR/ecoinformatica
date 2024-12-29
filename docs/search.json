@@ -114,7 +114,7 @@
     "href": "equipo/perez_luque/index.html#módulos",
     "title": "Antonio J. Pérez-Luque",
     "section": "Módulos",
-    "text": "Módulos\n\nReproducibilidad en Ciencia\nDatos Primarios\nProgramación\nSistemas de Información Geográfica\nTeledetección"
+    "text": "Módulos\n\nProgramación\nDatos Primarios\nReproducibilidad en Ciencia"
   },
   {
     "objectID": "equipo/perez_luque/index.html#contacto",
@@ -128,14 +128,14 @@
     "href": "equipo/perez_luque/index.html#tutorías",
     "title": "Antonio J. Pérez-Luque",
     "section": "Tutorías",
-    "text": "Tutorías\n\nLunes 10:00 - 13:00\nOnline (contactar via mail)"
+    "text": "Tutorías\n\nLunes 10:00 - 13:00"
   },
   {
     "objectID": "equipo/suarez_munoz/index.html#módulos",
     "href": "equipo/suarez_munoz/index.html#módulos",
     "title": "María Suárez Muñoz",
     "section": "Módulos",
-    "text": "Módulos\n\nIntroducción a la Asignatura\nBases de Datos\nSistemas de Información Geográfica"
+    "text": "Módulos\n\nBases de Datos\nSistemas de Información Geográfica"
   },
   {
     "objectID": "equipo/suarez_munoz/index.html#contacto",
@@ -156,7 +156,7 @@
     "href": "equipo/martinez_lopez/index.html#módulos",
     "title": "Javier Martínez-López",
     "section": "Módulos",
-    "text": "Módulos\n\nIntroducción a la Asignatura\nProgramación\nTeledetección"
+    "text": "Módulos\n\nTeledetección\nSistemas de Información Geográfica"
   },
   {
     "objectID": "equipo/martinez_lopez/index.html#contacto",
@@ -205,7 +205,7 @@
     "href": "sesiones/repro/repro_intro_slides.html#crisis-de-reproducibilidad",
     "title": "Reproducibilidad en Ciencia",
     "section": "Crisis de Reproducibilidad",
-    "text": "Crisis de Reproducibilidad\n\n\n\nBaker 2016\n\n\n\n\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
+    "text": "Crisis de Reproducibilidad\n\nBaker 2016\n\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#mismos-datos-mismos-resultados",
@@ -219,28 +219,28 @@
     "href": "sesiones/repro/repro_intro_slides.html#problema-actual",
     "title": "Reproducibilidad en Ciencia",
     "section": "¿problema actual?",
-    "text": "¿problema actual?\n\n\n\n\n\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia\n\n\n\n\nFraude científico 1\n\n\n\n\n\n\n\nPotti et al. 2013\n\n\n\n\n\n\nInvestigador contratado por la EBD.\n36 publicaciones (13 de ellas retiradas)\nInventó resultados, instituciones, autores, empresas, etc."
+    "text": "¿problema actual?\n\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia"
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
     "href": "sesiones/repro/repro_intro_slides.html#investigación-reproducible",
     "title": "Reproducibilidad en Ciencia",
     "section": "Investigación Reproducible",
-    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\n\n\nThe Turing way\n\n\n\n\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
+    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\nThe Turing way\n\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
     "href": "sesiones/repro/repro_intro_slides.html#gradiente-de-reproducibilidad",
     "title": "Reproducibilidad en Ciencia",
     "section": "Gradiente de Reproducibilidad",
-    "text": "Gradiente de Reproducibilidad\n\n\n\nRodríguez-Sánchez et al. 2016\n\n\n\n\nFlujo de trabajo reproducible: ventajas (I)\n\n\nLa utilización de código permite la automatización: ejecución de tareas repetitivas sin esfuerzo\nMuy fácil corregir y regenerar resultados, tablas y figuras\nReducción drástica del riesgo de errores\nLos flujos de trabajo reproducibles facilitan la colaboración\nMayor facilidad para escribir trabajos al tener registro exhaustivo de todo el proceso de análisis\n\n\n\n\n\nFlujo de trabajo reproducible: ventajas (II)\n\n\n\nLa publicación del código:\n\nayuda a detectar errores antes de la publicación definitiva\nfacilita el proceso de revisión\nfacilita la comprensión del artículo y evita malinterpretaciones\n\nLa reproducibilidad es un sello de calidad y aumenta la probabilidad de aceptación del trabajo\nLa reproducibilidad aumenta el impacto de las publicaciones (citas, reconocimiento, reutilización, coautorías)\nAhorro de tiempo y esfuerzo al reutilizar código en otros proyectos"
+    "text": "Gradiente de Reproducibilidad\n\nRodríguez-Sánchez et al. 2016"
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
     "href": "sesiones/repro/repro_intro_slides.html#reproducibilidad-barreras",
     "title": "Reproducibilidad en Ciencia",
     "section": "Reproducibilidad: Barreras",
-    "text": "Reproducibilidad: Barreras\n\n\n\nFuente: Kirstie Whitaker"
+    "text": "Reproducibilidad: Barreras\n\nFuente: Kirstie Whitaker"
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#reproducibilidad-costes",
@@ -254,7 +254,7 @@
     "href": "sesiones/repro/repro_intro_slides.html#cuándo-y-dónde-ser-reproducible",
     "title": "Reproducibilidad en Ciencia",
     "section": "¿Cuándo y Dónde ser reproducible?",
-    "text": "¿Cuándo y Dónde ser reproducible?\n\n\n\n\n\n\n\n\n\nSandve et al. 2013"
+    "text": "¿Cuándo y Dónde ser reproducible?"
   },
   {
     "objectID": "sesiones/repro/repro_intro_slides.html#recursos",
@@ -282,7 +282,7 @@
     "href": "sesiones/repro/repro_intro_slides.html#alguna-duda",
     "title": "Reproducibilidad en Ciencia",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   },
   {
     "objectID": "modulos/reproducibilidad.html",
@@ -296,7 +296,7 @@
     "href": "modulos.html",
     "title": "Módulos",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nMaría Suárez-Muñoz, Antonio J. Pérez-Luque\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
+    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nAntonio J. Pérez-Luque, María Suárez-Muñoz\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Módulos"
     ]
@@ -369,28 +369,28 @@
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#encabezado-yaml",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Encabezado YAML",
-    "text": "Encabezado YAML\n\nYAML, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\n\nDelimitado por tres guiones (---) al inicio y al final (a modo de bloque)\nEstructura anidada\nContiene metadatos del documento: título del documento, autor, los formatos de salida, etc)\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\nFigura 3. Encabezado YAML\n\n\n\nExisten diferenes parámetros que se pueden especificar en el encabezado YAML, que van a definir algunas características del documento.\n\n\ntitle: Título del documento\n\nauthor: Autor del documento\n\noutput: Formatos de salida del documento (pdf, word, html, etc). Mas información aquí\n\n\ndate: Fecha del documento\n\n\nAlgunos parámetros van a estar condicionados por el tipo de formato de salida. Por ejemplo:\n\n\ntoc: true Mostrar la tabla de contenidos cuando la salida sea de tipo html.\nTambién podemos especificar una plantilla de word.\n\n---\noutput:\n  word_document:\n    reference_docx: \"template.docx\"\n---\n\n\nExisten diferentes formatos de salida de documentos. En el ejemplo (Figura 3) hemos usado html, pero podemos especificar diferentes formatos de salida (word, pdf, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con html_document, podemos usar el comando ?rmarkdown::html_document. Así, por ejemplo:\n\nword_document(\n  toc = FALSE,\n  toc_depth = 3,\n  number_sections = FALSE,\n  fig_width = 5,\n  fig_height = 4,\n  fig_caption = TRUE,\n  highlight = \"default\",\n  reference_docx = \"default\",\n)"
+    "text": "Encabezado YAML\n\nYAML, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\n\nDelimitado por tres guiones (---) al inicio y al final (a modo de bloque)\nEstructura anidada\nContiene metadatos del documento: título del documento, autor, los formatos de salida, etc)\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\nFigura 3. Encabezado YAML"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Narrativa (Texto del documento)",
-    "text": "Narrativa (Texto del documento)\n\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown.\n\n\n\n\nFormato\nSintáxis\nEjemplo\n\n\n\nCursiva\n*Texto*\nEsto es cursiva\n\n\nNegrita\n**Negrita**\nEsto es negrita\n\n\nLink\n[Descripción del texto](url)\nUn link\n\n\n\nImágenes\n![Descripción](url a la imagen)\nUna imagen \n\n\n\n\n\nEncabezados\nPara crear encabezados de secciones y subsecciones has de utilizar el simbolo #. De tal forma:\n# Título\n## Sección principal\n### Subsección\n#### Sub-subsección\n\nSuperíndices, Subíndices\n\n\nsuperíndices escribiendo R^2^ que produce R2\n\n\nsubíndices, escribiendo CO~2~ que produce CO2.\n\nEcuaciones\nA veces puede interesarnos escribir ecuaciones. Para ello vamos a usar el lenguaje LaTeX. Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo este.\n\n\nLas ecuaciones pueden incluirse en la misma línea, para lo cual incluimos la ecuación entre simbolos $...$. Por ejemplo:\nEn nuestro estudio utilizamos una regresión de acuerdo a \\(y_i=a_i+b_iX\\).\nPara obtener esta ecuación hemos escrito $y_i=a_i+b_iX$\nTambién podemos incluir ecuaciones mas complejas en párrafo aparte usando $$...$$. Por ejemplo para obtener \\[y = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\\]\nescribimos $$y = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon$$\n\nRecursos sobre Markdown\nExisten muchos recursos en la web sobre sintáxis markdown:\n\nhttps://www.markdownguide.org/basic-syntax\nhttps://quarto.org/docs/authoring/markdown-basics.html"
+    "text": "Narrativa (Texto del documento)\n\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown."
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Trozos de código (chunks)",
-    "text": "Trozos de código (chunks)\n\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca.\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc.\n\n\n\na. Código R en línea\n\n\nPara incluir código en líneas hay que utilizar la siguiente sintaxis `r `  en la que incluiremos nuestro código después de la letra r.\nPor ejemplo si escribimos: la media de nuestro grupo es `r mean(c(1,3))`  aparecerá como:  la media de nuestro grupo es 2.\n\nDe esta forma podemos incluir resultados de análisis (e.g. p.valor de un análisis) sin tener que copiarlos a mano, reduciendo la generación de errores.\n\nb. Bloques de código (chunks)\n\nLos trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración. Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: shell/bash, python, SQL, R, etc.)\nPara insertar un trozo de código en R, puedes escribirlo manualmente escribiendo ```{r} seguido de ``` en la siguiente línea. \n```{r}\nn &lt;- 5\nseq(n)\n```\nKnitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.\n\n\n\nEn la siguiente animación (Figura 4) puedes ver la anatomía de un trozo de código.\n\n\n\n\n\n\nFigura 4. Anatomía de un trozo de Código. Fuente: Shannon Pileggi\n\n\n¿Cómo insertar un chunk de código?\nExisten varias formas de insertar un chunk de código:\n\nUsando “Insert” en la barra de Edición\nEscribiendo manualmente ```{r} y ```\n\nUsando un atajo de teclado:\n\nCtrl + Alt + I (Windows)\nCmd + Alt + I (OS)\n\n\n\nOpciones y nombres de los bloques\n\nCuando creamos un documento reproducible es importante identificar los diferentes trozos de código para poder ejecutarlos a lo largo de todo el documento. Esta aproximación tiene varias ventajas:\n\nSe puede navegar mas cómodamente a los bloques específicos usando el navegador de código desplegable abajo a la izquierda en el editor de script:\n\n\n\nOpciones y nombres de los bloques\n\n\nEn caso de que el bloque de código produzca un gráfico, se usará el nombre del bloque para nomobrar los gráficos facilitando la reutilización de estos gráficos.\nGuardar bloques específicos de código complejo y costoso de ejecutar en la caché.\n\nEn nuestro ejemplo anterior podemos añadir el nombre del chunk como 1-numero-aleatorio:\n\n```{r 1-numero-aleatorio}\nn &lt;- 5\nseq(n)\n```\n\n[1] 1 2 3 4 5\n\n\nLas salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas aquí.\n\nPrincipales opciones de los chunks\n\neval = FALSE evita que el código sea evaluado. (Y, obviamente, si el código no es ejecutado no se generaran resultados). Esto es útil para mostrar códigos de ejemplo, o para deshabilitar un gran bloque de código sin comentar cada línea.\ninclude = FALSE ejecuta el código, pero no muestra el código o los resultados en el documento final. Se puede usar para aligerar el aspecto final de nuestro documento.\necho = FALSE evita que se vea el código, pero sí muestra los resultados en el archivo final.\n\nPrincipales opciones de los chunks\n\nmessage = FALSE o warning = FALSE evita que aparezcan mensajes o advertencias en el archivo final.\nesults = 'hide' oculta el output impreso\nfig.show = 'hide' oculta los gráficos producidos\nerror = TRUE permite que se siga renderizando el documento a pesar de que exista un error en el código. Puede ser útil durante el proceso de creación de un documento reproducible\n\nIncluir Tablas\nUn aspecto muy intersante de los documentos reproducibles es la inclusión de tablas. Para incluir una tabla existen diferentes opciones, siendo la función knitr::kable la que nos permite incluir tablas de la forma mas sencilla (mas información aquí). Así por ejemplo, si escribimos\n\n``` {{r}}\nknitr::kable(\n  mtcars[1:5, ]\n)\n```\nobtenemos la Tabla 1\n\n\n\n\n\nTabla 1. Ejemplo de Tabla con kable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2"
+    "text": "Trozos de código (chunks)\n\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca.\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc."
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Tejer y Renderizar",
-    "text": "Tejer y Renderizar\n\n\nAl terminar nuestro.Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.\nKnit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\n\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\n\nFigura 5. Opciones Knit\n\n\n\n\n\n\n\n\nFigura 6. Knit (Tejer) un documento. Fuente: Shannon Pileggi"
+    "text": "Tejer y Renderizar\n\n\nAl terminar nuestro.Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.\nKnit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\n\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\n\nFigura 5. Opciones Knit"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo",
@@ -418,7 +418,7 @@
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#alguna-duda",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   },
   {
     "objectID": "modulos/reproducibilidad.html#recursos",
@@ -516,7 +516,7 @@
     "href": "sesiones/intro/intro_proyecto.html",
     "title": "Introducción al proyecto de la asignatura",
     "section": "",
-    "text": "Aquí puedes ver el pdf"
+    "text": "[INSERTAR PDF: “intro_proyecto_presentacion_20241202.pdf”]"
   },
   {
     "objectID": "sesiones/intro/intro_proyecto.html#objetivo",
@@ -554,234 +554,332 @@
     "text": "Recursos"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html",
-    "href": "sesiones/introprog/intro_R_jml.html",
-    "title": "Primeros pasos con R",
+    "objectID": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
+    "href": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Qué es el control de versiones?",
+    "text": "¿Qué es el control de versiones?\nEl control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante\n\nSe puede utilizar sobre cualquier archivo.\nPermite:\n\nRevertir archivos (proyecto) a un estado anterior\nComparar cambios a lo largo del tiempo\n\n\nFacilita la identificación de errores"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registro-de-cambios",
+    "href": "sesiones/repro/repro_git.html#registro-de-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registro de cambios",
+    "text": "Registro de cambios"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registro-de-cambios-varios-usuarios",
+    "href": "sesiones/repro/repro_git.html#registro-de-cambios-varios-usuarios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registro de cambios (varios usuarios)",
+    "text": "Registro de cambios (varios usuarios)"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#integración-de-cambios",
+    "href": "sesiones/repro/repro_git.html#integración-de-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Integración de cambios",
+    "text": "Integración de cambios"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
+    "href": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Sistemas para el control de versiones",
+    "text": "Sistemas para el control de versiones\n\n\n\n\n\nProGit book\nOtros:\n\nSubversion\nConcurrent Version System CVS"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#git",
+    "href": "sesiones/repro/repro_git.html#git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Git",
+    "text": "Git\n\nSistema avanzado de control de versiones distribuido\nPermite rastrear el progreso de un proyecto mediante capturas\n\n¿Qué cambios?\n¿Dónde?\n¿Quién los hizo?\n¿Por qué?"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#github",
+    "href": "sesiones/repro/repro_git.html#github",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "GitHub",
+    "text": "GitHub\n\n\n\n\nUn website donde alojar repositorios\nInterfaz para explorar repositorios\nPermite colaborar de una forma más eficaz:\n\nCompartir repositorio\nVer cambios\nCorregir errores\nDiscutir y Revisar cambios\n\n\n\n\n\n\n\n\n\nhttps://github.com/"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#recursos-sobre-git",
+    "href": "sesiones/repro/repro_git.html#recursos-sobre-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos sobre Git",
+    "text": "Recursos sobre Git\n\n\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#ciclo-de-git",
+    "href": "sesiones/repro/repro_git.html#ciclo-de-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciclo de Git",
+    "text": "Ciclo de Git\n\nArtwork by Allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#ciclo-de-git-1",
+    "href": "sesiones/repro/repro_git.html#ciclo-de-git-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciclo de Git",
+    "text": "Ciclo de Git\n\nT. Meralus"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#instalar-git",
+    "href": "sesiones/repro/repro_git.html#instalar-git",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Instalar Git",
+    "text": "Instalar Git\n\n\nInstala Git en tu ordenador. Puedes usar la documentación oficial\n\n\n\nConfigurar Git\n\n\nCódigo\nEjemplo\n\n\n\ngit config --global user.name \ngit config --global user.email \n\n\ngit config --global user.name \"Fulanito Menganito\"\ngit config --global user.email micorreo@gmail.com\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nVamos a usar Github, por tanto la dirección de correo que indiques ha de ser la misma con la que te registres en GitHub.\n\n\n\n\nEn cualquier momento podemos ver las opciones de configuración\n\ngit config --list"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
+    "href": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crear un repositorio nuevo",
+    "text": "Crear un repositorio nuevo\n\nAbre la consola de comandos\n\nCrea un directorio nuevo y ábrelo1\n\n\nmkdir &lt;nombre_directorio&gt;\n\nmkdir datos\ncd datos\nAyuda sobre comandos"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
+    "href": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Iniciar un repositorio",
+    "text": "Iniciar un repositorio\n\nPara iniciar un repositorio utilizamos el comando\n\ngit init nombrerepositorio\ngit init mi_primer_repositorio\n\n\n\n\n\n\nNote\n\n\n¿Que ha ocurrido en nuestro directorio?\n\n\n\n\nInspeccionar el directorio\n\ncd mi_primer_repositorio\nls -a \ncd .git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#añadir-cambios",
+    "href": "sesiones/repro/repro_git.html#añadir-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Añadir cambios",
+    "text": "Añadir cambios\n\nCrea un archivo de texto dentro del directorio, escribe algo y nómbralo miarchivo.txt\nAñade el archivo a la staging area\n\ngit add &lt;nombre_archivo&gt;\ngit add miarchivo.txt\n\nSi quiero añadir todos los archivos\n\ngit add ."
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#registrar-cambios",
+    "href": "sesiones/repro/repro_git.html#registrar-cambios",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Registrar cambios",
+    "text": "Registrar cambios\ngit commit -m \"Commit message\"\"\n\n\n\n\n\n\nImportant\n\n\nEl mensaje nos servirá para indicar lo que hemos hecho.\n\n\nRecomendaciones de buenas prácticas para commits\nAlgunas convenciones para commits\n\n\n\n\ngit commit -m \"Escribo mis datos personales en archivo\"\n\n[master (root-commit) 71fe224] Escribo mis datos personales en archivo\n 1 file changed, 2 insertions(+)\n create mode 100644 miarchivo.txt"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section",
+    "href": "sesiones/repro/repro_git.html#section",
+    "title": "Control de Versiones con Git y GitHub",
     "section": "",
-    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python.\n\n\n\n\n\nR es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\n\n\n\n\nLas funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())\n\n\n\n\nPor ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views\n\n\n\n\nManuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R\n\n\n\n\n\nhelp(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+    "text": "Allison_horst"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#qué-es-rstudio",
-    "href": "sesiones/introprog/intro_R_jml.html#qué-es-rstudio",
-    "title": "Primeros pasos con R",
+    "objectID": "sesiones/repro/repro_git.html#section-1",
+    "href": "sesiones/repro/repro_git.html#section-1",
+    "title": "Control de Versiones con Git y GitHub",
     "section": "",
-    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python."
+    "text": "Allison_horst"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#qué-es-r",
-    "href": "sesiones/introprog/intro_R_jml.html#qué-es-r",
-    "title": "Primeros pasos con R",
+    "objectID": "sesiones/repro/repro_git.html#section-2",
+    "href": "sesiones/repro/repro_git.html#section-2",
+    "title": "Control de Versiones con Git y GitHub",
     "section": "",
-    "text": "R es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages."
+    "text": "T. Meralus"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#librerías",
-    "href": "sesiones/introprog/intro_R_jml.html#librerías",
-    "title": "Primeros pasos con R",
+    "objectID": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
+    "href": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enviar cambios a Repositorios Remotos",
+    "text": "Enviar cambios a Repositorios Remotos\n\nNuestros cambios están en el HEAD (copia local)\nQueremos enviar los cambios a un repositorio remoto\n\n\n\n\n\n\n\n\nCaution\n\n\nNecesitamos un repositorio remoto (GitHub):\n\nCrear\nClonar\n\n\n\n\ngit remote add origin &lt;url server&gt;\n\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#crear-repositorio-en-github",
+    "href": "sesiones/repro/repro_git.html#crear-repositorio-en-github",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crear repositorio en GitHub",
+    "text": "Crear repositorio en GitHub"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#section-3",
+    "href": "sesiones/repro/repro_git.html#section-3",
+    "title": "Control de Versiones con Git y GitHub",
     "section": "",
-    "text": "Las funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())"
+    "text": "Julen Astigarraga"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#librerías-1",
-    "href": "sesiones/introprog/intro_R_jml.html#librerías-1",
-    "title": "Primeros pasos con R",
+    "objectID": "sesiones/repro/repro_git.html#section-4",
+    "href": "sesiones/repro/repro_git.html#section-4",
+    "title": "Control de Versiones con Git y GitHub",
     "section": "",
-    "text": "Por ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views"
+    "text": "Julen Astigarraga"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#fuentes-de-información",
-    "href": "sesiones/introprog/intro_R_jml.html#fuentes-de-información",
-    "title": "Primeros pasos con R",
-    "section": "",
-    "text": "Manuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R"
+    "objectID": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
+    "href": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enlazar repositorio local y remoto",
+    "text": "Enlazar repositorio local y remoto\n URL: https://github.com/ajpelu/teach_git_ejemplo.git\n\ngit remote add origin &lt;url server&gt;\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#ayuda",
-    "href": "sesiones/introprog/intro_R_jml.html#ayuda",
-    "title": "Primeros pasos con R",
-    "section": "",
-    "text": "help(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+    "objectID": "sesiones/repro/repro_git.html#enviar",
+    "href": "sesiones/repro/repro_git.html#enviar",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Enviar",
+    "text": "Enviar\n\n\nPara enviar cambios (una vez conectados) a un repositorio remoto\nNos pedirá usuario y contraseña\n\n\ngit push origin master\n\n\n\n\n\n\nWarning\n\n\ngit push origin\ngit push origin master\n¿Qué rama queremos sincronizar?"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#variables-constantes-y-operadores",
-    "href": "sesiones/introprog/intro_R_jml.html#variables-constantes-y-operadores",
-    "title": "Primeros pasos con R",
-    "section": "Variables, constantes y operadores",
-    "text": "Variables, constantes y operadores\n\na &lt;- 3.25  # Asigna el valor 3.25 a la variable 'a'\n\na = 3.25  # Otra forma de asignar valores\n\nnombre &lt;- 'Pepe'  # Asigna una cadena de texto a la variable: nombre\n\n\nas.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha\n\n[1] \"2000-01-01\"\n\nas.Date('2000-01-01') + 2  # Suma días a una fecha\n\n[1] \"2000-01-03\"\n\n\n\nConstantes\n\nNULL ## Representa un objeto vacío\n\nNULL\n\nNA ## Representa un valor faltante\n\n[1] NA\n\nNaN ## Representa un valor no numérico (ejemplo: 1/0)\n\n[1] NaN\n\npi ## Constante matemática predefinida\n\n[1] 3.141593\n\n\n\n\nOperadores\n\na == 3.25  # Compara si 'a' es igual a 3.25\n\n[1] TRUE\n\na == 6  # Compara si 'a' es igual a 6\n\n[1] FALSE\n\nnombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'\n\n[1] TRUE\n\nnombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'\n\n[1] TRUE\n\na != 2  # Verifica si 'a' no es igual a 2\n\n[1] TRUE\n\n5 &lt; 6  # Verifica si 5 es menor que 6\n\n[1] TRUE\n\n10 &gt;= 5  # Verifica si 10 es mayor o igual a 5\n\n[1] TRUE\n\n\n\nOperadores aritméticos\n\n1 + 2  # Suma\n\n[1] 3\n\n1 - 2  # Resta\n\n[1] -1\n\n5 / 3  # División\n\n[1] 1.666667\n\n2 ^ 3  # Potencia\n\n[1] 8\n\nsqrt(10)  # Raíz cuadrada\n\n[1] 3.162278\n\nrunif(5, min = 0, max = 100) # Números aleatorios\n\n[1] 60.30072 35.35508 42.23538 75.88020 12.10621"
+    "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio",
+    "href": "sesiones/repro/repro_git.html#clonar-un-repositorio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Clonar un repositorio",
+    "text": "Clonar un repositorio"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#vectores",
-    "href": "sesiones/introprog/intro_R_jml.html#vectores",
-    "title": "Primeros pasos con R",
-    "section": "Vectores",
-    "text": "Vectores\n\na &lt;- NULL # Crea un vector vacío\n\na &lt;- 1:10 # Crea un vector con valores del 1 al 10\n\nc &lt;- seq(1, 10, by = 0.5) # Crea un vector secuencial con incrementos de 0.5\n\nd &lt;- c(0, 1, 1, 2, 3) # Crea un vector con valores específicos\n\ne &lt;- c('b1', 'b2', 'b3') # Crea un vector de cadenas de texto\n\nf &lt;- rep(5, 6) # Crea un vector repitiendo el número 5 seis veces\n\nd[1] # Obtiene el primer elemento del vector 'd'\n\n[1] 0\n\nd[-1] # Excluye el primer elemento del vector 'd'\n\n[1] 1 1 2 3"
+    "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
+    "href": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Clonar un repositorio",
+    "text": "Clonar un repositorio\n\nImportante para reproducibilidad\nColaboración\nRepositorio remoto (GitHub)\n2 formas (diferencias)\n\n\n\nHTTPS\nSSH\n\n\n\n# git clone &lt;url&gt; \ngit clone https://github.com/ajpelu/teach_git_ejemplo.git \n\n\n# git clone username@host:/path/to/repository\ngit clone git@github.com:ajpelu/teach_git_ejemplo.git"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#matrices",
-    "href": "sesiones/introprog/intro_R_jml.html#matrices",
-    "title": "Primeros pasos con R",
-    "section": "Matrices",
-    "text": "Matrices\n\nmat &lt;- matrix(1:12, 3, 4) # Crea una matriz con valores del 1 al 12, dispuestos en 3 filas y 4 columnas\n\nmat\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\nmatrix(1:12, 3, 4, byrow = TRUE) # La matriz se rellena por filas\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\nrbind(1:5, 11:15, 21:25) # Une vectores como filas\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]   11   12   13   14   15\n[3,]   21   22   23   24   25\n\ncbind(1:5, 11:15, 21:25) # Une vectores como columnas\n\n     [,1] [,2] [,3]\n[1,]    1   11   21\n[2,]    2   12   22\n[3,]    3   13   23\n[4,]    4   14   24\n[5,]    5   15   25\n\nmat[1:2, 2:3] # Selecciona valores de las filas 1 y 2, columnas 2 y 3\n\n     [,1] [,2]\n[1,]    4    7\n[2,]    5    8\n\nmat[, -2] # Excluye la segunda columna de la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    7   10\n[2,]    2    8   11\n[3,]    3    9   12\n\nt(mat) # Transpone la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n[4,]   10   11   12"
+    "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
+    "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Actualizar un repositorio local",
+    "text": "Actualizar un repositorio local\n\nAllison_horst"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#data-frames",
-    "href": "sesiones/introprog/intro_R_jml.html#data-frames",
-    "title": "Primeros pasos con R",
-    "section": "Data frames",
-    "text": "Data frames\n\nmat &lt;- matrix(1:30, 10) ## Crea una matriz con valores del 1 al 30 en 10 filas\n\nmat\n\n      [,1] [,2] [,3]\n [1,]    1   11   21\n [2,]    2   12   22\n [3,]    3   13   23\n [4,]    4   14   24\n [5,]    5   15   25\n [6,]    6   16   26\n [7,]    7   17   27\n [8,]    8   18   28\n [9,]    9   19   29\n[10,]   10   20   30\n\ndf_mat &lt;- as.data.frame(mat) ## Convierte la matriz en un 'data.frame'\n\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\ndf_mat[2, 1] # Selecciona un elemento específico (fila 2, columna 1)\n\n[1] 2\n\ndf_mat$V1 # Selecciona una columna por su nombre\n\n [1]  1  2  3  4  5  6  7  8  9 10"
+    "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
+    "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Actualizar un repositorio local",
+    "text": "Actualizar un repositorio local\n\n¿Existe alguna información nueva en mi repositorio remoto?\n\ngit fetch  \n\n¿Existe alguna información nueva en mi repositorio remoto y quiero que esté en mi repositorio local?\n\ngit pull  \n\n\n\n\n\n\nWarning\n\n\n\nPrestar atención a la rama!!\n\ngit pull origin master"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#primeros-pasos",
-    "href": "sesiones/introprog/intro_R_jml.html#primeros-pasos",
-    "title": "Primeros pasos con R",
-    "section": "Primeros pasos",
-    "text": "Primeros pasos\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\nnames(df_mat) &lt;- c('B1', 'B2', 'B3') # Renombra las columnas\n\nrownames(df_mat) # Muestra los nombres de las filas\n\n [1] \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\"\n\nrownames(df_mat) &lt;- LETTERS[1:10] # Renombra las filas con letras en mayúscula\n\nhead(df_mat) # Muestra las primeras filas del 'data.frame'\n\n  B1 B2 B3\nA  1 11 21\nB  2 12 22\nC  3 13 23\nD  4 14 24\nE  5 15 25\nF  6 16 26"
+    "objectID": "sesiones/repro/repro_git.html#otros-comandos",
+    "href": "sesiones/repro/repro_git.html#otros-comandos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Otros comandos",
+    "text": "Otros comandos"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#seleccionar-de-mis-datos",
-    "href": "sesiones/introprog/intro_R_jml.html#seleccionar-de-mis-datos",
-    "title": "Primeros pasos con R",
-    "section": "Seleccionar de mis datos",
-    "text": "Seleccionar de mis datos\n\niris[, 1] # Selecciona la primera columna\n\n  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1\n [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0\n [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5\n [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1\n [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5\n [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3\n[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2\n[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8\n[145] 6.7 6.7 6.3 6.5 6.2 5.9\n\niris[1:6, -1] # Selecciona las primeras 6 filas excluyendo la primera columna\n\n  Sepal.Width Petal.Length Petal.Width Species\n1         3.5          1.4         0.2  setosa\n2         3.0          1.4         0.2  setosa\n3         3.2          1.3         0.2  setosa\n4         3.1          1.5         0.2  setosa\n5         3.6          1.4         0.2  setosa\n6         3.9          1.7         0.4  setosa\n\niris[1:3, ] # Selecciona las primeras 3 filas\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n\niris[-1:-140, ] # Excluye las primeras 140 filas\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n141          6.7         3.1          5.6         2.4 virginica\n142          6.9         3.1          5.1         2.3 virginica\n143          5.8         2.7          5.1         1.9 virginica\n144          6.8         3.2          5.9         2.3 virginica\n145          6.7         3.3          5.7         2.5 virginica\n146          6.7         3.0          5.2         2.3 virginica\n147          6.3         2.5          5.0         1.9 virginica\n148          6.5         3.0          5.2         2.0 virginica\n149          6.2         3.4          5.4         2.3 virginica\n150          5.9         3.0          5.1         1.8 virginica\n\niris[1:6, c(1, 3)] # Selecciona las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Length Petal.Length\n1          5.1          1.4\n2          4.9          1.4\n3          4.7          1.3\n4          4.6          1.5\n5          5.0          1.4\n6          5.4          1.7\n\niris[1:6, -c(1, 3)] # Excluye las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Width Petal.Width Species\n1         3.5         0.2  setosa\n2         3.0         0.2  setosa\n3         3.2         0.2  setosa\n4         3.1         0.2  setosa\n5         3.6         0.2  setosa\n6         3.9         0.4  setosa"
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: shell\n",
+    "text": "Anexo. Formas de usar git: shell\n\n\nGit for Windows"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#estadísticos-descriptivos",
-    "href": "sesiones/introprog/intro_R_jml.html#estadísticos-descriptivos",
-    "title": "Primeros pasos con R",
-    "section": "Estadísticos descriptivos",
-    "text": "Estadísticos descriptivos\n\ntable(Species) # Crea una tabla de frecuencia por especie\n\nSpecies\n    setosa versicolor  virginica \n        50         50         50 \n\nsummary(iris) # Resumen estadístico del conjunto 'iris'\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\nsummary(cars) # Resumen estadístico del conjunto 'cars'\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nsd(iris$Sepal.Length) # Desviación estándar de una variable\n\n[1] 0.8280661"
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: git-GUI\n",
+    "text": "Anexo. Formas de usar git: git-GUI\n\n\nClientes de git GUI (Guest User Interfaces)"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#exportar-datos",
-    "href": "sesiones/introprog/intro_R_jml.html#exportar-datos",
-    "title": "Primeros pasos con R",
-    "section": "Exportar datos",
-    "text": "Exportar datos\nExportar un ‘data.frame’ como archivo CSV (valores separados por ‘comas’).\n\nwrite.table(df_mat, # data.frame\n            'df_mat.csv', # nombre del archivo de salida\n            sep=';', # Separador de columnas\n            dec=',', # Separador decimal\n            col.names=TRUE, # Mantener nombres de las columnas\n            row.names=FALSE) # No guardar nombres de las filas"
+    "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
+    "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Anexo. Formas de usar git: R-studio\n",
+    "text": "Anexo. Formas de usar git: R-studio\n\nhttps://happygitwithr.com/\n\n\n\n\nHappy Git and Gihub for the useR Tutorial - Posit"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
-    "href": "sesiones/introprog/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
-    "title": "Primeros pasos con R",
-    "section": "¿Cómo se haría la función ‘Área del triángulo’?",
-    "text": "¿Cómo se haría la función ‘Área del triángulo’?\n\narea_triangulo &lt;- function(b = 3, h = 5) { # valores por defecto\n  b * h / 2 # Calcula el área de un triángulo\n}\n\narea_triangulo() # Usa los valores por defecto\n\n[1] 7.5\n\narea_triangulo(b = 4) # Especifica un valor diferente para la base\n\n[1] 10"
+    "objectID": "sesiones/repro/repro_git.html#cómo-definirías-la-ciencia",
+    "href": "sesiones/repro/repro_git.html#cómo-definirías-la-ciencia",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Cómo definirías la ciencia?",
+    "text": "¿Cómo definirías la ciencia?"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#leyendas-gráficos-básicos",
-    "href": "sesiones/introprog/intro_R_jml.html#leyendas-gráficos-básicos",
-    "title": "Primeros pasos con R",
-    "section": "Leyendas (gráficos básicos)",
-    "text": "Leyendas (gráficos básicos)\n\n# Crea un gráfico de dispersión coloreado por especie\n\nplot(\n  Sepal.Length,\n  Petal.Length,\n  col = as.factor(Species),\n  xlab = 'Long. Sépalo',\n  ylab = 'Long. Pétalo' \n)\n\n# Agrega una leyenda al gráfico\n\nlegend(7, # Posición en el eje X\n       3, # Posición en el eje Y\n       col = c(1:3),\n       pch = 1, # Símbolo\n       legend = unique(Species)) # Valores únicos de la variable Species"
+    "objectID": "sesiones/repro/repro_git.html#ciencia",
+    "href": "sesiones/repro/repro_git.html#ciencia",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Ciencia",
+    "text": "Ciencia\n\n\nConjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales RAE\n\n\n\nLa ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico. Mario Bugne 1957, La ciencia: su método y su filosofía"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#usando-ggplot2",
-    "href": "sesiones/introprog/intro_R_jml.html#usando-ggplot2",
-    "title": "Primeros pasos con R",
-    "section": "Usando ggplot2",
-    "text": "Usando ggplot2\nManual de ggplot2\n\nlibrary(ggplot2)\n\nggplot(data=iris,\n       aes(x = Petal.Length,\n           y = Petal.Width)) +\n  geom_point(aes(color=Species))"
+    "objectID": "sesiones/repro/repro_git.html#crisis-de-reproducibilidad",
+    "href": "sesiones/repro/repro_git.html#crisis-de-reproducibilidad",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Crisis de Reproducibilidad",
+    "text": "Crisis de Reproducibilidad\n\nBaker 2016\n\n70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#histogramas-gráficos-básicos",
-    "href": "sesiones/introprog/intro_R_jml.html#histogramas-gráficos-básicos",
-    "title": "Primeros pasos con R",
-    "section": "Histogramas (gráficos básicos)",
-    "text": "Histogramas (gráficos básicos)\n\n# Opción A\n\nindice_versicolor &lt;- Species == 'versicolor' # Índice lógico para filtrar por especie\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n# Opción B\n\nsl_versicolor &lt;- subset(Sepal.Length, Species == 'versicolor') # Otra forma de filtrar\n\nhist(sl_versicolor) # Histograma del subconjunto filtrado"
+    "objectID": "sesiones/repro/repro_git.html#mismos-datos-mismos-resultados",
+    "href": "sesiones/repro/repro_git.html#mismos-datos-mismos-resultados",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿mismos datos = mismos resultados?",
+    "text": "¿mismos datos = mismos resultados?"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#exportación-de-gráficos-agrupados",
-    "href": "sesiones/introprog/intro_R_jml.html#exportación-de-gráficos-agrupados",
-    "title": "Primeros pasos con R",
-    "section": "Exportación de gráficos (agrupados)",
-    "text": "Exportación de gráficos (agrupados)\n\n#jpeg('histogramas.jpg')\n\npar(mfrow = c(1, 2)) # Divide la ventana gráfica en una cuadrícula de 1x2\n\nhist(Sepal.Length) # Histograma de todas las longitudes de sépalo\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n#dev.off() # Cierra el dispositivo gráfico (= guarda el fichero)"
+    "objectID": "sesiones/repro/repro_git.html#problema-actual",
+    "href": "sesiones/repro/repro_git.html#problema-actual",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿problema actual?",
+    "text": "¿problema actual?\n\n\nNo es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#histogramas-ggplot2",
-    "href": "sesiones/introprog/intro_R_jml.html#histogramas-ggplot2",
-    "title": "Primeros pasos con R",
-    "section": "Histogramas (ggplot2)",
-    "text": "Histogramas (ggplot2)\n\nggplot(data = iris,\n       aes(x = Sepal.Length)) +\n  geom_histogram() +\n  labs( x = \"Longitud del sépalo\",\n        y = \"Frecuencia\",\n        title = \"Histograma longitud del sépalo\") +\n  theme_light()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# ggsave('histograma.png')"
+    "objectID": "sesiones/repro/repro_git.html#investigación-reproducible",
+    "href": "sesiones/repro/repro_git.html#investigación-reproducible",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Investigación Reproducible",
+    "text": "Investigación Reproducible\n\n\nTrabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original\n\n\n\nThe Turing way\nUn resultado es reproducible cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.\nA result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.\nRobusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis."
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#diagramas-de-cajas-boxplots",
-    "href": "sesiones/introprog/intro_R_jml.html#diagramas-de-cajas-boxplots",
-    "title": "Primeros pasos con R",
-    "section": "Diagramas de cajas (boxplots)",
-    "text": "Diagramas de cajas (boxplots)\n\nboxplot(Sepal.Length ~ Species) # Diagrama de cajas de longitudes de sépalo por especie\n\n\n\n\n\n\n\n# boxplot usando ggplot2\n\nggplot(data = iris,\n       aes(x = Species,\n           y = Sepal.Length,\n           fill = Species)) +\n  geom_boxplot() +\n  labs( x = \"Especies\",\n        y = \"Longitud del sépalo\",\n        title = \"Gráfico de cajas y bigotes\",\n        subtitle = \"Longitud del sépalo por especies\")"
+    "objectID": "sesiones/repro/repro_git.html#gradiente-de-reproducibilidad",
+    "href": "sesiones/repro/repro_git.html#gradiente-de-reproducibilidad",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Gradiente de Reproducibilidad",
+    "text": "Gradiente de Reproducibilidad\n\nRodríguez-Sánchez et al. 2016"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
-    "href": "sesiones/introprog/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
-    "title": "Primeros pasos con R",
-    "section": "Diagramas de barras y lectura de datos",
-    "text": "Diagramas de barras y lectura de datos\nbar1_data.csv\n\nbar1_data &lt;- read.table('data/bar1_data.csv',\n                        sep = ',', # El separador de columnas es la coma\n                        header = T) # La primera fila es el encabezado\n\nstr(bar1_data) # tipos de datos de las columnas del data.frame\n\n'data.frame':   8 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000\n $ value: num  0.755 0.43 0.977 0.959 1.414 ...\n\n\n\nbarplot(bar1_data$value, names.arg = factor(bar1_data$Site)) # Crea un gráfico de barras\n\n\n\n\n\n\n\n# ggplot2\n\nggplot(bar1_data,\n       aes(x = Site,\n           y = value)) +\n  geom_col()\n\n\n\n\n\n\n\n\n\nEjercicio adicional: ¿Cómo leemos el archivo iris.csv?"
+    "objectID": "sesiones/repro/repro_git.html#reproducibilidad-barreras",
+    "href": "sesiones/repro/repro_git.html#reproducibilidad-barreras",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Reproducibilidad: Barreras",
+    "text": "Reproducibilidad: Barreras\n\nFuente: Kirstie Whitaker"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#gráficos-de-regresión-lineal",
-    "href": "sesiones/introprog/intro_R_jml.html#gráficos-de-regresión-lineal",
-    "title": "Primeros pasos con R",
-    "section": "Gráficos de regresión lineal",
-    "text": "Gráficos de regresión lineal\n\nlm_pl_sl &lt;- lm(Petal.Length ~ Sepal.Length) # Ajusta un modelo lineal\n\nshapiro.test(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n    Shapiro-Wilk normality test\n\ndata:  lm_pl_sl$residuals\nW = 0.99437, p-value = 0.831\n\nhist(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n\n\n\n\n\nsummary(lm_pl_sl) # Resumen del modelo\n\n\nCall:\nlm(formula = Petal.Length ~ Sepal.Length)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.47747 -0.59072 -0.00668  0.60484  2.49512 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.10144    0.50666  -14.02   &lt;2e-16 ***\nSepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8678 on 148 degrees of freedom\nMultiple R-squared:   0.76, Adjusted R-squared:  0.7583 \nF-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16"
+    "objectID": "sesiones/repro/repro_git.html#reproducibilidad-costes",
+    "href": "sesiones/repro/repro_git.html#reproducibilidad-costes",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Reproducibilidad: Costes",
+    "text": "Reproducibilidad: Costes"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-del-modelo",
-    "href": "sesiones/introprog/intro_R_jml.html#gráfico-del-modelo",
-    "title": "Primeros pasos con R",
-    "section": "Gráfico del modelo",
-    "text": "Gráfico del modelo\n\n# require(ggplot2) # Carga el paquete ggplot2\n\nc &lt;- ggplot(iris,\n            aes(y = Petal.Length,\n                x = Sepal.Length)) # Define un gráfico base\n\nc + stat_smooth(method = lm,\n                colour = \"black\") +\n  geom_point(aes(col = factor(Species))) # Agrega capas al gráfico\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n# ggsave('iris_lm.png') # Guardar gráfico"
+    "objectID": "sesiones/repro/repro_git.html#cuándo-y-dónde-ser-reproducible",
+    "href": "sesiones/repro/repro_git.html#cuándo-y-dónde-ser-reproducible",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Cuándo y Dónde ser reproducible?",
+    "text": "¿Cuándo y Dónde ser reproducible?"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-agrupadas",
-    "href": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-agrupadas",
-    "title": "Primeros pasos con R",
-    "section": "Gráfico de barras agrupadas",
-    "text": "Gráfico de barras agrupadas\nEjercicio: lee el archivo ‘data/bar2_data.csv’ (contiene más años)\nbar2_data.csv\n\nbar2_data &lt;- read.table('data/bar2_data.csv',\n                        sep = '|',\n                        header = T) \n\nstr(bar2_data)\n\n'data.frame':   20 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000 2001 2001 ...\n $ value: num  0.755 -0.43 0.977 0.959 1.414 ...\n\n\n\nggplot(bar2_data,\n       aes(x = Site,\n           y = value,\n           fill = factor(year)) # Agrupamos por año\n       ) +\n  geom_col(position = position_dodge(preserve = \"single\"))"
+    "objectID": "sesiones/repro/repro_git.html#recursos",
+    "href": "sesiones/repro/repro_git.html#recursos",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nLista de recursos sobre Ciencia Reproducible\nRodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) Ciencia reproducible: qué, por qué, cómo. Ecosistemas, 25(2): 83-92.\nA Beginner’s Guide to Conducting Reproducible Research\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nA Guide to Reproducible Code in Ecology and Evolution"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
-    "href": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
-    "title": "Primeros pasos con R",
-    "section": "Gráfico de barras en subfiguras",
-    "text": "Gráfico de barras en subfiguras\n\nggplot(bar2_data, aes(x = Site, y = value)) +\n  geom_col() +\n  facet_wrap( ~ year)"
+    "objectID": "sesiones/repro/repro_git.html#recursos-1",
+    "href": "sesiones/repro/repro_git.html#recursos-1",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\n\n\n\n\nCooper & Hsing (2017)"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#preparar-datos-para-ggplot2",
-    "href": "sesiones/introprog/intro_R_jml.html#preparar-datos-para-ggplot2",
-    "title": "Primeros pasos con R",
-    "section": "Preparar datos para ggplot2",
-    "text": "Preparar datos para ggplot2\ndata.csv\n\nlibrary(reshape2) # Carga la librería reshape\n\ndata&lt;-read.table('data/data.csv',\n                 sep = '\\t',\n                 header = T) # Lee un archivo de datos\n\nhead(data) # Muestra las primeras filas del conjunto de datos\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\ndata_ggplot2 &lt;- melt(data,\n                     id = c('site')) \n\ndata_ggplot2 # Muestra los datos transformados\n\n   site variable      value\n1     a     var1  0.7549967\n2     b     var1 -0.4297789\n3     c     var1  0.9768700\n4     d     var1  0.9594651\n5     e     var1  1.4142136\n6     f     var1  0.3863983\n7     g     var1  0.3980741\n8     a     var2  0.4457979\n9     b     var2 -0.5818249\n10    c     var2  0.1715152\n11    d     var2 -0.7068345\n12    e     var2  1.0907563\n13    f     var2  0.3364102\n14    g     var2  0.4796152\n\ndata_orginal&lt;-dcast(data_ggplot2, site ~ variable) # convertir niveles de una variable en columnas\n\nhead(data_orginal)\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\nhelp(dcast) # función de agregación (similar a tabla pivotante de Excel)"
+    "objectID": "sesiones/repro/repro_git.html#recursos-2",
+    "href": "sesiones/repro/repro_git.html#recursos-2",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Recursos",
+    "text": "Recursos\n\nAlston & Rick 2021"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
-    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
-    "title": "Primeros pasos con R",
-    "section": "Análisis de la serie de datos 1",
-    "text": "Análisis de la serie de datos 1\nDatos: ts.csv\n\n# devtools::install_github(\"nxskok/mkac\")\n\nlibrary(lubridate)\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\nlibrary(mkac)\n\n# Cargar los datos\ndata&lt;-read.table('data/ts.csv', sep=',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.5     1\n3 2024-01-25   0.6     1\n4 2024-02-10   0.3     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\ntable(data$month)\n\n\n 1  2  3  4  5  6  7  8  9 10 11 12 \n 3  2  3  2  2  2  2  2  2  2  2  3 \n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 0.8228706\n\n$z_star\n[1] 0.8228706\n\n$ratio\n[1] 1\n\n$P_value\n[1] 0.4105816\n\n$P_value_adj\n[1] 0.4105816\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.01666667\n\n# Alternativa (sin pendiente de Sen):\n\n# library(Kendall)\n\n# MannKendall(data_monthly_mean$value)"
+    "objectID": "sesiones/repro/repro_git.html#alguna-duda",
+    "href": "sesiones/repro/repro_git.html#alguna-duda",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Control de Versiones con Git y GitHub. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   },
   {
-    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
-    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
-    "title": "Primeros pasos con R",
-    "section": "Análisis de la serie de datos 2",
-    "text": "Análisis de la serie de datos 2\nDatos: ts2.csv\n\n# Cargar los datos\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
-  },
-  {
-    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
-    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
-    "title": "Primeros pasos con R",
-    "section": "Análisis de la serie de datos 2 (la manera tidyverse)",
-    "text": "Análisis de la serie de datos 2 (la manera tidyverse)\n\n# Cargar las librerías necesarias\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr   1.1.4     ✔ stringr 1.5.1\n✔ forcats 1.0.0     ✔ tibble  3.2.1\n✔ purrr   1.0.2     ✔ tidyr   1.3.1\n✔ readr   2.1.5     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lubridate)\n\n# Cargar los datos\n\n# data &lt;- read_csv('data/ts2.csv') # Crearía un tibble: https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html\n\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\n# Inspeccionar la estructura de los datos\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;chr&gt; \"20/01/2024\", \"22/01/2024\", \"25/01/2024\", \"10/02/2024\", \"24/02/2…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Interpretar las fechas\n\ndata &lt;- data %&gt;% \n  mutate(date = dmy(date))\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;date&gt; 2024-01-20, 2024-01-22, 2024-01-25, 2024-02-10, 2024-02-24, 202…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Graficar la serie temporal\n\ndata %&gt;% \n  ggplot(aes(x = date, y = value)) + \n  geom_point() + \n  labs(title = \"Serie temporal\", x = \"Fecha\", y = \"Valor\")\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata &lt;- data %&gt;% \n  mutate(month = month(date))\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- data %&gt;% \n  group_by(month) %&gt;% \n  summarise(value = mean(value, na.rm = TRUE))\n\n# Graficar las medias mensuales\n\ndata_monthly_mean %&gt;% \n  ggplot(aes(x = month, y = value)) + \n  geom_point() + \n  labs(title = \"Media mensual\", x = \"Mes\", y = \"Valor promedio\")\n\n\n\n\n\n\n\n# Análisis de tendencia con funciones de Kendall y Theil-Sen\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
-  },
-  {
-    "objectID": "sesiones/repro/repro_intro_slides.html#footnotes",
-    "href": "sesiones/repro/repro_intro_slides.html#footnotes",
-    "title": "Reproducibilidad en Ciencia",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAbril-Ruiz (2019). Manzanas podridas↩︎"
-  },
-  {
-    "objectID": "sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
-    "href": "sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
-    "title": "Creación de un mapa de biodiversidad de Sierra Nevada",
-    "section": "",
-    "text": "Objetivos\nEsta práctica tiene los siguientes objetivos:\n\nDisciplinares:\n\nReconocer el concepto de biodiversidad ya estudiado en en otras ocasiones.\nAprender un método para cuantificar la diversidad biológica: Índice de Shannon.\nAprender a generar mapas de diversidad biológica: Mapas de distribución del índice de Shannon.\nReconocer patrones de distribución de la diversidad en un territorio concreto.\nIdentificar las causas de los patrones anteriores.\n\nInstrumentales:\n\nAfianzar nuestro conocimiento de SIG.\nMejorar nuestro conocimiento de R.\nAprender la forma en la que obtenemos un mapa de distribución de una variable continua a partir de datos tomados de forma discreta.\n\n\n\n\nContextualización ecológica y estructura de la sesión\nPara cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Weaver, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:\n\nDelimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.\nListado de especies existente en esa comunidad.\nAbundancia de cada especie en dicha comunidad.\n\n\nPara alcanzar los objetivos planteados, procederemos de la siguiente forma:\n\nEn primer lugar aprenderemos la mecánica del cálculo del mapa de diversidad a una escala de 250 m en el espacio protegido de Sierra Nevada (Sur de España). Es decir, asumiremos que una comunidad ecológica es una entidad de forma cuadrangular con un lado de 250 m. Esto no es así en la realidad, pero es la aproximación más fácil que tenemos a nuestro alcance.\nUna vez obtenido este mapa, trataremos de estudiar los patrones de cambio espacial de dicha diversidad. También identificaremos los factores abióticos que explican dichos patrones espaciales.\n\n\n\nObtención de un mapa de biodiversidad: Metodología y flujo de trabajo\nComo se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:\n(1) Información de distribución de especies en la zona de estudio (Sierra Nevada):\nEs el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon.\nPara conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada GBIF (Global Biodiversity Information Facility).\nSe trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta.\nEsta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra.\nAccederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada.\nDurante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor.\nPasos para descargar manual la base de datos de especies en GBIF desde el portal web:\n\nUsando el navegador web entramos en gbif.org y elegimos la opción ‘Get data’ y ‘Occurrences’.\n\n\n\nEn ‘Location’ haz clic en ‘Geometry’:\n\n\n\nCopia y pega el contenido del archivo con el perímetro del parque natural de Sierra Nevada. Este archivo usa el formato de coordenadas Well Known Text (WKT).\nDespués haz clic en ‘ADD’. Verás la lista de ocurrencias en forma de tabla, así como en el mapa (si cambias a la pestaña ‘MAP’).\n\n\n\nHaz clic en la pestaña ‘DOWNLOAD’ y elige el format ‘SIMPLE’ para descargar los datos (se necesita estar registrado).\n\n\n\nAl descargar los datos, verás un resumen de los mismos y se generará un DOI para citarlos correctamente. Puedes descargar la cita en cualquier formato para usarla con un gestor de referencias.\n\n\nLos datos de presencia de especies tienen el siguiente “aspecto” cuando son visualizados en QGIS.\nAquí puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos…\n\n(2) Distribución de las comunidades ecológicas que conforman Sierra Nevada:\nEste paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra.\nEn este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado.\nA partir de esta información obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon.\nEn la siguiente figura puedes ver la distribución de presencias de especies en unas cuantas comunidades.\n\nPara ello seguiremos el siguiente flujo de trabajo (ya descrito a grandes rasgos en la presentación introductoria):\n\nImportamos el archivo csv de GBIF con sus atributos geográficos.\nConvertimos la tabla importada a un objeto geográfico tipo sf.\nCreamos una malla de 250 m con la extensión y sistema de coordenadas de la capa de presencias.\nAsignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.\nCalcular el número de individuos por especie y por cuadrícula.\nCalcular el número total de individuos por cuadrícula.\nCalcular la proporción de individuos (pi) por especie y por cuadrícula.\nCalcular el log2 pi por especie y por cuadrícula.\nCalcular H por cuadrícula.\nExportamos la capa de la malla obtenida a un fichero de formas para visualizarlo en QGIS.\n\nEste script de R genera un mapa del índice de Shannon en cuadrículas de 250x250 m a partir de los datos de presencias de especies existentes en GBIF.\n\n# Instalar y cargar los paquetes necesarios\n\ninstall.packages(\"sf\")\n\nlibrary(sf)\n\n# install.packages(\"dplyr\")\n\nlibrary(dplyr)\n\n# Importamos el archivo csv de GBIF con sus atributos geográficos\n\npresencias &lt;- read.delim(\"0002064-240130105604617.csv\", quote = '')\n\n# Convertimos la tabla importada a un objeto geográfico tipo sf\n\npresencias_geo &lt;- st_as_sf(\n  presencias,\n  coords = c(\"decimalLongitude\", \"decimalLatitude\"),\n  crs = 4326\n)\n\n# Reproyectamos la capa creada al sistema de coordenadas EPSG:23030 (UTM)\n\npresencias_geo_23030 &lt;- st_transform(presencias_geo, crs = 23030)\n\n# Creamos una malla de 250 m con la extensión y sistema de coordenadas de la capa de presencias\n\ngrid_250m &lt;- st_make_grid(presencias_geo_23030, cellsize = c(250, 250))\n\n# Transformamos la malla obtenida (tipo sfc) a tipo espacial sf\n\ngrid_250m_sf &lt;- st_sf(geometry = grid_250m)\n\n# Añadimos un campo llamado id_250 a la malla. Le incluimos valores secuenciales desde 1.\ngrid_250m_sf$id_250 &lt;- seq(1, 55125, by = 1)\n\n# Asignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.\npresencias_x_grid &lt;- st_join(presencias_geo_23030, left = FALSE, grid_250m_sf)\n\n# Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. \n\nbio &lt;- as.data.frame(presencias_x_grid)\n\nbio &lt;- bio[c('id_250', 'scientificName')]\n\n# Calcular el número de individuos por especie y por cuadrícula (num_ind_sp_cuad)\n\nT_num_ind_sp_cuad &lt;- bio %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250, scientificName) %&gt;%    #group the calculations by id_250 + scientificName\n  summarize(`num_ind_sp_cuad` = length(scientificName))\n\n# Calcular el número total de individuos por cuadrícula.\n\nT_num_ind_cuad &lt;- bio %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250) %&gt;%    #group the calculations by id_250\n  summarize(`num_ind_cuad` = n())\n\n# Fusionar las tablas anteriores para calcular Pi\n\nT_num_ind_sp_cuad_mas_num_ind_cuad &lt;- merge(T_num_ind_sp_cuad, T_num_ind_cuad)\n\n# Calcular pi por especie y por cuadrícula.\n\nT_num_ind_sp_cuad_mas_num_ind_cuad$pi &lt;- T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_sp_cuad /\n  T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_cuad\n\n# Calcular el log2 pi por especie y por cuadrícula.\n\nT_num_ind_sp_cuad_mas_num_ind_cuad$lnpi_pi&lt;-log2(T_num_ind_sp_cuad_mas_num_ind_cuad$pi)*T_num_ind_sp_cuad_mas_num_ind_cuad$pi\n\n# Calcular H por cuadrícula\n\nT_Shannon &lt;- T_num_ind_sp_cuad_mas_num_ind_cuad %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250) %&gt;%    #group the calculations by id_250 \n  summarize(`H` = sum(lnpi_pi)*(-1))\n\n# Fusionar la tabla que tiene el índice de Shannon con la malla de cuadrículas.\n\ngrid_250m_sf &lt;- merge(x = grid_250m_sf,\n                      y = T_Shannon,\n                      by.x = \"id_250\",\n                      by.y = \"id_250\")\n\n# Exportamos la capa de la malla obtenida a un fichero de formas para visualizarlo en QGIS.\n\nst_write(grid_250m_sf, \"Shannon_250_sierra_nevada.shp\", append = FALSE)\n\nUna vez abierto el archivo en QGIS, debemos darle una paleta de colores para visualizar los valores del índice de Shannon (columna H) correctamente:\n\n\n\nResultados esperables\nEl siguiente mapa de ejemplo muestra el resultado obtenido en una práctica anterior.\nSe trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada cuadrícula de la malla de 250 m.\n\nEn el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada.\nDurante la práctica reflexionamos sobre dichos patrones:\n\n¿Cómo cambia la diversidad al aumentar la altitud? ¿A qué se puede deber dicho patrón?\n¿Crees que se repetiría el mismo patrón en otras montañas de la Tierra?\n¿Ves algún sesgo espacial en los datos de GBIF?\n¿Hay algún patrón de cambio de diversidad en dirección Este-Oeste? En caso afirmativo, ¿a qué puede deberse?\n\n\n\nRecursos adicionales\nEn este vídeo de Francisco Javier Bonet (UCO) podéis ver la discusión de los resultados obtenidos en una sesión anterior.\nEvaluamos patrones de distribución espacial de la diversidad y tratamos de identificar las variables que explican dichos patrones."
+    "objectID": "sesiones/repro/repro_git.html#has-experimentado-alguna-de-estas-situaciones-en-tu-trabajo-diario",
+    "href": "sesiones/repro/repro_git.html#has-experimentado-alguna-de-estas-situaciones-en-tu-trabajo-diario",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?",
+    "text": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?"
   }
 ]
