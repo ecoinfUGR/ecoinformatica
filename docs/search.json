@@ -881,5 +881,187 @@
     "title": "Control de Versiones con Git y GitHub",
     "section": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?",
     "text": "¿Has experimentado alguna de estas situaciones en tu trabajo diario?"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#portal-de-datos-de-gbif",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#portal-de-datos-de-gbif",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Portal de datos de GBIF",
+    "text": "Portal de datos de GBIF\n\nIr al portal de datos de http://datos.gbif.es\nRealiza una búsqueda por el nombre de un taxon, e.g. Quercus pyrenaica, en la barra de búsqueda y clica en el botón de búsqueda\n\n\n\n\nGBIF.es"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Resultados",
+    "text": "Resultados\n\n\n\n\n\n\n\nImportant\n\n\nLos resultados de la búsqueda se filtran ahora por defecto para excluir los registros de menor calidad de acuerdo con el perfil de datos General de GBIF.ES\n\n\n\n\n\nUsar perfil de Datos\nAplicar Filtros de Calidad"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados-perfil-de-datos",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados-perfil-de-datos",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Resultados: Perfil de Datos",
+    "text": "Resultados: Perfil de Datos"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-registros",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-registros",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Opciones de Resultados: Registros",
+    "text": "Opciones de Resultados: Registros"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-mapa",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-mapa",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Opciones de Resultados: Mapa",
+    "text": "Opciones de Resultados: Mapa"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-estadísticas",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-estadísticas",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Opciones de Resultados: Estadísticas",
+    "text": "Opciones de Resultados: Estadísticas"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-imágenes",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-imágenes",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Opciones de Resultados: Imágenes",
+    "text": "Opciones de Resultados: Imágenes"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-imágenes-1",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#opciones-de-resultados-imágenes-1",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Opciones de Resultados: Imágenes",
+    "text": "Opciones de Resultados: Imágenes"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#filtrar-resultados",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#filtrar-resultados",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Filtrar Resultados",
+    "text": "Filtrar Resultados\n\nPor Perfil de Datos\nUsando campos del estándar Darwin Core (personalizar filtros)"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Exportar datos: Descarga",
+    "text": "Exportar datos: Descarga\n\nNecesita registro\nCrear cuenta"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-1",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-1",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Exportar datos: Descarga",
+    "text": "Exportar datos: Descarga"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-2",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-2",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Exportar datos: Descarga",
+    "text": "Exportar datos: Descarga\n\nPersonalizar Descarga"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#api-application-programming-interface",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#api-application-programming-interface",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "API (Application Programming Interface)",
+    "text": "API (Application Programming Interface)\n\n\n\nHowie Mann"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#uso-de-apis-en-gbif",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#uso-de-apis-en-gbif",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Uso de APIs en GBIF",
+    "text": "Uso de APIs en GBIF\n\nI Mini Taller portal de GBIF Internacional (05/03/2014)"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultado-archivo-json",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#resultado-archivo-json",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Resultado: Archivo JSON",
+    "text": "Resultado: Archivo JSON\n\n{\n  \"usageKey\": 2878826,\n  \"scientificName\": \"Quercus pyrenaica Willd.\",\n  \"canonicalName\": \"Quercus pyrenaica\",\n  \"rank\": \"SPECIES\",\n  \"status\": \"ACCEPTED\",\n  \"confidence\": 97,\n  \"matchType\": \"EXACT\",\n  \"kingdom\": \"Plantae\",\n  \"phylum\": \"Tracheophyta\",\n  \"order\": \"Fagales\",\n  \"family\": \"Fagaceae\",\n  \"genus\": \"Quercus\",\n  \"species\": \"Quercus pyrenaica\",\n  \"kingdomKey\": 6,\n  \"phylumKey\": 7707728,\n  \"classKey\": 220,\n  \"orderKey\": 1354,\n  \"familyKey\": 4689,\n  \"genusKey\": 2877951,\n  \"speciesKey\": 2878826,\n  \"synonym\": false,\n  \"class\": \"Magnoliopsida\"\n}"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Exportación de nuestra búsqueda",
+    "text": "Exportación de nuestra búsqueda\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda-1",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda-1",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Exportación de nuestra búsqueda",
+    "text": "Exportación de nuestra búsqueda\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Tipos de búsquedas:",
+    "text": "Tipos de búsquedas:\n\nSimple\nAvanzada\nPor nombres científicos (lotes)\nPor números de catálogo\nEventos\nEspacial (Área)"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#búsqueda-espacial",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#búsqueda-espacial",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Búsqueda Espacial",
+    "text": "Búsqueda Espacial"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas-espaciales",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas-espaciales",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Tipos de búsquedas espaciales",
+    "text": "Tipos de búsquedas espaciales\n\nDibujar un área de interés\nImportar un área:\n\nformato WKT (Well Known Text)\n\nRegiones definidas"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#dibujar-un-área-de-interés",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#dibujar-un-área-de-interés",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Dibujar un área de interés",
+    "text": "Dibujar un área de interés"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#dibujar-un-área-de-interés-resultados",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#dibujar-un-área-de-interés-resultados",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Dibujar un área de interés (resultados)",
+    "text": "Dibujar un área de interés (resultados)"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#wkt",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#wkt",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "WKT",
+    "text": "WKT\n\nDefinir area usando un archivo WKT"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Regiones Definidas",
+    "text": "Regiones Definidas\n\nIr a Regiones o visitar https://regiones.gbif.es/"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas-1",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas-1",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "Regiones Definidas",
+    "text": "Regiones Definidas\n\nSeleccionar Región Definida"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#alguna-duda",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html#alguna-duda",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
   }
 ]
