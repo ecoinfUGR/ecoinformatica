@@ -56,6 +56,8 @@
   },
   {
     "listing": "/modulos/datos_primarios.html",
-    "items": []
+    "items": [
+      "/sesiones/datos_primarios/primary_search_biodiversity.html"
+    ]
   }
 ]

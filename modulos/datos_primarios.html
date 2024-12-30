@@ -98,9 +98,9 @@ div.csl-indent {
     }
 
     const options = {
-      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -279,6 +279,17 @@ Fecha
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1741046400000" data-listing-file-modified-sort="1735545714842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="485" data-listing-title-sort="Búsqueda de Datos primarios de Biodiversidad" data-listing-filename-sort="primary_search_biodiversity.qmd">
+<td>
+<span class="listing-sesion">2</span>
+</td>
+<td>
+<a href="../sesiones/datos_primarios/primary_search_biodiversity.html" class="title listing-title">Búsqueda de Datos primarios de Biodiversidad</a>
+</td>
+<td>
+<span class="listing-date">Tue, Mar 04</span>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
