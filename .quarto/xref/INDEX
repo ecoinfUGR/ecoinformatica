@@ -73,5 +73,8 @@
   },
   "sesiones/datos_primarios/primary_search_biodiversity.qmd": {
     "primary_search_biodiversity.html": "deef0fb2"
+  },
+  "sesiones/introprog/intro_R_jml.qmd": {
+    "intro_R_jml.html": "cea98eff"
   }
 }
