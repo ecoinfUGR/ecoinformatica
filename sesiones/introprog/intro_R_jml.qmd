@@ -390,7 +390,9 @@ legend(7, # Posición en el eje X
 
 ## Usando ggplot2
 
+:::{.callout-warning}
 [Manual de ggplot2](https://ggplot2.tidyverse.org/reference/)
+:::
 
 ```{r}
 library(ggplot2)
@@ -465,7 +467,9 @@ ggplot(data = iris,
 
 ## Diagramas de barras y lectura de datos
 
+:::{.callout-important}
 [bar1_data.csv](data/bar1_data.csv)
+:::
 
 ```{r}
 bar1_data <- read.table('data/bar1_data.csv',
@@ -487,7 +491,9 @@ ggplot(bar1_data,
 
 ```
 
-* Ejercicio adicional: ¿Cómo leemos el archivo [iris.csv](data/iris.csv)?
+:::{.callout-tip}
+Ejercicio adicional: ¿Cómo leemos el archivo [iris.csv](data/iris.csv)?
+:::
 
 ## Gráficos de regresión lineal
 
@@ -519,9 +525,11 @@ c + stat_smooth(method = lm,
 
 ## Gráfico de barras agrupadas 
 
-**Ejercicio: lee el archivo 'data/bar2_data.csv'** (contiene más años)
+:::{.callout-important}
+Lee el archivo 'data/bar2_data.csv' (contiene más años)
 
 [bar2_data.csv](data/bar2_data.csv)
+:::
 
 ```{r}
 bar2_data <- read.table('data/bar2_data.csv',
@@ -549,7 +557,9 @@ ggplot(bar2_data, aes(x = Site, y = value)) +
 
 ## Preparar datos para ggplot2
 
+:::{.callout-important}
 [data.csv](data/data.csv)
+:::
 
 ```{r}
 library(reshape2) # Carga la librería reshape
@@ -577,7 +587,9 @@ help(dcast) # función de agregación (similar a tabla pivotante de Excel)
 
 ## Análisis de la serie de datos 1
 
+:::{.callout-important}
 Datos: [ts.csv](data/ts.csv)
+:::
 
 ```{r}
 
@@ -625,7 +637,9 @@ theil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)
 
 ## Análisis de la serie de datos 2
 
+:::{.callout-important}
 Datos: [ts2.csv](data/ts2.csv)
+:::
 
 ```{r}
 # Cargar los datos

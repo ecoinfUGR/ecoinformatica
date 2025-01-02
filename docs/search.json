@@ -289,14 +289,14 @@
     "href": "modulos/reproducibilidad.html",
     "title": "Reproducibilidad",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos.html",
     "href": "modulos.html",
     "title": "Módulos",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nAntonio J. Pérez-Luque, María Suárez-Muñoz\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
+    "text": "Order By\n       Default\n         \n          Nombre\n        \n         \n          Profesores\n        \n     \n  \n\n\n\n\n\nNombre\n\n\nProfesores\n\n\n\n\n\n\nIntroducción\n\n\nMaría Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nReproducibilidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\nIntroducción a la Programación\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nSistemas de Información Geográfica\n\n\nMaría Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nBases de Datos\n\n\nMaría Suárez-Muñoz\n\n\n\n\nTeledetección\n\n\nJavier Martínez-López, Antonio J. Pérez-Luque\n\n\n\n\nDatos Primarios de Biodiversidad\n\n\nAntonio J. Pérez-Luque\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Módulos"
     ]
@@ -425,14 +425,14 @@
     "href": "modulos/reproducibilidad.html#recursos",
     "title": "Reproducibilidad",
     "section": "Recursos",
-    "text": "Recursos\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media"
+    "text": "Recursos\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
   },
   {
     "objectID": "modulos/bbdd.html",
     "href": "modulos/bbdd.html",
     "title": "Bases de Datos",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/bbdd.html#recursos",
@@ -460,7 +460,7 @@
     "href": "modulos/programacion.html",
     "title": "Introducción a la Programación",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/programacion.html#recursos",
@@ -474,7 +474,7 @@
     "href": "modulos/datos_primarios.html",
     "title": "Datos Primarios de Biodiversidad",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n2\n\n\nBúsqueda de Datos primarios de Biodiversidad\n\n\nTue, Mar 04\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/datos_primarios.html#recursos",
@@ -488,7 +488,7 @@
     "href": "modulos/teledeteccion.html",
     "title": "Teledetección",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n \n\n\ngee_intro\n\n\n \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/teledeteccion.html#recursos",
@@ -502,7 +502,7 @@
     "href": "modulos/sig.html",
     "title": "Sistemas de Información Geográfica",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\nx\n\n\nCreación de un mapa de biodiversidad de Sierra Nevada\n\n\nInvalid Date\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/sig.html#recursos",
@@ -557,8 +557,8 @@
     "objectID": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
     "href": "sesiones/repro/repro_git.html#qué-es-el-control-de-versiones",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "¿Qué es el control de versiones?",
-    "text": "¿Qué es el control de versiones?\nEl control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante\n\nSe puede utilizar sobre cualquier archivo.\nPermite:\n\nRevertir archivos (proyecto) a un estado anterior\nComparar cambios a lo largo del tiempo\n\n\nFacilita la identificación de errores"
+    "section": "",
+    "text": "El control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante\n\nSe puede utilizar sobre cualquier archivo.\nPermite:\n\nRevertir archivos (proyecto) a un estado anterior\nComparar cambios a lo largo del tiempo\n\n\nFacilita la identificación de errores"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#registro-de-cambios",
@@ -585,78 +585,78 @@
     "objectID": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
     "href": "sesiones/repro/repro_git.html#sistemas-para-el-control-de-versiones",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Sistemas para el control de versiones",
-    "text": "Sistemas para el control de versiones\n\n\n\n\n\nProGit book\nOtros:\n\nSubversion\nConcurrent Version System CVS"
+    "section": "",
+    "text": "ProGit book\nOtros:\n\nSubversion\nConcurrent Version System CVS"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#git",
     "href": "sesiones/repro/repro_git.html#git",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Git",
-    "text": "Git\n\nSistema avanzado de control de versiones distribuido\nPermite rastrear el progreso de un proyecto mediante capturas\n\n¿Qué cambios?\n¿Dónde?\n¿Quién los hizo?\n¿Por qué?"
+    "section": "",
+    "text": "Sistema avanzado de control de versiones distribuido\nPermite rastrear el progreso de un proyecto mediante capturas\n\n¿Qué cambios?\n¿Dónde?\n¿Quién los hizo?\n¿Por qué?\n\n\n\n\n\n\nDevon Wijesinghe"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#github",
     "href": "sesiones/repro/repro_git.html#github",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "GitHub",
-    "text": "GitHub\n\n\n\n\nUn website donde alojar repositorios\nInterfaz para explorar repositorios\nPermite colaborar de una forma más eficaz:\n\nCompartir repositorio\nVer cambios\nCorregir errores\nDiscutir y Revisar cambios\n\n\n\n\n\n\n\n\n\nhttps://github.com/"
+    "section": "",
+    "text": "Un website donde alojar repositorios\nInterfaz para explorar repositorios\nPermite colaborar de una forma más eficaz:\n\nCompartir repositorio\nVer cambios\nCorregir errores\nDiscutir y Revisar cambios\n\n\n\n\n\n\n\n\n\nhttps://github.com/"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#recursos-sobre-git",
     "href": "sesiones/repro/repro_git.html#recursos-sobre-git",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Recursos sobre Git",
-    "text": "Recursos sobre Git\n\n\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
+    "section": "",
+    "text": "Interactive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#ciclo-de-git",
     "href": "sesiones/repro/repro_git.html#ciclo-de-git",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Ciclo de Git",
-    "text": "Ciclo de Git\n\nArtwork by Allison_horst"
+    "section": "",
+    "text": "Artwork by Allison_horst"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#ciclo-de-git-1",
     "href": "sesiones/repro/repro_git.html#ciclo-de-git-1",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Ciclo de Git",
-    "text": "Ciclo de Git\n\nT. Meralus"
+    "section": "",
+    "text": "T. Meralus"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#instalar-git",
     "href": "sesiones/repro/repro_git.html#instalar-git",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Instalar Git",
-    "text": "Instalar Git\n\n\nInstala Git en tu ordenador. Puedes usar la documentación oficial\n\n\n\nConfigurar Git\n\n\nCódigo\nEjemplo\n\n\n\ngit config --global user.name \ngit config --global user.email \n\n\ngit config --global user.name \"Fulanito Menganito\"\ngit config --global user.email micorreo@gmail.com\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nVamos a usar Github, por tanto la dirección de correo que indiques ha de ser la misma con la que te registres en GitHub.\n\n\n\n\nEn cualquier momento podemos ver las opciones de configuración\n\ngit config --list"
+    "section": "",
+    "text": "Instala Git en tu ordenador. Puedes usar la documentación oficial\n\n\n\n\n\n\nCódigo\nEjemplo\n\n\n\ngit config --global user.name \ngit config --global user.email \n\n\ngit config --global user.name \"Fulanito Menganito\"\ngit config --global user.email micorreo@gmail.com\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVamos a usar Github, por tanto la dirección de correo que indiques ha de ser la misma con la que te registres en GitHub.\n\n\n\nEn cualquier momento podemos ver las opciones de configuración\n\ngit config --list"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
     "href": "sesiones/repro/repro_git.html#crear-un-repositorio-nuevo",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Crear un repositorio nuevo",
-    "text": "Crear un repositorio nuevo\n\nAbre la consola de comandos\n\nCrea un directorio nuevo y ábrelo1\n\n\nmkdir &lt;nombre_directorio&gt;\n\nmkdir datos\ncd datos\nAyuda sobre comandos"
+    "section": "",
+    "text": "Abre la consola de comandos\n\nCrea un directorio nuevo y ábrelo1\n\n\nmkdir &lt;nombre_directorio&gt;\n\nmkdir datos\ncd datos"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
     "href": "sesiones/repro/repro_git.html#iniciar-un-repositorio",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Iniciar un repositorio",
-    "text": "Iniciar un repositorio\n\nPara iniciar un repositorio utilizamos el comando\n\ngit init nombrerepositorio\ngit init mi_primer_repositorio\n\n\n\n\n\n\nNote\n\n\n¿Que ha ocurrido en nuestro directorio?\n\n\n\n\nInspeccionar el directorio\n\ncd mi_primer_repositorio\nls -a \ncd .git"
+    "section": "",
+    "text": "Para iniciar un repositorio utilizamos el comando\n\ngit init nombrerepositorio\ngit init mi_primer_repositorio\n\n\n\n\n\n\nNote\n\n\n\n¿Que ha ocurrido en nuestro directorio?\n\n\n\nInspeccionar el directorio\n\ncd mi_primer_repositorio\nls -a \ncd .git"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#añadir-cambios",
     "href": "sesiones/repro/repro_git.html#añadir-cambios",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Añadir cambios",
-    "text": "Añadir cambios\n\nCrea un archivo de texto dentro del directorio, escribe algo y nómbralo miarchivo.txt\nAñade el archivo a la staging area\n\ngit add &lt;nombre_archivo&gt;\ngit add miarchivo.txt\n\nSi quiero añadir todos los archivos\n\ngit add ."
+    "section": "",
+    "text": "Crea un archivo de texto dentro del directorio, escribe algo y nómbralo miarchivo.txt\nAñade el archivo a la staging area\n\ngit add &lt;nombre_archivo&gt;\ngit add miarchivo.txt\n\nSi quiero añadir todos los archivos\n\ngit add ."
   },
   {
     "objectID": "sesiones/repro/repro_git.html#registrar-cambios",
     "href": "sesiones/repro/repro_git.html#registrar-cambios",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Registrar cambios",
-    "text": "Registrar cambios\ngit commit -m \"Commit message\"\"\n\n\n\n\n\n\nImportant\n\n\nEl mensaje nos servirá para indicar lo que hemos hecho.\n\n\nRecomendaciones de buenas prácticas para commits\nAlgunas convenciones para commits\n\n\n\n\ngit commit -m \"Escribo mis datos personales en archivo\"\n\n[master (root-commit) 71fe224] Escribo mis datos personales en archivo\n 1 file changed, 2 insertions(+)\n create mode 100644 miarchivo.txt"
+    "section": "",
+    "text": "git commit -m \"Commit message\"\"\n\n\n\n\n\n\nImportant\n\n\n\nEl mensaje nos servirá para indicar lo que hemos hecho.\n\n\nRecomendaciones de buenas prácticas para commits\nAlgunas convenciones para commits\n\n\n\ngit commit -m \"Escribo mis datos personales en archivo\"\n\n[master (root-commit) 71fe224] Escribo mis datos personales en archivo\n 1 file changed, 2 insertions(+)\n create mode 100644 miarchivo.txt"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#section",
@@ -683,8 +683,8 @@
     "objectID": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
     "href": "sesiones/repro/repro_git.html#enviar-cambios-a-repositorios-remotos",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Enviar cambios a Repositorios Remotos",
-    "text": "Enviar cambios a Repositorios Remotos\n\nNuestros cambios están en el HEAD (copia local)\nQueremos enviar los cambios a un repositorio remoto\n\n\n\n\n\n\n\n\nCaution\n\n\nNecesitamos un repositorio remoto (GitHub):\n\nCrear\nClonar\n\n\n\n\ngit remote add origin &lt;url server&gt;\n\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
+    "section": "",
+    "text": "Nuestros cambios están en el HEAD (copia local)\nQueremos enviar los cambios a un repositorio remoto\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNecesitamos un repositorio remoto (GitHub):\n\nCrear\nClonar\n\n\n\ngit remote add origin &lt;url server&gt;\n\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#crear-repositorio-en-github",
@@ -711,15 +711,15 @@
     "objectID": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
     "href": "sesiones/repro/repro_git.html#enlazar-repositorio-local-y-remoto",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Enlazar repositorio local y remoto",
-    "text": "Enlazar repositorio local y remoto\n URL: https://github.com/ajpelu/teach_git_ejemplo.git\n\ngit remote add origin &lt;url server&gt;\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
+    "section": "",
+    "text": "URL: https://github.com/ajpelu/teach_git_ejemplo.git\n\ngit remote add origin &lt;url server&gt;\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#enviar",
     "href": "sesiones/repro/repro_git.html#enviar",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Enviar",
-    "text": "Enviar\n\n\nPara enviar cambios (una vez conectados) a un repositorio remoto\nNos pedirá usuario y contraseña\n\n\ngit push origin master\n\n\n\n\n\n\nWarning\n\n\ngit push origin\ngit push origin master\n¿Qué rama queremos sincronizar?"
+    "section": "",
+    "text": "Para enviar cambios (una vez conectados) a un repositorio remoto\nNos pedirá usuario y contraseña\n\n\ngit push origin master\n\n\n\n\n\n\nWarning\n\n\n\ngit push origin\ngit push origin master\n¿Qué rama queremos sincronizar?"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio",
@@ -732,22 +732,22 @@
     "objectID": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
     "href": "sesiones/repro/repro_git.html#clonar-un-repositorio-1",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Clonar un repositorio",
-    "text": "Clonar un repositorio\n\nImportante para reproducibilidad\nColaboración\nRepositorio remoto (GitHub)\n2 formas (diferencias)\n\n\n\nHTTPS\nSSH\n\n\n\n# git clone &lt;url&gt; \ngit clone https://github.com/ajpelu/teach_git_ejemplo.git \n\n\n# git clone username@host:/path/to/repository\ngit clone git@github.com:ajpelu/teach_git_ejemplo.git"
+    "section": "",
+    "text": "Importante para reproducibilidad\nColaboración\nRepositorio remoto (GitHub)\n2 formas (diferencias)\n\n\n\nHTTPS\nSSH\n\n\n\n# git clone &lt;url&gt; \ngit clone https://github.com/ajpelu/teach_git_ejemplo.git \n\n\n# git clone username@host:/path/to/repository\ngit clone git@github.com:ajpelu/teach_git_ejemplo.git"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
     "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Actualizar un repositorio local",
-    "text": "Actualizar un repositorio local\n\nAllison_horst"
+    "section": "",
+    "text": "Allison_horst"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
     "href": "sesiones/repro/repro_git.html#actualizar-un-repositorio-local-1",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Actualizar un repositorio local",
-    "text": "Actualizar un repositorio local\n\n¿Existe alguna información nueva en mi repositorio remoto?\n\ngit fetch  \n\n¿Existe alguna información nueva en mi repositorio remoto y quiero que esté en mi repositorio local?\n\ngit pull  \n\n\n\n\n\n\nWarning\n\n\n\nPrestar atención a la rama!!\n\ngit pull origin master"
+    "section": "",
+    "text": "¿Existe alguna información nueva en mi repositorio remoto?\n\ngit fetch  \n\n¿Existe alguna información nueva en mi repositorio remoto y quiero que esté en mi repositorio local?\n\ngit pull  \n\n\n\n\n\n\nWarning\n\n\n\n\nPrestar atención a la rama!!\n\ngit pull origin master"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#otros-comandos",
@@ -760,22 +760,22 @@
     "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
     "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-shell",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Anexo. Formas de usar git: shell\n",
-    "text": "Anexo. Formas de usar git: shell\n\n\nGit for Windows"
+    "section": "",
+    "text": "Git for Windows"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
     "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-git-gui",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Anexo. Formas de usar git: git-GUI\n",
-    "text": "Anexo. Formas de usar git: git-GUI\n\n\nClientes de git GUI (Guest User Interfaces)"
+    "section": "",
+    "text": "Clientes de git GUI (Guest User Interfaces)"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
     "href": "sesiones/repro/repro_git.html#anexo.-formas-de-usar-git-r-studio",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "Anexo. Formas de usar git: R-studio\n",
-    "text": "Anexo. Formas de usar git: R-studio\n\nhttps://happygitwithr.com/\n\n\n\n\nHappy Git and Gihub for the useR Tutorial - Posit"
+    "section": "",
+    "text": "https://happygitwithr.com/\n\n\n\n\nHappy Git and Gihub for the useR Tutorial - Posit"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#cómo-definirías-la-ciencia",
@@ -872,8 +872,8 @@
     "objectID": "sesiones/repro/repro_git.html#alguna-duda",
     "href": "sesiones/repro/repro_git.html#alguna-duda",
     "title": "Control de Versiones con Git y GitHub",
-    "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Control de Versiones con Git y GitHub. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+    "section": "",
+    "text": "@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Control de Versiones con Git y GitHub. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "sesiones/repro/repro_git.html#has-experimentado-alguna-de-estas-situaciones-en-tu-trabajo-diario",
@@ -886,15 +886,15 @@
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#portal-de-datos-de-gbif",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#portal-de-datos-de-gbif",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Portal de datos de GBIF",
-    "text": "Portal de datos de GBIF\n\nIr al portal de datos de http://datos.gbif.es\nRealiza una búsqueda por el nombre de un taxon, e.g. Quercus pyrenaica, en la barra de búsqueda y clica en el botón de búsqueda\n\n\n\n\nGBIF.es"
+    "section": "",
+    "text": "Ir al portal de datos de http://datos.gbif.es\nRealiza una búsqueda por el nombre de un taxon, e.g. Quercus pyrenaica, en la barra de búsqueda y clica en el botón de búsqueda\n\n\n\n\nGBIF.es"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Resultados",
-    "text": "Resultados\n\n\n\n\n\n\n\nImportant\n\n\nLos resultados de la búsqueda se filtran ahora por defecto para excluir los registros de menor calidad de acuerdo con el perfil de datos General de GBIF.ES\n\n\n\n\n\nUsar perfil de Datos\nAplicar Filtros de Calidad"
+    "section": "",
+    "text": "Important\n\n\n\nLos resultados de la búsqueda se filtran ahora por defecto para excluir los registros de menor calidad de acuerdo con el perfil de datos General de GBIF.ES\n\n\n\n\nUsar perfil de Datos\nAplicar Filtros de Calidad"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultados-perfil-de-datos",
@@ -942,15 +942,15 @@
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#filtrar-resultados",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#filtrar-resultados",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Filtrar Resultados",
-    "text": "Filtrar Resultados\n\nPor Perfil de Datos\nUsando campos del estándar Darwin Core (personalizar filtros)"
+    "section": "",
+    "text": "Por Perfil de Datos\nUsando campos del estándar Darwin Core (personalizar filtros)"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Exportar datos: Descarga",
-    "text": "Exportar datos: Descarga\n\nNecesita registro\nCrear cuenta"
+    "section": "",
+    "text": "Necesita registro\nCrear cuenta"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-1",
@@ -963,50 +963,50 @@
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-2",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportar-datos-descarga-2",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Exportar datos: Descarga",
-    "text": "Exportar datos: Descarga\n\nPersonalizar Descarga"
+    "section": "",
+    "text": "Personalizar Descarga"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#api-application-programming-interface",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#api-application-programming-interface",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "API (Application Programming Interface)",
-    "text": "API (Application Programming Interface)\n\n\n\nHowie Mann"
+    "section": "",
+    "text": "Howie Mann"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#uso-de-apis-en-gbif",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#uso-de-apis-en-gbif",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Uso de APIs en GBIF",
-    "text": "Uso de APIs en GBIF\n\nI Mini Taller portal de GBIF Internacional (05/03/2014)"
+    "section": "",
+    "text": "I Mini Taller portal de GBIF Internacional (05/03/2014)\n\n\n\n\nhttps://api.gbif.org/v1/species/match?name=Quercus pyrenaica\n\nURL base: https://api.gbif.org/v1\nGrupo/Namespace que queremos consultar: species, occurrences, etc. Mas información en documentación de Referencia\nFunción: funcionalidad a usar: buscar (search), coincidencia (match), etc.\nParámetro: los parámetros para nuestra llamada: e.g. name.\nconsulta: la consulta dentro de dicho parámetro\n\n\n\n\n\n\nDocumentación de Referencia\nTutorial para principiantes"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#resultado-archivo-json",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#resultado-archivo-json",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Resultado: Archivo JSON",
-    "text": "Resultado: Archivo JSON\n\n{\n  \"usageKey\": 2878826,\n  \"scientificName\": \"Quercus pyrenaica Willd.\",\n  \"canonicalName\": \"Quercus pyrenaica\",\n  \"rank\": \"SPECIES\",\n  \"status\": \"ACCEPTED\",\n  \"confidence\": 97,\n  \"matchType\": \"EXACT\",\n  \"kingdom\": \"Plantae\",\n  \"phylum\": \"Tracheophyta\",\n  \"order\": \"Fagales\",\n  \"family\": \"Fagaceae\",\n  \"genus\": \"Quercus\",\n  \"species\": \"Quercus pyrenaica\",\n  \"kingdomKey\": 6,\n  \"phylumKey\": 7707728,\n  \"classKey\": 220,\n  \"orderKey\": 1354,\n  \"familyKey\": 4689,\n  \"genusKey\": 2877951,\n  \"speciesKey\": 2878826,\n  \"synonym\": false,\n  \"class\": \"Magnoliopsida\"\n}"
+    "section": "",
+    "text": "{\n  \"usageKey\": 2878826,\n  \"scientificName\": \"Quercus pyrenaica Willd.\",\n  \"canonicalName\": \"Quercus pyrenaica\",\n  \"rank\": \"SPECIES\",\n  \"status\": \"ACCEPTED\",\n  \"confidence\": 97,\n  \"matchType\": \"EXACT\",\n  \"kingdom\": \"Plantae\",\n  \"phylum\": \"Tracheophyta\",\n  \"order\": \"Fagales\",\n  \"family\": \"Fagaceae\",\n  \"genus\": \"Quercus\",\n  \"species\": \"Quercus pyrenaica\",\n  \"kingdomKey\": 6,\n  \"phylumKey\": 7707728,\n  \"classKey\": 220,\n  \"orderKey\": 1354,\n  \"familyKey\": 4689,\n  \"genusKey\": 2877951,\n  \"speciesKey\": 2878826,\n  \"synonym\": false,\n  \"class\": \"Magnoliopsida\"\n}"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Exportación de nuestra búsqueda",
-    "text": "Exportación de nuestra búsqueda\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
+    "section": "",
+    "text": "https://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda-1",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#exportación-de-nuestra-búsqueda-1",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Exportación de nuestra búsqueda",
-    "text": "Exportación de nuestra búsqueda\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
+    "section": "",
+    "text": "https://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Tipos de búsquedas:",
-    "text": "Tipos de búsquedas:\n\nSimple\nAvanzada\nPor nombres científicos (lotes)\nPor números de catálogo\nEventos\nEspacial (Área)"
+    "section": "",
+    "text": "Simple\nAvanzada\nPor nombres científicos (lotes)\nPor números de catálogo\nEventos\nEspacial (Área)"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#búsqueda-espacial",
@@ -1019,8 +1019,8 @@
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas-espaciales",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#tipos-de-búsquedas-espaciales",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Tipos de búsquedas espaciales",
-    "text": "Tipos de búsquedas espaciales\n\nDibujar un área de interés\nImportar un área:\n\nformato WKT (Well Known Text)\n\nRegiones definidas"
+    "section": "",
+    "text": "Dibujar un área de interés\nImportar un área:\n\nformato WKT (Well Known Text)\n\nRegiones definidas"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#dibujar-un-área-de-interés",
@@ -1040,28 +1040,266 @@
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#wkt",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#wkt",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "WKT",
-    "text": "WKT\n\nDefinir area usando un archivo WKT"
+    "section": "",
+    "text": "Definir area usando un archivo WKT"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Regiones Definidas",
-    "text": "Regiones Definidas\n\nIr a Regiones o visitar https://regiones.gbif.es/"
+    "section": "",
+    "text": "Ir a Regiones o visitar https://regiones.gbif.es/"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas-1",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#regiones-definidas-1",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "Regiones Definidas",
-    "text": "Regiones Definidas\n\nSeleccionar Región Definida"
+    "section": "",
+    "text": "Seleccionar Región Definida"
   },
   {
     "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html#alguna-duda",
     "href": "sesiones/datos_primarios/primary_search_biodiversity.html#alguna-duda",
     "title": "Búsqueda de Datos primarios de Biodiversidad",
-    "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+    "section": "",
+    "text": "@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html",
+    "href": "sesiones/introprog/intro_R_jml.html",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python.\n\n\n\n\n\nR es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\n\n\n\n\nLas funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())\n\n\n\n\nPor ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views\n\n\n\n\nManuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R\n\n\n\n\n\nhelp(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#qué-es-rstudio",
+    "href": "sesiones/introprog/intro_R_jml.html#qué-es-rstudio",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python."
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#qué-es-r",
+    "href": "sesiones/introprog/intro_R_jml.html#qué-es-r",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "R es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages."
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#librerías",
+    "href": "sesiones/introprog/intro_R_jml.html#librerías",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Las funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#librerías-1",
+    "href": "sesiones/introprog/intro_R_jml.html#librerías-1",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Por ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#fuentes-de-información",
+    "href": "sesiones/introprog/intro_R_jml.html#fuentes-de-información",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Manuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#ayuda",
+    "href": "sesiones/introprog/intro_R_jml.html#ayuda",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "help(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#variables-constantes-y-operadores",
+    "href": "sesiones/introprog/intro_R_jml.html#variables-constantes-y-operadores",
+    "title": "Primeros pasos con R",
+    "section": "Variables, constantes y operadores",
+    "text": "Variables, constantes y operadores\n\na &lt;- 3.25  # Asigna el valor 3.25 a la variable 'a'\n\na = 3.25  # Otra forma de asignar valores\n\nnombre &lt;- 'Pepe'  # Asigna una cadena de texto a la variable: nombre\n\n\nas.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha\n\n[1] \"2000-01-01\"\n\nas.Date('2000-01-01') + 2  # Suma días a una fecha\n\n[1] \"2000-01-03\"\n\n\n\nConstantes\n\nNULL ## Representa un objeto vacío\n\nNULL\n\nNA ## Representa un valor faltante\n\n[1] NA\n\nNaN ## Representa un valor no numérico (ejemplo: 1/0)\n\n[1] NaN\n\npi ## Constante matemática predefinida\n\n[1] 3.141593\n\n\n\n\nOperadores\n\na == 3.25  # Compara si 'a' es igual a 3.25\n\n[1] TRUE\n\na == 6  # Compara si 'a' es igual a 6\n\n[1] FALSE\n\nnombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'\n\n[1] TRUE\n\nnombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'\n\n[1] TRUE\n\na != 2  # Verifica si 'a' no es igual a 2\n\n[1] TRUE\n\n5 &lt; 6  # Verifica si 5 es menor que 6\n\n[1] TRUE\n\n10 &gt;= 5  # Verifica si 10 es mayor o igual a 5\n\n[1] TRUE\n\n\n\nOperadores aritméticos\n\n1 + 2  # Suma\n\n[1] 3\n\n1 - 2  # Resta\n\n[1] -1\n\n5 / 3  # División\n\n[1] 1.666667\n\n2 ^ 3  # Potencia\n\n[1] 8\n\nsqrt(10)  # Raíz cuadrada\n\n[1] 3.162278\n\nrunif(5, min = 0, max = 100) # Números aleatorios\n\n[1] 92.62206 94.21360 68.87264 36.36304 22.18688"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#vectores",
+    "href": "sesiones/introprog/intro_R_jml.html#vectores",
+    "title": "Primeros pasos con R",
+    "section": "Vectores",
+    "text": "Vectores\n\na &lt;- NULL # Crea un vector vacío\n\na &lt;- 1:10 # Crea un vector con valores del 1 al 10\n\nc &lt;- seq(1, 10, by = 0.5) # Crea un vector secuencial con incrementos de 0.5\n\nd &lt;- c(0, 1, 1, 2, 3) # Crea un vector con valores específicos\n\ne &lt;- c('b1', 'b2', 'b3') # Crea un vector de cadenas de texto\n\nf &lt;- rep(5, 6) # Crea un vector repitiendo el número 5 seis veces\n\nd[1] # Obtiene el primer elemento del vector 'd'\n\n[1] 0\n\nd[-1] # Excluye el primer elemento del vector 'd'\n\n[1] 1 1 2 3"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#matrices",
+    "href": "sesiones/introprog/intro_R_jml.html#matrices",
+    "title": "Primeros pasos con R",
+    "section": "Matrices",
+    "text": "Matrices\n\nmat &lt;- matrix(1:12, 3, 4) # Crea una matriz con valores del 1 al 12, dispuestos en 3 filas y 4 columnas\n\nmat\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\nmatrix(1:12, 3, 4, byrow = TRUE) # La matriz se rellena por filas\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\nrbind(1:5, 11:15, 21:25) # Une vectores como filas\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]   11   12   13   14   15\n[3,]   21   22   23   24   25\n\ncbind(1:5, 11:15, 21:25) # Une vectores como columnas\n\n     [,1] [,2] [,3]\n[1,]    1   11   21\n[2,]    2   12   22\n[3,]    3   13   23\n[4,]    4   14   24\n[5,]    5   15   25\n\nmat[1:2, 2:3] # Selecciona valores de las filas 1 y 2, columnas 2 y 3\n\n     [,1] [,2]\n[1,]    4    7\n[2,]    5    8\n\nmat[, -2] # Excluye la segunda columna de la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    7   10\n[2,]    2    8   11\n[3,]    3    9   12\n\nt(mat) # Transpone la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n[4,]   10   11   12"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#data-frames",
+    "href": "sesiones/introprog/intro_R_jml.html#data-frames",
+    "title": "Primeros pasos con R",
+    "section": "Data frames",
+    "text": "Data frames\n\nmat &lt;- matrix(1:30, 10) ## Crea una matriz con valores del 1 al 30 en 10 filas\n\nmat\n\n      [,1] [,2] [,3]\n [1,]    1   11   21\n [2,]    2   12   22\n [3,]    3   13   23\n [4,]    4   14   24\n [5,]    5   15   25\n [6,]    6   16   26\n [7,]    7   17   27\n [8,]    8   18   28\n [9,]    9   19   29\n[10,]   10   20   30\n\ndf_mat &lt;- as.data.frame(mat) ## Convierte la matriz en un 'data.frame'\n\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\ndf_mat[2, 1] # Selecciona un elemento específico (fila 2, columna 1)\n\n[1] 2\n\ndf_mat$V1 # Selecciona una columna por su nombre\n\n [1]  1  2  3  4  5  6  7  8  9 10"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#primeros-pasos",
+    "href": "sesiones/introprog/intro_R_jml.html#primeros-pasos",
+    "title": "Primeros pasos con R",
+    "section": "Primeros pasos",
+    "text": "Primeros pasos\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\nnames(df_mat) &lt;- c('B1', 'B2', 'B3') # Renombra las columnas\n\nrownames(df_mat) # Muestra los nombres de las filas\n\n [1] \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\"\n\nrownames(df_mat) &lt;- LETTERS[1:10] # Renombra las filas con letras en mayúscula\n\nhead(df_mat) # Muestra las primeras filas del 'data.frame'\n\n  B1 B2 B3\nA  1 11 21\nB  2 12 22\nC  3 13 23\nD  4 14 24\nE  5 15 25\nF  6 16 26"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#seleccionar-de-mis-datos",
+    "href": "sesiones/introprog/intro_R_jml.html#seleccionar-de-mis-datos",
+    "title": "Primeros pasos con R",
+    "section": "Seleccionar de mis datos",
+    "text": "Seleccionar de mis datos\n\niris[, 1] # Selecciona la primera columna\n\n  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1\n [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0\n [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5\n [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1\n [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5\n [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3\n[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2\n[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8\n[145] 6.7 6.7 6.3 6.5 6.2 5.9\n\niris[1:6, -1] # Selecciona las primeras 6 filas excluyendo la primera columna\n\n  Sepal.Width Petal.Length Petal.Width Species\n1         3.5          1.4         0.2  setosa\n2         3.0          1.4         0.2  setosa\n3         3.2          1.3         0.2  setosa\n4         3.1          1.5         0.2  setosa\n5         3.6          1.4         0.2  setosa\n6         3.9          1.7         0.4  setosa\n\niris[1:3, ] # Selecciona las primeras 3 filas\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n\niris[-1:-140, ] # Excluye las primeras 140 filas\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n141          6.7         3.1          5.6         2.4 virginica\n142          6.9         3.1          5.1         2.3 virginica\n143          5.8         2.7          5.1         1.9 virginica\n144          6.8         3.2          5.9         2.3 virginica\n145          6.7         3.3          5.7         2.5 virginica\n146          6.7         3.0          5.2         2.3 virginica\n147          6.3         2.5          5.0         1.9 virginica\n148          6.5         3.0          5.2         2.0 virginica\n149          6.2         3.4          5.4         2.3 virginica\n150          5.9         3.0          5.1         1.8 virginica\n\niris[1:6, c(1, 3)] # Selecciona las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Length Petal.Length\n1          5.1          1.4\n2          4.9          1.4\n3          4.7          1.3\n4          4.6          1.5\n5          5.0          1.4\n6          5.4          1.7\n\niris[1:6, -c(1, 3)] # Excluye las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Width Petal.Width Species\n1         3.5         0.2  setosa\n2         3.0         0.2  setosa\n3         3.2         0.2  setosa\n4         3.1         0.2  setosa\n5         3.6         0.2  setosa\n6         3.9         0.4  setosa"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#estadísticos-descriptivos",
+    "href": "sesiones/introprog/intro_R_jml.html#estadísticos-descriptivos",
+    "title": "Primeros pasos con R",
+    "section": "Estadísticos descriptivos",
+    "text": "Estadísticos descriptivos\n\ntable(Species) # Crea una tabla de frecuencia por especie\n\nSpecies\n    setosa versicolor  virginica \n        50         50         50 \n\nsummary(iris) # Resumen estadístico del conjunto 'iris'\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\nsummary(cars) # Resumen estadístico del conjunto 'cars'\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nsd(iris$Sepal.Length) # Desviación estándar de una variable\n\n[1] 0.8280661"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#exportar-datos",
+    "href": "sesiones/introprog/intro_R_jml.html#exportar-datos",
+    "title": "Primeros pasos con R",
+    "section": "Exportar datos",
+    "text": "Exportar datos\nExportar un ‘data.frame’ como archivo CSV (valores separados por ‘comas’).\n\nwrite.table(df_mat, # data.frame\n            'df_mat.csv', # nombre del archivo de salida\n            sep=';', # Separador de columnas\n            dec=',', # Separador decimal\n            col.names=TRUE, # Mantener nombres de las columnas\n            row.names=FALSE) # No guardar nombres de las filas"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
+    "href": "sesiones/introprog/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
+    "title": "Primeros pasos con R",
+    "section": "¿Cómo se haría la función ‘Área del triángulo’?",
+    "text": "¿Cómo se haría la función ‘Área del triángulo’?\n\narea_triangulo &lt;- function(b = 3, h = 5) { # valores por defecto\n  b * h / 2 # Calcula el área de un triángulo\n}\n\narea_triangulo() # Usa los valores por defecto\n\n[1] 7.5\n\narea_triangulo(b = 4) # Especifica un valor diferente para la base\n\n[1] 10"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#leyendas-gráficos-básicos",
+    "href": "sesiones/introprog/intro_R_jml.html#leyendas-gráficos-básicos",
+    "title": "Primeros pasos con R",
+    "section": "Leyendas (gráficos básicos)",
+    "text": "Leyendas (gráficos básicos)\n\n# Crea un gráfico de dispersión coloreado por especie\n\nplot(\n  Sepal.Length,\n  Petal.Length,\n  col = as.factor(Species),\n  xlab = 'Long. Sépalo',\n  ylab = 'Long. Pétalo' \n)\n\n# Agrega una leyenda al gráfico\n\nlegend(7, # Posición en el eje X\n       3, # Posición en el eje Y\n       col = c(1:3),\n       pch = 1, # Símbolo\n       legend = unique(Species)) # Valores únicos de la variable Species"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#usando-ggplot2",
+    "href": "sesiones/introprog/intro_R_jml.html#usando-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Usando ggplot2",
+    "text": "Usando ggplot2\n\n\n\n\n\n\nWarning\n\n\n\nManual de ggplot2\n\n\n\nlibrary(ggplot2)\n\nggplot(data=iris,\n       aes(x = Petal.Length,\n           y = Petal.Width)) +\n  geom_point(aes(color=Species))"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#histogramas-gráficos-básicos",
+    "href": "sesiones/introprog/intro_R_jml.html#histogramas-gráficos-básicos",
+    "title": "Primeros pasos con R",
+    "section": "Histogramas (gráficos básicos)",
+    "text": "Histogramas (gráficos básicos)\n\n# Opción A\n\nindice_versicolor &lt;- Species == 'versicolor' # Índice lógico para filtrar por especie\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n# Opción B\n\nsl_versicolor &lt;- subset(Sepal.Length, Species == 'versicolor') # Otra forma de filtrar\n\nhist(sl_versicolor) # Histograma del subconjunto filtrado"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#exportación-de-gráficos-agrupados",
+    "href": "sesiones/introprog/intro_R_jml.html#exportación-de-gráficos-agrupados",
+    "title": "Primeros pasos con R",
+    "section": "Exportación de gráficos (agrupados)",
+    "text": "Exportación de gráficos (agrupados)\n\n#jpeg('histogramas.jpg')\n\npar(mfrow = c(1, 2)) # Divide la ventana gráfica en una cuadrícula de 1x2\n\nhist(Sepal.Length) # Histograma de todas las longitudes de sépalo\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n#dev.off() # Cierra el dispositivo gráfico (= guarda el fichero)"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#histogramas-ggplot2",
+    "href": "sesiones/introprog/intro_R_jml.html#histogramas-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Histogramas (ggplot2)",
+    "text": "Histogramas (ggplot2)\n\nggplot(data = iris,\n       aes(x = Sepal.Length)) +\n  geom_histogram() +\n  labs( x = \"Longitud del sépalo\",\n        y = \"Frecuencia\",\n        title = \"Histograma longitud del sépalo\") +\n  theme_light()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# ggsave('histograma.png')"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#diagramas-de-cajas-boxplots",
+    "href": "sesiones/introprog/intro_R_jml.html#diagramas-de-cajas-boxplots",
+    "title": "Primeros pasos con R",
+    "section": "Diagramas de cajas (boxplots)",
+    "text": "Diagramas de cajas (boxplots)\n\nboxplot(Sepal.Length ~ Species) # Diagrama de cajas de longitudes de sépalo por especie\n\n\n\n\n\n\n\n# boxplot usando ggplot2\n\nggplot(data = iris,\n       aes(x = Species,\n           y = Sepal.Length,\n           fill = Species)) +\n  geom_boxplot() +\n  labs( x = \"Especies\",\n        y = \"Longitud del sépalo\",\n        title = \"Gráfico de cajas y bigotes\",\n        subtitle = \"Longitud del sépalo por especies\")"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
+    "href": "sesiones/introprog/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
+    "title": "Primeros pasos con R",
+    "section": "Diagramas de barras y lectura de datos",
+    "text": "Diagramas de barras y lectura de datos\n\n\n\n\n\n\nImportant\n\n\n\nbar1_data.csv\n\n\n\nbar1_data &lt;- read.table('data/bar1_data.csv',\n                        sep = ',', # El separador de columnas es la coma\n                        header = T) # La primera fila es el encabezado\n\nstr(bar1_data) # tipos de datos de las columnas del data.frame\n\n'data.frame':   8 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000\n $ value: num  0.755 0.43 0.977 0.959 1.414 ...\n\n\n\nbarplot(bar1_data$value, names.arg = factor(bar1_data$Site)) # Crea un gráfico de barras\n\n\n\n\n\n\n\n# ggplot2\n\nggplot(bar1_data,\n       aes(x = Site,\n           y = value)) +\n  geom_col()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nEjercicio adicional: ¿Cómo leemos el archivo iris.csv?"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#gráficos-de-regresión-lineal",
+    "href": "sesiones/introprog/intro_R_jml.html#gráficos-de-regresión-lineal",
+    "title": "Primeros pasos con R",
+    "section": "Gráficos de regresión lineal",
+    "text": "Gráficos de regresión lineal\n\nlm_pl_sl &lt;- lm(Petal.Length ~ Sepal.Length) # Ajusta un modelo lineal\n\nshapiro.test(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n    Shapiro-Wilk normality test\n\ndata:  lm_pl_sl$residuals\nW = 0.99437, p-value = 0.831\n\nhist(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n\n\n\n\n\nsummary(lm_pl_sl) # Resumen del modelo\n\n\nCall:\nlm(formula = Petal.Length ~ Sepal.Length)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.47747 -0.59072 -0.00668  0.60484  2.49512 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.10144    0.50666  -14.02   &lt;2e-16 ***\nSepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8678 on 148 degrees of freedom\nMultiple R-squared:   0.76, Adjusted R-squared:  0.7583 \nF-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-del-modelo",
+    "href": "sesiones/introprog/intro_R_jml.html#gráfico-del-modelo",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico del modelo",
+    "text": "Gráfico del modelo\n\n# require(ggplot2) # Carga el paquete ggplot2\n\nc &lt;- ggplot(iris,\n            aes(y = Petal.Length,\n                x = Sepal.Length)) # Define un gráfico base\n\nc + stat_smooth(method = lm,\n                colour = \"black\") +\n  geom_point(aes(col = factor(Species))) # Agrega capas al gráfico\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n# ggsave('iris_lm.png') # Guardar gráfico"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-agrupadas",
+    "href": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-agrupadas",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico de barras agrupadas",
+    "text": "Gráfico de barras agrupadas\n\n\n\n\n\n\nImportant\n\n\n\nLee el archivo ‘data/bar2_data.csv’ (contiene más años)\nbar2_data.csv\n\n\n\nbar2_data &lt;- read.table('data/bar2_data.csv',\n                        sep = '|',\n                        header = T) \n\nstr(bar2_data)\n\n'data.frame':   20 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000 2001 2001 ...\n $ value: num  0.755 -0.43 0.977 0.959 1.414 ...\n\n\n\nggplot(bar2_data,\n       aes(x = Site,\n           y = value,\n           fill = factor(year)) # Agrupamos por año\n       ) +\n  geom_col(position = position_dodge(preserve = \"single\"))"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
+    "href": "sesiones/introprog/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico de barras en subfiguras",
+    "text": "Gráfico de barras en subfiguras\n\nggplot(bar2_data, aes(x = Site, y = value)) +\n  geom_col() +\n  facet_wrap( ~ year)"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#preparar-datos-para-ggplot2",
+    "href": "sesiones/introprog/intro_R_jml.html#preparar-datos-para-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Preparar datos para ggplot2",
+    "text": "Preparar datos para ggplot2\n\n\n\n\n\n\nImportant\n\n\n\ndata.csv\n\n\n\nlibrary(reshape2) # Carga la librería reshape\n\ndata&lt;-read.table('data/data.csv',\n                 sep = '\\t',\n                 header = T) # Lee un archivo de datos\n\nhead(data) # Muestra las primeras filas del conjunto de datos\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\ndata_ggplot2 &lt;- melt(data,\n                     id = c('site')) \n\ndata_ggplot2 # Muestra los datos transformados\n\n   site variable      value\n1     a     var1  0.7549967\n2     b     var1 -0.4297789\n3     c     var1  0.9768700\n4     d     var1  0.9594651\n5     e     var1  1.4142136\n6     f     var1  0.3863983\n7     g     var1  0.3980741\n8     a     var2  0.4457979\n9     b     var2 -0.5818249\n10    c     var2  0.1715152\n11    d     var2 -0.7068345\n12    e     var2  1.0907563\n13    f     var2  0.3364102\n14    g     var2  0.4796152\n\ndata_orginal&lt;-dcast(data_ggplot2, site ~ variable) # convertir niveles de una variable en columnas\n\nhead(data_orginal)\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\nhelp(dcast) # función de agregación (similar a tabla pivotante de Excel)"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
+    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 1",
+    "text": "Análisis de la serie de datos 1\n\n\n\n\n\n\nImportant\n\n\n\nDatos: ts.csv\n\n\n\n# devtools::install_github(\"nxskok/mkac\")\n\nlibrary(lubridate)\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\nlibrary(mkac)\n\n# Cargar los datos\ndata&lt;-read.table('data/ts.csv', sep=',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.5     1\n3 2024-01-25   0.6     1\n4 2024-02-10   0.3     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\ntable(data$month)\n\n\n 1  2  3  4  5  6  7  8  9 10 11 12 \n 3  2  3  2  2  2  2  2  2  2  2  3 \n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 0.8228706\n\n$z_star\n[1] 0.8228706\n\n$ratio\n[1] 1\n\n$P_value\n[1] 0.4105816\n\n$P_value_adj\n[1] 0.4105816\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.01666667\n\n# Alternativa (sin pendiente de Sen):\n\n# library(Kendall)\n\n# MannKendall(data_monthly_mean$value)"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
+    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 2",
+    "text": "Análisis de la serie de datos 2\n\n\n\n\n\n\nImportant\n\n\n\nDatos: ts2.csv\n\n\n\n# Cargar los datos\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
+  },
+  {
+    "objectID": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
+    "href": "sesiones/introprog/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 2 (la manera tidyverse)",
+    "text": "Análisis de la serie de datos 2 (la manera tidyverse)\n\n# Cargar las librerías necesarias\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr   1.1.4     ✔ stringr 1.5.1\n✔ forcats 1.0.0     ✔ tibble  3.2.1\n✔ purrr   1.0.2     ✔ tidyr   1.3.1\n✔ readr   2.1.5     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lubridate)\n\n# Cargar los datos\n\n# data &lt;- read_csv('data/ts2.csv') # Crearía un tibble: https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html\n\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\n# Inspeccionar la estructura de los datos\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;chr&gt; \"20/01/2024\", \"22/01/2024\", \"25/01/2024\", \"10/02/2024\", \"24/02/2…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Interpretar las fechas\n\ndata &lt;- data %&gt;% \n  mutate(date = dmy(date))\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;date&gt; 2024-01-20, 2024-01-22, 2024-01-25, 2024-02-10, 2024-02-24, 202…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Graficar la serie temporal\n\ndata %&gt;% \n  ggplot(aes(x = date, y = value)) + \n  geom_point() + \n  labs(title = \"Serie temporal\", x = \"Fecha\", y = \"Valor\")\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata &lt;- data %&gt;% \n  mutate(month = month(date))\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- data %&gt;% \n  group_by(month) %&gt;% \n  summarise(value = mean(value, na.rm = TRUE))\n\n# Graficar las medias mensuales\n\ndata_monthly_mean %&gt;% \n  ggplot(aes(x = month, y = value)) + \n  geom_point() + \n  labs(title = \"Media mensual\", x = \"Mes\", y = \"Valor promedio\")\n\n\n\n\n\n\n\n# Análisis de tendencia con funciones de Kendall y Theil-Sen\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
+  },
+  {
+    "objectID": "sesiones/datos_primarios/primary_search_biodiversity.html",
+    "href": "sesiones/datos_primarios/primary_search_biodiversity.html",
+    "title": "Búsqueda de Datos primarios de Biodiversidad",
+    "section": "",
+    "text": "Ir al portal de datos de http://datos.gbif.es\nRealiza una búsqueda por el nombre de un taxon, e.g. Quercus pyrenaica, en la barra de búsqueda y clica en el botón de búsqueda\n\n\n\n\nGBIF.es\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nLos resultados de la búsqueda se filtran ahora por defecto para excluir los registros de menor calidad de acuerdo con el perfil de datos General de GBIF.ES\n\n\n\n\nUsar perfil de Datos\nAplicar Filtros de Calidad\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPor Perfil de Datos\nUsando campos del estándar Darwin Core (personalizar filtros)\n\n\n\n\n\n\n\n\n\n\nNecesita registro\nCrear cuenta\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPersonalizar Descarga\n\n\n\n\n\n\n\n\n\n\n\n\nHowie Mann\n\n\n\n\n\n\nI Mini Taller portal de GBIF Internacional (05/03/2014)\n\n\n\n\nhttps://api.gbif.org/v1/species/match?name=Quercus pyrenaica\n\nURL base: https://api.gbif.org/v1\nGrupo/Namespace que queremos consultar: species, occurrences, etc. Mas información en documentación de Referencia\nFunción: funcionalidad a usar: buscar (search), coincidencia (match), etc.\nParámetro: los parámetros para nuestra llamada: e.g. name.\nconsulta: la consulta dentro de dicho parámetro\n\n\n\n\n\n\nDocumentación de Referencia\nTutorial para principiantes\n\n\n\n\n\n\n\n{\n  \"usageKey\": 2878826,\n  \"scientificName\": \"Quercus pyrenaica Willd.\",\n  \"canonicalName\": \"Quercus pyrenaica\",\n  \"rank\": \"SPECIES\",\n  \"status\": \"ACCEPTED\",\n  \"confidence\": 97,\n  \"matchType\": \"EXACT\",\n  \"kingdom\": \"Plantae\",\n  \"phylum\": \"Tracheophyta\",\n  \"order\": \"Fagales\",\n  \"family\": \"Fagaceae\",\n  \"genus\": \"Quercus\",\n  \"species\": \"Quercus pyrenaica\",\n  \"kingdomKey\": 6,\n  \"phylumKey\": 7707728,\n  \"classKey\": 220,\n  \"orderKey\": 1354,\n  \"familyKey\": 4689,\n  \"genusKey\": 2877951,\n  \"speciesKey\": 2878826,\n  \"synonym\": false,\n  \"class\": \"Magnoliopsida\"\n}\n\n\n\n\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA\n\n\n\n\n\n\n\n\n\n\nhttps://registros-ws.gbif.es/occurrences/search?q=lsid%3A2878826&qualityProfile=LA\n\n\n\n\n\n\n\n\n\n\nSimple\nAvanzada\nPor nombres científicos (lotes)\nPor números de catálogo\nEventos\nEspacial (Área)\n\n\n\n\n\n\n\n\n\n\n\n\n\nDibujar un área de interés\nImportar un área:\n\nformato WKT (Well Known Text)\n\nRegiones definidas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinir area usando un archivo WKT\n\n\n\n\n\n\n\n\n\n\nIr a Regiones o visitar https://regiones.gbif.es/\n\n\n\n\n\n\n\n\n\n\nSeleccionar Región Definida\n\n\n\n\n\n\n\n\n\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html",
+    "href": "sesiones/repro/repro_git.html",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "",
+    "text": "phdcomic\n\n\n\n\nScott Adams\n\n\n\n\nphdcomic\n\n\nEl control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que podamos recuperar versiones específicas más adelante\n\nSe puede utilizar sobre cualquier archivo.\nPermite:\n\nRevertir archivos (proyecto) a un estado anterior\nComparar cambios a lo largo del tiempo\n\n\nFacilita la identificación de errores\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProGit book\nOtros:\n\nSubversion\nConcurrent Version System CVS\n\n\n\n\n\nSistema avanzado de control de versiones distribuido\nPermite rastrear el progreso de un proyecto mediante capturas\n\n¿Qué cambios?\n¿Dónde?\n¿Quién los hizo?\n¿Por qué?\n\n\n\n\n\n\nDevon Wijesinghe\n\n\n\n\n\n\nUn website donde alojar repositorios\nInterfaz para explorar repositorios\nPermite colaborar de una forma más eficaz:\n\nCompartir repositorio\nVer cambios\nCorregir errores\nDiscutir y Revisar cambios\n\n\n\n\n\n\n\n\n\nhttps://github.com/\n\n\n\n\n\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github\n\n\n\n\n\n\n\nArtwork by Allison_horst\n\n\n\n\n\n\nT. Meralus\n\n\n\n\nInstala Git en tu ordenador. Puedes usar la documentación oficial\n\n\n\n\n\n\nCódigo\nEjemplo\n\n\n\ngit config --global user.name \ngit config --global user.email \n\n\ngit config --global user.name \"Fulanito Menganito\"\ngit config --global user.email micorreo@gmail.com\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVamos a usar Github, por tanto la dirección de correo que indiques ha de ser la misma con la que te registres en GitHub.\n\n\n\nEn cualquier momento podemos ver las opciones de configuración\n\ngit config --list\n\n\n\nAbre la consola de comandos\n\nCrea un directorio nuevo y ábrelo1\n\n\nmkdir &lt;nombre_directorio&gt;\n\nmkdir datos\ncd datos\n\n\nPara iniciar un repositorio utilizamos el comando\n\ngit init nombrerepositorio\ngit init mi_primer_repositorio\n\n\n\n\n\n\nNote\n\n\n\n¿Que ha ocurrido en nuestro directorio?\n\n\n\nInspeccionar el directorio\n\ncd mi_primer_repositorio\nls -a \ncd .git\n\n\nCrea un archivo de texto dentro del directorio, escribe algo y nómbralo miarchivo.txt\nAñade el archivo a la staging area\n\ngit add &lt;nombre_archivo&gt;\ngit add miarchivo.txt\n\nSi quiero añadir todos los archivos\n\ngit add . \n\ngit commit -m \"Commit message\"\"\n\n\n\n\n\n\nImportant\n\n\n\nEl mensaje nos servirá para indicar lo que hemos hecho.\n\n\nRecomendaciones de buenas prácticas para commits\nAlgunas convenciones para commits\n\n\n\ngit commit -m \"Escribo mis datos personales en archivo\"\n\n[master (root-commit) 71fe224] Escribo mis datos personales en archivo\n 1 file changed, 2 insertions(+)\n create mode 100644 miarchivo.txt\n\n\n\nAllison_horst\n\n\n\n\nAllison_horst\n\n\n\n\nT. Meralus\n\n\n\nNuestros cambios están en el HEAD (copia local)\nQueremos enviar los cambios a un repositorio remoto\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNecesitamos un repositorio remoto (GitHub):\n\nCrear\nClonar\n\n\n\ngit remote add origin &lt;url server&gt;\n\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git\n\n\n\n\n\nJulen Astigarraga\n\n\n\n\nJulen Astigarraga\n\n\n URL: https://github.com/ajpelu/teach_git_ejemplo.git\n\ngit remote add origin &lt;url server&gt;\ngit remote add origin https://github.com/ajpelu/teach_git_ejemplo.git\n\n\n\nPara enviar cambios (una vez conectados) a un repositorio remoto\nNos pedirá usuario y contraseña\n\n\ngit push origin master\n\n\n\n\n\n\nWarning\n\n\n\ngit push origin\ngit push origin master\n¿Qué rama queremos sincronizar?\n\n\n\n\n\n\n\n\n\n\nImportante para reproducibilidad\nColaboración\nRepositorio remoto (GitHub)\n2 formas (diferencias)\n\n\n\nHTTPS\nSSH\n\n\n\n# git clone &lt;url&gt; \ngit clone https://github.com/ajpelu/teach_git_ejemplo.git \n\n\n# git clone username@host:/path/to/repository\ngit clone git@github.com:ajpelu/teach_git_ejemplo.git \n\n\n\n\n\n\nAllison_horst\n\n\n\n¿Existe alguna información nueva en mi repositorio remoto?\n\ngit fetch  \n\n¿Existe alguna información nueva en mi repositorio remoto y quiero que esté en mi repositorio local?\n\ngit pull  \n\n\n\n\n\n\nWarning\n\n\n\n\nPrestar atención a la rama!!\n\ngit pull origin master \n\n\n\n\n\n\n\n\n\n\nGit for Windows\n\n\n\nClientes de git GUI (Guest User Interfaces)\n\n\n\n\n\n\nhttps://happygitwithr.com/\n\n\n\n\nHappy Git and Gihub for the useR Tutorial - Posit\n\n\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Control de Versiones con Git y GitHub. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+  },
+  {
+    "objectID": "sesiones/repro/repro_git.html#footnotes",
+    "href": "sesiones/repro/repro_git.html#footnotes",
+    "title": "Control de Versiones con Git y GitHub",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nAyuda sobre comandos↩︎"
   }
 ]
