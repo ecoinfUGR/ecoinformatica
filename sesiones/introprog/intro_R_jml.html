@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Javier Martínez-López">
-<meta name="dcterms.date" content="2024-12-23">
+<meta name="dcterms.date" content="2025-01-02">
 
 <title>Primeros pasos con R – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 23, 2024</p>
+      <p class="date">January 2, 2025</p>
     </div>
   </div>
   
@@ -459,7 +459,7 @@ citing R packages.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">5</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>) <span class="co"># Números aleatorios</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 60.30072 35.35508 42.23538 75.88020 12.10621</code></pre>
+<pre><code>[1] 92.62206 94.21360 68.87264 36.36304 22.18688</code></pre>
 </div>
 </div>
 </section>
@@ -947,7 +947,19 @@ F  6 16 26</code></pre>
 </section>
 <section id="usando-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="usando-ggplot2">Usando ggplot2</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><a href="https://ggplot2.tidyverse.org/reference/">Manual de ggplot2</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1069,7 +1081,19 @@ F  6 16 26</code></pre>
 </section>
 <section id="diagramas-de-barras-y-lectura-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="diagramas-de-barras-y-lectura-de-datos">Diagramas de barras y lectura de datos</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><a href="data/bar1_data.csv">bar1_data.csv</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>bar1_data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'data/bar1_data.csv'</span>,</span>
 <span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">sep =</span> <span class="st">','</span>, <span class="co"># El separador de columnas es la coma</span></span>
@@ -1106,9 +1130,19 @@ F  6 16 26</code></pre>
 </div>
 </div>
 </div>
-<ul>
-<li>Ejercicio adicional: ¿Cómo leemos el archivo <a href="data/iris.csv">iris.csv</a>?</li>
-</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ejercicio adicional: ¿Cómo leemos el archivo <a href="data/iris.csv">iris.csv</a>?</p>
+</div>
+</div>
 </section>
 <section id="gráficos-de-regresión-lineal" class="level2">
 <h2 class="anchored" data-anchor-id="gráficos-de-regresión-lineal">Gráficos de regresión lineal</h2>
@@ -1181,8 +1215,20 @@ F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
 <section id="gráfico-de-barras-agrupadas" class="level2">
 <h2 class="anchored" data-anchor-id="gráfico-de-barras-agrupadas">Gráfico de barras agrupadas</h2>
-<p><strong>Ejercicio: lee el archivo ‘data/bar2_data.csv’</strong> (contiene más años)</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lee el archivo ‘data/bar2_data.csv’ (contiene más años)</p>
 <p><a href="data/bar2_data.csv">bar2_data.csv</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>bar2_data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'data/bar2_data.csv'</span>,</span>
 <span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">sep =</span> <span class="st">'|'</span>,</span>
@@ -1229,7 +1275,19 @@ F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
 <section id="preparar-datos-para-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="preparar-datos-para-ggplot2">Preparar datos para ggplot2</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><a href="data/data.csv">data.csv</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># Carga la librería reshape</span></span>
 <span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1288,7 +1346,19 @@ F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h1>Test de tendencias de series temporales (<a href="https://github.com/nxskok/mkac">Mann-Kendall</a>)</h1>
 <section id="análisis-de-la-serie-de-datos-1" class="level2">
 <h2 class="anchored" data-anchor-id="análisis-de-la-serie-de-datos-1">Análisis de la serie de datos 1</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Datos: <a href="data/ts.csv">ts.csv</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("nxskok/mkac")</span></span>
 <span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1392,7 +1462,19 @@ $P_value_adj
 </section>
 <section id="análisis-de-la-serie-de-datos-2" class="level2">
 <h2 class="anchored" data-anchor-id="análisis-de-la-serie-de-datos-2">Análisis de la serie de datos 2</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Datos: <a href="data/ts2.csv">ts2.csv</a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar los datos</span></span>
 <span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'data/ts2.csv'</span>, <span class="at">sep =</span> <span class="st">','</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
