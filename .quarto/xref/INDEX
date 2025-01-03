@@ -73,5 +73,11 @@
   },
   "sesiones/datos_primarios/primary_search_biodiversity.qmd": {
     "primary_search_biodiversity.html": "deef0fb2"
+  },
+  "sesiones/programacion/bucles.qmd": {
+    "bucles.html": "4a2bc3b1"
+  },
+  "sesiones/programacion/secuencias_control.qmd": {
+    "secuencias_control.html": "d9958414"
   }
 }
