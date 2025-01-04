@@ -1,0 +1,388 @@
+---
+title: "Pipe programming"
+author: 
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-03-04
+sesion: 2
+format: 
+  revealjs:
+    auto-stretch: false 
+    logo: "images/logo-ugr.png"
+    footer: Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad
+    theme: [default, "../../custom_theme.scss"] 
+    transition: fade
+    background-transition: fade
+    highlight-style: a11y
+code-link: true
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+code-annotations: hover
+execute:
+  echo: true     
+  eval: true     
+  output: true   
+  include: true
+---
+
+
+## ¿Pipe programming?
+
+![Source: [Numbers around us](https://www.r-bloggers.com/2024/04/navigating-the-data-pipes-an-r-programming-journey-with-mario-bros/)](images/pipe_mario.jpg){fig-align="center" width=50%}
+
+---
+
+- **pipe** (tubería) es una técnica de programación que permite encadenar funciones de manera secuencial
+- Permite pasar información de un proceso o comando a otro de manera ordenada y secuencial 
+- Es un proceso de comunicación entre los procesos de una sola vía
+- La salida de un proceso se convierte en la entrada del siguiente proceso
+
+
+---
+
+![Source: [Arthur Welle](https://github.com/arthurwelle/VIS/blob/master/Pipe_Cake/Pipe_baking.gif)](images/pipe_baking_r.gif){fig-align="center" width=50%}
+
+--- 
+
+## Ejemplo {footer=false}
+
+::: small 
+
+::: {.panel-tabset}
+
+### Modo tradicional
+```{r}
+set.seed(123) 
+x <- runif(10) 
+x 
+
+x_sort <- sort(x) 
+x_log <- log(x_sort) 
+x_diff <- diff(x_log) 
+x_exp <- exp(x_diff) 
+ybase <- cumsum(x_exp) 
+ybase
+
+# ybase <- cumsum(exp(diff(log(sort(x)))))
+```
+
+
+### Pipe
+```{r}
+ypipe <- x |> 
+  sort() |>     
+  log() |>      
+  diff() |>    
+  exp() |>      
+  cumsum()
+
+ypipe
+```
+
+:::
+
+::: 
+
+## Tipos de pipes
+
+:::: {.columns}
+
+::: {.column width="50%"}
+1. **magrittr** 
+
+```{.r}
+%>%
+```
+
+<br> 
+```{.r}
+library(magrittr)
+```
+![](images/pipe_magrittr.png){fig-align="left" width=20%}
+
+:::
+
+::: {.column width="50%"}
+2. **R base** 
+
+```{.r}
+|> 
+```
+:::
+::::
+
+## ¿Cómo incluir pipes en el código? 
+
+::: {.callout-tip}
+### Windows
+
+`Ctrl + Shift + M`
+::: 
+
+<br>
+
+::: {.callout-tip}
+### Mac
+`Cmd + Shift + M`
+::: 
+
+## Mas ejemplos {footer=false} 
+
+::: small
+
+- Calcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela
+
+::: {.panel-tabset} 
+
+## Código 
+```{.r}
+dbh <- c(5.0, 70.2, 7.0, 95.5, 87.3, 6.8, 65.0, 110.5, 80.5, 120.0) #<1>
+
+dbh_filtrado <- subset(dbh, dbh > 7.5) #<2>
+
+area_basal <- pi * (dbh_filtrado / 200)^2 #<3>
+
+h <- hist(area_basal,
+  main = "Histograma", #<4>
+  xlab = expression("Área Basal (" * m^2 * ")"), #<4>
+  ylab = "Frecuencia"
+) #<4>
+
+```
+
+1. Crear un vector de DBH (diámetros en cm)
+2. Filtrar valores de DBH mayores de 7.5 cm
+3. Calcular el área basal (en cm²) para cada valor filtrado
+4. Generar un histograma de las áreas basales
+
+## Gráfico 
+
+```{r}
+#| echo: false 
+dbh <- c(5.0, 70.2, 7.0, 95.5, 87.3, 6.8, 65.0, 110.5, 80.5, 120.0) 
+
+dbh_filtrado <- subset(dbh, dbh > 7.5)
+
+area_basal <- pi * (dbh_filtrado / 200)^2 
+
+hist(area_basal, main = "Histograma",
+          xlab= expression("Área Basal (" * m^2 * ")"), 
+     ylab = "Frecuencia") 
+```
+
+
+::: 
+
+:::
+
+--- 
+
+## Mas ejemplos {footer=false} 
+
+::: small
+
+- Calcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela
+
+::: {.panel-tabset} 
+
+## Pipe `%>%` 
+```{.r}
+library(magrittr)
+dbh %>%
+  subset(. > 7.5) %>%  
+  {(pi * (. / 200)^2)} %>%                     
+  hist(                                      
+    main = "magrittr",
+    xlab = expression("Área Basal (" * m^2 * ")"),
+    ylab = "Frecuencia",
+    col = "lightblue"
+  )
+
+```
+
+## Gráfico `%>%` 
+
+```{r}
+#| echo: false 
+library(magrittr)
+dbh %>%
+  subset(. > 7.5) %>%                             
+  {pi * (. / 200)^2} %>%                     
+  hist(                                      
+    main = "magrittr",
+    xlab = expression("Área Basal (" * m^2 * ")"),
+    ylab = "Frecuencia",
+    col = "lightblue"
+  )
+```
+
+
+## Pipe `|>` 
+```{.r}
+dbh |>
+  (\(x) subset(x, x > 7.5))() |>
+  (\(x) pi * (x / 200)^2)() |>
+  hist(
+    main = "R pipe",
+    xlab = expression("Área Basal (" * m^2 * ")"),
+    ylab = "Frecuencia",
+    col = "blue",
+  )
+```
+
+## Gráfico `|>` 
+
+```{r}
+#| echo: false 
+dbh |>
+  (\(x) subset(x, x > 7.5))() |>
+  (\(x) pi * (x / 200)^2)() |>
+  hist(
+    main = "R pipe",
+    xlab = expression("Área Basal (" * m^2 * ")"),
+    ylab = "Frecuencia",
+    col = "blue",
+  )
+```
+
+
+::: 
+
+:::
+
+--- 
+
+## Práctica {footer=false}
+::: small
+Calcular la altura media de los árboles de *Pinus pinaster*  
+
+
+```{r}
+library(tibble)
+
+pinos <- tibble(
+  id = 1:10,
+  especie = c("sylvestris", "nigra", "pinaster", "sylvestris", "nigra",
+              "pinaster", "sylvestris", "nigra", "pinaster", "sylvestris"),
+  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), 
+  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) 
+)
+
+pinos
+```
+
+:::
+
+--- 
+
+::: {.panel-tabset}
+## Flujo "clásico"
+```{r}
+# Encadena funciones 
+  
+mean(subset(pinos, especie == "pinaster")$altura_m)
+```
+<br>
+
+```{r}
+# Crea objetos temporales 
+pinaster <- pinos[pinos$especie == "pinaster", ] 
+altura_media_pinaster <- mean(pinaster$altura_m)
+altura_media_pinaster 
+```
+
+## Pipe (`magrittr`)
+
+```{r}
+library(magrittr)
+
+altura_media_pinaster <- pinos %>%
+  subset(especie == "pinaster") %>%
+  .$altura_m %>% 
+  mean() 
+
+altura_media_pinaster
+```
+
+## Pipe (R)
+
+```{r}
+altura_media_pinaster <- 
+
+pinos |>
+  subset(especie == "pinaster") |>
+  (\(.) mean(.$altura_m))() 
+  
+
+pinos |>
+  subset(especie == "pinaster") |>
+  (\(data) mean(data$altura_m))() 
+  
+```
+
+:::
+
+## ¿Como podría calcular la altura media por especie? 
+
+```{r}
+#| code-fold: true
+#| results: hide
+library(dplyr)
+  
+pinos |> 
+  group_by(especie) |> 
+  summarise(altura_media = mean(altura_m))
+```
+
+--- 
+
+#### ¿Y solo de aquellos individuos que tengan DBH > 7.5 cm? ¿y cuantos son?
+```{r}
+#| code-fold: true
+#| results: hide
+  
+pinos |> 
+  filter(dbh_cm > 7.5) |>
+  group_by(especie) |> 
+  summarise(altura_media = mean(altura_m), 
+            n = n())
+```
+
+
+
+## Recursos
+- [What is a pipe in computer programming?](https://www.techtarget.com/whatis/definition/pipe)
+- [Pipeline (Wikipedia)](https://en.wikipedia.org/wiki/Pipeline_(software)) 
+- [Pipes in R Tutorial For Beginners](https://www.datacamp.com/tutorial/pipe-r-tutorial)
+- [Navigating the Data Pipes: An R Programming Journey with Mario Bros](https://www.r-bloggers.com/2024/04/navigating-the-data-pipes-an-r-programming-journey-with-mario-bros/)
+- [Understanding the native R pipe](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/)
+- [How to use pipes](https://www.rforecology.com/post/how-to-use-pipes/)
+- [Intro R piping, by Molowny-Horas](https://emf.creaf.cat/training/r_basics/)
+
+
+## ¿Alguna duda?
+
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
+
+
+- [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
+
+
+<small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small>
+
+![](images/logo-jdc.png){fig-align="center" width=40%}
+
+
+::: {.callout-tip}
+## Si usas esta presentación puedes citarla como:
+<small>**Pérez-Luque, A.J. **(2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+:::
