@@ -5,7 +5,10 @@
   },
   {
     "listing": "/modulos/programacion.html",
-    "items": []
+    "items": [
+      "/sesiones/programacion/piping.html",
+      "/sesiones/programacion/secuencias_control.html"
+    ]
   },
   {
     "listing": "/modulos/introduccion.html",

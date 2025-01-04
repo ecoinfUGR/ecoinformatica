@@ -28,7 +28,7 @@
     "href": "modulos/programacion.html",
     "title": "Introducción a la Programación",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n2\n\n\nPipe programming\n\n\nTue, Mar 04\n\n\n\n\n2\n\n\nEstructuras de Control en Programación (R y Python)\n\n\nTue, Mar 04\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/programacion.html#recursos",
@@ -595,6 +595,230 @@
     "title": "Creación de un mapa de biodiversidad de Sierra Nevada",
     "section": "",
     "text": "Objetivos\nEsta práctica tiene los siguientes objetivos:\n\nDisciplinares:\n\nReconocer el concepto de biodiversidad ya estudiado en en otras ocasiones.\nAprender un método para cuantificar la diversidad biológica: Índice de Shannon.\nAprender a generar mapas de diversidad biológica: Mapas de distribución del índice de Shannon.\nReconocer patrones de distribución de la diversidad en un territorio concreto.\nIdentificar las causas de los patrones anteriores.\n\nInstrumentales:\n\nAfianzar nuestro conocimiento de SIG.\nMejorar nuestro conocimiento de R.\nAprender la forma en la que obtenemos un mapa de distribución de una variable continua a partir de datos tomados de forma discreta.\n\n\n\n\nContextualización ecológica y estructura de la sesión\nPara cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Weaver, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:\n\nDelimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.\nListado de especies existente en esa comunidad.\nAbundancia de cada especie en dicha comunidad.\n\n\nPara alcanzar los objetivos planteados, procederemos de la siguiente forma:\n\nEn primer lugar aprenderemos la mecánica del cálculo del mapa de diversidad a una escala de 250 m en el espacio protegido de Sierra Nevada (Sur de España). Es decir, asumiremos que una comunidad ecológica es una entidad de forma cuadrangular con un lado de 250 m. Esto no es así en la realidad, pero es la aproximación más fácil que tenemos a nuestro alcance.\nUna vez obtenido este mapa, trataremos de estudiar los patrones de cambio espacial de dicha diversidad. También identificaremos los factores abióticos que explican dichos patrones espaciales.\n\n\n\nObtención de un mapa de biodiversidad: Metodología y flujo de trabajo\nComo se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:\n(1) Información de distribución de especies en la zona de estudio (Sierra Nevada):\nEs el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon.\nPara conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada GBIF (Global Biodiversity Information Facility).\nSe trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta.\nEsta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra.\nAccederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada.\nDurante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor.\nPasos para descargar manual la base de datos de especies en GBIF desde el portal web:\n\nUsando el navegador web entramos en gbif.org y elegimos la opción ‘Get data’ y ‘Occurrences’.\n\n\n\nEn ‘Location’ haz clic en ‘Geometry’:\n\n\n\nCopia y pega el contenido del archivo con el perímetro del parque natural de Sierra Nevada. Este archivo usa el formato de coordenadas Well Known Text (WKT).\nDespués haz clic en ‘ADD’. Verás la lista de ocurrencias en forma de tabla, así como en el mapa (si cambias a la pestaña ‘MAP’).\n\n\n\nHaz clic en la pestaña ‘DOWNLOAD’ y elige el format ‘SIMPLE’ para descargar los datos (se necesita estar registrado).\n\n\n\nAl descargar los datos, verás un resumen de los mismos y se generará un DOI para citarlos correctamente. Puedes descargar la cita en cualquier formato para usarla con un gestor de referencias.\n\n\nLos datos de presencia de especies tienen el siguiente “aspecto” cuando son visualizados en QGIS.\nAquí puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos…\n\n(2) Distribución de las comunidades ecológicas que conforman Sierra Nevada:\nEste paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra.\nEn este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado.\nA partir de esta información obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon.\nEn la siguiente figura puedes ver la distribución de presencias de especies en unas cuantas comunidades.\n\nPara ello seguiremos el siguiente flujo de trabajo (ya descrito a grandes rasgos en la presentación introductoria):\n\nImportamos el archivo csv de GBIF con sus atributos geográficos.\nConvertimos la tabla importada a un objeto geográfico tipo sf.\nCreamos una malla de 250 m con la extensión y sistema de coordenadas de la capa de presencias.\nAsignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.\nCalcular el número de individuos por especie y por cuadrícula.\nCalcular el número total de individuos por cuadrícula.\nCalcular la proporción de individuos (pi) por especie y por cuadrícula.\nCalcular el log2 pi por especie y por cuadrícula.\nCalcular H por cuadrícula.\nExportamos la capa de la malla obtenida a un fichero de formas para visualizarlo en QGIS.\n\nEste script de R genera un mapa del índice de Shannon en cuadrículas de 250x250 m a partir de los datos de presencias de especies existentes en GBIF.\n\n# Instalar y cargar los paquetes necesarios\n\ninstall.packages(\"sf\")\n\nlibrary(sf)\n\n# install.packages(\"dplyr\")\n\nlibrary(dplyr)\n\n# Importamos el archivo csv de GBIF con sus atributos geográficos\n\npresencias &lt;- read.delim(\"0002064-240130105604617.csv\", quote = '')\n\n# Convertimos la tabla importada a un objeto geográfico tipo sf\n\npresencias_geo &lt;- st_as_sf(\n  presencias,\n  coords = c(\"decimalLongitude\", \"decimalLatitude\"),\n  crs = 4326\n)\n\n# Reproyectamos la capa creada al sistema de coordenadas EPSG:23030 (UTM)\n\npresencias_geo_23030 &lt;- st_transform(presencias_geo, crs = 23030)\n\n# Creamos una malla de 250 m con la extensión y sistema de coordenadas de la capa de presencias\n\ngrid_250m &lt;- st_make_grid(presencias_geo_23030, cellsize = c(250, 250))\n\n# Transformamos la malla obtenida (tipo sfc) a tipo espacial sf\n\ngrid_250m_sf &lt;- st_sf(geometry = grid_250m)\n\n# Añadimos un campo llamado id_250 a la malla. Le incluimos valores secuenciales desde 1.\ngrid_250m_sf$id_250 &lt;- seq(1, 55125, by = 1)\n\n# Asignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.\npresencias_x_grid &lt;- st_join(presencias_geo_23030, left = FALSE, grid_250m_sf)\n\n# Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. \n\nbio &lt;- as.data.frame(presencias_x_grid)\n\nbio &lt;- bio[c('id_250', 'scientificName')]\n\n# Calcular el número de individuos por especie y por cuadrícula (num_ind_sp_cuad)\n\nT_num_ind_sp_cuad &lt;- bio %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250, scientificName) %&gt;%    #group the calculations by id_250 + scientificName\n  summarize(`num_ind_sp_cuad` = length(scientificName))\n\n# Calcular el número total de individuos por cuadrícula.\n\nT_num_ind_cuad &lt;- bio %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250) %&gt;%    #group the calculations by id_250\n  summarize(`num_ind_cuad` = n())\n\n# Fusionar las tablas anteriores para calcular Pi\n\nT_num_ind_sp_cuad_mas_num_ind_cuad &lt;- merge(T_num_ind_sp_cuad, T_num_ind_cuad)\n\n# Calcular pi por especie y por cuadrícula.\n\nT_num_ind_sp_cuad_mas_num_ind_cuad$pi &lt;- T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_sp_cuad /\n  T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_cuad\n\n# Calcular el log2 pi por especie y por cuadrícula.\n\nT_num_ind_sp_cuad_mas_num_ind_cuad$lnpi_pi&lt;-log2(T_num_ind_sp_cuad_mas_num_ind_cuad$pi)*T_num_ind_sp_cuad_mas_num_ind_cuad$pi\n\n# Calcular H por cuadrícula\n\nT_Shannon &lt;- T_num_ind_sp_cuad_mas_num_ind_cuad %&gt;%    #create a new data table of the aggregated data\n  group_by(id_250) %&gt;%    #group the calculations by id_250 \n  summarize(`H` = sum(lnpi_pi)*(-1))\n\n# Fusionar la tabla que tiene el índice de Shannon con la malla de cuadrículas.\n\ngrid_250m_sf &lt;- merge(x = grid_250m_sf,\n                      y = T_Shannon,\n                      by.x = \"id_250\",\n                      by.y = \"id_250\")\n\n# Exportamos la capa de la malla obtenida a un fichero de formas para visualizarlo en QGIS.\n\nst_write(grid_250m_sf, \"Shannon_250_sierra_nevada.shp\", append = FALSE)\n\nUna vez abierto el archivo en QGIS, debemos darle una paleta de colores para visualizar los valores del índice de Shannon (columna H) correctamente:\n\n\n\nResultados esperables\nEl siguiente mapa de ejemplo muestra el resultado obtenido en una práctica anterior.\nSe trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada cuadrícula de la malla de 250 m.\n\nEn el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada.\nDurante la práctica reflexionamos sobre dichos patrones:\n\n¿Cómo cambia la diversidad al aumentar la altitud? ¿A qué se puede deber dicho patrón?\n¿Crees que se repetiría el mismo patrón en otras montañas de la Tierra?\n¿Ves algún sesgo espacial en los datos de GBIF?\n¿Hay algún patrón de cambio de diversidad en dirección Este-Oeste? En caso afirmativo, ¿a qué puede deberse?\n\n\n\nRecursos adicionales\nEn este vídeo de Francisco Javier Bonet (UCO) podéis ver la discusión de los resultados obtenidos en una sesión anterior.\nEvaluamos patrones de distribución espacial de la diversidad y tratamos de identificar las variables que explican dichos patrones."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#introducción",
+    "href": "sesiones/programacion/secuencias_control.html#introducción",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Introducción",
+    "text": "Introducción\n\nEstructuras de control: Herramientas fundamentales en programación que permiten modificar el flujo de ejecución de un programa según ciertas condiciones o repeticiones.\nSon esenciales para tomar decisiones dinámicas, realizar acciones repetitivas y dirigir cómo se ejecuta el código, haciéndolo más flexible y adaptable."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#tipos-de-estructuras-de-control",
+    "href": "sesiones/programacion/secuencias_control.html#tipos-de-estructuras-de-control",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Tipos de Estructuras de Control",
+    "text": "Tipos de Estructuras de Control\n\n\n\nEstructuras Secuenciales: Ejecutan instrucciones una tras otra\nEstructuras de Selección (Condicionales): Permiten que un bloque de código se ejecute o no, en función de una condición. Dependiendo de si una condición es TRUE o FALSE, el algoritmo toma un camino u otro. Tipos:\n\nSimple: Una única condición (if).\nDoble: Incluye una alternativa (if-else).\nMúltiple: Varias alternativas posibles (switch).\n\nEstructuras de Iteración (Bucles): Permiten repetir un bloque de código varias veces mientras se cumpla una condición o sobre una secuencia de elementos. Tipos:\n\nfor: Itera sobre una secuencia conocida.\nwhile: Repite mientras una condición sea TRUE.\nrepeat: Ejecuta indefinidamente hasta que se use un break para detenerlo."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#ejemplo-práctico",
+    "href": "sesiones/programacion/secuencias_control.html#ejemplo-práctico",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Ejemplo práctico",
+    "text": "Ejemplo práctico\n\n\nSe han muestreando diferentes plots circulares en pinares de repoblación para evaluar la densidad de plantación\nEn cada plot (de radio variable) anotamos el número de individuos de cada especie\n¿podrías escribir un código que calcule el área muestreada en cada plot?\n\n\nCreación de un tibble con los datosVista del tibble\n\n\n\nlibrary(tibble)\npinares &lt;- tibble(\n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n\n\n\n\npinares\n\n# A tibble: 5 × 3\n  id_plot radio_m n_individuos\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 syl1          5           10\n2 syl2          6           12\n3 nig1          7           15\n4 nig2          8           18\n5 nig3          9           20"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#solucionario",
+    "href": "sesiones/programacion/secuencias_control.html#solucionario",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Solucionario",
+    "text": "Solucionario\n\nSol1. generar objetos para cada radio. Inconvenientes: código repetitivo y poco eficiente. Facilidad de cometer errores. Sol2. Crear una nueva columna en el tibble con el área de cada plot. Más eficiente y menos propenso a errores. Sol3. Crear una función que calcule el área de un plot y aplicarla a cada radio. Más eficiente y reutilizable.\n\n\n\nSol. 1Sol. 2Sol. 3Bucles\n\n\n\nradios &lt;- pinares$radio_m\n\narea1 &lt;- pi * radios[1]^2\nprint(area1)\n\n[1] 78.53982\n\narea2 &lt;- pi * radios[2]^2\nprint(area2)\n\n[1] 113.0973\n\narea3 &lt;- pi * radios[3]^2\nprint(area3)\n\n[1] 153.938\n\narea4 &lt;- pi * radios[4]^2\nprint(area4)\n\n[1] 201.0619\n\narea5 &lt;- pi * radios[5]^2\nprint(area5)\n\n[1] 254.469\n\n\n\n\n\npinares$area_m2 &lt;- pi * pinares$radio_m^2\n\npinares\n\n# A tibble: 5 × 4\n  id_plot radio_m n_individuos area_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;\n1 syl1          5           10    78.5\n2 syl2          6           12   113. \n3 nig1          7           15   154. \n4 nig2          8           18   201. \n5 nig3          9           20   254. \n\n\n\n\n\ncalcula_area &lt;- function(x) {\n  return(pi * x^2)\n}\n\npinares$area2_m2 &lt;- sapply(pinares$radio_m, calcula_area)\npinares\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos area_m2 area2_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10    78.5     78.5\n2 syl2          6           12   113.     113. \n3 nig1          7           15   154.     154. \n4 nig2          8           18   201.     201. \n5 nig3          9           20   254.     254. \n\n\n\n\n\nfor (i in pinares$radio_m) {\n  print(pi * i^2)\n}\n\n[1] 78.53982\n[1] 113.0973\n[1] 153.938\n[1] 201.0619\n[1] 254.469"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#uso-de-bucles",
+    "href": "sesiones/programacion/secuencias_control.html#uso-de-bucles",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Uso de bucles",
+    "text": "Uso de bucles\n¿Qué son los bucles en programación?\n\nSon secuencias código que se ejecutan repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse\n\n¿Por qué usarlos?\n\nPara iterar sobre elementos de un conjunto de datos.\nPara automatizar tareas repetitivas.\nPara realizar cálculos iterativos."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#tipos-de-bucles",
+    "href": "sesiones/programacion/secuencias_control.html#tipos-de-bucles",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Tipos de bucles:",
+    "text": "Tipos de bucles:\n\nfor: Iteraciones sobre elementos definidos.\nwhile: Iteraciones controladas por una condición.\nrepeat: Repeticiones indefinidas con una interrupción explícita."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#for-loop-iteraciones-determinadas",
+    "href": "sesiones/programacion/secuencias_control.html#for-loop-iteraciones-determinadas",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "for loop: iteraciones determinadas",
+    "text": "for loop: iteraciones determinadas\nEjecuta un bloque de código para cada elemento de una secuencia predefinida.\nfor (item in list_of_items) { \n\ndo_something(item)\n\n}\nEjemplo:\n\nRPython\n\n\nfor (i in 1:5) {\n  print(i * i)\n}\n\n\nfor i in range(1, 6):\n    print(i**2)"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle",
+    "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Elementos del bucle",
+    "text": "Elementos del bucle"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice",
+    "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Elementos del bucle: Índice",
+    "text": "Elementos del bucle: Índice\n\nLooping por valor: cuando se itera sobre un valor directamente\n\nMás compacto y legible\nDirectamente trabaja con los valores del vector\nÚtil cuando no necesitas los índices, solo los valores\n\n\nfor (i in radios) {\n  area &lt;- pi * i^2\n  print(area)\n}"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice-1",
+    "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice-1",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Elementos del bucle: Índice",
+    "text": "Elementos del bucle: Índice\n\nLooping por índice: cuando se itera sobre un índice de la lista o del vector\n\nMás flexible y versátil\nPermite acceder tanto a los índices como a los valores\nÚtil cuando necesitas los índices para realizar operaciones específicas\n\n\n\nEjemplo 1Ejemplo 2\n\n\nfor (i in 1:5) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}\n\n\nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#práctica-1",
+    "href": "sesiones/programacion/secuencias_control.html#práctica-1",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Práctica 1",
+    "text": "Práctica 1\nEscribe un bucle que permita calcular el tamaño de los plots de las zonas de muestreo en hectáreas\n\n\nCode\nareas_ha &lt;- vector(mode = \"numeric\", length = length(radios))\n  \nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  areas_ha[i] &lt;- area_ha\n}\n\nprint(areas_ha)"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#práctica-2",
+    "href": "sesiones/programacion/secuencias_control.html#práctica-2",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Práctica 2",
+    "text": "Práctica 2\nCompleta el siguiente bucle para que imprima los nombres de las especies de los pinares\nespecies &lt;- c(\n  \"Pinus sylvestris\", \"Pinus nigra\", \"Pinus halepensis\",\n  \"Pinus pinaster\", \"Pinus canariensis\", \"Pinus pinea\"\n)\n\nfor (sp in 1:length( &lt;-???-&gt; )) { \n  print(especies[ &lt;-???-&gt; ])     \n}"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#práctica-3",
+    "href": "sesiones/programacion/secuencias_control.html#práctica-3",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Práctica 3",
+    "text": "Práctica 3\n\nEscribe un bucle que calcule la densidad de árboles para cada parcela en pies/hectárea\n\n\n\nCode\n1radios &lt;- pinares$radio_m\narboles &lt;- pinares$n_individuos\n\ndensidad &lt;- vector(\n  mode = \"numeric\",\n2  length = length(pinares$radio_m))\n\nfor (i in 1:length(radios)) {\n3  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n\n4  densidad[i] &lt;- arboles[i] / area_ha\n}\n\n\n\n1\n\nDos vectores de datos\n\n2\n\nObjeto donde almacenar los resultados\n\n3\n\nItera sobre el primer vector (radios) para calcular el área\n\n4\n\nItera sobre el seguno vector (arboles) para calcular la densidad\n\n\n\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#práctica-3-1",
+    "href": "sesiones/programacion/secuencias_control.html#práctica-3-1",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Práctica 3",
+    "text": "Práctica 3\n\n\n¿Podría actuar sobre un solo data.frame o tibble?\n¿Podría almacenar los resultados en ese mismo tibble?\n\n\n\n\nCode\npinares &lt;- tibble( \n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n  \nfor (i in 1:nrow(pinares)) {\n  pinares$area[i] &lt;- (pi * pinares$radio_m[i]^2 / 10000)\n  pinares$densidad[i] &lt;- pinares$n_individuos[i] / pinares$area[i] \n}\n\npinares\n\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos    area densidad\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10 0.00785    1273.\n2 syl2          6           12 0.0113     1061.\n3 nig1          7           15 0.0154      974.\n4 nig2          8           18 0.0201      895.\n5 nig3          9           20 0.0254      786.\n\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#aplicaciones",
+    "href": "sesiones/programacion/secuencias_control.html#aplicaciones",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Aplicaciones",
+    "text": "Aplicaciones\n\nlooping en funciones\nlooping sobre dataframes o tibbles ()\nLooping sobre archivos y directorios\nAlmacenar datos\nBucles anidados"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#while-loop-repetición-condicional",
+    "href": "sesiones/programacion/secuencias_control.html#while-loop-repetición-condicional",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "2. while Loop: Repetición Condicional",
+    "text": "2. while Loop: Repetición Condicional\nEjecuta un bloque de código mientras una condición sea verdadera\n\nradios &lt;- pinares$radio_m \n\n1i &lt;- 1\n  \n2while (i &lt;= 3) {\n  \n3  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  print(area_ha)\n  \n4  i &lt;- i + 1\n}\n\n\n1\n\nIniciamos el contador\n\n2\n\nCondición de salida\n\n3\n\nCódigo a ejecutar\n\n4\n\nActualización del contador\n\n\n\n\n[1] 0.007853982\n[1] 0.01130973\n[1] 0.0153938"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#repeat-loop-repetición-indefinida",
+    "href": "sesiones/programacion/secuencias_control.html#repeat-loop-repetición-indefinida",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "3. repeat Loop: Repetición Indefinida",
+    "text": "3. repeat Loop: Repetición Indefinida\n¿Qué es?\n\nEjecuta un bloque de código indefinidamente hasta que se usa break.\n\nEjemplo:\ni &lt;- 1\nrepeat {\n  print(mean(iris$Petal.Length[iris$Species == unique(iris$Species)[i]]))\n  i &lt;- i + 1\n  if (i &gt; 3) break\n}"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-tapply",
+    "href": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-tapply",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "4. Alternativas Vectorizadas (apply, tapply)",
+    "text": "4. Alternativas Vectorizadas (apply, tapply)\n¿Qué son?\n\nMétodos eficientes y vectorizados para realizar operaciones en matrices o listas.\n\nEjemplo:\ntapply(iris$Sepal.Width, iris$Species, mean)\nVentajas:\n\nMás rápidas y concisas que los bucles tradicionales.\nMejor adaptadas para trabajar con grandes volúmenes de datos."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#comparación-con-purrr",
+    "href": "sesiones/programacion/secuencias_control.html#comparación-con-purrr",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "5. Comparación con purrr",
+    "text": "5. Comparación con purrr\n¿Qué es purrr?\n\npurrr es un paquete del ecosistema tidyverse que facilita la programación funcional.\n\nEjemplo Comparativo\nUsando un bucle for:\nspecies_means &lt;- numeric()\nfor (species in unique(iris$Species)) {\n  species_means &lt;- c(species_means, mean(iris$Sepal.Length[iris$Species == species]))\n}\nprint(species_means)"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#comparación-general",
+    "href": "sesiones/programacion/secuencias_control.html#comparación-general",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "6. Comparación General",
+    "text": "6. Comparación General\n\n\n\n\n\n\n\n\nTipo de Bucle\nVentajas\nDesventajas\n\n\n\n\nfor\nSimple y flexible\nMenos eficiente con grandes datos\n\n\nwhile\nÚtil para condiciones dinámicas\nMayor riesgo de bucles infinitos\n\n\nrepeat\nGran control manual\nRequiere interrupción explícita\n\n\napply/tapply\nAltamente eficiente y compacto\nMenos intuitivo para principiantes\n\n\npurrr::map\nSintaxis legible y funcional\nRequiere instalación adicional"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#conclusión",
+    "href": "sesiones/programacion/secuencias_control.html#conclusión",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Conclusión",
+    "text": "Conclusión\n\nBásico: Los bucles (for, while, repeat) son fundamentales para aprender programación iterativa.\nAvanzado: Las funciones vectorizadas (apply, tapply) y paquetes como purrr son ideales para mejorar el rendimiento y la legibilidad.\nRecomendación: Usa bucles simples para aprender y alterna con soluciones vectorizadas o funcionales para proyectos más complejos."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#alguna-duda",
+    "href": "sesiones/programacion/secuencias_control.html#alguna-duda",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#pipe-programming",
+    "href": "sesiones/programacion/piping.html#pipe-programming",
+    "title": "Pipe programming",
+    "section": "¿Pipe programming?",
+    "text": "¿Pipe programming?\n\n\n\nSource: Numbers around us"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#ejemplo",
+    "href": "sesiones/programacion/piping.html#ejemplo",
+    "title": "Pipe programming",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\n\nModo tradicionalPipe\n\n\n\nset.seed(123) \nx &lt;- runif(10) \nx \n\n [1] 0.2875775 0.7883051 0.4089769 0.8830174 0.9404673 0.0455565 0.5281055\n [8] 0.8924190 0.5514350 0.4566147\n\nx_sort &lt;- sort(x) \nx_log &lt;- log(x_sort) \nx_diff &lt;- diff(x_log) \nx_exp &lt;- exp(x_diff) \nybase &lt;- cumsum(x_exp) \nybase\n\n[1]  6.312546  7.734691  8.851172 10.007739 11.051915 12.481467 13.601614\n[8] 14.612261 15.666101\n\n# ybase &lt;- cumsum(exp(diff(log(sort(x)))))\n\n\n\n\nypipe &lt;- x |&gt; \n  sort() |&gt;     \n  log() |&gt;      \n  diff() |&gt;    \n  exp() |&gt;      \n  cumsum()\n\nypipe\n\n[1]  6.312546  7.734691  8.851172 10.007739 11.051915 12.481467 13.601614\n[8] 14.612261 15.666101"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#tipos-de-pipes",
+    "href": "sesiones/programacion/piping.html#tipos-de-pipes",
+    "title": "Pipe programming",
+    "section": "Tipos de pipes",
+    "text": "Tipos de pipes\n\n\n\nmagrittr\n\n%&gt;%\n\nlibrary(magrittr)\n\n\n\n\n\n\n\nR base\n\n|&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#cómo-incluir-pipes-en-el-código",
+    "href": "sesiones/programacion/piping.html#cómo-incluir-pipes-en-el-código",
+    "title": "Pipe programming",
+    "section": "¿Cómo incluir pipes en el código?",
+    "text": "¿Cómo incluir pipes en el código?\n\n\n\n\n\n\nWindows\n\n\nCtrl + Shift + M\n\n\n\n\n\n\n\n\n\n\nMac\n\n\nCmd + Shift + M"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#mas-ejemplos",
+    "href": "sesiones/programacion/piping.html#mas-ejemplos",
+    "title": "Pipe programming",
+    "section": "Mas ejemplos",
+    "text": "Mas ejemplos\n\n\nCalcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela\n\n\nCódigoGráfico\n\n\n1dbh &lt;- c(5.0, 70.2, 7.0, 95.5, 87.3, 6.8, 65.0, 110.5, 80.5, 120.0)\n\n2dbh_filtrado &lt;- subset(dbh, dbh &gt; 7.5)\n\n3area_basal &lt;- pi * (dbh_filtrado / 200)^2\n\nh &lt;- hist(area_basal,\n4  main = \"Histograma\",\n  xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n  ylab = \"Frecuencia\"\n)\n\n1\n\nCrear un vector de DBH (diámetros en cm)\n\n2\n\nFiltrar valores de DBH mayores de 7.5 cm\n\n3\n\nCalcular el área basal (en cm²) para cada valor filtrado\n\n4\n\nGenerar un histograma de las áreas basales"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#mas-ejemplos-1",
+    "href": "sesiones/programacion/piping.html#mas-ejemplos-1",
+    "title": "Pipe programming",
+    "section": "Mas ejemplos",
+    "text": "Mas ejemplos\n\n\nCalcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela\n\n\nPipe %&gt;%Gráfico %&gt;%Pipe |&gt;Gráfico |&gt;\n\n\nlibrary(magrittr)\ndbh %&gt;%\n  subset(. &gt; 7.5) %&gt;%  \n  {(pi * (. / 200)^2)} %&gt;%                     \n  hist(                                      \n    main = \"magrittr\",\n    xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n    ylab = \"Frecuencia\",\n    col = \"lightblue\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\ndbh |&gt;\n  (\\(x) subset(x, x &gt; 7.5))() |&gt;\n  (\\(x) pi * (x / 200)^2)() |&gt;\n  hist(\n    main = \"R pipe\",\n    xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n    ylab = \"Frecuencia\",\n    col = \"blue\",\n  )"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#práctica",
+    "href": "sesiones/programacion/piping.html#práctica",
+    "title": "Pipe programming",
+    "section": "Práctica",
+    "text": "Práctica\n\nCalcular la altura media de los árboles de Pinus pinaster\n\nlibrary(tibble)\n\npinos &lt;- tibble(\n  id = 1:10,\n  especie = c(\"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\", \"nigra\",\n              \"pinaster\", \"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\"),\n  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), \n  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) \n)\n\npinos\n\n# A tibble: 10 × 4\n      id especie    dbh_cm altura_m\n   &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;\n 1     1 sylvestris   30.5     12.5\n 2     2 nigra         6.5     13.2\n 3     3 pinaster      7.2     10  \n 4     4 sylvestris    5        9.5\n 5     5 nigra        28.3     14  \n 6     6 pinaster     35.1     15  \n 7     7 sylvestris    7        8.2\n 8     8 nigra         6.8     11.8\n 9     9 pinaster     40       14.5\n10    10 sylvestris   32.7     12"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#como-podría-calcular-la-altura-media-por-especie",
+    "href": "sesiones/programacion/piping.html#como-podría-calcular-la-altura-media-por-especie",
+    "title": "Pipe programming",
+    "section": "¿Como podría calcular la altura media por especie?",
+    "text": "¿Como podría calcular la altura media por especie?\n\n\nCode\nlibrary(dplyr)\n  \npinos |&gt; \n  group_by(especie) |&gt; \n  summarise(altura_media = mean(altura_m))"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#recursos",
+    "href": "sesiones/programacion/piping.html#recursos",
+    "title": "Pipe programming",
+    "section": "Recursos",
+    "text": "Recursos\n\nWhat is a pipe in computer programming?\nPipeline (Wikipedia)\nPipes in R Tutorial For Beginners\nNavigating the Data Pipes: An R Programming Journey with Mario Bros\nUnderstanding the native R pipe\nHow to use pipes\nIntro R piping, by Molowny-Horas"
+  },
+  {
+    "objectID": "sesiones/programacion/piping.html#alguna-duda",
+    "href": "sesiones/programacion/piping.html#alguna-duda",
+    "title": "Pipe programming",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "sesiones/introprog/intro_R_jml.html",
