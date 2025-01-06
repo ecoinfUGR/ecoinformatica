@@ -82,5 +82,11 @@
   },
   "sesiones/programacion/piping.qmd": {
     "piping.html": "a52b1ebd"
+  },
+  "tidy_data.qmd": {
+    "tidy_data.html": "1de395ad"
+  },
+  "sesiones/programacion/tidy_data.qmd": {
+    "tidy_data.html": "564e3e2e"
   }
 }
