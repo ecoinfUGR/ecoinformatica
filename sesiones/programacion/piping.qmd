@@ -5,7 +5,7 @@ author:
     orcid: 0000-0002-1747-0469
     email: antonio.perez@inia.csic.es
     affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
-date: 2025-03-04
+date: 2025-01-14
 sesion: 2
 format: 
   revealjs:

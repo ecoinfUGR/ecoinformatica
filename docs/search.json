@@ -1525,5 +1525,75 @@
     "title": "Pipe programming",
     "section": "¿Como podría calcular la altura media por especie?",
     "text": "¿Como podría calcular la altura media por especie?\n\nCodelibrary(dplyr)\n  \npinos |&gt; \n  group_by(especie) |&gt; \n  summarise(altura_media = mean(altura_m))"
+  },
+  {
+    "objectID": "tidy_data.html#intro",
+    "href": "tidy_data.html#intro",
+    "title": "El mundo tidyverse",
+    "section": "Intro",
+    "text": "Intro\n\n\n\nSource: Julia Lowndes & Allison Horst"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#ejemplo",
+    "href": "sesiones/programacion/tidy_data.html#ejemplo",
+    "title": "El mundo tidyverse",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\n\n\nModo tradicional\nPipe\n\n\n\n\nset.seed(123) #&lt;&lt; \nx &lt;- runif(10) \nx \n\n [1] 0.2875775 0.7883051 0.4089769 0.8830174 0.9404673 0.0455565 0.5281055\n [8] 0.8924190 0.5514350 0.4566147\n\nx_sort &lt;- sort(x) \nx_log &lt;- log(x_sort) \nx_diff &lt;- diff(x_log) \nx_exp &lt;- exp(x_diff) \nybase &lt;- cumsum(x_exp) \nybase\n\n[1]  6.312546  7.734691  8.851172 10.007739 11.051915 12.481467 13.601614\n[8] 14.612261 15.666101\n\n# ybase &lt;- cumsum(exp(diff(log(sort(x)))))\n\n\n\n\nypipe &lt;- x |&gt; \n  sort() |&gt;     \n  log() |&gt;      \n  diff() |&gt;    \n  exp() |&gt;      \n  cumsum()\n\nypipe\n\n[1]  6.312546  7.734691  8.851172 10.007739 11.051915 12.481467 13.601614\n[8] 14.612261 15.666101"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#tipos-de-pipes",
+    "href": "sesiones/programacion/tidy_data.html#tipos-de-pipes",
+    "title": "El mundo tidyverse",
+    "section": "Tipos de pipes",
+    "text": "Tipos de pipes\n\n\n\nmagrittr\n\n%&gt;%\n\nlibrary(magrittr)\n\n\n\n\n\n\nR base\n\n|&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#cómo-incluir-pipes-en-el-código",
+    "href": "sesiones/programacion/tidy_data.html#cómo-incluir-pipes-en-el-código",
+    "title": "El mundo tidyverse",
+    "section": "¿Cómo incluir pipes en el código?",
+    "text": "¿Cómo incluir pipes en el código?\n\n\n\n\n\n\nWindows\n\n\nCtrl + Shift + M\n\n\n\n\n\n\n\n\n\n\nMac\n\n\nCmd + Shift + M"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#mas-ejemplos",
+    "href": "sesiones/programacion/tidy_data.html#mas-ejemplos",
+    "title": "El mundo tidyverse",
+    "section": "Mas ejemplos",
+    "text": "Mas ejemplos\n\n\nCalcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela\n\n\n\nCódigo\nGráfico\n\n\n\n1dbh &lt;- c(5.0, 70.2, 7.0, 95.5, 87.3, 6.8, 65.0, 110.5, 80.5, 120.0)\n\n2dbh_filtrado &lt;- subset(dbh, dbh &gt; 7.5)\n\n3area_basal &lt;- pi * (dbh_filtrado / 200)^2\n\nh &lt;- hist(area_basal,\n4  main = \"Histograma\",\n  xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n  ylab = \"Frecuencia\"\n)\n\n1\n\nCrear un vector de DBH (diámetros en cm)\n\n2\n\nFiltrar valores de DBH mayores de 7.5 cm\n\n3\n\nCalcular el área basal (en cm²) para cada valor filtrado\n\n4\n\nGenerar un histograma de las áreas basales"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#mas-ejemplos-1",
+    "href": "sesiones/programacion/tidy_data.html#mas-ejemplos-1",
+    "title": "El mundo tidyverse",
+    "section": "Mas ejemplos",
+    "text": "Mas ejemplos\n\n\nCalcula el histograma de frecuencias del área basal de los diferentes pinos muestrados en una parcela\n\n\n\nPipe %&gt;%\nGráfico %&gt;%\nPipe |&gt;\nGráfico |&gt;\n\n\n\nlibrary(magrittr)\ndbh %&gt;%\n  subset(. &gt; 7.5) %&gt;%  \n  {(pi * (. / 200)^2)} %&gt;%                     \n  hist(                                      \n    main = \"magrittr\",\n    xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n    ylab = \"Frecuencia\",\n    col = \"lightblue\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\ndbh |&gt;\n  (\\(x) subset(x, x &gt; 7.5))() |&gt;\n  (\\(x) pi * (x / 200)^2)() |&gt;\n  hist(\n    main = \"R pipe\",\n    xlab = expression(\"Área Basal (\" * m^2 * \")\"),\n    ylab = \"Frecuencia\",\n    col = \"blue\",\n  )"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#práctica",
+    "href": "sesiones/programacion/tidy_data.html#práctica",
+    "title": "El mundo tidyverse",
+    "section": "Práctica",
+    "text": "Práctica\n\nCalcular la altura media de los árboles de Pinus pinaster\n\nlibrary(tibble)\n\npinos &lt;- tibble(\n  id = 1:10,\n  especie = c(\"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\", \"nigra\",\n              \"pinaster\", \"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\"),\n  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), \n  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) \n)\n\npinos\n\n# A tibble: 10 × 4\n      id especie    dbh_cm altura_m\n   &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;\n 1     1 sylvestris   30.5     12.5\n 2     2 nigra         6.5     13.2\n 3     3 pinaster      7.2     10  \n 4     4 sylvestris    5        9.5\n 5     5 nigra        28.3     14  \n 6     6 pinaster     35.1     15  \n 7     7 sylvestris    7        8.2\n 8     8 nigra         6.8     11.8\n 9     9 pinaster     40       14.5\n10    10 sylvestris   32.7     12"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#como-podría-calcular-la-altura-media-por-especie",
+    "href": "sesiones/programacion/tidy_data.html#como-podría-calcular-la-altura-media-por-especie",
+    "title": "El mundo tidyverse",
+    "section": "¿Como podría calcular la altura media por especie?",
+    "text": "¿Como podría calcular la altura media por especie?\n\nCodelibrary(dplyr)\n  \npinos |&gt; \n  group_by(especie) |&gt; \n  summarise(altura_media = mean(altura_m))"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#recursos",
+    "href": "sesiones/programacion/tidy_data.html#recursos",
+    "title": "El mundo tidyverse",
+    "section": "Recursos",
+    "text": "Recursos\n\nIllustrations from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#alguna-duda",
+    "href": "sesiones/programacion/tidy_data.html#alguna-duda",
+    "title": "El mundo tidyverse",
+    "section": "¿Alguna duda?",
+    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   }
 ]
