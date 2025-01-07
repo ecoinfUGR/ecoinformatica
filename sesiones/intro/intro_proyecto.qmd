@@ -8,28 +8,24 @@ author:
 date: 2025-01-07
 sesion: 1
 date-format: long
-format: 
-  revealjs: 
-    multiplex: true
-    logo: "images/logo-ugr.png"
-    footer: Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad
-    theme: [default, "../../custom_theme.scss"] 
-    transition: fade
-    background-transition: fade
-    highlight-style: a11y
+format: html
 code-link: true
 citation: true
+# bibliography: ../../assets/references/ref_intro.bib
+# csl: ../../assets/references/ecology.csl
+# nocite: |
+#  @*
 ---
 
 # Presentación
 
-- Aquí puedes ver el [pdf](nombre_archivo.pdf)
+- Aquí puedes ver el [pdf](intro_proyecto_presentacion.pdf)
 
 # Entregable: flujo de trabajo
 
 ## Objetivo
 
-Construir un flujo de trabajo que describa un proceso complejo de análisis y procesamiento de información ambiental. El proceso puede ser tu proyecto fin de máster, el trabajo de la asignatura o cualquier otro análisis en el que estés trabajando. Para describirlo debes elaborar un esquema acompañado, si lo ves necesario, de un pequeño texto. Puedes utilizar herramientas digitales (https://app.diagrams.net/, PowerPoint) o un simple esquema hecho a mano para elaborar el esquema.
+Construir un flujo de trabajo que describa un proceso complejo de análisis y procesamiento de información ambiental. El proceso puede ser tu proyecto fin de máster, el trabajo de la asignatura o cualquier otro análisis en el que estés trabajando. Para describirlo debes elaborar un esquema acompañado, si lo ves necesario, de un pequeño texto. Puedes utilizar herramientas digitales ([https://app.diagrams.net/](Flowchart Maker), PowerPoint) o un simple esquema hecho a mano para elaborar el esquema.
 
 ## Aspectos a valorar
 
@@ -51,9 +47,9 @@ Tras la entrega inicial el trabajo entregado será devuelto con comentarios y su
 
 # Recursos 
 
-- [Santín, C., Madrigal, J., Cerdà, X., Pausas, J. 2023. Ciencia para las políticas públicas - Incendios forestales. Science4Policy. CSIC.]
+- [Santín, C., Madrigal, J., Cerdà, X., Pausas, J. 2023. Ciencia para las políticas públicas - Incendios forestales. Science4Policy. CSIC.](http://hdl.handle.net/10261/329674)
 
-- [Zamora, R., Pérez-Luque, A.J., Bonet, F.J., Barea-Azcón, J.M. y Aspizua, R. (editores). 2015. La huella del cambio global en Sierra Nevada: Retos para la conservación. Consejería de Medio Ambiente y Ordenación del Territorio. Junta de Andalucía. 208 pp.]
+- [Zamora, R., Pérez-Luque, A.J., Bonet, F.J., Barea-Azcón, J.M. y Aspizua, R. (editores). 2015. La huella del cambio global en Sierra Nevada: Retos para la conservación. Consejería de Medio Ambiente y Ordenación del Territorio. Junta de Andalucía. 208 pp.](https://digibug.ugr.es/handle/10481/54646)
 
 - [La huella del fuego](https://www.rtve.es/play/videos/cronicas/cronicas-huella-fuego-281116/3814720/)
 
@@ -68,7 +64,6 @@ Tras la entrega inicial el trabajo entregado será devuelto con comentarios y su
 - [Suárez-Muñoz, M., M. Mina, P. C. Salazar, R. M. Navarro-Cerrillo, J. L. Quero, and F. J. Bonet-García. 2021. A step-by-step guide to initialize and calibrate landscape models: A case study in the mediterranean mountains. Frontiers in Ecology and Evolution 9:209](https://doi.org/10.3389/fevo.2021.653393)
 
 - [Flowchart - Wikipedia](https://en.wikipedia.org/wiki/Flowchart)
-:::
 
 # ¿Alguna duda?
 
@@ -78,5 +73,3 @@ Tras la entrega inicial el trabajo entregado será devuelto con comentarios y su
 # Si usas esta presentación puedes citarla como:
 <small>**Suárez-Muñoz, M. **(2025). Introducción a la asignatura Ciclo de Gestión de los Datos. Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
 ::: 
-
-
