@@ -88,5 +88,8 @@
   },
   "sesiones/programacion/tidy_data.qmd": {
     "tidy_data.html": "564e3e2e"
+  },
+  "sesiones/introprog/intro_R_jml.qmd": {
+    "intro_R_jml.html": "7c9bb0eb"
   }
 }
