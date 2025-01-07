@@ -88,6 +88,14 @@ execute:
 
 ::: {.panel-tabset}
 ## Datos ejemplo
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+
 ```{r}
 library(tibble)
 
