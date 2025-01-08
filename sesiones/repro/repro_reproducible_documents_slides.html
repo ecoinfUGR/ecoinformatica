@@ -6,7 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dece3bd051e391dd7205a6b15f93dc59.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dece3bd051e391dd7205a6b15f93dc59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Antonio J. Pérez-Luque">
@@ -219,8 +221,8 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <li><p>Vamos a trabajar con <a href="https://www.r-project.org/">R</a>, Rstudio (ahora llamado <a href="https://posit.co/">posit</a>), y utilizaremos al menos el paquete <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a>.</p></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="section" class="slide level2" data-footer="false">
+<h2></h2>
 <div id="fig-rmd-allison" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -246,32 +248,30 @@ Figura&nbsp;1. Esquema general de <code>Rmd</code>. Fuente: <a href="https://all
 <section id="crear-un-archivo-.rmd" class="slide level2">
 <h2>Crear un archivo <code>.Rmd</code></h2>
 <p>Dentro de R-Studio, haz clic en <strong>Archivo → Nuevo archivo → Rmarkdown</strong></p>
-<div id="fig-crea-rmd" class="r-stack quarto-float quarto-figure quarto-figure-center">
+<div id="fig-elephants" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-crea-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="fig-create-rmd" class="fragment quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-create-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="images/rmd-create.png" class="fragment" data-ref-parent="fig-crea-rmd" height="370">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-create-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Crea archivo <code>Rmd</code>
-</figcaption>
-</figure>
-</div>
-<div id="fig-create-rmd-details" class="fragment quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-create-rmd-details-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="images/rmd-create2.png" class="fragment" data-ref-parent="fig-crea-rmd" height="370">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-create-rmd-details-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Define detalles generales <code>Rmd</code>
-</figcaption>
+<div aria-describedby="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rmd-create.png" style="width:70.0%"></p>
+<figcaption>Crea archivo <code>Rmd</code></figcaption>
 </figure>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crea-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2. Crea archivo <code>Rmd</code>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rmd-create2.png" style="width:70.0%"></p>
+<figcaption>Define detalles generales <code>Rmd</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2
 </figcaption>
 </figure>
 </div>
@@ -282,7 +282,7 @@ Figura&nbsp;2. Crea archivo <code>Rmd</code>
 
 </section>
 <section id="encabezado-yaml" class="slide level2">
-<h2>Encabezado YAML</h2>
+<h2>1. Encabezado YAML</h2>
 <div class="small">
 <p><a href="https://yaml.org/">YAML</a>, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.</p>
 <ul>
@@ -352,25 +352,34 @@ Figura&nbsp;3. Encabezado YAML
 </section>
 <section class="slide level2">
 
+<h3 id="parametros-en-función-del-formato-de-salida">Parametros en función del formato de salida</h3>
 <div class="small">
-<p>Existen diferentes formatos de salida de documentos. En el ejemplo (<a href="#/fig-yaml" class="quarto-xref">Figura&nbsp;3</a>) hemos usado <code>html</code>, pero podemos especificar diferentes formatos de salida (<code>word</code>, <code>pdf</code>, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con <code>html_document</code>, podemos usar el comando <code>?rmarkdown::html_document</code>. Así, por ejemplo:</p>
+<ul>
+<li>Cada tipo de formato de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML.</li>
+<li>Por ejemplo, para saber qué parámetros puedes definir con <code>html_document</code>, podemos usar el comando <code>?rmarkdown::html_document</code>. Así, por ejemplo:</li>
+</ul>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">word_document</span>(</span>
-<span id="cb2-2"><a></a>  <span class="at">toc =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb2-3"><a></a>  <span class="at">toc_depth =</span> <span class="dv">3</span>,</span>
-<span id="cb2-4"><a></a>  <span class="at">number_sections =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb2-5"><a></a>  <span class="at">fig_width =</span> <span class="dv">5</span>,</span>
-<span id="cb2-6"><a></a>  <span class="at">fig_height =</span> <span class="dv">4</span>,</span>
-<span id="cb2-7"><a></a>  <span class="at">fig_caption =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb2-8"><a></a>  <span class="at">highlight =</span> <span class="st">"default"</span>,</span>
-<span id="cb2-9"><a></a>  <span class="at">reference_docx =</span> <span class="st">"default"</span>,</span>
-<span id="cb2-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>?rmarkdown<span class="sc">::</span>word_document</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="fu">word_document</span>(</span>
+<span id="cb2-4"><a></a>  <span class="at">toc =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-5"><a></a>  <span class="at">toc_depth =</span> <span class="dv">3</span>,</span>
+<span id="cb2-6"><a></a>  <span class="at">number_sections =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-7"><a></a>  <span class="at">fig_width =</span> <span class="dv">5</span>,</span>
+<span id="cb2-8"><a></a>  <span class="at">fig_height =</span> <span class="dv">4</span>,</span>
+<span id="cb2-9"><a></a>  <span class="at">fig_caption =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-10"><a></a>  <span class="at">highlight =</span> <span class="st">"default"</span>,</span>
+<span id="cb2-11"><a></a>  <span class="at">reference_docx =</span> <span class="st">"default"</span>,</span>
+<span id="cb2-12"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="narrativa-texto-del-documento" class="slide level2">
-<h2>Narrativa (Texto del documento)</h2>
+<h2>2. Narrativa (Texto del documento)</h2>
 <div class="small">
-<p>Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento <code>.Rmd</code> todo lo que no esté en el encabezazo YAML o dentro de un <code>chunk</code> de código, será interpretado como texto.</p>
-<p>Para escribir la parte narrativa se utiliza el lenguaje <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown.</p>
+<ul>
+<li>Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc.</li>
+<li>En un documento <code>.Rmd</code> todo lo que no esté en el encabezazo YAML o dentro de un <code>chunk</code> de código, será interpretado como texto.</li>
+<li>Para escribir la parte narrativa se utiliza el lenguaje <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender.</li>
+</ul>
 </div>
 </section>
 <section class="slide level2">
@@ -410,7 +419,7 @@ Figura&nbsp;3. Encabezado YAML
 <section class="slide level2">
 
 <h3 id="encabezados">Encabezados</h3>
-<p>Para crear encabezados de secciones y subsecciones has de utilizar el simbolo <code>#</code>. De tal forma:</p>
+<p>Para crear encabezados de secciones y subsecciones has de utilizar el simbolo <code>#</code></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="fu"># Título</span></span>
 <span id="cb3-2"><a></a><span class="fu">## Sección principal</span></span>
 <span id="cb3-3"><a></a><span class="fu">### Subsección</span></span>
@@ -425,7 +434,11 @@ Figura&nbsp;3. Encabezado YAML
 <section class="slide level2">
 
 <h3 id="ecuaciones">Ecuaciones</h3>
-<p>A veces puede interesarnos escribir <strong>ecuaciones</strong>. Para ello vamos a usar el lenguaje <a href="http://www.latex-project.org/">LaTeX</a>. Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo <a href="https://latex.codecogs.com/eqneditor/editor.php">este</a>.</p>
+<ul>
+<li>A veces puede interesarnos escribir <strong>ecuaciones</strong>.</li>
+<li>Para ello vamos a usar el lenguaje <a href="http://www.latex-project.org/">LaTeX</a>.</li>
+<li>Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo <a href="https://latex.codecogs.com/eqneditor/editor.php">este</a>.</li>
+</ul>
 </section>
 <section class="slide level2">
 
@@ -447,9 +460,17 @@ Figura&nbsp;3. Encabezado YAML
 </ul>
 </section>
 <section id="trozos-de-código-chunks" class="slide level2">
-<h2>Trozos de código (<code>chunks</code>)</h2>
+<h2>3. Trozos de código (<code>chunks</code>)</h2>
 <div class="small">
-<p>Los trozos o bloques de código (<code>chunks</code>) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento <code>.Rmd</code> tenemos que indicar un tipo especial de marca.</p>
+<ul>
+<li>Los trozos o bloques de código (<code>chunks</code>) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final.</li>
+<li>Para distinguir los trozos de código del resto de elementos del documento <code>.Rmd</code> tenemos que indicar un tipo especial de marca.</li>
+</ul>
+</div>
+</section>
+<section id="trozos-de-código-chunks-1" class="slide level2">
+<h2>3. Trozos de código (<code>chunks</code>)</h2>
+<div class="small">
 <p>Existen dos formas de incrustar código dentro de un documento <code>.Rmd</code>:</p>
 <ol type="a">
 <li><p><strong>Código en línea:</strong> Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)</p></li>
@@ -472,8 +493,11 @@ Figura&nbsp;3. Encabezado YAML
 
 <h3 id="b.-bloques-de-código-chunks">b. Bloques de código (<strong>chunks</strong>)</h3>
 <div class="small">
-<p>Los trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración. Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: <code>shell/bash</code>, <code>python</code>, <code>SQL</code>, <code>R</code>, etc.)</p>
-<p>Para insertar un trozo de código en R, puedes escribirlo manualmente escribiendo <code>```{r}</code> seguido de <code>```</code> en la siguiente línea. <br></p>
+<ul>
+<li><p>Los trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración.</p></li>
+<li><p>Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: <code>shell/bash</code>, <code>python</code>, <code>SQL</code>, <code>R</code>, etc.)</p></li>
+<li><p>Para insertar un trozo de código en R, puedes escribirlo manualmente escribiendo <code>```{r}</code> seguido de <code>```</code> en la siguiente línea. <br></p></li>
+</ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="in">```{r}</span></span>
 <span id="cb4-2"><a></a><span class="in">n &lt;- 5</span></span>
 <span id="cb4-3"><a></a><span class="in">seq(n)</span></span>
@@ -481,8 +505,8 @@ Figura&nbsp;3. Encabezado YAML
 <p>Knitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.</p>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="section-1" class="slide level2" data-footer="false">
+<h2></h2>
 <div class="small">
 <p>En la siguiente animación (<a href="#/fig-chunk-anatomy" class="quarto-xref">Figura&nbsp;4</a>) puedes ver la anatomía de un trozo de código.</p>
 </div>
@@ -540,31 +564,36 @@ Figura&nbsp;4. Anatomía de un trozo de Código. Fuente: <a href="https://www.pi
 <pre><code>[1] 1 2 3 4 5</code></pre>
 </div>
 </div>
-<p>Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas <a href="http://yihui.name/knitr/options/">aquí</a>.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <h3 id="principales-opciones-de-los-chunks">Principales opciones de los chunks</h3>
+<div class="small">
+<p>Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas <a href="http://yihui.name/knitr/options/">aquí</a>.</p>
 <ul>
 <li><p><code>eval = FALSE</code> evita que el código sea evaluado. (Y, obviamente, si el código no es ejecutado no se generaran resultados). Esto es útil para mostrar códigos de ejemplo, o para deshabilitar un gran bloque de código sin comentar cada línea.</p></li>
 <li><p><code>include = FALSE</code> ejecuta el código, pero no muestra el código o los resultados en el documento final. Se puede usar para aligerar el aspecto final de nuestro documento.</p></li>
 <li><p><code>echo = FALSE</code> evita que se vea el código, pero sí muestra los resultados en el archivo final.</p></li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="principales-opciones-de-los-chunks-1">Principales opciones de los chunks</h3>
+<div class="small">
 <ul>
 <li><p><code>message = FALSE</code> o <code>warning = FALSE</code> evita que aparezcan mensajes o advertencias en el archivo final.</p></li>
-<li><p><code>esults = 'hide'</code> oculta el output impreso</p></li>
+<li><p><code>results = 'hide'</code> oculta el output impreso</p></li>
 <li><p><code>fig.show = 'hide'</code> oculta los gráficos producidos</p></li>
 <li><p><code>error = TRUE</code> permite que se siga renderizando el documento a pesar de que exista un error en el código. Puede ser útil durante el proceso de creación de un documento reproducible</p></li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="incluir-tablas">Incluir Tablas</h3>
+<div class="small">
 <p>Un aspecto muy intersante de los documentos reproducibles es la inclusión de tablas. Para incluir una tabla existen diferentes opciones, siendo la función <code>knitr::kable</code> la que nos permite incluir tablas de la forma mas sencilla (mas información <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html">aquí</a>). Así por ejemplo, si escribimos</p>
 <p><br></p>
 <pre><code>``` {{r}}
@@ -573,6 +602,7 @@ knitr::kable(
 )
 ```</code></pre>
 <p>obtenemos la <a href="#/tbl-ejemplo-tabla" class="quarto-xref">Tabla&nbsp;1</a></p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -696,7 +726,7 @@ Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 </div>
 </div>
 </section>
-<section id="tejer-y-renderizar" class="slide level2">
+<section id="tejer-y-renderizar" class="slide level2" data-footer="false">
 <h2>Tejer y Renderizar</h2>
 <div class="small">
 <ul>
@@ -704,7 +734,6 @@ Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 <li><p><strong>Knit</strong> es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.</p></li>
 </ul>
 <p>Para ello en la parte superior del panel, hacer click en <code>Knit</code> directamente o desplegar las opciones de <code>Knit</code> y ejecutar la que mas nos convenga (<a href="#/fig-knit" class="quarto-xref">Figura&nbsp;5</a>, ver animación en <a href="#/fig-knitting" class="quarto-xref">Figura&nbsp;6</a>).</p>
-</div>
 <div id="fig-knit" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -714,6 +743,7 @@ Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 Figura&nbsp;5. Opciones Knit
 </figcaption>
 </figure>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -771,7 +801,7 @@ Figura&nbsp;6. Knit (Tejer) un documento. Fuente: <a href="https://www.pipinghot
 <section id="alguna-duda" class="slide level2">
 <h2>¿Alguna duda?</h2>
 <ul>
-<li><a href="https://twitter.com/ajpelu"><span class="citation" data-cites="ajpelu">@ajpelu</span></a></li>
+<li><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></li>
 <li><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></li>
 </ul>
 <p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
