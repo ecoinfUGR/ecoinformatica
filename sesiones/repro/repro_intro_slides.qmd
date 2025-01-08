@@ -203,7 +203,7 @@ citation: true
 
 ## ¿Alguna duda?
 
-- [@ajpelu](https://twitter.com/ajpelu)
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
 - [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
 
 

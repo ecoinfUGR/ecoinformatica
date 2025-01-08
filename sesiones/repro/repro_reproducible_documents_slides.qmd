@@ -35,7 +35,7 @@ crossref:
 - Vamos a trabajar con [R](https://www.r-project.org/), Rstudio (ahora llamado [posit](https://posit.co/)), y utilizaremos al menos el paquete [`rmarkdown`](https://rmarkdown.rstudio.com/).
 
 
-----------------------
+## {footer=false}
 
 
 ![Esquema general de `Rmd`. Fuente: [\@allison_horst](https://allisonhorst.com/allison-horst)](images/rmd-allison.png){#fig-rmd-allison}
@@ -53,17 +53,16 @@ crossref:
 
 Dentro de R-Studio, haz clic en **Archivo → Nuevo archivo → Rmarkdown** 
 
-::: {.r-stack #fig-crea-rmd}
-![Crea archivo `Rmd`](images/rmd-create.png){.fragment height="370" #fig-create-rmd}
+::: {#fig-elephants layout-ncol=2}
 
-![Define detalles generales `Rmd`](images/rmd-create2.png){.fragment height="370" #fig-create-rmd-details}
+![Crea archivo `Rmd`](images/rmd-create.png){width=70%}
 
-Crea archivo `Rmd`
-:::
+![Define detalles generales `Rmd`](images/rmd-create2.png){width=70%}
+::: 
 
 # Estructura de un archivo `Rmd`
 
-## Encabezado YAML
+## 1. Encabezado YAML
 
 ::: small
 [YAML](https://yaml.org/), es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.
@@ -107,8 +106,11 @@ output:
 
 ------------------------------
 
+### Parametros en función del formato de salida
+
 ::: small
-Existen diferentes formatos de salida de documentos. En el ejemplo (@fig-yaml) hemos usado `html`, pero podemos especificar diferentes formatos de salida (`word`, `pdf`, presentaciones, etc.). Cada tipo de documento de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. Por ejemplo, para saber qué parámetros puedes definir con `html_document`, podemos usar el comando `?rmarkdown::html_document`. Así, por ejemplo:
+- Cada tipo de formato de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML. 
+- Por ejemplo, para saber qué parámetros puedes definir con `html_document`, podemos usar el comando `?rmarkdown::html_document`. Así, por ejemplo:
 :::
 
 ```{r}
@@ -117,6 +119,8 @@ Existen diferentes formatos de salida de documentos. En el ejemplo (@fig-yaml) h
 ```
 
 ``` r
+?rmarkdown::word_document
+
 word_document(
   toc = FALSE,
   toc_depth = 3,
@@ -129,11 +133,11 @@ word_document(
 )
 ```
 
-## Narrativa (Texto del documento)
+## 2. Narrativa (Texto del documento)
 ::: small
-Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento `.Rmd` todo lo que no esté en el encabezazo YAML o dentro de un `chunk` de código, será interpretado como texto.
-
-Para escribir la parte narrativa se utiliza el lenguaje [Markdown](https://es.wikipedia.org/wiki/Markdown), que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown.
+- Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. 
+- En un documento `.Rmd` todo lo que no esté en el encabezazo YAML o dentro de un `chunk` de código, será interpretado como texto.
+- Para escribir la parte narrativa se utiliza el lenguaje [Markdown](https://es.wikipedia.org/wiki/Markdown), que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender.
 :::
 
 ------------------------------
@@ -149,7 +153,7 @@ Para escribir la parte narrativa se utiliza el lenguaje [Markdown](https://es.wi
 ------------------------------
 
 ### Encabezados 
-Para crear encabezados de secciones y subsecciones has de utilizar el simbolo `#`. De tal forma:
+Para crear encabezados de secciones y subsecciones has de utilizar el simbolo `#`
 
 ``` md
 # Título
@@ -168,7 +172,9 @@ Para crear encabezados de secciones y subsecciones has de utilizar el simbolo `#
 
 ### Ecuaciones
 
-A veces puede interesarnos escribir **ecuaciones**. Para ello vamos a usar el lenguaje [LaTeX](http://www.latex-project.org/). Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo [este](https://latex.codecogs.com/eqneditor/editor.php).
+- A veces puede interesarnos escribir **ecuaciones**. 
+- Para ello vamos a usar el lenguaje [LaTeX](http://www.latex-project.org/). 
+- Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo [este](https://latex.codecogs.com/eqneditor/editor.php).
 
 ------------------------------
 
@@ -196,11 +202,16 @@ Existen muchos recursos en la web sobre sintáxis markdown:
 - [https://quarto.org/docs/authoring/markdown-basics.html](https://quarto.org/docs/authoring/markdown-basics.html)
 
 
-## Trozos de código (`chunks`)
+## 3. Trozos de código (`chunks`)
 
 ::: small
-Los trozos o bloques de código (`chunks`) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento `.Rmd` tenemos que indicar un tipo especial de marca.
+- Los trozos o bloques de código (`chunks`) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. 
+- Para distinguir los trozos de código del resto de elementos del documento `.Rmd` tenemos que indicar un tipo especial de marca.
+:::
 
+## 3. Trozos de código (`chunks`)
+
+::: small
 Existen dos formas de incrustar código dentro de un documento `.Rmd`:
 
 a.  **Código en línea:** Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)
@@ -228,9 +239,10 @@ De esta forma podemos incluir resultados de análisis (e.g. p.valor de un análi
 ### b. Bloques de código (**chunks**)
 
 ::: small
-Los trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración. Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: `shell/bash`, `python`, `SQL`, `R`, etc.)
+- Los trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración.
+- Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: `shell/bash`, `python`, `SQL`, `R`, etc.)
 
-Para insertar un trozo de código en R, puedes escribirlo manualmente escribiendo ```` ```{r} ```` seguido de ```` ``` ```` en la siguiente línea. 
+- Para insertar un trozo de código en R, puedes escribirlo manualmente escribiendo ```` ```{r} ```` seguido de ```` ``` ```` en la siguiente línea. 
 <br> 
 
 ````markdown
@@ -245,6 +257,7 @@ Knitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mo
 
 ------------------------------
 
+## {footer=false}
 ::: small
 En la siguiente animación (@fig-chunk-anatomy) puedes ver la anatomía de un trozo de código.
 ::: 
@@ -289,13 +302,13 @@ n <- 5
 seq(n)
 ```
 
-Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas [aquí](http://yihui.name/knitr/options/).
-
 :::
 ------------------------------
 
 ### Principales opciones de los chunks 
 
+::: small
+Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas [aquí](http://yihui.name/knitr/options/).
 
 -   `eval = FALSE` evita que el código sea evaluado. (Y, obviamente, si el código no es ejecutado no se generaran resultados). Esto es útil para mostrar códigos de ejemplo, o para deshabilitar un gran bloque de código sin comentar cada línea.
 
@@ -303,23 +316,26 @@ Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas
 
 -   `echo = FALSE` evita que se vea el código, pero sí muestra los resultados en el archivo final.
 
+:::
 ------------------------------
 
 ### Principales opciones de los chunks 
 
-
+::: small
 -   `message = FALSE` o `warning = FALSE` evita que aparezcan mensajes o advertencias en el archivo final.
 
--   `esults = 'hide'` oculta el output impreso
+-   `results = 'hide'` oculta el output impreso
 
 -   `fig.show = 'hide'` oculta los gráficos producidos
 
 -   `error = TRUE` permite que se siga renderizando el documento a pesar de que exista un error en el código. Puede ser útil durante el proceso de creación de un documento reproducible
 
+:::
 ------------------------------
 
 ### Incluir Tablas
 
+::: small
 Un aspecto muy intersante de los documentos reproducibles es la inclusión de tablas. Para incluir una tabla existen diferentes opciones, siendo la función `knitr::kable` la que nos permite incluir tablas de la forma mas sencilla (mas información [aquí](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)). Así por ejemplo, si escribimos
 
 <br>
@@ -331,7 +347,7 @@ knitr::kable(
 ```
 ````
 obtenemos la @tbl-ejemplo-tabla
-
+::: 
 ------------------------------
 
 ::: small
@@ -345,16 +361,18 @@ knitr::kable(
 ```
 ::: 
 
-## Tejer y Renderizar
+## Tejer y Renderizar {footer=false}
 ::: small
 - Al terminar nuestro`.Rmd` escrito procedemos a tejer (`knit`) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.
 
 - **Knit** es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa. 
 
 Para ello en la parte superior del panel, hacer click en `Knit` directamente o desplegar las opciones de `Knit` y ejecutar la que mas nos convenga (@fig-knit, ver animación en @fig-knitting).
-::: 
 
 ![Opciones Knit](images/knit.png){#fig-knit}
+::: 
+
+
 
 ---------------------------------
 
@@ -408,7 +426,7 @@ Resumen de los pasos que sigue RMarkdown para llegar al documento renderizado
 
 ## ¿Alguna duda?
 
-- [@ajpelu](https://twitter.com/ajpelu)
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
 - [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
 
 

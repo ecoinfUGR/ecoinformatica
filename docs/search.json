@@ -282,7 +282,7 @@
     "href": "sesiones/repro/repro_intro_slides.html#alguna-duda",
     "title": "Reproducibilidad en Ciencia",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "modulos/reproducibilidad.html",
@@ -362,35 +362,35 @@
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#crear-un-archivo-.rmd",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Crear un archivo .Rmd\n",
-    "text": "Crear un archivo .Rmd\n\nDentro de R-Studio, haz clic en Archivo → Nuevo archivo → Rmarkdown\n\n\n\n\n\n\n\n(a) Crea archivo Rmd\n\n\n\n\n\n\n\n(b) Define detalles generales Rmd\n\n\n\n\nFigura 2. Crea archivo Rmd"
+    "text": "Crear un archivo .Rmd\n\nDentro de R-Studio, haz clic en Archivo → Nuevo archivo → Rmarkdown\n\n\n\n\n\n\nCrea archivo Rmd\n\n\n\n\n\nDefine detalles generales Rmd\n\n\n\n\n\nFigura 2"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#encabezado-yaml",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#encabezado-yaml",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
-    "section": "Encabezado YAML",
-    "text": "Encabezado YAML\n\nYAML, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\n\nDelimitado por tres guiones (---) al inicio y al final (a modo de bloque)\nEstructura anidada\nContiene metadatos del documento: título del documento, autor, los formatos de salida, etc)\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\nFigura 3. Encabezado YAML"
+    "section": "1. Encabezado YAML",
+    "text": "1. Encabezado YAML\n\nYAML, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.\n\nDelimitado por tres guiones (---) al inicio y al final (a modo de bloque)\nEstructura anidada\nContiene metadatos del documento: título del documento, autor, los formatos de salida, etc)\n\n\n\n\n\n\n\n\n\n\n\n(a) Encabezado YAML\n\n\n\n\n\n\n\n\n\n(b) Vista tras su renderización\n\n\n\n\n\n\nFigura 3. Encabezado YAML"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#narrativa-texto-del-documento",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
-    "section": "Narrativa (Texto del documento)",
-    "text": "Narrativa (Texto del documento)\n\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown."
+    "section": "2. Narrativa (Texto del documento)",
+    "text": "2. Narrativa (Texto del documento)\n\n\nEsta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc.\nEn un documento .Rmd todo lo que no esté en el encabezazo YAML o dentro de un chunk de código, será interpretado como texto.\nPara escribir la parte narrativa se utiliza el lenguaje Markdown, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender."
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
-    "section": "Trozos de código (chunks)",
-    "text": "Trozos de código (chunks)\n\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final. Para distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca.\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc."
+    "section": "3. Trozos de código (chunks)",
+    "text": "3. Trozos de código (chunks)\n\n\nLos trozos o bloques de código (chunks) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final.\nPara distinguir los trozos de código del resto de elementos del documento .Rmd tenemos que indicar un tipo especial de marca."
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#tejer-y-renderizar",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "Tejer y Renderizar",
-    "text": "Tejer y Renderizar\n\n\nAl terminar nuestro.Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.\nKnit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\n\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\n\nFigura 5. Opciones Knit"
+    "text": "Tejer y Renderizar\n\n\nAl terminar nuestro.Rmd escrito procedemos a tejer (knit) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.\nKnit es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.\n\nPara ello en la parte superior del panel, hacer click en Knit directamente o desplegar las opciones de Knit y ejecutar la que mas nos convenga (Figura 5, ver animación en Figura 6).\n\n\n\n\n\nFigura 5. Opciones Knit"
   },
   {
     "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#resumen-del-flujo-de-trabajo",
@@ -418,7 +418,7 @@
     "href": "sesiones/repro/repro_reproducible_documents_slides.html#alguna-duda",
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/ \n\n\n\n\n\n\n\nMaster Universitario en Conservación, Gestión y Restauración de la Biodiversidad"
+    "text": "¿Alguna duda?\n\n\n ajpelu.bsky.social\n\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "modulos/reproducibilidad.html#recursos",
@@ -1833,5 +1833,33 @@
     "title": "Estructuras de Control en Programación (R y Python)",
     "section": "",
     "text": "Estructuras de control: Herramientas fundamentales en programación que permiten modificar el flujo de ejecución de un programa según ciertas condiciones o repeticiones.\nSon esenciales para tomar decisiones dinámicas, realizar acciones repetitivas y dirigir cómo se ejecuta el código, haciéndolo más flexible y adaptable."
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#section",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#section",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "",
+    "text": "Figura 1. Esquema general de Rmd. Fuente: @allison_horst"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#crear-un-archivo-.rmd-1",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#crear-un-archivo-.rmd-1",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Crear un archivo .Rmd\n",
+    "text": "Crear un archivo .Rmd"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks-1",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#trozos-de-código-chunks-1",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "3. Trozos de código (chunks)",
+    "text": "3. Trozos de código (chunks)\n\nExisten dos formas de incrustar código dentro de un documento .Rmd:\n\nCódigo en línea: Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)\nBloques de código (chunks): Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc."
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#section-1",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#section-1",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "",
+    "text": "En la siguiente animación (Figura 4) puedes ver la anatomía de un trozo de código.\n\n\n\n\n\n\nFigura 4. Anatomía de un trozo de Código. Fuente: Shannon Pileggi"
   }
 ]
