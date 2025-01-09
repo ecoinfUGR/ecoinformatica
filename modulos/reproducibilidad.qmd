@@ -33,7 +33,7 @@ listing:
     sort-ui: false
     filter-ui: false
 tbl-colwidths: [10,50,40]
-bibliography: ../assets/references/refs_modulos.bib
+bibliography: ../assets/references/refs_modulo_repro.bib
 csl: ../assets/references/ecology.csl
 nocite: |
   @*
