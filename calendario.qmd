@@ -13,6 +13,7 @@ library(tidyverse)
 library(kableExtra)
 library(toastui) 
 
+# read horarios
 h <- read_csv("assets/horarios_24_25.csv", show_col_types = FALSE)
 
 d <- h |> 
