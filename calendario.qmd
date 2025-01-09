@@ -30,7 +30,6 @@ d <- h |>
     calendarId, title, body, recurrenceRule, start, end, category, location = site, 
     backgroundColor, color, borderColor
   )
-
 ```
 
 ```{r}
