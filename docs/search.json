@@ -289,7 +289,7 @@
     "href": "modulos/reproducibilidad.html",
     "title": "Reproducibilidad",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nControl de Versiones con Git y GitHub\n\n\nMon, Jan 20\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos.html",
@@ -425,7 +425,7 @@
     "href": "modulos/reproducibilidad.html#recursos",
     "title": "Reproducibilidad",
     "section": "Recursos",
-    "text": "Recursos\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media"
+    "text": "Recursos\n\nThe Turing Way handbook to reproducible, ethical and collaborative data science.\nAwesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github"
   },
   {
     "objectID": "modulos/bbdd.html",
@@ -460,7 +460,7 @@
     "href": "modulos/programacion.html",
     "title": "Introducción a la Programación",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nPrimeros pasos con R\n\n\nFri, Jan 10\n\n\n\n\n2\n\n\nPipe programming\n\n\nTue, Jan 14\n\n\n\n\n3\n\n\nEstructuras de Control en Programación (R y Python)\n\n\nWed, Jan 15\n\n\n\n\n4\n\n\nTidy data\n\n\nFri, Jan 17\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/programacion.html#recursos",
@@ -1650,7 +1650,7 @@
     "href": "sesiones/introprog/intro_R_jml.html#variables-constantes-y-operadores",
     "title": "Primeros pasos con R",
     "section": "Variables, constantes y operadores",
-    "text": "Variables, constantes y operadores\n\na &lt;- 3.25  # Asigna el valor 3.25 a la variable 'a'\n\na = 3.25  # Otra forma de asignar valores\n\nnombre &lt;- 'Pepe'  # Asigna una cadena de texto a la variable: nombre\n\n\nas.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha\n\n[1] \"2000-01-01\"\n\nas.Date('2000-01-01') + 2  # Suma días a una fecha\n\n[1] \"2000-01-03\"\n\n\n\nConstantes\n\nNULL ## Representa un objeto vacío\n\nNULL\n\nNA ## Representa un valor faltante\n\n[1] NA\n\nNaN ## Representa un valor no numérico (ejemplo: 1/0)\n\n[1] NaN\n\npi ## Constante matemática predefinida\n\n[1] 3.141593\n\n\n\n\nOperadores\n\na == 3.25  # Compara si 'a' es igual a 3.25\n\n[1] TRUE\n\na == 6  # Compara si 'a' es igual a 6\n\n[1] FALSE\n\nnombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'\n\n[1] TRUE\n\nnombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'\n\n[1] TRUE\n\na != 2  # Verifica si 'a' no es igual a 2\n\n[1] TRUE\n\n5 &lt; 6  # Verifica si 5 es menor que 6\n\n[1] TRUE\n\n10 &gt;= 5  # Verifica si 10 es mayor o igual a 5\n\n[1] TRUE\n\n\n\nOperadores aritméticos\n\n1 + 2  # Suma\n\n[1] 3\n\n1 - 2  # Resta\n\n[1] -1\n\n5 / 3  # División\n\n[1] 1.666667\n\n2 ^ 3  # Potencia\n\n[1] 8\n\nsqrt(10)  # Raíz cuadrada\n\n[1] 3.162278\n\nrunif(5, min = 0, max = 100) # Números aleatorios\n\n[1] 92.62206 94.21360 68.87264 36.36304 22.18688"
+    "text": "Variables, constantes y operadores\n\na &lt;- 3.25  # Asigna el valor 3.25 a la variable 'a'\n\na = 3.25  # Otra forma de asignar valores\n\nnombre &lt;- 'Pepe'  # Asigna una cadena de texto a la variable: nombre\n\n\nas.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha\n\n[1] \"2000-01-01\"\n\nas.Date('2000-01-01') + 2  # Suma días a una fecha\n\n[1] \"2000-01-03\"\n\n\n\nConstantes\n\nNULL ## Representa un objeto vacío\n\nNULL\n\nNA ## Representa un valor faltante\n\n[1] NA\n\nNaN ## Representa un valor no numérico (ejemplo: 1/0)\n\n[1] NaN\n\npi ## Constante matemática predefinida\n\n[1] 3.141593\n\n\n\n\nOperadores\n\na == 3.25  # Compara si 'a' es igual a 3.25\n\n[1] TRUE\n\na == 6  # Compara si 'a' es igual a 6\n\n[1] FALSE\n\nnombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'\n\n[1] TRUE\n\nnombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'\n\n[1] TRUE\n\na != 2  # Verifica si 'a' no es igual a 2\n\n[1] TRUE\n\n5 &lt; 6  # Verifica si 5 es menor que 6\n\n[1] TRUE\n\n10 &gt;= 5  # Verifica si 10 es mayor o igual a 5\n\n[1] TRUE\n\n\n\nOperadores aritméticos\n\n1 + 2  # Suma\n\n[1] 3\n\n1 - 2  # Resta\n\n[1] -1\n\n5 / 3  # División\n\n[1] 1.666667\n\n2 ^ 3  # Potencia\n\n[1] 8\n\nsqrt(10)  # Raíz cuadrada\n\n[1] 3.162278\n\nrunif(5, min = 0, max = 100) # Números aleatorios\n\n[1] 37.50953 24.35718 99.23489 52.33144 13.75842"
   },
   {
     "objectID": "sesiones/introprog/intro_R_jml.html#vectores",
@@ -1861,5 +1861,313 @@
     "title": "Documentos Reproducibles con Rmarkdown (slides)",
     "section": "",
     "text": "En la siguiente animación (Figura 4) puedes ver la anatomía de un trozo de código.\n\n\n\n\n\n\nFigura 4. Anatomía de un trozo de Código. Fuente: Shannon Pileggi"
+  },
+  {
+    "objectID": "practicas/pr_repro_documentos_reproducibles.html#entrega",
+    "href": "practicas/pr_repro_documentos_reproducibles.html#entrega",
+    "title": "Práctica Documentos Reproducibles",
+    "section": "2.1 Entrega",
+    "text": "2.1 Entrega\n\n\n\n\n\n\nMaterial a entregar\n\n\n\nCada alumno debe entregar una carpeta (en formato comprimido .zip) que contenga al menos los siguientes ficheros: el archivo .Rmd; el archivo de salida generado (word, pdf), el conjunto datos usado, y el resto de archivos necesarios para renderizar el documento (e.g. imágenes, etc.)"
+  },
+  {
+    "objectID": "practicas/pr_repro_documentos_reproducibles.html#recursos",
+    "href": "practicas/pr_repro_documentos_reproducibles.html#recursos",
+    "title": "Práctica Documentos Reproducibles",
+    "section": "2.2 Recursos",
+    "text": "2.2 Recursos\nPara la realización de este ejercicio práctico consulta las diapositivas y el temario que se ha dado en clase así como algunos de los recursos incluidos, como por ejemplo:\n\nR for Data Science en especial los capítulos 27 a 29 en su versión en castellano.\nR for Reproducible Scientific Analysis (RMarkdown / knitr)\nReproducible reports with R markdown\nR para Análisis Científicos Reproducibles\nLevel up in R Markdown\nIntroducing RStudio and R Markdown\nCurso de Introducción a R\nEscribir un Trabajo Fin de Estudios con R Markdown\n… Existen muchos más"
+  },
+  {
+    "objectID": "sesiones/repro/repro_reproducible_documents_slides.html#ejemplo-completo",
+    "href": "sesiones/repro/repro_reproducible_documents_slides.html#ejemplo-completo",
+    "title": "Documentos Reproducibles con Rmarkdown (slides)",
+    "section": "Ejemplo completo",
+    "text": "Ejemplo completo\n\n\nEn este enlace tienes un ejemplo bastante completo.\nDescarga la carpeta, descomprimela y abre el archivo ejemplo_documento_reproducible.Rmd en RStudio."
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "",
+    "text": "Este documento presenta un análisis de datos sobre el efecto del peso de la bellota en la altura de la plántula. Se utilizarán técnicas estadísticas para explorar la relación entre estas dos variables.\nEl estudio de la relación entre el peso de la bellota y la altura de la plántula es importante para comprender los factores que influyen en el crecimiento de las plantas. En particular, se ha observado que el tamaño de la bellota puede influir en el desarrollo inicial de la plántula (Quero et al. 2007)."
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#zona-de-estudio",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#zona-de-estudio",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "Zona de Estudio",
+    "text": "Zona de Estudio\nLa zona de estudio se localiza en el Parque Nacional de Sierra Nevada. En concreto se trata de un encinar situado en las proximidades del Jardín Botánico de La Cortijuela (Granada; 37º05’‘6.11’’ N, 3º28’11.38’’ W) a una altitud de unos 1650 m s.n.m. (Figura @ref(fig:mapa)).\n\n\n\n\nMapa de localización de la zona de estudio"
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#carga-y-exploración-de-datos",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#carga-y-exploración-de-datos",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "Carga y exploración de datos",
+    "text": "Carga y exploración de datos\n\ndatos &lt;- read.csv(\"peso_altura_bellota.csv\")\n\n# Visualizar las primeras filas del conjunto de datos\nhead(datos)\n\n  peso_bellota altura_plantula\n1           10              15\n2           15              20\n3           12              18\n4            8              12\n5           14              22\n6           16              25"
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#análisis-exploratorio",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#análisis-exploratorio",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "Análisis exploratorio",
+    "text": "Análisis exploratorio\nEn la Figura @ref(fig:scatterplot), se explora gráficamente la relación entre el peso de la bellota y la altura de la plántula.\n\n\n\n\n\nRelación entre Peso de la Bellota y Altura de la Plántula\n\n\n\n\nLa relación entre el peso de la bellota (\\(x\\)) y la altura de la plántula (\\(y\\)) puede ser modelada con la siguiente ecuación (Eq. @ref(eq:modelo-lineal)) de regresión lineal:\n\n\\[\n\\begin{equation}\ny = \\beta_0 + \\beta_1 x + \\epsilon (\\#eq:modelo-lineal)\n\\end{equation}\n\\]\ndonde:\n\n\\(y\\): Altura de la plántula.\n\\(x\\): Peso de la bellota.\n\\(\\beta_0\\): Intercepto.\n\\(\\beta_1\\): Pendiente.\n\\(\\epsilon\\): Término de error."
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#modelo-de-regresión-lineal",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#modelo-de-regresión-lineal",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "Modelo de Regresión Lineal",
+    "text": "Modelo de Regresión Lineal\nSe ajusta un modelo de regresión lineal para cuantificar la relación entre el peso de la bellota y la altura de la plántula.\n\n# Ajustar un modelo de regresión lineal\nmodelo &lt;- lm(altura_plantula ~ peso_bellota, data = datos)\n\n# Resumen del modelo\nsummary(modelo)\n\n\nCall:\nlm(formula = altura_plantula ~ peso_bellota, data = datos)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.3000 -0.2667  0.0000  0.4333  1.2667 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)    0.8000     1.7700   0.452    0.665    \npeso_bellota   1.4333     0.1442   9.940 2.23e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.117 on 7 degrees of freedom\nMultiple R-squared:  0.9338,    Adjusted R-squared:  0.9244 \nF-statistic:  98.8 on 1 and 7 DF,  p-value: 2.226e-05"
+  },
+  {
+    "objectID": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#resultados-de-la-regresión",
+    "href": "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html#resultados-de-la-regresión",
+    "title": "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula",
+    "section": "Resultados de la Regresión",
+    "text": "Resultados de la Regresión\nSe utiliza el paquete broom para presentar los resultados de manera tabular (Tabla @ref(tab:tabla-modelo)).\n\n\n\nResultados de la Regresión Lineal\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.800000\n1.770003\n0.4519767\n0.6649583\n\n\npeso_bellota\n1.433333\n0.144200\n9.9398957\n0.0000223\n\n\n\n\n\nEl modelo ajustado sugiere la siguiente ecuación:\n\\[\ny = \\text{0.8} + \\text{1.433}x\n\\]\ny explica un 0.93% de la variabilidad en la altura de la plántula."
+  },
+  {
+    "objectID": "practicas/pr_repro_control_versiones.html#sec-actividad1",
+    "href": "practicas/pr_repro_control_versiones.html#sec-actividad1",
+    "title": "Práctica Control de Versiones",
+    "section": "2.1 Actividad 1. Control de Versiones de un proyecto",
+    "text": "2.1 Actividad 1. Control de Versiones de un proyecto\n\nInstalar Git en tu ordenador.\nCrear un repositorio llamado ecoinf_nombre Ejemplo:\n\necoinf_antonioperez\n\nGenera un documento de texto plano (.txt) o un script (.R).\nRealiza varios cambios en el documento y registra cada cambio.\nHaz un control de versiones.\nCrea un repositorio en GitHub.\nConecta ambos repositorios (repositorio local y repositorio remoto) y sincronízalos.\n\n\n\n\n\n\n\nEntrega\n\n\n\nCada alumno ha de enviar la url del repositorio creado en github."
+  },
+  {
+    "objectID": "practicas/pr_repro_control_versiones.html#actividad-2.-control-de-versiones-colaboración",
+    "href": "practicas/pr_repro_control_versiones.html#actividad-2.-control-de-versiones-colaboración",
+    "title": "Práctica Control de Versiones",
+    "section": "2.2 Actividad 2. Control de Versiones (Colaboración)",
+    "text": "2.2 Actividad 2. Control de Versiones (Colaboración)\n\nCrea un fork del repositorio https://github.com/ajpelu/teach_git_ejemplo\nClona el repositorio en tu equipo para tener una copia local.\nEscribe algo en el documento miarchivo.txt (además de tu nombre y tus apellidos, algo original: un poema, una canción, un refrán, un mensaje, una receta, … ).\nRegistra los cambios y haz un control de versiones.\nSincroniza con tu repositorio remoto.\nHaz un pull request.\n\n\n\n\n\n\n\nTip\n\n\n\nSi tienes alguna duda consulta puedes leer este tutorial\n\n\n\n\n\n\n\n\nEntrega\n\n\n\nNo es necesario realizar entrega, puesto que me llegarán los pull requests de cada alumno"
+  },
+  {
+    "objectID": "practicas/pr_repro_control_versiones.html#actividad-3.-control-de-versiones-de-documentos-reproducibles",
+    "href": "practicas/pr_repro_control_versiones.html#actividad-3.-control-de-versiones-de-documentos-reproducibles",
+    "title": "Práctica Control de Versiones",
+    "section": "2.3 Actividad 3. Control de Versiones de Documentos Reproducibles",
+    "text": "2.3 Actividad 3. Control de Versiones de Documentos Reproducibles\n\nCrea un documento reproducible con .Rmd y exportalo en el formato que mas te guste (pdf, word, etc.). El documento debe contener al menos texto, imágenes, código, tablas, etc.\nRealiza cambios en el documento:\n\n\nPersonaliza con el encabezado YAML\nIncluye texto\nModifica el código\n\n\nRegistra los cambios en el documento mediante el control de versiones de forma local y en remoto.\nUsa el repositorio del la Actividad 1.\n\n\n\n\n\n\n\nEntrega\n\n\n\nCada alumno ha de enviar la url del repositorio creado en github así como un archivo comprimido (.zip) con una copia de su repositorio local."
+  },
+  {
+    "objectID": "practicas/pr_repro_control_versiones.html#recursos",
+    "href": "practicas/pr_repro_control_versiones.html#recursos",
+    "title": "Práctica Control de Versiones",
+    "section": "2.4 Recursos",
+    "text": "2.4 Recursos\nPara la realización de este ejercicio práctico consulta las diapositivas y el temario que se ha dado en clase así como algunos de los recursos incluidos, como por ejemplo:\n\nInteractive Tutorial Git (CodeSchool)\nGit - the simple guide (Roger Dudler)\nGit and GitHub (Hadley Wickham)\nA brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)\nA basic tutorial to version control using git (Jon Lefcheck)\nGit/Github guide a minimal tutorial (Karl Broman)\nGetting Git Right (Atlassian)\nRecopilación de tutoriales (F. Rodríguez-Sánchez)\nGuía Visual de Git\nIntroducción al funcionamiento y uso de git y github\n… Existen muchos más"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html",
+    "href": "sesiones/programacion/intro_R_jml.html",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python.\n\n\n\n\n\nR es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\n\n\n\n\nLas funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())\n\n\n\n\nPor ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views\n\n\n\n\nManuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R\n\n\n\n\n\nhelp(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#qué-es-rstudio",
+    "href": "sesiones/programacion/intro_R_jml.html#qué-es-rstudio",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "RStudio es un entorno de desarrollo integrado (IDE) para R y Python."
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#qué-es-r",
+    "href": "sesiones/programacion/intro_R_jml.html#qué-es-r",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "R es un lenguaje de programación principalmente orientado al análisis estadístico y visualización de información cuantitativa y cualitativa y publicado como software libre.\n\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2024). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2024},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages."
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#librerías",
+    "href": "sesiones/programacion/intro_R_jml.html#librerías",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Las funciones se agrupan por paquetes o librerías\nLas Funciones más habituales se incluyen por defecto en R (base)\nLas librerías se pueden instalar y cargar fácilmente (install.packages() y library())"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#librerías-1",
+    "href": "sesiones/programacion/intro_R_jml.html#librerías-1",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Por ejemplo ggplot2\n\ninstall.packages('ggplot2')  # Instala el paquete 'ggplot2'\n\nlibrary(ggplot2)  # Carga el paquete 'ggplot2' para usar sus funciones\n\nlibrary(help=ggplot2)  # Muestra la ayuda disponible para el paquete 'ggplot2'\n\nbrowseVignettes()\n\nHay conjuntos de librerías según su temática llamadas Task Views"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#fuentes-de-información",
+    "href": "sesiones/programacion/intro_R_jml.html#fuentes-de-información",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "Manuales oficiales\nManuales externos\nListas de correo\nR-bloggers\nComunidad R-Hispano\nApuntes de Luís Cayuela\nR Cookbook, 2nd Edition\nManipulación de datos e investigación reproducible en R"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#ayuda",
+    "href": "sesiones/programacion/intro_R_jml.html#ayuda",
+    "title": "Primeros pasos con R",
+    "section": "",
+    "text": "help(\"aov\") ## Ayuda sobre una función específica\n\nhelp('+') ## Ayuda sobre operadores matemáticos\n\nhelp.search('linear model') ## Búsqueda de palabras clave"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#variables-constantes-y-operadores",
+    "href": "sesiones/programacion/intro_R_jml.html#variables-constantes-y-operadores",
+    "title": "Primeros pasos con R",
+    "section": "Variables, constantes y operadores",
+    "text": "Variables, constantes y operadores\n\na &lt;- 3.25  # Asigna el valor 3.25 a la variable 'a'\n\na = 3.25  # Otra forma de asignar valores\n\nnombre &lt;- 'Pepe'  # Asigna una cadena de texto a la variable: nombre\n\n\nas.Date('2000-01-01')  # Convierte un texto en un objeto de tipo fecha\n\n[1] \"2000-01-01\"\n\nas.Date('2000-01-01') + 2  # Suma días a una fecha\n\n[1] \"2000-01-03\"\n\n\n\nConstantes\n\nNULL ## Representa un objeto vacío\n\nNULL\n\nNA ## Representa un valor faltante\n\n[1] NA\n\nNaN ## Representa un valor no numérico (ejemplo: 1/0)\n\n[1] NaN\n\npi ## Constante matemática predefinida\n\n[1] 3.141593\n\n\n\n\nOperadores\n\na == 3.25  # Compara si 'a' es igual a 3.25\n\n[1] TRUE\n\na == 6  # Compara si 'a' es igual a 6\n\n[1] FALSE\n\nnombre != 'Juan'  # Verifica si 'nombre' no es igual a 'Juan'\n\n[1] TRUE\n\nnombre == 'Pepe'  # Verifica si 'nombre' es igual a 'Pepe'\n\n[1] TRUE\n\na != 2  # Verifica si 'a' no es igual a 2\n\n[1] TRUE\n\n5 &lt; 6  # Verifica si 5 es menor que 6\n\n[1] TRUE\n\n10 &gt;= 5  # Verifica si 10 es mayor o igual a 5\n\n[1] TRUE\n\n\n\nOperadores aritméticos\n\n1 + 2  # Suma\n\n[1] 3\n\n1 - 2  # Resta\n\n[1] -1\n\n5 / 3  # División\n\n[1] 1.666667\n\n2 ^ 3  # Potencia\n\n[1] 8\n\nsqrt(10)  # Raíz cuadrada\n\n[1] 3.162278\n\nrunif(5, min = 0, max = 100) # Números aleatorios\n\n[1] 52.51568 31.17330 74.89380 95.30941 43.17172"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#vectores",
+    "href": "sesiones/programacion/intro_R_jml.html#vectores",
+    "title": "Primeros pasos con R",
+    "section": "Vectores",
+    "text": "Vectores\n\na &lt;- NULL # Crea un vector vacío\n\na &lt;- 1:10 # Crea un vector con valores del 1 al 10\n\nc &lt;- seq(1, 10, by = 0.5) # Crea un vector secuencial con incrementos de 0.5\n\nd &lt;- c(0, 1, 1, 2, 3) # Crea un vector con valores específicos\n\ne &lt;- c('b1', 'b2', 'b3') # Crea un vector de cadenas de texto\n\nf &lt;- rep(5, 6) # Crea un vector repitiendo el número 5 seis veces\n\nd[1] # Obtiene el primer elemento del vector 'd'\n\n[1] 0\n\nd[-1] # Excluye el primer elemento del vector 'd'\n\n[1] 1 1 2 3"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#matrices",
+    "href": "sesiones/programacion/intro_R_jml.html#matrices",
+    "title": "Primeros pasos con R",
+    "section": "Matrices",
+    "text": "Matrices\n\nmat &lt;- matrix(1:12, 3, 4) # Crea una matriz con valores del 1 al 12, dispuestos en 3 filas y 4 columnas\n\nmat\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\nmatrix(1:12, 3, 4, byrow = TRUE) # La matriz se rellena por filas\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\nrbind(1:5, 11:15, 21:25) # Une vectores como filas\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]   11   12   13   14   15\n[3,]   21   22   23   24   25\n\ncbind(1:5, 11:15, 21:25) # Une vectores como columnas\n\n     [,1] [,2] [,3]\n[1,]    1   11   21\n[2,]    2   12   22\n[3,]    3   13   23\n[4,]    4   14   24\n[5,]    5   15   25\n\nmat[1:2, 2:3] # Selecciona valores de las filas 1 y 2, columnas 2 y 3\n\n     [,1] [,2]\n[1,]    4    7\n[2,]    5    8\n\nmat[, -2] # Excluye la segunda columna de la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    7   10\n[2,]    2    8   11\n[3,]    3    9   12\n\nt(mat) # Transpone la matriz\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n[4,]   10   11   12"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#data-frames",
+    "href": "sesiones/programacion/intro_R_jml.html#data-frames",
+    "title": "Primeros pasos con R",
+    "section": "Data frames",
+    "text": "Data frames\n\nmat &lt;- matrix(1:30, 10) ## Crea una matriz con valores del 1 al 30 en 10 filas\n\nmat\n\n      [,1] [,2] [,3]\n [1,]    1   11   21\n [2,]    2   12   22\n [3,]    3   13   23\n [4,]    4   14   24\n [5,]    5   15   25\n [6,]    6   16   26\n [7,]    7   17   27\n [8,]    8   18   28\n [9,]    9   19   29\n[10,]   10   20   30\n\ndf_mat &lt;- as.data.frame(mat) ## Convierte la matriz en un 'data.frame'\n\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\ndf_mat[2, 1] # Selecciona un elemento específico (fila 2, columna 1)\n\n[1] 2\n\ndf_mat$V1 # Selecciona una columna por su nombre\n\n [1]  1  2  3  4  5  6  7  8  9 10"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#primeros-pasos",
+    "href": "sesiones/programacion/intro_R_jml.html#primeros-pasos",
+    "title": "Primeros pasos con R",
+    "section": "Primeros pasos",
+    "text": "Primeros pasos\n\nnames(df_mat) # Muestra los nombres de las columnas\n\n[1] \"V1\" \"V2\" \"V3\"\n\nnames(df_mat) &lt;- c('B1', 'B2', 'B3') # Renombra las columnas\n\nrownames(df_mat) # Muestra los nombres de las filas\n\n [1] \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\"\n\nrownames(df_mat) &lt;- LETTERS[1:10] # Renombra las filas con letras en mayúscula\n\nhead(df_mat) # Muestra las primeras filas del 'data.frame'\n\n  B1 B2 B3\nA  1 11 21\nB  2 12 22\nC  3 13 23\nD  4 14 24\nE  5 15 25\nF  6 16 26"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#seleccionar-de-mis-datos",
+    "href": "sesiones/programacion/intro_R_jml.html#seleccionar-de-mis-datos",
+    "title": "Primeros pasos con R",
+    "section": "Seleccionar de mis datos",
+    "text": "Seleccionar de mis datos\n\niris[, 1] # Selecciona la primera columna\n\n  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1\n [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0\n [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5\n [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1\n [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5\n [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3\n[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2\n[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8\n[145] 6.7 6.7 6.3 6.5 6.2 5.9\n\niris[1:6, -1] # Selecciona las primeras 6 filas excluyendo la primera columna\n\n  Sepal.Width Petal.Length Petal.Width Species\n1         3.5          1.4         0.2  setosa\n2         3.0          1.4         0.2  setosa\n3         3.2          1.3         0.2  setosa\n4         3.1          1.5         0.2  setosa\n5         3.6          1.4         0.2  setosa\n6         3.9          1.7         0.4  setosa\n\niris[1:3, ] # Selecciona las primeras 3 filas\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n\niris[-1:-140, ] # Excluye las primeras 140 filas\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n141          6.7         3.1          5.6         2.4 virginica\n142          6.9         3.1          5.1         2.3 virginica\n143          5.8         2.7          5.1         1.9 virginica\n144          6.8         3.2          5.9         2.3 virginica\n145          6.7         3.3          5.7         2.5 virginica\n146          6.7         3.0          5.2         2.3 virginica\n147          6.3         2.5          5.0         1.9 virginica\n148          6.5         3.0          5.2         2.0 virginica\n149          6.2         3.4          5.4         2.3 virginica\n150          5.9         3.0          5.1         1.8 virginica\n\niris[1:6, c(1, 3)] # Selecciona las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Length Petal.Length\n1          5.1          1.4\n2          4.9          1.4\n3          4.7          1.3\n4          4.6          1.5\n5          5.0          1.4\n6          5.4          1.7\n\niris[1:6, -c(1, 3)] # Excluye las columnas 1 y 3 de las primeras 6 filas\n\n  Sepal.Width Petal.Width Species\n1         3.5         0.2  setosa\n2         3.0         0.2  setosa\n3         3.2         0.2  setosa\n4         3.1         0.2  setosa\n5         3.6         0.2  setosa\n6         3.9         0.4  setosa"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#estadísticos-descriptivos",
+    "href": "sesiones/programacion/intro_R_jml.html#estadísticos-descriptivos",
+    "title": "Primeros pasos con R",
+    "section": "Estadísticos descriptivos",
+    "text": "Estadísticos descriptivos\n\ntable(Species) # Crea una tabla de frecuencia por especie\n\nSpecies\n    setosa versicolor  virginica \n        50         50         50 \n\nsummary(iris) # Resumen estadístico del conjunto 'iris'\n\n  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   \n Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  \n 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  \n Median :5.800   Median :3.000   Median :4.350   Median :1.300  \n Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  \n 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  \n Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  \n       Species  \n setosa    :50  \n versicolor:50  \n virginica :50  \n                \n                \n                \n\nsummary(cars) # Resumen estadístico del conjunto 'cars'\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nsd(iris$Sepal.Length) # Desviación estándar de una variable\n\n[1] 0.8280661"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#exportar-datos",
+    "href": "sesiones/programacion/intro_R_jml.html#exportar-datos",
+    "title": "Primeros pasos con R",
+    "section": "Exportar datos",
+    "text": "Exportar datos\nExportar un ‘data.frame’ como archivo CSV (valores separados por ‘comas’).\n\nwrite.table(df_mat, # data.frame\n            'df_mat.csv', # nombre del archivo de salida\n            sep=';', # Separador de columnas\n            dec=',', # Separador decimal\n            col.names=TRUE, # Mantener nombres de las columnas\n            row.names=FALSE) # No guardar nombres de las filas"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
+    "href": "sesiones/programacion/intro_R_jml.html#cómo-se-haría-la-función-área-del-triángulo",
+    "title": "Primeros pasos con R",
+    "section": "¿Cómo se haría la función ‘Área del triángulo’?",
+    "text": "¿Cómo se haría la función ‘Área del triángulo’?\n\narea_triangulo &lt;- function(b = 3, h = 5) { # valores por defecto\n  b * h / 2 # Calcula el área de un triángulo\n}\n\narea_triangulo() # Usa los valores por defecto\n\n[1] 7.5\n\narea_triangulo(b = 4) # Especifica un valor diferente para la base\n\n[1] 10"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#leyendas-gráficos-básicos",
+    "href": "sesiones/programacion/intro_R_jml.html#leyendas-gráficos-básicos",
+    "title": "Primeros pasos con R",
+    "section": "Leyendas (gráficos básicos)",
+    "text": "Leyendas (gráficos básicos)\n\n# Crea un gráfico de dispersión coloreado por especie\n\nplot(\n  Sepal.Length,\n  Petal.Length,\n  col = as.factor(Species),\n  xlab = 'Long. Sépalo',\n  ylab = 'Long. Pétalo' \n)\n\n# Agrega una leyenda al gráfico\n\nlegend(7, # Posición en el eje X\n       3, # Posición en el eje Y\n       col = c(1:3),\n       pch = 1, # Símbolo\n       legend = unique(Species)) # Valores únicos de la variable Species"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#usando-ggplot2",
+    "href": "sesiones/programacion/intro_R_jml.html#usando-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Usando ggplot2",
+    "text": "Usando ggplot2\n\n\n\n\n\n\nWarning\n\n\n\nManual de ggplot2\n\n\n\nlibrary(ggplot2)\n\nggplot(data=iris,\n       aes(x = Petal.Length,\n           y = Petal.Width)) +\n  geom_point(aes(color=Species))"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#histogramas-gráficos-básicos",
+    "href": "sesiones/programacion/intro_R_jml.html#histogramas-gráficos-básicos",
+    "title": "Primeros pasos con R",
+    "section": "Histogramas (gráficos básicos)",
+    "text": "Histogramas (gráficos básicos)\n\n# Opción A\n\nindice_versicolor &lt;- Species == 'versicolor' # Índice lógico para filtrar por especie\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n# Opción B\n\nsl_versicolor &lt;- subset(Sepal.Length, Species == 'versicolor') # Otra forma de filtrar\n\nhist(sl_versicolor) # Histograma del subconjunto filtrado"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#exportación-de-gráficos-agrupados",
+    "href": "sesiones/programacion/intro_R_jml.html#exportación-de-gráficos-agrupados",
+    "title": "Primeros pasos con R",
+    "section": "Exportación de gráficos (agrupados)",
+    "text": "Exportación de gráficos (agrupados)\n\n#jpeg('histogramas.jpg')\n\npar(mfrow = c(1, 2)) # Divide la ventana gráfica en una cuadrícula de 1x2\n\nhist(Sepal.Length) # Histograma de todas las longitudes de sépalo\n\nhist(Sepal.Length[indice_versicolor]) # Histograma de longitudes de sépalo para 'versicolor'\n\n\n\n\n\n\n\n#dev.off() # Cierra el dispositivo gráfico (= guarda el fichero)"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#histogramas-ggplot2",
+    "href": "sesiones/programacion/intro_R_jml.html#histogramas-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Histogramas (ggplot2)",
+    "text": "Histogramas (ggplot2)\n\nggplot(data = iris,\n       aes(x = Sepal.Length)) +\n  geom_histogram() +\n  labs( x = \"Longitud del sépalo\",\n        y = \"Frecuencia\",\n        title = \"Histograma longitud del sépalo\") +\n  theme_light()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# ggsave('histograma.png')"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#diagramas-de-cajas-boxplots",
+    "href": "sesiones/programacion/intro_R_jml.html#diagramas-de-cajas-boxplots",
+    "title": "Primeros pasos con R",
+    "section": "Diagramas de cajas (boxplots)",
+    "text": "Diagramas de cajas (boxplots)\n\nboxplot(Sepal.Length ~ Species) # Diagrama de cajas de longitudes de sépalo por especie\n\n\n\n\n\n\n\n# boxplot usando ggplot2\n\nggplot(data = iris,\n       aes(x = Species,\n           y = Sepal.Length,\n           fill = Species)) +\n  geom_boxplot() +\n  labs( x = \"Especies\",\n        y = \"Longitud del sépalo\",\n        title = \"Gráfico de cajas y bigotes\",\n        subtitle = \"Longitud del sépalo por especies\")"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
+    "href": "sesiones/programacion/intro_R_jml.html#diagramas-de-barras-y-lectura-de-datos",
+    "title": "Primeros pasos con R",
+    "section": "Diagramas de barras y lectura de datos",
+    "text": "Diagramas de barras y lectura de datos\n\n\n\n\n\n\nImportant\n\n\n\nbar1_data.csv\n\n\n\nbar1_data &lt;- read.table('data/bar1_data.csv',\n                        sep = ',', # El separador de columnas es la coma\n                        header = T) # La primera fila es el encabezado\n\nstr(bar1_data) # tipos de datos de las columnas del data.frame\n\n'data.frame':   8 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000\n $ value: num  0.755 0.43 0.977 0.959 1.414 ...\n\n\n\nbarplot(bar1_data$value, names.arg = factor(bar1_data$Site)) # Crea un gráfico de barras\n\n\n\n\n\n\n\n# ggplot2\n\nggplot(bar1_data,\n       aes(x = Site,\n           y = value)) +\n  geom_col()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nEjercicio adicional: ¿Cómo leemos el archivo iris.csv?"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#gráficos-de-regresión-lineal",
+    "href": "sesiones/programacion/intro_R_jml.html#gráficos-de-regresión-lineal",
+    "title": "Primeros pasos con R",
+    "section": "Gráficos de regresión lineal",
+    "text": "Gráficos de regresión lineal\n\nlm_pl_sl &lt;- lm(Petal.Length ~ Sepal.Length) # Ajusta un modelo lineal\n\nshapiro.test(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n    Shapiro-Wilk normality test\n\ndata:  lm_pl_sl$residuals\nW = 0.99437, p-value = 0.831\n\nhist(lm_pl_sl$residuals) # Comprueba la normalidad de los residuos del modelo\n\n\n\n\n\n\n\nsummary(lm_pl_sl) # Resumen del modelo\n\n\nCall:\nlm(formula = Petal.Length ~ Sepal.Length)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.47747 -0.59072 -0.00668  0.60484  2.49512 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.10144    0.50666  -14.02   &lt;2e-16 ***\nSepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8678 on 148 degrees of freedom\nMultiple R-squared:   0.76, Adjusted R-squared:  0.7583 \nF-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#gráfico-del-modelo",
+    "href": "sesiones/programacion/intro_R_jml.html#gráfico-del-modelo",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico del modelo",
+    "text": "Gráfico del modelo\n\n# require(ggplot2) # Carga el paquete ggplot2\n\nc &lt;- ggplot(iris,\n            aes(y = Petal.Length,\n                x = Sepal.Length)) # Define un gráfico base\n\nc + stat_smooth(method = lm,\n                colour = \"black\") +\n  geom_point(aes(col = factor(Species))) # Agrega capas al gráfico\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n# ggsave('iris_lm.png') # Guardar gráfico"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#gráfico-de-barras-agrupadas",
+    "href": "sesiones/programacion/intro_R_jml.html#gráfico-de-barras-agrupadas",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico de barras agrupadas",
+    "text": "Gráfico de barras agrupadas\n\n\n\n\n\n\nImportant\n\n\n\nLee el archivo ‘data/bar2_data.csv’ (contiene más años)\nbar2_data.csv\n\n\n\nbar2_data &lt;- read.table('data/bar2_data.csv',\n                        sep = '|',\n                        header = T) \n\nstr(bar2_data)\n\n'data.frame':   20 obs. of  3 variables:\n $ Site : chr  \"S1\" \"S2\" \"S3\" \"S4\" ...\n $ year : int  2000 2000 2000 2000 2000 2000 2000 2000 2001 2001 ...\n $ value: num  0.755 -0.43 0.977 0.959 1.414 ...\n\n\n\nggplot(bar2_data,\n       aes(x = Site,\n           y = value,\n           fill = factor(year)) # Agrupamos por año\n       ) +\n  geom_col(position = position_dodge(preserve = \"single\"))"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
+    "href": "sesiones/programacion/intro_R_jml.html#gráfico-de-barras-en-subfiguras",
+    "title": "Primeros pasos con R",
+    "section": "Gráfico de barras en subfiguras",
+    "text": "Gráfico de barras en subfiguras\n\nggplot(bar2_data, aes(x = Site, y = value)) +\n  geom_col() +\n  facet_wrap( ~ year)"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#preparar-datos-para-ggplot2",
+    "href": "sesiones/programacion/intro_R_jml.html#preparar-datos-para-ggplot2",
+    "title": "Primeros pasos con R",
+    "section": "Preparar datos para ggplot2",
+    "text": "Preparar datos para ggplot2\n\n\n\n\n\n\nImportant\n\n\n\ndata.csv\n\n\n\nlibrary(reshape2) # Carga la librería reshape\n\ndata&lt;-read.table('data/data.csv',\n                 sep = '\\t',\n                 header = T) # Lee un archivo de datos\n\nhead(data) # Muestra las primeras filas del conjunto de datos\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\ndata_ggplot2 &lt;- melt(data,\n                     id = c('site')) \n\ndata_ggplot2 # Muestra los datos transformados\n\n   site variable      value\n1     a     var1  0.7549967\n2     b     var1 -0.4297789\n3     c     var1  0.9768700\n4     d     var1  0.9594651\n5     e     var1  1.4142136\n6     f     var1  0.3863983\n7     g     var1  0.3980741\n8     a     var2  0.4457979\n9     b     var2 -0.5818249\n10    c     var2  0.1715152\n11    d     var2 -0.7068345\n12    e     var2  1.0907563\n13    f     var2  0.3364102\n14    g     var2  0.4796152\n\ndata_orginal&lt;-dcast(data_ggplot2, site ~ variable) # convertir niveles de una variable en columnas\n\nhead(data_orginal)\n\n  site       var1       var2\n1    a  0.7549967  0.4457979\n2    b -0.4297789 -0.5818249\n3    c  0.9768700  0.1715152\n4    d  0.9594651 -0.7068345\n5    e  1.4142136  1.0907563\n6    f  0.3863983  0.3364102\n\nhelp(dcast) # función de agregación (similar a tabla pivotante de Excel)"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
+    "href": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-1",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 1",
+    "text": "Análisis de la serie de datos 1\n\n\n\n\n\n\nImportant\n\n\n\nDatos: ts.csv\n\n\n\n# devtools::install_github(\"nxskok/mkac\")\n\nlibrary(lubridate)\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\nlibrary(mkac)\n\n# Cargar los datos\ndata&lt;-read.table('data/ts.csv', sep=',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.5 0.6 0.3 0.5 0.6 0.4 0.8 0.2 0.7 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.5     1\n3 2024-01-25   0.6     1\n4 2024-02-10   0.3     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\ntable(data$month)\n\n\n 1  2  3  4  5  6  7  8  9 10 11 12 \n 3  2  3  2  2  2  2  2  2  2  2  3 \n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 0.8228706\n\n$z_star\n[1] 0.8228706\n\n$ratio\n[1] 1\n\n$P_value\n[1] 0.4105816\n\n$P_value_adj\n[1] 0.4105816\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.01666667\n\n# Alternativa (sin pendiente de Sen):\n\n# library(Kendall)\n\n# MannKendall(data_monthly_mean$value)"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
+    "href": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-2",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 2",
+    "text": "Análisis de la serie de datos 2\n\n\n\n\n\n\nImportant\n\n\n\nDatos: ts2.csv\n\n\n\n# Cargar los datos\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : chr  \"20/01/2024\" \"22/01/2024\" \"25/01/2024\" \"10/02/2024\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\n# Interpretar las fechas\ndata$date &lt;- as.Date(data$date, format = '%d/%m/%Y')\n\nstr(data)\n\n'data.frame':   27 obs. of  2 variables:\n $ date : Date, format: \"2024-01-20\" \"2024-01-22\" ...\n $ value: num  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ...\n\nplot(data$date, data$value)\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata$month &lt;- month(data$date)\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- aggregate(value ~ month, data, mean)\n\nplot(data_monthly_mean$month, data_monthly_mean$value)\n\n\n\n\n\n\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
+  },
+  {
+    "objectID": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
+    "href": "sesiones/programacion/intro_R_jml.html#análisis-de-la-serie-de-datos-2-la-manera-tidyverse",
+    "title": "Primeros pasos con R",
+    "section": "Análisis de la serie de datos 2 (la manera tidyverse)",
+    "text": "Análisis de la serie de datos 2 (la manera tidyverse)\n\n# Cargar las librerías necesarias\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr   1.1.4     ✔ stringr 1.5.1\n✔ forcats 1.0.0     ✔ tibble  3.2.1\n✔ purrr   1.0.2     ✔ tidyr   1.3.1\n✔ readr   2.1.5     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lubridate)\n\n# Cargar los datos\n\n# data &lt;- read_csv('data/ts2.csv') # Crearía un tibble: https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html\n\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\n# Inspeccionar la estructura de los datos\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;chr&gt; \"20/01/2024\", \"22/01/2024\", \"25/01/2024\", \"10/02/2024\", \"24/02/2…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Interpretar las fechas\n\ndata &lt;- data %&gt;% \n  mutate(date = dmy(date))\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;date&gt; 2024-01-20, 2024-01-22, 2024-01-25, 2024-02-10, 2024-02-24, 202…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Graficar la serie temporal\n\ndata %&gt;% \n  ggplot(aes(x = date, y = value)) + \n  geom_point() + \n  labs(title = \"Serie temporal\", x = \"Fecha\", y = \"Valor\")\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata &lt;- data %&gt;% \n  mutate(month = month(date))\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- data %&gt;% \n  group_by(month) %&gt;% \n  summarise(value = mean(value, na.rm = TRUE))\n\n# Graficar las medias mensuales\n\ndata_monthly_mean %&gt;% \n  ggplot(aes(x = month, y = value)) + \n  geom_point() + \n  labs(title = \"Media mensual\", x = \"Mes\", y = \"Valor promedio\")\n\n\n\n\n\n\n\n# Análisis de tendencia con funciones de Kendall y Theil-Sen\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
   }
 ]

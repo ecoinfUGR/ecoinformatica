@@ -3,8 +3,8 @@ title: "Primeros pasos con R"
 format: html
 number-sections: false
 number-depth: 4
-date: "`r Sys.Date()`"
-sesion: x
+date: 2025-01-10
+sesion: 1
 author: 
   - name: "Javier Martínez-López"
     orcid: 0000-0002-0825-7252

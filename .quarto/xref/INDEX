@@ -94,5 +94,14 @@
   },
   "practicas/pr_repro_documentos_reproducibles.qmd": {
     "pr_repro_documentos_reproducibles.html": "2f255c95"
+  },
+  "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.Rmd": {
+    "ejemplo_documento_reproducible.html": "1af6f1ee"
+  },
+  "practicas/pr_repro_control_versiones.qmd": {
+    "pr_repro_control_versiones.html": "b6817968"
+  },
+  "sesiones/programacion/intro_R_jml.qmd": {
+    "intro_R_jml.html": "0180ff52"
   }
 }

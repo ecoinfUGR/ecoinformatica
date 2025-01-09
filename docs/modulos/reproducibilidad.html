@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,10 +57,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +105,34 @@ div.csl-indent {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-practicas .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-modulo','listing-practica','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-practicas'] = new List('listing-practicas', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -279,7 +307,7 @@ Fecha
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1736290800000" data-listing-file-modified-sort="1734909328884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="654" data-listing-title-sort="Reproducibilidad en Ciencia" data-listing-filename-sort="repro_intro_slides.qmd">
+<tr data-index="0" data-listing-date-sort="1736290800000" data-listing-file-modified-sort="1736352087211" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="659" data-listing-title-sort="Reproducibilidad en Ciencia" data-listing-filename-sort="repro_intro_slides.qmd">
 <td>
 <span class="listing-sesion">1</span>
 </td>
@@ -290,7 +318,7 @@ Fecha
 <span class="listing-date">Wed, Jan 08</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1736377200000" data-listing-file-modified-sort="1735573974882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1920" data-listing-title-sort="Documentos Reproducibles con Rmarkdown" data-listing-filename-sort="repro_reproducible_documents.qmd">
+<tr data-index="1" data-listing-date-sort="1736377200000" data-listing-file-modified-sort="1735390596661" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1920" data-listing-title-sort="Documentos Reproducibles con Rmarkdown" data-listing-filename-sort="repro_reproducible_documents.qmd">
 <td>
 <span class="listing-sesion">2</span>
 </td>
@@ -301,7 +329,7 @@ Fecha
 <span class="listing-date">Thu, Jan 09</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1736377200000" data-listing-file-modified-sort="1734909328884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1978" data-listing-title-sort="Documentos Reproducibles con Rmarkdown (slides)" data-listing-filename-sort="repro_reproducible_documents_slides.qmd">
+<tr data-index="2" data-listing-date-sort="1736377200000" data-listing-file-modified-sort="1736416684082" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1997" data-listing-title-sort="Documentos Reproducibles con Rmarkdown (slides)" data-listing-filename-sort="repro_reproducible_documents_slides.qmd">
 <td>
 <span class="listing-sesion">2</span>
 </td>
@@ -312,7 +340,7 @@ Fecha
 <span class="listing-date">Thu, Jan 09</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1737327600000" data-listing-file-modified-sort="1735573974882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="897" data-listing-title-sort="Control de Versiones con Git y GitHub" data-listing-filename-sort="repro_git.qmd">
+<tr data-index="3" data-listing-date-sort="1737327600000" data-listing-file-modified-sort="1735390596660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="897" data-listing-title-sort="Control de Versiones con Git y GitHub" data-listing-filename-sort="repro_git.qmd">
 <td>
 <span class="listing-sesion">3</span>
 </td>
@@ -332,6 +360,59 @@ No matching items
 </section>
 <section id="ejercicios-prácticos" class="level1">
 <h1>Ejercicios prácticos</h1>
+<div id="listing-practicas" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Módulo
+</th>
+<th>
+Práctica
+</th>
+<th>
+Nombre
+</th>
+<th>
+Fecha
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1736377200000" data-listing-file-modified-sort="1736417225080" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="350" data-listing-title-sort="Práctica Documentos Reproducibles" data-listing-filename-sort="pr_repro_documentos_reproducibles.qmd">
+<td>
+<span class="listing-modulo">Reproducibilidad</span>
+</td>
+<td>
+<span class="listing-practica">1</span>
+</td>
+<td>
+<a href="../practicas/pr_repro_documentos_reproducibles.html" class="title listing-title">Práctica Documentos Reproducibles</a>
+</td>
+<td>
+<span class="listing-date">Thu, Jan 09</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1737414000000" data-listing-file-modified-sort="1736417272546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="471" data-listing-title-sort="Práctica Control de Versiones" data-listing-filename-sort="pr_repro_control_versiones.qmd">
+<td>
+<span class="listing-modulo">Reproducibilidad</span>
+</td>
+<td>
+<span class="listing-practica">2</span>
+</td>
+<td>
+<a href="../practicas/pr_repro_control_versiones.html" class="title listing-title">Práctica Control de Versiones</a>
+</td>
+<td>
+<span class="listing-date">Tue, Jan 21</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 <section id="recursos" class="level2">
 <h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
 <ul>
@@ -453,8 +534,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -565,7 +644,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

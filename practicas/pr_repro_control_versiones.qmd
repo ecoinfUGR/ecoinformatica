@@ -1,0 +1,129 @@
+---
+title: "Práctica Control de Versiones"
+author: 
+  - name: "[Antonio J. Pérez-Luque](equipo/perez_luque)"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-01-21
+modulo: Reproducibilidad
+practica: 2
+format: html
+number-sections: true
+number-depth: 4
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+---
+
+# Introducción {.unnumbered}
+
+# Objetivos
+
+-   Aprender a realizar control de versiones de un proyecto tanto de forma individual como colaborativa.
+
+# Actividades
+
+-   Cada alumno ha de hacer las actividades 1 y 2 (**nivel básico**), y si lo desea realizar la actividad 3 que combina control de versiones y documentos reproducibles (**nivel experto**)
+
+## Actividad 1. Control de Versiones de un proyecto {#sec-actividad1}
+
+1.  Instalar Git en tu ordenador.
+
+2.  Crear un repositorio llamado `ecoinf_nombre` Ejemplo:
+
+``` bash
+ecoinf_antonioperez
+```
+
+3.  Genera un documento de texto plano (`.txt`) o un script (`.R`).
+
+4.  Realiza varios cambios en el documento y registra cada cambio.
+
+5.  Haz un control de versiones.
+
+6.  Crea un repositorio en [GitHub](https://github.com/).
+
+7.  Conecta ambos repositorios (repositorio local y repositorio remoto) y sincronízalos.
+
+::: {.callout-important appearance="simple"}
+## Entrega
+
+Cada alumno ha de enviar la **url del repositorio creado en github**.
+:::
+
+## Actividad 2. Control de Versiones (Colaboración)
+
+1.  Crea un **fork** del repositorio <https://github.com/ajpelu/teach_git_ejemplo>
+
+2.  **Clona** el repositorio en tu equipo para tener una copia local.
+
+3.  Escribe algo en el documento `miarchivo.txt` (además de tu nombre y tus apellidos, algo original: un poema, una canción, un refrán, un mensaje, una receta, ... ).
+
+4.  Registra los cambios y haz un control de versiones.
+
+5.  Sincroniza con tu repositorio remoto.
+
+6.  Haz un **pull request**.
+
+::: callout-tip
+Si tienes alguna duda consulta puedes leer este [tutorial](https://sigdeletras.com/2021/como-colaborar-en-proyectos-haciendo-pull-requests/)
+:::
+
+::: {.callout-important appearance="simple"}
+## Entrega
+
+No es necesario realizar entrega, puesto que me llegarán los pull requests de cada alumno
+:::
+
+## Actividad 3. Control de Versiones de Documentos Reproducibles
+
+1.  Crea un documento reproducible con `.Rmd` y exportalo en el formato que mas te guste (pdf, word, etc.). El documento debe contener al menos texto, imágenes, código, tablas, etc.
+
+2.  Realiza cambios en el documento:
+
+-   Personaliza con el encabezado YAML
+-   Incluye texto
+-   Modifica el código
+
+3.  Registra los cambios en el documento mediante el control de versiones de forma local y en remoto.
+
+4.  Usa el repositorio del la Actividad 1.
+
+::: {.callout-important appearance="simple"}
+## Entrega
+
+Cada alumno ha de enviar la **url del repositorio creado en github** así como un archivo comprimido (`.zip`) con una copia de su repositorio local.
+:::
+
+## Recursos
+
+Para la realización de este ejercicio práctico consulta las diapositivas y el temario que se ha dado en clase así como algunos de los recursos incluidos, como por ejemplo:
+
+-   [Interactive Tutorial Git (CodeSchool)](https://try.github.io/levels/1/challenges/1)
+
+-   [Git - the simple guide (Roger Dudler)](http://rogerdudler.github.io/git-guide/index.es.html)
+
+-   [Git and GitHub (Hadley Wickham)](http://r-pkgs.had.co.nz/git.html)
+
+-   [A brief introduction to git & GitHub (Karl Broman & Samuel G. Younkin)](https://www.biostat.wisc.edu/~kbroman/talks/GitPrimer.pdf)
+
+-   [A basic tutorial to version control using git (Jon Lefcheck)](http://jonlefcheck.net/2013/11/04/a-basic-tutorial-to-version-control-using-git/)
+
+-   [Git/Github guide a minimal tutorial (Karl Broman)](http://kbroman.org/github_tutorial/)
+
+-   [Getting Git Right (Atlassian)](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+
+-   [Recopilación de tutoriales (F. Rodríguez-Sánchez)](https://gist.github.com/Pakillo/63c15c700c9c76fe8032)
+
+-   [Guía Visual de Git](https://marklodato.github.io/visual-git-guide/index-es.html)
+
+-   [Introducción al funcionamiento y uso de git y github](https://juancuiule.github.io/intro-a-git/)
+
+-   ... Existen muchos más
