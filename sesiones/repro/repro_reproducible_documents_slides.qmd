@@ -401,6 +401,15 @@ Resumen de los pasos que sigue RMarkdown para llegar al documento renderizado
 
 ![](images/rmd-workflow.png)
 
+## Ejemplo completo
+
+::: small
+- En este [enlace](https://github.com/ecoinfUGR/ecoinformatica/raw/refs/heads/main/practicas/ejemplos/ejemplo_documento_reproducible.zip) tienes un ejemplo bastante completo. 
+
+- Descarga la carpeta, descomprimela y abre el archivo `ejemplo_documento_reproducible.Rmd` en RStudio. 
+
+::: 
+
 ## Recursos {#sec-recursos}
 
 ::: small
