@@ -1,0 +1,5 @@
+language:
+  label:
+    fig: 'Fig. '
+    tab: 'Tabla '
+    eq: 'Ecuación '
