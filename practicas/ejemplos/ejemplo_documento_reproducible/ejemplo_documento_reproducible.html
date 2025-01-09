@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="María Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-01-01">
 
-<title>Introducción – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +22,78 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0a5606191757e60715372409ffb4c6bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-0a5606191757e60715372409ffb4c6bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +121,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-sesiones .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
+<link href="../../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="../../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="../../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="../../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="../../../site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="../../../site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -137,7 +173,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
     </a>
   </div>
@@ -152,7 +188,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introducción</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,31 +202,31 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../calendario.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../calendario.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendario</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modulos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Módulos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../equipo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../equipo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profesores</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guia_docente.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../guia_docente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía Docente</span></a>
   </div>
 </li>
@@ -204,7 +240,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#material-y-métodos" id="toc-material-y-métodos" class="nav-link" data-scroll-target="#material-y-métodos">Material y métodos</a>
+  <ul class="collapse">
+  <li><a href="#zona-de-estudio" id="toc-zona-de-estudio" class="nav-link" data-scroll-target="#zona-de-estudio">Zona de Estudio</a></li>
+  <li><a href="#carga-y-exploración-de-datos" id="toc-carga-y-exploración-de-datos" class="nav-link" data-scroll-target="#carga-y-exploración-de-datos">Carga y exploración de datos</a></li>
+  <li><a href="#análisis-exploratorio" id="toc-análisis-exploratorio" class="nav-link" data-scroll-target="#análisis-exploratorio">Análisis exploratorio</a></li>
+  </ul></li>
+  <li><a href="#resultados" id="toc-resultados" class="nav-link" data-scroll-target="#resultados">Resultados</a>
+  <ul class="collapse">
+  <li><a href="#modelo-de-regresión-lineal" id="toc-modelo-de-regresión-lineal" class="nav-link" data-scroll-target="#modelo-de-regresión-lineal">Modelo de Regresión Lineal</a></li>
+  <li><a href="#resultados-de-la-regresión" id="toc-resultados-de-la-regresión" class="nav-link" data-scroll-target="#resultados-de-la-regresión">Resultados de la Regresión</a></li>
+  </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +262,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title">Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula</h1>
 </div>
 
 
@@ -223,10 +272,16 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p><a href="equipo/suarez_munoz">María Suárez-Muñoz</a>, <a href="equipo/martinez_lopez">Javier Martínez-López</a>, <a href="equipo/perez_luque">Antonio J. Pérez-Luque</a> </p>
+             <p>Antonio J. Pérez-Luque </p>
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -236,47 +291,170 @@ window.Quarto = {
 </header>
 
 
-<section id="sesiones" class="level1">
-<h1>Sesiones</h1>
-<div id="listing-sesiones" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
+<p>Este documento presenta un análisis de datos sobre el efecto del peso de la bellota en la altura de la plántula. Se utilizarán técnicas estadísticas para explorar la relación entre estas dos variables.</p>
+<p>El estudio de la relación entre el peso de la bellota y la altura de la plántula es importante para comprender los factores que influyen en el crecimiento de las plantas. En particular, se ha observado que el tamaño de la bellota puede influir en el desarrollo inicial de la plántula <span class="citation" data-cites="Quero2007">(<a href="#ref-Quero2007" role="doc-biblioref">Quero et al. 2007</a>)</span>.</p>
+</section>
+<section id="material-y-métodos" class="level1">
+<h1>Material y métodos</h1>
+<section id="zona-de-estudio" class="level2">
+<h2 class="anchored" data-anchor-id="zona-de-estudio">Zona de Estudio</h2>
+<p>La zona de estudio se localiza en el Parque Nacional de Sierra Nevada. En concreto se trata de un encinar situado en las proximidades del Jardín Botánico de La Cortijuela (Granada; 37º05’‘6.11’’ N, 3º28’11.38’’ W) a una altitud de unos 1650 m s.n.m. (Figura @ref(fig:mapa)).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-48a3d8739b4b7729701c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-48a3d8739b4b7729701c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://www.ign.es/wmts/ign-base?service=WMTS&request=GetTile&version=1.0.0&format=image/jpeg&layer=IGNBase-gris&style=default&tilematrixset=GoogleMapsCompatible&tilematrix={z}&tilerow={y}&tilecol={x}",null,"Base",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"minzoom":0,"maxzoom":18,"tilesize":256,"errortileurl":"","nowrap":false,"zoomoffset":0,"zoomreverse":false,"zindex":1,"detectretina":false,"attribution":"CC BY 4.0 scne.es. Sistema Geogr&aacute;fico Nacional <a href='http://www.ign.es'>IGN<\/a>"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"World Imagery (ESRI)",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxZoom":25}]},{"method":"addMarkers","args":[37.0851,-3.4698,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Zona de Estudio",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["World Imagery (ESRI)","Base"],[],{"collapsed":true,"autoZIndex":true,"position":"bottomright"}]}],"setView":[[37.0851,-3.4698],12,[]],"limits":{"lat":[37.0851,37.0851],"lng":[-3.4698,-3.4698]}},"evals":[],"jsHooks":[]}</script>
+<p>Mapa de localización de la zona de estudio</p>
+</div>
+</div>
+</section>
+<section id="carga-y-exploración-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="carga-y-exploración-de-datos">Carga y exploración de datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"peso_altura_bellota.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar las primeras filas del conjunto de datos</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  peso_bellota altura_plantula
+1           10              15
+2           15              20
+3           12              18
+4            8              12
+5           14              22
+6           16              25</code></pre>
+</div>
+</div>
+</section>
+<section id="análisis-exploratorio" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-exploratorio">Análisis exploratorio</h2>
+<p>En la Figura @ref(fig:scatterplot), se explora gráficamente la relación entre el peso de la bellota y la altura de la plántula.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ejemplo_documento_reproducible_files/figure-html/scatterplot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Relación entre Peso de la Bellota y Altura de la Plántula</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La relación entre el peso de la bellota (<span class="math inline">\(x\)</span>) y la altura de la plántula (<span class="math inline">\(y\)</span>) puede ser modelada con la siguiente ecuación (Eq. @ref(eq:modelo-lineal)) de regresión lineal:</p>
+<!--- 
+Mas información sobre como obtener referencias cruzadas en R Markdown:
+https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html
+--->
+<p><span class="math display">\[
+\begin{equation}
+y = \beta_0 + \beta_1 x + \epsilon (\#eq:modelo-lineal)
+\end{equation}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(y\)</span>: Altura de la plántula.</li>
+<li><span class="math inline">\(x\)</span>: Peso de la bellota.</li>
+<li><span class="math inline">\(\beta_0\)</span>: Intercepto.</li>
+<li><span class="math inline">\(\beta_1\)</span>: Pendiente.</li>
+<li><span class="math inline">\(\epsilon\)</span>: Término de error.</li>
+</ul>
+</section>
+</section>
+<section id="resultados" class="level1">
+<h1>Resultados</h1>
+<section id="modelo-de-regresión-lineal" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-de-regresión-lineal">Modelo de Regresión Lineal</h2>
+<p>Se ajusta un modelo de regresión lineal para cuantificar la relación entre el peso de la bellota y la altura de la plántula.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar un modelo de regresión lineal</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(altura_plantula <span class="sc">~</span> peso_bellota, <span class="at">data =</span> datos)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen del modelo</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = altura_plantula ~ peso_bellota, data = datos)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.3000 -0.2667  0.0000  0.4333  1.2667 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    0.8000     1.7700   0.452    0.665    
+peso_bellota   1.4333     0.1442   9.940 2.23e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.117 on 7 degrees of freedom
+Multiple R-squared:  0.9338,    Adjusted R-squared:  0.9244 
+F-statistic:  98.8 on 1 and 7 DF,  p-value: 2.226e-05</code></pre>
+</div>
+</div>
+</section>
+<section id="resultados-de-la-regresión" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-de-la-regresión">Resultados de la Regresión</h2>
+<p>Se utiliza el paquete <code>broom</code> para presentar los resultados de manera tabular (Tabla @ref(tab:tabla-modelo)).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Resultados de la Regresión Lineal</caption>
 <thead>
-<tr>
-<th>
-Sesión
-</th>
-<th>
-Nombre
-</th>
-<th>
-Fecha
-</th>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
 </tr>
 </thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1736208000000" data-listing-file-modified-sort="1736417922893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="505" data-listing-title-sort="Introducción al proyecto de la asignatura" data-listing-filename-sort="intro_proyecto.qmd">
-<td>
-<span class="listing-sesion">1</span>
-</td>
-<td>
-<a href="../sesiones/intro/intro_proyecto.html" class="title listing-title">Introducción al proyecto de la asignatura</a>
-</td>
-<td>
-<span class="listing-date">Tue, Jan 07</span>
-</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.800000</td>
+<td style="text-align: right;">1.770003</td>
+<td style="text-align: right;">0.4519767</td>
+<td style="text-align: right;">0.6649583</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">peso_bellota</td>
+<td style="text-align: right;">1.433333</td>
+<td style="text-align: right;">0.144200</td>
+<td style="text-align: right;">9.9398957</td>
+<td style="text-align: right;">0.0000223</td>
 </tr>
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
 </div>
 </div>
+<p>El modelo ajustado sugiere la siguiente ecuación:</p>
+<p><span class="math display">\[
+y = \text{0.8} + \text{1.433}x
+\]</span></p>
+<p>y explica un 0.93% de la variabilidad en la altura de la plántula.</p>
+</section>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>En base al análisis realizado, se observó una relación significativa entre el peso de la bellota y la altura de la plántula. Los resultados indican que el peso de la bellota podría ser un predictor importante para el crecimiento inicial de las plántulas, en línea con hallazgos previos <span class="citation" data-cites="Smith2020">(<a href="#ref-Smith2020" role="doc-biblioref">Smith and Brown 2020</a>)</span>.</p>
+<p>Por otro lado, la generación de documentos reproducibles facilita la comunicación de los resultados y la transparencia en la investigación. En este caso, la inclusión de mapas interactivos facilita la contextualización geográfica, lo que puede ser valioso para futuros estudios y aplicaciones prácticas en gestión forestal.</p>
+</section>
+<section id="referencias" class="level1">
+
 
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Quero2007" class="csl-entry" role="listitem">
+Quero, J. L., R. Villar, T. Marañón, R. Zamora, and L. Poorter. 2007. <a href="https://doi.org/10.3732/ajb.94.11.1795">Seed‐mass effects in four mediterranean quercus species (fagaceae) growing in contrasting light environments</a>. American Journal of Botany 94:1795–1803.
+</div>
+<div id="ref-Smith2020" class="csl-entry" role="listitem">
+Smith, J., and A. Brown. 2020. Seed weight as a determinant of seedling growth. Journal of Ecological Research 45:123–134.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

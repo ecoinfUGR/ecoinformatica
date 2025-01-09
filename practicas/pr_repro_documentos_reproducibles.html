@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="María Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-01-09">
 
-<title>Introducción – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Práctica Documentos Reproducibles – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-sesiones .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -152,7 +93,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introducción</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Práctica Documentos Reproducibles</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -204,7 +145,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">1</span> Objetivos</a></li>
+  <li><a href="#actividades" id="toc-actividades" class="nav-link" data-scroll-target="#actividades"><span class="header-section-number">2</span> Actividades</a>
+  <ul class="collapse">
+  <li><a href="#entrega" id="toc-entrega" class="nav-link" data-scroll-target="#entrega"><span class="header-section-number">2.1</span> Entrega</a></li>
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos"><span class="header-section-number">2.2</span> Recursos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -213,20 +160,33 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title">Práctica Documentos Reproducibles</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="equipo/perez_luque">Antonio J. Pérez-Luque</a> <a href="mailto:antonio.perez@inia.csic.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
+      
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-             <p><a href="equipo/suarez_munoz">María Suárez-Muñoz</a>, <a href="equipo/martinez_lopez">Javier Martínez-López</a>, <a href="equipo/perez_luque">Antonio J. Pérez-Luque</a> </p>
-          </div>
+      <p class="date">January 9, 2025</p>
+    </div>
   </div>
-    
   
     
   </div>
@@ -236,44 +196,73 @@ window.Quarto = {
 </header>
 
 
-<section id="sesiones" class="level1">
-<h1>Sesiones</h1>
-<div id="listing-sesiones" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Sesión
-</th>
-<th>
-Nombre
-</th>
-<th>
-Fecha
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1736208000000" data-listing-file-modified-sort="1736417922893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="505" data-listing-title-sort="Introducción al proyecto de la asignatura" data-listing-filename-sort="intro_proyecto.qmd">
-<td>
-<span class="listing-sesion">1</span>
-</td>
-<td>
-<a href="../sesiones/intro/intro_proyecto.html" class="title listing-title">Introducción al proyecto de la asignatura</a>
-</td>
-<td>
-<span class="listing-date">Tue, Jan 07</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<section id="introducción" class="level1 unnumbered">
+<h1 class="unnumbered">Introducción</h1>
+</section>
+<section id="objetivos" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Objetivos</h1>
+<ul>
+<li>Aprender a crear documentos <code>.Rmd</code> que combinan código con texto narrativo</li>
+</ul>
+</section>
+<section id="actividades" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Actividades</h1>
+<ul>
+<li><p>Elige un conjunto de datos sobre el que quieras realizar el documento reproducible.</p></li>
+<li><p>Genera un documento reproducible que contenga diferentes elementos</p>
+<ul>
+<li><strong>nivel básico</strong>:
+<ul>
+<li>Una imagen</li>
+<li>Texto en negrita, cursiva</li>
+<li>Enlaces a diferentes webs</li>
+<li>Un trozo de código</li>
+<li>Un gráfico generado a partir de un trozo de código (el alumno tiene que importar el archivo de datos)</li>
+</ul></li>
+<li><strong>nivel medio</strong>:
+<ul>
+<li>una tabla procesada a partir de un código</li>
+<li>Referencias bibliográficas</li>
+</ul></li>
+<li><strong>nivel experto</strong>:
+<ul>
+<li>elementos interactivos (<em>e.g.</em> mapa)</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="entrega" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="entrega"><span class="header-section-number">2.1</span> Entrega</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Material a entregar
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Cada alumno debe entregar una carpeta (en formato comprimido <code>.zip</code>) que contenga al menos los siguientes ficheros: el archivo <code>.Rmd</code>; el archivo de salida generado (<code>word</code>, <code>pdf</code>), el conjunto datos usado, y el resto de archivos necesarios para renderizar el documento (<em>e.g.</em> imágenes, etc.)</p>
+</div>
+</div>
+</section>
+<section id="recursos" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="recursos"><span class="header-section-number">2.2</span> Recursos</h2>
+<p>Para la realización de este ejercicio práctico consulta las diapositivas y el temario que se ha dado en clase así como algunos de los recursos incluidos, como por ejemplo:</p>
+<ul>
+<li><p><a href="https://es.r4ds.hadley.nz/r-markdown.html">R for Data Science</a> en especial los capítulos 27 a 29 en su versión en castellano.</p></li>
+<li><p><a href="https://reproducible-analysis-workshop.readthedocs.io/en/latest/6.RMarkdown-knitr.html">R for Reproducible Scientific Analysis (RMarkdown / knitr)</a></p></li>
+<li><p><a href="https://intro2r.com/rmarkdown_r.html">Reproducible reports with R markdown</a></p></li>
+<li><p><a href="https://swcarpentry.github.io/r-novice-gapminder-es/15-knitr-markdown/index.html">R para Análisis Científicos Reproducibles</a></p></li>
+<li><p><a href="https://allisonhorst.github.io/ucsb-qmss-rmarkdown/">Level up in R Markdown</a></p></li>
+<li><p><a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Introducing RStudio and R Markdown</a></p></li>
+<li><p><a href="https://www.uv.es/vcoll/RMarkdown.html">Curso de Introducción a R</a></p></li>
+<li><p><a href="http://destio.us.es/calvo/memoriatfe/MemoriaTFE_PedroLuque_2017Nov_imprimir2caras.pdf">Escribir un Trabajo Fin de Estudios con R Markdown</a></p></li>
+<li><p>… Existen muchos más</p></li>
+</ul>
 
 
-
+</section>
 </section>
 
 </main> <!-- /main -->
