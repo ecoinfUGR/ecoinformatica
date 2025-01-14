@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Guía Docente – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="https://github.com/ecoinfugr/" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guia_docente.html">Guía Docente</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./calendario.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calendario</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Módulos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./equipo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profesores</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./guia_docente.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Guía Docente</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#breve-descripción-de-contenidos" id="toc-breve-descripción-de-contenidos" class="nav-link active" data-scroll-target="#breve-descripción-de-contenidos">Breve descripción de contenidos</a></li>
+  <li><a href="#prerrequisitos-yo-recomendaciones" id="toc-prerrequisitos-yo-recomendaciones" class="nav-link" data-scroll-target="#prerrequisitos-yo-recomendaciones">Prerrequisitos y/o Recomendaciones</a></li>
+  <li><a href="#resultados-de-aprendizaje-objetivos" id="toc-resultados-de-aprendizaje-objetivos" class="nav-link" data-scroll-target="#resultados-de-aprendizaje-objetivos">Resultados de aprendizaje (Objetivos)</a></li>
+  <li><a href="#programa-de-contenidos-teóricos-y-prácticos" id="toc-programa-de-contenidos-teóricos-y-prácticos" class="nav-link" data-scroll-target="#programa-de-contenidos-teóricos-y-prácticos">Programa de contenidos teóricos y prácticos</a>
+  <ul class="collapse">
+  <li><a href="#teórico" id="toc-teórico" class="nav-link" data-scroll-target="#teórico">Teórico</a></li>
+  <li><a href="#práctico" id="toc-práctico" class="nav-link" data-scroll-target="#práctico">Práctico</a></li>
+  </ul></li>
+  <li><a href="#evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final" id="toc-evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final" class="nav-link" data-scroll-target="#evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final">Evaluación (instrumentos de evaluación, criterios de evaluación y porcentaje sobre la calificación final)</a>
+  <ul class="collapse">
+  <li><a href="#evaluación-ordinaria" id="toc-evaluación-ordinaria" class="nav-link" data-scroll-target="#evaluación-ordinaria">Evaluación ordinaria</a></li>
+  <li><a href="#evaluación-extraordinaria" id="toc-evaluación-extraordinaria" class="nav-link" data-scroll-target="#evaluación-extraordinaria">Evaluación extraordinaria</a></li>
+  <li><a href="#evaluación-única-final" id="toc-evaluación-única-final" class="nav-link" data-scroll-target="#evaluación-única-final">Evaluación única final</a></li>
+  </ul></li>
+  <li><a href="#información-adicional" id="toc-información-adicional" class="nav-link" data-scroll-target="#información-adicional">Información adicional</a></li>
+  <li><a href="#software-libre-usado" id="toc-software-libre-usado" class="nav-link" data-scroll-target="#software-libre-usado">Software Libre usado:</a></li>
+  <li><a href="#enlaces-recomendados" id="toc-enlaces-recomendados" class="nav-link" data-scroll-target="#enlaces-recomendados">Enlaces recomendados</a></li>
+  <li><a href="#bibliografía-recomendada" id="toc-bibliografía-recomendada" class="nav-link" data-scroll-target="#bibliografía-recomendada">Bibliografía Recomendada</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guía Docente</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Enlace a la <a href="(https://masteres.ugr.es/sites/master/default/public/guias-firmadas/2023/M64-56-2-22.pdf)">Guía Docente Oficial</a> aprobada para el curso 2024-2025.</p>
+<section id="breve-descripción-de-contenidos" class="level2">
+<h2 class="anchored" data-anchor-id="breve-descripción-de-contenidos">Breve descripción de contenidos</h2>
+<p>Esta materia organiza sus contenidos en torno al concepto de ciclo de gestión del dato <span class="citation" data-cites="MichenerJones2012EcoinformaticsSupporting">(<a href="#ref-MichenerJones2012EcoinformaticsSupporting" role="doc-biblioref">Michener and Jones 2012</a>)</span>. Se trata de mejorar la capacidad de los estudiantes para manejar la información desde que es capturada en campo hasta que es utilizada por gestores, científicos o el público en general. Se abordarán varias fases: captura de datos (diseño experimental, fotointerpretación), almacenamiento de información (metadatos y bases de datos geográficas), análisis de datos (análisis estadístico y modelización de procesos) y divulgación de contenidos (web, portales de datos, reproducibilidad, etc.). En cada una de las fases anteriores se adquirirán competencias relacionadas con el manejo de información ecológica: programación, bases de datos relacionales, teledetección, técnicas de reproducibilidad, acceso a datos primarios de biodiversidad, etc.</p>
+<p>La metodología docente de la asignatura se basa en el aprendizaje basado en proyectos. Se plantearán a los estudiantes preguntas relacionadas con la gestión de recursos naturales. Para responder esas preguntas se requieren habilidades de investigación y también conocimiento sobre gestión de recursos. En el proceso de realizar este proyecto (y por tanto de responder a una pregunta en concreto), los estudiantes irán adquiriendo una serie de competencias relacionadas con los aspectos mostrados anteriormente del ciclo de gestión del dato.</p>
+</section>
+<section id="prerrequisitos-yo-recomendaciones" class="level2">
+<h2 class="anchored" data-anchor-id="prerrequisitos-yo-recomendaciones">Prerrequisitos y/o Recomendaciones</h2>
+<p>Es altamente recomendable que los alumnos matriculados tengan un conocimiento medio-alto de informática, o gran interés por adquirirlo. Deberán entender la estructura del sistema operativo Windows, Mac o Linux, moverse bien por las carpetas, instalar aplicaciones, etc.</p>
+</section>
+<section id="resultados-de-aprendizaje-objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-de-aprendizaje-objetivos">Resultados de aprendizaje (Objetivos)</h2>
+<p><strong><em>El alumno sabrá/comprenderá:</em></strong></p>
+<ul>
+<li>La importancia del manejo de la información ambiental y de la biodiversidad para su desempeño profesional.</li>
+<li>Deberá entender los distintos pasos que hay que dar para obtener conocimiento útil a partir de los datos originales tomados en el campo.</li>
+<li>También comprenderá el concepto de big data y la necesidad de contar con herramientas avanzadas para manejar grandes volúmenes de información.&nbsp;La componente espacial de la información ambiental, así como la temporal también serán conceptos clave en esta asignatura.</li>
+</ul>
+<p><strong><em>El alumno será capaz de:</em></strong></p>
+<ul>
+<li>Identificar los distintos pasos del ciclo de gestión del dato de manera específica para cualquier problema relacionado con la biología de la conservación en la que haya información ambiental implicada.</li>
+<li>Diseñar una base de datos relacional para almacenar datos a partir de un diseño experimental dado.</li>
+<li>Documentar los datos tomados mediante distintos estándares existentes.</li>
+<li>Consultar y descargar datos especializados de distintos portales específicos relacionados con biología de la conservación.</li>
+<li>Manejar, procesar y analizar información geoespacial.</li>
+<li>Aplicar técnicas de análisis de datos relacionados con la gestión y estudio de la biodiversidad en un contexto de cambio global (por ejemplo series temporales, etc).</li>
+<li>Comprender elementos básicos de teledetección, así como utilizar productos disponibles online.</li>
+<li>Entender e implementar elementos básicos de programación útiles para desarrollar su actividad profesional (bucles, iteración de procesos, conexión con bases de datos, etc.).</li>
+<li>Aplicar metodologías y aproximaciones que permitan tener un flujo de trabajo reproducible, así como usar repositorios para almacenar y compartir flujos de trabajo y código (<a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>).</li>
+</ul>
+</section>
+<section id="programa-de-contenidos-teóricos-y-prácticos" class="level2">
+<h2 class="anchored" data-anchor-id="programa-de-contenidos-teóricos-y-prácticos">Programa de contenidos teóricos y prácticos</h2>
+<section id="teórico" class="level3">
+<h3 class="anchored" data-anchor-id="teórico">Teórico</h3>
+<p>Debido al carácter eminentemente práctico de la asignatura, no resulta del todo útil describirla siguiendo el clásico esquema de temas. No obstante, se presentan a continuación una serie de elementos teórico-prácticos que serán impartidos en la asignatura. El orden descrito aquí es flexible y dependerá de la configuración de la clase y de otros factores.</p>
+<ul>
+<li>Presentación de la asignatura. Generalidades sobre la ecoinformática. Necesidad de habilidades para manejar información. Concepto de flujo de trabajo como herramienta para planificar el abordaje de problemas.</li>
+<li>Reproducibilidad en ciencia. Generalidades sobre reproducibilidad en ciencia. Uso de herramientas para facilitar que nuestro trabajo sea reproducible, por otros y por nosotros mismos. Creación de documentos reproducibles. Control de versiones.</li>
+<li>Introducción a la programación (nociones de <a href="https://www.r-project.org/">R</a>).</li>
+<li>Captura y Almacenamiento de información. Identificación de las fuentes de datos necesarias para abordar el problema seleccionado.</li>
+<li>Herramientas para almacenar y representar información geoespacial: Bases de datos relacionales. Sistemas de Información geográfica.</li>
+<li>Fuentes de información disponibles. Portales integrados de acceso a información ambiental y datos sobre biodiversidad.</li>
+<li>Procesamiento/integración de información y análisis de resultados: análisis de series temporales, evaluación multicriterio, álgebra de mapas, etc.</li>
+<li>Teledetección: Aspectos generales. Series temporales. Variables ambientales relevantes. Introducción a <a href="https://earthengine.google.com/">Google Earth Engine</a>.</li>
+<li>Datos primarios de biodiversidad e integración de datos en repositorios. Repositorios de información sobre biodiversidad. Se analizarán los principales repositorios existentes para almacenar datos sobre biodiversidad. También se estudiará el concepto de datapaper como herramienta básica para documentar y poner a disposición de la sociedad los datos científicos.</li>
+</ul>
+</section>
+<section id="práctico" class="level3">
+<h3 class="anchored" data-anchor-id="práctico">Práctico</h3>
+<p>La asignatura combina los contenidos teóricos con los prácticos. Usamos la técnica docente de “aprendizaje basado en proyectos”. Esto implica que los alumnos aprenden una serie de contenidos teóricos a partir de su aplicación a problemas reales. Durante la asignatura trataremos diversos temas y trabajaremos con herramientas que nos permitirán abordar una problemática relacionada con la toma de decisiones en la gestión del medio natural. La problemática o el proyecto concreto a abordar estará abierto a los intereses del alumnado. El planteamiento del proyecto se presentará al resto del grupo, momento en el que se darán pautas y recomendaciones para su ejecución y presentación final.</p>
+</section>
+</section>
+<section id="evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación-instrumentos-de-evaluación-criterios-de-evaluación-y-porcentaje-sobre-la-calificación-final">Evaluación (instrumentos de evaluación, criterios de evaluación y porcentaje sobre la calificación final)</h2>
+<section id="evaluación-ordinaria" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-ordinaria">Evaluación ordinaria</h3>
+<p>El artículo 17 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que la convocatoria ordinaria estará basada preferentemente en la evaluación continua del estudiante, excepto para quienes se le haya reconocido el derecho a la evaluación única final.</p>
+<p>En esta asignatura se promueve la evaluación continua y se usan los siguientes instrumentos (descritos en el documento VERIFICA)</p>
+<ul>
+<li><p>Actividades de evaluación continua. Durante el desarrollo de la asignatura se realizan actividades calificables que permiten poner en práctica lo aprendido durante las clases. Deben de completarlas cada semana o cada dos semanas. Estas actividades suponen un 30% de la calificación final y corresponden con los siguientes instrumentos de evaluación de VERIFICA:</p>
+<ul>
+<li>Pruebas, ejercicios y problemas, resueltos en clase o individualmente a lo largo del curso.</li>
+<li>Memorias</li>
+</ul></li>
+<li><p>Trabajo final realizado en grupo o de forma individual para cuya realización es necesario poner en práctica buena parte de las competencias adquiridas durante la asignatura. Se trata de un trabajo sintético que tiene un valor en la calificación final del 60%. Corresponde con las siguientes actividades de VERIFICA:</p>
+<ul>
+<li>Valoración final de informes, trabajos, proyectos, etc.</li>
+<li>Memorias.</li>
+<li>Pruebas escritas.</li>
+</ul></li>
+<li><p>Participación en clase. Con este instrumento se pretende evaluar la implicación del estudiante en la asignatura. Tiene un peso del 10% de la calificación final. Corresponde con los siguientes instrumentos del documento VERIFICA del máster:</p>
+<ul>
+<li>Presentaciones orales.</li>
+<li>Aportaciones del estudiante en sesiones de discusión y actitud del estudiante en las diferentes actividades desarrolladas.</li>
+</ul></li>
+</ul>
+</section>
+<section id="evaluación-extraordinaria" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-extraordinaria">Evaluación extraordinaria</h3>
+<p>El artículo 19 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que los estudiantes que no hayan superado la asignatura en la convocatoria ordinaria dispondrán de una convocatoria extraordinaria. A ella podrán concurrir todos los estudiantes, con independencia de haber seguido o no un proceso de evaluación continua. De esta forma, el estudiante que no haya realizado la evaluación continua tendrá la posibilidad de obtener el 100% de la calificación mediante la realización de un trabajo o examen individual. En dicho examen se evaluarán las competencias propias de la asignatura. Aquellos estudiantes que hayan fallado en alguna de las pruebas descritas anteriormente, deberán repetirlas y volver a entregarlas dentro los plazos previamente acordados con los profesores.</p>
+</section>
+<section id="evaluación-única-final" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-única-final">Evaluación única final</h3>
+<p>El artículo 8 de la Normativa de Evaluación y Calificación de los Estudiantes de la Universidad de Granada establece que podrán acogerse a la evaluación única final, el estudiante que no pueda cumplir con el método de evaluación continua por causas justificadas. Para acogerse a la evaluación única final, el estudiante, en las dos primeras semanas de impartición de la asignatura o en las dos semanas siguientes a su matriculación si ésta se ha producido con posterioridad al inicio de las clases, lo solicitará, a través del procedimiento electrónico, a la Coordinación del Máster, quien dará traslado al profesorado correspondiente, alegando y acreditando las razones que le asisten para no poder seguir el sistema de evaluación continua.</p>
+<p>La evaluación en tal caso consistirá en:</p>
+<ul>
+<li>Realización de un trabajo de tema libre que esté relacionado con el objeto de la asignatura. El tema del trabajo será consensuado con los profesores, que orientarán a los estudiantes en el proceso de elaboración del mismo. Este trabajo supondrá el 50% de la nota final.</li>
+<li>Examen práctico que contendrá ejercicios de manejo de información y análisis de datos relacionados con los contenidos de la asignatura. El estudiante deberá completarlos usando su ordenador o uno dispuesto por la UGR. Este examen supondrá el 50% de la calificación final.</li>
+</ul>
+</section>
+</section>
+<section id="información-adicional" class="level2">
+<h2 class="anchored" data-anchor-id="información-adicional">Información adicional</h2>
+<p>La asignatura de <strong><em>Ciclo de Gestión de los datos: Ecoinformática</em></strong> está coordinada con las asignaturas de <a href="https://masteres.ugr.es/sites/master/default/public/guias-firmadas/2023/M64-56-2-23.pdf">Funciones y Servicios de los Ecosistemas (FySE)</a> y <a href="https://masteres.ugr.es/sites/master/default/public/guias-firmadas/2023/M64-56-2-24.pdf">Diseño y Gestión de Áreas Protegidas (DyGAP)</a>, dentro de las posibles narrativas transversales podrían estar las siguientes:</p>
+<ul>
+<li><p><strong><em>Gestión adaptativa para la naturalización de pinares</em></strong></p>
+<ul>
+<li>Se mostrarán algunos de los problemas que pueden presentar las masas de pinares monoespecíficas, coetáneas y muy densas: decaimiento, baja resiliencia, y empobrecimiento.</li>
+<li>Se reflexionará sobre la necesidad de promover acciones de adaptación de los pinares para potenciar su papel como espacios protectores del bienestar humano frente al cambio global.</li>
+<li>Identificación mediante SIG y teledetección de rodales que estén sufriendo decaimiento y sobre los que deberían realizarse actuaciones para aumentar su resiliencia y biodiversidad.</li>
+<li>Principios de la gestión adaptativa y análisis de resultados obtenidos en las prácticas de Ecoinformática para incorporar los criterios de gestión de masas forestales en los planes de gestión de las áreas protegidas para hacerlas más biodiversas y resilientes.</li>
+</ul></li>
+<li><p><strong><em>Incorporación de la perspectiva de funciones y servicios de los ecosistemas en el diseño y gestión de áreas protegidas promoviendo la interfaz ciencia-gestión-sociedad</em></strong>.</p>
+<ul>
+<li>Potencialidades que tiene la perspectiva de funciones y servicios de los ecosistemas y de la interfaz ciencia-gestión-sociedad para el diseño y gestión de áreas protegidas.</li>
+<li>Caracterización de la diversidad funcional a nivel de ecosistema mediante teledetección (e.g., https://obsnev.es/apps/efts_SN.html).</li>
+<li>Se incorporarán a los criterios biofísicos centrados en especies y hábitats, los criterios de riqueza y rareza de ecosistemas funcionales para la identificación de huecos en la Red Natura 2000. Se evaluará el grado de complementariedad y redundancia entre las prioridades basadas en hábitats y especies, y basadas en funciones y servicios de los ecosistemas.</li>
+</ul></li>
+</ul>
+<p>NOTA: Es aconsejable cursar las tres asignaturas, aunque no es imprescindible.</p>
+</section>
+<section id="software-libre-usado" class="level2">
+<h2 class="anchored" data-anchor-id="software-libre-usado">Software Libre usado:</h2>
+<ul>
+<li><a href="https://www.r-project.org/">R</a></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li><a href="https://www.qgis.org/">QGIS</a></li>
+<li><a href="https://git-scm.com/">Git</a></li>
+</ul>
+</section>
+<section id="enlaces-recomendados" class="level2">
+<h2 class="anchored" data-anchor-id="enlaces-recomendados">Enlaces recomendados</h2>
+<ul>
+<li>https://aprendiendo-r-intro.netlify.app/que-es-r<br>
+</li>
+<li>https://ajpelu.github.io/diveRpine/<br>
+</li>
+<li>The Turing Way handbook to reproducible, ethical and collaborative data science.</li>
+<li>https://book.the-turing-way.org/index.html</li>
+</ul>
+</section>
+<section id="bibliografía-recomendada" class="level2">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía Recomendada</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Bekkeretal2007LongtermDatasets" class="csl-entry" role="listitem">
+Bekker, R. M., E. Van Der Maarel, H. Bruelheide, and K. Woods. 2007. <a href="https://doi.org/10.1111/j.1654-1103.2007.tb02559.x">Long-term datasets: <span>From</span> descriptive to predictive data using ecoinformatics</a>. Journal of Vegetation Science 18:457–462.
+</div>
+<div id="ref-10141/622618" class="csl-entry" role="listitem">
+BES, and N. Cooper. 2017. <a href="http://hdl.handle.net/10141/622618">A guide to reproducible code in ecology and evolution</a>. British Ecological Society.
+</div>
+<div id="ref-Canhosetal2004GlobalBiodiversity" class="csl-entry" role="listitem">
+Canhos, V. P., S. D. Souza, R. D. Giovanni, and D. A. L. Canhos. 2004. <a href="https://doi.org/10.17161/bi.v1i0.3">Global <span>Biodiversity Informatics</span>: Setting the scene for a <span>“new world”</span> of ecological forecasting</a>. Biodiversity Informatics 1.
+</div>
+<div id="ref-CavenderBaresetal2020RemoteSensing" class="csl-entry" role="listitem">
+Cavender-Bares, J., J. A. Gamon, and P. A. Townsend, editors. 2020. <a href="https://doi.org/10.1007/978-3-030-33157-3">Remote <span>Sensing</span> of <span>Plant Biodiversity</span></a>. Springer International Publishing, Cham.
+</div>
+<div id="ref-CavenderBaresetal2022IntegratingRemote" class="csl-entry" role="listitem">
+Cavender-Bares, J., F. D. Schneider, M. J. Santos, A. Armstrong, A. Carnaval, K. M. Dahlin, L. Fatoyinbo, G. C. Hurtt, D. Schimel, P. A. Townsend, S. L. Ustin, Z. Wang, and A. M. Wilson. 2022. <a href="https://doi.org/10.1038/s41559-022-01702-5">Integrating remote sensing with ecology and evolution to advance biodiversity conservation</a>. Nature Ecology &amp; Evolution 6:506–519.
+</div>
+<div id="ref-Cazorlaetal2023RemotesensingbasedDataset" class="csl-entry" role="listitem">
+Cazorla, B. P., J. Cabello, A. Reyes, E. Guirado, J. Peñas, A. J. Pérez-Luque, and D. Alcaraz-Segura. 2023. <a href="https://doi.org/10.5194/essd-15-1871-2023">A remote-sensing-based dataset to characterize the ecosystem functioning and functional diversity in the <span>Biosphere Reserve</span> of the <span>Sierra Nevada</span> (southeastern <span>Spain</span>)</a>. Earth System Science Data 15:1871–1887.
+</div>
+<div id="ref-Chapman2005PrinciplesData" class="csl-entry" role="listitem">
+Chapman, A. D. 2005a. <a href="https://doi.org/10.15468/DOC.JRGG-A190">Principles of <span>Data Quality</span></a>.
+</div>
+<div id="ref-Chapman2005UsesPrimary" class="csl-entry" role="listitem">
+Chapman, A. D. 2005b. Uses of <span>Primary Species-Occurrence Data</span>, version 1.0. Report for the Global Biodiversity Information Facility, Copenhagen.
+</div>
+<div id="ref-ChapmanWieczorek2020GeoreferencingBest" class="csl-entry" role="listitem">
+Chapman, A., and J. Wieczorek. 2020. <a href="https://doi.org/10.15468/DOC-GG7H-S853">Georeferencing <span>Best Practices</span></a>.
+</div>
+<div id="ref-Crawley2013Book" class="csl-entry" role="listitem">
+Crawley, M. J. 2013. The <span>R</span> book. 2nd ed. John Wiley &amp; Sons Inc, Hoboken, N.J.
+</div>
+<div id="ref-HawksworthCABInternational1997BiodiversityInformation" class="csl-entry" role="listitem">
+Hawksworth, D. L., and CAB International, editors. 1997. Biodiversity information: Needs and options; proceedings of the 1996 <span>International Workshop</span> on <span>Biodiversity Information</span>. CAB Internat, Wallingford.
+</div>
+<div id="ref-Hogeweg2007PopulationDynamics" class="csl-entry" role="listitem">
+Hogeweg, P. 2007. <a href="https://doi.org/10.1016/j.ecoinf.2007.01.002">From population dynamics to ecoinformatics: <span>Ecosystems</span> as multilevel information processing systems</a>. Ecological Informatics 2:103–111.
+</div>
+<div id="ref-Michener2009EcologicalData" class="csl-entry" role="listitem">
+Michener, W. K. 2009. Ecological <span>Data</span>: <span>Design</span>, <span>Management</span> and <span>Processing</span>. 1st ed. John Wiley &amp; Sons, Incorporated, Hoboken.
+</div>
+<div id="ref-MichenerJones2012EcoinformaticsSupporting" class="csl-entry" role="listitem">
+Michener, W. K., and M. B. Jones. 2012. <a href="https://doi.org/10.1016/j.tree.2011.11.016">Ecoinformatics: Supporting ecology as a data-intensive science</a>. Trends in Ecology &amp; Evolution 27:85–93.
+</div>
+<div id="ref-Olaya2020SistemasInformacion" class="csl-entry" role="listitem">
+Olaya, V. 2020. Sistemas de información geográfica. ed. rev. Víctor Olaya, s. l.
+</div>
+<div id="ref-PerezLuqueZamora2023DiveRpineDiversification" class="csl-entry" role="listitem">
+Pérez-Luque, A. J., and R. Zamora. 2023. <a href="https://doi.org/10.1016/j.ecolind.2023.110021"><span class="nocase">diveRpine</span>: <span>Diversification</span> of pine plantations in <span>Mediterranean</span> mountains. <span>An</span> interactive <span>R</span> tool to help decision makers</a>. Ecological Indicators 147:110021.
+</div>
+<div id="ref-Perkel2019WorkflowSystems" class="csl-entry" role="listitem">
+Perkel, J. M. 2019. <a href="https://doi.org/10.1038/d41586-019-02619-z">Workflow systems turn raw data into scientific knowledge</a>. Nature 573:149–150.
+</div>
+<div id="ref-RDevelopmentCoreTeam2000Introduccion" class="csl-entry" role="listitem">
+R Development Core Team. 2000. <a href="https://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf">Introducción a <span>R</span></a>.
+</div>
+<div id="ref-Rousseletal2023LidRPackage" class="csl-entry" role="listitem">
+Roussel, J.-R., T. R. H. Goodboy, and P. Tompalski. 2023. <a href="https://r-lidar.github.io/lidRbook/">The <span class="nocase">lidR</span> package</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

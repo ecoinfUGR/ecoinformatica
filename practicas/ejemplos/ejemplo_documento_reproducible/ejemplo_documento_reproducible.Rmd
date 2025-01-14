@@ -1,0 +1,148 @@
+---
+title: "Análisis del Efecto del Peso de la Bellota en la Altura de la Plántula"
+author: "Antonio J. Pérez-Luque"
+date: "2025-01-01"
+output:
+    bookdown::html_document2:
+      toc: true
+      toc-depth: 3
+      toc_float: true
+      global_numbering: true
+      fig_caption: true
+bibliography: ref_peso_semillas.bib
+csl: ecology.csl
+---
+
+# Introducción
+
+Este documento presenta un análisis de datos sobre el efecto del peso de la bellota en la altura de la plántula. Se utilizarán técnicas estadísticas para explorar la relación entre estas dos variables.
+
+```{r pkg, include=FALSE}
+# Carga de paquetes necesarios
+library(ggplot2)
+library(knitr)
+library(broom)
+library(leaflet)
+library(mapSpain)
+```
+
+El estudio de la relación entre el peso de la bellota y la altura de la plántula es importante para comprender los factores que influyen en el crecimiento de las plantas. En particular, se ha observado que el tamaño de la bellota puede influir en el desarrollo inicial de la plántula [@Quero2007].
+
+# Material y métodos
+
+## Zona de Estudio
+
+La zona de estudio se localiza en el Parque Nacional de Sierra Nevada. En concreto se trata de un encinar situado en las proximidades del Jardín Botánico de La Cortijuela (Granada; 37º05''6.11'' N, 3º28'11.38'' W) a una altitud de unos 1650 m s.n.m. (Figura \@ref(fig:mapa)).
+
+```{r mapa, echo=FALSE, fig.cap="Mapa de localización de la zona de estudio"}
+# Mapa interactivo con leaflet
+leaflet() |> 
+  addProviderEspTiles("IGNBase.Gris", group = "Base") |> 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "World Imagery (ESRI)",
+                   options = providerTileOptions(maxZoom = 25)) |> 
+  setView(lng = -3.4698, lat = 37.0851, zoom = 12) |>
+  addMarkers(lng = -3.4698, lat = 37.0851, popup = "Zona de Estudio") |> 
+  addLayersControl(
+        position = "bottomright",
+        baseGroups = c("World Imagery (ESRI)", "Base"),
+        options = layersControlOptions(collapsed = TRUE) 
+      ) 
+  
+```
+
+## Carga y exploración de datos
+
+```{r}
+datos <- read.csv("peso_altura_bellota.csv")
+
+# Visualizar las primeras filas del conjunto de datos
+head(datos)
+```
+
+## Análisis exploratorio
+
+En la Figura \@ref(fig:scatterplot), se explora gráficamente la relación entre el peso de la bellota y la altura de la plántula.
+
+```{r scatterplot, echo=FALSE, message=FALSE, fig.cap="Relación entre Peso de la Bellota y Altura de la Plántula"}
+ggplot(datos, aes(x = peso_bellota, y = altura_plantula)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "blue") +
+  labs(x = "Peso de la Bellota",
+       y = "Altura de la Plántula")
+```
+
+La relación entre el peso de la bellota ($x$) y la altura de la plántula ($y$) puede ser modelada con la siguiente ecuación (Eq. \@ref(eq:modelo-lineal)) de regresión lineal:
+
+<!--- 
+Mas información sobre como obtener referencias cruzadas en R Markdown:
+https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html
+---> 
+
+```{r, echo=FALSE, eval=FALSE}
+# También puedo incluir comentarios usando chunks. Aunque no es lo mas ortodoxo
+```
+
+
+$$
+\begin{equation}
+y = \beta_0 + \beta_1 x + \epsilon (\#eq:modelo-lineal)
+\end{equation}
+$$
+
+donde:
+
+- $y$: Altura de la plántula.
+- $x$: Peso de la bellota.
+- $\beta_0$: Intercepto.
+- $\beta_1$: Pendiente.
+- $\epsilon$: Término de error.
+
+# Resultados
+
+## Modelo de Regresión Lineal
+
+Se ajusta un modelo de regresión lineal para cuantificar la relación entre el peso de la bellota y la altura de la plántula.
+
+```{r modelo}
+# Ajustar un modelo de regresión lineal
+modelo <- lm(altura_plantula ~ peso_bellota, data = datos)
+
+# Resumen del modelo
+summary(modelo)
+```
+
+## Resultados de la Regresión
+
+Se utiliza el paquete `broom` para presentar los resultados de manera tabular (Tabla  \@ref(tab:tabla-modelo)).
+
+```{r tabla-modelo, echo=FALSE}
+# Convertir resultados a un marco de datos
+resultados_regresion <- tidy(modelo)
+
+# Mostrar los resultados
+kable(resultados_regresion, caption = "Resultados de la Regresión Lineal")
+```
+
+El modelo ajustado sugiere la siguiente ecuación:
+
+```{r, echo=FALSE}
+intercepto <- round(coef(modelo)[1], 3)
+pendiente <- round(coef(modelo)[2], 3)
+```
+
+
+$$
+y = \text{`r intercepto`} + \text{`r pendiente`}x
+$$
+
+y explica un `r round(summary(modelo)$r.squared, 2)`% de la variabilidad en la altura de la plántula.
+
+# Conclusiones
+
+En base al análisis realizado, se observó una relación significativa entre el peso de la bellota y la altura de la plántula. Los resultados indican que el peso de la bellota podría ser un predictor importante para el crecimiento inicial de las plántulas, en línea con hallazgos previos [@Smith2020].
+
+Por otro lado, la generación de documentos reproducibles facilita la comunicación de los resultados y la transparencia en la investigación. En este caso, la inclusión de mapas interactivos facilita la contextualización geográfica, lo que puede ser valioso para futuros estudios y aplicaciones prácticas en gestión forestal.
+
+
+# Referencias

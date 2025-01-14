@@ -1,2 +1,6 @@
 /.quarto/
-.Rproj.user
+.Rproj.user/
+.Rhistory
+.RData
+INDEX
+search.json

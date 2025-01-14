@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-01-09">
+<title>Ciclo de Gestión de los Datos. Ecoinformática – Documentos Reproducibles con Rmarkdown (slides)</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
+  </style>
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ee917d3ac312f7388ce82e656a56ad5d.css">
+<link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Documentos Reproducibles con Rmarkdown (slides)</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+          </p>
+    </div>
+</div>
+
+  <p class="date">2025-01-09</p>
+</section><section><section id="introducción" class="title-slide slide level1 unnumbered center"><h1>Introducción</h1>
+<ul>
+<li><p>En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (<code>Rmd</code>).</p></li>
+<li><p>Vamos a trabajar con <a href="https://www.r-project.org/">R</a>, Rstudio (ahora llamado <a href="https://posit.co/">posit</a>), y utilizaremos al menos el paquete <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a>.</p></li>
+</ul></section><section id="section" class="slide level2" data-footer="false"><h2></h2>
+<div id="fig-rmd-allison" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/rmd-allison.png">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1. Esquema general de <code>Rmd</code>. Fuente: <a href="https://allisonhorst.com/allison-horst">@allison_horst</a>
+</figcaption></figure>
+</div>
+</section></section><section><section id="flujo-de-trabajo" class="title-slide slide level1 center"><h1>Flujo de Trabajo</h1>
+<ol type="1">
+<li>Crear archivo <code>.Rmd</code>
+</li>
+<li>Escribir encabezado YAML</li>
+<li>Escribir texto y código</li>
+<li>Renderizar (<code>Knit</code>)</li>
+</ol>
+<p><img data-src="images/rmd-workflow.png"></p>
+</section><section id="crear-un-archivo-.rmd" class="slide level2"><h2>Crear un archivo <code>.Rmd</code>
+</h2>
+<p>Dentro de R-Studio, haz clic en <strong>Archivo → Nuevo archivo → Rmarkdown</strong></p>
+<div id="fig-elephants" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/rmd-create.png" style="width:70.0%"></p>
+<figcaption>Crea archivo <code>Rmd</code></figcaption></figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/rmd-create2.png" style="width:70.0%"></p>
+<figcaption>Define detalles generales <code>Rmd</code></figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-elephants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2
+</figcaption></figure>
+</div>
+</section></section><section><section id="estructura-de-un-archivo-rmd" class="title-slide slide level1 center"><h1>Estructura de un archivo <code>Rmd</code>
+</h1>
+
+</section><section id="encabezado-yaml" class="slide level2"><h2>1. Encabezado YAML</h2>
+<div class="small">
+<p><a href="https://yaml.org/">YAML</a>, es un lenguaje de serialización de datos para todos los lenguajes de programación. Se diseño para representar datos jerárquicos pero que sea fácil de escribir y leer por humanos.</p>
+<ul>
+<li>Delimitado por tres guiones (<code>---</code>) al inicio y al final (a modo de bloque)</li>
+<li>Estructura anidada</li>
+<li>Contiene metadatos del documento: título del documento, autor, los formatos de salida, etc)</li>
+</ul>
+</div>
+<div id="fig-yaml" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-yaml" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ymal-example" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig"><div aria-describedby="fig-ymal-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/ymal-example.png" data-ref-parent="fig-yaml">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ymal-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Encabezado YAML
+</figcaption></figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-yaml" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-yaml-render" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig"><div aria-describedby="fig-yaml-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/ymal-render.png" data-ref-parent="fig-yaml">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-yaml-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Vista tras su renderización
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3. Encabezado YAML
+</figcaption></figure>
+</div>
+</section><section class="slide level2"><p>Existen diferenes parámetros que se pueden especificar en el encabezado YAML, que van a definir algunas características del documento.</p>
+<ul>
+<li>
+<code>title</code>: Título del documento</li>
+<li>
+<code>author</code>: Autor del documento</li>
+<li>
+<code>output</code>: Formatos de salida del documento (<code>pdf</code>, <code>word</code>, <code>html</code>, etc). Mas información <a href="https://rmarkdown.rstudio.com/lesson-9.html">aquí</a>
+</li>
+<li>
+<code>date</code>: Fecha del documento</li>
+</ul></section><section class="slide level2"><p>Algunos parámetros van a estar condicionados por el tipo de formato de salida. Por ejemplo:</p>
+<ul>
+<li>
+<code>toc</code>: <code>true</code> Mostrar la tabla de contenidos cuando la salida sea de tipo html.</li>
+<li>También podemos especificar una plantilla de word.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="pp">---</span></span>
+<span id="cb1-2"><a></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb1-3"><a></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb1-4"><a></a><span class="at">    </span><span class="fu">reference_docx</span><span class="kw">:</span><span class="at"> </span><span class="st">"template.docx"</span></span>
+<span id="cb1-5"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section class="slide level2"><h3 id="parametros-en-función-del-formato-de-salida">Parametros en función del formato de salida</h3>
+<div class="small">
+<ul>
+<li>Cada tipo de formato de salida presenta diferentes parámetros que se pueden especificar en la cabecera YAML.</li>
+<li>Por ejemplo, para saber qué parámetros puedes definir con <code>html_document</code>, podemos usar el comando <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_document.html">?rmarkdown::html_document</a></code>. Así, por ejemplo:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>?rmarkdown<span class="sc">::</span>word_document</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="fu">word_document</span>(</span>
+<span id="cb2-4"><a></a>  <span class="at">toc =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-5"><a></a>  <span class="at">toc_depth =</span> <span class="dv">3</span>,</span>
+<span id="cb2-6"><a></a>  <span class="at">number_sections =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-7"><a></a>  <span class="at">fig_width =</span> <span class="dv">5</span>,</span>
+<span id="cb2-8"><a></a>  <span class="at">fig_height =</span> <span class="dv">4</span>,</span>
+<span id="cb2-9"><a></a>  <span class="at">fig_caption =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-10"><a></a>  <span class="at">highlight =</span> <span class="st">"default"</span>,</span>
+<span id="cb2-11"><a></a>  <span class="at">reference_docx =</span> <span class="st">"default"</span>,</span>
+<span id="cb2-12"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="narrativa-texto-del-documento" class="slide level2"><h2>2. Narrativa (Texto del documento)</h2>
+<div class="small">
+<ul>
+<li>Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc.</li>
+<li>En un documento <code>.Rmd</code> todo lo que no esté en el encabezazo YAML o dentro de un <code>chunk</code> de código, será interpretado como texto.</li>
+<li>Para escribir la parte narrativa se utiliza el lenguaje <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender.</li>
+</ul>
+</div>
+</section><section class="slide level2"><table class="caption-top">
+<thead><tr class="header">
+<th>Formato</th>
+<th>Sintáxis</th>
+<th>Ejemplo</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Cursiva</td>
+<td><code>*Texto*</code></td>
+<td><em>Esto es cursiva</em></td>
+</tr>
+<tr class="even">
+<td>Negrita</td>
+<td><code>**Negrita**</code></td>
+<td><strong>Esto es negrita</strong></td>
+</tr>
+<tr class="odd">
+<td>Link</td>
+<td><code>[Descripción del texto](url)</code></td>
+<td>Un <a href="http://www.github.com">link</a>
+</td>
+</tr>
+<tr class="even">
+<td>Imágenes</td>
+<td><code>![Descripción](url a la imagen)</code></td>
+<td>Una imagen <img data-src="images/rmd-logo.png" alt="image">
+</td>
+</tr>
+</tbody>
+</table></section><section class="slide level2"><h3 id="encabezados">Encabezados</h3>
+<p>Para crear encabezados de secciones y subsecciones has de utilizar el simbolo <code>#</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="fu"># Título</span></span>
+<span id="cb3-2"><a></a><span class="fu">## Sección principal</span></span>
+<span id="cb3-3"><a></a><span class="fu">### Subsección</span></span>
+<span id="cb3-4"><a></a><span class="fu">#### Sub-subsección</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<h3 id="superíndices-subíndices">Superíndices, Subíndices</h3>
+<ul>
+<li>
+<strong>superíndices</strong> escribiendo <code>R^2^</code> que produce R<sup>2</sup>
+</li>
+<li>
+<strong>subíndices</strong>, escribiendo <code>CO~2~</code> que produce CO<sub>2</sub>.</li>
+</ul></section><section class="slide level2"><h3 id="ecuaciones">Ecuaciones</h3>
+<ul>
+<li>A veces puede interesarnos escribir <strong>ecuaciones</strong>.</li>
+<li>Para ello vamos a usar el lenguaje <a href="http://www.latex-project.org/">LaTeX</a>.</li>
+<li>Existen algunos editores online que nos permiten escribir ecuaciones usando LaTeX, como por ejemplo <a href="https://latex.codecogs.com/eqneditor/editor.php">este</a>.</li>
+</ul></section><section class="slide level2"><div class="small">
+<p>Las ecuaciones pueden incluirse en la <strong>misma línea</strong>, para lo cual incluimos la ecuación entre simbolos <code>$...$</code>. Por ejemplo:</p>
+<p>En nuestro estudio utilizamos una regresión de acuerdo a <span class="math inline">\(y_i=a_i+b_iX\)</span>.</p>
+<p>Para obtener esta ecuación hemos escrito <code>$y_i=a_i+b_iX$</code></p>
+<p>También podemos incluir ecuaciones mas complejas <strong>en párrafo aparte</strong> usando <code>$$...$$</code>. Por ejemplo para obtener <span class="math display">\[y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon\]</span></p>
+<p>escribimos <br><code>$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$</code></p>
+</div>
+</section><section class="slide level2"><h3 id="recursos-sobre-markdown">Recursos sobre Markdown</h3>
+<p>Existen muchos recursos en la web sobre sintáxis markdown:</p>
+<ul>
+<li><p><a href="https://www.markdownguide.org/basic-syntax">https://www.markdownguide.org/basic-syntax</a></p></li>
+<li><p><a href="https://quarto.org/docs/authoring/markdown-basics.html">https://quarto.org/docs/authoring/markdown-basics.html</a></p></li>
+</ul></section><section id="trozos-de-código-chunks" class="slide level2"><h2>3. Trozos de código (<code>chunks</code>)</h2>
+<div class="small">
+<ul>
+<li>Los trozos o bloques de código (<code>chunks</code>) dentro de un documento RMarkdown permiten ejecutar diferentes análisis y mostrar resultados en el documento final.</li>
+<li>Para distinguir los trozos de código del resto de elementos del documento <code>.Rmd</code> tenemos que indicar un tipo especial de marca.</li>
+</ul>
+</div>
+</section><section id="trozos-de-código-chunks-1" class="slide level2"><h2>3. Trozos de código (<code>chunks</code>)</h2>
+<div class="small">
+<p>Existen dos formas de incrustar código dentro de un documento <code>.Rmd</code>:</p>
+<ol type="a">
+<li><p><strong>Código en línea:</strong> Código breve que se incluye en una línea escrita del documento (generalmente no mas de una línea de código)</p></li>
+<li><p><strong>Bloques de código (<code>chunks</code>):</strong> Partes del documento que incluyen varias líneas de código. Permiten represantar gráficos, tablas, aplicar análisis estadísticos, cargar paquetes, etc.</p></li>
+</ol>
+</div>
+</section><section class="slide level2"><h3 id="a.-código-r-en-línea">a. Código R en línea</h3>
+<div class="small">
+<ul>
+<li><p>Para incluir código en líneas hay que utilizar la siguiente sintaxis <br><code>`r `</code> <br> en la que incluiremos nuestro código después de la letra <code>r</code>.</p></li>
+<li><p>Por ejemplo si escribimos: <br>la media de nuestro grupo es <code>`r mean(c(1,3))`</code> <br> aparecerá como: <br> la media de nuestro grupo es 2.</p></li>
+</ul>
+<p>De esta forma podemos incluir resultados de análisis (e.g.&nbsp;p.valor de un análisis) sin tener que copiarlos a mano, reduciendo la generación de errores.</p>
+</div>
+</section><section class="slide level2"><h3 id="b.-bloques-de-código-chunks">b. Bloques de código (<strong>chunks</strong>)</h3>
+<div class="small">
+<ul>
+<li><p>Los trozos de código se pueden utilizar para representar la salida del código en los documentos o para mostrar el código para la ilustración.</p></li>
+<li><p>Los trozos de código pueden estar escritos en diferentes lenguajes (e.g.: <code>shell/bash</code>, <code>python</code>, <code>SQL</code>, <code>R</code>, etc.)</p></li>
+<li><p>Para insertar un trozo de código en R, puedes escribirlo manualmente escribiendo <code>```{r}</code> seguido de <code>```</code> en la siguiente línea. <br></p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a></a><span class="in">n &lt;- 5</span></span>
+<span id="cb4-3"><a></a><span class="in">seq(n)</span></span>
+<span id="cb4-4"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Knitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.</p>
+</div>
+</section><section id="section-1" class="slide level2" data-footer="false"><h2></h2>
+<div class="small">
+<p>En la siguiente animación (<a href="#/fig-chunk-anatomy" class="quarto-xref">Figura&nbsp;4</a>) puedes ver la anatomía de un trozo de código.</p>
+</div>
+<div id="fig-chunk-anatomy" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-chunk-anatomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/chunk-anatomy.gif">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chunk-anatomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4. Anatomía de un trozo de Código. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
+</figcaption></figure>
+</div>
+</section><section class="slide level2"><h3 id="cómo-insertar-un-chunk-de-código">¿Cómo insertar un chunk de código?</h3>
+<p>Existen varias formas de insertar un chunk de código:</p>
+<ul>
+<li>Usando “Insert” en la barra de Edición</li>
+<li>Escribiendo manualmente <code>```{r}</code> y <code>```</code>
+</li>
+<li>Usando un atajo de teclado:
+<ul>
+<li>Ctrl + Alt + I (Windows)</li>
+<li>Cmd + Alt + I (OS)</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><h3 id="opciones-y-nombres-de-los-bloques">Opciones y nombres de los bloques</h3>
+<div class="small">
+<p>Cuando creamos un documento reproducible es importante identificar los diferentes trozos de código para poder ejecutarlos a lo largo de todo el documento. Esta aproximación tiene varias ventajas:</p>
+<ol type="1">
+<li>Se puede navegar mas cómodamente a los bloques específicos usando el navegador de código desplegable abajo a la izquierda en el editor de script:</li>
+</ol>
+</div>
+<p><img data-src="images/code-navigation.png"></p>
+</section><section class="slide level2"><h3 id="opciones-y-nombres-de-los-bloques-1">Opciones y nombres de los bloques</h3>
+<div class="small">
+<ol start="2" type="1">
+<li><p>En caso de que el bloque de código produzca un gráfico, se usará el nombre del bloque para nomobrar los gráficos facilitando la reutilización de estos gráficos.</p></li>
+<li><p>Guardar bloques específicos de código complejo y costoso de ejecutar en la caché.</p></li>
+</ol>
+<p>En nuestro ejemplo anterior podemos añadir el nombre del chunk como <code>1-numero-aleatorio</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="in">```{r 1-numero-aleatorio}</span></span>
+<span id="cb5-2"><a></a><span class="in">n &lt;- 5</span></span>
+<span id="cb5-3"><a></a><span class="in">seq(n)</span></span>
+<span id="cb5-4"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><h3 id="principales-opciones-de-los-chunks">Principales opciones de los chunks</h3>
+<div class="small">
+<p>Las salidas de los códigos pueden personalizarse con diferentes opciones. Estas opciones se suministran para cada uno de los chunks. Existen mas de 50 opciones de personalización que pueden ser consultadas <a href="http://yihui.name/knitr/options/">aquí</a>.</p>
+<ul>
+<li><p><code>eval = FALSE</code> evita que el código sea evaluado. (Y, obviamente, si el código no es ejecutado no se generaran resultados). Esto es útil para mostrar códigos de ejemplo, o para deshabilitar un gran bloque de código sin comentar cada línea.</p></li>
+<li><p><code>include = FALSE</code> ejecuta el código, pero no muestra el código o los resultados en el documento final. Se puede usar para aligerar el aspecto final de nuestro documento.</p></li>
+<li><p><code>echo = FALSE</code> evita que se vea el código, pero sí muestra los resultados en el archivo final.</p></li>
+</ul>
+</div>
+</section><section class="slide level2"><h3 id="principales-opciones-de-los-chunks-1">Principales opciones de los chunks</h3>
+<div class="small">
+<ul>
+<li><p><code>message = FALSE</code> o <code>warning = FALSE</code> evita que aparezcan mensajes o advertencias en el archivo final.</p></li>
+<li><p><code>results = 'hide'</code> oculta el output impreso</p></li>
+<li><p><code>fig.show = 'hide'</code> oculta los gráficos producidos</p></li>
+<li><p><code>error = TRUE</code> permite que se siga renderizando el documento a pesar de que exista un error en el código. Puede ser útil durante el proceso de creación de un documento reproducible</p></li>
+</ul>
+</div>
+</section><section class="slide level2"><h3 id="incluir-tablas">Incluir Tablas</h3>
+<div class="small">
+<p>Un aspecto muy intersante de los documentos reproducibles es la inclusión de tablas. Para incluir una tabla existen diferentes opciones, siendo la función <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable</a></code> la que nos permite incluir tablas de la forma mas sencilla (mas información <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html">aquí</a>). Así por ejemplo, si escribimos</p>
+<p><br></p>
+<pre><code>``` {{r}}
+knitr::kable(
+  mtcars[1:5, ]
+)
+```</code></pre>
+<p>obtenemos la <a href="#/tbl-ejemplo-tabla" class="quarto-xref">Tabla&nbsp;1</a></p>
+</div>
+</section><section class="slide level2"><div class="small">
+<div class="cell">
+<div id="tbl-ejemplo-tabla" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ejemplo-tabla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
+</figcaption><div aria-describedby="tbl-ejemplo-tabla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">drat</th>
+<th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="tejer-y-renderizar" class="slide level2" data-footer="false"><h2>Tejer y Renderizar</h2>
+<div class="small">
+<ul>
+<li><p>Al terminar nuestro<code>.Rmd</code> escrito procedemos a tejer (<code>knit</code>) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento.</p></li>
+<li><p><strong>Knit</strong> es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.</p></li>
+</ul>
+<p>Para ello en la parte superior del panel, hacer click en <code>Knit</code> directamente o desplegar las opciones de <code>Knit</code> y ejecutar la que mas nos convenga (<a href="#/fig-knit" class="quarto-xref">Figura&nbsp;5</a>, ver animación en <a href="#/fig-knitting" class="quarto-xref">Figura&nbsp;6</a>).</p>
+<div id="fig-knit" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/knit.png">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5. Opciones Knit
+</figcaption></figure>
+</div>
+</div>
+</section><section class="slide level2"><div id="fig-knitting" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig"><div aria-describedby="fig-knitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/knitting.gif">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-knitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6. Knit (Tejer) un documento. Fuente: <a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Shannon Pileggi</a>
+</figcaption></figure>
+</div>
+</section><section id="resumen-del-flujo-de-trabajo" class="slide level2"><h2>Resumen del Flujo de Trabajo</h2>
+<p>Resumen de los pasos que sigue RMarkdown para llegar al documento renderizado</p>
+<div>
+<ol type="1">
+<li class="fragment"><p>Crear un informe <code>.Rmd</code> que incluya las especificaciones YAML, trozos de código R (<code>chunks</code>) y narraciones markdown</p></li>
+<li class="fragment"><p>Pasar el archivo <code>.Rmd</code> a <code>knitr</code> para que ejecute los trozos de código R y cree un nuevo archivo <code>.md</code></p></li>
+</ol>
+<div class="small">
+<ul>
+<li class="fragment">
+<a href="http://yihui.name/knitr/">Knitr</a> es un paquete dentro de R que permite la integración de código R en documentos RMarkdown renderizados como HTML, latex, pdf, word, entre otros tipos de documentos.</li>
+</ul>
+</div>
+</div>
+</section><section id="resumen-del-flujo-de-trabajo-1" class="slide level2"><h2>Resumen del Flujo de Trabajo</h2>
+<p>Resumen de los pasos que sigue RMarkdown para llegar al documento renderizado</p>
+<ol start="3" type="1">
+<li>El archivo <code>.md</code> generado se entrega a <strong>pandoc</strong>, que creará el documento final renderizado (por ejemplo, html, Microsoft word, pdf, etc.). <a href="http://pandoc.org/">Pandoc</a> es un convertidor universal de documentos y permite la conversión de un tipo de documento (en este caso: <code>.Rmd</code>) a otro (en este caso: HTML)</li>
+</ol>
+<p><img data-src="images/rmd-workflow.png"></p>
+</section><section id="ejemplo-completo" class="slide level2"><h2>Ejemplo completo</h2>
+<div class="small">
+<ul>
+<li><p>En este <a href="https://github.com/ecoinfUGR/ecoinformatica/raw/refs/heads/main/practicas/ejemplos/ejemplo_documento_reproducible.zip">enlace</a> tienes un ejemplo bastante completo.</p></li>
+<li><p>Descarga la carpeta, descomprimela y abre el archivo <code>ejemplo_documento_reproducible.Rmd</code> en RStudio.</p></li>
+</ul>
+</div>
+</section><section id="sec-recursos" class="slide level2"><h2>Recursos</h2>
+<div class="small">
+<ul>
+<li><p><a href="https://es.r4ds.hadley.nz/r-markdown.html">R for Data Science</a> en especial los capítulos 27 a 29 en su versión en castellano.</p></li>
+<li><p><a href="https://reproducible-analysis-workshop.readthedocs.io/en/latest/6.RMarkdown-knitr.html">R for Reproducible Scientific Analysis (RMarkdown / knitr)</a></p></li>
+<li><p><a href="https://intro2r.com/rmarkdown_r.html">Reproducible reports with R markdown</a></p></li>
+<li><p><a href="https://swcarpentry.github.io/r-novice-gapminder-es/15-knitr-markdown/index.html">R para Análisis Científicos Reproducibles</a></p></li>
+<li><p><a href="https://allisonhorst.github.io/ucsb-qmss-rmarkdown/">Level up in R Markdown</a></p></li>
+<li><p><a href="https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/">Introducing RStudio and R Markdown</a></p></li>
+<li><p><a href="https://www.uv.es/vcoll/RMarkdown.html">Curso de Introducción a R</a></p></li>
+<li><p><a href="http://destio.us.es/calvo/memoriatfe/MemoriaTFE_PedroLuque_2017Nov_imprimir2caras.pdf">Escribir un Trabajo Fin de Estudios con R Markdown</a></p></li>
+<li><p>… Existen muchos más</p></li>
+</ul>
+</div>
+</section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
+<ul>
+<li>
+<i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a>
+</li>
+<li><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></li>
+</ul>
+<p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/logo-jdc.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+</figure>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Si usas esta presentación puedes citarla como:</strong></p>
+</div>
+<div class="callout-content">
+<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
+</div>
+</div>
+</div>
+
+
+</section></section>
+</div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo-ugr.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+
+
+</body></html>

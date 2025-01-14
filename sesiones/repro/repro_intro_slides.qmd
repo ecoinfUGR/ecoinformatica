@@ -1,0 +1,218 @@
+---
+title: "Reproducibilidad en Ciencia"
+author: 
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-01-08
+sesion: 1
+date-format: long
+format: 
+  revealjs: 
+    multiplex: true
+    logo: "images/logo-ugr.png"
+    footer: Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad
+    theme: [default, "../../custom_theme.scss"] 
+    transition: fade
+    background-transition: fade
+    highlight-style: a11y
+code-link: true
+citation: true
+---
+
+
+## ¿Cómo definirías la ciencia? 
+
+![](images/repro-science.jpg){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Ciencia
+
+::: small
+>Conjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales 
+<br> <br> **RAE**
+
+<br>
+
+> La ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico. <br> <br> **Mario Bugne 1957**, *La ciencia: su método y su filosofía*
+
+
+:::
+
+------------------------------------------------------------------------
+
+![](images/repro-metodo-cientifico-bebe.jpg){fig-align="center"}
+
+## Crisis de Reproducibilidad
+
+![[Baker 2016](https://www.nature.com/articles/533452a)](images/repro-crisis.png)
+
+::: notes
+-   
+
+    > 70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y \> 50% han fallado en reproducir sus propios experimentos
+:::
+
+## ¿mismos datos = mismos resultados?
+
+![](images/repro-trial.png){fig-align="center"}
+
+## ¿problema actual?
+
+![](images/repro-crisis-twitter.png){fig-align="center"}
+
+::: notes
+-   No es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia
+:::
+
+------------------------------------------------------------------------
+
+### Fraude científico [^1]
+
+[^1]: Abril-Ruiz (2019). [Manzanas podridas](https://psyarxiv.com/z82mh/)
+
+::: columns
+::: {.column width="50%"}
+![](images/repro-lemus-ms.png){height=500}
+:::
+
+::: {.column width="50%"}
+![[Potti et al. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001276)](images/repro-lemus-retracted.png)
+:::
+:::
+
+::: notes
+-   Investigador contratado por la EBD.
+-   36 publicaciones (13 de ellas retiradas)
+-   Inventó resultados, instituciones, autores, empresas, etc.
+:::
+
+# ¿Qué entendemos por ciencia reproducible?
+
+## Investigación Reproducible
+
+::: small
+> Trabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original
+:::
+
+![[The Turing way](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html)](images/repro-reproducible-matrix.jpeg){fig-align="center"}
+
+::: notes
+-   Un resultado es *reproducible* cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.
+
+-   A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+
+-   Robusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis.
+:::
+
+## Gradiente de Reproducibilidad
+
+![[Rodríguez-Sánchez et al. 2016](http://doi.org/10.7818/ECOS.2016.25-2.11)](images/repro-gradiente.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### Flujo de trabajo reproducible: ventajas (I)
+
+::: {.incremental}
+- La utilización de código permite la automatización: ejecución de tareas repetitivas sin esfuerzo
+- Muy fácil corregir y regenerar resultados, tablas y figuras
+- Reducción drástica del riesgo de errores
+- Los flujos de trabajo reproducibles facilitan la colaboración
+- Mayor facilidad para escribir trabajos al tener registro exhaustivo de todo el proceso de análisis
+:::
+
+------------------------------------------------------------------------
+
+### Flujo de trabajo reproducible: ventajas (II)
+
+::: {.incremental}
+::: small
+- La publicación del código:
+
+    - ayuda a detectar errores antes de la publicación definitiva
+    - facilita el proceso de revisión
+    - facilita la comprensión del artículo y evita malinterpretaciones
+    
+- La reproducibilidad es un sello de calidad y aumenta la probabilidad de aceptación del trabajo 
+- La reproducibilidad aumenta el impacto de las publicaciones (citas, reconocimiento, reutilización, coautorías)
+- Ahorro de tiempo y esfuerzo al reutilizar código en otros proyectos
+:::
+:::
+
+## Reproducibilidad: Barreras
+
+![Fuente: [Kirstie Whitaker](https://youtu.be/wZeoZaIV0VE?t=312)](images/repro-barriers.png){fig-align="center"}
+
+## Reproducibilidad: Costes
+
+![](images/repro-metodo-geek.png)
+
+## ¿Cuándo y Dónde ser reproducible?
+
+::: columns
+::: {.column width="50%"}
+![](images/repro-ciclo-dato.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/repro-three-steps.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+
+![](images/repro-tensimple.png)
+
+[Sandve et al. 2013](https://doi.org/10.1371/journal.pcbi.1003285)
+
+## Recursos
+
+::: small
+-   [Awesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media](https://github.com/leipzig/awesome-reproducible-research)
+
+-   [Lista de recursos sobre Ciencia Reproducible](https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Recursos.md)
+
+-   Rodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) [Ciencia reproducible: qué, por qué, cómo](http://doi.org/10.7818/ECOS.2016.25-2.11). Ecosistemas, 25(2): 83-92.
+
+-   [A Beginner's Guide to Conducting Reproducible Research](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801)
+
+-   [The Turing Way handbook to reproducible, ethical and collaborative data science](https://the-turing-way.netlify.app/welcome.html).
+
+-   [A Guide to Reproducible Code in Ecology and Evolution](https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf)
+:::
+
+## Recursos
+
+![](images/repro-british.png){fig-align="center" height=500}
+
+:::small
+
+[Cooper & Hsing (2017)](https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf)
+:::
+
+## Recursos
+
+![](images/repro-alston.png)
+
+[Alston & Rick 2021](https://doi.org/10.1002/bes2.1801)
+
+
+
+## ¿Alguna duda?
+
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
+- [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
+
+
+<small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small>
+
+![](images/logo-jdc.png){fig-align="center" width=40%}
+
+
+::: {.callout-tip}
+## Si usas esta presentación puedes citarla como:
+<small>**Pérez-Luque, A.J. **(2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+:::

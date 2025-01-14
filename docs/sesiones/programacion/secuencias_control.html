@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-01-15">
+<title>Estructuras de Control en Programación (R y Python) – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="https://github.com/ecoinfugr/" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Estructuras de Control en Programación (R y Python)</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../calendario.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calendario</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modulos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Módulos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../equipo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profesores</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../guia_docente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guía Docente</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introducci%C3%B3n" id="toc-introducción" class="nav-link active" data-scroll-target="#introducci%C3%B3n">Introducción</a></li>
+  <li>
+<a href="#tipos-de-estructuras-de-control" id="toc-tipos-de-estructuras-de-control" class="nav-link" data-scroll-target="#tipos-de-estructuras-de-control">Tipos de Estructuras de Control</a>
+  <ul class="collapse">
+<li><a href="#condicionales-simple" id="toc-condicionales-simple" class="nav-link" data-scroll-target="#condicionales-simple">2. Condicionales <strong>simple</strong></a></li>
+  <li><a href="#condicionales-simple-1" id="toc-condicionales-simple-1" class="nav-link" data-scroll-target="#condicionales-simple-1">2. Condicionales <strong>simple</strong></a></li>
+  </ul>
+</li>
+  <li><a href="#ejemplo-pr%C3%A1ctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-pr%C3%A1ctico">Ejemplo práctico</a></li>
+  <li><a href="#solucionario" id="toc-solucionario" class="nav-link" data-scroll-target="#solucionario">Solucionario</a></li>
+  <li>
+<a href="#uso-de-bucles" id="toc-uso-de-bucles" class="nav-link" data-scroll-target="#uso-de-bucles">Uso de bucles</a>
+  <ul class="collapse">
+<li><a href="#qu%C3%A9-son-los-bucles-en-programaci%C3%B3n" id="toc-qué-son-los-bucles-en-programación" class="nav-link" data-scroll-target="#qu%C3%A9-son-los-bucles-en-programaci%C3%B3n"><strong>¿Qué son los bucles en programación?</strong></a></li>
+  </ul>
+</li>
+  <li><a href="#tipos-de-bucles" id="toc-tipos-de-bucles" class="nav-link" data-scroll-target="#tipos-de-bucles"><strong>Tipos de bucles</strong>:</a></li>
+  <li>
+<a href="#for-loop-iteraciones-determinadas" id="toc-for-loop-iteraciones-determinadas" class="nav-link" data-scroll-target="#for-loop-iteraciones-determinadas"><strong><code>for</code> loop: iteraciones determinadas</strong></a>
+  <ul class="collapse">
+<li><a href="#estudio-en-detalle-del-bucle" id="toc-estudio-en-detalle-del-bucle" class="nav-link" data-scroll-target="#estudio-en-detalle-del-bucle">Estudio en detalle del bucle</a></li>
+  </ul>
+</li>
+  <li><a href="#elementos-del-bucle" id="toc-elementos-del-bucle" class="nav-link" data-scroll-target="#elementos-del-bucle">Elementos del bucle</a></li>
+  <li><a href="#elementos-del-bucle-%C3%ADndice" id="toc-elementos-del-bucle-índice" class="nav-link" data-scroll-target="#elementos-del-bucle-%C3%ADndice">Elementos del bucle: <strong>Índice</strong></a></li>
+  <li>
+<a href="#elementos-del-bucle-%C3%ADndice-1" id="toc-elementos-del-bucle-índice-1" class="nav-link" data-scroll-target="#elementos-del-bucle-%C3%ADndice-1">Elementos del bucle: <strong>Índice</strong></a>
+  <ul class="collapse">
+<li><a href="#looping-por-%C3%ADndice-o-por-valor" id="toc-looping-por-índice-o-por-valor" class="nav-link" data-scroll-target="#looping-por-%C3%ADndice-o-por-valor">¿looping por índice o por valor?</a></li>
+  <li><a href="#looping-por-%C3%ADndice-o-por-valor-1" id="toc-looping-por-índice-o-por-valor-1" class="nav-link" data-scroll-target="#looping-por-%C3%ADndice-o-por-valor-1">¿looping por índice o por valor?</a></li>
+  </ul>
+</li>
+  <li><a href="#pr%C3%A1ctica-1" id="toc-práctica-1" class="nav-link" data-scroll-target="#pr%C3%A1ctica-1">Práctica 1</a></li>
+  <li><a href="#pr%C3%A1ctica-2" id="toc-práctica-2" class="nav-link" data-scroll-target="#pr%C3%A1ctica-2">Práctica 2</a></li>
+  <li><a href="#pr%C3%A1ctica-3" id="toc-práctica-3" class="nav-link" data-scroll-target="#pr%C3%A1ctica-3">Práctica 3</a></li>
+  <li><a href="#pr%C3%A1ctica-3-1" id="toc-práctica-3-1" class="nav-link" data-scroll-target="#pr%C3%A1ctica-3-1">Práctica 3</a></li>
+  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones">Aplicaciones</a></li>
+  <li><a href="#while-loop-repetici%C3%B3n-condicional" id="toc-while-loop-repetición-condicional" class="nav-link" data-scroll-target="#while-loop-repetici%C3%B3n-condicional"><strong>2. <code>while</code> Loop: Repetición Condicional</strong></a></li>
+  <li>
+<a href="#repeat-loop-repetici%C3%B3n-indefinida" id="toc-repeat-loop-repetición-indefinida" class="nav-link" data-scroll-target="#repeat-loop-repetici%C3%B3n-indefinida"><strong>3. <code>repeat</code> Loop: Repetición Indefinida</strong></a>
+  <ul class="collapse">
+<li><a href="#qu%C3%A9-es" id="toc-qué-es" class="nav-link" data-scroll-target="#qu%C3%A9-es"><strong>¿Qué es?</strong></a></li>
+  <li><a href="#ejemplo-3" id="toc-ejemplo-3" class="nav-link" data-scroll-target="#ejemplo-3"><strong>Ejemplo</strong>:</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#alternativas-vectorizadas-apply-tapply" id="toc-alternativas-vectorizadas-apply-tapply" class="nav-link" data-scroll-target="#alternativas-vectorizadas-apply-tapply"><strong>4. Alternativas Vectorizadas (<code>apply</code>, <code>tapply</code>)</strong></a>
+  <ul class="collapse">
+<li><a href="#qu%C3%A9-son" id="toc-qué-son" class="nav-link" data-scroll-target="#qu%C3%A9-son"><strong>¿Qué son?</strong></a></li>
+  <li><a href="#ejemplo-4" id="toc-ejemplo-4" class="nav-link" data-scroll-target="#ejemplo-4"><strong>Ejemplo</strong>:</a></li>
+  <li><a href="#ventajas" id="toc-ventajas" class="nav-link" data-scroll-target="#ventajas"><strong>Ventajas</strong>:</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#comparaci%C3%B3n-con-purrr" id="toc-comparación-con-purrr" class="nav-link" data-scroll-target="#comparaci%C3%B3n-con-purrr"><strong>5. Comparación con <code>purrr</code></strong></a>
+  <ul class="collapse">
+<li><a href="#qu%C3%A9-es-purrr" id="toc-qué-es-purrr" class="nav-link" data-scroll-target="#qu%C3%A9-es-purrr"><strong>¿Qué es <code>purrr</code>?</strong></a></li>
+  <li><a href="#ejemplo-comparativo" id="toc-ejemplo-comparativo" class="nav-link" data-scroll-target="#ejemplo-comparativo"><strong>Ejemplo Comparativo</strong></a></li>
+  <li><a href="#ventajas-de-purrr" id="toc-ventajas-de-purrr" class="nav-link" data-scroll-target="#ventajas-de-purrr"><strong>Ventajas de <code>purrr</code></strong>:</a></li>
+  </ul>
+</li>
+  <li><a href="#comparaci%C3%B3n-general" id="toc-comparación-general" class="nav-link" data-scroll-target="#comparaci%C3%B3n-general"><strong>6. Comparación General</strong></a></li>
+  <li><a href="#conclusi%C3%B3n" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusi%C3%B3n"><strong>Conclusión</strong></a></li>
+  <li><a href="#alguna-duda" id="toc-alguna-duda" class="nav-link" data-scroll-target="#alguna-duda">¿Alguna duda?</a></li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="secuencias_control.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Estructuras de Control en Programación (R y Python)</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Antonio J. Pérez-Luque <a href="mailto:antonio.perez@inia.csic.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="introducción" class="level2"><h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<ul>
+<li>
+<strong>Estructuras de control</strong>: Herramientas fundamentales en programación que permiten modificar el flujo de ejecución de un programa según ciertas condiciones o repeticiones.</li>
+<li>Son esenciales para tomar decisiones dinámicas, realizar acciones repetitivas y dirigir cómo se ejecuta el código, haciéndolo más flexible y adaptable.</li>
+</ul>
+<hr></section><section id="tipos-de-estructuras-de-control" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="tipos-de-estructuras-de-control">Tipos de Estructuras de Control</h2>
+<div class="incremental">
+<div class="small">
+<ol class="incremental" type="1">
+<li><p><strong>Estructuras Secuenciales</strong>: Ejecutan instrucciones una tras otra</p></li>
+<li>
+<p><strong>Estructuras de Selección</strong> (Condicionales): Permiten que un bloque de código se ejecute o no, en función de una condición. Dependiendo de si una condición es <code>TRUE</code> o <code>FALSE</code>, el algoritmo toma un camino u otro. <strong>Tipos</strong>:</p>
+<ul class="incremental">
+<li>
+<strong>Simple</strong>: Una única condición (<strong><code>if</code></strong>).</li>
+<li>
+<strong>Doble</strong>: Incluye una alternativa (<strong><code>if-else</code></strong>).</li>
+<li>
+<strong>Múltiple</strong>: Varias alternativas posibles (<strong><code>switch</code></strong>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Estructuras de Iteración</strong> (Bucles): Permiten repetir un bloque de código varias veces mientras se cumpla una condición o sobre una secuencia de elementos. <strong>Tipos</strong>:</p>
+<ul class="incremental">
+<li>
+<strong><code>for</code></strong>: Itera sobre una secuencia conocida.</li>
+<li>
+<strong><code>while</code></strong>: Repite mientras una condición sea <code>TRUE</code>.</li>
+<li>
+<strong><code>repeat</code></strong>: Ejecuta indefinidamente hasta que se use un <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> para detenerlo.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<hr>
+<section id="condicionales-simple" class="level3"><h3 class="anchored" data-anchor-id="condicionales-simple">2. Condicionales <strong>simple</strong>
+</h3>
+<div class="small">
+<ul>
+<li>Permiten que un bloque de código se ejecute o no, en función de una condición.</li>
+<li>Dependiendo de si una condición es <code>TRUE</code> o <code>FALSE</code>, el algoritmo toma un camino u otro.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recuerda los operadores en R:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<code>==</code> (igualdad)</li>
+<li>
+<code>!=</code> (distinto)</li>
+<li>
+<code>&gt;</code> (mayor que)</li>
+<li>
+<code>&lt;</code> (menor que)</li>
+<li>
+<code>&gt;=</code> (mayor o igual que)</li>
+<li>
+<code>&lt;=</code> (menor o igual que)</li>
+</ul>
+</div>
+</div>
+</div>
+<hr></section><section id="condicionales-simple-1" class="level3"><h3 class="anchored" data-anchor-id="condicionales-simple-1">2. Condicionales <strong>simple</strong>
+</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Datos ejemplo</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Condicional if</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pinos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,</span>
+<span>  especie <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>,</span>
+<span>              <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span><span class="op">)</span>,</span>
+<span>  dbh_cm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">30.5</span>, <span class="fl">6.5</span>, <span class="fl">7.2</span>, <span class="fl">5.0</span>, <span class="fl">28.3</span>, <span class="fl">35.1</span>, <span class="fl">7.0</span>, <span class="fl">6.8</span>, <span class="fl">40.0</span>, <span class="fl">32.7</span><span class="op">)</span>, </span>
+<span>  altura_m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">13.2</span>, <span class="fl">10.0</span>, <span class="fl">9.5</span>, <span class="fl">14.0</span>, <span class="fl">15.0</span>, <span class="fl">8.2</span>, <span class="fl">11.8</span>, <span class="fl">14.5</span>, <span class="fl">12.0</span><span class="op">)</span> </span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pino1</span> <span class="op">&lt;-</span> <span class="va">pinos</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">pino1</span><span class="op">$</span><span class="va">dbh_cm</span> <span class="op">&gt;</span> <span class="fl">7.5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># calcula el área basal del pino en m2</span></span>
+<span>  <span class="va">area_basal</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="op">(</span><span class="op">(</span><span class="va">pino1</span><span class="op">$</span><span class="va">dbh_cm</span> <span class="op">/</span> <span class="fl">100</span><span class="op">)</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span></span>
+<span>    <span class="st">"El árbol con ID"</span>, <span class="va">pino1</span><span class="op">$</span><span class="va">id</span>,</span>
+<span>    <span class="st">"pertenece a la especie Pinus"</span>, <span class="va">pino1</span><span class="op">$</span><span class="va">especie</span>,</span>
+<span>    <span class="st">"y tiene un área basal de"</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">area_basal</span>, <span class="fl">4</span><span class="op">)</span>, <span class="st">"m²."</span>, sep <span class="op">=</span> <span class="st">" "</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "El árbol con ID 1 pertenece a la especie Pinus sylvestris y tiene un área basal de 0.0731 m²."</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="ejemplo-práctico" class="level2"><h2 class="anchored" data-anchor-id="ejemplo-práctico">Ejemplo práctico</h2>
+<div class="small">
+<ul>
+<li>Se han muestreando diferentes <em>plots circulares</em> en pinares de repoblación para evaluar la densidad de plantación</li>
+<li>En cada plot (de radio variable) anotamos el número de individuos de cada especie</li>
+<li>¿podrías escribir un código que calcule el área muestreada en cada plot?</li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Creación de un <code>tibble</code> con los datos</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Vista del tibble</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
+<span><span class="va">pinares</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  id_plot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span><span class="op">)</span>,</span>
+<span>  radio_m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span><span class="op">)</span>,</span>
+<span>  n_individuos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pinares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  id_plot radio_m n_individuos
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;
+1 syl1          5           10
+2 syl2          6           12
+3 nig1          7           15
+4 nig2          8           18
+5 nig3          9           20</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="solucionario" class="level2"><h2 class="anchored" data-anchor-id="solucionario">Solucionario</h2>
+<div class="notes">
+<p>Sol1. generar objetos para cada radio. Inconvenientes: código repetitivo y poco eficiente. Facilidad de cometer errores. Sol2. Crear una nueva columna en el tibble con el área de cada plot. Más eficiente y menos propenso a errores. Sol3. Crear una función que calcule el área de un plot y aplicarla a cada radio. Más eficiente y reutilizable.</p>
+</div>
+<div class="small">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Sol. 1</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Sol. 2</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Sol. 3</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Bucles</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">radios</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span></span>
+<span></span>
+<span><span class="va">area1</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 78.53982</code></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">area2</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 113.0973</code></pre>
+</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">area3</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 153.938</code></pre>
+</div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">area4</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="fl">4</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 201.0619</code></pre>
+</div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">area5</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 254.469</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pinares</span><span class="op">$</span><span class="va">area_m2</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span><span class="op">^</span><span class="fl">2</span></span>
+<span></span>
+<span><span class="va">pinares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  id_plot radio_m n_individuos area_m2
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;
+1 syl1          5           10    78.5
+2 syl2          6           12   113. 
+3 nig1          7           15   154. 
+4 nig2          8           18   201. 
+5 nig3          9           20   254. </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">calcula_area</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">pinares</span><span class="op">$</span><span class="va">area2_m2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span>, <span class="va">calcula_area</span><span class="op">)</span></span>
+<span><span class="va">pinares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  id_plot radio_m n_individuos area_m2 area2_m2
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1 syl1          5           10    78.5     78.5
+2 syl2          6           12   113.     113. 
+3 nig1          7           15   154.     154. 
+4 nig2          8           18   201.     201. 
+5 nig3          9           20   254.     254. </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">i</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 78.53982
+[1] 113.0973
+[1] 153.938
+[1] 201.0619
+[1] 254.469</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr></section><section id="uso-de-bucles" class="level2"><h2 class="anchored" data-anchor-id="uso-de-bucles">Uso de bucles</h2>
+<section id="qué-son-los-bucles-en-programación" class="level3"><h3 class="anchored" data-anchor-id="qué-son-los-bucles-en-programación"><strong>¿Qué son los bucles en programación?</strong></h3>
+<ul>
+<li>Son secuencias código que se ejecutan repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse</li>
+</ul>
+<p><strong>¿Por qué usarlos?</strong></p>
+<ul>
+<li>Para iterar sobre elementos de un conjunto de datos.</li>
+<li>Para automatizar tareas repetitivas.</li>
+<li>Para realizar cálculos iterativos.</li>
+</ul>
+<hr></section></section><section id="tipos-de-bucles" class="level2"><h2 class="anchored" data-anchor-id="tipos-de-bucles">
+<strong>Tipos de bucles</strong>:</h2>
+<ul>
+<li>
+<strong><code>for</code></strong>: Iteraciones sobre elementos definidos.</li>
+<li>
+<strong><code>while</code></strong>: Iteraciones controladas por una condición.</li>
+<li>
+<strong><code>repeat</code></strong>: Repeticiones indefinidas con una interrupción explícita.</li>
+</ul></section><section id="for-loop-iteraciones-determinadas" class="level2"><h2 class="anchored" data-anchor-id="for-loop-iteraciones-determinadas"><strong><code>for</code> loop: iteraciones determinadas</strong></h2>
+<p>Ejecuta un bloque de código para cada elemento de una secuencia predefinida.</p>
+<span style="color:blue;">for (</span><span style="color:red;">item</span> in <span style="color:orange;">list_of_items</span><span style="color:blue;">)</span> <span style="color:blue;">{</span> <br><p style="text-indent: 50px;">
+<span style="color:green;">do_something(</span><span style="color:red;">item</span><span style="color:green;">)</span>
+</p>
+<p><span style="color:blue;">}</span></p>
+<section id="ejemplo" class="level4"><h4 class="anchored" data-anchor-id="ejemplo">
+<strong>Ejemplo</strong>:</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">i</span> <span class="op">*</span> <span class="va">i</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<hr></section><section id="estudio-en-detalle-del-bucle" class="level3"><h3 class="anchored" data-anchor-id="estudio-en-detalle-del-bucle">Estudio en detalle del bucle</h3>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">radios</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span></span>
+<span><span class="va">radios</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 6 7 8 9</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode" id="annotated-cell-2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">radios</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">i</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1"><strong>Iteración</strong>: <code>i</code> toma el valor de cada elemento de la lista <code>radios</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2,3" data-code-annotation="2"><strong>Ejecución del código</strong>: Se calcula el área de cada plot y se imprime por pantalla</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3"><strong>Finalización</strong>: Si hay mas elementos dentro de la lista, el bucle se repite. Cuando se haya procesado todos los elementos, el bucle termina</span>
+</dd>
+</dl>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 78.53982
+[1] 113.0973
+[1] 153.938
+[1] 201.0619
+[1] 254.469</code></pre>
+</div>
+</div>
+</section></section><section id="elementos-del-bucle" class="level2"><h2 class="anchored" data-anchor-id="elementos-del-bucle">Elementos del bucle</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/for_structure.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</section><section id="elementos-del-bucle-índice" class="level2"><h2 class="anchored" data-anchor-id="elementos-del-bucle-índice">Elementos del bucle: <strong>Índice</strong>
+</h2>
+<div class="small">
+<p>Looping por <strong>valor</strong>: cuando se itera sobre un valor directamente</p>
+<ul>
+<li>Más compacto y legible</li>
+<li>Directamente trabaja con los valores del vector</li>
+<li>Útil cuando no necesitas los índices, solo los valores</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">radios</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">i</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr></section><section id="elementos-del-bucle-índice-1" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="elementos-del-bucle-índice-1">Elementos del bucle: <strong>Índice</strong>
+</h2>
+<div class="small">
+<p>Looping por <strong>índice</strong>: cuando se itera sobre un índice de la lista o del vector</p>
+<ul>
+<li>Más flexible y versátil</li>
+<li>Permite acceder tanto a los índices como a los valores</li>
+<li>Útil cuando necesitas los índices para realizar operaciones específicas</li>
+</ul>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Ejemplo 1</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Ejemplo 2</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<hr>
+<section id="looping-por-índice-o-por-valor" class="level3"><h3 class="anchored" data-anchor-id="looping-por-índice-o-por-valor">¿looping por índice o por valor?</h3>
+<div class="small">
+<ul>
+<li>El resultado es el mismo, pero el enfoque depende de la tarea que estés realizando</li>
+<li>El bucle por índice permite realizar operaciones más complejas y personalizadas</li>
+<li>Permite almacenar los datos calculados en el bucle</li>
+</ul>
+</div>
+<div class="cell">
+<div class="sourceCode" id="annotated-cell-4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">areas1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">areas2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"numeric"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Podemos crear un vector vacío y almacenar los resultados en cada iteración</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">Crear un vector vacío tipo numérico con la longitud de la lista <code>radios</code></span>
+</dd>
+</dl>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">areas1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>logical(0)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">areas2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0 0 0 0 0</code></pre>
+</div>
+</div>
+<hr></section><section id="looping-por-índice-o-por-valor-1" class="level3"><h3 class="anchored" data-anchor-id="looping-por-índice-o-por-valor-1">¿looping por índice o por valor?</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">areas1</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">areas2</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">areas1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="co"># print(area)</span></span>
+<span>  <span class="va">areas1</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">area</span> </span>
+<span><span class="op">}</span></span>
+<span>  </span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">areas1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">areas2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"numeric"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="co"># print(area)</span></span>
+<span>  <span class="va">areas2</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">area</span> </span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">areas2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section></section><section id="práctica-1" class="level2"><h2 class="anchored" data-anchor-id="práctica-1">Práctica 1</h2>
+<p>Escribe un bucle que permita calcular el tamaño de los plots de las zonas de muestreo en hectáreas</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">areas_ha</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"numeric"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="va">area_ha</span> <span class="op">&lt;-</span> <span class="va">area</span> <span class="op">/</span> <span class="fl">10000</span></span>
+<span>  <span class="va">areas_ha</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">area_ha</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">areas_ha</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="práctica-2" class="level2"><h2 class="anchored" data-anchor-id="práctica-2">Práctica 2</h2>
+<p>Completa el siguiente bucle para que imprima los nombres de las especies de los pinares</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>especies <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pinus sylvestris"</span>, <span class="st">"Pinus nigra"</span>, <span class="st">"Pinus halepensis"</span>,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pinus pinaster"</span>, <span class="st">"Pinus canariensis"</span>, <span class="st">"Pinus pinea"</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (sp <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>( <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> )) { </span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(especies[ <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> ])     </span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="práctica-3" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="práctica-3">Práctica 3</h2>
+<div class="small">
+<p>Escribe un bucle que calcule la <strong>densidad de árboles</strong> para cada parcela en pies/hectárea</p>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="annotated-cell-9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">radios</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span></span>
+<span><span class="va">arboles</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">n_individuos</span></span>
+<span></span>
+<span><span class="va">densidad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span></span>
+<span>  mode <span class="op">=</span> <span class="st">"numeric"</span>,</span>
+<span>  length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">radios</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="va">area_ha</span> <span class="op">&lt;-</span> <span class="va">area</span> <span class="op">/</span> <span class="fl">10000</span></span>
+<span></span>
+<span>  <span class="va">densidad</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">arboles</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">/</span> <span class="va">area_ha</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-annotation">
+<dl>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="1,2" data-code-annotation="1">Dos vectores de datos</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="6" data-code-annotation="2">Objeto donde almacenar los resultados</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="9,10" data-code-annotation="3">Itera sobre el primer vector (<code>radios</code>) para calcular el área</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="12" data-code-annotation="4">Itera sobre el seguno vector (<code>arboles</code>) para calcular la densidad</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="notes">
+<p>Esta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas.</p>
+</div>
+</section><section id="práctica-3-1" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="práctica-3-1">Práctica 3</h2>
+<div class="small">
+<ul>
+<li>¿Podría actuar sobre un solo <code>data.frame</code> o <code>tibble</code>?</li>
+<li>¿Podría almacenar los resultados en ese mismo <code>tibble</code>?</li>
+</ul>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pinares</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span> </span>
+<span>  id_plot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span><span class="op">)</span>,</span>
+<span>  radio_m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span><span class="op">)</span>,</span>
+<span>  n_individuos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pinares</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">pinares</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span> <span class="op">/</span> <span class="fl">10000</span><span class="op">)</span></span>
+<span>  <span class="va">pinares</span><span class="op">$</span><span class="va">densidad</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">n_individuos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">/</span> <span class="va">pinares</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> </span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">pinares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  id_plot radio_m n_individuos    area densidad
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1 syl1          5           10 0.00785    1273.
+2 syl2          6           12 0.0113     1061.
+3 nig1          7           15 0.0154      974.
+4 nig2          8           18 0.0201      895.
+5 nig3          9           20 0.0254      786.</code></pre>
+</div>
+</div>
+<div class="notes">
+<p>Esta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas.</p>
+</div>
+</section><section id="aplicaciones" class="level2"><h2 class="anchored" data-anchor-id="aplicaciones">Aplicaciones</h2>
+<ul>
+<li>looping en funciones</li>
+<li>looping sobre dataframes o tibbles ()</li>
+<li>Looping sobre archivos y directorios</li>
+<li>Almacenar datos</li>
+<li>Bucles anidados</li>
+</ul></section><section id="while-loop-repetición-condicional" class="level2"><h2 class="anchored" data-anchor-id="while-loop-repetición-condicional"><strong>2. <code>while</code> Loop: Repetición Condicional</strong></h2>
+<p>Ejecuta un bloque de código mientras una condición sea verdadera</p>
+<div class="cell">
+<div class="sourceCode" id="annotated-cell-11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">radios</span> <span class="op">&lt;-</span> <span class="va">pinares</span><span class="op">$</span><span class="va">radio_m</span> </span>
+<span></span>
+<span><span class="va">i</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span>  </span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="va">i</span> <span class="op">&lt;=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="va">area</span> <span class="op">&lt;-</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">radios</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span>  <span class="va">area_ha</span> <span class="op">&lt;-</span> <span class="va">area</span> <span class="op">/</span> <span class="fl">10000</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">area_ha</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="3" data-code-annotation="1">Iniciamos el contador</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="5" data-code-annotation="2">Condición de salida</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="7,8,9" data-code-annotation="3">Código a ejecutar</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="11" data-code-annotation="4">Actualización del contador</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.007853982
+[1] 0.01130973
+[1] 0.0153938</code></pre>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inicializar las varbiables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="small">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Dataframe</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Sin inicializar</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Inicializadas</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bosques</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span> </span>
+<span>  id_plot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span><span class="op">)</span>,</span>
+<span>  radio_m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span><span class="op">)</span>,</span>
+<span>  n_individuos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">i</span> <span class="op">&lt;-</span> <span class="fl">1</span> </span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="va">i</span> <span class="op">&lt;=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">bosques</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">bosques</span><span class="op">$</span><span class="va">radio_m</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span> <span class="op">/</span> <span class="fl">10000</span><span class="op">)</span></span>
+<span>  <span class="va">bosques</span><span class="op">$</span><span class="va">densidad</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">bosques</span><span class="op">$</span><span class="va">n_individuos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">/</span> <span class="va">bosques</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span></span>
+<span>  <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">bosques</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  id_plot radio_m n_individuos    area densidad
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1 syl1          5           10 0.00785    1273.
+2 syl2          6           12 0.0113     1061.
+3 nig1          7           15 0.0154      974.
+4 nig2          8           18 0.00785    1273.
+5 nig3          9           20 0.00785    1273.</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bosques</span><span class="op">$</span><span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"numeric"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">bosques</span><span class="op">)</span><span class="op">)</span> </span>
+<span><span class="va">bosques</span><span class="op">$</span><span class="va">densidad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"numeric"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">bosques</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">i</span> <span class="op">&lt;-</span> <span class="fl">1</span> </span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="va">i</span> <span class="op">&lt;=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">bosques</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">bosques</span><span class="op">$</span><span class="va">radio_m</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span> <span class="op">/</span> <span class="fl">10000</span><span class="op">)</span></span>
+<span>  <span class="va">bosques</span><span class="op">$</span><span class="va">densidad</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">bosques</span><span class="op">$</span><span class="va">n_individuos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">/</span> <span class="va">bosques</span><span class="op">$</span><span class="va">area</span><span class="op">[</span><span class="va">i</span><span class="op">]</span></span>
+<span>  <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">bosques</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  id_plot radio_m n_individuos    area densidad
+  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+1 syl1          5           10 0.00785    1273.
+2 syl2          6           12 0.0113     1061.
+3 nig1          7           15 0.0154      974.
+4 nig2          8           18 0             0 
+5 nig3          9           20 0             0 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="repeat-loop-repetición-indefinida" class="level2"><h2 class="anchored" data-anchor-id="repeat-loop-repetición-indefinida"><strong>3. <code>repeat</code> Loop: Repetición Indefinida</strong></h2>
+<section id="qué-es" class="level3"><h3 class="anchored" data-anchor-id="qué-es"><strong>¿Qué es?</strong></h3>
+<ul>
+<li>Ejecuta un bloque de código indefinidamente hasta que se usa <code><a href="https://rdrr.io/r/base/Control.html">break</a></code>.</li>
+</ul></section><section id="ejemplo-3" class="level3"><h3 class="anchored" data-anchor-id="ejemplo-3">
+<strong>Ejemplo</strong>:</h3>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">i</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="kw">repeat</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">[</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">&gt;</span> <span class="fl">3</span><span class="op">)</span> <span class="kw">break</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section><section id="alternativas-vectorizadas-apply-tapply" class="level2"><h2 class="anchored" data-anchor-id="alternativas-vectorizadas-apply-tapply"><strong>4. Alternativas Vectorizadas (<code>apply</code>, <code>tapply</code>)</strong></h2>
+<section id="qué-son" class="level3"><h3 class="anchored" data-anchor-id="qué-son"><strong>¿Qué son?</strong></h3>
+<ul>
+<li>Métodos eficientes y vectorizados para realizar operaciones en matrices o listas.</li>
+</ul></section><section id="ejemplo-4" class="level3"><h3 class="anchored" data-anchor-id="ejemplo-4">
+<strong>Ejemplo</strong>:</h3>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="va">mean</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="ventajas" class="level3"><h3 class="anchored" data-anchor-id="ventajas">
+<strong>Ventajas</strong>:</h3>
+<ul>
+<li>Más rápidas y concisas que los bucles tradicionales.</li>
+<li>Mejor adaptadas para trabajar con grandes volúmenes de datos.</li>
+</ul>
+<hr></section></section><section id="comparación-con-purrr" class="level2"><h2 class="anchored" data-anchor-id="comparación-con-purrr"><strong>5. Comparación con <code>purrr</code></strong></h2>
+<section id="qué-es-purrr" class="level3"><h3 class="anchored" data-anchor-id="qué-es-purrr"><strong>¿Qué es <code>purrr</code>?</strong></h3>
+<ul>
+<li>
+<code>purrr</code> es un paquete del ecosistema tidyverse que facilita la programación funcional.</li>
+</ul></section><section id="ejemplo-comparativo" class="level3"><h3 class="anchored" data-anchor-id="ejemplo-comparativo"><strong>Ejemplo Comparativo</strong></h3>
+<section id="usando-un-bucle-for" class="level4"><h4 class="anchored" data-anchor-id="usando-un-bucle-for">Usando un bucle <code>for</code>:</h4>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">species_means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">species</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">species_means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">species_means</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">[</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="va">species</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">species_means</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr></section><section id="usando-purrrmap" class="level4"><h4 class="anchored" data-anchor-id="usando-purrrmap">Usando <code>purrr::map</code>:</h4>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://purrr.tidyverse.org/">purrr</a></span><span class="op">)</span></span>
+<span><span class="va">species_means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span>, <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">[</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="va">.x</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">species_means</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section><section id="ventajas-de-purrr" class="level3"><h3 class="anchored" data-anchor-id="ventajas-de-purrr">
+<strong>Ventajas de <code>purrr</code></strong>:</h3>
+<ul>
+<li>Sintaxis más compacta y legible.</li>
+<li>Integración directa con otras herramientas del tidyverse.</li>
+<li>Mejora la eficiencia para operaciones funcionales repetitivas.</li>
+</ul>
+<hr></section></section><section id="comparación-general" class="level2"><h2 class="anchored" data-anchor-id="comparación-general"><strong>6. Comparación General</strong></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 38%">
+<col style="width: 39%">
+</colgroup>
+<thead><tr class="header">
+<th>Tipo de Bucle</th>
+<th>Ventajas</th>
+<th>Desventajas</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>for</code></td>
+<td>Simple y flexible</td>
+<td>Menos eficiente con grandes datos</td>
+</tr>
+<tr class="even">
+<td><code>while</code></td>
+<td>Útil para condiciones dinámicas</td>
+<td>Mayor riesgo de bucles infinitos</td>
+</tr>
+<tr class="odd">
+<td><code>repeat</code></td>
+<td>Gran control manual</td>
+<td>Requiere interrupción explícita</td>
+</tr>
+<tr class="even">
+<td>
+<code>apply</code>/<code>tapply</code>
+</td>
+<td>Altamente eficiente y compacto</td>
+<td>Menos intuitivo para principiantes</td>
+</tr>
+<tr class="odd">
+<td><code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code></td>
+<td>Sintaxis legible y funcional</td>
+<td>Requiere instalación adicional</td>
+</tr>
+</tbody>
+</table>
+<hr></section><section id="conclusión" class="level2"><h2 class="anchored" data-anchor-id="conclusión"><strong>Conclusión</strong></h2>
+<ul>
+<li>
+<strong>Básico</strong>: Los bucles (<code>for</code>, <code>while</code>, <code>repeat</code>) son fundamentales para aprender programación iterativa.</li>
+<li>
+<strong>Avanzado</strong>: Las funciones vectorizadas (<code>apply</code>, <code>tapply</code>) y paquetes como <code>purrr</code> son ideales para mejorar el rendimiento y la legibilidad.</li>
+<li>
+<strong>Recomendación</strong>: Usa bucles simples para aprender y alterna con soluciones vectorizadas o funcionales para proyectos más complejos.</li>
+</ul></section><section id="alguna-duda" class="level2"><h2 class="anchored" data-anchor-id="alguna-duda">¿Alguna duda?</h2>
+<ul>
+<li><a href="https://twitter.com/ajpelu"><span class="citation" data-cites="ajpelu">@ajpelu</span></a></li>
+<li><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></li>
+</ul>
+<p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/logo-jdc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Si usas esta presentación puedes citarla como:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
+</div>
+</div>
+
+
+</section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
