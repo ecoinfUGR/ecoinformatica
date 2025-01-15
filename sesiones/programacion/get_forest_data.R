@@ -13,6 +13,33 @@ ifn_plots <- show_plots_from(
   provinces = sn_provinces, versions = "ifn3"
 )
 
+
+prov_ifn3 <- c("04","18")
+prov_ifn4 <- c("30")
+
+
+ifn3 <- show_plots_from(
+  "IFN",
+  folder = ifn_folder,
+  provinces = prov_ifn3, versions = c("ifn3","ifn2")
+)
+
+ifn4 <- show_plots_from(
+  "IFN",
+  folder = ifn_folder,
+  provinces = prov_ifn4, versions = "ifn4"
+)
+
+show_plots_from(
+  "IFN",
+  folder = ifn_folder,
+  provinces = sn_provinces, versions = "ifn3"
+)
+
+
+
+
+
 # Descargar datos Sierra Nevada (límite)
 
 # World Database on Protected Areas (WDPA)
@@ -25,7 +52,7 @@ library(wdpar)
 # sn <- spain |>
 #   dplyr::filter(NAME == "Sierra Nevada" & WDPAID == "555588878")
 # st_write(sn, 'assets/ext_data/geoinfo/sn_wdpa.shp')
-
+sn <- st_read('assets/ext_data/geoinfo/sn_wdpa.shp')
 
 ggplot(ifn_plots) +
   geom_sf(
@@ -38,8 +65,9 @@ ggplot(ifn_plots) +
 
 
 sn_plots <- ifn_plots |>
-  st_filter(sn)
+  st_filter(sn) |>  create_filter_list()
 
+sn_plots <- st_drop_geometry(sn_plots)
 
 ggplot() +
   # add geom_sf for the protected areas

@@ -1284,23 +1284,23 @@
   {
     "objectID": "sesiones/programacion/secuencias_control.html#introducción",
     "href": "sesiones/programacion/secuencias_control.html#introducción",
-    "title": "Estructuras de Control en Programación (R y Python)",
-    "section": "",
-    "text": "Estructuras de control: Herramientas fundamentales en programación que permiten modificar el flujo de ejecución de un programa según ciertas condiciones o repeticiones.\nSon esenciales para tomar decisiones dinámicas, realizar acciones repetitivas y dirigir cómo se ejecuta el código, haciéndolo más flexible y adaptable."
+    "title": "Estructuras de Control en Programación",
+    "section": "Introducción",
+    "text": "Introducción\n\n\nEstructuras de control: Herramientas fundamentales en programación que permiten modificar el flujo de ejecución de un programa según ciertas condiciones o repeticiones.\nSon esenciales para tomar decisiones dinámicas, realizar acciones repetitivas y dirigir cómo se ejecuta el código, haciéndolo más flexible y adaptable."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#tipos-de-estructuras-de-control",
     "href": "sesiones/programacion/secuencias_control.html#tipos-de-estructuras-de-control",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Tipos de Estructuras de Control",
-    "text": "Tipos de Estructuras de Control\n\n\n\nEstructuras Secuenciales: Ejecutan instrucciones una tras otra\n\nEstructuras de Selección (Condicionales): Permiten que un bloque de código se ejecute o no, en función de una condición. Dependiendo de si una condición es TRUE o FALSE, el algoritmo toma un camino u otro. Tipos:\n\n\nSimple: Una única condición (if).\n\nDoble: Incluye una alternativa (if-else).\n\nMúltiple: Varias alternativas posibles (switch).\n\n\n\nEstructuras de Iteración (Bucles): Permiten repetir un bloque de código varias veces mientras se cumpla una condición o sobre una secuencia de elementos. Tipos:\n\n\nfor: Itera sobre una secuencia conocida.\n\nwhile: Repite mientras una condición sea TRUE.\n\nrepeat: Ejecuta indefinidamente hasta que se use un break para detenerlo.\n\n\n\n\n\n\n2. Condicionales simple\n\n\n\nPermiten que un bloque de código se ejecute o no, en función de una condición.\nDependiendo de si una condición es TRUE o FALSE, el algoritmo toma un camino u otro.\n\n\n\n\n\n\n\nRecuerda los operadores en R:\n\n\n\n\n\n== (igualdad)\n\n!= (distinto)\n\n&gt; (mayor que)\n\n&lt; (menor que)\n\n&gt;= (mayor o igual que)\n\n&lt;= (menor o igual que)\n\n\n\n\n2. Condicionales simple\n\n\n\nDatos ejemplo\nCondicional if\n\n\n\n\nlibrary(tibble)\n\npinos &lt;- tibble(\n  id = 1:10,\n  especie = c(\"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\", \"nigra\",\n              \"pinaster\", \"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\"),\n  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), \n  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) \n)\n\n\n\n\npino1 &lt;- pinos[1, ]\n\nif (pino1$dbh_cm &gt; 7.5) {\n  # calcula el área basal del pino en m2\n  area_basal &lt;- pi * ((pino1$dbh_cm / 100) / 2)^2\n\n  print(paste(\n    \"El árbol con ID\", pino1$id,\n    \"pertenece a la especie Pinus\", pino1$especie,\n    \"y tiene un área basal de\",\n    round(area_basal, 4), \"m².\", sep = \" \"\n  ))\n}\n\n[1] \"El árbol con ID 1 pertenece a la especie Pinus sylvestris y tiene un área basal de 0.0731 m².\""
+    "text": "Tipos de Estructuras de Control\n\n\n\nEstructuras Secuenciales: Ejecutan instrucciones una tras otra\n\nEstructuras de Selección (Condicionales): Permiten que un bloque de código se ejecute o no, en función de una condición. Dependiendo de si una condición es TRUE o FALSE, el algoritmo toma un camino u otro. Tipos:\n\n\nSimple: Una única condición (if).\n\nDoble: Incluye una alternativa (if-else).\n\nMúltiple: Varias alternativas posibles (switch).\n\n\n\nEstructuras de Iteración (Bucles): Permiten repetir un bloque de código varias veces mientras se cumpla una condición o sobre una secuencia de elementos. Tipos:\n\n\nfor: Itera sobre una secuencia conocida.\n\nwhile: Repite mientras una condición sea TRUE.\n\nrepeat: Ejecuta indefinidamente hasta que se use un break para detenerlo."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#solucionario",
     "href": "sesiones/programacion/secuencias_control.html#solucionario",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Solucionario",
-    "text": "Solucionario\n\nSol1. generar objetos para cada radio. Inconvenientes: código repetitivo y poco eficiente. Facilidad de cometer errores. Sol2. Crear una nueva columna en el tibble con el área de cada plot. Más eficiente y menos propenso a errores. Sol3. Crear una función que calcule el área de un plot y aplicarla a cada radio. Más eficiente y reutilizable.\n\n\n\n\nSol. 1\nSol. 2\nSol. 3\nBucles\n\n\n\n\nradios &lt;- pinares$radio_m\n\narea1 &lt;- pi * radios[1]^2\nprint(area1)\n\n[1] 78.53982\n\narea2 &lt;- pi * radios[2]^2\nprint(area2)\n\n[1] 113.0973\n\narea3 &lt;- pi * radios[3]^2\nprint(area3)\n\n[1] 153.938\n\narea4 &lt;- pi * radios[4]^2\nprint(area4)\n\n[1] 201.0619\n\narea5 &lt;- pi * radios[5]^2\nprint(area5)\n\n[1] 254.469\n\n\n\n\n\npinares$area_m2 &lt;- pi * pinares$radio_m^2\n\npinares\n\n# A tibble: 5 × 4\n  id_plot radio_m n_individuos area_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;\n1 syl1          5           10    78.5\n2 syl2          6           12   113. \n3 nig1          7           15   154. \n4 nig2          8           18   201. \n5 nig3          9           20   254. \n\n\n\n\n\ncalcula_area &lt;- function(x) {\n  return(pi * x^2)\n}\n\npinares$area2_m2 &lt;- sapply(pinares$radio_m, calcula_area)\npinares\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos area_m2 area2_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10    78.5     78.5\n2 syl2          6           12   113.     113. \n3 nig1          7           15   154.     154. \n4 nig2          8           18   201.     201. \n5 nig3          9           20   254.     254. \n\n\n\n\n\nfor (i in pinares$radio_m) {\n  print(pi * i^2)\n}\n\n[1] 78.53982\n[1] 113.0973\n[1] 153.938\n[1] 201.0619\n[1] 254.469"
+    "text": "Solucionario\nSol1. generar objetos para cada radio. Inconvenientes: código repetitivo y poco eficiente. Facilidad de cometer errores. Sol2. Crear una nueva columna en el tibble con el área de cada plot. Más eficiente y menos propenso a errores. Sol3. Crear una función que calcule el área de un plot y aplicarla a cada radio. Más eficiente y reutilizable.\n\n\n\nSol. 1\nSol. 2\nSol. 3\nBucles\n\n\n\n\nradios &lt;- pinares$radio_m\n\narea1 &lt;- pi * radios[1]^2\nprint(area1)\n\n[1] 78.53982\n\narea2 &lt;- pi * radios[2]^2\nprint(area2)\n\n[1] 113.0973\n\narea3 &lt;- pi * radios[3]^2\nprint(area3)\n\n[1] 153.938\n\narea4 &lt;- pi * radios[4]^2\nprint(area4)\n\n[1] 201.0619\n\narea5 &lt;- pi * radios[5]^2\nprint(area5)\n\n[1] 254.469\n\n\n\n\n\npinares$area_m2 &lt;- pi * pinares$radio_m^2\n\npinares\n\n# A tibble: 5 × 4\n  id_plot radio_m n_individuos area_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;\n1 syl1          5           10    78.5\n2 syl2          6           12   113. \n3 nig1          7           15   154. \n4 nig2          8           18   201. \n5 nig3          9           20   254. \n\n\n\n\n\ncalcula_area &lt;- function(x) {\n  return(pi * x^2)\n}\n\npinares$area2_m2 &lt;- sapply(pinares$radio_m, calcula_area)\npinares\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos area_m2 area2_m2\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10    78.5     78.5\n2 syl2          6           12   113.     113. \n3 nig1          7           15   154.     154. \n4 nig2          8           18   201.     201. \n5 nig3          9           20   254.     254. \n\n\n\n\n\nfor (i in pinares$radio_m) {\n  print(pi * i^2)\n}\n\n[1] 78.53982\n[1] 113.0973\n[1] 153.938\n[1] 201.0619\n[1] 254.469"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#uso-de-bucles",
@@ -1312,126 +1312,126 @@
   {
     "objectID": "sesiones/programacion/secuencias_control.html#tipos-de-bucles",
     "href": "sesiones/programacion/secuencias_control.html#tipos-de-bucles",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "\nTipos de bucles:",
     "text": "Tipos de bucles:\n\n\nfor: Iteraciones sobre elementos definidos.\n\nwhile: Iteraciones controladas por una condición.\n\nrepeat: Repeticiones indefinidas con una interrupción explícita."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#for-loop-iteraciones-determinadas",
     "href": "sesiones/programacion/secuencias_control.html#for-loop-iteraciones-determinadas",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "for loop: iteraciones determinadas",
-    "text": "for loop: iteraciones determinadas\nEjecuta un bloque de código para cada elemento de una secuencia predefinida.\nfor (item in list_of_items) { \ndo_something(item)\n\n}\n\nEjemplo:\n\n\nR\nPython\n\n\n\nfor (i in 1:5) {\n  print(i * i)\n}\n\n\nfor i in range(1, 6):\n    print(i**2)\n\n\n\nEstudio en detalle del bucle\n\nradios &lt;- pinares$radio_m\nradios\n\n[1] 5 6 7 8 9\n\n\n\n\nfor (i in radios) {\n  area &lt;- (pi * i^2)\n  print(area)\n}\n\n\n1\n\nIteración: i toma el valor de cada elemento de la lista radios.\n\n2\n\nEjecución del código: Se calcula el área de cada plot y se imprime por pantalla\n\n3\n\nFinalización: Si hay mas elementos dentro de la lista, el bucle se repite. Cuando se haya procesado todos los elementos, el bucle termina\n\n\n\n\n\n\n\n[1] 78.53982\n[1] 113.0973\n[1] 153.938\n[1] 201.0619\n[1] 254.469"
+    "text": "for loop: iteraciones determinadas\nEjecuta un bloque de código para cada elemento de una secuencia predefinida.\nfor (item in list_of_items) { \ndo_something(item)\n\n}\n\nEjemplo:\n\n\nR\nPython\n\n\n\nfor (i in 1:5) {\n  print(i * i)\n}\n\n\nfor i in range(1, 6):\n    print(i**2)"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle",
     "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Elementos del bucle",
     "text": "Elementos del bucle"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice",
     "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Elementos del bucle: Índice\n",
     "text": "Elementos del bucle: Índice\n\n\nLooping por valor: cuando se itera sobre un valor directamente\n\nMás compacto y legible\nDirectamente trabaja con los valores del vector\nÚtil cuando no necesitas los índices, solo los valores\n\n\nfor (i in radios) {\n  area &lt;- pi * i^2\n  print(area)\n}"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice-1",
     "href": "sesiones/programacion/secuencias_control.html#elementos-del-bucle-índice-1",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Elementos del bucle: Índice\n",
-    "text": "Elementos del bucle: Índice\n\n\nLooping por índice: cuando se itera sobre un índice de la lista o del vector\n\nMás flexible y versátil\nPermite acceder tanto a los índices como a los valores\nÚtil cuando necesitas los índices para realizar operaciones específicas\n\n\n\n\nEjemplo 1\nEjemplo 2\n\n\n\nfor (i in 1:5) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}\n\n\nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}\n\n\n\n\n¿looping por índice o por valor?\n\n\nEl resultado es el mismo, pero el enfoque depende de la tarea que estés realizando\nEl bucle por índice permite realizar operaciones más complejas y personalizadas\nPermite almacenar los datos calculados en el bucle\n\n\n\nareas1 &lt;- vector()\n\nareas2 &lt;- vector(mode = \"numeric\", length = length(radios))\n\n\n1\n\nPodemos crear un vector vacío y almacenar los resultados en cada iteración\n\n2\n\nCrear un vector vacío tipo numérico con la longitud de la lista radios\n\n\n\n\n\n\nprint(areas1)\n\nlogical(0)\n\n\n\nprint(areas2)\n\n[1] 0 0 0 0 0\n\n\n¿looping por índice o por valor?\n\n\nareas1\nareas2\n\n\n\nareas1 &lt;- vector()\n  \nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  # print(area)\n  areas1[i] &lt;- area \n}\n  \nprint(areas1)\n\n\nareas2 &lt;- vector(mode = \"numeric\", length = length(radios))\n  \nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  # print(area)\n  areas2[i] &lt;- area \n}\n\nprint(areas2)"
+    "text": "Elementos del bucle: Índice\n\n\nLooping por índice: cuando se itera sobre un índice de la lista o del vector\n\nMás flexible y versátil\nPermite acceder tanto a los índices como a los valores\nÚtil cuando necesitas los índices para realizar operaciones específicas\n\n\n\n\nEjemplo 1\nEjemplo 2\n\n\n\nfor (i in 1:5) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}\n\n\nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  print(area)\n}"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#práctica-1",
     "href": "sesiones/programacion/secuencias_control.html#práctica-1",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Práctica 1",
     "text": "Práctica 1\nEscribe un bucle que permita calcular el tamaño de los plots de las zonas de muestreo en hectáreas\n\nCodeareas_ha &lt;- vector(mode = \"numeric\", length = length(radios))\n  \nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  areas_ha[i] &lt;- area_ha\n}\n\nprint(areas_ha)"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#práctica-2",
     "href": "sesiones/programacion/secuencias_control.html#práctica-2",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Práctica 2",
     "text": "Práctica 2\nCompleta el siguiente bucle para que imprima los nombres de las especies de los pinares\nespecies &lt;- c(\n  \"Pinus sylvestris\", \"Pinus nigra\", \"Pinus halepensis\",\n  \"Pinus pinaster\", \"Pinus canariensis\", \"Pinus pinea\"\n)\n\nfor (sp in 1:length( &lt;-???-&gt; )) { \n  print(especies[ &lt;-???-&gt; ])     \n}"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#práctica-3",
     "href": "sesiones/programacion/secuencias_control.html#práctica-3",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Práctica 3",
-    "text": "Práctica 3\n\nEscribe un bucle que calcule la densidad de árboles para cada parcela en pies/hectárea\n\n\nCoderadios &lt;- pinares$radio_m\narboles &lt;- pinares$n_individuos\n\ndensidad &lt;- vector(\n  mode = \"numeric\",\n  length = length(pinares$radio_m))\n\nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n\n  densidad[i] &lt;- arboles[i] / area_ha\n}\n\n\n1\n\nDos vectores de datos\n\n2\n\nObjeto donde almacenar los resultados\n\n3\n\nItera sobre el primer vector (radios) para calcular el área\n\n4\n\nItera sobre el seguno vector (arboles) para calcular la densidad\n\n\n\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
+    "text": "Práctica 3\n\nEscribe un bucle que calcule la densidad de árboles para cada parcela en pies/hectárea\n\n\nCode1radios &lt;- pinares$radio_m\narboles &lt;- pinares$n_individuos\n\ndensidad &lt;- vector(\n  mode = \"numeric\",\n2  length = length(pinares$radio_m))\n\nfor (i in 1:length(radios)) {\n3  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n\n4  densidad[i] &lt;- arboles[i] / area_ha\n}\n\n\n1\n\nDos vectores de datos\n\n2\n\nObjeto donde almacenar los resultados\n\n3\n\nItera sobre el primer vector (radios) para calcular el área\n\n4\n\nItera sobre el seguno vector (arboles) para calcular la densidad\n\n\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#práctica-3-1",
     "href": "sesiones/programacion/secuencias_control.html#práctica-3-1",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Práctica 3",
-    "text": "Práctica 3\n\n\n¿Podría actuar sobre un solo data.frame o tibble?\n¿Podría almacenar los resultados en ese mismo tibble?\n\n\n\nCodepinares &lt;- tibble( \n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n  \nfor (i in 1:nrow(pinares)) {\n  pinares$area[i] &lt;- (pi * pinares$radio_m[i]^2 / 10000)\n  pinares$densidad[i] &lt;- pinares$n_individuos[i] / pinares$area[i] \n}\n\npinares\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos    area densidad\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10 0.00785    1273.\n2 syl2          6           12 0.0113     1061.\n3 nig1          7           15 0.0154      974.\n4 nig2          8           18 0.0201      895.\n5 nig3          9           20 0.0254      786.\n\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
+    "text": "Práctica 3\n\n\n¿Podría actuar sobre un solo data.frame o tibble?\n¿Podría almacenar los resultados en ese mismo tibble?\n\n\n\nCodepinares &lt;- tibble( \n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n  \nfor (i in 1:nrow(pinares)) {\n  pinares$area[i] &lt;- (pi * pinares$radio_m[i]^2 / 10000)\n  pinares$densidad[i] &lt;- pinares$n_individuos[i] / pinares$area[i] \n}\n\npinares\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos    area densidad\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10 0.00785    1273.\n2 syl2          6           12 0.0113     1061.\n3 nig1          7           15 0.0154      974.\n4 nig2          8           18 0.0201      895.\n5 nig3          9           20 0.0254      786.\n\n\nEsta práctia sirve para introducir concepto de bucle con entrada de diferentes fuentes. Usando index, podemos acceder a diferentes entradas."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#aplicaciones",
     "href": "sesiones/programacion/secuencias_control.html#aplicaciones",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Aplicaciones",
     "text": "Aplicaciones\n\nlooping en funciones\nlooping sobre dataframes o tibbles ()\nLooping sobre archivos y directorios\nAlmacenar datos\nBucles anidados"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#while-loop-repetición-condicional",
     "href": "sesiones/programacion/secuencias_control.html#while-loop-repetición-condicional",
-    "title": "Estructuras de Control en Programación (R y Python)",
-    "section": "2. while Loop: Repetición Condicional",
-    "text": "2. while Loop: Repetición Condicional\nEjecuta un bloque de código mientras una condición sea verdadera\n\nradios &lt;- pinares$radio_m \n\ni &lt;- 1\n  \nwhile (i &lt;= 3) {\n  \n  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  print(area_ha)\n  \n  i &lt;- i + 1\n}\n\n\n1\n\nIniciamos el contador\n\n2\n\nCondición de salida\n\n3\n\nCódigo a ejecutar\n\n4\n\nActualización del contador\n\n\n\n\n[1] 0.007853982\n[1] 0.01130973\n[1] 0.0153938\n\n\n\n\n\n\n\n\n\nInicializar las varbiables\n\n\n\n\n\n\n\n\n\nDataframe\nSin inicializar\nInicializadas\n\n\n\n\nbosques &lt;- tibble( \n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n\n\n\n\ni &lt;- 1 \nwhile (i &lt;= 3) {\n  bosques$area[i] &lt;- (pi * bosques$radio_m[i]^2 / 10000)\n  bosques$densidad[i] &lt;- bosques$n_individuos[i] / bosques$area[i]\n  i &lt;- i + 1\n}\n\nbosques\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos    area densidad\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10 0.00785    1273.\n2 syl2          6           12 0.0113     1061.\n3 nig1          7           15 0.0154      974.\n4 nig2          8           18 0.00785    1273.\n5 nig3          9           20 0.00785    1273.\n\n\n\n\n\nbosques$area &lt;- vector(mode = \"numeric\", length = nrow(bosques)) \nbosques$densidad &lt;- vector(mode = \"numeric\", length = nrow(bosques))\n\ni &lt;- 1 \nwhile (i &lt;= 3) {\n  bosques$area[i] &lt;- (pi * bosques$radio_m[i]^2 / 10000)\n  bosques$densidad[i] &lt;- bosques$n_individuos[i] / bosques$area[i]\n  i &lt;- i + 1\n}\n\nbosques\n\n# A tibble: 5 × 5\n  id_plot radio_m n_individuos    area densidad\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 syl1          5           10 0.00785    1273.\n2 syl2          6           12 0.0113     1061.\n3 nig1          7           15 0.0154      974.\n4 nig2          8           18 0             0 \n5 nig3          9           20 0             0"
+    "title": "Estructuras de Control en Programación",
+    "section": "while Loop: Repetición Condicional",
+    "text": "while Loop: Repetición Condicional\nEjecuta un bloque de código mientras una condición sea verdadera\n\nradios &lt;- pinares$radio_m \n\n1i &lt;- 1\n  \n2while (i &lt;= 3) {\n  \n3  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  print(area_ha)\n  \n4  i &lt;- i + 1\n}\n\n\n1\n\nIniciamos el contador\n\n2\n\nCondición de salida\n\n3\n\nCódigo a ejecutar\n\n4\n\nActualización del contador\n\n\n\n\n[1] 0.007853982\n[1] 0.01130973\n[1] 0.0153938"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#repeat-loop-repetición-indefinida",
     "href": "sesiones/programacion/secuencias_control.html#repeat-loop-repetición-indefinida",
-    "title": "Estructuras de Control en Programación (R y Python)",
-    "section": "3. repeat Loop: Repetición Indefinida",
-    "text": "3. repeat Loop: Repetición Indefinida\n¿Qué es?\n\nEjecuta un bloque de código indefinidamente hasta que se usa break.\n\nEjemplo:\ni &lt;- 1\nrepeat {\n  print(mean(iris$Petal.Length[iris$Species == unique(iris$Species)[i]]))\n  i &lt;- i + 1\n  if (i &gt; 3) break\n}"
+    "title": "Estructuras de Control en Programación",
+    "section": "\nrepeat Loop: Repetición Indefinida",
+    "text": "repeat Loop: Repetición Indefinida\n\n\nEjecuta un bloque de código indefinidamente hasta que se usa break.\n\nEjemplo: obtener el dbh medio de los 5 individuos mas grandes\n\npinos_ordenados &lt;- pinos[order(pinos$dbh_cm, decreasing = TRUE), ]\n\ni &lt;- 1 # contador\npromedio &lt;- 0 # variable donde guardar \n  \nrepeat { \n  # promedio parcial (usando los primeros i pinos más grandes)\n  promedio &lt;- mean(pinos_ordenados$dbh_cm[1:i])\n  \n  # Verificar si hemos procesado más de 5 pinos\n  if (i &gt; 5) {\n    print(paste(\"Promedio de dbh_cm de los 5 pinos más grandes:\", promedio))\n    break\n  }\n  # Avanzar al siguiente pino\n  i &lt;- i + 1\n}\n\n[1] \"Promedio de dbh_cm de los 5 pinos más grandes: 28.9666666666667\""
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-tapply",
     "href": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-tapply",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "4. Alternativas Vectorizadas (apply, tapply)",
-    "text": "4. Alternativas Vectorizadas (apply, tapply)\n¿Qué son?\n\nMétodos eficientes y vectorizados para realizar operaciones en matrices o listas.\n\nEjemplo:\ntapply(iris$Sepal.Width, iris$Species, mean)\n\nVentajas:\n\nMás rápidas y concisas que los bucles tradicionales.\nMejor adaptadas para trabajar con grandes volúmenes de datos."
+    "text": "4. Alternativas Vectorizadas (apply, tapply)\n\n\nMétodos eficientes y vectorizados para realizar operaciones en matrices o listas.\n\nEjemplo:\n\ntapply(pinos$dbh_cm, pinos$especie, mean)\n\n     nigra   pinaster sylvestris \n  13.86667   27.43333   18.80000 \n\n\nVentajas:\n\nMás rápidas y concisas que los bucles tradicionales.\nMejor adaptadas para trabajar con grandes volúmenes de datos."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#comparación-con-purrr",
     "href": "sesiones/programacion/secuencias_control.html#comparación-con-purrr",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "5. Comparación con purrr",
-    "text": "5. Comparación con purrr\n¿Qué es purrr?\n\n\npurrr es un paquete del ecosistema tidyverse que facilita la programación funcional.\nEjemplo Comparativo\nUsando un bucle for:\nspecies_means &lt;- numeric()\nfor (species in unique(iris$Species)) {\n  species_means &lt;- c(species_means, mean(iris$Sepal.Length[iris$Species == species]))\n}\nprint(species_means)\nUsando purrr::map:\nlibrary(purrr)\nspecies_means &lt;- map(unique(iris$Species), ~ mean(iris$Sepal.Length[iris$Species == .x]))\nprint(species_means)\n\nVentajas de purrr:\n\nSintaxis más compacta y legible.\nIntegración directa con otras herramientas del tidyverse.\nMejora la eficiencia para operaciones funcionales repetitivas."
+    "text": "5. Comparación con purrr\n¿Qué es purrr?\n\n\npurrr es un paquete del ecosistema tidyverse que facilita la programación funcional.\n\nEjemplo Comparativo\nUsando un bucle for:\nspecies_means &lt;- numeric()\nfor (species in unique(iris$Species)) {\n  species_means &lt;- c(species_means, mean(iris$Sepal.Length[iris$Species == species]))\n}\nprint(species_means)"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#comparación-general",
     "href": "sesiones/programacion/secuencias_control.html#comparación-general",
-    "title": "Estructuras de Control en Programación (R y Python)",
-    "section": "6. Comparación General",
-    "text": "6. Comparación General\n\n\n\n\n\n\n\nTipo de Bucle\nVentajas\nDesventajas\n\n\n\nfor\nSimple y flexible\nMenos eficiente con grandes datos\n\n\nwhile\nÚtil para condiciones dinámicas\nMayor riesgo de bucles infinitos\n\n\nrepeat\nGran control manual\nRequiere interrupción explícita\n\n\n\napply/tapply\n\nAltamente eficiente y compacto\nMenos intuitivo para principiantes\n\n\npurrr::map\nSintaxis legible y funcional\nRequiere instalación adicional"
+    "title": "Estructuras de Control en Programación",
+    "section": "Comparación General",
+    "text": "Comparación General\n\n\n\n\n\n\n\n\nTipo de Bucle\nVentajas\nDesventajas\n\n\n\nfor\nSimple y flexible\nMenos eficiente con grandes datos\n\n\nwhile\nÚtil para condiciones dinámicas\nMayor riesgo de bucles infinitos\n\n\nrepeat\nGran control manual\nRequiere interrupción explícita\n\n\n\napply/tapply\n\nAltamente eficiente y compacto\nMenos intuitivo para principiantes\n\n\npurrr::map\nSintaxis legible y funcional\nRequiere instalación adicional"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#conclusión",
     "href": "sesiones/programacion/secuencias_control.html#conclusión",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Conclusión",
     "text": "Conclusión\n\n\nBásico: Los bucles (for, while, repeat) son fundamentales para aprender programación iterativa.\n\nAvanzado: Las funciones vectorizadas (apply, tapply) y paquetes como purrr son ideales para mejorar el rendimiento y la legibilidad.\n\nRecomendación: Usa bucles simples para aprender y alterna con soluciones vectorizadas o funcionales para proyectos más complejos."
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#alguna-duda",
     "href": "sesiones/programacion/secuencias_control.html#alguna-duda",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n@ajpelu\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+    "text": "¿Alguna duda?\n\n\n ajpelu.bsky.social\n\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Estructuras de Control en Programación (ejemplos con R). Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "sesiones/programacion/secuencias_control.html#ejemplo-práctico",
     "href": "sesiones/programacion/secuencias_control.html#ejemplo-práctico",
-    "title": "Estructuras de Control en Programación (R y Python)",
+    "title": "Estructuras de Control en Programación",
     "section": "Ejemplo práctico",
     "text": "Ejemplo práctico\n\n\nSe han muestreando diferentes plots circulares en pinares de repoblación para evaluar la densidad de plantación\nEn cada plot (de radio variable) anotamos el número de individuos de cada especie\n¿podrías escribir un código que calcule el área muestreada en cada plot?\n\n\n\nCreación de un tibble con los datos\nVista del tibble\n\n\n\n\nlibrary(tibble)\npinares &lt;- tibble(\n  id_plot = c(\"syl1\", \"syl2\", \"nig1\", \"nig2\", \"nig3\"),\n  radio_m = c(5, 6, 7, 8, 9),\n  n_individuos = c(10, 12, 15, 18, 20)\n)\n\n\n\n\npinares\n\n# A tibble: 5 × 3\n  id_plot radio_m n_individuos\n  &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 syl1          5           10\n2 syl2          6           12\n3 nig1          7           15\n4 nig2          8           18\n5 nig3          9           20"
   },
@@ -2169,5 +2169,40 @@
     "title": "Primeros pasos con R",
     "section": "Análisis de la serie de datos 2 (la manera tidyverse)",
     "text": "Análisis de la serie de datos 2 (la manera tidyverse)\n\n# Cargar las librerías necesarias\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr   1.1.4     ✔ stringr 1.5.1\n✔ forcats 1.0.0     ✔ tibble  3.2.1\n✔ purrr   1.0.2     ✔ tidyr   1.3.1\n✔ readr   2.1.5     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lubridate)\n\n# Cargar los datos\n\n# data &lt;- read_csv('data/ts2.csv') # Crearía un tibble: https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html\n\ndata &lt;- read.table('data/ts2.csv', sep = ',', header = TRUE)\n\n# Inspeccionar la estructura de los datos\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;chr&gt; \"20/01/2024\", \"22/01/2024\", \"25/01/2024\", \"10/02/2024\", \"24/02/2…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Interpretar las fechas\n\ndata &lt;- data %&gt;% \n  mutate(date = dmy(date))\n\nglimpse(data)\n\nRows: 27\nColumns: 2\n$ date  &lt;date&gt; 2024-01-20, 2024-01-22, 2024-01-25, 2024-02-10, 2024-02-24, 202…\n$ value &lt;dbl&gt; 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3,…\n\n# Graficar la serie temporal\n\ndata %&gt;% \n  ggplot(aes(x = date, y = value)) + \n  geom_point() + \n  labs(title = \"Serie temporal\", x = \"Fecha\", y = \"Valor\")\n\n\n\n\n\n\n\n# Extraer mes del año en una nueva columna\n\ndata &lt;- data %&gt;% \n  mutate(month = month(date))\n\nhead(data)\n\n        date value month\n1 2024-01-20   0.1     1\n2 2024-01-22   0.2     1\n3 2024-01-25   0.3     1\n4 2024-02-10   0.4     2\n5 2024-02-24   0.5     2\n6 2024-03-12   0.6     3\n\n# Nueva tabla de datos con medias mensuales\n\ndata_monthly_mean &lt;- data %&gt;% \n  group_by(month) %&gt;% \n  summarise(value = mean(value, na.rm = TRUE))\n\n# Graficar las medias mensuales\n\ndata_monthly_mean %&gt;% \n  ggplot(aes(x = month, y = value)) + \n  geom_point() + \n  labs(title = \"Media mensual\", x = \"Mes\", y = \"Valor promedio\")\n\n\n\n\n\n\n\n# Análisis de tendencia con funciones de Kendall y Theil-Sen\n\nkendall_Z_adjusted(data_monthly_mean$value)\n\n$z\n[1] 4.525788\n\n$z_star\n[1] 4.525788\n\n$ratio\n[1] 1\n\n$P_value\n[1] 6.017083e-06\n\n$P_value_adj\n[1] 6.017083e-06\n\ntheil_sen_slope(y = data_monthly_mean$value, x = data_monthly_mean$month)\n\n[1] 0.2083333"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#datos-ejemplo",
+    "href": "sesiones/programacion/secuencias_control.html#datos-ejemplo",
+    "title": "Estructuras de Control en Programación (R y Python)",
+    "section": "Datos ejemplo",
+    "text": "Datos ejemplo\n\nlibrary(tibble)\n\npinos &lt;- tibble(\n  id = 1:10,\n  especie = c(\"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\", \"nigra\",\n              \"pinaster\", \"sylvestris\", \"nigra\", \"pinaster\", \"sylvestris\"),\n  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), \n  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) \n)"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#estructuras-de-iteración-bucles",
+    "href": "sesiones/programacion/secuencias_control.html#estructuras-de-iteración-bucles",
+    "title": "Estructuras de Control en Programación",
+    "section": "3. Estructuras de iteración (bucles)",
+    "text": "3. Estructuras de iteración (bucles)\n\nSon secuencias código que se ejecutan repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse\n\n¿Por qué usarlos?\n\nPara iterar sobre elementos de un conjunto de datos.\nPara automatizar tareas repetitivas.\nPara realizar cálculos iterativos."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-sapplytapply",
+    "href": "sesiones/programacion/secuencias_control.html#alternativas-vectorizadas-apply-sapplytapply",
+    "title": "Estructuras de Control en Programación",
+    "section": "Alternativas Vectorizadas (apply, sapply,tapply`)",
+    "text": "Alternativas Vectorizadas (apply, sapply,tapply`)\n\n\nHerramientas para aplicar funciones a estructuras de datos, pero cada una tiene su uso específico dependiendo de la estructura y el tipo de operación deseada.\napply: aplica una función a las filas o columnas de una matriz o array.\nsapply: aplica una función a cada elemento de una lista o vector y simplifica automáticamente la salida al formato más compacto posible (vector, matriz o lista).\ntapply: aplica una función a los subconjuntos de un vector, definidos por un factor o factores.\n\n\n\napply\nsapply\ntapply\n\n\n\n\n# Calcular media de cada columna numérica\nd &lt;- as.matrix(pinos[, c(\"dbh_cm\", \"altura_m\")])\n  \napply(d, 2, mean)\n\n  dbh_cm altura_m \n   19.91    12.07 \n\n\n\n\n\n# Identificar columnas numéricas\nsapply(pinos, is.numeric)\n\n      id  especie   dbh_cm altura_m \n    TRUE    FALSE     TRUE     TRUE \n\n\n\n\n\n# Promedio de dbh por especie \ntapply(pinos$dbh_cm, pinos$especie, mean)\n\n     nigra   pinaster sylvestris \n  13.86667   27.43333   18.80000 \n\n\n\n\n\nVentajas:\n\nMás rápidas y concisas que los bucles tradicionales.\nMejor adaptadas para trabajar con grandes volúmenes de datos."
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#purrr",
+    "href": "sesiones/programacion/secuencias_control.html#purrr",
+    "title": "Estructuras de Control en Programación",
+    "section": "purrr",
+    "text": "purrr\n\n¿Qué es purrr?\n\n\npurrr es un paquete del ecosistema tidyverse que facilita la programación funcional.\n\nEjemplo Comparativo\n\n\nfor\npurrr\n\n\n\n\nareas_ha &lt;- vector(mode = \"numeric\", length = length(radios))\n  \nfor (i in 1:length(radios)) {\n  area &lt;- pi * radios[i]^2\n  area_ha &lt;- area / 10000\n  areas_ha[i] &lt;- area_ha\n}\n\nareas_ha\n\n[1] 0.007853982 0.011309734 0.015393804 0.020106193 0.025446900\n\n\n\n\n\nlibrary(purrr)\nareas_ha &lt;- map_dbl(radios, ~ pi * (.x^2) / 10000)\nareas_ha\n\n[1] 0.007853982 0.011309734 0.015393804 0.020106193 0.025446900"
+  },
+  {
+    "objectID": "sesiones/programacion/secuencias_control.html#purrr-2",
+    "href": "sesiones/programacion/secuencias_control.html#purrr-2",
+    "title": "Estructuras de Control en Programación",
+    "section": "purrr",
+    "text": "purrr\n\nVentajas de purrr:\n\nSintaxis más compacta y legible.\nIntegración directa con otras herramientas del tidyverse.\nMejora la eficiencia para operaciones funcionales repetitivas."
   }
 ]
