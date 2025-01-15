@@ -6,12 +6,14 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dece3bd051e391dd7205a6b15f93dc59.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dece3bd051e391dd7205a6b15f93dc59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Antonio J. Pérez-Luque">
   <meta name="dcterms.date" content="2025-01-15">
-  <title>Ciclo de Gestión de los Datos. Ecoinformática – Estructuras de Control en Programación (R y Python)</title>
+  <title>Ciclo de Gestión de los Datos. Ecoinformática – Estructuras de Control en Programación</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -193,7 +195,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Estructuras de Control en Programación (R y Python)</h1>
+  <h1 class="title">Estructuras de Control en Programación</h1>
+  <p class="subtitle">(ejemplos con R)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -272,40 +275,119 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </section>
 <section class="slide level2">
 
-<h3 id="condicionales-simple-1">2. Condicionales <strong>simple</strong></h3>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Datos ejemplo</a></li><li><a href="#tabset-1-2">Condicional if</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
+<h3 id="condicionales-simples">2. Condicionales <strong>simples</strong></h3>
+<div class="small">
+<ul>
+<li>Datos ejemplo</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tibble)</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>pinos <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb1-4"><a></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb1-5"><a></a>  <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>,</span>
-<span id="cb1-6"><a></a>              <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span>),</span>
-<span id="cb1-7"><a></a>  <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="fl">30.5</span>, <span class="fl">6.5</span>, <span class="fl">7.2</span>, <span class="fl">5.0</span>, <span class="fl">28.3</span>, <span class="fl">35.1</span>, <span class="fl">7.0</span>, <span class="fl">6.8</span>, <span class="fl">40.0</span>, <span class="fl">32.7</span>), </span>
-<span id="cb1-8"><a></a>  <span class="at">altura_m =</span> <span class="fu">c</span>(<span class="fl">12.5</span>, <span class="fl">13.2</span>, <span class="fl">10.0</span>, <span class="fl">9.5</span>, <span class="fl">14.0</span>, <span class="fl">15.0</span>, <span class="fl">8.2</span>, <span class="fl">11.8</span>, <span class="fl">14.5</span>, <span class="fl">12.0</span>) </span>
-<span id="cb1-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a></a>  <span class="at">especie =</span> <span class="fu">c</span>(</span>
+<span id="cb1-6"><a></a>    <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>,</span>
+<span id="cb1-7"><a></a>    <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>,</span>
+<span id="cb1-8"><a></a>    <span class="st">"sylvestris"</span>, <span class="st">"nigra"</span>, <span class="st">"pinaster"</span>, <span class="st">"sylvestris"</span></span>
+<span id="cb1-9"><a></a>  ),</span>
+<span id="cb1-10"><a></a>  <span class="at">dbh_cm =</span> <span class="fu">c</span>(</span>
+<span id="cb1-11"><a></a>    <span class="fl">30.5</span>, <span class="fl">6.5</span>, <span class="fl">7.2</span>, <span class="fl">5.0</span>, <span class="fl">28.3</span>,</span>
+<span id="cb1-12"><a></a>    <span class="fl">35.1</span>, <span class="fl">7.0</span>, <span class="fl">6.8</span>, <span class="fl">40.0</span>, <span class="fl">32.7</span></span>
+<span id="cb1-13"><a></a>  ),</span>
+<span id="cb1-14"><a></a>  <span class="at">altura_m =</span> <span class="fu">c</span>(</span>
+<span id="cb1-15"><a></a>    <span class="fl">12.5</span>, <span class="fl">13.2</span>, <span class="fl">10.0</span>, <span class="fl">9.5</span>, <span class="fl">14.0</span>,</span>
+<span id="cb1-16"><a></a>    <span class="fl">15.0</span>, <span class="fl">8.2</span>, <span class="fl">11.8</span>, <span class="fl">14.5</span>, <span class="fl">12.0</span></span>
+<span id="cb1-17"><a></a>  )</span>
+<span id="cb1-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="condicionales-simples-1">2. Condicionales <strong>simples</strong></h3>
+<div class="small">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><code>if</code></a></li><li><a href="#tabset-1-2"><code>ifelse</code></a></li><li><a href="#tabset-1-3"><code>switch</code></a></li><li><a href="#tabset-1-4"><code>if</code> (otro ejemplo)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>arbol <span class="ot">&lt;-</span> pinos[<span class="dv">1</span>, ]</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="cf">if</span> (arbol<span class="sc">$</span>dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) {</span>
+<span id="cb2-4"><a></a>  <span class="fu">print</span>(<span class="fu">paste</span>(</span>
+<span id="cb2-5"><a></a>    <span class="st">"El arbol ID ="</span>, arbol<span class="sc">$</span>id,</span>
+<span id="cb2-6"><a></a>    <span class="st">" es un adulto, y tiene un diámetro de "</span>, arbol<span class="sc">$</span>dbh_cm, <span class="st">" cm"</span></span>
+<span id="cb2-7"><a></a>  ))</span>
+<span id="cb2-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "El arbol ID = 1  es un adulto, y tiene un diámetro de  30.5  cm"</code></pre>
+</div>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>pino1 <span class="ot">&lt;-</span> pinos[<span class="dv">1</span>, ]</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a><span class="cf">if</span> (pino1<span class="sc">$</span>dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) {</span>
-<span id="cb2-4"><a></a>  <span class="co"># calcula el área basal del pino en m2</span></span>
-<span id="cb2-5"><a></a>  area_basal <span class="ot">&lt;-</span> pi <span class="sc">*</span> ((pino1<span class="sc">$</span>dbh_cm <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a>  <span class="fu">print</span>(<span class="fu">paste</span>(</span>
-<span id="cb2-8"><a></a>    <span class="st">"El árbol con ID"</span>, pino1<span class="sc">$</span>id,</span>
-<span id="cb2-9"><a></a>    <span class="st">"pertenece a la especie Pinus"</span>, pino1<span class="sc">$</span>especie,</span>
-<span id="cb2-10"><a></a>    <span class="st">"y tiene un área basal de"</span>,</span>
-<span id="cb2-11"><a></a>    <span class="fu">round</span>(area_basal, <span class="dv">4</span>), <span class="st">"m²."</span>, <span class="at">sep =</span> <span class="st">" "</span></span>
-<span id="cb2-12"><a></a>  ))</span>
-<span id="cb2-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>arbol <span class="ot">&lt;-</span> pinos[<span class="dv">2</span>, ]</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a><span class="cf">if</span> (arbol<span class="sc">$</span>dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) {</span>
+<span id="cb4-4"><a></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"El arbol ID ="</span>, arbol<span class="sc">$</span>id,</span>
+<span id="cb4-5"><a></a>    <span class="st">"es un adulto, y tiene un diámetro de"</span>, arbol<span class="sc">$</span>dbh_cm, <span class="st">" cm"</span>,</span>
+<span id="cb4-6"><a></a>    <span class="at">sep =</span> <span class="st">" "</span></span>
+<span id="cb4-7"><a></a>  ))</span>
+<span id="cb4-8"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb4-9"><a></a>  <span class="fu">print</span>(</span>
+<span id="cb4-10"><a></a>    <span class="fu">paste</span>(</span>
+<span id="cb4-11"><a></a>      <span class="st">"El arbol ID ="</span>, arbol<span class="sc">$</span>id,</span>
+<span id="cb4-12"><a></a>      <span class="st">"es un juvenil, y tiene un diámetro de"</span>, arbol<span class="sc">$</span>dbh_cm, <span class="st">" cm"</span></span>
+<span id="cb4-13"><a></a>    ),</span>
+<span id="cb4-14"><a></a>    <span class="at">sep =</span> <span class="st">" "</span></span>
+<span id="cb4-15"><a></a>  )</span>
+<span id="cb4-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "El arbol ID = 2 es un juvenil, y tiene un diámetro de 6.5  cm"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sp <span class="ot">&lt;-</span> <span class="st">"sylvestris"</span> </span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="cf">switch</span> (sp,</span>
+<span id="cb6-4"><a></a>  <span class="st">"nigra"</span> <span class="ot">=</span> {</span>
+<span id="cb6-5"><a></a>    n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">subset</span>(pinos, especie <span class="sc">==</span> sp))</span>
+<span id="cb6-6"><a></a>    <span class="fu">paste</span>(<span class="st">"Existen"</span>, n, <span class="st">"individuos de P."</span>, sp)</span>
+<span id="cb6-7"><a></a>  },</span>
+<span id="cb6-8"><a></a>  <span class="st">"sylvestris"</span> <span class="ot">=</span> {</span>
+<span id="cb6-9"><a></a>    n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">subset</span>(pinos, especie <span class="sc">==</span> sp))</span>
+<span id="cb6-10"><a></a>    <span class="fu">paste</span>(<span class="st">"Existen"</span>, n, <span class="st">"individuos de P."</span>, sp)</span>
+<span id="cb6-11"><a></a>  },</span>
+<span id="cb6-12"><a></a>  <span class="st">"pinaster"</span> <span class="ot">=</span> {</span>
+<span id="cb6-13"><a></a>    n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">subset</span>(pinos, especie <span class="sc">==</span> sp))</span>
+<span id="cb6-14"><a></a>    <span class="fu">paste</span>(<span class="st">"Existen"</span>, n, <span class="st">"individuos de P."</span>, sp)</span>
+<span id="cb6-15"><a></a>  }</span>
+<span id="cb6-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Existen 4 individuos de P. sylvestris"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>pino1 <span class="ot">&lt;-</span> pinos[<span class="dv">1</span>, ]</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="cf">if</span> (pino1<span class="sc">$</span>dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) {</span>
+<span id="cb8-4"><a></a>  <span class="co"># calcula el área basal del pino en m2</span></span>
+<span id="cb8-5"><a></a>  area_basal <span class="ot">&lt;-</span> pi <span class="sc">*</span> ((pino1<span class="sc">$</span>dbh_cm <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb8-6"><a></a></span>
+<span id="cb8-7"><a></a>  <span class="fu">print</span>(<span class="fu">paste</span>(</span>
+<span id="cb8-8"><a></a>    <span class="st">"El árbol con ID"</span>, pino1<span class="sc">$</span>id,</span>
+<span id="cb8-9"><a></a>    <span class="st">"pertenece a la especie Pinus"</span>, pino1<span class="sc">$</span>especie,</span>
+<span id="cb8-10"><a></a>    <span class="st">"y tiene un área basal de"</span>,</span>
+<span id="cb8-11"><a></a>    <span class="fu">round</span>(area_basal, <span class="dv">4</span>), <span class="st">"m²."</span>, <span class="at">sep =</span> <span class="st">" "</span></span>
+<span id="cb8-12"><a></a>  ))</span>
+<span id="cb8-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "El árbol con ID 1 pertenece a la especie Pinus sylvestris y tiene un área basal de 0.0731 m²."</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -325,17 +407,17 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tibble)</span>
-<span id="cb4-2"><a></a>pinares <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-3"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
-<span id="cb4-4"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
-<span id="cb4-5"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
-<span id="cb4-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(tibble)</span>
+<span id="cb10-2"><a></a>pinares <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-3"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
+<span id="cb10-4"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
+<span id="cb10-5"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
+<span id="cb10-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   id_plot radio_m n_individuos
@@ -373,30 +455,30 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>radios <span class="ot">&lt;-</span> pinares<span class="sc">$</span>radio_m</span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a>area1 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb7-4"><a></a><span class="fu">print</span>(area1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>radios <span class="ot">&lt;-</span> pinares<span class="sc">$</span>radio_m</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>area1 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb13-4"><a></a><span class="fu">print</span>(area1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 78.53982</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>area2 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb9-2"><a></a><span class="fu">print</span>(area2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>area2 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb15-2"><a></a><span class="fu">print</span>(area2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 113.0973</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>area3 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">3</span>]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb11-2"><a></a><span class="fu">print</span>(area3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>area3 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">3</span>]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-2"><a></a><span class="fu">print</span>(area3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 153.938</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>area4 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">4</span>]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb13-2"><a></a><span class="fu">print</span>(area4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>area4 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">4</span>]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb19-2"><a></a><span class="fu">print</span>(area4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 201.0619</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>area5 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">5</span>]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-2"><a></a><span class="fu">print</span>(area5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>area5 <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[<span class="dv">5</span>]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb21-2"><a></a><span class="fu">print</span>(area5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 254.469</code></pre>
 </div>
@@ -404,9 +486,9 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>pinares<span class="sc">$</span>area_m2 <span class="ot">&lt;-</span> pi <span class="sc">*</span> pinares<span class="sc">$</span>radio_m<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb17-2"><a></a></span>
-<span id="cb17-3"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>pinares<span class="sc">$</span>area_m2 <span class="ot">&lt;-</span> pi <span class="sc">*</span> pinares<span class="sc">$</span>radio_m<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   id_plot radio_m n_individuos area_m2
@@ -421,12 +503,12 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <div id="tabset-3-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>calcula_area <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb19-2"><a></a>  <span class="fu">return</span>(pi <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb19-3"><a></a>}</span>
-<span id="cb19-4"><a></a></span>
-<span id="cb19-5"><a></a>pinares<span class="sc">$</span>area2_m2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(pinares<span class="sc">$</span>radio_m, calcula_area)</span>
-<span id="cb19-6"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>calcula_area <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb25-2"><a></a>  <span class="fu">return</span>(pi <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb25-3"><a></a>}</span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a>pinares<span class="sc">$</span>area2_m2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(pinares<span class="sc">$</span>radio_m, calcula_area)</span>
+<span id="cb25-6"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   id_plot radio_m n_individuos area_m2 area2_m2
@@ -441,9 +523,9 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <div id="tabset-3-4">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> pinares<span class="sc">$</span>radio_m) {</span>
-<span id="cb21-2"><a></a>  <span class="fu">print</span>(pi <span class="sc">*</span> i<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb21-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> pinares<span class="sc">$</span>radio_m) {</span>
+<span id="cb27-2"><a></a>  <span class="fu">print</span>(pi <span class="sc">*</span> i<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb27-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 78.53982
 [1] 113.0973
@@ -457,9 +539,8 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 </div>
 </section>
-<section id="uso-de-bucles" class="slide level2">
-<h2>Uso de bucles</h2>
-<h3 id="qué-son-los-bucles-en-programación"><strong>¿Qué son los bucles en programación?</strong></h3>
+<section id="estructuras-de-iteración-bucles" class="slide level2">
+<h2>3. Estructuras de iteración (bucles)</h2>
 <ul>
 <li>Son secuencias código que se ejecutan repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse</li>
 </ul>
@@ -491,13 +572,13 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">R</a></li><li><a href="#tabset-4-2">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb23-2"><a></a>  <span class="fu">print</span>(i <span class="sc">*</span> i)</span>
-<span id="cb23-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb29-2"><a></a>  <span class="fu">print</span>(i <span class="sc">*</span> i)</span>
+<span id="cb29-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-2">
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
-<span id="cb24-2"><a></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb30-2"><a></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -506,8 +587,8 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 
 <h3 id="estudio-en-detalle-del-bucle">Estudio en detalle del bucle</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>radios <span class="ot">&lt;-</span> pinares<span class="sc">$</span>radio_m</span>
-<span id="cb25-2"><a></a>radios</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>radios <span class="ot">&lt;-</span> pinares<span class="sc">$</span>radio_m</span>
+<span id="cb31-2"><a></a>radios</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 6 7 8 9</code></pre>
 </div>
@@ -564,10 +645,10 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <li>Útil cuando no necesitas los índices, solo los valores</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> radios) {</span>
-<span id="cb28-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> i<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb28-3"><a></a>  <span class="fu">print</span>(area)</span>
-<span id="cb28-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> radios) {</span>
+<span id="cb34-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> i<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">print</span>(area)</span>
+<span id="cb34-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="elementos-del-bucle-índice-1" class="slide level2" data-footer="false">
 <h2>Elementos del bucle: <strong>Índice</strong></h2>
@@ -583,16 +664,16 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Ejemplo 1</a></li><li><a href="#tabset-5-2">Ejemplo 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb29-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb29-3"><a></a>  <span class="fu">print</span>(area)</span>
-<span id="cb29-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb35-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb35-3"><a></a>  <span class="fu">print</span>(area)</span>
+<span id="cb35-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-5-2">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
-<span id="cb30-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb30-3"><a></a>  <span class="fu">print</span>(area)</span>
-<span id="cb30-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
+<span id="cb36-2"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">print</span>(area)</span>
+<span id="cb36-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -626,13 +707,13 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">print</span>(areas1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">print</span>(areas1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>logical(0)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">print</span>(areas2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">print</span>(areas2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0 0 0 0 0</code></pre>
 </div>
@@ -645,26 +726,26 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">areas1</a></li><li><a href="#tabset-6-2">areas2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1">
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>areas1 <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
-<span id="cb35-2"><a></a>  </span>
-<span id="cb35-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
-<span id="cb35-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb35-5"><a></a>  <span class="co"># print(area)</span></span>
-<span id="cb35-6"><a></a>  areas1[i] <span class="ot">&lt;-</span> area </span>
-<span id="cb35-7"><a></a>}</span>
-<span id="cb35-8"><a></a>  </span>
-<span id="cb35-9"><a></a><span class="fu">print</span>(areas1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>areas1 <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
+<span id="cb41-2"><a></a>  </span>
+<span id="cb41-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
+<span id="cb41-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb41-5"><a></a>  <span class="co"># print(area)</span></span>
+<span id="cb41-6"><a></a>  areas1[i] <span class="ot">&lt;-</span> area </span>
+<span id="cb41-7"><a></a>}</span>
+<span id="cb41-8"><a></a>  </span>
+<span id="cb41-9"><a></a><span class="fu">print</span>(areas1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-6-2">
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>areas2 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">length</span>(radios))</span>
-<span id="cb36-2"><a></a>  </span>
-<span id="cb36-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
-<span id="cb36-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb36-5"><a></a>  <span class="co"># print(area)</span></span>
-<span id="cb36-6"><a></a>  areas2[i] <span class="ot">&lt;-</span> area </span>
-<span id="cb36-7"><a></a>}</span>
-<span id="cb36-8"><a></a></span>
-<span id="cb36-9"><a></a><span class="fu">print</span>(areas2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>areas2 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">length</span>(radios))</span>
+<span id="cb42-2"><a></a>  </span>
+<span id="cb42-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
+<span id="cb42-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb42-5"><a></a>  <span class="co"># print(area)</span></span>
+<span id="cb42-6"><a></a>  areas2[i] <span class="ot">&lt;-</span> area </span>
+<span id="cb42-7"><a></a>}</span>
+<span id="cb42-8"><a></a></span>
+<span id="cb42-9"><a></a><span class="fu">print</span>(areas2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -675,29 +756,29 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>areas_ha <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">length</span>(radios))</span>
-<span id="cb37-2"><a></a>  </span>
-<span id="cb37-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
-<span id="cb37-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb37-5"><a></a>  area_ha <span class="ot">&lt;-</span> area <span class="sc">/</span> <span class="dv">10000</span></span>
-<span id="cb37-6"><a></a>  areas_ha[i] <span class="ot">&lt;-</span> area_ha</span>
-<span id="cb37-7"><a></a>}</span>
-<span id="cb37-8"><a></a></span>
-<span id="cb37-9"><a></a><span class="fu">print</span>(areas_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>areas_ha <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">length</span>(radios))</span>
+<span id="cb43-2"><a></a>  </span>
+<span id="cb43-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
+<span id="cb43-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb43-5"><a></a>  area_ha <span class="ot">&lt;-</span> area <span class="sc">/</span> <span class="dv">10000</span></span>
+<span id="cb43-6"><a></a>  areas_ha[i] <span class="ot">&lt;-</span> area_ha</span>
+<span id="cb43-7"><a></a>}</span>
+<span id="cb43-8"><a></a></span>
+<span id="cb43-9"><a></a><span class="fu">print</span>(areas_ha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="práctica-2" class="slide level2">
 <h2>Práctica 2</h2>
 <p>Completa el siguiente bucle para que imprima los nombres de las especies de los pinares</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>especies <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-2"><a></a>  <span class="st">"Pinus sylvestris"</span>, <span class="st">"Pinus nigra"</span>, <span class="st">"Pinus halepensis"</span>,</span>
-<span id="cb38-3"><a></a>  <span class="st">"Pinus pinaster"</span>, <span class="st">"Pinus canariensis"</span>, <span class="st">"Pinus pinea"</span></span>
-<span id="cb38-4"><a></a>)</span>
-<span id="cb38-5"><a></a></span>
-<span id="cb38-6"><a></a><span class="cf">for</span> (sp <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>( <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> )) { </span>
-<span id="cb38-7"><a></a>  <span class="fu">print</span>(especies[ <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> ])     </span>
-<span id="cb38-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>especies <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb44-2"><a></a>  <span class="st">"Pinus sylvestris"</span>, <span class="st">"Pinus nigra"</span>, <span class="st">"Pinus halepensis"</span>,</span>
+<span id="cb44-3"><a></a>  <span class="st">"Pinus pinaster"</span>, <span class="st">"Pinus canariensis"</span>, <span class="st">"Pinus pinea"</span></span>
+<span id="cb44-4"><a></a>)</span>
+<span id="cb44-5"><a></a></span>
+<span id="cb44-6"><a></a><span class="cf">for</span> (sp <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>( <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> )) { </span>
+<span id="cb44-7"><a></a>  <span class="fu">print</span>(especies[ <span class="ot">&lt;-</span>???<span class="ot">-&gt;</span> ])     </span>
+<span id="cb44-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="práctica-3" class="slide level2" data-footer="false">
 <h2>Práctica 3</h2>
@@ -767,18 +848,18 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>pinares <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
-<span id="cb39-2"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
-<span id="cb39-3"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
-<span id="cb39-4"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
-<span id="cb39-5"><a></a>)</span>
-<span id="cb39-6"><a></a>  </span>
-<span id="cb39-7"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(pinares)) {</span>
-<span id="cb39-8"><a></a>  pinares<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> pinares<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
-<span id="cb39-9"><a></a>  pinares<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> pinares<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> pinares<span class="sc">$</span>area[i] </span>
-<span id="cb39-10"><a></a>}</span>
-<span id="cb39-11"><a></a></span>
-<span id="cb39-12"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>pinares <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb45-2"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
+<span id="cb45-3"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
+<span id="cb45-4"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
+<span id="cb45-5"><a></a>)</span>
+<span id="cb45-6"><a></a>  </span>
+<span id="cb45-7"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(pinares)) {</span>
+<span id="cb45-8"><a></a>  pinares<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> pinares<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
+<span id="cb45-9"><a></a>  pinares<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> pinares<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> pinares<span class="sc">$</span>area[i] </span>
+<span id="cb45-10"><a></a>}</span>
+<span id="cb45-11"><a></a></span>
+<span id="cb45-12"><a></a>pinares</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -816,7 +897,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </ul>
 </section>
 <section id="while-loop-repetición-condicional" class="slide level2">
-<h2><strong>2. <code>while</code> Loop: Repetición Condicional</strong></h2>
+<h2><strong><code>while</code> Loop: Repetición Condicional</strong></h2>
 <p>Ejecuta un bloque de código mientras una condición sea verdadera</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1"></a>radios <span class="ot">&lt;-</span> pinares<span class="sc">$</span>radio_m </span>
@@ -879,23 +960,23 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>bosques <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
-<span id="cb42-2"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
-<span id="cb42-3"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
-<span id="cb42-4"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
-<span id="cb42-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>bosques <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb48-2"><a></a>  <span class="at">id_plot =</span> <span class="fu">c</span>(<span class="st">"syl1"</span>, <span class="st">"syl2"</span>, <span class="st">"nig1"</span>, <span class="st">"nig2"</span>, <span class="st">"nig3"</span>),</span>
+<span id="cb48-3"><a></a>  <span class="at">radio_m =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
+<span id="cb48-4"><a></a>  <span class="at">n_individuos =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">20</span>)</span>
+<span id="cb48-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-7-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb43-2"><a></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">3</span>) {</span>
-<span id="cb43-3"><a></a>  bosques<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> bosques<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
-<span id="cb43-4"><a></a>  bosques<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> bosques<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> bosques<span class="sc">$</span>area[i]</span>
-<span id="cb43-5"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb43-6"><a></a>}</span>
-<span id="cb43-7"><a></a></span>
-<span id="cb43-8"><a></a>bosques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb49-2"><a></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">3</span>) {</span>
+<span id="cb49-3"><a></a>  bosques<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> bosques<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
+<span id="cb49-4"><a></a>  bosques<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> bosques<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> bosques<span class="sc">$</span>area[i]</span>
+<span id="cb49-5"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb49-6"><a></a>}</span>
+<span id="cb49-7"><a></a></span>
+<span id="cb49-8"><a></a>bosques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   id_plot radio_m n_individuos    area densidad
@@ -910,17 +991,17 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <div id="tabset-7-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>bosques<span class="sc">$</span>area <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(bosques)) </span>
-<span id="cb45-2"><a></a>bosques<span class="sc">$</span>densidad <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(bosques))</span>
-<span id="cb45-3"><a></a></span>
-<span id="cb45-4"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb45-5"><a></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">3</span>) {</span>
-<span id="cb45-6"><a></a>  bosques<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> bosques<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
-<span id="cb45-7"><a></a>  bosques<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> bosques<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> bosques<span class="sc">$</span>area[i]</span>
-<span id="cb45-8"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb45-9"><a></a>}</span>
-<span id="cb45-10"><a></a></span>
-<span id="cb45-11"><a></a>bosques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>bosques<span class="sc">$</span>area <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(bosques)) </span>
+<span id="cb51-2"><a></a>bosques<span class="sc">$</span>densidad <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(bosques))</span>
+<span id="cb51-3"><a></a></span>
+<span id="cb51-4"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb51-5"><a></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">3</span>) {</span>
+<span id="cb51-6"><a></a>  bosques<span class="sc">$</span>area[i] <span class="ot">&lt;-</span> (pi <span class="sc">*</span> bosques<span class="sc">$</span>radio_m[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">10000</span>)</span>
+<span id="cb51-7"><a></a>  bosques<span class="sc">$</span>densidad[i] <span class="ot">&lt;-</span> bosques<span class="sc">$</span>n_individuos[i] <span class="sc">/</span> bosques<span class="sc">$</span>area[i]</span>
+<span id="cb51-8"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb51-9"><a></a>}</span>
+<span id="cb51-10"><a></a></span>
+<span id="cb51-11"><a></a>bosques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   id_plot radio_m n_individuos    area densidad
@@ -938,62 +1019,151 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 </section>
 <section id="repeat-loop-repetición-indefinida" class="slide level2">
-<h2><strong>3. <code>repeat</code> Loop: Repetición Indefinida</strong></h2>
-<h3 id="qué-es"><strong>¿Qué es?</strong></h3>
+<h2><code>repeat</code> Loop: Repetición Indefinida</h2>
+<div class="small">
 <ul>
 <li>Ejecuta un bloque de código indefinidamente hasta que se usa <code>break</code>.</li>
 </ul>
-<h3 id="ejemplo-3"><strong>Ejemplo</strong>:</h3>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb47-2"><a></a><span class="cf">repeat</span> {</span>
-<span id="cb47-3"><a></a>  <span class="fu">print</span>(<span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species)[i]]))</span>
-<span id="cb47-4"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb47-5"><a></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="cf">break</span></span>
-<span id="cb47-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo</strong>: obtener el dbh medio de los 5 individuos mas grandes</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>pinos_ordenados <span class="ot">&lt;-</span> pinos[<span class="fu">order</span>(pinos<span class="sc">$</span>dbh_cm, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb53-2"><a></a></span>
+<span id="cb53-3"><a></a>i <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># contador</span></span>
+<span id="cb53-4"><a></a>promedio <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># variable donde guardar </span></span>
+<span id="cb53-5"><a></a>  </span>
+<span id="cb53-6"><a></a><span class="cf">repeat</span> { </span>
+<span id="cb53-7"><a></a>  <span class="co"># promedio parcial (usando los primeros i pinos más grandes)</span></span>
+<span id="cb53-8"><a></a>  promedio <span class="ot">&lt;-</span> <span class="fu">mean</span>(pinos_ordenados<span class="sc">$</span>dbh_cm[<span class="dv">1</span><span class="sc">:</span>i])</span>
+<span id="cb53-9"><a></a>  </span>
+<span id="cb53-10"><a></a>  <span class="co"># Verificar si hemos procesado más de 5 pinos</span></span>
+<span id="cb53-11"><a></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb53-12"><a></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Promedio de dbh_cm de los 5 pinos más grandes:"</span>, promedio))</span>
+<span id="cb53-13"><a></a>    <span class="cf">break</span></span>
+<span id="cb53-14"><a></a>  }</span>
+<span id="cb53-15"><a></a>  <span class="co"># Avanzar al siguiente pino</span></span>
+<span id="cb53-16"><a></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb53-17"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Promedio de dbh_cm de los 5 pinos más grandes: 28.9666666666667"</code></pre>
+</div>
+</div>
+</div>
 </section>
-<section id="alternativas-vectorizadas-apply-tapply" class="slide level2">
-<h2><strong>4. Alternativas Vectorizadas (<code>apply</code>, <code>tapply</code>)</strong></h2>
-<h3 id="qué-son"><strong>¿Qué son?</strong></h3>
+<section class="slide level2">
+
+<p><strong>Alternativas Vectorizadas (apply, sapply, tapply)</strong></p>
+<div class="small">
 <ul>
-<li>Métodos eficientes y vectorizados para realizar operaciones en matrices o listas.</li>
+<li><p>Herramientas para aplicar funciones a estructuras de datos, pero cada una tiene su uso específico dependiendo de la estructura y el tipo de operación deseada.</p></li>
+<li><p><code>apply</code>: aplica una función a las filas o columnas de una matriz o array.</p></li>
+<li><p><code>sapply</code>: aplica una función a cada elemento de una lista o vector y simplifica automáticamente la salida al formato más compacto posible (vector, matriz o lista).</p></li>
+<li><p><code>tapply</code>: aplica una función a los subconjuntos de un vector, definidos por un factor o factores.</p></li>
 </ul>
-<h3 id="ejemplo-4"><strong>Ejemplo</strong>:</h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">tapply</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Species, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="ventajas"><strong>Ventajas</strong>:</h3>
+</div>
+</section>
+<section class="slide level2">
+
+<p><strong>Alternativas Vectorizadas (apply, sapply, tapply)</strong></p>
+<div class="small">
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1"><code>apply</code></a></li><li><a href="#tabset-8-2"><code>sapply</code></a></li><li><a href="#tabset-8-3"><code>tapply</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="co"># Calcular media de cada columna numérica</span></span>
+<span id="cb55-2"><a></a>d <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(pinos[, <span class="fu">c</span>(<span class="st">"dbh_cm"</span>, <span class="st">"altura_m"</span>)])</span>
+<span id="cb55-3"><a></a>  </span>
+<span id="cb55-4"><a></a><span class="fu">apply</span>(d, <span class="dv">2</span>, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  dbh_cm altura_m 
+   19.91    12.07 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Identificar columnas numéricas</span></span>
+<span id="cb57-2"><a></a><span class="fu">sapply</span>(pinos, is.numeric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      id  especie   dbh_cm altura_m 
+    TRUE    FALSE     TRUE     TRUE </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="co"># Promedio de dbh por especie </span></span>
+<span id="cb59-2"><a></a><span class="fu">tapply</span>(pinos<span class="sc">$</span>dbh_cm, pinos<span class="sc">$</span>especie, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     nigra   pinaster sylvestris 
+  13.86667   27.43333   18.80000 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Ventajas</strong>:</p>
 <ul>
 <li>Más rápidas y concisas que los bucles tradicionales.</li>
 <li>Mejor adaptadas para trabajar con grandes volúmenes de datos.</li>
 </ul>
+</div>
 </section>
-<section id="comparación-con-purrr" class="slide level2">
-<h2><strong>5. Comparación con <code>purrr</code></strong></h2>
-<h3 id="qué-es-purrr"><strong>¿Qué es <code>purrr</code>?</strong></h3>
+<section id="purrr" class="slide level2">
+<h2><strong><code>purrr</code></strong></h2>
+<div class="small">
+<p><strong>¿Qué es <code>purrr</code>?</strong></p>
 <ul>
 <li><code>purrr</code> es un paquete del ecosistema tidyverse que facilita la programación funcional.</li>
 </ul>
-<h3 id="ejemplo-comparativo"><strong>Ejemplo Comparativo</strong></h3>
-<h4 id="usando-un-bucle-for">Usando un bucle <code>for</code>:</h4>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>species_means <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
-<span id="cb49-2"><a></a><span class="cf">for</span> (species <span class="cf">in</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species)) {</span>
-<span id="cb49-3"><a></a>  species_means <span class="ot">&lt;-</span> <span class="fu">c</span>(species_means, <span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> species]))</span>
-<span id="cb49-4"><a></a>}</span>
-<span id="cb49-5"><a></a><span class="fu">print</span>(species_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo Comparativo</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">for</a></li><li><a href="#tabset-9-2">purrr</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>areas_ha <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="fu">length</span>(radios))</span>
+<span id="cb61-2"><a></a>  </span>
+<span id="cb61-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(radios)) {</span>
+<span id="cb61-4"><a></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radios[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb61-5"><a></a>  area_ha <span class="ot">&lt;-</span> area <span class="sc">/</span> <span class="dv">10000</span></span>
+<span id="cb61-6"><a></a>  areas_ha[i] <span class="ot">&lt;-</span> area_ha</span>
+<span id="cb61-7"><a></a>}</span>
+<span id="cb61-8"><a></a></span>
+<span id="cb61-9"><a></a>areas_ha</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.007853982 0.011309734 0.015393804 0.020106193 0.025446900</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">library</span>(purrr)</span>
+<span id="cb63-2"><a></a>areas_ha <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(radios, <span class="sc">~</span> pi <span class="sc">*</span> (.x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">10000</span>)</span>
+<span id="cb63-3"><a></a>areas_ha</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.007853982 0.011309734 0.015393804 0.020106193 0.025446900</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section class="slide level2">
-
-<h4 id="usando-purrrmap">Usando <code>purrr::map</code>:</h4>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">library</span>(purrr)</span>
-<span id="cb50-2"><a></a>species_means <span class="ot">&lt;-</span> <span class="fu">map</span>(<span class="fu">unique</span>(iris<span class="sc">$</span>Species), <span class="sc">~</span> <span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> .x]))</span>
-<span id="cb50-3"><a></a><span class="fu">print</span>(species_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="ventajas-de-purrr"><strong>Ventajas de <code>purrr</code></strong>:</h3>
+<section id="purrr-2" class="slide level2">
+<h2><strong><code>purrr</code></strong></h2>
+<div class="small">
+<p><strong>Ventajas de <code>purrr</code></strong>:</p>
 <ul>
 <li>Sintaxis más compacta y legible.</li>
 <li>Integración directa con otras herramientas del tidyverse.</li>
 <li>Mejora la eficiencia para operaciones funcionales repetitivas.</li>
 </ul>
+</div>
 </section>
 <section id="comparación-general" class="slide level2">
-<h2><strong>6. Comparación General</strong></h2>
+<h2><strong>Comparación General</strong></h2>
+<div class="small">
 <table class="caption-top">
 <colgroup>
 <col style="width: 21%">
@@ -1035,6 +1205,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="conclusión" class="slide level2">
 <h2><strong>Conclusión</strong></h2>
@@ -1047,7 +1218,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <section id="alguna-duda" class="slide level2">
 <h2>¿Alguna duda?</h2>
 <ul>
-<li><a href="https://twitter.com/ajpelu"><span class="citation" data-cites="ajpelu">@ajpelu</span></a></li>
+<li><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></li>
 <li><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></li>
 </ul>
 <p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
@@ -1065,7 +1236,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <p><strong>Si usas esta presentación puedes citarla como:</strong></p>
 </div>
 <div class="callout-content">
-<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
+<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Estructuras de Control en Programación (ejemplos con R). Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
 </div>
 </div>
 </div>
