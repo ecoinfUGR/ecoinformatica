@@ -1,5 +1,6 @@
 ---
-title: "Estructuras de Control en Programación (R y Python)"
+title: "Estructuras de Control en Programación"
+subtitle: "(ejemplos con R)"
 author: 
   - name: "Antonio J. Pérez-Luque"
     orcid: 0000-0002-1747-0469
@@ -84,10 +85,11 @@ execute:
 
 ---
 
-### 2. Condicionales **simple** 
+### 2. Condicionales **simples** 
 
-::: {.panel-tabset}
-## Datos ejemplo
+::: small
+
+- Datos ejemplo
 
 ```{r}
 #| echo: false
@@ -102,14 +104,90 @@ library(tibble)
 
 pinos <- tibble(
   id = 1:10,
-  especie = c("sylvestris", "nigra", "pinaster", "sylvestris", "nigra",
-              "pinaster", "sylvestris", "nigra", "pinaster", "sylvestris"),
-  dbh_cm = c(30.5, 6.5, 7.2, 5.0, 28.3, 35.1, 7.0, 6.8, 40.0, 32.7), 
-  altura_m = c(12.5, 13.2, 10.0, 9.5, 14.0, 15.0, 8.2, 11.8, 14.5, 12.0) 
+  especie = c(
+    "sylvestris", "nigra", "pinaster",
+    "sylvestris", "nigra", "pinaster",
+    "sylvestris", "nigra", "pinaster", "sylvestris"
+  ),
+  dbh_cm = c(
+    30.5, 6.5, 7.2, 5.0, 28.3,
+    35.1, 7.0, 6.8, 40.0, 32.7
+  ),
+  altura_m = c(
+    12.5, 13.2, 10.0, 9.5, 14.0,
+    15.0, 8.2, 11.8, 14.5, 12.0
+  )
 )
 ```
+::: 
 
-## Condicional if 
+---
+
+### 2. Condicionales **simples** 
+
+
+::: small
+
+::: {.panel-tabset}
+
+## `if`
+```{r}
+arbol <- pinos[1, ]
+
+if (arbol$dbh_cm > 7.5) {
+  print(paste(
+    "El arbol ID =", arbol$id,
+    " es un adulto, y tiene un diámetro de ", arbol$dbh_cm, " cm"
+  ))
+}
+```
+
+
+## `ifelse`
+```{r}
+arbol <- pinos[2, ]
+
+if (arbol$dbh_cm > 7.5) {
+  print(paste("El arbol ID =", arbol$id,
+    "es un adulto, y tiene un diámetro de", arbol$dbh_cm, " cm",
+    sep = " "
+  ))
+} else {
+  print(
+    paste(
+      "El arbol ID =", arbol$id,
+      "es un juvenil, y tiene un diámetro de", arbol$dbh_cm, " cm"
+    ),
+    sep = " "
+  )
+}
+```
+
+
+## `switch`
+
+```{r}
+sp <- "sylvestris" 
+
+switch (sp,
+  "nigra" = {
+    n <- nrow(subset(pinos, especie == sp))
+    paste("Existen", n, "individuos de P.", sp)
+  },
+  "sylvestris" = {
+    n <- nrow(subset(pinos, especie == sp))
+    paste("Existen", n, "individuos de P.", sp)
+  },
+  "pinaster" = {
+    n <- nrow(subset(pinos, especie == sp))
+    paste("Existen", n, "individuos de P.", sp)
+  }
+)
+
+```
+
+
+## `if` (otro ejemplo)
 
 ```{r}
 pino1 <- pinos[1, ]
@@ -126,6 +204,8 @@ if (pino1$dbh_cm > 7.5) {
   ))
 }
 ```
+
+::: 
 
 ::: 
 
@@ -212,8 +292,7 @@ for (i in pinares$radio_m) {
 
 --- 
 
-## Uso de bucles 
-### **¿Qué son los bucles en programación?**
+## 3. Estructuras de iteración (bucles) 
 
 - Son secuencias código que se ejecutan repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse
 
@@ -525,10 +604,8 @@ Esta práctia sirve para introducir concepto de bucle con entrada de diferentes 
 - Bucles anidados 
 
 
-## **2. `while` Loop: Repetición Condicional**
+## **`while` Loop: Repetición Condicional**
 Ejecuta un bloque de código mientras una condición sea verdadera
-
-
 
 ```{r}
 radios <- pinares$radio_m 
@@ -603,68 +680,148 @@ bosques
 
 ::: 
 
-## **3. `repeat` Loop: Repetición Indefinida**
+## `repeat` Loop: Repetición Indefinida
 
-### **¿Qué es?**
+::: small
+
 - Ejecuta un bloque de código indefinidamente hasta que se usa `break`.
 
-### **Ejemplo**:
-```r
-i <- 1
-repeat {
-  print(mean(iris$Petal.Length[iris$Species == unique(iris$Species)[i]]))
+**Ejemplo**: obtener el dbh medio de los 5 individuos mas grandes
+
+```{r}
+pinos_ordenados <- pinos[order(pinos$dbh_cm, decreasing = TRUE), ]
+
+i <- 1 # contador
+promedio <- 0 # variable donde guardar 
+  
+repeat { 
+  # promedio parcial (usando los primeros i pinos más grandes)
+  promedio <- mean(pinos_ordenados$dbh_cm[1:i])
+  
+  # Verificar si hemos procesado más de 5 pinos
+  if (i > 5) {
+    print(paste("Promedio de dbh_cm de los 5 pinos más grandes:", promedio))
+    break
+  }
+  # Avanzar al siguiente pino
   i <- i + 1
-  if (i > 3) break
 }
+
 ```
 
-## **4. Alternativas Vectorizadas (`apply`, `tapply`)**
+::: 
 
-### **¿Qué son?**
-- Métodos eficientes y vectorizados para realizar operaciones en matrices o listas.
+--- 
 
-### **Ejemplo**:
-```r
-tapply(iris$Sepal.Width, iris$Species, mean)
+**Alternativas Vectorizadas (apply, sapply, tapply)**
+
+::: small 
+
+- Herramientas para aplicar funciones a estructuras de datos, pero cada una tiene su uso específico dependiendo de la estructura y el tipo de operación deseada. 
+
+- `apply`: aplica una función a las filas o columnas de una matriz o array.
+- `sapply`: aplica una función a cada elemento de una lista o vector y simplifica automáticamente la salida al formato más compacto posible (vector, matriz o lista).
+- `tapply`: aplica una función a los subconjuntos de un vector, definidos por un factor o factores.
+
+::: 
+
+--- 
+
+**Alternativas Vectorizadas (apply, sapply, tapply)**
+
+::: small
+
+::: {.panel-tabset}
+### `apply`
+
+```{r}
+# Calcular media de cada columna numérica
+d <- as.matrix(pinos[, c("dbh_cm", "altura_m")])
+  
+apply(d, 2, mean)
 ```
 
-### **Ventajas**:
+### `sapply`
+
+```{r}
+# Identificar columnas numéricas
+sapply(pinos, is.numeric)
+```
+
+### `tapply`
+
+```{r}
+# Promedio de dbh por especie 
+tapply(pinos$dbh_cm, pinos$especie, mean)
+```
+
+::: 
+
+**Ventajas**:
+
 - Más rápidas y concisas que los bucles tradicionales.
 - Mejor adaptadas para trabajar con grandes volúmenes de datos.
 
+::: 
+
 ---
 
-## **5. Comparación con `purrr`**
+## **`purrr`**
 
-### **¿Qué es `purrr`?**
+::: small
+
+**¿Qué es `purrr`?**
+
 - `purrr` es un paquete del ecosistema tidyverse que facilita la programación funcional.
 
-### **Ejemplo Comparativo**
-#### Usando un bucle `for`:
-```r
-species_means <- numeric()
-for (species in unique(iris$Species)) {
-  species_means <- c(species_means, mean(iris$Sepal.Length[iris$Species == species]))
+**Ejemplo Comparativo**
+
+::: {.panel-tabset}
+
+### for
+```{r}
+areas_ha <- vector(mode = "numeric", length = length(radios))
+  
+for (i in 1:length(radios)) {
+  area <- pi * radios[i]^2
+  area_ha <- area / 10000
+  areas_ha[i] <- area_ha
 }
-print(species_means)
+
+areas_ha
 ```
+
+### purrr 
+
+```{r}
+library(purrr)
+areas_ha <- map_dbl(radios, ~ pi * (.x^2) / 10000)
+areas_ha
+```
+
+:::
+
+:::
+
 --- 
 
-#### Usando `purrr::map`:
-```r
-library(purrr)
-species_means <- map(unique(iris$Species), ~ mean(iris$Sepal.Length[iris$Species == .x]))
-print(species_means)
-```
+## **`purrr`**
 
-### **Ventajas de `purrr`**:
+::: small 
+
+**Ventajas de `purrr`**:
+
 - Sintaxis más compacta y legible.
 - Integración directa con otras herramientas del tidyverse.
 - Mejora la eficiencia para operaciones funcionales repetitivas.
 
+:::
+
 ---
 
-## **6. Comparación General**
+## **Comparación General**
+
+::: small
 
 | Tipo de Bucle     | Ventajas                          | Desventajas                       |
 |--------------------|-----------------------------------|------------------------------------|
@@ -674,6 +831,8 @@ print(species_means)
 | `apply`/`tapply`  | Altamente eficiente y compacto    | Menos intuitivo para principiantes|
 | `purrr::map`      | Sintaxis legible y funcional      | Requiere instalación adicional    |
 
+
+::: 
 ---
 
 ## **Conclusión**
@@ -685,7 +844,7 @@ print(species_means)
 
 ## ¿Alguna duda?
 
-- [@ajpelu](https://twitter.com/ajpelu)
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
 - [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
 
 
@@ -696,5 +855,5 @@ print(species_means)
 
 ::: {.callout-tip}
 ## Si usas esta presentación puedes citarla como:
-<small>**Pérez-Luque, A.J. **(2025). Búsqueda de Datos primarios de Biodiversidad. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+<small>**Pérez-Luque, A.J. **(2025). Estructuras de Control en Programación (ejemplos con R). Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
 :::
