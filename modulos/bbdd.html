@@ -98,9 +98,9 @@ div.csl-indent {
     }
 
     const options = {
-      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -279,6 +279,17 @@ Fecha
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1738540800000" data-listing-file-modified-sort="1737029202487" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Bases de Datps" data-listing-filename-sort="bbdd.qmd">
+<td>
+<span class="listing-sesion">1</span>
+</td>
+<td>
+<a href="../sesiones/bbdd/bbdd.html" class="title listing-title">Bases de Datps</a>
+</td>
+<td>
+<span class="listing-date">Mon, Feb 03</span>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
