@@ -1,12 +1,14 @@
 ---
 title: "Sistemas de Información Geográfica"
-author: "[María Suárez-Muñoz](equipo/suarez_munoz), [Javier Martínez-López](equipo/martinez_lopez), [Antonio J. Pérez-Luque](equipo/perez_luque)"
+author: "María Suárez Muñoz"
 date: ""
-modulo_order: 4
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/sig/*.qmd
+      - ../sesiones/sig/sig_presentacion_20241202.pdf # María, 23/01, 24/01, 28/01
+      - ../sesiones/sig/sig_practica_qgis.qmd # María, 23/01, 24/01, 28/01 
+      # ... Antonio (7/02)
+      - ../sesiones/sig/clusterizacion.qmd # (7/02)
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"
@@ -24,15 +26,43 @@ nocite: |
   @*
 ---
 
-# Sesiones 
+# Sesiones
 
 ::: {#sesiones}
 :::
 
-# Ejercicios prácticos 
+# Entregable: mapa base
 
-## Recursos 
+## Objetivo
 
+Caracterizar la zona con la que vas a trabajar en el proyecto de la asignatura. Con caracterización nos referimos a uno o varios mapas acompañados de un pequeño texto que describa la zona. Piensa en qué información es relevante para tu proyecto (características de la vegetación, factores abióticos, elementos de interés...), cómo puedes mostrarla y qué necesitas describir y explicar para que yo comprenda qué me quieres decir.
 
-# Bibliografía complementaria 
+## Aspectos a valorar
 
+-   Claridad en la información: ¿las capas tienen nombres y leyendas claros e inequívocos?
+
+-   Relevancia de la información mostrada en el mapa: ¿las capas utilizadas son útiles para el caso de estudio propuesto?
+
+-   Aplicación de operaciones: ¿se han realizado operaciones entre capas para obtener nueva información? ¿se han combinado distintas fuentes de información?
+
+-   Reproducibilidad: el mapa se entrega acompañado de un proyecto de qGIS y las respectivas capas de información, lo que permite reproducir el mapa.
+
+-   Expresión escrita: el texto que acompaña al mapa es claro y permite comprender el mapa en mayor detalle.
+
+## Evaluación
+
+La entrega inicial del mapa se hará de manera individual, y como en el caso anterior será devuelta con comentarios y sugerencias que permitan seguir mejorando el mapa. Tras ello se podrá realizar una segunda entrega individual o incluirla en el trabajo final en grupo.
+
+# Recursos
+
+-   [Why all world maps are wrong](https://www.youtube.com/watch?v=kIID5FDi2JQ)
+
+-   [GIS Coordinate Reference Systems](https://www.youtube.com/watch?v=WWp1k0SlMUU)
+
+-   [Spatial Reference](https://spatialreference.org/)
+
+-   [QGIS Training Manual](https://docs.qgis.org/3.34/en/docs/training_manual/index.html)
+
+-   [Visor REDIAM](https://portalrediam.cica.es/VisorRediam/)
+
+-   [Área de descarga de información ambiental en Andalucía](https://portalrediam.cica.es/descargas?path=%2F)
