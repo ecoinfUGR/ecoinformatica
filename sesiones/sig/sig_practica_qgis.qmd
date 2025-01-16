@@ -57,7 +57,7 @@ Al configurar el sistema de referencia del proyecto estamos diciéndole a qGIS q
 
 La información vectorial puede almacenarse en distintos tipos de archivos. Algunos de los más comunes son los archivos shape y GeoPackage. La diferencia entre ellos es que en los archivos shape el formato de los archivos es privado, mientras que en los GeoPackage son datos abiertos. Además, los archivos shape en realidad se componen de un conjunto de archivos (.shp, .cpg, .dbf, .prj,  .shx) que deben ir juntos y con el mismo nombre para ser leídos correctamente. Por su parte, los archivos GeoPackage contienen toda la información en un sólo archivo (.gpkg). 
 
-Cargaremos las capas vectoriales *red_viaria.shp*, *incendio_lanjaron_perimetro_23030.shp* y *mucva_multi_23030.gpkg*.
+Cargaremos las capas vectoriales *red_viaria.shp*, *incendio_lanjaron_perimetro_23030.shp* y *poligonos.gpkg*.
 
 ![](images/load_vect_layer.png)
 
@@ -85,7 +85,7 @@ Para crear la conexión al servidor: **Add WMS/WMTS Layer... → New**
 
 Para cargar la capa: **Add WMS/WMTS Layer... → Seleccionar capa → Connect → Seleccionar subcapa → Add** 
 
-Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), que además tiene un [visor web](https://portalrediam.cica.es/VisorRediam/) que permite explorar las capas disponibles.
+Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), de la que ya hablaremos más adelante. A nivel nacional el Ministerio para la Transición Ecológical y el Reto Demográfico también ofrece algunos recursos ((ver aquí)[https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad.html]).
 
 ### Modificar simbología de las capas
 
@@ -149,10 +149,6 @@ El cálculo de geometrías sobre distinto tipo de capas vectoriales nos reporta 
 
 **CUIDADO:** una vez calculadas las geometrías de una capa éstas se incorporan a los atributos de la capa y a partir de entonces `qGIS` *se olvida* de lo que son. Es decir, pasan a ser un atributo estátito de cada elemento y si realizamos operaciones con esa capa que arrastren esos atributos éstos no se actualizarán. 
 
-### Calcular pendiente y aspecto
-
-Por su parte, algunas operaciones básicas al trabajar con capas de elevación son el cálculo la pendiente (**Raster → Analysis → Slope...**) y el aspecto (**Raster → Analysis → Aspect...**), que aporta la integración de `qGIS` y GDAL.
-
 ### Seleccionar elementos vectoriales
 
 En algunas ocasiones nos interesa seleccionar un subconjunto de elementos de una capa vectorial (puntos dentro de un polígono, líneas o polígonos dentro de un polígono mayor...). Un ejemplo sería generar una capa con la red de carretera que se ha visto afectada por el incendio, y que constituyen las principales vías de acceso a la zona.
@@ -188,6 +184,12 @@ Cuando necesitamos recortar una capa ráster podemos hacerlo de varias maneras: 
 **Ojo** la extensión no tiene por qué corresponder con la superficie que visualizamos: un ráster puede tener celdas sin valor que computarán dentro de su extensión y la extensión de una capa vectorial se corresponderá con el recuadro formado por sus coordenadas máximas y mínimas, no por el mínimo polígono que contenga todos sus elementos. 
 
 Otra opción es utilizar una capa vectorial (de polígono) como *máscara.* En este caso sí extraeremos sólo la porción del ráster contenida dentro del polígono, y no la correspondiente a su extensión. Para esto haremos: **Raster → Extraction → Clip Raster by Mask Layer**
+
+¿Te da un error? Prueba a detallarle los CRS de entrada y salida...
+
+### Calcular pendiente y aspecto
+
+Por su parte, algunas operaciones básicas al trabajar con capas de elevación son el cálculo la pendiente (**Raster → Analysis → Slope...**) y el aspecto (**Raster → Analysis → Aspect...**), que aporta la integración de `qGIS` y GDAL.
 
 ### Cálculos aritméticos con capas ráster
 
@@ -229,6 +231,25 @@ Encontrar el error puede ser complicado cuando se trata de capas con muchos pol�
 
 La causa de los errores puede ser diversa y, por tanto, la solución puede depender en cada caso, pero al menos ya tenemos ubicado el problema ;)
 
+### Rasterizar
+
+La información vectorial puede ser poco adecuada para realizar algunos cálculos o análisis. En estos casos resulta útil transformar la capa vectorial a una capa ráster. Sin embargo, debemos considerar cuidadosamente qué estamos haciendo al transformar esta información.
+
+*Rasterizar* implica crear una capa ráster - donde cada celda tiene un único valor - a partir de una capa vectorial - es decir, una capa de puntos, líneas o polígonos donde cada elemento tiene una serie de *atributos*. Por lo tanto, al rasterizar tendremos que decidir qué atributo es el que nos interesa.
+
+Veamos un ejemplo. Vamos a rasterizar el mapa de cobertura que cargamos anteriormente, el *mucva_multi_23030.gpkg*. Para eso hacemos **Raster → Conversion → Rasterize (Vector to Raster)...** y rellenamos los parámetros correspondientes:
+
+![](images/raster_mask.png)
+
+1. Atributo a rasterizar: U03
+2. Unidades: georreferenciadas
+3. Resolution: por ejemplo, 100 x 100 m
+4. Extensión: la de la capa
+
+¿Qué hemos obtenido?
+
+¿Qué pasaría si en vez de usar esta capa usáramos el porcentaje de cabida cubierta arbolada del MFE?
+
 ### Poligonizar
 
 Otras veces nos resulta útil transformar un ráster a una capa vectorial... **Raster → Conversion → Polygonize (Raster to Vector)...**
@@ -245,7 +266,13 @@ Imaginemos, por ejemplo, que queremos calcular la superficie quemada de nuestra 
 
 Otras veces nos resulta útil combinar capas con el objetivo de crear huecos o eliminar zonas que no nos interesan. Para ello podemos usar **Difference** (**Vector → Geoprocessing Tools...**). 
 
-Esta función nos resultará útil si queremos generar una *antimáscara*, por ejemplo para sombre a la zona exterior a mi zona de estudio en un mapa.
+Esta función nos resultará útil si queremos generar una *antimáscara*, por ejemplo para sombrear la zona exterior a la zona de estudio en un mapa.
+
+### Alinear capas ráster
+
+Comparemos las capas ráster que tenemos hasta ahora: temperaturas, precipitación, incidencia, elevación, pendiente, aspecto, vegetación... ¿Qué diferencias hay entre ellas?
+
+Recordemos, un ráster es una capa espacial donde la información se almacena en celdas, normalmente cuadradas. Con esta informción, ¿qué características debemos considerar para describir un ráster?
 
 ### Vincular información a una capa
 

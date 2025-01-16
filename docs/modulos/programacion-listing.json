@@ -1,0 +1,9 @@
+{
+  "listing": "/modulos/programacion.html",
+  "items": [
+    "/sesiones/programacion/intro_R_jml.html",
+    "/sesiones/programacion/piping.html",
+    "/sesiones/programacion/secuencias_control.html",
+    "/sesiones/programacion/tidy_data.html"
+  ]
+}

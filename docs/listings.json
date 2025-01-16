@@ -24,15 +24,17 @@
       "/modulos/introduccion.html",
       "/modulos/reproducibilidad.html",
       "/modulos/programacion.html",
-      "/modulos/sig.html",
       "/modulos/bbdd.html",
       "/modulos/teledeteccion.html",
-      "/modulos/datos_primarios.html"
+      "/modulos/datos_primarios.html",
+      "/modulos/sig.html"
     ]
   },
   {
     "listing": "/modulos/bbdd.html",
-    "items": []
+    "items": [
+      "/sesiones/bbdd/bbdd.html"
+    ]
   },
   {
     "listing": "/modulos/trabajo_grupal.html",
@@ -66,7 +68,7 @@
   {
     "listing": "/modulos/sig.html",
     "items": [
-      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html"
+      "/sesiones/sig/sig_practica_qgis.html"
     ]
   },
   {
