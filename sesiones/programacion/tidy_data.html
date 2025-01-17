@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ee917d3ac312f7388ce82e656a56ad5d.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -166,6 +231,410 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </figure>
 </div>
 </section>
+<section>
+<section id="data.frame-tibble" class="title-slide slide level1 center">
+<h1><code>data.frame</code> &amp; <code>tibble</code></h1>
+
+</section>
+<section id="data.frame" class="slide level2">
+<h2><code>data.frame</code></h2>
+<div class="small">
+<ul>
+<li>Es la estructura más común para manejar datos tabulares en R</li>
+<li>Funcionan como una tabla: filas (observaciones) y columnas (variables)</li>
+<li>Introducidos con el lenguaje base de R</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb1-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb1-4"><a></a>)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>df </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  x y
+1 1 A
+2 2 B
+3 3 C</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="tibble" class="slide level2">
+<h2><code>tibble</code></h2>
+<div class="small">
+<ul>
+<li>Versión mejorada de <code>data.frame</code> incluida en el pkg <strong>tibble</strong> (<strong>tidyverse</strong>).</li>
+<li>Diseñados para ser más consistentes y fáciles de usar.</li>
+<li>Permite manejar variables <em>no-sintácticas</em> (a diferencia de R-base).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-2"><a></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-3"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb3-4"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb3-5"><a></a>  <span class="st">`</span><span class="at">x al cuadrado</span><span class="st">`</span> <span class="ot">=</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-6"><a></a>) </span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>tb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+      x y     `x al cuadrado`
+  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+1     1 A                   1
+2     2 B                   4
+3     3 C                   9</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="diferencias-impresión-de-datos">Diferencias: impresión de datos</h3>
+<div class="small">
+<ul>
+<li><code>data.frame</code>:
+<ul>
+<li>Imprimen <strong>todas las filas y columnas</strong> por defecto.</li>
+<li>Pueden ser difíciles de leer si el conjunto de datos es grande.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  x y
+1 1 A
+2 2 B
+3 3 C</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="diferencias-impresión-de-datos-1">Diferencias: impresión de datos</h3>
+<div class="small">
+<ul>
+<li><code>tibble</code>:
+<ul>
+<li>Imprimen un <strong>resumen compacto</strong>: muestran las primeras 10 filas y columnas que caben en la consola (se puede modificar, ver <a href="https://es.r4ds.hadley.nz/10-tibble.html#tibbles-vs.-data.frame">esto</a>).</li>
+<li>Formato mas amigable para explorar grandes volúmenes de datos.</li>
+<li>Imprimen también la <code>str()</code> de los datos</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">print</span>(tb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+      x y     `x al cuadrado`
+  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+1     1 A                   1
+2     2 B                   4
+3     3 C                   9</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="diferencias-manejo-de-tipo-de-datos">Diferencias: manejo de tipo de datos</h3>
+<div class="small">
+<ul>
+<li><p><code>data.frame</code>: las columnas de tipo <strong>carácter</strong> se convierten automáticamente a factores, a menos que especifiques <code>stringsAsFactors = FALSE</code>.</p></li>
+<li><p><code>tibble</code>: nunca convierten caracteres a factores de forma automática.</p></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">dataframe</a></li><li><a href="#tabset-1-2">tibble</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb9-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb9-4"><a></a>)</span>
+<span id="cb9-5"><a></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   3 obs. of  2 variables:
+ $ x: num  1 2 3
+ $ y: chr  "A" "B" "C"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb11-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb11-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb11-4"><a></a>)</span>
+<span id="cb11-5"><a></a><span class="fu">str</span>(tb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [3 × 2] (S3: tbl_df/tbl/data.frame)
+ $ x: num [1:3] 1 2 3
+ $ y: chr [1:3] "A" "B" "C"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data.frame-vs.-tibble" class="slide level2">
+<h2><code>data.frame</code> vs.&nbsp;<code>tibble</code></h2>
+<ul>
+<li><strong>data.frame</strong>: Útiles en scripts básicos o cuando no necesitas integrarte al <strong>tidyverse</strong>.</li>
+<li><strong>tibble</strong>: Más consistentes, ideales para trabajar con el <strong>tidyverse</strong> y explorar datos.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Para usar tibble tienes que cargar el paquete <a href="https://tibble.tidyverse.org/reference/tibble-package.html">tibble</a> que viene por defecto con <a href="https://www.tidyverse.org/packages/">tidyverse</a></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="generar-tibble" class="title-slide slide level1 center">
+<h1>Generar <code>tibble</code></h1>
+
+</section>
+<section class="slide level2">
+
+<div class="small">
+<p><strong>Transformar <code>data.frame</code> a <code>tibble</code></strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>dft <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span>
+<span id="cb13-2"><a></a>dft</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+      x y    
+  &lt;dbl&gt; &lt;chr&gt;
+1     1 A    
+2     2 B    
+3     3 C    </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="small">
+<p><strong>Crear <code>tibble</code> directamente</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>arboles <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-2"><a></a>  <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span>, <span class="st">"Quercus ilex"</span>, </span>
+<span id="cb15-3"><a></a>              <span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span>),</span>
+<span id="cb15-4"><a></a>  <span class="at">altura_m =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">18</span>),</span>
+<span id="cb15-5"><a></a>  <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">45</span>),</span>
+<span id="cb15-6"><a></a>  <span class="at">site =</span> <span class="fu">c</span>(<span class="st">"plot_A"</span>, <span class="st">"plot_B"</span>, <span class="st">"plot_C"</span>, <span class="st">"plot_A"</span>, <span class="st">"plot_B"</span>)</span>
+<span id="cb15-7"><a></a>)</span>
+<span id="cb15-8"><a></a></span>
+<span id="cb15-9"><a></a>arboles </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  especie           altura_m dbh_cm site  
+  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; 
+1 Pinus halepensis        15     30 plot_A
+2 Quercus ilex             8     40 plot_B
+3 Quercus ilex            10     35 plot_C
+4 Pinus pinaster          12     25 plot_A
+5 Quercus pyrenaica       18     45 plot_B</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="small">
+<p><strong>Crear <code>tibble</code> transpuesto (<code>t</code></strong><code>r</code><strong><code>ibble</code>)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>arboles <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb17-2"><a></a>  <span class="sc">~</span>especie,            <span class="sc">~</span>altura_m, <span class="sc">~</span>dbh_cm, <span class="sc">~</span>site,</span>
+<span id="cb17-3"><a></a>  <span class="st">"Pinus halepensis"</span>,   <span class="dv">15</span>,        <span class="dv">30</span>,      <span class="st">"plot_A"</span>,</span>
+<span id="cb17-4"><a></a>  <span class="st">"Quercus ilex"</span>,       <span class="dv">8</span>,         <span class="dv">40</span>,      <span class="st">"plot_B"</span>,</span>
+<span id="cb17-5"><a></a>  <span class="st">"Quercus ilex"</span>,       <span class="dv">10</span>,        <span class="dv">35</span>,      <span class="st">"plot_C"</span>,</span>
+<span id="cb17-6"><a></a>  <span class="st">"Pinus pinaster"</span>,     <span class="dv">12</span>,        <span class="dv">25</span>,      <span class="st">"plot_A"</span>,</span>
+<span id="cb17-7"><a></a>  <span class="st">"Quercus pyrenaica"</span>,  <span class="dv">18</span>,        <span class="dv">45</span>,      <span class="st">"plot_B"</span></span>
+<span id="cb17-8"><a></a>)</span>
+<span id="cb17-9"><a></a>arboles </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  especie           altura_m dbh_cm site  
+  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; 
+1 Pinus halepensis        15     30 plot_A
+2 Quercus ilex             8     40 plot_B
+3 Quercus ilex            10     35 plot_C
+4 Pinus pinaster          12     25 plot_A
+5 Quercus pyrenaica       18     45 plot_B</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2" data-footer="false">
+<h2></h2>
+<div class="small">
+<p><strong>Crear <code>tibble</code> a partir de listas complejas (<code>enframe</code>)</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Crea tibble</a></li><li><a href="#tabset-2-2">Acceso a datos</a></li><li><a href="#tabset-2-3">Acceso a datos (II)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>lista_compleja <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb19-2"><a></a>  <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb19-3"><a></a>  <span class="at">letras =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb19-4"><a></a>  <span class="at">datos =</span> <span class="fu">list</span>(</span>
+<span id="cb19-5"><a></a>    <span class="at">tipo =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>),</span>
+<span id="cb19-6"><a></a>    <span class="at">valores =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb19-7"><a></a>  )</span>
+<span id="cb19-8"><a></a>)</span>
+<span id="cb19-9"><a></a></span>
+<span id="cb19-10"><a></a>lc <span class="ot">&lt;-</span> <span class="fu">enframe</span>(lista_compleja)</span>
+<span id="cb19-11"><a></a>lc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name    value           
+  &lt;chr&gt;   &lt;list&gt;          
+1 numeros &lt;dbl [3]&gt;       
+2 letras  &lt;chr [3]&gt;       
+3 datos   &lt;named list [2]&gt;</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>lc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name    value           
+  &lt;chr&gt;   &lt;list&gt;          
+1 numeros &lt;dbl [3]&gt;       
+2 letras  &lt;chr [3]&gt;       
+3 datos   &lt;named list [2]&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>lc[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeros" "letras"  "datos"  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>lc[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1 2 3
+
+[[2]]
+[1] "A" "B" "C"
+
+[[3]]
+[[3]]$tipo
+[1] "x" "y" "z"
+
+[[3]]$valores
+[1] 10 20 30</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "A" "B" "C"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[[1]]$tipo
+[1] "x" "y" "z"
+
+[[1]]$valores
+[1] 10 20 30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">as.data.frame</span>(lc[[<span class="dv">2</span>]][<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  tipo valores
+1    x      10
+2    y      20
+3    z      30</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-footer="false">
+<h2></h2>
+<div class="small">
+<p><strong>Crear <code>tibble</code> a partir de listas complejas (<code>enframe</code>) (II)</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Datos forestales</a></li><li><a href="#tabset-3-2">Crea tibble</a></li><li><a href="#tabset-3-3">Desagregar</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>datos_forestales <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb35-2"><a></a>  <span class="at">parcela_1 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-3"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span>),</span>
+<span id="cb35-4"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb35-5"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>)</span>
+<span id="cb35-6"><a></a>  ),</span>
+<span id="cb35-7"><a></a>  <span class="at">parcela_2 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-8"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span>),</span>
+<span id="cb35-9"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">8</span>),</span>
+<span id="cb35-10"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">35</span>)</span>
+<span id="cb35-11"><a></a>  ),</span>
+<span id="cb35-12"><a></a>  <span class="at">parcela_3 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-13"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus sylvestris"</span>),</span>
+<span id="cb35-14"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">12</span>),</span>
+<span id="cb35-15"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">40</span>)</span>
+<span id="cb35-16"><a></a>  )</span>
+<span id="cb35-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>d <span class="ot">&lt;-</span> <span class="fu">enframe</span>(datos_forestales, <span class="at">name =</span> <span class="st">"parcela"</span>, <span class="at">value =</span> <span class="st">"contenido"</span>)</span>
+<span id="cb36-2"><a></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  parcela   contenido       
+  &lt;chr&gt;     &lt;list&gt;          
+1 parcela_1 &lt;named list [3]&gt;
+2 parcela_2 &lt;named list [3]&gt;
+3 parcela_3 &lt;named list [3]&gt;</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb38-2"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a></a>  <span class="fu">unnest_wider</span>(contenido) <span class="sc">|&gt;</span> </span>
+<span id="cb38-4"><a></a>  <span class="fu">unnest</span>(<span class="fu">c</span>(especie, n_ind, dbh_cm)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  parcela   especie           n_ind dbh_cm
+  &lt;chr&gt;     &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;
+1 parcela_1 Pinus halepensis     10     25
+2 parcela_1 Quercus ilex          5     30
+3 parcela_2 Pinus pinaster       15     20
+4 parcela_2 Quercus pyrenaica     8     35
+5 parcela_3 Pinus sylvestris     12     40</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="alguna-duda" class="slide level2">
 <h2>¿Alguna duda?</h2>
 <ul>
@@ -187,13 +656,13 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <p><strong>Si usas esta presentación puedes citarla como:</strong></p>
 </div>
 <div class="callout-content">
-<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
+<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Tidy data. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
 </div>
 </div>
 </div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/logo-ugr.png" class="slide-logo"></p>
@@ -410,6 +879,44 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
