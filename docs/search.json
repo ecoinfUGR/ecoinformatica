@@ -502,7 +502,7 @@
     "href": "modulos/sig.html",
     "title": "Sistemas de Información Geográfica",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nReproducibilidad en Ciencia\n\n\nWed, Jan 08\n\n\n\n\n2\n\n\nDocumentos Reproducibles con Rmarkdown (slides)\n\n\nThu, Jan 09\n\n\n\n\n3\n\n\nDocumentos Reproducibles con Rmarkdown\n\n\nThu, Jan 09\n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\nx\n\n\nCreación de un mapa de biodiversidad de Sierra Nevada\n\n\nInvalid Date\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/sig.html#recursos",
@@ -1594,7 +1594,7 @@
     "href": "sesiones/programacion/tidy_data.html#alguna-duda",
     "title": "Tidy data",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Tidy data. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "sesiones/introprog/intro_R_jml.html",
@@ -2204,5 +2204,173 @@
     "title": "Estructuras de Control en Programación",
     "section": "purrr",
     "text": "purrr\n\nVentajas de purrr:\n\nSintaxis más compacta y legible.\nIntegración directa con otras herramientas del tidyverse.\nMejora la eficiencia para operaciones funcionales repetitivas."
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#data.frame-y-tibble",
+    "href": "sesiones/programacion/tidy_data.html#data.frame-y-tibble",
+    "title": "Tidy data",
+    "section": "\ndata.frame y tibble\n",
+    "text": "data.frame y tibble"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#qué-son-los-tibbles",
+    "href": "sesiones/programacion/tidy_data.html#qué-son-los-tibbles",
+    "title": "Tidy data",
+    "section": "¿Qué son los Tibbles?",
+    "text": "¿Qué son los Tibbles?\n\nUna versión mejorada de los Data Frames introducida por el paquete tibble.\nForma parte del tidyverse.\nDiseñados para ser más consistentes y fáciles de usar.\n\nlibrary(tibble)\ntb &lt;- tibble(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manejo-de-impresión",
+    "href": "sesiones/programacion/tidy_data.html#manejo-de-impresión",
+    "title": "Tidy data",
+    "section": "Manejo de impresión",
+    "text": "Manejo de impresión\nData Frames\n\nImprimen todas las filas y columnas por defecto.\nPueden ser difíciles de leer si el conjunto de datos es grande.\n\nprint(df)\nTibbles\n\nImprimen un resumen compacto: muestran las primeras 10 filas y columnas que caben en la consola.\nMás amigables para explorar datos grandes.\n\nprint(tb)"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manejo-de-tipos-de-datos",
+    "href": "sesiones/programacion/tidy_data.html#manejo-de-tipos-de-datos",
+    "title": "Tidy data",
+    "section": "Manejo de Tipos de Datos",
+    "text": "Manejo de Tipos de Datos\nData Frames\n\nLas columnas de tipo carácter se convierten automáticamente a factores, a menos que especifiques stringsAsFactors = FALSE.\n\ndf &lt;- data.frame(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(df)\nTibbles\n\nNunca convierten caracteres a factores de forma automática.\n\ntb &lt;- tibble(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(tb)"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#acceso-a-las-columnas",
+    "href": "sesiones/programacion/tidy_data.html#acceso-a-las-columnas",
+    "title": "Tidy data",
+    "section": "Acceso a las columnas",
+    "text": "Acceso a las columnas\nData Frames\n\nPermiten el acceso a columnas con $ y [].\nPueden devolver un vector o un data frame, dependiendo del índice.\n\ndf[1]   # Devuelve un data frame\ndf[, 1] # Devuelve un vector\nTibbles\n\nConsistentes: siempre devuelven un tibble, incluso cuando seleccionas una sola columna.\n\ntb[1]   # Devuelve un tibble\ntb[, 1] # Devuelve un tibble\ntb$columna1 # Devuelve un vector"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#data.frame",
+    "href": "sesiones/programacion/tidy_data.html#data.frame",
+    "title": "Tidy data",
+    "section": "data.frame",
+    "text": "data.frame\n\n\nEs la estructura más común para manejar datos tabulares en R\nFuncionan como una tabla: filas (observaciones) y columnas (variables)\nIntroducidos con el lenguaje base de R\n\n\ndf &lt;- data.frame(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\")\n)\n\ndf \n\n  x y\n1 1 A\n2 2 B\n3 3 C"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#tibble",
+    "href": "sesiones/programacion/tidy_data.html#tibble",
+    "title": "Tidy data",
+    "section": "tibble",
+    "text": "tibble\n\n\nVersión mejorada de data.frame incluida en el pkg tibble (tidyverse).\nDiseñados para ser más consistentes y fáciles de usar.\nPermite manejar variables no-sintácticas (a diferencia de R-base).\n\n\nlibrary(tibble)\ntb &lt;- tibble(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\"),\n  `x al cuadrado` = x^2\n) \n\ntb\n\n# A tibble: 3 × 3\n      x y     `x al cuadrado`\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1     1 A                   1\n2     2 B                   4\n3     3 C                   9"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#diferencias-principales",
+    "href": "sesiones/programacion/tidy_data.html#diferencias-principales",
+    "title": "Tidy data",
+    "section": "Diferencias principales",
+    "text": "Diferencias principales\nManejo de tipo de datos\n\ndata.frame: las columnas de tipo carácter se convierten automáticamente a factores, a menos que especifiques stringsAsFactors = FALSE.\n\n\ndf &lt;- data.frame(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(df)\n\n'data.frame':   3 obs. of  2 variables:\n $ columna1: num  1 2 3\n $ columna2: chr  \"A\" \"B\" \"C\"\n\n\n\ntibble: nunca convierten caracteres a factores de forma automática.\n\n\ntb &lt;- tibble(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(tb)\n\ntibble [3 × 2] (S3: tbl_df/tbl/data.frame)\n $ columna1: num [1:3] 1 2 3\n $ columna2: chr [1:3] \"A\" \"B\" \"C\""
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#diferencias-principales-1",
+    "href": "sesiones/programacion/tidy_data.html#diferencias-principales-1",
+    "title": "Tidy data",
+    "section": "Diferencias principales",
+    "text": "Diferencias principales\nManejo de impresión\n\ntibble:\n\nImprimen un resumen compacto: muestran las primeras 10 filas y columnas que caben en la consola.\nMás amigables para explorar datos grandes.\n\n\n\nprint(tb)"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#diferencias-principales-2",
+    "href": "sesiones/programacion/tidy_data.html#diferencias-principales-2",
+    "title": "Tidy data",
+    "section": "Diferencias principales",
+    "text": "Diferencias principales\nManejo de tipo de datos\n\ndata.frame: las columnas de tipo carácter se convierten automáticamente a factores, a menos que especifiques stringsAsFactors = FALSE.\n\n\ndf &lt;- data.frame(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(df)\n\n'data.frame':   3 obs. of  2 variables:\n $ columna1: num  1 2 3\n $ columna2: chr  \"A\" \"B\" \"C\"\n\n\n\ntibble: nunca convierten caracteres a factores de forma automática.\n\n\ntb &lt;- tibble(\n  columna1 = c(1, 2, 3),\n  columna2 = c(\"A\", \"B\", \"C\")\n)\nstr(tb)\n\ntibble [3 × 2] (S3: tbl_df/tbl/data.frame)\n $ columna1: num [1:3] 1 2 3\n $ columna2: chr [1:3] \"A\" \"B\" \"C\""
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#cuándo-usar-unotibbleodata.frame",
+    "href": "sesiones/programacion/tidy_data.html#cuándo-usar-unotibbleodata.frame",
+    "title": "Tidy data",
+    "section": "¿Cuándo usar unotibbleodata.frame`?",
+    "text": "¿Cuándo usar unotibbleodata.frame`?\n\n\n\n\n\n\n\n\nCaracterística\nData Frames\nTibbles\n\n\n\nUso en scripts básicos\n✔️\n❌\n\n\nIntegración con tidyverse\n❌\n✔️\n\n\nExploración de datos\n❌ (impresión menos práctica)\n✔️ (impresión compacta)\n\n\nConsistencia\n❌ (manejo diferente de índices)\n✔️ (mismo comportamiento)"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#data.frame-vs.-tibble",
+    "href": "sesiones/programacion/tidy_data.html#data.frame-vs.-tibble",
+    "title": "Tidy data",
+    "section": "\ndata.frame vs. tibble\n",
+    "text": "data.frame vs. tibble\n\n\n\ndata.frame: Útiles en scripts básicos o cuando no necesitas integrarte al tidyverse.\n\ntibble: Más consistentes, ideales para trabajar con el tidyverse y explorar datos.\n\n\n\n\n\n\n\nNote\n\n\nPara usar tibble tienes que cargar el paquete tibble que viene por defecto con tidyverse"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#generar-tibble",
+    "href": "sesiones/programacion/tidy_data.html#generar-tibble",
+    "title": "Tidy data",
+    "section": "Generar tibble\n",
+    "text": "Generar tibble\n\n\n\nCrear tibble\n\n\n\narboles &lt;- tibble(\n  especie = c(\"Pinus halepensis\", \"Quercus ilex\", \"Quercus ilex\", \n              \"Pinus pinaster\", \"Quercus pyrenaica\"),\n  altura_m = c(15, 8, 10, 12, 18),\n  dbh_cm = c(30, 40, 35, 25, 45),\n  site = c(\"plot_A\", \"plot_B\", \"plot_C\", \"plot_A\", \"plot_B\")\n)\n\narboles \n\n# A tibble: 5 × 4\n  especie           altura_m dbh_cm site  \n  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; \n1 Pinus halepensis        15     30 plot_A\n2 Quercus ilex             8     40 plot_B\n3 Quercus ilex            10     35 plot_C\n4 Pinus pinaster          12     25 plot_A\n5 Quercus pyrenaica       18     45 plot_B"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#alguna-duda-rstudio",
+    "href": "sesiones/programacion/tidy_data.html#alguna-duda-rstudio",
+    "title": "Tidy data",
+    "section": "¿Alguna duda? RStudio",
+    "text": "¿Alguna duda? RStudio\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#generar-tibble-1",
+    "href": "sesiones/programacion/tidy_data.html#generar-tibble-1",
+    "title": "Tidy data",
+    "section": "Generar tibble\n",
+    "text": "Generar tibble\n\n\n\nCrear un tibble transpuesto (tribble)\n\n\narboles &lt;- tribble(\n  ~especie,            ~altura_m, ~dbh_cm, ~site,\n  \"Pinus halepensis\",   15,        30,      \"plot_A\",\n  \"Quercus ilex\",       8,         40,      \"plot_B\",\n  \"Quercus ilex\",       10,        35,      \"plot_C\",\n  \"Pinus pinaster\",     12,        25,      \"plot_A\",\n  \"Quercus pyrenaica\",  18,        45,      \"plot_B\"\n)\narboles \n\n# A tibble: 5 × 4\n  especie           altura_m dbh_cm site  \n  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; \n1 Pinus halepensis        15     30 plot_A\n2 Quercus ilex             8     40 plot_B\n3 Quercus ilex            10     35 plot_C\n4 Pinus pinaster          12     25 plot_A\n5 Quercus pyrenaica       18     45 plot_B"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#generar-tibble-2",
+    "href": "sesiones/programacion/tidy_data.html#generar-tibble-2",
+    "title": "Tidy data",
+    "section": "Generar tibble\n",
+    "text": "Generar tibble\n\n\n\nCrear un tibble a partir de listas complejas (enframe)\n\n\n\nGenera tibble\nAcceso a datos\nAcceso a datos (II)\nEj. 2\nEj. 2\n\n\n\n\nlista_compleja &lt;- list(\n  numeros = c(1, 2, 3),\n  letras = c(\"A\", \"B\", \"C\"),\n  datos = list(\n    tipo = c(\"x\", \"y\", \"z\"),\n    valores = c(10, 20, 30)\n  )\n)\n\nlc &lt;- enframe(lista_compleja)\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\n\n\n\n\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\nlc[[1]]\n\n[1] \"numeros\" \"letras\"  \"datos\"  \n\nlc[[2]]\n\n[[1]]\n[1] 1 2 3\n\n[[2]]\n[1] \"A\" \"B\" \"C\"\n\n[[3]]\n[[3]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[3]]$valores\n[1] 10 20 30\n\n\n\n\n\nlc[[2]][1]\n\n[[1]]\n[1] 1 2 3\n\nlc[[2]][2]\n\n[[1]]\n[1] \"A\" \"B\" \"C\"\n\nlc[[2]][3]\n\n[[1]]\n[[1]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[1]]$valores\n[1] 10 20 30\n\n\n\n\n\ndatos_forestales &lt;- list(\n  parcela_1 = list(\n    especie = c(\"Pinus halepensis\", \"Quercus ilex\"),\n    n_ind = c(10, 5),\n    dbh_cm = c(25, 30)\n  ),\n  parcela_2 = list(\n    especie = c(\"Pinus pinaster\", \"Quercus pyrenaica\"),\n    n_ind = c(15, 8),\n    dbh_cm = c(20, 35)\n  ),\n  parcela_3 = list(\n    especie = c(\"Pinus sylvestris\"),\n    n_ind = c(12),\n    dbh_cm = c(40)\n  )\n)\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;\n\n\n\n\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#generar-tibble-3",
+    "href": "sesiones/programacion/tidy_data.html#generar-tibble-3",
+    "title": "Tidy data",
+    "section": "Generar tibble\n",
+    "text": "Generar tibble\n\n\n\nCrear un tibble a partir de listas complejas (enframe)\n\n\n\nGenera tibble\nAcceso a datos\nAcceso a datos (II)\nEj. 2\nEj. 2\n\n\n\n\nlista_compleja &lt;- list(\n  numeros = c(1, 2, 3),\n  letras = c(\"A\", \"B\", \"C\"),\n  datos = list(\n    tipo = c(\"x\", \"y\", \"z\"),\n    valores = c(10, 20, 30)\n  )\n)\n\nlc &lt;- enframe(lista_compleja)\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\n\n\n\n\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\nlc[[1]]\n\n[1] \"numeros\" \"letras\"  \"datos\"  \n\nlc[[2]]\n\n[[1]]\n[1] 1 2 3\n\n[[2]]\n[1] \"A\" \"B\" \"C\"\n\n[[3]]\n[[3]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[3]]$valores\n[1] 10 20 30\n\n\n\n\n\nlc[[2]][1]\n\n[[1]]\n[1] 1 2 3\n\nlc[[2]][2]\n\n[[1]]\n[1] \"A\" \"B\" \"C\"\n\nlc[[2]][3]\n\n[[1]]\n[[1]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[1]]$valores\n[1] 10 20 30\n\n\n\n\n\ndatos_forestales &lt;- list(\n  parcela_1 = list(\n    especie = c(\"Pinus halepensis\", \"Quercus ilex\"),\n    n_ind = c(10, 5),\n    dbh_cm = c(25, 30)\n  ),\n  parcela_2 = list(\n    especie = c(\"Pinus pinaster\", \"Quercus pyrenaica\"),\n    n_ind = c(15, 8),\n    dbh_cm = c(20, 35)\n  ),\n  parcela_3 = list(\n    especie = c(\"Pinus sylvestris\"),\n    n_ind = c(12),\n    dbh_cm = c(40)\n  )\n)\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;\n\n\n\n\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#section",
+    "href": "sesiones/programacion/tidy_data.html#section",
+    "title": "Tidy data",
+    "section": "",
+    "text": "Crear tibble a partir de listas complejas (enframe)\n\n\nCrea tibble\nAcceso a datos\nAcceso a datos (II)\n\n\n\n\nlista_compleja &lt;- list(\n  numeros = c(1, 2, 3),\n  letras = c(\"A\", \"B\", \"C\"),\n  datos = list(\n    tipo = c(\"x\", \"y\", \"z\"),\n    valores = c(10, 20, 30)\n  )\n)\n\nlc &lt;- enframe(lista_compleja)\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\n\n\n\n\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;\n\nlc[[1]]\n\n[1] \"numeros\" \"letras\"  \"datos\"  \n\nlc[[2]]\n\n[[1]]\n[1] 1 2 3\n\n[[2]]\n[1] \"A\" \"B\" \"C\"\n\n[[3]]\n[[3]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[3]]$valores\n[1] 10 20 30\n\n\n\n\n\nlc[[2]][1]\n\n[[1]]\n[1] 1 2 3\n\nlc[[2]][2]\n\n[[1]]\n[1] \"A\" \"B\" \"C\"\n\nlc[[2]][3]\n\n[[1]]\n[[1]]$tipo\n[1] \"x\" \"y\" \"z\"\n\n[[1]]$valores\n[1] 10 20 30\n\nas.data.frame(lc[[2]][3])\n\n  tipo valores\n1    x      10\n2    y      20\n3    z      30"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#section-1",
+    "href": "sesiones/programacion/tidy_data.html#section-1",
+    "title": "Tidy data",
+    "section": "",
+    "text": "Crear tibble a partir de listas complejas (enframe) (II)\n\n\nDatos forestales\nCrea tibble\nDesagregar\n\n\n\n\ndatos_forestales &lt;- list(\n  parcela_1 = list(\n    especie = c(\"Pinus halepensis\", \"Quercus ilex\"),\n    n_ind = c(10, 5),\n    dbh_cm = c(25, 30)\n  ),\n  parcela_2 = list(\n    especie = c(\"Pinus pinaster\", \"Quercus pyrenaica\"),\n    n_ind = c(15, 8),\n    dbh_cm = c(20, 35)\n  ),\n  parcela_3 = list(\n    especie = c(\"Pinus sylvestris\"),\n    n_ind = c(12),\n    dbh_cm = c(40)\n  )\n)\n\n\n\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;\n\n\n\n\n\nlibrary(tidyr)\nd |&gt; \n  unnest_wider(contenido) |&gt; \n  unnest(c(especie, n_ind, dbh_cm)) \n\n# A tibble: 5 × 4\n  parcela   especie           n_ind dbh_cm\n  &lt;chr&gt;     &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;\n1 parcela_1 Pinus halepensis     10     25\n2 parcela_1 Quercus ilex          5     30\n3 parcela_2 Pinus pinaster       15     20\n4 parcela_2 Quercus pyrenaica     8     35\n5 parcela_3 Pinus sylvestris     12     40"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_text.html",
+    "href": "sesiones/programacion/tidy_text.html",
+    "title": "Tidy data",
+    "section": "",
+    "text": "La organización de datos de forma estructurada es esencial para el análisis y la visualización. En este documento exploraremos las diferencias entre dos estructuras comunes en R: data.frame y tibble. Estas herramientas son fundamentales para trabajar de manera eficiente con datos tabulares y son pilares en la filosofía del tidyverse.\n\n\n\nSource: Julia Lowndes & Allison Horst\n\n\nPara empezar, el concepto de “tidy data” promueve una organización en la que cada variable es una columna, cada observación es una fila y cada tipo de unidad observacional forma una tabla. Esta estructura facilita el uso de herramientas analíticas y asegura consistencia.\n\n\n\nSource: Wickham & Grolemund"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_text.html#data.frame",
+    "href": "sesiones/programacion/tidy_text.html#data.frame",
+    "title": "Tidy data",
+    "section": "2.1 data.frame",
+    "text": "2.1 data.frame\nEl data.frame es la estructura más común para manejar datos tabulares en R. Fue introducida con el lenguaje base y funciona como una tabla, donde las filas representan observaciones y las columnas, variables. Esta simplicidad lo convierte en un punto de partida ideal.\n\ndf &lt;- data.frame(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\")\n)\n\ndf \n\n  x y\n1 1 A\n2 2 B\n3 3 C"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_text.html#tibble",
+    "href": "sesiones/programacion/tidy_text.html#tibble",
+    "title": "Tidy data",
+    "section": "2.2 tibble",
+    "text": "2.2 tibble\nCon el auge del tidyverse, nació el tibble, una versión mejorada del data.frame. Diseñado para ser más consistente y amigable, este formato facilita el manejo de datos complejos y variables no sintácticas. La impresión de los datos, como veremos a continuación, es un ejemplo de su diseño optimizado.\n\nlibrary(tibble)\ntb &lt;- tibble(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\"),\n  `x al cuadrado` = x^2\n) \n\ntb\n\n# A tibble: 3 × 3\n      x y     `x al cuadrado`\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1     1 A                   1\n2     2 B                   4\n3     3 C                   9\n\n\n\n2.2.1 Diferencias: impresión de datos\nUn aspecto práctico para destacar es cómo estas estructuras manejan la impresión de datos en la consola. Mientras que data.frame muestra todas las filas y columnas, lo que puede ser abrumador en grandes conjuntos de datos, el tibble ofrece un resumen compacto, mostrando solo una vista general.\n\nprint(df)\n\n  x y\n1 1 A\n2 2 B\n3 3 C\n\n\n\nprint(tb)\n\n# A tibble: 3 × 3\n      x y     `x al cuadrado`\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1     1 A                   1\n2     2 B                   4\n3     3 C                   9\n\n\n\n\n2.2.2 Diferencias: manejo de tipo de datos\nOtro punto clave es cómo tratan los tipos de datos. En data.frame, las columnas de tipo carácter se convierten automáticamente en factores (a menos que se especifique lo contrario). Por otro lado, tibble respeta los caracteres tal como están, proporcionando un comportamiento más intuitivo en muchos casos.\n\ndf &lt;- data.frame(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\")\n)\nstr(df)\n\n'data.frame':   3 obs. of  2 variables:\n $ x: num  1 2 3\n $ y: chr  \"A\" \"B\" \"C\"\n\n\n\ntb &lt;- tibble(\n  x = c(1, 2, 3),\n  y = c(\"A\", \"B\", \"C\")\n)\nstr(tb)\n\ntibble [3 × 2] (S3: tbl_df/tbl/data.frame)\n $ x: num [1:3] 1 2 3\n $ y: chr [1:3] \"A\" \"B\" \"C\"\n\n\n\n\n2.2.3 Diferencias: acceso a las columnas\nAcceder a los datos también muestra una diferencia significativa. Con data.frame, se pueden usar $ y [], pero el resultado puede variar entre un vector y un data frame. En cambio, tibble mantiene consistencia, devolviendo siempre un tibble, a menos que se especifique lo contrario.\n\ndf[1]   # Devuelve un data frame\n\n  x\n1 1\n2 2\n3 3\n\ndf[, 1] # Devuelve un vector\n\n[1] 1 2 3\n\n\n\ntb[1]   # Devuelve un tibble\n\n# A tibble: 3 × 1\n      x\n  &lt;dbl&gt;\n1     1\n2     2\n3     3\n\ntb[, 1] # Devuelve un tibble\n\n# A tibble: 3 × 1\n      x\n  &lt;dbl&gt;\n1     1\n2     2\n3     3\n\ntb$x    # Devuelve un vector\n\n[1] 1 2 3"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_text.html#data.frame-vs.-tibble",
+    "href": "sesiones/programacion/tidy_text.html#data.frame-vs.-tibble",
+    "title": "Tidy data",
+    "section": "2.3 data.frame vs. tibble",
+    "text": "2.3 data.frame vs. tibble\nEn resumen, ambas estructuras tienen sus fortalezas. Mientras que el data.frame es simple y adecuado para scripts básicos, el tibble destaca por su consistencia y facilidad de integración con el tidyverse, haciéndolo ideal para análisis más complejos.\n\n2.3.1 Generar tibble\nUn tibble puede crearse desde un data.frame o directamente desde cero. A continuación, mostramos algunos ejemplos.\n\ndft &lt;- as_tibble(df)\ndft\n\n# A tibble: 3 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 A    \n2     2 B    \n3     3 C    \n\n\n\narboles &lt;- tibble(\n  especie = c(\"Pinus halepensis\", \"Quercus ilex\", \"Quercus ilex\", \n              \"Pinus pinaster\", \"Quercus pyrenaica\"),\n  altura_m = c(15, 8, 10, 12, 18),\n  dbh_cm = c(30, 40, 35, 25, 45),\n  site = c(\"plot_A\", \"plot_B\", \"plot_C\", \"plot_A\", \"plot_B\")\n)\n\narboles \n\n# A tibble: 5 × 4\n  especie           altura_m dbh_cm site  \n  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; \n1 Pinus halepensis        15     30 plot_A\n2 Quercus ilex             8     40 plot_B\n3 Quercus ilex            10     35 plot_C\n4 Pinus pinaster          12     25 plot_A\n5 Quercus pyrenaica       18     45 plot_B\n\n\nCrear un tibble transpuesto:\n\narboles &lt;- tribble(\n  ~especie,            ~altura_m, ~dbh_cm, ~site,\n  \"Pinus halepensis\",   15,        30,      \"plot_A\",\n  \"Quercus ilex\",       8,         40,      \"plot_B\",\n  \"Quercus ilex\",       10,        35,      \"plot_C\",\n  \"Pinus pinaster\",     12,        25,      \"plot_A\",\n  \"Quercus pyrenaica\",  18,        45,      \"plot_B\"\n)\narboles \n\n# A tibble: 5 × 4\n  especie           altura_m dbh_cm site  \n  &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; \n1 Pinus halepensis        15     30 plot_A\n2 Quercus ilex             8     40 plot_B\n3 Quercus ilex            10     35 plot_C\n4 Pinus pinaster          12     25 plot_A\n5 Quercus pyrenaica       18     45 plot_B\n\n\nTambién es posible crear un tibble a partir de estructuras más complejas, como listas. Esto es particularmente útil para organizar datos jerárquicos o anidados.\n\nlista_compleja &lt;- list(\n  numeros = c(1, 2, 3),\n  letras = c(\"A\", \"B\", \"C\"),\n  datos = list(\n    tipo = c(\"x\", \"y\", \"z\"),\n    valores = c(10, 20, 30)\n  )\n)\n\nlc &lt;- enframe(lista_compleja)\nlc \n\n# A tibble: 3 × 2\n  name    value           \n  &lt;chr&gt;   &lt;list&gt;          \n1 numeros &lt;dbl [3]&gt;       \n2 letras  &lt;chr [3]&gt;       \n3 datos   &lt;named list [2]&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_text.html#conclusión",
+    "href": "sesiones/programacion/tidy_text.html#conclusión",
+    "title": "Tidy data",
+    "section": "2.4 Conclusión",
+    "text": "2.4 Conclusión\nEl uso de data.frame y tibble depende de las necesidades específicas del análisis. Mientras que data.frame ofrece un enfoque tradicional y sencillo, tibble proporciona herramientas modernas y flexibles, integrándose perfectamente en el entorno del tidyverse. Al dominar estas estructuras, podrás manejar datos de manera más eficiente y efectiva."
   }
 ]

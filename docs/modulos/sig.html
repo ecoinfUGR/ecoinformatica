@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,10 +57,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -279,7 +279,7 @@ Fecha
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="NaN" data-listing-file-modified-sort="1734912892005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1579" data-listing-title-sort="Creación de un mapa de biodiversidad de Sierra Nevada" data-listing-filename-sort="guion_practica_mapa_biodiversidad_jml.qmd">
+<tr data-index="0" data-listing-date-sort="NaN" data-listing-file-modified-sort="1735232580075" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1579" data-listing-title-sort="Creación de un mapa de biodiversidad de Sierra Nevada" data-listing-filename-sort="guion_practica_mapa_biodiversidad_jml.qmd">
 <td>
 <span class="listing-sesion">x</span>
 </td>
@@ -322,10 +322,16 @@ Astigarraga, J., and V. Cruz-Alonso. 2022. <a href="https://doi.org/10.7818/ECOS
 Cooper, N., and P.-Y. Hsing, editors. 2017. <a href="http://hdl.handle.net/10141/622618">A guide to reproducible code in ecology and evolution</a>. British Ecological Society.
 </div>
 <div id="ref-GaleanoPrieto2018PorQue" class="csl-entry" role="listitem">
-Galeano Prieto, J. 2018.<a href="https://doi.org/10.7818/ECOS.1604"> qué usar <span>GitHub</span>? <span>Diez</span> pasos para disfrutar de <span>GitHub</span> y no morir en el intento</a>. Ecosistemas 27:140–141.
+Galeano Prieto, J. 2018. <a href="https://doi.org/10.7818/ECOS.1604">¿<span>Por</span> qué usar <span>GitHub</span>? <span>Diez</span> pasos para disfrutar de <span>GitHub</span> y no morir en el intento</a>. Ecosistemas 27:140–141.
+</div>
+<div id="ref-Gandrud2020ReproducibleResearch" class="csl-entry" role="listitem">
+Gandrud, C. 2020. <a href="https://doi.org/10.1201/9780429031854">Reproducible research with <span>R</span> and <span>R Studio</span></a>. Third edition. CRC Press, Boca Raton.
 </div>
 <div id="ref-RodriguezSanchezetal2016CienciaReproducible" class="csl-entry" role="listitem">
 Rodríguez-Sanchez, F., A. J. Pérez-Luque, I. Bartomeus, and S. Varela. 2016. <a href="https://doi.org/10.7818/ECOS.2016.25-2.11">Ciencia reproducible: Qué, por qué, cómo?</a> Ecosistemas 25:83–92.
+</div>
+<div id="ref-WickhamGrolemund2017DataScience" class="csl-entry" role="listitem">
+Wickham, H., and G. Grolemund. 2017. R for data science: Import, tidy, transform, visualize, and model data. O’Reilly Media, Inc, Sebastopol, CA.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -410,8 +416,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -522,7 +526,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
