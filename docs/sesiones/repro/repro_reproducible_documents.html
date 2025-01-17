@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Antonio J. Pérez-Luque">
 <meta name="dcterms.date" content="2025-01-09">
 
-<title>Documentos Reproducibles con Rmarkdown – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Ciclo de Gestión de los Datos. Ecoinformática - Documentos Reproducibles con Rmarkdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -153,11 +153,11 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Documentos Reproducibles con Rmarkdown</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -276,7 +276,7 @@ window.Quarto = {
 <h1 class="unnumbered">Introducción</h1>
 <p>En este tutorial vamos a aprender a crear documentos dinámicos y reproducibles con R y Rmarkdown (<code>Rmd</code>)(<a href="#fig-rmd-allison" class="quarto-xref">Figura&nbsp;1</a>). Vamos a trabajar con <a href="https://www.r-project.org/">R</a>, Rstudio (ahora llamado <a href="https://posit.co/">posit</a>), y utilizaremos al menos el paquete <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a>.</p>
 <p>Para la realización de este tutorial hemos utilizado recursos de diferentes fuentes. En el apartado <a href="#sec-recursos">Recursos</a> se encuentran listados todos los que se han utilizado.</p>
-<div id="fig-rmd-allison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-rmd-allison" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rmd-allison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/rmd-allison.png" class="img-fluid figure-img">
@@ -304,7 +304,7 @@ Figura&nbsp;1. Esquema general de <code>Rmd</code>. Fuente: <a href="https://all
 <div aria-describedby="fig-crea-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-crea-rmd" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-create-rmd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-create-rmd" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-create-rmd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/rmd-create.png" class="img-fluid figure-img" data-ref-parent="fig-crea-rmd">
@@ -316,7 +316,7 @@ Figura&nbsp;1. Esquema general de <code>Rmd</code>. Fuente: <a href="https://all
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-crea-rmd" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-create-rmd-details" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-create-rmd-details" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-create-rmd-details-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/rmd-create2.png" class="img-fluid figure-img" data-ref-parent="fig-crea-rmd">
@@ -347,7 +347,7 @@ Figura&nbsp;2. Crea archivo <code>Rmd</code>
 <div aria-describedby="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-yaml" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-ymal-example" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-ymal-example" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-ymal-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ymal-example.png" class="img-fluid figure-img" data-ref-parent="fig-yaml">
@@ -359,7 +359,7 @@ Figura&nbsp;2. Crea archivo <code>Rmd</code>
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-yaml" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-yaml-render" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-yaml-render" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-yaml-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ymal-render.png" class="img-fluid figure-img" data-ref-parent="fig-yaml">
@@ -417,7 +417,7 @@ Figura&nbsp;3. Encabezado YAML
 <h2 data-number="2.2" class="anchored" data-anchor-id="narrativa-texto-del-documento"><span class="header-section-number">2.2</span> Narrativa (Texto del documento)</h2>
 <p>Esta parte del documento se utiliza para describir diferentes aspectos de nuestro trabajo: el resumen, una introducción, la motivación del trabajo, metodologías, resultados, etc. En un documento <code>.Rmd</code> todo lo que no esté en el encabezazo YAML o dentro de un <code>chunk</code> de código, será interpretado como texto.</p>
 <p>Para escribir la parte narrativa se utiliza el lenguaje <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no es mas que una colección simple de convenciones para dar formato a archivos de texto plano. Está diseñado para que sea fácil de leer, de escribir y también de aprender. En la siguiente tabla tienes algunos ejemplos de como es la sintáxis markdown.</p>
-<table class="caption-top table">
+<table class="table">
 <thead>
 <tr class="header">
 <th>Formato</th>
@@ -487,7 +487,7 @@ Figura&nbsp;3. Encabezado YAML
 </div>
 <p>Knitr interpreta ese trozo de texto como instrucciones de R, las ejecutará y mostrará los resultados como parte del documento.</p>
 <p>En la siguiente animación (<a href="#fig-chunk-anatomy" class="quarto-xref">Figura&nbsp;4</a>) puedes ver la anatomía de un trozo de código.</p>
-<div id="fig-chunk-anatomy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-chunk-anatomy" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-chunk-anatomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="gif/chunk-anatomy.gif" class="img-fluid figure-img">
@@ -550,14 +550,14 @@ knitr::kable(
 ```</code></pre>
 <p>obtenemos la <a href="#tbl-ejemplo-tabla" class="quarto-xref">Tabla&nbsp;1</a></p>
 <div class="cell">
-<div id="tbl-ejemplo-tabla" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-ejemplo-tabla" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ejemplo-tabla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 </figcaption>
 <div aria-describedby="tbl-ejemplo-tabla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 7%">
@@ -672,7 +672,7 @@ Tabla&nbsp;1. Ejemplo de Tabla con <code>kable</code>
 <h2 data-number="2.4" class="anchored" data-anchor-id="tejer-y-renderizar"><span class="header-section-number">2.4</span> Tejer y Renderizar</h2>
 <p>Finalmente, una vez que tenemos nuestro documento <code>.Rmd</code> escrito procedemos a tejer (<code>knit</code>) el documento para que se ejecute el código y los resultados se incluyan dentro de nuestro documento. <strong>Knit</strong> es el verbo que describe la combinación de los trozos de código, el código en línea, el markdown y la narrativa.</p>
 <p>Para ello en la parte superior del panel, hacer click en <code>Knit</code> directamente o desplegar las opciones de <code>Knit</code> y ejecutar la que mas nos convenga (<a href="#fig-knit" class="quarto-xref">Figura&nbsp;5</a>, ver animación en <a href="#fig-knitting" class="quarto-xref">Figura&nbsp;6</a>).</p>
-<div id="fig-knit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-knit" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-knit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/knit.png" class="img-fluid figure-img">
@@ -682,7 +682,7 @@ Figura&nbsp;5. Opciones Knit
 </figcaption>
 </figure>
 </div>
-<div id="fig-knitting" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-knitting" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-knitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="gif/knitting.gif" class="img-fluid figure-img">
@@ -768,7 +768,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -800,29 +811,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -830,7 +819,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

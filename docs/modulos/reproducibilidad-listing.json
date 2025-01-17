@@ -1,0 +1,11 @@
+{
+  "listing": "/modulos/reproducibilidad.html",
+  "items": [
+    "/sesiones/repro/repro_intro_slides.html",
+    "/sesiones/repro/repro_reproducible_documents.html",
+    "/sesiones/repro/repro_reproducible_documents_slides.html",
+    "/sesiones/repro/repro_git.html",
+    "/practicas/pr_repro_documentos_reproducibles.html",
+    "/practicas/pr_repro_control_versiones.html"
+  ]
+}
