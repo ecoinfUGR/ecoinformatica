@@ -103,17 +103,5 @@
   },
   "sesiones/programacion/intro_R_jml.qmd": {
     "intro_R_jml.html": "0180ff52"
-  },
-  "sesiones/sig/sig_practica_qgis.qmd": {
-    "sig_practica_qgis.html": "5e62333d"
-  },
-  "sesiones/sig/clusterizacion.qmd": {
-    "clusterizacion.html": "34acd778"
-  },
-  "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
-    "guion_practica_mapa_biodiversidad_jml.html": "48d4690b"
-  },
-  "sesiones/bbdd/bbdd.qmd": {
-    "bbdd.html": "c88fd462"
   }
 }

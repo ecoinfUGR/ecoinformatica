@@ -43,11 +43,277 @@ execute:
 ![Source: [Wickham & Grolemund](https://r4ds.had.co.nz/tidy-data.html)](images/tidy_data.png){fig-align="center"}
 
 
+# `data.frame` & `tibble`
+
+## `data.frame` 
+
+::: small 
+- Es la estructura más común para manejar datos tabulares en R
+- Funcionan como una tabla: filas (observaciones) y columnas (variables)
+- Introducidos con el lenguaje base de R
+
+```{r}
+df <- data.frame(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+
+df 
+```
+
+::: 
 --- 
 
+## `tibble`
+
+::: small 
+
+- Versión mejorada de `data.frame` incluida en el pkg **tibble** (**tidyverse**). 
+- Diseñados para ser más consistentes y fáciles de usar.
+- Permite manejar variables *no-sintácticas* (a diferencia de R-base). 
+
+```{r}
+library(tibble)
+tb <- tibble(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C"),
+  `x al cuadrado` = x^2
+) 
+
+tb
+```
+
+:::
+--- 
+
+### Diferencias: impresión de datos 
+
+::: small 
+- `data.frame`:
+    - Imprimen **todas las filas y columnas** por defecto.
+    - Pueden ser difíciles de leer si el conjunto de datos es grande.
+
+```{r}
+print(df)
+```
+
+::: 
+
+--- 
+
+### Diferencias: impresión de datos 
+
+::: small 
+- `tibble`: 
+  - Imprimen un **resumen compacto**: muestran las primeras 10 filas y columnas que caben en la consola (se puede modificar, ver [esto](https://es.r4ds.hadley.nz/10-tibble.html#tibbles-vs.-data.frame)). 
+  - Formato mas amigable para explorar grandes volúmenes de datos.
+  - Imprimen también la `str()` de los datos
+
+```{r}
+print(tb)
+```
+
+::: 
+
+--- 
+
+### Diferencias: manejo de tipo de datos
+
+::: small 
+- `data.frame`: las columnas de tipo **carácter** se convierten automáticamente a factores, a menos que especifiques `stringsAsFactors = FALSE`.
+
+- `tibble`: nunca convierten caracteres a factores de forma automática.
+
+::: {.panel-tabset}
+### dataframe
+```{r}
+df <- data.frame(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+str(df)
+```
+
+### tibble
+```{r}
+tb <- tibble(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+str(tb)
+```
+
+:::
+
+::: 
+
+---
+
+## `data.frame` vs. `tibble`
+
+- **data.frame**: Útiles en scripts básicos o cuando no necesitas integrarte al **tidyverse**.
+- **tibble**: Más consistentes, ideales para trabajar con el **tidyverse** y explorar datos.
 
 
-## ¿Alguna duda?
+::: {.callout-note}
+
+Para usar tibble tienes que cargar el paquete [tibble](https://tibble.tidyverse.org/reference/tibble-package.html) que viene por defecto con [tidyverse](https://www.tidyverse.org/packages/) 
+
+::: 
+
+
+# Generar `tibble`
+
+--- 
+
+::: small
+**Transformar `data.frame` a `tibble`**
+
+
+```{r}
+dft <- as_tibble(df)
+dft
+```
+
+::: 
+
+--- 
+
+::: small
+**Crear `tibble` directamente**
+
+```{r}
+arboles <- tibble(
+  especie = c("Pinus halepensis", "Quercus ilex", "Quercus ilex", 
+              "Pinus pinaster", "Quercus pyrenaica"),
+  altura_m = c(15, 8, 10, 12, 18),
+  dbh_cm = c(30, 40, 35, 25, 45),
+  site = c("plot_A", "plot_B", "plot_C", "plot_A", "plot_B")
+)
+
+arboles 
+```
+
+:::
+
+--- 
+
+::: small
+**Crear `tibble` transpuesto (`t`**`r`**`ibble`)**
+
+```{r}
+arboles <- tribble(
+  ~especie,            ~altura_m, ~dbh_cm, ~site,
+  "Pinus halepensis",   15,        30,      "plot_A",
+  "Quercus ilex",       8,         40,      "plot_B",
+  "Quercus ilex",       10,        35,      "plot_C",
+  "Pinus pinaster",     12,        25,      "plot_A",
+  "Quercus pyrenaica",  18,        45,      "plot_B"
+)
+arboles 
+```
+
+::: 
+
+## {footer=false}
+
+::: small 
+
+**Crear `tibble` a partir de listas complejas (`enframe`)** 
+
+::: {.panel-tabset}
+
+#### Crea tibble
+```{r}
+lista_compleja <- list(
+  numeros = c(1, 2, 3),
+  letras = c("A", "B", "C"),
+  datos = list(
+    tipo = c("x", "y", "z"),
+    valores = c(10, 20, 30)
+  )
+)
+
+lc <- enframe(lista_compleja)
+lc 
+```
+
+#### Acceso a datos
+```{r}
+lc 
+
+lc[[1]]
+
+lc[[2]]
+```
+
+#### Acceso a datos (II)
+
+```{r}
+lc[[2]][1]
+
+lc[[2]][2]
+
+lc[[2]][3]
+
+as.data.frame(lc[[2]][3])
+```
+
+:::
+
+:::
+
+## {footer=false}
+
+::: small 
+
+**Crear `tibble` a partir de listas complejas (`enframe`) (II)** 
+
+::: {.panel-tabset}
+### Datos forestales 
+
+```{r}
+datos_forestales <- list(
+  parcela_1 = list(
+    especie = c("Pinus halepensis", "Quercus ilex"),
+    n_ind = c(10, 5),
+    dbh_cm = c(25, 30)
+  ),
+  parcela_2 = list(
+    especie = c("Pinus pinaster", "Quercus pyrenaica"),
+    n_ind = c(15, 8),
+    dbh_cm = c(20, 35)
+  ),
+  parcela_3 = list(
+    especie = c("Pinus sylvestris"),
+    n_ind = c(12),
+    dbh_cm = c(40)
+  )
+)
+
+```
+
+### Crea tibble
+```{r}
+d <- enframe(datos_forestales, name = "parcela", value = "contenido")
+d
+```
+
+### Desagregar 
+```{r}
+library(tidyr)
+d |> 
+  unnest_wider(contenido) |> 
+  unnest(c(especie, n_ind, dbh_cm)) 
+```
+
+
+:::
+
+::: 
+
+
+## ¿Alguna duda? 
 
 - {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
 
@@ -62,5 +328,5 @@ execute:
 
 ::: {.callout-tip}
 ## Si usas esta presentación puedes citarla como:
-<small>**Pérez-Luque, A.J. **(2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+<small>**Pérez-Luque, A.J. **(2025). Tidy data. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
 :::
