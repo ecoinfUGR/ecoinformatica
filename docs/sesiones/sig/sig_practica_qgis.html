@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="María Suárez Muñoz">
 <meta name="dcterms.date" content="2025-01-23">
 
-<title>Ciclo de Gestión de los Datos. Ecoinformática - Manual de Sistemas de Información Geográfica</title>
+<title>Manual de Sistemas de Información Geográfica – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Manual de Sistemas de Información Geográfica</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -158,7 +158,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#modificar-simbología-de-las-capas" id="toc-modificar-simbología-de-las-capas" class="nav-link" data-scroll-target="#modificar-simbología-de-las-capas">Modificar simbología de las capas</a></li>
   <li><a href="#crear-capa-vectorial-puntos" id="toc-crear-capa-vectorial-puntos" class="nav-link" data-scroll-target="#crear-capa-vectorial-puntos">Crear capa vectorial (puntos)</a></li>
   <li><a href="#crear-capa-vectorial-polígonos" id="toc-crear-capa-vectorial-polígonos" class="nav-link" data-scroll-target="#crear-capa-vectorial-polígonos">Crear capa vectorial (polígonos)</a></li>
-  <li><a href="#descargar-capas-de-información" id="toc-descargar-capas-de-información" class="nav-link" data-scroll-target="#descargar-capas-de-información">Descargar capas de información</a></li>
   </ul></li>
   <li><a href="#realizar-operaciones" id="toc-realizar-operaciones" class="nav-link" data-scroll-target="#realizar-operaciones">Realizar operaciones</a>
   <ul class="collapse">
@@ -305,13 +304,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/draw_shapefile_layer.png" class="img-fluid"></p>
 <p>También podríamos crear capas de puntos y de líneas con las opciones correspondientes a este tipo de elementos.</p>
 </section>
-<section id="descargar-capas-de-información" class="level3">
-<h3 class="anchored" data-anchor-id="descargar-capas-de-información">Descargar capas de información</h3>
-<p>A menudo no disponemos de las capas de información que necesitamos, ni las podemos generar nosotros mismos, sino que las descargamos desde alguna fuente.</p>
-<p>En este caso descargaremos varias capas del área de descarga de información ambiental en Andalucía, a la que podemos acceder desde (éste enlace)[https://portalrediam.cica.es/descargas].</p>
-<p><em>NOTA</em>: por alguna razón este enlace falla cuando se accede desde ciertos sistemas operativos y navegadores. Si es tu caso, prueba con otro navegador.</p>
-<p>Para esta práctica nos resultará útil tener capas relativas a la incidencia solar, las temperaturas y las precipitaciones medias de la zona.</p>
-</section>
 </section>
 <section id="realizar-operaciones" class="level2">
 <h2 class="anchored" data-anchor-id="realizar-operaciones">Realizar operaciones</h2>
@@ -335,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="buffer">Buffer</h3>
 <p>Para distintos procesos nos puede resultar interesante definir unas franjas de cierta anchura a ambos lados de los caminos y carreteras (por ejemplo, para realizar actuaciones de eliminación de materia muerta para disminuir el riesgo de futuros incendios). Esto es lo que se conoce como “buffer”, y puede aplicarse sobre elementos lineales, pero también sobre puntos y polígonos (pensemos, por ejemplo, en la distancia a la que esperamos encontrar ciertas desde árboles individuales o parches de vegetación).</p>
 <p>En este caso vamos a realizar un buffer sobre la red de carreteras afectadas por el fuego. Para ello primero necesitaremos recortar la capa de red viaria con el polígono del incendio (ver sección anterior) y a continuación aplicar la herramienta buffer (<strong>Vector → Geoprocessing Tools → Buffer</strong>).</p>
-<p><strong>EJERCICIO</strong> Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?</p>
+<p>Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?</p>
 </section>
 <section id="reproyectar-capas" class="level3">
 <h3 class="anchored" data-anchor-id="reproyectar-capas">Reproyectar capas</h3>
@@ -382,9 +374,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="rasterizar" class="level3">
 <h3 class="anchored" data-anchor-id="rasterizar">Rasterizar</h3>
-<p>La información vectorial puede ser poco adecuada para realizar algunos cálculos o análisis. En estos casos resulta útil transformar la capa vectorial a una capa ráster. Sin embargo, debemos considerar cuidadosamente qué estamos haciendo al transformar esta información.</p>
+<p>La información vectorial puede ser poco adecuada para realizar algunos cálculos o análisis. En estos casos resulta útil transformar la capa vectorial a una capa ráster. Sin embargo, debemos considerar cuidadosamente qué estamos haciendo al transformar esta información…</p>
 <p><em>Rasterizar</em> implica crear una capa ráster - donde cada celda tiene un único valor - a partir de una capa vectorial - es decir, una capa de puntos, líneas o polígonos donde cada elemento tiene una serie de <em>atributos</em>. Por lo tanto, al rasterizar tendremos que decidir qué atributo es el que nos interesa.</p>
-<p>Veamos un ejemplo. Vamos a rasterizar el mapa de cobertura que cargamos anteriormente, el <em>mucva_multi_23030.gpkg</em>. Para eso hacemos <strong>Raster → Conversion → Rasterize (Vector to Raster)…</strong> y rellenamos los parámetros correspondientes:</p>
+<p>Veamos un ejemplo. Vamos a rasterizar el mapa de cobertura <em>mucva_multi_23030.gpkg</em>. Para eso hacemos <strong>Raster → Conversion → Rasterize (Vector to Raster)…</strong> y rellenamos los parámetros correspondientes:</p>
 <p><img src="images/raster_mask.png" class="img-fluid"></p>
 <ol type="1">
 <li>Atributo a rasterizar: U03</li>
@@ -431,7 +423,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="guardar-proyecto" class="level2">
 <h2 class="anchored" data-anchor-id="guardar-proyecto">Guardar proyecto</h2>
+<p>Como con cualquier documento sobre el que estamos trabajando, es importante guardar el proyecto para poder seguir trabajando sobre él.</p>
 <p><img src="images/gis_save_project.png" class="img-fluid"></p>
+<p><strong>Ojo</strong> qGIS guarda el <em>proyecto</em>, no lo que éste contiene. Esto significa que el archivo .qgz no contiene las capas por lo que si enviamos el proyecto a alguien no podrá acceder a la información que tenemos en él a no ser que también le enviemos las capas correspondientes.</p>
+<p>Además, eso implica que si alguna capa se elimina o cambia de ubicación en nuestro ordenador <code>qGIS</code> no podrá cargarlas al abrir el proyecto de nuevo. En este caso nos avisa y nos facilita volver a vincular las capas que faltan:</p>
+<p><img src="images/open_project.png" class="img-fluid"></p>
 
 
 </section>
@@ -473,18 +469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -516,7 +501,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -524,7 +529,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -621,7 +626,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

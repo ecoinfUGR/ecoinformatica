@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="María Suárez-Muñoz, Javier Martínez-López, Antonio J. Pérez-Luque">
+<meta name="author" content="María Suárez Muñoz">
+<meta name="dcterms.date" content="2025-02-03">
 
-<title>Sistemas de Información Geográfica – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Bases de Datos – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,23 +25,21 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-sesiones .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-sesion','listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-sesiones'] = new List('listing-sesiones', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -137,7 +78,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
     </a>
   </div>
@@ -152,7 +93,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Sistemas de Información Geográfica</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bases de Datos</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,31 +107,31 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../calendario.html" class="sidebar-item-text sidebar-link">
+  <a href="../../calendario.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendario</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modulos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Módulos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../equipo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../equipo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profesores</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guia_docente.html" class="sidebar-item-text sidebar-link">
+  <a href="../../guia_docente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía Docente</span></a>
   </div>
 </li>
@@ -199,41 +140,41 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
-  <li><a href="#entregable-mapa-base" id="toc-entregable-mapa-base" class="nav-link" data-scroll-target="#entregable-mapa-base">Entregable: mapa base</a>
-  <ul class="collapse">
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#aspectos-a-valorar" id="toc-aspectos-a-valorar" class="nav-link" data-scroll-target="#aspectos-a-valorar">Aspectos a valorar</a></li>
-  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
-  </ul></li>
-  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sistemas de Información Geográfica</h1>
+<h1 class="title">Bases de Datos</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">María Suárez Muñoz <a href="mailto:maria.suarez.munoz@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-1765-6885" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departamento de Ingeniería Forestal, Universidad de Córdoba
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
+      
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-             <p><a href="equipo/suarez_munoz">María Suárez-Muñoz</a>, <a href="equipo/martinez_lopez">Javier Martínez-López</a>, <a href="equipo/perez_luque">Antonio J. Pérez-Luque</a> </p>
-          </div>
+      <p class="date">February 3, 2025</p>
+    </div>
   </div>
-    
   
     
   </div>
@@ -243,99 +184,8 @@ window.Quarto = {
 </header>
 
 
-<section id="sesiones" class="level1">
-<h1>Sesiones</h1>
-<div id="listing-sesiones" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Sesión
-</th>
-<th>
-Nombre
-</th>
-<th>
-Fecha
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1737586800000" data-listing-file-modified-sort="1737377729797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2647" data-listing-title-sort="Manual de Sistemas de Información Geográfica" data-listing-filename-sort="sig_practica_qgis.qmd">
-<td>
-<span class="listing-sesion">1</span>
-</td>
-<td>
-<a href="../sesiones/sig/sig_practica_qgis.html" class="title listing-title">Manual de Sistemas de Información Geográfica</a>
-</td>
-<td>
-<span class="listing-date">Thu, Jan 23</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1737586800000" data-listing-title-sort="[Presentacion SIG (PDF)](../sesiones/sig/sig_presentacion_20241202.pdf)">
-<td>
-<span class="listing-sesion">1</span>
-</td>
-<td>
-<span class="listing-title"><a href="../sesiones/sig/sig_presentacion_20241202.pdf">Presentacion SIG (PDF)</a></span>
-</td>
-<td>
-<span class="listing-date">Thu, Jan 23</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1739746800000" data-listing-file-modified-sort="1737378202455" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1579" data-listing-title-sort="Creación de un mapa de biodiversidad de Sierra Nevada" data-listing-filename-sort="guion_practica_mapa_biodiversidad_jml.qmd">
-<td>
-<span class="listing-sesion">3</span>
-</td>
-<td>
-<a href="../sesiones/sig/guion_practica_mapa_biodiversidad_jml.html" class="title listing-title">Creación de un mapa de biodiversidad de Sierra Nevada</a>
-</td>
-<td>
-<span class="listing-date">Mon, Feb 17</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="entregable-mapa-base" class="level1">
-<h1>Entregable: mapa base</h1>
-<section id="objetivo" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
-<p>Caracterizar la zona con la que vas a trabajar en el proyecto de la asignatura. Con caracterización nos referimos a uno o varios mapas acompañados de un pequeño texto que describa la zona. Piensa en qué información es relevante para tu proyecto (características de la vegetación, factores abióticos, elementos de interés…), cómo puedes mostrarla y qué necesitas describir y explicar para que yo comprenda qué me quieres decir.</p>
-</section>
-<section id="aspectos-a-valorar" class="level2">
-<h2 class="anchored" data-anchor-id="aspectos-a-valorar">Aspectos a valorar</h2>
-<ul>
-<li><p>Claridad en la información: ¿las capas tienen nombres y leyendas claros e inequívocos?</p></li>
-<li><p>Relevancia de la información mostrada en el mapa: ¿las capas utilizadas son útiles para el caso de estudio propuesto?</p></li>
-<li><p>Aplicación de operaciones: ¿se han realizado operaciones entre capas para obtener nueva información? ¿se han combinado distintas fuentes de información?</p></li>
-<li><p>Reproducibilidad: el mapa se entrega acompañado de un proyecto de qGIS y las respectivas capas de información, lo que permite reproducir el mapa.</p></li>
-<li><p>Expresión escrita: el texto que acompaña al mapa es claro y permite comprender el mapa en mayor detalle.</p></li>
-</ul>
-</section>
-<section id="evaluación" class="level2">
-<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
-<p>La entrega inicial del mapa se hará de manera individual, y como en el caso anterior será devuelta con comentarios y sugerencias que permitan seguir mejorando el mapa. Tras ello se podrá realizar una segunda entrega individual o incluirla en el trabajo final en grupo.</p>
-</section>
-</section>
-<section id="recursos" class="level1">
-<h1>Recursos</h1>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=kIID5FDi2JQ">Why all world maps are wrong</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=WWp1k0SlMUU">GIS Coordinate Reference Systems</a></p></li>
-<li><p><a href="https://spatialreference.org/">Spatial Reference</a></p></li>
-<li><p><a href="https://docs.qgis.org/3.34/en/docs/training_manual/index.html">QGIS Training Manual</a></p></li>
-<li><p><a href="https://portalrediam.cica.es/VisorRediam/">Visor REDIAM</a></p></li>
-<li><p><a href="https://portalrediam.cica.es/descargas?path=%2F">Área de descarga de información ambiental en Andalucía</a></p></li>
-</ul>
 
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="María Suárez-Muñoz">
 
-<title>Ciclo de Gestión de los Datos. Ecoinformática - Bases de Datos</title>
+<title>Bases de Datos – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -57,10 +37,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +98,7 @@ div.csl-indent {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -169,11 +149,11 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bases de Datos</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -225,11 +205,13 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sesiones" id="toc-sesiones" class="nav-link active" data-scroll-target="#sesiones">Sesiones</a></li>
-  <li><a href="#ejercicios-prácticos" id="toc-ejercicios-prácticos" class="nav-link" data-scroll-target="#ejercicios-prácticos">Ejercicios prácticos</a>
+  <li><a href="#entregable-esquema-entidad-relación" id="toc-entregable-esquema-entidad-relación" class="nav-link" data-scroll-target="#entregable-esquema-entidad-relación">Entregable: esquema entidad-relación</a>
   <ul class="collapse">
-  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#aspectos-a-valorar" id="toc-aspectos-a-valorar" class="nav-link" data-scroll-target="#aspectos-a-valorar">Aspectos a valorar</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
   </ul></li>
-  <li><a href="#bibliografía-complementaria" id="toc-bibliografía-complementaria" class="nav-link" data-scroll-target="#bibliografía-complementaria">Bibliografía complementaria</a></li>
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
   </ul>
 </nav>
     </div>
@@ -279,12 +261,12 @@ Fecha
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1738537200000" data-listing-file-modified-sort="1737028386788" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Bases de Datps" data-listing-filename-sort="bbdd.qmd">
+<tr data-index="0" data-listing-date-sort="1738537200000" data-listing-file-modified-sort="1737377729684" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Bases de Datos" data-listing-filename-sort="bbdd_sesion.qmd">
 <td>
 <span class="listing-sesion">1</span>
 </td>
 <td>
-<a href="../sesiones/bbdd/bbdd.html" class="title listing-title">Bases de Datps</a>
+<a href="../sesiones/bbdd/bbdd_sesion.html" class="title listing-title">Bases de Datos</a>
 </td>
 <td>
 <span class="listing-date">Mon, Feb 03</span>
@@ -297,43 +279,40 @@ No matching items
 </div>
 </div>
 </section>
-<section id="ejercicios-prácticos" class="level1">
-<h1>Ejercicios prácticos</h1>
-<section id="recursos" class="level2">
-<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+<section id="entregable-esquema-entidad-relación" class="level1">
+<h1>Entregable: esquema entidad-relación</h1>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
+<p>Para practicar un poco más con la creación y construcción de bases de datos relacionales se propone un ejercicio consistente en crear el esquema entidad-relación de una base de datos sencilla, elaborando y describiendo los pasos necesarios para ello. Para construir la base de datos podéis utilizar el conjunto de datos, el proceso o la información que os resulte más útil e interesante. Podéis pensar en información que estáis recopilando para algún trabajo de clase o vuestro TFM, en vuestra colección de arácnidos, en vuestro perfil de Spotify… Pero si no tenéis algún conjunto de datos que os resulte práctico utilizar podéis utilizar esta descripción:</p>
+<p><em>“Muestreos fitosociológicos: Se diseña un trabajo de campo que consiste en hacer muestreos fitosociológicos en una serie de puntos del territorio. En cada muestreo (caracterizado por un punto), se evalúan la presencia y abundancia de todas las especies vegetales existentes en un radio de xx m desde el centro de la parcela. La presencia de las especies se registra a través de un listado de taxones de Andalucía. Su abundancia se codifica según el criterio de Braun-Blanquet (búscalo en internet si no sabes lo que es). Cada muestreo es realizado por un equipo de personas cuyo número es variable. También es importante tener en cuenta que cada punto puede ser visitado en varias ocasiones”.</em></p>
+<p>Concretamente os pedimos que elaboréis un diagrama entidad-relación que muestre la estructura de vuestra base de datos. Este diagrama, en forma de imagen o esquema mostrará la estructura de la base de datos. Es probable que al elaborarlo encuentres ambigüedades en la descripción de la base de datos. Tendrás entonces que volver a la descripción y modificarla para mejorarla. Es un proceso iterativo. Identifica las entidades y los atributos importantes. Además, en el caso de que optéis por crear un esquema entidad-relación distinto del caso propuesto será necesario acompañarlo de una descripción literal de vuestra base de datos. Esta descripción en forma de texto deberá explicar en detalle qué información se va a almacenar en la base de datos y qué características tiene.</p>
+</section>
+<section id="aspectos-a-valorar" class="level2">
+<h2 class="anchored" data-anchor-id="aspectos-a-valorar">Aspectos a valorar</h2>
+<ul>
+<li><p>Descripción literal de la base de datos: ¿es una descripción clara y sin ambigüedad?</p></li>
+<li><p>Comprensión de conceptos sobre bases de datos relacionales: ¿se identifican correctamente las entidades y sus atributos? ¿se reflejan las relaciones entre las distintas entidades? ¿las relaciones reflejan la información recogida de acuerdo a la descripción?</p></li>
+<li><p>Justificación y resolución de conflictos: No es lo mismo no hacer algo, que no saber hacerlo porque tengo un problema que me está impidiendo avanzar… ¿se identifican dificultades encontradas? ¿se justifican las decisiones adoptadas o se valoran distintas opciones?</p></li>
+</ul>
+</section>
+<section id="evaluación" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
+<p>Como en otros casos, tras la entrega el trabajo entregado podrá ser devuelto con comentarios orientados a aclarar aspectos o dudas. Tras ello se podrá hacer una segunda entrega que incorpore los aspectos mencionados en la primera evaluación. La segunda evaluación, por lo tanto, consistirá en analizar cómo se han incorporado mejoras o se ha aprendido del proceso.</p>
 </section>
 </section>
-<section id="bibliografía-complementaria" class="level1">
-
-
+<section id="recursos" class="level1">
+<h1>Recursos</h1>
+<ul>
+<li><p><a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional/index_historia_inventario_forestal_espana.html">Información sobre el Inventario Forestal Nacional</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=UvPNJQDCUVk&amp;list=PLEuHpCZXt_Al8p6d58pQlNwpoG_iTQ9eh&amp;index=2">Vídeo sobre el Inventario Forestal Nacional</a></p></li>
+<li><p><a href="https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/ifn3.html">Acceso a los datos del IFN3</a></p></li>
+</ul>
 
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografía complementaria</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-AlstonRick2021BeginnersGuide" class="csl-entry" role="listitem">
-Alston, J. M., and J. A. Rick. 2021. <a href="https://doi.org/10.1002/bes2.1801">A <span>Beginner</span>’s <span>Guide</span> to <span>Conducting Reproducible Research</span></a>. The Bulletin of the Ecological Society of America 102:e01801.
-</div>
-<div id="ref-AstigarragaCruzAlonso2022SePuede" class="csl-entry" role="listitem">
-Astigarraga, J., and V. Cruz-Alonso. 2022. <a href="https://doi.org/10.7818/ECOS.2332">Se puede entender cómo funcionan git y GitHub!</a> Ecosistemas 31:2332.
-</div>
-<div id="ref-10141/622618" class="csl-entry" role="listitem">
-Cooper, N., and P.-Y. Hsing, editors. 2017. <a href="http://hdl.handle.net/10141/622618">A guide to reproducible code in ecology and evolution</a>. British Ecological Society.
-</div>
-<div id="ref-GaleanoPrieto2018PorQue" class="csl-entry" role="listitem">
-Galeano Prieto, J. 2018. <a href="https://doi.org/10.7818/ECOS.1604">¿<span>Por</span> qué usar <span>GitHub</span>? <span>Diez</span> pasos para disfrutar de <span>GitHub</span> y no morir en el intento</a>. Ecosistemas 27:140–141.
-</div>
-<div id="ref-Gandrud2020ReproducibleResearch" class="csl-entry" role="listitem">
-Gandrud, C. 2020. <a href="https://doi.org/10.1201/9780429031854">Reproducible research with <span>R</span> and <span>R Studio</span></a>. Third edition. CRC Press, Boca Raton.
-</div>
-<div id="ref-RodriguezSanchezetal2016CienciaReproducible" class="csl-entry" role="listitem">
-Rodríguez-Sanchez, F., A. J. Pérez-Luque, I. Bartomeus, and S. Varela. 2016. <a href="https://doi.org/10.7818/ECOS.2016.25-2.11">Ciencia reproducible: Qué, por qué, cómo?</a> Ecosistemas 25:83–92.
-</div>
-<div id="ref-WickhamGrolemund2017DataScience" class="csl-entry" role="listitem">
-Wickham, H., and G. Grolemund. 2017. R for data science: Import, tidy, transform, visualize, and model data. O’Reilly Media, Inc, Sebastopol, CA.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -369,18 +348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -412,7 +380,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -420,7 +408,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -517,7 +505,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
