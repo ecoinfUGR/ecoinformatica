@@ -2210,5 +2210,222 @@
     "title": "Tidy data",
     "section": "",
     "text": "Crear tibble a partir de listas complejas (enframe) (II)\n\n\nDatos forestales\nCrea tibble\nDesagregar\n\n\n\n\ndatos_forestales &lt;- list(\n  parcela_1 = list(\n    especie = c(\"Pinus halepensis\", \"Quercus ilex\"),\n    n_ind = c(10, 5),\n    dbh_cm = c(25, 30)\n  ),\n  parcela_2 = list(\n    especie = c(\"Pinus pinaster\", \"Quercus pyrenaica\"),\n    n_ind = c(15, 8),\n    dbh_cm = c(20, 35)\n  ),\n  parcela_3 = list(\n    especie = c(\"Pinus sylvestris\"),\n    n_ind = c(12),\n    dbh_cm = c(40)\n  )\n)\n\n\n\n\nd &lt;- enframe(datos_forestales, name = \"parcela\", value = \"contenido\")\nd\n\n# A tibble: 3 × 2\n  parcela   contenido       \n  &lt;chr&gt;     &lt;list&gt;          \n1 parcela_1 &lt;named list [3]&gt;\n2 parcela_2 &lt;named list [3]&gt;\n3 parcela_3 &lt;named list [3]&gt;\n\n\n\n\n\nlibrary(tidyr)\nd |&gt; \n  unnest_wider(contenido) |&gt; \n  unnest(c(especie, n_ind, dbh_cm)) \n\n# A tibble: 5 × 4\n  parcela   especie           n_ind dbh_cm\n  &lt;chr&gt;     &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;\n1 parcela_1 Pinus halepensis     10     25\n2 parcela_1 Quercus ilex          5     30\n3 parcela_2 Pinus pinaster       15     20\n4 parcela_2 Quercus pyrenaica     8     35\n5 parcela_3 Pinus sylvestris     12     40"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#lectura",
+    "href": "sesiones/programacion/tidy_data.html#lectura",
+    "title": "Tidy data",
+    "section": "Lectura",
+    "text": "Lectura\nlibrary(tidyverse)\nd &lt;- read_csv(\"TU_RUTA/ifn_sn_tree.csv\")"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#explorar-datos",
+    "href": "sesiones/programacion/tidy_data.html#explorar-datos",
+    "title": "Tidy data",
+    "section": "Explorar datos",
+    "text": "Explorar datos\n\nlibrary(tidyverse)\nd &lt;- read_csv(\"TU_RUTA/ifn_sn_tree.csv\")\n\nd\n\n# A tibble: 8,786 × 10\n   plot  aspect slope tree_id specie              dbh height tree_density_factor\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;\n 1 0792    270     27       1 Pinus halepensis    8.5   3.8                127. \n 2 0792    270     27       2 Pinus halepensis   15.4   4.90                31.8\n 3 0792    330.    40      10 Pinus halepensis   13.4   6.70                31.8\n 4 0792    330.    40      12 Pinus halepensis   13.0   6.90                31.8\n 5 0792    330.    40       1 Quercus ilex ssp…  13     2.40                31.8\n 6 0792    330.    40       2 Quercus ilex ssp…  10.0   2                  127. \n 7 0792    330.    40       3 Quercus ilex ssp…  14.0   2                   31.8\n 8 0792    330.    40       4 Quercus ilex ssp…  13.4   2.60                31.8\n 9 0792    330.    40       5 Quercus ilex ssp…  10.2   2.3                127. \n10 0792    330.    40       6 Quercus ilex ssp…  10.4   2                  127. \n# ℹ 8,776 more rows\n# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#explorar-datos-1",
+    "href": "sesiones/programacion/tidy_data.html#explorar-datos-1",
+    "title": "Tidy data",
+    "section": "Explorar datos",
+    "text": "Explorar datos\n\n\nglimpse(d)\n\nRows: 8,786\nColumns: 10\n$ plot                &lt;chr&gt; \"0792\", \"0792\", \"0792\", \"0792\", \"0792\", \"0792\", \"0…\n$ aspect              &lt;dbl&gt; 270.0, 270.0, 330.3, 330.3, 330.3, 330.3, 330.3, 3…\n$ slope               &lt;dbl&gt; 27, 27, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40…\n$ tree_id             &lt;dbl&gt; 1, 2, 10, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1, 3,…\n$ specie              &lt;chr&gt; \"Pinus halepensis\", \"Pinus halepensis\", \"Pinus hal…\n$ dbh                 &lt;dbl&gt; 8.50, 15.45, 13.40, 12.95, 13.00, 10.05, 14.05, 13…\n$ height              &lt;dbl&gt; 3.8, 4.9, 6.7, 6.9, 2.4, 2.0, 2.0, 2.6, 2.3, 2.0, …\n$ tree_density_factor &lt;dbl&gt; 127.32395, 31.83099, 31.83099, 31.83099, 31.83099,…\n$ tree_quality_wood   &lt;dbl&gt; 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2, 2, 2,…\n$ prov                &lt;chr&gt; \"Almeria\", \"Almeria\", \"Almeria\", \"Almeria\", \"Almer…"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar",
+    "title": "Tidy data",
+    "section": "Manipular datos: ordenar",
+    "text": "Manipular datos: ordenar\n\nOrdena los datos por pendiente\n\n\n\nd |&gt; \n  arrange(slope)\n\n# A tibble: 8,786 × 10\n   plot  aspect slope tree_id specie             dbh height tree_density_factor\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;\n 1 0811    202.   7.5       1 Pinus sylvestris  13.6   6.70                31.8\n 2 0811    202.   7.5       2 Pinus sylvestris  14.6   6.30                31.8\n 3 0811    202.   7.5       3 Pinus sylvestris  15.1   6.20                31.8\n 4 0811    202.   7.5       4 Pinus sylvestris  13.6   5.40                31.8\n 5 0811    202.   7.5       5 Pinus sylvestris  13     6.10                31.8\n 6 0811    202.   7.5       6 Pinus sylvestris  13.8   6.70                31.8\n 7 0811    202.   7.5       7 Pinus sylvestris  14.6   6.40                31.8\n 8 0811    202.   7.5       8 Pinus sylvestris  16.4   6.80                31.8\n 9 0811    202.   7.5       9 Pinus sylvestris  20.5   7.30                31.8\n10 0811    202.   7.5      10 Pinus sylvestris  13.9   5.90                31.8\n# ℹ 8,776 more rows\n# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar-1",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar-1",
+    "title": "Tidy data",
+    "section": "Manipular datos: ordenar",
+    "text": "Manipular datos: ordenar\n\nOrdena los datos por pendiente decreciente\n\n\n\nd |&gt; \n  arrange(desc(slope))\n\n# A tibble: 8,786 × 10\n   plot  aspect slope tree_id specie              dbh height tree_density_factor\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;\n 1 0792    330.    40      10 Pinus halepensis  13.4    6.70                31.8\n 2 0792    330.    40      12 Pinus halepensis  13.0    6.90                31.8\n 3 0792    330.    40       1 Quercus ilex ssp… 13      2.40                31.8\n 4 0792    330.    40       2 Quercus ilex ssp… 10.0    2                  127. \n 5 0792    330.    40       3 Quercus ilex ssp… 14.0    2                   31.8\n 6 0792    330.    40       4 Quercus ilex ssp… 13.4    2.60                31.8\n 7 0792    330.    40       5 Quercus ilex ssp… 10.2    2.3                127. \n 8 0792    330.    40       6 Quercus ilex ssp… 10.4    2                  127. \n 9 0792    330.    40       7 Quercus ilex ssp… 13      2.10                31.8\n10 0792    330.    40       8 Quercus ilex ssp…  7.75   2                  127. \n# ℹ 8,776 more rows\n# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar-2",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-ordenar-2",
+    "title": "Tidy data",
+    "section": "Manipular datos: ordenar",
+    "text": "Manipular datos: ordenar\n\nOrdena los datos por especie, de mayor a menor (altura)\n\n\n\nd |&gt; \n  arrange(specie, desc(height))\n\n# A tibble: 8,786 × 10\n   plot  aspect slope tree_id specie            dbh height tree_density_factor\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;\n 1 0924    198     40       2 Acacia spp.      25.6  12.1                 14.1\n 2 0924    198     40       3 Acacia spp.      25.7  NA                   14.1\n 3 1247    161.    40       1 Acer opalus      14.4   9.10                31.8\n 4 1264    194.    40       2 Acer opalus      17.7   7.80                31.8\n 5 1264    194.    40       4 Acer opalus      15.8   7.60                31.8\n 6 1264    194.    40       3 Acer opalus      19.1   6.70                31.8\n 7 1264    194.    40       1 Acer opalus      13.2   6.5                 31.8\n 8 1247    161.    40       2 Acer opalus      12.6   5                   31.8\n 9 0904    167.    16      12 Alnus glutinosa  32.4  16.6                 14.1\n10 0904    167.    16      15 Alnus glutinosa  32.2  15.2                 14.1\n# ℹ 8,776 more rows\n# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-organizar-columnas",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-organizar-columnas",
+    "title": "Tidy data",
+    "section": "Manipular datos: organizar columnas",
+    "text": "Manipular datos: organizar columnas\n\nCambiar orden de las columnas\n\n\n\nd |&gt; \n  relocate(plot, .after = prov)\n\n# A tibble: 8,786 × 10\n   aspect slope tree_id specie                    dbh height tree_density_factor\n    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;\n 1   270     27       1 Pinus halepensis          8.5   3.8                127. \n 2   270     27       2 Pinus halepensis         15.4   4.90                31.8\n 3   330.    40      10 Pinus halepensis         13.4   6.70                31.8\n 4   330.    40      12 Pinus halepensis         13.0   6.90                31.8\n 5   330.    40       1 Quercus ilex ssp. ball…  13     2.40                31.8\n 6   330.    40       2 Quercus ilex ssp. ball…  10.0   2                  127. \n 7   330.    40       3 Quercus ilex ssp. ball…  14.0   2                   31.8\n 8   330.    40       4 Quercus ilex ssp. ball…  13.4   2.60                31.8\n 9   330.    40       5 Quercus ilex ssp. ball…  10.2   2.3                127. \n10   330.    40       6 Quercus ilex ssp. ball…  10.4   2                  127. \n# ℹ 8,776 more rows\n# ℹ 3 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;, plot &lt;chr&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas",
+    "title": "Tidy data",
+    "section": "Manipular datos: seleccionar columnas",
+    "text": "Manipular datos: seleccionar columnas\n\n\nSelecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen\n\n\nd |&gt; \n  select(plot, specie, dbh, height, tree_quality_wood)\n\n# A tibble: 8,786 × 5\n   plot  specie                      dbh height tree_quality_wood\n   &lt;chr&gt; &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;\n 1 0792  Pinus halepensis            8.5   3.8                  2\n 2 0792  Pinus halepensis           15.4   4.90                 2\n 3 0792  Pinus halepensis           13.4   6.70                 2\n 4 0792  Pinus halepensis           13.0   6.90                 2\n 5 0792  Quercus ilex ssp. ballota  13     2.40                 5\n 6 0792  Quercus ilex ssp. ballota  10.0   2                    5\n 7 0792  Quercus ilex ssp. ballota  14.0   2                    5\n 8 0792  Quercus ilex ssp. ballota  13.4   2.60                 5\n 9 0792  Quercus ilex ssp. ballota  10.2   2.3                  5\n10 0792  Quercus ilex ssp. ballota  10.4   2                    5\n# ℹ 8,776 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas-1",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas-1",
+    "title": "Tidy data",
+    "section": "Manipular datos: seleccionar columnas",
+    "text": "Manipular datos: seleccionar columnas\n\n\n\n\n\n\nConflicto select\n\n\n\nselect es una función que aparece en mas de un paquete, por lo que se pueden generar conflictos y/o errores\ncuando la uses escribe dplyr::select\n\n\n\n\n\n\nSelecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen\n\n\nd |&gt; \n  dplyr::select(plot, specie, dbh, height, tree_quality_wood)\n\n# A tibble: 8,786 × 5\n   plot  specie                      dbh height tree_quality_wood\n   &lt;chr&gt; &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;\n 1 0792  Pinus halepensis            8.5   3.8                  2\n 2 0792  Pinus halepensis           15.4   4.90                 2\n 3 0792  Pinus halepensis           13.4   6.70                 2\n 4 0792  Pinus halepensis           13.0   6.90                 2\n 5 0792  Quercus ilex ssp. ballota  13     2.40                 5\n 6 0792  Quercus ilex ssp. ballota  10.0   2                    5\n 7 0792  Quercus ilex ssp. ballota  14.0   2                    5\n 8 0792  Quercus ilex ssp. ballota  13.4   2.60                 5\n 9 0792  Quercus ilex ssp. ballota  10.2   2.3                  5\n10 0792  Quercus ilex ssp. ballota  10.4   2                    5\n# ℹ 8,776 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas-2",
+    "href": "sesiones/programacion/tidy_data.html#manipular-datos-seleccionar-columnas-2",
+    "title": "Tidy data",
+    "section": "Manipular datos: seleccionar columnas",
+    "text": "Manipular datos: seleccionar columnas\n\n\nselect es una función muy poderosa\n\n\n\nSelecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)\n\n\ndatos &lt;- d |&gt; \n  dplyr::select(\n    plot, \n    sp = specie, \n    dbh_cm = dbh, \n    altura_m = height,\n    calidad_madera = tree_quality_wood)\n\ndatos\n\n# A tibble: 8,786 × 5\n   plot  sp                        dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0792  Pinus halepensis             8.5     3.8               2\n 2 0792  Pinus halepensis            15.4     4.90              2\n 3 0792  Pinus halepensis            13.4     6.70              2\n 4 0792  Pinus halepensis            13.0     6.90              2\n 5 0792  Quercus ilex ssp. ballota   13       2.40              5\n 6 0792  Quercus ilex ssp. ballota   10.0     2                 5\n 7 0792  Quercus ilex ssp. ballota   14.0     2                 5\n 8 0792  Quercus ilex ssp. ballota   13.4     2.60              5\n 9 0792  Quercus ilex ssp. ballota   10.2     2.3               5\n10 0792  Quercus ilex ssp. ballota   10.4     2                 5\n# ℹ 8,776 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#filtrar-casos",
+    "href": "sesiones/programacion/tidy_data.html#filtrar-casos",
+    "title": "Tidy data",
+    "section": "Filtrar casos",
+    "text": "Filtrar casos\n\n\nSelecciona árboles de Pinus sylvestris\n\n\n\ndatos |&gt; \n  filter(sp == \"Pinus sylvestris\")\n\n# A tibble: 2,948 × 5\n   plot  sp               dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0795  Pinus sylvestris   12.6     6.30              2\n 2 0795  Pinus sylvestris   11.2     7.10              2\n 3 0795  Pinus sylvestris   15.6     6.40              2\n 4 0795  Pinus sylvestris   14.9     7.70              2\n 5 0795  Pinus sylvestris   13.4     7                 2\n 6 0795  Pinus sylvestris   13.3     6.30              2\n 7 0795  Pinus sylvestris   19.2     7.5               2\n 8 0795  Pinus sylvestris   15.2     7.60              2\n 9 0795  Pinus sylvestris   17.6     7.40              2\n10 0795  Pinus sylvestris   14.6     7.5               2\n# ℹ 2,938 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#filtrar-casos-1",
+    "href": "sesiones/programacion/tidy_data.html#filtrar-casos-1",
+    "title": "Tidy data",
+    "section": "Filtrar casos",
+    "text": "Filtrar casos\n\n\nSelecciona árboles de Pinus\n\n\n\ndatos |&gt; \n  filter(str_detect(string = sp, pattern = \"Pinus\"))\n\n# A tibble: 7,185 × 5\n   plot  sp               dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0792  Pinus halepensis    8.5     3.8               2\n 2 0792  Pinus halepensis   15.4     4.90              2\n 3 0792  Pinus halepensis   13.4     6.70              2\n 4 0792  Pinus halepensis   13.0     6.90              2\n 5 0795  Pinus sylvestris   12.6     6.30              2\n 6 0795  Pinus sylvestris   11.2     7.10              2\n 7 0795  Pinus sylvestris   15.6     6.40              2\n 8 0795  Pinus sylvestris   14.9     7.70              2\n 9 0795  Pinus sylvestris   13.4     7                 2\n10 0795  Pinus sylvestris   13.3     6.30              2\n# ℹ 7,175 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#filtrar-casos-2",
+    "href": "sesiones/programacion/tidy_data.html#filtrar-casos-2",
+    "title": "Tidy data",
+    "section": "Filtrar casos",
+    "text": "Filtrar casos\n\n\nSelecciona árboles adultos (dbh &gt; 7.5) de Pinus\n\n\n\ndatos |&gt; \n  filter(str_detect(string = sp, pattern = \"Pinus\")) |&gt; \n  filter(dbh_cm &gt; 7.5)\n\n# A tibble: 7,183 × 5\n   plot  sp               dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0792  Pinus halepensis    8.5     3.8               2\n 2 0792  Pinus halepensis   15.4     4.90              2\n 3 0792  Pinus halepensis   13.4     6.70              2\n 4 0792  Pinus halepensis   13.0     6.90              2\n 5 0795  Pinus sylvestris   12.6     6.30              2\n 6 0795  Pinus sylvestris   11.2     7.10              2\n 7 0795  Pinus sylvestris   15.6     6.40              2\n 8 0795  Pinus sylvestris   14.9     7.70              2\n 9 0795  Pinus sylvestris   13.4     7                 2\n10 0795  Pinus sylvestris   13.3     6.30              2\n# ℹ 7,173 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#filtrar-casos-3",
+    "href": "sesiones/programacion/tidy_data.html#filtrar-casos-3",
+    "title": "Tidy data",
+    "section": "Filtrar casos",
+    "text": "Filtrar casos\n\n\nSelecciona árboles adultos (dbh &gt; 7.5) de Pinus\n\n\n\ndatos |&gt; \n  filter(str_detect(string = sp, pattern = \"Pinus\") & (dbh_cm &gt; 7.5))\n\n# A tibble: 7,183 × 5\n   plot  sp               dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0792  Pinus halepensis    8.5     3.8               2\n 2 0792  Pinus halepensis   15.4     4.90              2\n 3 0792  Pinus halepensis   13.4     6.70              2\n 4 0792  Pinus halepensis   13.0     6.90              2\n 5 0795  Pinus sylvestris   12.6     6.30              2\n 6 0795  Pinus sylvestris   11.2     7.10              2\n 7 0795  Pinus sylvestris   15.6     6.40              2\n 8 0795  Pinus sylvestris   14.9     7.70              2\n 9 0795  Pinus sylvestris   13.4     7                 2\n10 0795  Pinus sylvestris   13.3     6.30              2\n# ℹ 7,173 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#filtrar-casos-4",
+    "href": "sesiones/programacion/tidy_data.html#filtrar-casos-4",
+    "title": "Tidy data",
+    "section": "Filtrar casos",
+    "text": "Filtrar casos\n\n\nSelecciona árboles adultos (dbh &gt; 7.5) de Pinus con calidad de madera entre 1 y 3\n\n\ndatos |&gt; \n  filter(str_detect(string = sp, pattern = \"Pinus\")) |&gt; \n  filter(dbh_cm &gt; 7.5) |&gt; \n  filter(calidad_madera %in% c(1,2,3))\n\n# A tibble: 6,926 × 5\n   plot  sp               dbh_cm altura_m calidad_madera\n   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 0792  Pinus halepensis    8.5     3.8               2\n 2 0792  Pinus halepensis   15.4     4.90              2\n 3 0792  Pinus halepensis   13.4     6.70              2\n 4 0792  Pinus halepensis   13.0     6.90              2\n 5 0795  Pinus sylvestris   12.6     6.30              2\n 6 0795  Pinus sylvestris   11.2     7.10              2\n 7 0795  Pinus sylvestris   15.6     6.40              2\n 8 0795  Pinus sylvestris   14.9     7.70              2\n 9 0795  Pinus sylvestris   13.4     7                 2\n10 0795  Pinus sylvestris   13.3     6.30              2\n# ℹ 6,916 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#valores-únicos",
+    "href": "sesiones/programacion/tidy_data.html#valores-únicos",
+    "title": "Tidy data",
+    "section": "Valores únicos",
+    "text": "Valores únicos\n\n\n¿Cuantas parcelas hay?\n\n\ndatos |&gt; \n  distinct(plot) |&gt; \n  count()\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1   376"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#valores-únicos-1",
+    "href": "sesiones/programacion/tidy_data.html#valores-únicos-1",
+    "title": "Tidy data",
+    "section": "Valores únicos",
+    "text": "Valores únicos\n\n\n¿Cuantas parcelas diferentes hay que tengan tengan adultos (dbh &gt; 7.5) de Pinus con calidad de madera entre 1 y 3?\n\n\ndatos |&gt; \n  filter(str_detect(string = sp, pattern = \"Pinus\")) |&gt; \n  filter(dbh_cm &gt; 7.5) |&gt; \n  filter(calidad_madera %in% c(1,2,3)) |&gt; \n  distinct(plot) |&gt; \n  count()\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1   289"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#crear-variable",
+    "href": "sesiones/programacion/tidy_data.html#crear-variable",
+    "title": "Tidy data",
+    "section": "Crear variable",
+    "text": "Crear variable\n\n\nCalcula el área basal de cada indivudo\n\n\ndatos |&gt; \n  mutate(area_basal = (pi * (dbh_cm/200)^2))\n\n# A tibble: 8,786 × 6\n   plot  sp                        dbh_cm altura_m calidad_madera area_basal\n   &lt;chr&gt; &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n 1 0792  Pinus halepensis             8.5     3.8               2    0.00567\n 2 0792  Pinus halepensis            15.4     4.90              2    0.0187 \n 3 0792  Pinus halepensis            13.4     6.70              2    0.0141 \n 4 0792  Pinus halepensis            13.0     6.90              2    0.0132 \n 5 0792  Quercus ilex ssp. ballota   13       2.40              5    0.0133 \n 6 0792  Quercus ilex ssp. ballota   10.0     2                 5    0.00793\n 7 0792  Quercus ilex ssp. ballota   14.0     2                 5    0.0155 \n 8 0792  Quercus ilex ssp. ballota   13.4     2.60              5    0.0140 \n 9 0792  Quercus ilex ssp. ballota   10.2     2.3               5    0.00817\n10 0792  Quercus ilex ssp. ballota   10.4     2                 5    0.00841\n# ℹ 8,776 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#crear-variable-categorica",
+    "href": "sesiones/programacion/tidy_data.html#crear-variable-categorica",
+    "title": "Tidy data",
+    "section": "Crear variable categorica",
+    "text": "Crear variable categorica\n\n\nCrea una variable en función de otra variable\n\n\ndatos_clasificados &lt;- datos |&gt; \n  mutate(cohorte = case_when(\n    dbh_cm &lt;= 2.5 ~ \"recluta\",\n    dbh_cm &gt; 2.5 & dbh_cm &lt;= 7.5 ~ \"juvenile\",\n    dbh_cm &gt; 7.5 ~ \"adulto\"\n  ))"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas",
+    "href": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas",
+    "title": "Tidy data",
+    "section": "Calcular variables agregadas",
+    "text": "Calcular variables agregadas\n\n\nCalcula el número de individuos por parcela\n\n\ndatos |&gt; \n  group_by(plot) |&gt; \n  summarise(n_ind = n())\n\n# A tibble: 376 × 2\n   plot  n_ind\n   &lt;chr&gt; &lt;int&gt;\n 1 0792     14\n 2 0795     41\n 3 0796      3\n 4 0797     17\n 5 0798     14\n 6 0799     26\n 7 0800      9\n 8 0801     15\n 9 0802      1\n10 0803     71\n# ℹ 366 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-1",
+    "href": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-1",
+    "title": "Tidy data",
+    "section": "Calcular variables agregadas",
+    "text": "Calcular variables agregadas\n\n\nCalcula el número de individuos de cada especie por parcela\n\n\ndatos |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(n_ind = n())\n\n# A tibble: 633 × 3\n# Groups:   plot [376]\n   plot  sp                        n_ind\n   &lt;chr&gt; &lt;chr&gt;                     &lt;int&gt;\n 1 0792  Pinus halepensis              4\n 2 0792  Quercus ilex ssp. ballota    10\n 3 0795  Pinus pinaster                1\n 4 0795  Pinus sylvestris             40\n 5 0796  Pinus nigra                   2\n 6 0796  Quercus ilex ssp. ballota     1\n 7 0797  Pinus pinaster               17\n 8 0798  Quercus ilex ssp. ballota    14\n 9 0799  Pinus nigra                  25\n10 0799  Quercus ilex ssp. ballota     1\n# ℹ 623 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-2",
+    "href": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-2",
+    "title": "Tidy data",
+    "section": "Calcular variables agregadas",
+    "text": "Calcular variables agregadas\n\n\nCalcula la altura media, min y maxima de cada especie en cada parcela\n\n\ndatos |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(altura_media = mean(altura_m)) \n\n# A tibble: 633 × 3\n# Groups:   plot [376]\n   plot  sp                        altura_media\n   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;\n 1 0792  Pinus halepensis                  5.57\n 2 0792  Quercus ilex ssp. ballota         2.35\n 3 0795  Pinus pinaster                    6.30\n 4 0795  Pinus sylvestris                 NA   \n 5 0796  Pinus nigra                       7.65\n 6 0796  Quercus ilex ssp. ballota         5   \n 7 0797  Pinus pinaster                   NA   \n 8 0798  Quercus ilex ssp. ballota         5.28\n 9 0799  Pinus nigra                       6.94\n10 0799  Quercus ilex ssp. ballota         5.30\n# ℹ 623 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-3",
+    "href": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-3",
+    "title": "Tidy data",
+    "section": "Calcular variables agregadas",
+    "text": "Calcular variables agregadas\n\n\nCalcula la altura media y la desviación estándar de cada especie en cada parcela\n\n\ndatos |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(altura_media = mean(altura_m, na.rm = TRUE)) \n\n# A tibble: 633 × 3\n# Groups:   plot [376]\n   plot  sp                        altura_media\n   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;\n 1 0792  Pinus halepensis                  5.57\n 2 0792  Quercus ilex ssp. ballota         2.35\n 3 0795  Pinus pinaster                    6.30\n 4 0795  Pinus sylvestris                  6.74\n 5 0796  Pinus nigra                       7.65\n 6 0796  Quercus ilex ssp. ballota         5   \n 7 0797  Pinus pinaster                    5.53\n 8 0798  Quercus ilex ssp. ballota         5.28\n 9 0799  Pinus nigra                       6.94\n10 0799  Quercus ilex ssp. ballota         5.30\n# ℹ 623 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-4",
+    "href": "sesiones/programacion/tidy_data.html#calcular-variables-agregadas-4",
+    "title": "Tidy data",
+    "section": "Calcular variables agregadas",
+    "text": "Calcular variables agregadas\n\n\nCalcula la altura media y la desviación estándar de cada especie en cada parcela\n\n\ndatos |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(altura_media = mean(altura_m, na.rm = TRUE),\n            altura_sd = sd(altura_m, na.rm = TRUE))\n\n# A tibble: 633 × 4\n# Groups:   plot [376]\n   plot  sp                        altura_media altura_sd\n   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;\n 1 0792  Pinus halepensis                  5.57     1.49 \n 2 0792  Quercus ilex ssp. ballota         2.35     0.582\n 3 0795  Pinus pinaster                    6.30    NA    \n 4 0795  Pinus sylvestris                  6.74     0.628\n 5 0796  Pinus nigra                       7.65     2.62 \n 6 0796  Quercus ilex ssp. ballota         5       NA    \n 7 0797  Pinus pinaster                    5.53     0.911\n 8 0798  Quercus ilex ssp. ballota         5.28     1.48 \n 9 0799  Pinus nigra                       6.94     0.774\n10 0799  Quercus ilex ssp. ballota         5.30    NA    \n# ℹ 623 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#desagrupar-variables",
+    "href": "sesiones/programacion/tidy_data.html#desagrupar-variables",
+    "title": "Tidy data",
+    "section": "Desagrupar variables",
+    "text": "Desagrupar variables\n\nA menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido\n\n\n\nCalcula la altura media y la desviación estándar de cada especie en cada parcela\n\n\nalturas_medias &lt;- datos |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(altura_media = mean(altura_m, na.rm = TRUE),\n            altura_sd = sd(altura_m, na.rm = TRUE)) |&gt; \n  ungroup()"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\n\nSource: Garrick Aden-Buie’s - Tidyexplained Verbs"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-1",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-1",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\nCalcula la calidad promedio de las diferentes especies de Pinus en cada parcela\n\n\ndatos |&gt; \n  filter(str_detect(sp, \"Pinus\")) |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |&gt; \n  ungroup() |&gt; \n  pivot_wider(names_from = sp, values_from = calidad_promedio)\n\n# A tibble: 289 × 7\n   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`\n   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;\n 1 0792                   2            NA                  NA              NA\n 2 0795                  NA             2                   2.2            NA\n 3 0796                  NA            NA                  NA               2\n 4 0797                  NA             2.29               NA              NA\n 5 0799                  NA            NA                  NA               2\n 6 0800                  NA             2                  NA               2\n 7 0801                  NA             2.11               NA               2\n 8 0802                  NA             2                  NA              NA\n 9 0803                  NA             2                  NA              NA\n10 0805                  NA             2.27               NA              NA\n# ℹ 279 more rows\n# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-2",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-2",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\nCalcula la calidad promedio de las diferentes especies de Pinus en cada parcela\n\n\naux &lt;- datos |&gt; \n  filter(str_detect(sp, \"Pinus\")) |&gt; \n  group_by(plot, sp) |&gt; \n  summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |&gt; \n  ungroup() \naux \n\n# A tibble: 409 × 3\n   plot  sp               calidad_promedio\n   &lt;chr&gt; &lt;chr&gt;                       &lt;dbl&gt;\n 1 0792  Pinus halepensis             2   \n 2 0795  Pinus pinaster               2   \n 3 0795  Pinus sylvestris             2.2 \n 4 0796  Pinus nigra                  2   \n 5 0797  Pinus pinaster               2.29\n 6 0799  Pinus nigra                  2   \n 7 0800  Pinus nigra                  2   \n 8 0800  Pinus pinaster               2   \n 9 0801  Pinus nigra                  2   \n10 0801  Pinus pinaster               2.11\n# ℹ 399 more rows"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-3",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-3",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\nCalcula la calidad promedio de las diferentes especies de Pinus en cada parcela\n\n\naux |&gt; \n  pivot_wider(names_from = sp, values_from = calidad_promedio)\n\n# A tibble: 289 × 7\n   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`\n   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;\n 1 0792                   2            NA                  NA              NA\n 2 0795                  NA             2                   2.2            NA\n 3 0796                  NA            NA                  NA               2\n 4 0797                  NA             2.29               NA              NA\n 5 0799                  NA            NA                  NA               2\n 6 0800                  NA             2                  NA               2\n 7 0801                  NA             2.11               NA               2\n 8 0802                  NA             2                  NA              NA\n 9 0803                  NA             2                  NA              NA\n10 0805                  NA             2.27               NA              NA\n# ℹ 279 more rows\n# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-4",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-4",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\n\nRepresenta en un gráfico la altura y diámetro medio de las diferentes especies de pinos"
+  },
+  {
+    "objectID": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-5",
+    "href": "sesiones/programacion/tidy_data.html#reestructuración-de-datos-5",
+    "title": "Tidy data",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\n\ndatos |&gt; \n  filter(str_detect(sp, \"Pinus\")) |&gt; \n  pivot_longer(\n    cols = c(dbh_cm, altura_m),     \n    names_to = \"variable\",           \n    values_to = \"valor\"            \n  ) |&gt; ggplot(\n    aes(x = sp, y = valor, fill = sp)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") + \n  theme_minimal() +                                \n  labs(\n    title = \"Diámetro y Altura para Especies de Pinus\",\n    x = \"Especies de Pinus\",\n    y = \"Valor\",\n    fill = \"Especie\"\n  ) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + \n  facet_wrap(~ variable, scales = \"free_y\")"
   }
 ]

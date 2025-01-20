@@ -16,7 +16,8 @@ format:
     transition: fade
     background-transition: fade
     highlight-style: a11y
-code-link: true
+    code-block-background: true
+    code-link: true
 crossref:
   fig-title: Figura     # (default is "Figure")
   tbl-title: Tabla     # (default is "Table")
@@ -26,12 +27,13 @@ crossref:
   ref-hyperlink: true
   sec-prefix: ""
   sec-labels: alpha
-code-annotations: hover
 execute:
   echo: true     
   eval: true     
   output: true   
   include: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ---
@@ -311,6 +313,448 @@ d |>
 :::
 
 ::: 
+
+# Manipular datos con [tidyverse](https://www.tidyverse.org/)
+
+
+## Explorar datos 
+::: small
+
+```{r, message=FALSE, echo=FALSE}
+library(tidyverse)
+d <- read_csv("../../assets/ext_data/ifn_sn_tree.csv")
+```
+
+
+```{.r}
+library(tidyverse)
+d <- read_csv("TU_RUTA/ifn_sn_tree.csv")
+```
+
+```{r}
+d
+```
+
+::: 
+
+## Explorar datos 
+::: small 
+```{r, message=FALSE, echo=FALSE}
+library(tidyverse)
+library(tidylog)
+d <- read_csv("../../assets/ext_data/ifn_sn_tree.csv")
+```
+
+
+```{r}
+glimpse(d)
+```
+:::
+
+## Manipular datos: ordenar 
+- Ordena los datos por pendiente 
+
+::: small 
+
+```{r}
+d |> 
+  arrange(slope)
+```
+
+::: 
+
+## Manipular datos: ordenar 
+- Ordena los datos por pendiente decreciente
+
+::: small 
+
+```{r}
+d |> 
+  arrange(desc(slope))
+```
+
+::: 
+
+## Manipular datos: ordenar 
+- Ordena los datos por especie, de mayor a menor (altura)
+
+::: small 
+
+```{r}
+d |> 
+  arrange(specie, desc(height))
+```
+
+::: 
+
+## Manipular datos: organizar columnas
+- Cambiar orden de las columnas 
+
+::: small 
+
+```{r}
+d |> 
+  relocate(plot, .after = prov)
+```
+
+::: 
+
+
+## Manipular datos: seleccionar columnas
+::: small 
+- Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen
+
+```{r}
+d |> 
+  select(plot, specie, dbh, height, tree_quality_wood)
+```
+
+::: 
+
+
+## Manipular datos: seleccionar columnas {footer=false}
+
+::: {.callout-important}
+## Conflicto select
+
+- `select` es una función que aparece en mas de un paquete, por lo que se pueden generar conflictos y/o errores
+
+- cuando la uses escribe `dplyr::select`
+:::
+
+
+::: small 
+- Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen
+
+```{r}
+d |> 
+  dplyr::select(plot, specie, dbh, height, tree_quality_wood)
+```
+
+::: 
+
+## Manipular datos: seleccionar columnas {footer=false}
+
+- `select` es una función muy poderosa 
+
+::: small 
+- Selecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)
+
+```{r}
+datos <- d |> 
+  dplyr::select(
+    plot, 
+    sp = specie, 
+    dbh_cm = dbh, 
+    altura_m = height,
+    calidad_madera = tree_quality_wood)
+
+datos
+```
+
+::: 
+
+## Filtrar casos 
+
+::: small 
+- Selecciona árboles de *Pinus sylvestris*
+
+```{r}
+datos |> 
+  filter(sp == "Pinus sylvestris")
+```
+
+::: 
+
+## Filtrar casos
+
+::: small 
+- Selecciona árboles de *Pinus* 
+
+```{r}
+datos |> 
+  filter(str_detect(string = sp, pattern = "Pinus"))
+```
+
+::: 
+
+## Filtrar casos
+
+::: small 
+- Selecciona árboles adultos (dbh > 7.5) de *Pinus* 
+
+```{r}
+datos |> 
+  filter(str_detect(string = sp, pattern = "Pinus")) |> 
+  filter(dbh_cm > 7.5)
+```
+
+::: 
+
+## Filtrar casos
+
+::: small 
+- Selecciona árboles adultos (dbh > 7.5) de *Pinus* 
+
+```{r}
+datos |> 
+  filter(str_detect(string = sp, pattern = "Pinus") & (dbh_cm > 7.5))
+```
+
+::: 
+
+## Filtrar casos
+
+::: small 
+- Selecciona árboles adultos (dbh > 7.5) de *Pinus* con calidad de madera entre 1 y 3
+
+```{r}
+datos |> 
+  filter(str_detect(string = sp, pattern = "Pinus")) |> 
+  filter(dbh_cm > 7.5) |> 
+  filter(calidad_madera %in% c(1,2,3))
+
+```
+
+::: 
+
+
+## Valores únicos 
+
+::: small 
+- ¿Cuantas parcelas hay? 
+
+```{r}
+datos |> 
+  distinct(plot) |> 
+  count()
+```
+
+::: 
+
+## Valores únicos 
+
+::: small 
+- ¿Cuantas parcelas diferentes hay que tengan tengan adultos (dbh > 7.5) de *Pinus* con calidad de madera entre 1 y 3? 
+
+```{r}
+datos |> 
+  filter(str_detect(string = sp, pattern = "Pinus")) |> 
+  filter(dbh_cm > 7.5) |> 
+  filter(calidad_madera %in% c(1,2,3)) |> 
+  distinct(plot) |> 
+  count()
+```
+
+::: 
+
+## Crear variable 
+
+::: small 
+- Calcula el área basal de cada indivudo 
+
+```{r}
+datos |> 
+  mutate(area_basal = (pi * (dbh_cm/200)^2))
+  
+```
+
+::: 
+
+
+## Crear variable categorica 
+
+::: small 
+- Crea una variable en función de otra variable 
+
+```{r}
+datos_clasificados <- datos |> 
+  mutate(cohorte = case_when(
+    dbh_cm <= 2.5 ~ "recluta",
+    dbh_cm > 2.5 & dbh_cm <= 7.5 ~ "juvenile",
+    dbh_cm > 7.5 ~ "adulto"
+  ))
+  
+```
+
+::: 
+
+## Calcular variables agregadas 
+
+::: small 
+- Calcula el número de individuos por parcela 
+
+```{r}
+datos |> 
+  group_by(plot) |> 
+  summarise(n_ind = n())
+  
+```
+
+::: 
+
+## Calcular variables agregadas 
+
+::: small 
+- Calcula el número de individuos de cada especie por parcela 
+
+```{r}
+datos |> 
+  group_by(plot, sp) |> 
+  summarise(n_ind = n())
+  
+```
+
+::: 
+
+## Calcular variables agregadas 
+
+::: small 
+- Calcula la altura media, min y maxima de cada especie en cada parcela 
+
+```{r}
+datos |> 
+  group_by(plot, sp) |> 
+  summarise(altura_media = mean(altura_m)) 
+```
+
+::: 
+
+## Calcular variables agregadas 
+
+::: small 
+- Calcula la altura media y la desviación estándar de cada especie en cada parcela  
+
+```{r}
+datos |> 
+  group_by(plot, sp) |> 
+  summarise(altura_media = mean(altura_m, na.rm = TRUE)) 
+```
+
+::: 
+
+## Calcular variables agregadas 
+
+::: small 
+- Calcula la altura media y la desviación estándar de cada especie en cada parcela 
+
+```{r}
+datos |> 
+  group_by(plot, sp) |> 
+  summarise(altura_media = mean(altura_m, na.rm = TRUE),
+            altura_sd = sd(altura_m, na.rm = TRUE))
+```
+
+::: 
+
+
+## Desagrupar variables 
+
+- A menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido 
+
+::: small 
+- Calcula la altura media y la desviación estándar de cada especie en cada parcela 
+
+```{r}
+alturas_medias <- datos |> 
+  group_by(plot, sp) |> 
+  summarise(altura_media = mean(altura_m, na.rm = TRUE),
+            altura_sd = sd(altura_m, na.rm = TRUE)) |> 
+  ungroup()
+```
+
+::: 
+
+## Reestructuración de datos 
+
+![Source: [Garrick Aden-Buie’s - Tidyexplained Verbs](https://github.com/gadenbuie/tidyexplain)](images/wider_long){fig-align="center" width=40%}
+
+## Reestructuración de datos 
+
+- Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
+
+```{r}
+datos |> 
+  filter(str_detect(sp, "Pinus")) |> 
+  group_by(plot, sp) |> 
+  summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |> 
+  ungroup() |> 
+  pivot_wider(names_from = sp, values_from = calidad_promedio)
+```
+
+
+## Reestructuración de datos 
+
+- Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
+
+```{r}
+aux <- datos |> 
+  filter(str_detect(sp, "Pinus")) |> 
+  group_by(plot, sp) |> 
+  summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |> 
+  ungroup() 
+aux 
+```
+
+## Reestructuración de datos 
+
+- Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
+
+```{r}
+aux |> 
+  pivot_wider(names_from = sp, values_from = calidad_promedio)
+```
+
+## Reestructuración de datos {footer=false}
+::: small
+- Representa en un gráfico la altura y diámetro medio de las diferentes especies de pinos 
+::: 
+```{r, echo=FALSE}
+datos_pinos <- datos |> 
+  filter(str_detect(sp, "Pinus"))
+
+datos_pinos_longer <- datos_pinos |> 
+  pivot_longer(
+    cols = c(dbh_cm, altura_m),     
+    names_to = "variable",           
+    values_to = "valor"            
+  )
+
+ggplot(datos_pinos_longer, aes(x = sp, y = valor, fill = sp)) +
+  geom_bar(stat = "identity", position = "dodge") + 
+  theme_minimal() +                                
+  labs(
+    title = "Diámetro y Altura para Especies de Pinus",
+    x = "Especies de Pinus",
+    y = "Valor",
+    fill = "Especie"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_wrap(~ variable, scales = "free_y") 
+```
+
+## Reestructuración de datos {footer=false}
+
+```{r, fig.show='hide'}
+datos |> 
+  filter(str_detect(sp, "Pinus")) |> 
+  pivot_longer(
+    cols = c(dbh_cm, altura_m),     
+    names_to = "variable",           
+    values_to = "valor"            
+  ) |> ggplot(
+    aes(x = sp, y = valor, fill = sp)) +
+  geom_bar(stat = "identity", position = "dodge") + 
+  theme_minimal() +                                
+  labs(
+    title = "Diámetro y Altura para Especies de Pinus",
+    x = "Especies de Pinus",
+    y = "Valor",
+    fill = "Especie"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_wrap(~ variable, scales = "free_y") 
+```
 
 
 ## ¿Alguna duda? 
