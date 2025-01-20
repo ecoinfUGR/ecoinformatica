@@ -5,8 +5,8 @@ format:
     code-overflow: wrap
 number-sections: false
 number-depth: 4
-date: "`r Sys.Date()`"
-sesion: x
+date: 2025-02-17
+sesion: 3
 author: 
   - name: "Javier Martínez-López"
     orcid: 0000-0002-0825-7252

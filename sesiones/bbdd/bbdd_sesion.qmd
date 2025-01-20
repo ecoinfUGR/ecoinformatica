@@ -1,0 +1,22 @@
+---
+title: "Bases de Datos"
+format: html
+author: 
+  - name: "María Suárez Muñoz"
+    orcid: 0000-0003-1765-6885
+    email: maria.suarez.munoz@gmail.com
+    affiliation: Departamento de Ingeniería Forestal, Universidad de Córdoba
+date: 2025-02-03
+sesion: 1
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+---
+
+
