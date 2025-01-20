@@ -1,242 +1,229 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Antonio J. Pérez-Luque">
-<meta name="dcterms.date" content="2025-01-17">
-<title>Tidy data – Ciclo de Gestión de los Datos. Ecoinformática</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<html lang="en"><head>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-01-17">
+<title>Ciclo de Gestión de los Datos. Ecoinformática – Tidy data</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
+  </style>
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ee917d3ac312f7388ce82e656a56ad5d.css">
+<link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
-<body class="nav-sidebar docked nav-fixed">
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
-    </a>
-  </div>
-        <div class="quarto-navbar-tools tools-end">
-    <a href="https://github.com/ecoinfugr/" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
-</div>
-          <div id="quarto-search" class="" title="Search"></div>
-      </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tidy data</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../calendario.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calendario</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../modulos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Módulos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../equipo/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Profesores</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../guia_docente.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Guía Docente</span></a>
-  </div>
-</li>
-    </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
-   
-  <ul>
-<li>
-<a href="#data.frame-tibble" id="toc-data.frame-tibble" class="nav-link active" data-scroll-target="#data.frame-tibble"><code>data.frame</code> &amp; <code>tibble</code></a>
-  <ul class="collapse">
-<li><a href="#data.frame" id="toc-data.frame" class="nav-link" data-scroll-target="#data.frame"><code>data.frame</code></a></li>
-  <li>
-<a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><code>tibble</code></a>
-  <ul class="collapse">
-<li><a href="#diferencias-impresi%C3%B3n-de-datos" id="toc-diferencias-impresión-de-datos" class="nav-link" data-scroll-target="#diferencias-impresi%C3%B3n-de-datos">Diferencias: impresión de datos</a></li>
-  <li><a href="#diferencias-impresi%C3%B3n-de-datos-1" id="toc-diferencias-impresión-de-datos-1" class="nav-link" data-scroll-target="#diferencias-impresi%C3%B3n-de-datos-1">Diferencias: impresión de datos</a></li>
-  <li><a href="#diferencias-manejo-de-tipo-de-datos" id="toc-diferencias-manejo-de-tipo-de-datos" class="nav-link" data-scroll-target="#diferencias-manejo-de-tipo-de-datos">Diferencias: manejo de tipo de datos</a></li>
-  </ul>
-</li>
-  <li><a href="#data.frame-vs.-tibble" id="toc-data.frame-vs.-tibble" class="nav-link" data-scroll-target="#data.frame-vs.-tibble"><code>data.frame</code> vs.&nbsp;<code>tibble</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#generar-tibble" id="toc-generar-tibble" class="nav-link" data-scroll-target="#generar-tibble">Generar <code>tibble</code></a>
-  <ul class="collapse">
-<li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
-  <li><a href="#alguna-duda" id="toc-alguna-duda" class="nav-link" data-scroll-target="#alguna-duda">¿Alguna duda?</a></li>
-  </ul>
-</li>
-  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tidy_data.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Tidy data</h1>
-</div>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Tidy data</h1>
 
-
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Antonio J. Pérez-Luque <a href="mailto:antonio.perez@inia.csic.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a>
+</div>
+        <p class="quarto-title-affiliation">
             Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
           </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 17, 2025</p>
     </div>
-  </div>
-  
-    
-  </div>
-  
+</div>
 
-
-</header><hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/tidy_intro.jpg" class="img-fluid figure-img"></p>
+  <p class="date">2025-01-17</p>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/tidy_intro.jpg"></p>
 <figcaption>Source: <a href="https://openscapes.org/blog/2020-10-12-tidy-data/">Julia Lowndes &amp; Allison Horst</a></figcaption></figure>
 </div>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/tidy_data.png" class="img-fluid figure-img"></p>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/tidy_data.png"></p>
 <figcaption>Source: <a href="https://r4ds.had.co.nz/tidy-data.html">Wickham &amp; Grolemund</a></figcaption></figure>
 </div>
-<section id="data.frame-tibble" class="level1"><h1>
+</section><section><section id="data.frame-tibble" class="title-slide slide level1 center"><h1>
 <code>data.frame</code> &amp; <code>tibble</code>
 </h1>
-<section id="data.frame" class="level2"><h2 class="anchored" data-anchor-id="data.frame"><code>data.frame</code></h2>
+
+</section><section id="data.frame" class="slide level2"><h2><code>data.frame</code></h2>
 <div class="small">
 <ul>
 <li>Es la estructura más común para manejar datos tabulares en R</li>
@@ -244,12 +231,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Introducidos con el lenguaje base de R</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb1-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb1-4"><a></a>)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>df </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y
 1 1 A
@@ -258,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr></section><section id="tibble" class="level2"><h2 class="anchored" data-anchor-id="tibble"><code>tibble</code></h2>
+</section><section id="tibble" class="slide level2"><h2><code>tibble</code></h2>
 <div class="small">
 <ul>
 <li>Versión mejorada de <code>data.frame</code> incluida en el pkg <strong>tibble</strong> (<strong>tidyverse</strong>).</li>
@@ -266,14 +253,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Permite manejar variables <em>no-sintácticas</em> (a diferencia de R-base).</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
-<span><span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
-<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>,</span>
-<span>  `x al cuadrado` <span class="op">=</span> <span class="va">x</span><span class="op">^</span><span class="fl">2</span></span>
-<span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">tb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-2"><a></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-3"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb3-4"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb3-5"><a></a>  <span class="st">`</span><span class="at">x al cuadrado</span><span class="st">`</span> <span class="ot">=</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-6"><a></a>) </span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>tb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
       x y     `x al cuadrado`
@@ -284,8 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr>
-<section id="diferencias-impresión-de-datos" class="level3"><h3 class="anchored" data-anchor-id="diferencias-impresión-de-datos">Diferencias: impresión de datos</h3>
+</section><section class="slide level2"><h3 id="diferencias-impresión-de-datos">Diferencias: impresión de datos</h3>
 <div class="small">
 <ul>
 <li>
@@ -297,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y
 1 1 A
@@ -306,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr></section><section id="diferencias-impresión-de-datos-1" class="level3"><h3 class="anchored" data-anchor-id="diferencias-impresión-de-datos-1">Diferencias: impresión de datos</h3>
+</section><section class="slide level2"><h3 id="diferencias-impresión-de-datos-1">Diferencias: impresión de datos</h3>
 <div class="small">
 <ul>
 <li>
@@ -319,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">tb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">print</span>(tb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
       x y     `x al cuadrado`
@@ -330,25 +316,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr></section><section id="diferencias-manejo-de-tipo-de-datos" class="level3"><h3 class="anchored" data-anchor-id="diferencias-manejo-de-tipo-de-datos">Diferencias: manejo de tipo de datos</h3>
+</section><section class="slide level2"><h3 id="diferencias-manejo-de-tipo-de-datos">Diferencias: manejo de tipo de datos</h3>
 <div class="small">
 <ul>
 <li><p><code>data.frame</code>: las columnas de tipo <strong>carácter</strong> se convierten automáticamente a factores, a menos que especifiques <code>stringsAsFactors = FALSE</code>.</p></li>
 <li><p><code>tibble</code>: nunca convierten caracteres a factores de forma automática.</p></li>
 </ul>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">dataframe</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">tibble</a></li>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">dataframe</a></li>
+<li><a href="#tabset-1-2">tibble</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb9-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb9-4"><a></a>)</span>
+<span id="cb9-5"><a></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   3 obs. of  2 variables:
  $ x: num  1 2 3
@@ -356,13 +342,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
-<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">tb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb11-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb11-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
+<span id="cb11-4"><a></a>)</span>
+<span id="cb11-5"><a></a><span class="fu">str</span>(tb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [3 × 2] (S3: tbl_df/tbl/data.frame)
  $ x: num [1:3] 1 2 3
@@ -373,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr></section></section><section id="data.frame-vs.-tibble" class="level2"><h2 class="anchored" data-anchor-id="data.frame-vs.-tibble">
+</section><section id="data.frame-vs.-tibble" class="slide level2"><h2>
 <code>data.frame</code> vs.&nbsp;<code>tibble</code>
 </h2>
 <ul>
@@ -382,27 +368,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <strong>tibble</strong>: Más consistentes, ideales para trabajar con el <strong>tidyverse</strong> y explorar datos.</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<p><strong>Note</strong></p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-content">
 <p>Para usar tibble tienes que cargar el paquete <a href="https://tibble.tidyverse.org/reference/tibble-package.html">tibble</a> que viene por defecto con <a href="https://www.tidyverse.org/packages/">tidyverse</a></p>
 </div>
 </div>
-</section></section><section id="generar-tibble" class="level1"><h1>Generar <code>tibble</code>
+</div>
+</section></section><section><section id="generar-tibble" class="title-slide slide level1 center"><h1>Generar <code>tibble</code>
 </h1>
-<hr>
-<div class="small">
+
+</section><section class="slide level2"><div class="small">
 <p><strong>Transformar <code>data.frame</code> a <code>tibble</code></strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dft</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="va">dft</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>dft <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span>
+<span id="cb13-2"><a></a>dft</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
       x y    
@@ -413,19 +399,18 @@ Note
 </div>
 </div>
 </div>
-<hr>
-<div class="small">
+</section><section class="slide level2"><div class="small">
 <p><strong>Crear <code>tibble</code> directamente</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">arboles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
-<span>  especie <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span>, <span class="st">"Quercus ilex"</span>, </span>
-<span>              <span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span><span class="op">)</span>,</span>
-<span>  altura_m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">8</span>, <span class="fl">10</span>, <span class="fl">12</span>, <span class="fl">18</span><span class="op">)</span>,</span>
-<span>  dbh_cm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">35</span>, <span class="fl">25</span>, <span class="fl">45</span><span class="op">)</span>,</span>
-<span>  site <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"plot_A"</span>, <span class="st">"plot_B"</span>, <span class="st">"plot_C"</span>, <span class="st">"plot_A"</span>, <span class="st">"plot_B"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">arboles</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>arboles <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-2"><a></a>  <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span>, <span class="st">"Quercus ilex"</span>, </span>
+<span id="cb15-3"><a></a>              <span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span>),</span>
+<span id="cb15-4"><a></a>  <span class="at">altura_m =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">18</span>),</span>
+<span id="cb15-5"><a></a>  <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">45</span>),</span>
+<span id="cb15-6"><a></a>  <span class="at">site =</span> <span class="fu">c</span>(<span class="st">"plot_A"</span>, <span class="st">"plot_B"</span>, <span class="st">"plot_C"</span>, <span class="st">"plot_A"</span>, <span class="st">"plot_B"</span>)</span>
+<span id="cb15-7"><a></a>)</span>
+<span id="cb15-8"><a></a></span>
+<span id="cb15-9"><a></a>arboles </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   especie           altura_m dbh_cm site  
@@ -438,19 +423,18 @@ Note
 </div>
 </div>
 </div>
-<hr>
-<div class="small">
+</section><section class="slide level2"><div class="small">
 <p><strong>Crear <code>tibble</code> transpuesto (<code>t</code></strong><code>r</code><strong><code>ibble</code>)</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">arboles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
-<span>  <span class="op">~</span><span class="va">especie</span>,            <span class="op">~</span><span class="va">altura_m</span>, <span class="op">~</span><span class="va">dbh_cm</span>, <span class="op">~</span><span class="va">site</span>,</span>
-<span>  <span class="st">"Pinus halepensis"</span>,   <span class="fl">15</span>,        <span class="fl">30</span>,      <span class="st">"plot_A"</span>,</span>
-<span>  <span class="st">"Quercus ilex"</span>,       <span class="fl">8</span>,         <span class="fl">40</span>,      <span class="st">"plot_B"</span>,</span>
-<span>  <span class="st">"Quercus ilex"</span>,       <span class="fl">10</span>,        <span class="fl">35</span>,      <span class="st">"plot_C"</span>,</span>
-<span>  <span class="st">"Pinus pinaster"</span>,     <span class="fl">12</span>,        <span class="fl">25</span>,      <span class="st">"plot_A"</span>,</span>
-<span>  <span class="st">"Quercus pyrenaica"</span>,  <span class="fl">18</span>,        <span class="fl">45</span>,      <span class="st">"plot_B"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">arboles</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>arboles <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb17-2"><a></a>  <span class="sc">~</span>especie,            <span class="sc">~</span>altura_m, <span class="sc">~</span>dbh_cm, <span class="sc">~</span>site,</span>
+<span id="cb17-3"><a></a>  <span class="st">"Pinus halepensis"</span>,   <span class="dv">15</span>,        <span class="dv">30</span>,      <span class="st">"plot_A"</span>,</span>
+<span id="cb17-4"><a></a>  <span class="st">"Quercus ilex"</span>,       <span class="dv">8</span>,         <span class="dv">40</span>,      <span class="st">"plot_B"</span>,</span>
+<span id="cb17-5"><a></a>  <span class="st">"Quercus ilex"</span>,       <span class="dv">10</span>,        <span class="dv">35</span>,      <span class="st">"plot_C"</span>,</span>
+<span id="cb17-6"><a></a>  <span class="st">"Pinus pinaster"</span>,     <span class="dv">12</span>,        <span class="dv">25</span>,      <span class="st">"plot_A"</span>,</span>
+<span id="cb17-7"><a></a>  <span class="st">"Quercus pyrenaica"</span>,  <span class="dv">18</span>,        <span class="dv">45</span>,      <span class="st">"plot_B"</span></span>
+<span id="cb17-8"><a></a>)</span>
+<span id="cb17-9"><a></a>arboles </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   especie           altura_m dbh_cm site  
@@ -463,29 +447,29 @@ Note
 </div>
 </div>
 </div>
-<section id="section" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="section"></h2>
+</section><section id="section" class="slide level2" data-footer="false"><h2></h2>
 <div class="small">
 <p><strong>Crear <code>tibble</code> a partir de listas complejas (<code>enframe</code>)</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Crea tibble</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Acceso a datos</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Acceso a datos (II)</a></li>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">Crea tibble</a></li>
+<li><a href="#tabset-2-2">Acceso a datos</a></li>
+<li><a href="#tabset-2-3">Acceso a datos (II)</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lista_compleja</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  numeros <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  letras <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>,</span>
-<span>  datos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>    tipo <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span><span class="op">)</span>,</span>
-<span>    valores <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">lc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span><span class="op">(</span><span class="va">lista_compleja</span><span class="op">)</span></span>
-<span><span class="va">lc</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>lista_compleja <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb19-2"><a></a>  <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb19-3"><a></a>  <span class="at">letras =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb19-4"><a></a>  <span class="at">datos =</span> <span class="fu">list</span>(</span>
+<span id="cb19-5"><a></a>    <span class="at">tipo =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>),</span>
+<span id="cb19-6"><a></a>    <span class="at">valores =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb19-7"><a></a>  )</span>
+<span id="cb19-8"><a></a>)</span>
+<span id="cb19-9"><a></a></span>
+<span id="cb19-10"><a></a>lc <span class="ot">&lt;-</span> <span class="fu">enframe</span>(lista_compleja)</span>
+<span id="cb19-11"><a></a>lc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name    value           
@@ -496,9 +480,9 @@ Note
 </div>
 </div>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>lc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name    value           
@@ -507,11 +491,11 @@ Note
 2 letras  &lt;chr [3]&gt;       
 3 datos   &lt;named list [2]&gt;</code></pre>
 </div>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>lc[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeros" "letras"  "datos"  </code></pre>
 </div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>lc[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 1 2 3
@@ -528,19 +512,19 @@ Note
 </div>
 </div>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-3">
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 1 2 3</code></pre>
 </div>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "A" "B" "C"</code></pre>
 </div>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lc</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>lc[[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [[1]]$tipo
@@ -549,7 +533,7 @@ Note
 [[1]]$valores
 [1] 10 20 30</code></pre>
 </div>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">lc</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">as.data.frame</span>(lc[[<span class="dv">2</span>]][<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  tipo valores
 1    x      10
@@ -561,41 +545,41 @@ Note
 </div>
 </div>
 </div>
-</section><section id="section-1" class="level2" data-footer="false"><h2 data-footer="false" class="anchored" data-anchor-id="section-1"></h2>
+</section><section id="section-1" class="slide level2" data-footer="false"><h2></h2>
 <div class="small">
 <p><strong>Crear <code>tibble</code> a partir de listas complejas (<code>enframe</code>) (II)</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Datos forestales</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Crea tibble</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Desagregar</a></li>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-3-1">Datos forestales</a></li>
+<li><a href="#tabset-3-2">Crea tibble</a></li>
+<li><a href="#tabset-3-3">Desagregar</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-3-1">
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datos_forestales</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  parcela_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>    especie <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span><span class="op">)</span>,</span>
-<span>    n_ind <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span>,</span>
-<span>    dbh_cm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">30</span><span class="op">)</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  parcela_2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>    especie <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span><span class="op">)</span>,</span>
-<span>    n_ind <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">8</span><span class="op">)</span>,</span>
-<span>    dbh_cm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">35</span><span class="op">)</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  parcela_3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>    especie <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pinus sylvestris"</span><span class="op">)</span>,</span>
-<span>    n_ind <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span>,</span>
-<span>    dbh_cm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>datos_forestales <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb35-2"><a></a>  <span class="at">parcela_1 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-3"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus halepensis"</span>, <span class="st">"Quercus ilex"</span>),</span>
+<span id="cb35-4"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb35-5"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>)</span>
+<span id="cb35-6"><a></a>  ),</span>
+<span id="cb35-7"><a></a>  <span class="at">parcela_2 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-8"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus pinaster"</span>, <span class="st">"Quercus pyrenaica"</span>),</span>
+<span id="cb35-9"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">8</span>),</span>
+<span id="cb35-10"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">35</span>)</span>
+<span id="cb35-11"><a></a>  ),</span>
+<span id="cb35-12"><a></a>  <span class="at">parcela_3 =</span> <span class="fu">list</span>(</span>
+<span id="cb35-13"><a></a>    <span class="at">especie =</span> <span class="fu">c</span>(<span class="st">"Pinus sylvestris"</span>),</span>
+<span id="cb35-14"><a></a>    <span class="at">n_ind =</span> <span class="fu">c</span>(<span class="dv">12</span>),</span>
+<span id="cb35-15"><a></a>    <span class="at">dbh_cm =</span> <span class="fu">c</span>(<span class="dv">40</span>)</span>
+<span id="cb35-16"><a></a>  )</span>
+<span id="cb35-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span><span class="op">(</span><span class="va">datos_forestales</span>, name <span class="op">=</span> <span class="st">"parcela"</span>, value <span class="op">=</span> <span class="st">"contenido"</span><span class="op">)</span></span>
-<span><span class="va">d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>d <span class="ot">&lt;-</span> <span class="fu">enframe</span>(datos_forestales, <span class="at">name =</span> <span class="st">"parcela"</span>, <span class="at">value =</span> <span class="st">"contenido"</span>)</span>
+<span id="cb36-2"><a></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   parcela   contenido       
@@ -606,12 +590,12 @@ Note
 </div>
 </div>
 </div>
-<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div id="tabset-3-3">
 <div class="cell">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span><span class="va">d</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider</a></span><span class="op">(</span><span class="va">contenido</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html">unnest</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">especie</span>, <span class="va">n_ind</span>, <span class="va">dbh_cm</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb38-2"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a></a>  <span class="fu">unnest_wider</span>(contenido) <span class="sc">|&gt;</span> </span>
+<span id="cb38-4"><a></a>  <span class="fu">unnest</span>(<span class="fu">c</span>(especie, n_ind, dbh_cm)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   parcela   especie           n_ind dbh_cm
@@ -627,524 +611,1204 @@ Note
 </div>
 </div>
 </div>
-</section><section id="alguna-duda" class="level2"><h2 class="anchored" data-anchor-id="alguna-duda">¿Alguna duda?</h2>
+</section></section><section><section id="manipular-datos-con-tidyverse" class="title-slide slide level1 center"><h1>Manipular datos con <a href="https://www.tidyverse.org/">tidyverse</a>
+</h1>
+
+</section><section id="explorar-datos" class="slide level2"><h2>Explorar datos</h2>
+<div class="small">
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb40-2"><a></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"TU_RUTA/ifn_sn_tree.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   plot  aspect slope tree_id specie              dbh height tree_density_factor
+   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1 0792    270     27       1 Pinus halepensis    8.5   3.8                127. 
+ 2 0792    270     27       2 Pinus halepensis   15.4   4.90                31.8
+ 3 0792    330.    40      10 Pinus halepensis   13.4   6.70                31.8
+ 4 0792    330.    40      12 Pinus halepensis   13.0   6.90                31.8
+ 5 0792    330.    40       1 Quercus ilex ssp…  13     2.40                31.8
+ 6 0792    330.    40       2 Quercus ilex ssp…  10.0   2                  127. 
+ 7 0792    330.    40       3 Quercus ilex ssp…  14.0   2                   31.8
+ 8 0792    330.    40       4 Quercus ilex ssp…  13.4   2.60                31.8
+ 9 0792    330.    40       5 Quercus ilex ssp…  10.2   2.3                127. 
+10 0792    330.    40       6 Quercus ilex ssp…  10.4   2                  127. 
+# ℹ 8,776 more rows
+# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="explorar-datos-1" class="slide level2"><h2>Explorar datos</h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">glimpse</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 8,786
+Columns: 10
+$ plot                &lt;chr&gt; "0792", "0792", "0792", "0792", "0792", "0792", "0…
+$ aspect              &lt;dbl&gt; 270.0, 270.0, 330.3, 330.3, 330.3, 330.3, 330.3, 3…
+$ slope               &lt;dbl&gt; 27, 27, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40…
+$ tree_id             &lt;dbl&gt; 1, 2, 10, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1, 3,…
+$ specie              &lt;chr&gt; "Pinus halepensis", "Pinus halepensis", "Pinus hal…
+$ dbh                 &lt;dbl&gt; 8.50, 15.45, 13.40, 12.95, 13.00, 10.05, 14.05, 13…
+$ height              &lt;dbl&gt; 3.8, 4.9, 6.7, 6.9, 2.4, 2.0, 2.0, 2.6, 2.3, 2.0, …
+$ tree_density_factor &lt;dbl&gt; 127.32395, 31.83099, 31.83099, 31.83099, 31.83099,…
+$ tree_quality_wood   &lt;dbl&gt; 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2, 2, 2,…
+$ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "Almer…</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-ordenar" class="slide level2"><h2>Manipular datos: ordenar</h2>
+<ul>
+<li>Ordena los datos por pendiente</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb45-2"><a></a>  <span class="fu">arrange</span>(slope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   plot  aspect slope tree_id specie             dbh height tree_density_factor
+   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1 0811    202.   7.5       1 Pinus sylvestris  13.6   6.70                31.8
+ 2 0811    202.   7.5       2 Pinus sylvestris  14.6   6.30                31.8
+ 3 0811    202.   7.5       3 Pinus sylvestris  15.1   6.20                31.8
+ 4 0811    202.   7.5       4 Pinus sylvestris  13.6   5.40                31.8
+ 5 0811    202.   7.5       5 Pinus sylvestris  13     6.10                31.8
+ 6 0811    202.   7.5       6 Pinus sylvestris  13.8   6.70                31.8
+ 7 0811    202.   7.5       7 Pinus sylvestris  14.6   6.40                31.8
+ 8 0811    202.   7.5       8 Pinus sylvestris  16.4   6.80                31.8
+ 9 0811    202.   7.5       9 Pinus sylvestris  20.5   7.30                31.8
+10 0811    202.   7.5      10 Pinus sylvestris  13.9   5.90                31.8
+# ℹ 8,776 more rows
+# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-ordenar-1" class="slide level2"><h2>Manipular datos: ordenar</h2>
+<ul>
+<li>Ordena los datos por pendiente decreciente</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb47-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(slope))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   plot  aspect slope tree_id specie              dbh height tree_density_factor
+   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1 0792    330.    40      10 Pinus halepensis  13.4    6.70                31.8
+ 2 0792    330.    40      12 Pinus halepensis  13.0    6.90                31.8
+ 3 0792    330.    40       1 Quercus ilex ssp… 13      2.40                31.8
+ 4 0792    330.    40       2 Quercus ilex ssp… 10.0    2                  127. 
+ 5 0792    330.    40       3 Quercus ilex ssp… 14.0    2                   31.8
+ 6 0792    330.    40       4 Quercus ilex ssp… 13.4    2.60                31.8
+ 7 0792    330.    40       5 Quercus ilex ssp… 10.2    2.3                127. 
+ 8 0792    330.    40       6 Quercus ilex ssp… 10.4    2                  127. 
+ 9 0792    330.    40       7 Quercus ilex ssp… 13      2.10                31.8
+10 0792    330.    40       8 Quercus ilex ssp…  7.75   2                  127. 
+# ℹ 8,776 more rows
+# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-ordenar-2" class="slide level2"><h2>Manipular datos: ordenar</h2>
+<ul>
+<li>Ordena los datos por especie, de mayor a menor (altura)</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb49-2"><a></a>  <span class="fu">arrange</span>(specie, <span class="fu">desc</span>(height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   plot  aspect slope tree_id specie            dbh height tree_density_factor
+   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1 0924    198     40       2 Acacia spp.      25.6  12.1                 14.1
+ 2 0924    198     40       3 Acacia spp.      25.7  NA                   14.1
+ 3 1247    161.    40       1 Acer opalus      14.4   9.10                31.8
+ 4 1264    194.    40       2 Acer opalus      17.7   7.80                31.8
+ 5 1264    194.    40       4 Acer opalus      15.8   7.60                31.8
+ 6 1264    194.    40       3 Acer opalus      19.1   6.70                31.8
+ 7 1264    194.    40       1 Acer opalus      13.2   6.5                 31.8
+ 8 1247    161.    40       2 Acer opalus      12.6   5                   31.8
+ 9 0904    167.    16      12 Alnus glutinosa  32.4  16.6                 14.1
+10 0904    167.    16      15 Alnus glutinosa  32.2  15.2                 14.1
+# ℹ 8,776 more rows
+# ℹ 2 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-organizar-columnas" class="slide level2"><h2>Manipular datos: organizar columnas</h2>
+<ul>
+<li>Cambiar orden de las columnas</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb51-2"><a></a>  <span class="fu">relocate</span>(plot, <span class="at">.after =</span> prov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   aspect slope tree_id specie                    dbh height tree_density_factor
+    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1   270     27       1 Pinus halepensis          8.5   3.8                127. 
+ 2   270     27       2 Pinus halepensis         15.4   4.90                31.8
+ 3   330.    40      10 Pinus halepensis         13.4   6.70                31.8
+ 4   330.    40      12 Pinus halepensis         13.0   6.90                31.8
+ 5   330.    40       1 Quercus ilex ssp. ball…  13     2.40                31.8
+ 6   330.    40       2 Quercus ilex ssp. ball…  10.0   2                  127. 
+ 7   330.    40       3 Quercus ilex ssp. ball…  14.0   2                   31.8
+ 8   330.    40       4 Quercus ilex ssp. ball…  13.4   2.60                31.8
+ 9   330.    40       5 Quercus ilex ssp. ball…  10.2   2.3                127. 
+10   330.    40       6 Quercus ilex ssp. ball…  10.4   2                  127. 
+# ℹ 8,776 more rows
+# ℹ 3 more variables: tree_quality_wood &lt;dbl&gt;, prov &lt;chr&gt;, plot &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-seleccionar-columnas" class="slide level2"><h2>Manipular datos: seleccionar columnas</h2>
+<div class="small">
+<ul>
+<li>Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb53-2"><a></a>  <span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 5
+   plot  specie                      dbh height tree_quality_wood
+   &lt;chr&gt; &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;
+ 1 0792  Pinus halepensis            8.5   3.8                  2
+ 2 0792  Pinus halepensis           15.4   4.90                 2
+ 3 0792  Pinus halepensis           13.4   6.70                 2
+ 4 0792  Pinus halepensis           13.0   6.90                 2
+ 5 0792  Quercus ilex ssp. ballota  13     2.40                 5
+ 6 0792  Quercus ilex ssp. ballota  10.0   2                    5
+ 7 0792  Quercus ilex ssp. ballota  14.0   2                    5
+ 8 0792  Quercus ilex ssp. ballota  13.4   2.60                 5
+ 9 0792  Quercus ilex ssp. ballota  10.2   2.3                  5
+10 0792  Quercus ilex ssp. ballota  10.4   2                    5
+# ℹ 8,776 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-seleccionar-columnas-1" class="slide level2" data-footer="false"><h2>Manipular datos: seleccionar columnas</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Conflicto select</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p><code>select</code> es una función que aparece en mas de un paquete, por lo que se pueden generar conflictos y/o errores</p></li>
+<li><p>cuando la uses escribe <code><a href="https://dplyr.tidyverse.org/reference/select.html">dplyr::select</a></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="small">
+<ul>
+<li>Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb55-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 5
+   plot  specie                      dbh height tree_quality_wood
+   &lt;chr&gt; &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;
+ 1 0792  Pinus halepensis            8.5   3.8                  2
+ 2 0792  Pinus halepensis           15.4   4.90                 2
+ 3 0792  Pinus halepensis           13.4   6.70                 2
+ 4 0792  Pinus halepensis           13.0   6.90                 2
+ 5 0792  Quercus ilex ssp. ballota  13     2.40                 5
+ 6 0792  Quercus ilex ssp. ballota  10.0   2                    5
+ 7 0792  Quercus ilex ssp. ballota  14.0   2                    5
+ 8 0792  Quercus ilex ssp. ballota  13.4   2.60                 5
+ 9 0792  Quercus ilex ssp. ballota  10.2   2.3                  5
+10 0792  Quercus ilex ssp. ballota  10.4   2                    5
+# ℹ 8,776 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="manipular-datos-seleccionar-columnas-2" class="slide level2" data-footer="false"><h2>Manipular datos: seleccionar columnas</h2>
+<ul>
+<li>
+<code>select</code> es una función muy poderosa</li>
+</ul>
+<div class="small">
+<ul>
+<li>Selecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>datos <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb57-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb57-3"><a></a>    plot, </span>
+<span id="cb57-4"><a></a>    <span class="at">sp =</span> specie, </span>
+<span id="cb57-5"><a></a>    <span class="at">dbh_cm =</span> dbh, </span>
+<span id="cb57-6"><a></a>    <span class="at">altura_m =</span> height,</span>
+<span id="cb57-7"><a></a>    <span class="at">calidad_madera =</span> tree_quality_wood)</span>
+<span id="cb57-8"><a></a></span>
+<span id="cb57-9"><a></a>datos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 5
+   plot  sp                        dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0792  Pinus halepensis             8.5     3.8               2
+ 2 0792  Pinus halepensis            15.4     4.90              2
+ 3 0792  Pinus halepensis            13.4     6.70              2
+ 4 0792  Pinus halepensis            13.0     6.90              2
+ 5 0792  Quercus ilex ssp. ballota   13       2.40              5
+ 6 0792  Quercus ilex ssp. ballota   10.0     2                 5
+ 7 0792  Quercus ilex ssp. ballota   14.0     2                 5
+ 8 0792  Quercus ilex ssp. ballota   13.4     2.60              5
+ 9 0792  Quercus ilex ssp. ballota   10.2     2.3               5
+10 0792  Quercus ilex ssp. ballota   10.4     2                 5
+# ℹ 8,776 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="filtrar-casos" class="slide level2"><h2>Filtrar casos</h2>
+<div class="small">
+<ul>
+<li>Selecciona árboles de <em>Pinus sylvestris</em>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb59-2"><a></a>  <span class="fu">filter</span>(sp <span class="sc">==</span> <span class="st">"Pinus sylvestris"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,948 × 5
+   plot  sp               dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0795  Pinus sylvestris   12.6     6.30              2
+ 2 0795  Pinus sylvestris   11.2     7.10              2
+ 3 0795  Pinus sylvestris   15.6     6.40              2
+ 4 0795  Pinus sylvestris   14.9     7.70              2
+ 5 0795  Pinus sylvestris   13.4     7                 2
+ 6 0795  Pinus sylvestris   13.3     6.30              2
+ 7 0795  Pinus sylvestris   19.2     7.5               2
+ 8 0795  Pinus sylvestris   15.2     7.60              2
+ 9 0795  Pinus sylvestris   17.6     7.40              2
+10 0795  Pinus sylvestris   14.6     7.5               2
+# ℹ 2,938 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="filtrar-casos-1" class="slide level2"><h2>Filtrar casos</h2>
+<div class="small">
+<ul>
+<li>Selecciona árboles de <em>Pinus</em>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb61-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,185 × 5
+   plot  sp               dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0792  Pinus halepensis    8.5     3.8               2
+ 2 0792  Pinus halepensis   15.4     4.90              2
+ 3 0792  Pinus halepensis   13.4     6.70              2
+ 4 0792  Pinus halepensis   13.0     6.90              2
+ 5 0795  Pinus sylvestris   12.6     6.30              2
+ 6 0795  Pinus sylvestris   11.2     7.10              2
+ 7 0795  Pinus sylvestris   15.6     6.40              2
+ 8 0795  Pinus sylvestris   14.9     7.70              2
+ 9 0795  Pinus sylvestris   13.4     7                 2
+10 0795  Pinus sylvestris   13.3     6.30              2
+# ℹ 7,175 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="filtrar-casos-2" class="slide level2"><h2>Filtrar casos</h2>
+<div class="small">
+<ul>
+<li>Selecciona árboles adultos (dbh &gt; 7.5) de <em>Pinus</em>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb63-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb63-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,183 × 5
+   plot  sp               dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0792  Pinus halepensis    8.5     3.8               2
+ 2 0792  Pinus halepensis   15.4     4.90              2
+ 3 0792  Pinus halepensis   13.4     6.70              2
+ 4 0792  Pinus halepensis   13.0     6.90              2
+ 5 0795  Pinus sylvestris   12.6     6.30              2
+ 6 0795  Pinus sylvestris   11.2     7.10              2
+ 7 0795  Pinus sylvestris   15.6     6.40              2
+ 8 0795  Pinus sylvestris   14.9     7.70              2
+ 9 0795  Pinus sylvestris   13.4     7                 2
+10 0795  Pinus sylvestris   13.3     6.30              2
+# ℹ 7,173 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="filtrar-casos-3" class="slide level2"><h2>Filtrar casos</h2>
+<div class="small">
+<ul>
+<li>Selecciona árboles adultos (dbh &gt; 7.5) de <em>Pinus</em>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb65-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>) <span class="sc">&amp;</span> (dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,183 × 5
+   plot  sp               dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0792  Pinus halepensis    8.5     3.8               2
+ 2 0792  Pinus halepensis   15.4     4.90              2
+ 3 0792  Pinus halepensis   13.4     6.70              2
+ 4 0792  Pinus halepensis   13.0     6.90              2
+ 5 0795  Pinus sylvestris   12.6     6.30              2
+ 6 0795  Pinus sylvestris   11.2     7.10              2
+ 7 0795  Pinus sylvestris   15.6     6.40              2
+ 8 0795  Pinus sylvestris   14.9     7.70              2
+ 9 0795  Pinus sylvestris   13.4     7                 2
+10 0795  Pinus sylvestris   13.3     6.30              2
+# ℹ 7,173 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="filtrar-casos-4" class="slide level2"><h2>Filtrar casos</h2>
+<div class="small">
+<ul>
+<li>Selecciona árboles adultos (dbh &gt; 7.5) de <em>Pinus</em> con calidad de madera entre 1 y 3</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb67-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb67-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6,926 × 5
+   plot  sp               dbh_cm altura_m calidad_madera
+   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;
+ 1 0792  Pinus halepensis    8.5     3.8               2
+ 2 0792  Pinus halepensis   15.4     4.90              2
+ 3 0792  Pinus halepensis   13.4     6.70              2
+ 4 0792  Pinus halepensis   13.0     6.90              2
+ 5 0795  Pinus sylvestris   12.6     6.30              2
+ 6 0795  Pinus sylvestris   11.2     7.10              2
+ 7 0795  Pinus sylvestris   15.6     6.40              2
+ 8 0795  Pinus sylvestris   14.9     7.70              2
+ 9 0795  Pinus sylvestris   13.4     7                 2
+10 0795  Pinus sylvestris   13.3     6.30              2
+# ℹ 6,916 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="valores-únicos" class="slide level2"><h2>Valores únicos</h2>
+<div class="small">
+<ul>
+<li>¿Cuantas parcelas hay?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb69-2"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb69-3"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+      n
+  &lt;int&gt;
+1   376</code></pre>
+</div>
+</div>
+</div>
+</section><section id="valores-únicos-1" class="slide level2"><h2>Valores únicos</h2>
+<div class="small">
+<ul>
+<li>¿Cuantas parcelas diferentes hay que tengan tengan adultos (dbh &gt; 7.5) de <em>Pinus</em> con calidad de madera entre 1 y 3?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb71-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb71-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb71-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb71-5"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb71-6"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+      n
+  &lt;int&gt;
+1   289</code></pre>
+</div>
+</div>
+</div>
+</section><section id="crear-variable" class="slide level2"><h2>Crear variable</h2>
+<div class="small">
+<ul>
+<li>Calcula el área basal de cada indivudo</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a></a>  <span class="fu">mutate</span>(<span class="at">area_basal =</span> (pi <span class="sc">*</span> (dbh_cm<span class="sc">/</span><span class="dv">200</span>)<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 6
+   plot  sp                        dbh_cm altura_m calidad_madera area_basal
+   &lt;chr&gt; &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+ 1 0792  Pinus halepensis             8.5     3.8               2    0.00567
+ 2 0792  Pinus halepensis            15.4     4.90              2    0.0187 
+ 3 0792  Pinus halepensis            13.4     6.70              2    0.0141 
+ 4 0792  Pinus halepensis            13.0     6.90              2    0.0132 
+ 5 0792  Quercus ilex ssp. ballota   13       2.40              5    0.0133 
+ 6 0792  Quercus ilex ssp. ballota   10.0     2                 5    0.00793
+ 7 0792  Quercus ilex ssp. ballota   14.0     2                 5    0.0155 
+ 8 0792  Quercus ilex ssp. ballota   13.4     2.60              5    0.0140 
+ 9 0792  Quercus ilex ssp. ballota   10.2     2.3               5    0.00817
+10 0792  Quercus ilex ssp. ballota   10.4     2                 5    0.00841
+# ℹ 8,776 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="crear-variable-categorica" class="slide level2"><h2>Crear variable categorica</h2>
+<div class="small">
+<ul>
+<li>Crea una variable en función de otra variable</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>datos_clasificados <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb75-2"><a></a>  <span class="fu">mutate</span>(<span class="at">cohorte =</span> <span class="fu">case_when</span>(</span>
+<span id="cb75-3"><a></a>    dbh_cm <span class="sc">&lt;=</span> <span class="fl">2.5</span> <span class="sc">~</span> <span class="st">"recluta"</span>,</span>
+<span id="cb75-4"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> dbh_cm <span class="sc">&lt;=</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"juvenile"</span>,</span>
+<span id="cb75-5"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"adulto"</span></span>
+<span id="cb75-6"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="calcular-variables-agregadas" class="slide level2"><h2>Calcular variables agregadas</h2>
+<div class="small">
+<ul>
+<li>Calcula el número de individuos por parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb76-2"><a></a>  <span class="fu">group_by</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb76-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 376 × 2
+   plot  n_ind
+   &lt;chr&gt; &lt;int&gt;
+ 1 0792     14
+ 2 0795     41
+ 3 0796      3
+ 4 0797     17
+ 5 0798     14
+ 6 0799     26
+ 7 0800      9
+ 8 0801     15
+ 9 0802      1
+10 0803     71
+# ℹ 366 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="calcular-variables-agregadas-1" class="slide level2"><h2>Calcular variables agregadas</h2>
+<div class="small">
+<ul>
+<li>Calcula el número de individuos de cada especie por parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb78-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb78-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 633 × 3
+# Groups:   plot [376]
+   plot  sp                        n_ind
+   &lt;chr&gt; &lt;chr&gt;                     &lt;int&gt;
+ 1 0792  Pinus halepensis              4
+ 2 0792  Quercus ilex ssp. ballota    10
+ 3 0795  Pinus pinaster                1
+ 4 0795  Pinus sylvestris             40
+ 5 0796  Pinus nigra                   2
+ 6 0796  Quercus ilex ssp. ballota     1
+ 7 0797  Pinus pinaster               17
+ 8 0798  Quercus ilex ssp. ballota    14
+ 9 0799  Pinus nigra                  25
+10 0799  Quercus ilex ssp. ballota     1
+# ℹ 623 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="calcular-variables-agregadas-2" class="slide level2"><h2>Calcular variables agregadas</h2>
+<div class="small">
+<ul>
+<li>Calcula la altura media, min y maxima de cada especie en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb80-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb80-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 633 × 3
+# Groups:   plot [376]
+   plot  sp                        altura_media
+   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;
+ 1 0792  Pinus halepensis                  5.57
+ 2 0792  Quercus ilex ssp. ballota         2.35
+ 3 0795  Pinus pinaster                    6.30
+ 4 0795  Pinus sylvestris                 NA   
+ 5 0796  Pinus nigra                       7.65
+ 6 0796  Quercus ilex ssp. ballota         5   
+ 7 0797  Pinus pinaster                   NA   
+ 8 0798  Quercus ilex ssp. ballota         5.28
+ 9 0799  Pinus nigra                       6.94
+10 0799  Quercus ilex ssp. ballota         5.30
+# ℹ 623 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="calcular-variables-agregadas-3" class="slide level2"><h2>Calcular variables agregadas</h2>
+<div class="small">
+<ul>
+<li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb82-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb82-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 633 × 3
+# Groups:   plot [376]
+   plot  sp                        altura_media
+   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;
+ 1 0792  Pinus halepensis                  5.57
+ 2 0792  Quercus ilex ssp. ballota         2.35
+ 3 0795  Pinus pinaster                    6.30
+ 4 0795  Pinus sylvestris                  6.74
+ 5 0796  Pinus nigra                       7.65
+ 6 0796  Quercus ilex ssp. ballota         5   
+ 7 0797  Pinus pinaster                    5.53
+ 8 0798  Quercus ilex ssp. ballota         5.28
+ 9 0799  Pinus nigra                       6.94
+10 0799  Quercus ilex ssp. ballota         5.30
+# ℹ 623 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="calcular-variables-agregadas-4" class="slide level2"><h2>Calcular variables agregadas</h2>
+<div class="small">
+<ul>
+<li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb84-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb84-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb84-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 633 × 4
+# Groups:   plot [376]
+   plot  sp                        altura_media altura_sd
+   &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;
+ 1 0792  Pinus halepensis                  5.57     1.49 
+ 2 0792  Quercus ilex ssp. ballota         2.35     0.582
+ 3 0795  Pinus pinaster                    6.30    NA    
+ 4 0795  Pinus sylvestris                  6.74     0.628
+ 5 0796  Pinus nigra                       7.65     2.62 
+ 6 0796  Quercus ilex ssp. ballota         5       NA    
+ 7 0797  Pinus pinaster                    5.53     0.911
+ 8 0798  Quercus ilex ssp. ballota         5.28     1.48 
+ 9 0799  Pinus nigra                       6.94     0.774
+10 0799  Quercus ilex ssp. ballota         5.30    NA    
+# ℹ 623 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="desagrupar-variables" class="slide level2"><h2>Desagrupar variables</h2>
+<ul>
+<li>A menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido</li>
+</ul>
+<div class="small">
+<ul>
+<li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a>alturas_medias <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb86-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb86-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb86-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb86-5"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="reestructuración-de-datos" class="slide level2"><h2>Reestructuración de datos</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wider_long.png" style="width:40.0%"></p>
+<figcaption>Source: <a href="https://github.com/gadenbuie/tidyexplain">Garrick Aden-Buie’s - Tidyexplained Verbs</a></figcaption></figure>
+</div>
+</section><section id="reestructuración-de-datos-1" class="slide level2"><h2>Reestructuración de datos</h2>
+<ul>
+<li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb87-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb87-3"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb87-4"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb87-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb87-6"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 289 × 7
+   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+ 1 0792                   2            NA                  NA              NA
+ 2 0795                  NA             2                   2.2            NA
+ 3 0796                  NA            NA                  NA               2
+ 4 0797                  NA             2.29               NA              NA
+ 5 0799                  NA            NA                  NA               2
+ 6 0800                  NA             2                  NA               2
+ 7 0801                  NA             2.11               NA               2
+ 8 0802                  NA             2                  NA              NA
+ 9 0803                  NA             2                  NA              NA
+10 0805                  NA             2.27               NA              NA
+# ℹ 279 more rows
+# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="reestructuración-de-datos-2" class="slide level2"><h2>Reestructuración de datos</h2>
+<ul>
+<li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>aux <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb89-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb89-3"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb89-4"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb89-5"><a></a>  <span class="fu">ungroup</span>() </span>
+<span id="cb89-6"><a></a>aux </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 409 × 3
+   plot  sp               calidad_promedio
+   &lt;chr&gt; &lt;chr&gt;                       &lt;dbl&gt;
+ 1 0792  Pinus halepensis             2   
+ 2 0795  Pinus pinaster               2   
+ 3 0795  Pinus sylvestris             2.2 
+ 4 0796  Pinus nigra                  2   
+ 5 0797  Pinus pinaster               2.29
+ 6 0799  Pinus nigra                  2   
+ 7 0800  Pinus nigra                  2   
+ 8 0800  Pinus pinaster               2   
+ 9 0801  Pinus nigra                  2   
+10 0801  Pinus pinaster               2.11
+# ℹ 399 more rows</code></pre>
+</div>
+</div>
+</section><section id="reestructuración-de-datos-3" class="slide level2"><h2>Reestructuración de datos</h2>
+<ul>
+<li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a>aux <span class="sc">|&gt;</span> </span>
+<span id="cb91-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 289 × 7
+   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+ 1 0792                   2            NA                  NA              NA
+ 2 0795                  NA             2                   2.2            NA
+ 3 0796                  NA            NA                  NA               2
+ 4 0797                  NA             2.29               NA              NA
+ 5 0799                  NA            NA                  NA               2
+ 6 0800                  NA             2                  NA               2
+ 7 0801                  NA             2.11               NA               2
+ 8 0802                  NA             2                  NA              NA
+ 9 0803                  NA             2                  NA              NA
+10 0805                  NA             2.27               NA              NA
+# ℹ 279 more rows
+# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="reestructuración-de-datos-4" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
+<div class="small">
+<ul>
+<li>Representa en un gráfico la altura y diámetro medio de las diferentes especies de pinos</li>
+</ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="tidy_data_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="reestructuración-de-datos-5" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb93-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb93-3"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb93-4"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(dbh_cm, altura_m),     </span>
+<span id="cb93-5"><a></a>    <span class="at">names_to =</span> <span class="st">"variable"</span>,           </span>
+<span id="cb93-6"><a></a>    <span class="at">values_to =</span> <span class="st">"valor"</span>            </span>
+<span id="cb93-7"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(</span>
+<span id="cb93-8"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> sp, <span class="at">y =</span> valor, <span class="at">fill =</span> sp)) <span class="sc">+</span></span>
+<span id="cb93-9"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb93-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>                                </span>
+<span id="cb93-11"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb93-12"><a></a>    <span class="at">title =</span> <span class="st">"Diámetro y Altura para Especies de Pinus"</span>,</span>
+<span id="cb93-13"><a></a>    <span class="at">x =</span> <span class="st">"Especies de Pinus"</span>,</span>
+<span id="cb93-14"><a></a>    <span class="at">y =</span> <span class="st">"Valor"</span>,</span>
+<span id="cb93-15"><a></a>    <span class="at">fill =</span> <span class="st">"Especie"</span></span>
+<span id="cb93-16"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb93-17"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb93-18"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
 <ul>
 <li><p><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></p></li>
 <li><p><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></p></li>
 </ul>
 <p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/logo-jdc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<figure><p><img data-src="images/logo-jdc.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Si usas esta presentación puedes citarla como:
+<p><strong>Si usas esta presentación puedes citarla como:</strong></p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-content">
 <p><small><strong>Pérez-Luque, A.J. </strong>(2025). Tidy data. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
 </div>
 </div>
+</div>
 
 
-</section></section></main><!-- /main --><script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
+</section></section>
+</div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo-ugr.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad</p>
+</div>
+</div></div>
 
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
 
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
 
-  })();
-</script><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
       }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
           }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
         }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
           }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
         });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
-      for (let i=0; i<annoteTargets.length; i++) {
-        const annoteTarget = annoteTargets[i];
-        const targetCell = annoteTarget.getAttribute("data-target-cell");
-        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
-        const contentFn = () => {
-          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          if (content) {
-            const tipContent = content.cloneNode(true);
-            tipContent.classList.add("code-annotation-tip-content");
-            return tipContent.outerHTML;
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
           }
         }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
-          onShow: (instance) => {
-            selectCodeLines(instance.reference);
-            instance.reference.classList.add('code-annotation-active');
-            window.tippy.hideAll();
-          },
-          onHide: (instance) => {
-            unselectCodeLines();
-            instance.reference.classList.remove('code-annotation-active');
-          },
-          maxWidth: 300,
-          delay: [50, 0],
-          duration: [200, 0],
-          offset: [5, 10],
-          arrow: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
           appendTo: function(el) {
-            return el.parentElement.parentElement.parentElement;
+              return el.closest('section.slide') || el.parentElement;
           },
           interactive: true,
           interactiveBorder: 10,
-          theme: 'quarto',
-          placement: 'right',
-          popperOptions: {
-            modifiers: [
-            {
-              name: 'flip',
-              options: {
-                flipVariations: false, // true by default
-                allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
-              },
-            },
-            {
-              name: 'preventOverflow',
-              options: {
-                mainAxis: false,
-                altAxis: false
-              }
-            }
-            ]        
-          }      
+          theme: 'light-border',
+          placement: 'bottom-start',
         };
-        window.tippy(annoteTarget, config); 
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
       }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
           }
-          popup.appendChild(citeDiv);
         });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
 
 
 </body></html>
