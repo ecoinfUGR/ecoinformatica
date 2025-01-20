@@ -501,8 +501,6 @@
     "objectID": "modulos/sig.html",
     "href": "modulos/sig.html",
     "title": "Sistemas de Información Geográfica",
-    "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nManual de Sistemas de Información Geográfica\n\n\nThu, Jan 23\n\n\n\n\n \n\n\nPresentacion SIG (PDF)\n\n\nThu, Jan 23\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/sig.html#recursos",
@@ -1594,7 +1592,7 @@
     "href": "sesiones/programacion/tidy_data.html#alguna-duda",
     "title": "Tidy data",
     "section": "¿Alguna duda?",
-    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\n\nPérez-Luque, A.J. (2025). Pipe programming. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
+    "text": "¿Alguna duda?\n\n ajpelu.bsky.social\nantonio.perez@inia.csic.es\n\nAyuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR\n\n\n\n\n\n\n\n\n\n\nSi usas esta presentación puedes citarla como:\n\n\nPérez-Luque, A.J. (2025). Tidy data. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. https://ecoinfugr.github.io/ecoinformatica/"
   },
   {
     "objectID": "sesiones/introprog/intro_R_jml.html",

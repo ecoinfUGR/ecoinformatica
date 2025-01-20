@@ -1,0 +1,163 @@
+---
+title: "Tidy data" 
+author: 
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-01-17
+sesion: 4
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+---
+
+# Introducción
+
+La organización de datos de forma estructurada es esencial para el análisis y la visualización. En este documento exploraremos las diferencias entre dos estructuras comunes en R: `data.frame` y `tibble`. Estas herramientas son fundamentales para trabajar de manera eficiente con datos tabulares y son pilares en la filosofía del tidyverse.
+
+![Source: [Julia Lowndes & Allison Horst](https://openscapes.org/blog/2020-10-12-tidy-data/)](images/tidy_intro.jpg){fig-align="center"}
+
+Para empezar, el concepto de "tidy data" promueve una organización en la que cada variable es una columna, cada observación es una fila y cada tipo de unidad observacional forma una tabla. Esta estructura facilita el uso de herramientas analíticas y asegura consistencia.
+
+![Source: [Wickham & Grolemund](https://r4ds.had.co.nz/tidy-data.html)](images/tidy_data.png){fig-align="center"}
+
+# `data.frame` & `tibble`
+
+## `data.frame` 
+
+El `data.frame` es la estructura más común para manejar datos tabulares en R. Fue introducida con el lenguaje base y funciona como una tabla, donde las filas representan observaciones y las columnas, variables. Esta simplicidad lo convierte en un punto de partida ideal.
+
+```{r}
+df <- data.frame(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+
+df 
+```
+
+## `tibble`
+
+Con el auge del tidyverse, nació el `tibble`, una versión mejorada del `data.frame`. Diseñado para ser más consistente y amigable, este formato facilita el manejo de datos complejos y variables no sintácticas. La impresión de los datos, como veremos a continuación, es un ejemplo de su diseño optimizado.
+
+```{r}
+library(tibble)
+tb <- tibble(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C"),
+  `x al cuadrado` = x^2
+) 
+
+tb
+```
+
+### Diferencias: impresión de datos 
+
+Un aspecto práctico para destacar es cómo estas estructuras manejan la impresión de datos en la consola. Mientras que `data.frame` muestra todas las filas y columnas, lo que puede ser abrumador en grandes conjuntos de datos, el `tibble` ofrece un resumen compacto, mostrando solo una vista general.
+
+```{r}
+print(df)
+```
+
+```{r}
+print(tb)
+```
+
+### Diferencias: manejo de tipo de datos
+
+Otro punto clave es cómo tratan los tipos de datos. En `data.frame`, las columnas de tipo carácter se convierten automáticamente en factores (a menos que se especifique lo contrario). Por otro lado, `tibble` respeta los caracteres tal como están, proporcionando un comportamiento más intuitivo en muchos casos.
+
+```{r}
+df <- data.frame(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+str(df)
+```
+
+```{r}
+tb <- tibble(
+  x = c(1, 2, 3),
+  y = c("A", "B", "C")
+)
+str(tb)
+```
+
+### Diferencias: acceso a las columnas
+
+Acceder a los datos también muestra una diferencia significativa. Con `data.frame`, se pueden usar `$` y `[]`, pero el resultado puede variar entre un vector y un data frame. En cambio, `tibble` mantiene consistencia, devolviendo siempre un tibble, a menos que se especifique lo contrario.
+
+```{r}
+df[1]   # Devuelve un data frame
+df[, 1] # Devuelve un vector
+```
+
+```{r}
+tb[1]   # Devuelve un tibble
+tb[, 1] # Devuelve un tibble
+tb$x    # Devuelve un vector
+```
+
+## `data.frame` vs. `tibble`
+
+En resumen, ambas estructuras tienen sus fortalezas. Mientras que el `data.frame` es simple y adecuado para scripts básicos, el `tibble` destaca por su consistencia y facilidad de integración con el tidyverse, haciéndolo ideal para análisis más complejos.
+
+### Generar `tibble`
+
+Un `tibble` puede crearse desde un `data.frame` o directamente desde cero. A continuación, mostramos algunos ejemplos.
+
+```{r}
+dft <- as_tibble(df)
+dft
+```
+
+```{r}
+arboles <- tibble(
+  especie = c("Pinus halepensis", "Quercus ilex", "Quercus ilex", 
+              "Pinus pinaster", "Quercus pyrenaica"),
+  altura_m = c(15, 8, 10, 12, 18),
+  dbh_cm = c(30, 40, 35, 25, 45),
+  site = c("plot_A", "plot_B", "plot_C", "plot_A", "plot_B")
+)
+
+arboles 
+```
+
+Crear un tibble transpuesto:
+
+```{r}
+arboles <- tribble(
+  ~especie,            ~altura_m, ~dbh_cm, ~site,
+  "Pinus halepensis",   15,        30,      "plot_A",
+  "Quercus ilex",       8,         40,      "plot_B",
+  "Quercus ilex",       10,        35,      "plot_C",
+  "Pinus pinaster",     12,        25,      "plot_A",
+  "Quercus pyrenaica",  18,        45,      "plot_B"
+)
+arboles 
+```
+
+También es posible crear un `tibble` a partir de estructuras más complejas, como listas. Esto es particularmente útil para organizar datos jerárquicos o anidados.
+
+```{r}
+lista_compleja <- list(
+  numeros = c(1, 2, 3),
+  letras = c("A", "B", "C"),
+  datos = list(
+    tipo = c("x", "y", "z"),
+    valores = c(10, 20, 30)
+  )
+)
+
+lc <- enframe(lista_compleja)
+lc 
+```
+
+## Conclusión
+
+El uso de `data.frame` y `tibble` depende de las necesidades específicas del análisis. Mientras que `data.frame` ofrece un enfoque tradicional y sencillo, `tibble` proporciona herramientas modernas y flexibles, integrándose perfectamente en el entorno del tidyverse. Al dominar estas estructuras, podrás manejar datos de manera más eficiente y efectiva.
+
+---
