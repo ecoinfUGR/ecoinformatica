@@ -6,7 +6,7 @@ author:
     orcid: 0000-0003-1765-6885
     email: maria.suarez.munoz@gmail.com
     affiliation: Departamento de Ingeniería Forestal, Universidad de Córdoba
-date: 2025-01-07
+date: 2025-01-23
 sesion: 1
 crossref:
   fig-title: Figura     # (default is "Figure")
@@ -124,16 +124,6 @@ También podemos crear capas de manera manual. En este caso, nos será útil cre
 ![](images/draw_shapefile_layer.png)
 
 También podríamos crear capas de puntos y de líneas con las opciones correspondientes a este tipo de elementos.
-
-### Descargar capas de información
-
-A menudo no disponemos de las capas de información que necesitamos, ni las podemos generar nosotros mismos, sino que las descargamos desde alguna fuente.
-
-En este caso descargaremos varias capas del área de descarga de información ambiental en Andalucía, a la que podemos acceder desde (éste enlace)[https://portalrediam.cica.es/descargas].
-
-*NOTA*: por alguna razón este enlace falla cuando se accede desde ciertos sistemas operativos y navegadores. Si es tu caso, prueba con otro navegador. 
-
-Para esta práctica nos resultará útil tener capas relativas a la incidencia solar, las temperaturas y las precipitaciones medias de la zona.
   
 ## Realizar operaciones
 
@@ -167,7 +157,7 @@ Para distintos procesos nos puede resultar interesante definir unas franjas de c
 
 En este caso vamos a realizar un buffer sobre la red de carreteras afectadas por el fuego. Para ello primero necesitaremos recortar la capa de red viaria con el polígono del incendio (ver sección anterior) y a continuación aplicar la herramienta buffer (**Vector → Geoprocessing Tools → Buffer**).
 
-**EJERCICIO** Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?
+Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?
 
 ### Reproyectar capas
 
@@ -233,11 +223,11 @@ La causa de los errores puede ser diversa y, por tanto, la solución puede depen
 
 ### Rasterizar
 
-La información vectorial puede ser poco adecuada para realizar algunos cálculos o análisis. En estos casos resulta útil transformar la capa vectorial a una capa ráster. Sin embargo, debemos considerar cuidadosamente qué estamos haciendo al transformar esta información.
+La información vectorial puede ser poco adecuada para realizar algunos cálculos o análisis. En estos casos resulta útil transformar la capa vectorial a una capa ráster. Sin embargo, debemos considerar cuidadosamente qué estamos haciendo al transformar esta información...
 
 *Rasterizar* implica crear una capa ráster - donde cada celda tiene un único valor - a partir de una capa vectorial - es decir, una capa de puntos, líneas o polígonos donde cada elemento tiene una serie de *atributos*. Por lo tanto, al rasterizar tendremos que decidir qué atributo es el que nos interesa.
 
-Veamos un ejemplo. Vamos a rasterizar el mapa de cobertura que cargamos anteriormente, el *mucva_multi_23030.gpkg*. Para eso hacemos **Raster → Conversion → Rasterize (Vector to Raster)...** y rellenamos los parámetros correspondientes:
+Veamos un ejemplo. Vamos a rasterizar el mapa de cobertura *mucva_multi_23030.gpkg*. Para eso hacemos **Raster → Conversion → Rasterize (Vector to Raster)...** y rellenamos los parámetros correspondientes:
 
 ![](images/raster_mask.png)
 
@@ -294,4 +284,12 @@ Para crear un mapa exportable a pdf u otro formato primero necesitaremos crear u
 
 ## Guardar proyecto
 
+Como con cualquier documento sobre el que estamos trabajando, es importante guardar el proyecto para poder seguir trabajando sobre él. 
+
 ![](images/gis_save_project.png)
+
+**Ojo** qGIS guarda el *proyecto*, no lo que éste contiene. Esto significa que el archivo .qgz no contiene las capas por lo que si enviamos el proyecto a alguien no podrá acceder a la información que tenemos en él a no ser que también le enviemos las capas correspondientes. 
+
+Además, eso implica que si alguna capa se elimina o cambia de ubicación en nuestro ordenador `qGIS` no podrá cargarlas al abrir el proyecto de nuevo. En este caso nos avisa y nos facilita volver a vincular las capas que faltan:
+
+![](images/open_project.png)
