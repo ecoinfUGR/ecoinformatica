@@ -104,7 +104,16 @@
   "sesiones/programacion/intro_R_jml.qmd": {
     "intro_R_jml.html": "0180ff52"
   },
+  "sesiones/bbdd/bbdd_sesion.qmd": {
+    "bbdd_sesion.html": "4147ee67"
+  },
+  "sesiones/sig/sig_practica_qgis.qmd": {
+    "sig_practica_qgis.html": "3d4968a2"
+  },
   "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
-    "guion_practica_mapa_biodiversidad_jml.html": "28b2f3d3"
+    "guion_practica_mapa_biodiversidad_jml.html": "f6be8076"
+  },
+  "sesiones/programacion/tidy_text.qmd": {
+    "tidy_text.html": "219389b8"
   }
 }
