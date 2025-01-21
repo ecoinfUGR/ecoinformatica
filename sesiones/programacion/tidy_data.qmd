@@ -316,6 +316,10 @@ d |>
 
 # Manipular datos con [tidyverse](https://www.tidyverse.org/)
 
+## Datos de ejemplo
+- Vamos a trabajar con datos del [Tercer Inventario forestal Nacional (IFN3)](https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/ifn3.html)
+- En concreto con algunas parcelas del IFN3 en Sierra Nevada
+- Puedes descargar los datos [aquí](../../assets/ext_data/ifn_sn_tree.csv) (guarda el archivo como csv)
 
 ## Explorar datos 
 ::: small
@@ -399,6 +403,19 @@ d |>
 
 ::: 
 
+## Manipular datos: renombrar columnas
+
+::: small 
+- Renombra la variable tree_quality_wood por "calidad_madera"
+
+```{r}
+d |> 
+  rename(calidad_madera = tree_quality_wood)
+```
+
+::: 
+
+
 
 ## Manipular datos: seleccionar columnas
 ::: small 
@@ -413,6 +430,7 @@ d |>
 
 
 ## Manipular datos: seleccionar columnas {footer=false}
+::: small 
 
 ::: {.callout-important}
 ## Conflicto select
@@ -423,7 +441,6 @@ d |>
 :::
 
 
-::: small 
 - Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen
 
 ```{r}
@@ -435,9 +452,10 @@ d |>
 
 ## Manipular datos: seleccionar columnas {footer=false}
 
+::: small 
 - `select` es una función muy poderosa 
 
-::: small 
+
 - Selecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)
 
 ```{r}
@@ -650,9 +668,9 @@ datos |>
 
 ## Desagrupar variables 
 
+::: small 
 - A menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido 
 
-::: small 
 - Calcula la altura media y la desviación estándar de cada especie en cada parcela 
 
 ```{r}
@@ -664,40 +682,50 @@ alturas_medias <- datos |>
 ```
 
 ::: 
+--- 
 
 ## Reestructuración de datos 
 
 ![Source: [Garrick Aden-Buie’s - Tidyexplained Verbs](https://github.com/gadenbuie/tidyexplain)](images/wider_long){fig-align="center" width=40%}
 
 ## Reestructuración de datos 
+::: small
 
 - Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
 
 ```{r}
 datos |> 
   filter(str_detect(sp, "Pinus")) |> 
+  mutate(sp = str_remove_all(sp, "Pinus ")) |> 
   group_by(plot, sp) |> 
   summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |> 
   ungroup() |> 
   pivot_wider(names_from = sp, values_from = calidad_promedio)
 ```
 
+::: 
+
+--- 
 
 ## Reestructuración de datos 
+::: small
 
 - Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
 
 ```{r}
 aux <- datos |> 
   filter(str_detect(sp, "Pinus")) |> 
+  mutate(sp = str_remove_all(sp, "Pinus ")) |> 
   group_by(plot, sp) |> 
   summarise(calidad_promedio = mean(calidad_madera, na.rm = TRUE)) |> 
   ungroup() 
 aux 
 ```
+::: 
 
 ## Reestructuración de datos 
 
+::: small 
 - Calcula la calidad promedio de las diferentes especies de *Pinus* en cada parcela 
 
 ```{r}
@@ -705,13 +733,16 @@ aux |>
   pivot_wider(names_from = sp, values_from = calidad_promedio)
 ```
 
+::: 
+
 ## Reestructuración de datos {footer=false}
 ::: small
 - Representa en un gráfico la altura y diámetro medio de las diferentes especies de pinos 
 ::: 
 ```{r, echo=FALSE}
 datos_pinos <- datos |> 
-  filter(str_detect(sp, "Pinus"))
+  filter(str_detect(sp, "Pinus ")) |> 
+  mutate(sp = str_remove_all(sp, "Pinus ")) 
 
 datos_pinos_longer <- datos_pinos |> 
   pivot_longer(
@@ -736,8 +767,39 @@ ggplot(datos_pinos_longer, aes(x = sp, y = valor, fill = sp)) +
 ## Reestructuración de datos {footer=false}
 
 ```{r, fig.show='hide'}
+datos_plot <- datos |> 
+  filter(str_detect(sp, "Pinus")) |> 
+  mutate(sp = str_remove_all(sp, "Pinus ")) |> 
+  pivot_longer(
+    cols = c(dbh_cm, altura_m),     
+    names_to = "variable",           
+    values_to = "valor"            
+  ) 
+```
+
+## Reestructuración de datos {footer=false}
+
+```{r, fig.show='hide'}
+datos_plot |> ggplot(
+    aes(x = sp, y = valor, fill = sp)) +
+  geom_bar(stat = "identity", position = "dodge") + 
+  theme_minimal() +                                
+  labs(
+    title = "Diámetro y Altura para Especies de Pinus",
+    x = "Especies de Pinus",
+    y = "Valor",
+    fill = "Especie"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_wrap(~ variable, scales = "free_y") 
+```
+
+## Reestructuración de datos {footer=false}
+
+```{r, fig.show='hide'}
 datos |> 
   filter(str_detect(sp, "Pinus")) |> 
+  mutate(sp = str_remove_all(sp, "Pinus ")) |> 
   pivot_longer(
     cols = c(dbh_cm, altura_m),     
     names_to = "variable",           
@@ -755,6 +817,8 @@ datos |>
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   facet_wrap(~ variable, scales = "free_y") 
 ```
+
+
 
 
 ## ¿Alguna duda? 
