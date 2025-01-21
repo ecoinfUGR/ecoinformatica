@@ -614,7 +614,13 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </section></section><section><section id="manipular-datos-con-tidyverse" class="title-slide slide level1 center"><h1>Manipular datos con <a href="https://www.tidyverse.org/">tidyverse</a>
 </h1>
 
-</section><section id="explorar-datos" class="slide level2"><h2>Explorar datos</h2>
+</section><section id="datos-de-ejemplo" class="slide level2"><h2>Datos de ejemplo</h2>
+<ul>
+<li>Vamos a trabajar con datos del <a href="https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/ifn3.html">Tercer Inventario forestal Nacional (IFN3)</a>
+</li>
+<li>En concreto con algunas parcelas del IFN3 en Sierra Nevada</li>
+<li>Puedes descargar los datos <a href="../../assets/ext_data/ifn_sn_tree.csv">aquí</a> (guarda el archivo como csv)</li>
+</ul></section><section id="explorar-datos" class="slide level2"><h2>Explorar datos</h2>
 <div class="small">
 <div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb40-2"><a></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"TU_RUTA/ifn_sn_tree.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -767,14 +773,41 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </div>
 </div>
 </div>
+</section><section id="manipular-datos-renombrar-columnas" class="slide level2"><h2>Manipular datos: renombrar columnas</h2>
+<div class="small">
+<ul>
+<li>Renombra la variable tree_quality_wood por “calidad_madera”</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb53-2"><a></a>  <span class="fu">rename</span>(<span class="at">calidad_madera =</span> tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8,786 × 10
+   plot  aspect slope tree_id specie              dbh height tree_density_factor
+   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;
+ 1 0792    270     27       1 Pinus halepensis    8.5   3.8                127. 
+ 2 0792    270     27       2 Pinus halepensis   15.4   4.90                31.8
+ 3 0792    330.    40      10 Pinus halepensis   13.4   6.70                31.8
+ 4 0792    330.    40      12 Pinus halepensis   13.0   6.90                31.8
+ 5 0792    330.    40       1 Quercus ilex ssp…  13     2.40                31.8
+ 6 0792    330.    40       2 Quercus ilex ssp…  10.0   2                  127. 
+ 7 0792    330.    40       3 Quercus ilex ssp…  14.0   2                   31.8
+ 8 0792    330.    40       4 Quercus ilex ssp…  13.4   2.60                31.8
+ 9 0792    330.    40       5 Quercus ilex ssp…  10.2   2.3                127. 
+10 0792    330.    40       6 Quercus ilex ssp…  10.4   2                  127. 
+# ℹ 8,776 more rows
+# ℹ 2 more variables: calidad_madera &lt;dbl&gt;, prov &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
 </section><section id="manipular-datos-seleccionar-columnas" class="slide level2"><h2>Manipular datos: seleccionar columnas</h2>
 <div class="small">
 <ul>
 <li>Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>d <span class="sc">|&gt;</span> </span>
-<span id="cb53-2"><a></a>  <span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb55-2"><a></a>  <span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8,786 × 5
    plot  specie                      dbh height tree_quality_wood
@@ -794,6 +827,7 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </div>
 </div>
 </section><section id="manipular-datos-seleccionar-columnas-1" class="slide level2" data-footer="false"><h2>Manipular datos: seleccionar columnas</h2>
+<div class="small">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -810,13 +844,12 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </div>
 </div>
 </div>
-<div class="small">
 <ul>
 <li>Selecciona las especies, su altura y dbh, la calidad de la madera, y el plot al que pertenecen</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>d <span class="sc">|&gt;</span> </span>
-<span id="cb55-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb57-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(plot, specie, dbh, height, tree_quality_wood)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8,786 × 5
    plot  specie                      dbh height tree_quality_wood
@@ -836,24 +869,21 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </div>
 </div>
 </section><section id="manipular-datos-seleccionar-columnas-2" class="slide level2" data-footer="false"><h2>Manipular datos: seleccionar columnas</h2>
-<ul>
-<li>
-<code>select</code> es una función muy poderosa</li>
-</ul>
 <div class="small">
 <ul>
-<li>Selecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)</li>
+<li><p><code>select</code> es una función muy poderosa</p></li>
+<li><p>Selecciona las especies, su altura y dbh, y el plot al que pertenecen; renombra y recoloca)</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>datos <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
-<span id="cb57-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb57-3"><a></a>    plot, </span>
-<span id="cb57-4"><a></a>    <span class="at">sp =</span> specie, </span>
-<span id="cb57-5"><a></a>    <span class="at">dbh_cm =</span> dbh, </span>
-<span id="cb57-6"><a></a>    <span class="at">altura_m =</span> height,</span>
-<span id="cb57-7"><a></a>    <span class="at">calidad_madera =</span> tree_quality_wood)</span>
-<span id="cb57-8"><a></a></span>
-<span id="cb57-9"><a></a>datos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>datos <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb59-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb59-3"><a></a>    plot, </span>
+<span id="cb59-4"><a></a>    <span class="at">sp =</span> specie, </span>
+<span id="cb59-5"><a></a>    <span class="at">dbh_cm =</span> dbh, </span>
+<span id="cb59-6"><a></a>    <span class="at">altura_m =</span> height,</span>
+<span id="cb59-7"><a></a>    <span class="at">calidad_madera =</span> tree_quality_wood)</span>
+<span id="cb59-8"><a></a></span>
+<span id="cb59-9"><a></a>datos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8,786 × 5
    plot  sp                        dbh_cm altura_m calidad_madera
@@ -879,8 +909,8 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb59-2"><a></a>  <span class="fu">filter</span>(sp <span class="sc">==</span> <span class="st">"Pinus sylvestris"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb61-2"><a></a>  <span class="fu">filter</span>(sp <span class="sc">==</span> <span class="st">"Pinus sylvestris"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,948 × 5
    plot  sp               dbh_cm altura_m calidad_madera
@@ -906,8 +936,8 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb61-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb63-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,185 × 5
    plot  sp               dbh_cm altura_m calidad_madera
@@ -933,9 +963,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb63-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb63-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb65-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb65-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,183 × 5
    plot  sp               dbh_cm altura_m calidad_madera
@@ -961,8 +991,8 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb65-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>) <span class="sc">&amp;</span> (dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>) <span class="sc">&amp;</span> (dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,183 × 5
    plot  sp               dbh_cm altura_m calidad_madera
@@ -987,10 +1017,10 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Selecciona árboles adultos (dbh &gt; 7.5) de <em>Pinus</em> con calidad de madera entre 1 y 3</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb67-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb67-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb67-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb69-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb69-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb69-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6,926 × 5
    plot  sp               dbh_cm altura_m calidad_madera
@@ -1015,9 +1045,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>¿Cuantas parcelas hay?</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb69-2"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
-<span id="cb69-3"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb71-2"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb71-3"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
       n
@@ -1032,12 +1062,12 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>¿Cuantas parcelas diferentes hay que tengan tengan adultos (dbh &gt; 7.5) de <em>Pinus</em> con calidad de madera entre 1 y 3?</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb71-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb71-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb71-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb71-5"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
-<span id="cb71-6"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> sp, <span class="at">pattern =</span> <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb73-3"><a></a>  <span class="fu">filter</span>(dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb73-4"><a></a>  <span class="fu">filter</span>(calidad_madera <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb73-5"><a></a>  <span class="fu">distinct</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb73-6"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
       n
@@ -1052,8 +1082,8 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula el área basal de cada indivudo</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb73-2"><a></a>  <span class="fu">mutate</span>(<span class="at">area_basal =</span> (pi <span class="sc">*</span> (dbh_cm<span class="sc">/</span><span class="dv">200</span>)<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb75-2"><a></a>  <span class="fu">mutate</span>(<span class="at">area_basal =</span> (pi <span class="sc">*</span> (dbh_cm<span class="sc">/</span><span class="dv">200</span>)<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8,786 × 6
    plot  sp                        dbh_cm altura_m calidad_madera area_basal
@@ -1078,12 +1108,12 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Crea una variable en función de otra variable</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>datos_clasificados <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
-<span id="cb75-2"><a></a>  <span class="fu">mutate</span>(<span class="at">cohorte =</span> <span class="fu">case_when</span>(</span>
-<span id="cb75-3"><a></a>    dbh_cm <span class="sc">&lt;=</span> <span class="fl">2.5</span> <span class="sc">~</span> <span class="st">"recluta"</span>,</span>
-<span id="cb75-4"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> dbh_cm <span class="sc">&lt;=</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"juvenile"</span>,</span>
-<span id="cb75-5"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"adulto"</span></span>
-<span id="cb75-6"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a>datos_clasificados <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb77-2"><a></a>  <span class="fu">mutate</span>(<span class="at">cohorte =</span> <span class="fu">case_when</span>(</span>
+<span id="cb77-3"><a></a>    dbh_cm <span class="sc">&lt;=</span> <span class="fl">2.5</span> <span class="sc">~</span> <span class="st">"recluta"</span>,</span>
+<span id="cb77-4"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> dbh_cm <span class="sc">&lt;=</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"juvenile"</span>,</span>
+<span id="cb77-5"><a></a>    dbh_cm <span class="sc">&gt;</span> <span class="fl">7.5</span> <span class="sc">~</span> <span class="st">"adulto"</span></span>
+<span id="cb77-6"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section><section id="calcular-variables-agregadas" class="slide level2"><h2>Calcular variables agregadas</h2>
@@ -1092,9 +1122,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula el número de individuos por parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb76-2"><a></a>  <span class="fu">group_by</span>(plot) <span class="sc">|&gt;</span> </span>
-<span id="cb76-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb78-2"><a></a>  <span class="fu">group_by</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb78-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 376 × 2
    plot  n_ind
@@ -1119,9 +1149,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula el número de individuos de cada especie por parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb78-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb78-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb80-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb80-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_ind =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 633 × 3
 # Groups:   plot [376]
@@ -1147,9 +1177,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula la altura media, min y maxima de cada especie en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb80-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb80-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb82-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb82-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 633 × 3
 # Groups:   plot [376]
@@ -1175,9 +1205,9 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb82-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb82-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb84-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb84-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 633 × 3
 # Groups:   plot [376]
@@ -1203,10 +1233,10 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb84-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb84-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb84-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb86-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb86-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb86-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 633 × 4
 # Groups:   plot [376]
@@ -1227,19 +1257,17 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 </div>
 </div>
 </section><section id="desagrupar-variables" class="slide level2"><h2>Desagrupar variables</h2>
-<ul>
-<li>A menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido</li>
-</ul>
 <div class="small">
 <ul>
-<li>Calcula la altura media y la desviación estándar de cada especie en cada parcela</li>
+<li><p>A menudo es importante desagrupar variables, para garantizar que las operaciones que realizamos a continuación no se vean afectadas por el agrupamiento definido</p></li>
+<li><p>Calcula la altura media y la desviación estándar de cada especie en cada parcela</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a>alturas_medias <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
-<span id="cb86-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb86-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb86-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb86-5"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>alturas_medias <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb88-2"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb88-3"><a></a>  <span class="fu">summarise</span>(<span class="at">altura_media =</span> <span class="fu">mean</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb88-4"><a></a>            <span class="at">altura_sd =</span> <span class="fu">sd</span>(altura_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb88-5"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section><section id="reestructuración-de-datos" class="slide level2"><h2>Reestructuración de datos</h2>
@@ -1248,85 +1276,91 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <figcaption>Source: <a href="https://github.com/gadenbuie/tidyexplain">Garrick Aden-Buie’s - Tidyexplained Verbs</a></figcaption></figure>
 </div>
 </section><section id="reestructuración-de-datos-1" class="slide level2"><h2>Reestructuración de datos</h2>
+<div class="small">
 <ul>
 <li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb87-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb87-3"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb87-4"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb87-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb87-6"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb89-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb89-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sp =</span> <span class="fu">str_remove_all</span>(sp, <span class="st">"Pinus "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb89-4"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb89-5"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb89-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb89-7"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 289 × 7
-   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`
-   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;
- 1 0792                   2            NA                  NA              NA
- 2 0795                  NA             2                   2.2            NA
- 3 0796                  NA            NA                  NA               2
- 4 0797                  NA             2.29               NA              NA
- 5 0799                  NA            NA                  NA               2
- 6 0800                  NA             2                  NA               2
- 7 0801                  NA             2.11               NA               2
- 8 0802                  NA             2                  NA              NA
- 9 0803                  NA             2                  NA              NA
-10 0805                  NA             2.27               NA              NA
-# ℹ 279 more rows
-# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;</code></pre>
+   plot  halepensis pinaster sylvestris nigra uncinata pinea
+   &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+ 1 0792           2    NA          NA      NA       NA    NA
+ 2 0795          NA     2           2.2    NA       NA    NA
+ 3 0796          NA    NA          NA       2       NA    NA
+ 4 0797          NA     2.29       NA      NA       NA    NA
+ 5 0799          NA    NA          NA       2       NA    NA
+ 6 0800          NA     2          NA       2       NA    NA
+ 7 0801          NA     2.11       NA       2       NA    NA
+ 8 0802          NA     2          NA      NA       NA    NA
+ 9 0803          NA     2          NA      NA       NA    NA
+10 0805          NA     2.27       NA      NA       NA    NA
+# ℹ 279 more rows</code></pre>
+</div>
 </div>
 </div>
 </section><section id="reestructuración-de-datos-2" class="slide level2"><h2>Reestructuración de datos</h2>
+<div class="small">
 <ul>
 <li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>aux <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
-<span id="cb89-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb89-3"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
-<span id="cb89-4"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb89-5"><a></a>  <span class="fu">ungroup</span>() </span>
-<span id="cb89-6"><a></a>aux </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a>aux <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb91-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb91-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sp =</span> <span class="fu">str_remove_all</span>(sp, <span class="st">"Pinus "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb91-4"><a></a>  <span class="fu">group_by</span>(plot, sp) <span class="sc">|&gt;</span> </span>
+<span id="cb91-5"><a></a>  <span class="fu">summarise</span>(<span class="at">calidad_promedio =</span> <span class="fu">mean</span>(calidad_madera, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb91-6"><a></a>  <span class="fu">ungroup</span>() </span>
+<span id="cb91-7"><a></a>aux </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 409 × 3
-   plot  sp               calidad_promedio
-   &lt;chr&gt; &lt;chr&gt;                       &lt;dbl&gt;
- 1 0792  Pinus halepensis             2   
- 2 0795  Pinus pinaster               2   
- 3 0795  Pinus sylvestris             2.2 
- 4 0796  Pinus nigra                  2   
- 5 0797  Pinus pinaster               2.29
- 6 0799  Pinus nigra                  2   
- 7 0800  Pinus nigra                  2   
- 8 0800  Pinus pinaster               2   
- 9 0801  Pinus nigra                  2   
-10 0801  Pinus pinaster               2.11
+   plot  sp         calidad_promedio
+   &lt;chr&gt; &lt;chr&gt;                 &lt;dbl&gt;
+ 1 0792  halepensis             2   
+ 2 0795  pinaster               2   
+ 3 0795  sylvestris             2.2 
+ 4 0796  nigra                  2   
+ 5 0797  pinaster               2.29
+ 6 0799  nigra                  2   
+ 7 0800  nigra                  2   
+ 8 0800  pinaster               2   
+ 9 0801  nigra                  2   
+10 0801  pinaster               2.11
 # ℹ 399 more rows</code></pre>
 </div>
 </div>
+</div>
 </section><section id="reestructuración-de-datos-3" class="slide level2"><h2>Reestructuración de datos</h2>
+<div class="small">
 <ul>
 <li>Calcula la calidad promedio de las diferentes especies de <em>Pinus</em> en cada parcela</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a>aux <span class="sc">|&gt;</span> </span>
-<span id="cb91-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>aux <span class="sc">|&gt;</span> </span>
+<span id="cb93-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sp, <span class="at">values_from =</span> calidad_promedio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 289 × 7
-   plot  `Pinus halepensis` `Pinus pinaster` `Pinus sylvestris` `Pinus nigra`
-   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;         &lt;dbl&gt;
- 1 0792                   2            NA                  NA              NA
- 2 0795                  NA             2                   2.2            NA
- 3 0796                  NA            NA                  NA               2
- 4 0797                  NA             2.29               NA              NA
- 5 0799                  NA            NA                  NA               2
- 6 0800                  NA             2                  NA               2
- 7 0801                  NA             2.11               NA               2
- 8 0802                  NA             2                  NA              NA
- 9 0803                  NA             2                  NA              NA
-10 0805                  NA             2.27               NA              NA
-# ℹ 279 more rows
-# ℹ 2 more variables: `Pinus uncinata` &lt;dbl&gt;, `Pinus pinea` &lt;dbl&gt;</code></pre>
+   plot  halepensis pinaster sylvestris nigra uncinata pinea
+   &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+ 1 0792           2    NA          NA      NA       NA    NA
+ 2 0795          NA     2           2.2    NA       NA    NA
+ 3 0796          NA    NA          NA       2       NA    NA
+ 4 0797          NA     2.29       NA      NA       NA    NA
+ 5 0799          NA    NA          NA       2       NA    NA
+ 6 0800          NA     2          NA       2       NA    NA
+ 7 0801          NA     2.11       NA       2       NA    NA
+ 8 0802          NA     2          NA      NA       NA    NA
+ 9 0803          NA     2          NA      NA       NA    NA
+10 0805          NA     2.27       NA      NA       NA    NA
+# ℹ 279 more rows</code></pre>
+</div>
 </div>
 </div>
 </section><section id="reestructuración-de-datos-4" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
@@ -1338,31 +1372,58 @@ $ prov                &lt;chr&gt; "Almeria", "Almeria", "Almeria", "Almeria", "A
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="tidy_data_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
+<figure><p><img data-src="tidy_data_files/figure-revealjs/unnamed-chunk-46-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="reestructuración-de-datos-5" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb93-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb93-3"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb93-4"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(dbh_cm, altura_m),     </span>
-<span id="cb93-5"><a></a>    <span class="at">names_to =</span> <span class="st">"variable"</span>,           </span>
-<span id="cb93-6"><a></a>    <span class="at">values_to =</span> <span class="st">"valor"</span>            </span>
-<span id="cb93-7"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(</span>
-<span id="cb93-8"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> sp, <span class="at">y =</span> valor, <span class="at">fill =</span> sp)) <span class="sc">+</span></span>
-<span id="cb93-9"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
-<span id="cb93-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>                                </span>
-<span id="cb93-11"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb93-12"><a></a>    <span class="at">title =</span> <span class="st">"Diámetro y Altura para Especies de Pinus"</span>,</span>
-<span id="cb93-13"><a></a>    <span class="at">x =</span> <span class="st">"Especies de Pinus"</span>,</span>
-<span id="cb93-14"><a></a>    <span class="at">y =</span> <span class="st">"Valor"</span>,</span>
-<span id="cb93-15"><a></a>    <span class="at">fill =</span> <span class="st">"Especie"</span></span>
-<span id="cb93-16"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb93-17"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
-<span id="cb93-18"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a>datos_plot <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb95-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb95-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sp =</span> <span class="fu">str_remove_all</span>(sp, <span class="st">"Pinus "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb95-4"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb95-5"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(dbh_cm, altura_m),     </span>
+<span id="cb95-6"><a></a>    <span class="at">names_to =</span> <span class="st">"variable"</span>,           </span>
+<span id="cb95-7"><a></a>    <span class="at">values_to =</span> <span class="st">"valor"</span>            </span>
+<span id="cb95-8"><a></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="reestructuración-de-datos-6" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a>datos_plot <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(</span>
+<span id="cb96-2"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> sp, <span class="at">y =</span> valor, <span class="at">fill =</span> sp)) <span class="sc">+</span></span>
+<span id="cb96-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb96-4"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>                                </span>
+<span id="cb96-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb96-6"><a></a>    <span class="at">title =</span> <span class="st">"Diámetro y Altura para Especies de Pinus"</span>,</span>
+<span id="cb96-7"><a></a>    <span class="at">x =</span> <span class="st">"Especies de Pinus"</span>,</span>
+<span id="cb96-8"><a></a>    <span class="at">y =</span> <span class="st">"Valor"</span>,</span>
+<span id="cb96-9"><a></a>    <span class="at">fill =</span> <span class="st">"Especie"</span></span>
+<span id="cb96-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb96-11"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb96-12"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="reestructuración-de-datos-7" class="slide level2" data-footer="false"><h2>Reestructuración de datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb97-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(sp, <span class="st">"Pinus"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb97-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sp =</span> <span class="fu">str_remove_all</span>(sp, <span class="st">"Pinus "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb97-4"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb97-5"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(dbh_cm, altura_m),     </span>
+<span id="cb97-6"><a></a>    <span class="at">names_to =</span> <span class="st">"variable"</span>,           </span>
+<span id="cb97-7"><a></a>    <span class="at">values_to =</span> <span class="st">"valor"</span>            </span>
+<span id="cb97-8"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(</span>
+<span id="cb97-9"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> sp, <span class="at">y =</span> valor, <span class="at">fill =</span> sp)) <span class="sc">+</span></span>
+<span id="cb97-10"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb97-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>                                </span>
+<span id="cb97-12"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb97-13"><a></a>    <span class="at">title =</span> <span class="st">"Diámetro y Altura para Especies de Pinus"</span>,</span>
+<span id="cb97-14"><a></a>    <span class="at">x =</span> <span class="st">"Especies de Pinus"</span>,</span>
+<span id="cb97-15"><a></a>    <span class="at">y =</span> <span class="st">"Valor"</span>,</span>
+<span id="cb97-16"><a></a>    <span class="at">fill =</span> <span class="st">"Especie"</span></span>
+<span id="cb97-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb97-18"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb97-19"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
 <ul>
