@@ -2,142 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/practicas/pr_repro_documentos_reproducibles.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/practicas/pr_repro_control_versiones.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/tidy_data.html</loc>
-    <lastmod>2025-01-20T16:41:40.919Z</lastmod>
+    <lastmod>2025-01-21T15:30:30.447Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/index.html</loc>
-    <lastmod>2025-01-20T16:41:39.715Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.244Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/martinez_lopez/index.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.244Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/repro/repro_reproducible_documents.html</loc>
-    <lastmod>2025-01-20T16:41:40.206Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.732Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/repro/repro_reproducible_documents_slides.html</loc>
-    <lastmod>2025-01-20T16:41:40.206Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.733Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/intro/intro_proyecto.html</loc>
-    <lastmod>2025-01-20T16:41:39.790Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.318Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/programacion/secuencias_control.html</loc>
-    <lastmod>2025-01-20T16:41:40.079Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.605Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/programacion/intro_R_jml.html</loc>
-    <lastmod>2025-01-20T16:41:40.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/sig/sig_practica_qgis.html</loc>
-    <lastmod>2025-01-20T16:41:40.899Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/teledeteccion/gee_intro.html</loc>
-    <lastmod>2025-01-20T16:41:40.918Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/sig.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/datos_primarios.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/reproducibilidad.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/bbdd.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/index.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/about.html</loc>
-    <lastmod>2025-01-20T16:41:39.099Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/calendario.html</loc>
-    <lastmod>2025-01-20T16:41:39.152Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/teledeteccion.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/introduccion.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/programacion.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/bbdd/bbdd_sesion.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.605Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html</loc>
-    <lastmod>2025-01-20T16:41:40.206Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.733Z</lastmod>
   </url>
   <url>
-    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/programacion/tidy_text.html</loc>
-    <lastmod>2025-01-20T16:41:40.080Z</lastmod>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/bbdd/bbdd_sesion.html</loc>
+    <lastmod>2025-01-21T15:30:29.246Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/programacion.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/introduccion.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/teledeteccion.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/calendario.html</loc>
+    <lastmod>2025-01-21T15:30:28.682Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/about.html</loc>
+    <lastmod>2025-01-21T15:30:28.628Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/index.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/bbdd.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/reproducibilidad.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/datos_primarios.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/modulos/sig.html</loc>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/teledeteccion/gee_intro.html</loc>
+    <lastmod>2025-01-21T15:30:30.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/sig/sig_practica_qgis.html</loc>
+    <lastmod>2025-01-21T15:30:30.427Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/programacion/piping.html</loc>
-    <lastmod>2025-01-20T16:41:40.079Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.605Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/programacion/tidy_data.html</loc>
-    <lastmod>2025-01-20T16:41:40.079Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.605Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/datos_primarios/primary_search_biodiversity.html</loc>
-    <lastmod>2025-01-20T16:41:39.789Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.317Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/repro/repro_intro_slides.html</loc>
-    <lastmod>2025-01-20T16:41:40.205Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.732Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/sesiones/repro/repro_git.html</loc>
-    <lastmod>2025-01-20T16:41:40.205Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.732Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/perez_luque/index.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.244Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/equipo/suarez_munoz/index.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.244Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/guia_docente.html</loc>
-    <lastmod>2025-01-20T16:41:39.716Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.244Z</lastmod>
   </url>
   <url>
     <loc>https://ecoinfUGR.github.io/ecoinformatica/practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.html</loc>
-    <lastmod>2025-01-20T16:41:39.717Z</lastmod>
+    <lastmod>2025-01-21T15:30:29.245Z</lastmod>
   </url>
 </urlset>
