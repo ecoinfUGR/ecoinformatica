@@ -8,12 +8,10 @@
     ]
   },
   {
-    "listing": "/modulos/programacion.html",
+    "listing": "/modulos/sig.html",
     "items": [
-      "/sesiones/programacion/intro_R_jml.html",
-      "/sesiones/programacion/piping.html",
-      "/sesiones/programacion/secuencias_control.html",
-      "/sesiones/programacion/tidy_data.html"
+      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
+      "/sesiones/sig/sig_practica_qgis.html"
     ]
   },
   {
@@ -23,9 +21,18 @@
     ]
   },
   {
-    "listing": "/modulos/teledeteccion.html",
+    "listing": "/modulos/programacion.html",
     "items": [
-      "/sesiones/teledeteccion/gee_intro.html"
+      "/sesiones/programacion/intro_R_jml.html",
+      "/sesiones/programacion/piping.html",
+      "/sesiones/programacion/secuencias_control.html",
+      "/sesiones/programacion/tidy_data.html"
+    ]
+  },
+  {
+    "listing": "/modulos/datos_primarios.html",
+    "items": [
+      "/sesiones/datos_primarios/primary_search_biodiversity.html"
     ]
   },
   {
@@ -34,16 +41,10 @@
       "/modulos/introduccion.html",
       "/modulos/reproducibilidad.html",
       "/modulos/programacion.html",
-      "/modulos/bbdd.html",
       "/modulos/teledeteccion.html",
       "/modulos/datos_primarios.html",
+      "/modulos/bbdd.html",
       "/modulos/sig.html"
-    ]
-  },
-  {
-    "listing": "/modulos/bbdd.html",
-    "items": [
-      "/sesiones/bbdd/bbdd_sesion.html"
     ]
   },
   {
@@ -58,16 +59,15 @@
     ]
   },
   {
-    "listing": "/modulos/datos_primarios.html",
+    "listing": "/modulos/bbdd.html",
     "items": [
-      "/sesiones/datos_primarios/primary_search_biodiversity.html"
+      "/sesiones/bbdd/bbdd_sesion.html"
     ]
   },
   {
-    "listing": "/modulos/sig.html",
+    "listing": "/modulos/teledeteccion.html",
     "items": [
-      "/sesiones/sig/sig_practica_qgis.html",
-      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html"
+      "/sesiones/teledeteccion/gee_intro.html"
     ]
   }
 ]
