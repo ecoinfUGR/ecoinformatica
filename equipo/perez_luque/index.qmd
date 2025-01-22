@@ -17,7 +17,7 @@ about:
       href: https://orcid.org/0000-0002-1747-0469
     - text: "{{< fa globe >}} Personal web"
       href: http://ajperezluque.com/
-categories: [Programación, Teledetección, Sistemas de Información Geográfica, Datos Primarios, Reproducibilidad]
+categories: [Programación, Datos Primarios, Reproducibilidad]
 ---
  
 <hr>
@@ -25,18 +25,14 @@ categories: [Programación, Teledetección, Sistemas de Información Geográfica
 :::{#person-profile}
 
 ## Módulos 
-- [Reproducibilidad en Ciencia](../../modulos/reproducibilidad.qmd)
-- [Datos Primarios](../../modulos/datos_primarios.qmd)
-- [Programación](../../modulos/programacion.qmd)
-- [Sistemas de Información Geográfica](../../modulos/sig.qmd)
-- [Teledetección](../../modulos/teledeteccion.qmd)
-
+- Programación
+- Datos Primarios
+- Reproducibilidad en Ciencia
 
 ## Contacto
 - Grupo de Investigación en Ecología Funcional de Especies Forestales. Departamento de Ecología y Genética Forestal. 
 - **Instituto de Ciencias Forestales**, [Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria. Consejo Superior de Investigaciones Científicas](https://www.inia.es/)
 
 ## Tutorías 
-- Lunes 10:00 - 13:00 
-- Online (contactar via mail)
+- Lunes 10:00 - 13:00
 :::

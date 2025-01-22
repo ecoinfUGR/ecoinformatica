@@ -25,12 +25,11 @@ categories: [Bases de Datos, Sistemas de Información Geográfica]
 :::{#person-profile}
 
 ## Módulos 
-- [Introducción a la Asignatura](../../modulos/introduccion.qmd)
-- [Bases de Datos](../../modulos/bbdd.qmd)
-- [Sistemas de Información Geográfica](../../modulos/sig.qmd)
+- Bases de Datos
+- Sistemas de Información Geográfica
 
 ## Contacto
-- Departamento de Ingeniería Forestal. Universidad de Córdoba
+- Departamento de Botánica, Ecología y Fisiología Vegetal. Universidad de Córdoba
 
 ## Tutorías 
 - Lunes 10:00 - 13:00

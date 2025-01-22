@@ -17,7 +17,7 @@ about:
       href: https://orcid.org/0000-0002-0825-7252
     - text: "{{< fa globe >}} Personal web"
       href: https://www.ugr.es/personal/javier-martinez-lopez 
-categories: [Teledetección, Programación]
+categories: [Teledetección, Sistemas de Información Geográfica]
 ---
  
 <hr>
@@ -25,9 +25,8 @@ categories: [Teledetección, Programación]
 :::{#person-profile}
 
 ## Módulos 
-- [Introducción a la Asignatura](../../modulos/introduccion.qmd)
-- [Programación](../../modulos/programacion.qmd)
-- [Teledetección](../../modulos/teledeteccion.qmd)
+- Teledetección
+- Sistemas de Información Geográfica
 
 ## Contacto
 Contratado de Investigación Postdoctoral

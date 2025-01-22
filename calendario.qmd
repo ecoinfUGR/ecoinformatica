@@ -13,15 +13,15 @@ library(tidyverse)
 library(kableExtra)
 library(toastui) 
 
-# read horarios
 h <- read_csv("assets/horarios_24_25.csv", show_col_types = FALSE)
 
+
 d <- h |> 
-  mutate(start = as_datetime(paste(date,  time_start, sep = " "), tz="Europe/Madrid"),
+  mutate(start = as_datetime(paste(date, time_start, sep = " "),tz="Europe/Madrid"),
          end = as_datetime(paste(date, time_end, sep = " "),tz="Europe/Madrid"),
          calendarId = 1, 
          title = "Clase Ciclo Gestión de Datos",
-         body = paste("Sesión", sesion, " "), 
+         body = paste("Sesion", sesion, " "), 
          recurrenceRule = '', 
          category = "time", 
          backgroundColor = '#5e7a97', 
@@ -31,6 +31,7 @@ d <- h |>
     calendarId, title, body, recurrenceRule, start, end, category, location = site, 
     backgroundColor, color, borderColor
   )
+
 ```
 
 ```{r}
