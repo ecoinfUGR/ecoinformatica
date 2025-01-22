@@ -10,6 +10,7 @@ listing:
         date: 2025-01-23
         sesion: 1
       - ../sesiones/sig/sig_practica_qgis.qmd # María, 23/01, 24/01, 28/01 
+      - ../sesiones/sig/mapas_vegetacion.qmd # María, 23/01, 24/01, 28/01 
       # ... Antonio (7/02)
       - ../sesiones/sig/clusterizacion.qmd # (7/02)
       - ../sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd
