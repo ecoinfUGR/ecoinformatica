@@ -19,5 +19,8 @@
   },
   "calendario.qmd": {
     "calendario.html": "b0dd8d39"
+  },
+  "modulos/bbdd.qmd": {
+    "bbdd.html": "80679ee7"
   }
 }

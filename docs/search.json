@@ -91,5 +91,33 @@
     "crumbs": [
       "Calendario"
     ]
+  },
+  {
+    "objectID": "modulos/bbdd.html",
+    "href": "modulos/bbdd.html",
+    "title": "Bases de Datos",
+    "section": "",
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n1\n\n\nIntroducción a las bases de datos\n\n\nMon, Feb 03\n\n\n\n\n \n\n\n¿Cómo se hace una base de datos?\n\n\n \n\n\n\n\n \n\n\n¿Qué es una base de datos?\n\n\n \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "modulos/bbdd.html#objetivo",
+    "href": "modulos/bbdd.html#objetivo",
+    "title": "Bases de Datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nPara practicar un poco más con la creación y construcción de bases de datos relacionales se propone un ejercicio consistente en crear el esquema entidad-relación de una base de datos sencilla, elaborando y describiendo los pasos necesarios para ello. Para construir la base de datos podéis utilizar el conjunto de datos, el proceso o la información que os resulte más útil e interesante. Podéis pensar en información que estáis recopilando para algún trabajo de clase o vuestro TFM, en vuestra colección de arácnidos, en vuestro perfil de Spotify… Pero si no tenéis algún conjunto de datos que os resulte práctico, utilizar podéis utilizar esta descripción:\n“Se diseña un trabajo de campo que consiste en realizar transectos periódicos en una serie de zonas del territorio. En cada muestreo (caracterizado por un transecto de 500 m), se registran las especies de aves observadas o escuchadas, así como las condiciones meteorológicas y la hora de realización. La presencia de las especies se registra a través de un listado de taxones de Andalucía. Es importante tener en cuenta que cada muestreo es realizado por un equipo de personas cuyo número es variable y cada transecto es visitado en varias ocasiones (al menos en invierno y en verano)”.\nConcretamente os pedimos que elaboréis un diagrama entidad-relación que muestre la estructura de vuestra base de datos. Este diagrama, en forma de imagen o esquema mostrará la estructura de la base de datos. Es probable que al elaborarlo encuentres ambigüedades en la descripción de la base de datos. Tendrás entonces que volver a la descripción y modificarla para mejorarla. Es un proceso iterativo. Identifica las entidades y los atributos importantes. Además, en el caso de que optéis por crear un esquema entidad-relación distinto del caso propuesto será necesario acompañarlo de una descripción literal de vuestra base de datos para que pueda comprender si la base de datos se adecúa a la información. Esta descripción en forma de texto deberá explicar en detalle qué datos se va a almacenar en la base de datos y qué características tienen."
+  },
+  {
+    "objectID": "modulos/bbdd.html#aspectos-a-valorar",
+    "href": "modulos/bbdd.html#aspectos-a-valorar",
+    "title": "Bases de Datos",
+    "section": "Aspectos a valorar",
+    "text": "Aspectos a valorar\n\nDescripción literal de la base de datos: ¿es una descripción clara y sin ambigüedad?\nComprensión de conceptos sobre bases de datos relacionales: ¿se identifican correctamente las entidades y sus atributos? ¿se reflejan las relaciones entre las distintas entidades? ¿las relaciones reflejan la información recogida de acuerdo a la descripción?\nJustificación y resolución de conflictos: No es lo mismo no hacer algo, que no saber hacerlo porque tengo un problema que me está impidiendo avanzar… ¿se identifican dificultades encontradas? ¿se justifican las decisiones adoptadas o se valoran distintas opciones?"
+  },
+  {
+    "objectID": "modulos/bbdd.html#evaluación",
+    "href": "modulos/bbdd.html#evaluación",
+    "title": "Bases de Datos",
+    "section": "Evaluación",
+    "text": "Evaluación\nComo en otros casos, tras la entrega el trabajo entregado podrá ser devuelto con comentarios orientados a aclarar aspectos o dudas. Tras ello se podrá hacer una segunda entrega que incorpore los aspectos mencionados en la primera evaluación. La segunda evaluación, por lo tanto, consistirá en analizar cómo se han incorporado mejoras o se ha aprendido del proceso."
   }
 ]

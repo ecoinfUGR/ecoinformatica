@@ -6,5 +6,11 @@
       "/equipo/perez_luque/index.html",
       "/equipo/suarez_munoz/index.html"
     ]
+  },
+  {
+    "listing": "/modulos/bbdd.html",
+    "items": [
+      "/sesiones/bbdd/bbdd_sesion.html"
+    ]
   }
 ]
