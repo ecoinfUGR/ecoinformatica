@@ -2,6 +2,7 @@
 
 library(forestables)
 library(tidyverse)
+library(sf)
 ifn_folder <- 'assets/ext_data/ifn/'
 
 
@@ -18,17 +19,6 @@ prov_ifn3 <- c("04","18")
 prov_ifn4 <- c("30")
 
 
-ifn3 <- show_plots_from(
-  "IFN",
-  folder = ifn_folder,
-  provinces = prov_ifn3, versions = c("ifn3","ifn2")
-)
-
-ifn4 <- show_plots_from(
-  "IFN",
-  folder = ifn_folder,
-  provinces = prov_ifn4, versions = "ifn4"
-)
 
 show_plots_from(
   "IFN",
@@ -92,6 +82,20 @@ sn_tree <- ifn_data |>
   clean_empty("tree") |>
   unnest("tree", names_sep = "_")
 
+sn_tree_raw <- sn_tree |>
+  dplyr::rename(prov = province_name_original,
+                specie = tree_sp_name,
+                tree_id = tree_tree_id,
+                dbh = tree_dbh,
+                height = tree_height) |>
+  dplyr::select(-crs, -version, -province_code, -country,
+                -coord_sys_orig, -ca_name_original,
+                -sheet_ntm, -crs_orig, -regen, -understory,
+                -huso, -type, -tree_cubing_form, -tree_tree_ifn2, -tree_tree_ifn3,
+                -tree_sp_code, -class, -subclass, -year, -id_unique_code) |>
+  dplyr::relocate(prov, .after = "tree_quality_wood") |>
+  dplyr::relocate(tree_density_factor, .before = "tree_quality_wood") |>
+  st_drop_geometry()
 
-  # unnest the tree data
-  unnest("tree")
+write_csv(sn_tree_raw, file= "assets/ext_data/ifn_sn_tree.csv")
+
