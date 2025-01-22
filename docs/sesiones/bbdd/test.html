@@ -7,14 +7,12 @@
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.553">
 
-  <meta name="author" content="Antonio J. Pérez-Luque">
-  <meta name="dcterms.date" content="2025-01-08">
-  <title>Ciclo de Gestión de los Datos. Ecoinformática - Reproducibilidad en Ciencia</title>
+  <meta name="author" content="María Suárez Muñoz">
+  <meta name="dcterms.date" content="2025-02-03">
+  <title>Ciclo de Gestión de los Datos. Ecoinformática - Introducción a las bases de datos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -329,274 +327,97 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducibilidad en Ciencia</h1>
+  <h1 class="title">Introducción a las bases de datos</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+María Suárez Muñoz <a href="https://orcid.org/0000-0003-1765-6885" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
-<a href="mailto:antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a>
+<a href="mailto:bv2sumum@uco.es">bv2sumum@uco.es</a>
 </div>
         <p class="quarto-title-affiliation">
-            Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+            Departamento de Ingeniería Forestal, Universidad de Córdoba
           </p>
     </div>
 </div>
 
-  <p class="date">January 8, 2025</p>
+  <p class="date">February 3, 2025</p>
 </section>
-<section id="cómo-definirías-la-ciencia" class="slide level2">
-<h2>¿Cómo definirías la ciencia?</h2>
+<section id="cómo-recogemos-almacenamos-y-procesamos-datos" class="slide level2">
+<h2>¿Cómo recogemos, almacenamos y procesamos datos?</h2>
 
-<img data-src="images/repro-science.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ciencia" class="slide level2">
-<h2>Ciencia</h2>
-<div class="small">
-<blockquote>
-<p>Conjunto de conocimientos obtenidos mediante la observación y el razonamiento, sistemáticamente estructurados y de los que se deducen principios y leyes generales <br> <br> <strong>RAE</strong></p>
-</blockquote>
-<p><br></p>
-<blockquote>
-<p>La ciencia es el conocimiento obtenido mediante la observación de patrones regulares, de razonamientos y de experimentación en ámbitos específicos, a partir de los cuales se generan preguntas, se construyen hipótesis, se deducen principios y se elaboran leyes generales y sistemas organizados por medio de un método científico. <br> <br> <strong>Mario Bugne 1957</strong>, <em>La ciencia: su método y su filosofía</em></p>
-</blockquote>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="images/repro-metodo-cientifico-bebe.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="crisis-de-reproducibilidad" class="slide level2">
-<h2>Crisis de Reproducibilidad</h2>
-
-<img data-src="images/repro-crisis.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.nature.com/articles/533452a">Baker 2016</a></p><aside class="notes">
+<img data-src="images/datos.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="tipos-de-datos" class="slide level2">
+<h2>Tipos de datos</h2>
 <ul>
-<li><blockquote>
-<p>70% investigadores han intentado (sin éxito) reproducir otros experimentos científicos, y &gt; 50% han fallado en reproducir sus propios experimentos</p>
-</blockquote></li>
+<li>Datos de censos poblacionales en áreas y transectos</li>
+<li>Datos de variables abióticas: temperatura, altitud</li>
+<li>Registros (ubicaciones GPS, coordenadas)</li>
+<li>Datos de uso de suelo, coberturas y vegetación</li>
+<li>Observaciones de poblaciones: especie, número de individuos, fecha de observación, localización</li>
+<li>Análisis de muestras de suelo, agua o aire</li>
+<li>Material audiovisual: fotos, vídeos, audios</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="mismos-datos-mismos-resultados" class="slide level2">
-<h2>¿mismos datos = mismos resultados?</h2>
-
-<img data-src="images/repro-trial.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="problema-actual" class="slide level2">
-<h2>¿problema actual?</h2>
-
-<img data-src="images/repro-crisis-twitter.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<section id="tipos-de-archivos" class="slide level2">
+<h2>Tipos de archivos</h2>
 <ul>
-<li>No es un problema de ahora. Ya en 1830 el físico Charles Babbage publicó una obra sobre el declive de la ciencia</li>
+<li>Tablas de datos</li>
+<li>Archivos espaciales</li>
+<li>Archivos de imagen</li>
+<li>Audios</li>
+<li>…</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p><strong>¿Cómo los relacionamos para poder realizar análisis con ellos?</strong></p>
 </section>
-<section class="slide level2">
-
-<h3 id="fraude-científico-1">Fraude científico <sup>1</sup></h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/repro-lemus-ms.png" height="500"></p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/repro-lemus-retracted.png"></p>
-<figcaption><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001276">Potti et al.&nbsp;2013</a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<aside class="notes">
-<ul>
-<li>Investigador contratado por la EBD.</li>
-<li>36 publicaciones (13 de ellas retiradas)</li>
-<li>Inventó resultados, instituciones, autores, empresas, etc.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Abril-Ruiz (2019). <a href="https://psyarxiv.com/z82mh/">Manzanas podridas</a></p></li></ol></aside></section>
-<section>
-<section id="qué-entendemos-por-ciencia-reproducible" class="title-slide slide level1 center">
-<h1>¿Qué entendemos por ciencia reproducible?</h1>
-
+<section id="inventarios-forestales" class="slide level2">
+<h2>Inventarios forestales</h2>
+<p>Muestreo sistemático de una masa forestal que pretende recopilar información sobre, al menos, su composición, estructura y estado.</p>
+<p><strong>Diversos objetivos</strong></p>
 </section>
-<section id="investigación-reproducible" class="slide level2">
-<h2>Investigación Reproducible</h2>
-<div class="small">
-<blockquote>
-<p>Trabajo que puede recrearse de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original</p>
-</blockquote>
-</div>
-
-<img data-src="images/repro-reproducible-matrix.jpeg" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html">The Turing way</a></p><aside class="notes">
-<ul>
-<li><p>Un resultado es <em>reproducible</em> cuando los mismos pasos de análisis realizados en el mismo conjunto de datos producen sistemáticamente la misma respuesta.</p></li>
-<li><p>A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.</p></li>
-<li><p>Robusto: Un resultado es robusto cuando el mismo conjunto de datos se somete a diferentes flujos de trabajo de análisis para responder a la misma pregunta de investigación (por ejemplo, un pipeline escrito en R y otro escrito en Python) y se produce una respuesta cualitativamente similar o idéntica. Los resultados robustos muestran que el trabajo no depende de las especificidades del lenguaje de programación elegido para realizar el análisis.</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="gradiente-de-reproducibilidad" class="slide level2">
-<h2>Gradiente de Reproducibilidad</h2>
-
-<img data-src="images/repro-gradiente.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="http://doi.org/10.7818/ECOS.2016.25-2.11">Rodríguez-Sánchez et al.&nbsp;2016</a></p></section>
-<section class="slide level2">
-
-<h3 id="flujo-de-trabajo-reproducible-ventajas-i">Flujo de trabajo reproducible: ventajas (I)</h3>
-<div>
-<ul>
-<li class="fragment">La utilización de código permite la automatización: ejecución de tareas repetitivas sin esfuerzo</li>
-<li class="fragment">Muy fácil corregir y regenerar resultados, tablas y figuras</li>
-<li class="fragment">Reducción drástica del riesgo de errores</li>
-<li class="fragment">Los flujos de trabajo reproducibles facilitan la colaboración</li>
-<li class="fragment">Mayor facilidad para escribir trabajos al tener registro exhaustivo de todo el proceso de análisis</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="flujo-de-trabajo-reproducible-ventajas-ii">Flujo de trabajo reproducible: ventajas (II)</h3>
-<div>
+<section id="proceso" class="slide level2">
+<h2>Proceso</h2>
 <div class="small">
 <ul>
-<li class="fragment"><p>La publicación del código:</p>
-<ul>
-<li class="fragment">ayuda a detectar errores antes de la publicación definitiva</li>
-<li class="fragment">facilita el proceso de revisión</li>
-<li class="fragment">facilita la comprensión del artículo y evita malinterpretaciones</li>
-</ul></li>
-<li class="fragment"><p>La reproducibilidad es un sello de calidad y aumenta la probabilidad de aceptación del trabajo</p></li>
-<li class="fragment"><p>La reproducibilidad aumenta el impacto de las publicaciones (citas, reconocimiento, reutilización, coautorías)</p></li>
-<li class="fragment"><p>Ahorro de tiempo y esfuerzo al reutilizar código en otros proyectos</p></li>
+<li>Definición de puntos a muestrear</li>
+<li>Delimitación de parcelas</li>
+<li>Registro de información: características de los árboles, inventario florístico, factores abióticos, estructura de la masa, estado selvícola…</li>
 </ul>
 </div>
-</div>
-</section>
-<section id="reproducibilidad-barreras" class="slide level2">
-<h2>Reproducibilidad: Barreras</h2>
 
-<img data-src="images/repro-barriers.png" class="r-stretch quarto-figure-center"><p class="caption">Fuente: <a href="https://youtu.be/wZeoZaIV0VE?t=312">Kirstie Whitaker</a></p></section>
-<section id="reproducibilidad-costes" class="slide level2">
-<h2>Reproducibilidad: Costes</h2>
+<img data-src="images/sampling_inventory.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="inventarios-nacionales" class="slide level2">
+<h2>Inventarios nacionales</h2>
 
-<img data-src="images/repro-metodo-geek.png" class="r-stretch"></section>
-<section id="cuándo-y-dónde-ser-reproducible" class="slide level2">
-<h2>¿Cuándo y Dónde ser reproducible?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/repro-ciclo-dato.jpg"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/repro-three-steps.png"></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="images/repro-tensimple.png" class="r-stretch"><p><a href="https://doi.org/10.1371/journal.pcbi.1003285">Sandve et al.&nbsp;2013</a></p>
-</section>
-<section id="recursos" class="slide level2">
-<h2>Recursos</h2>
-<div class="small">
-<ul>
-<li><p><a href="https://github.com/leipzig/awesome-reproducible-research">Awesome Reproducible Research. A curated list of reproducible research case studies, projects, tutorials, and media</a></p></li>
-<li><p><a href="https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Recursos.md">Lista de recursos sobre Ciencia Reproducible</a></p></li>
-<li><p>Rodríguez-Sánchez F, Pérez-Luque AJ, Bartomeus I, Varela S (2016) <a href="http://doi.org/10.7818/ECOS.2016.25-2.11">Ciencia reproducible: qué, por qué, cómo</a>. Ecosistemas, 25(2): 83-92.</p></li>
-<li><p><a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801">A Beginner’s Guide to Conducting Reproducible Research</a></p></li>
-<li><p><a href="https://the-turing-way.netlify.app/welcome.html">The Turing Way handbook to reproducible, ethical and collaborative data science</a>.</p></li>
-<li><p><a href="https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf">A Guide to Reproducible Code in Ecology and Evolution</a></p></li>
+<img data-src="images/evolucion_ifn.jpg" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>Información homogénea</li>
+<li>Periodicidad</li>
 </ul>
-</div>
+<p><a href="https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/ifn3.html">Acceso</a></p>
+<p><em>Es una base de datos</em></p>
 </section>
-<section id="recursos-1" class="slide level2">
-<h2>Recursos</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/repro-british.png" class="quarto-figure quarto-figure-center" height="500"></p>
-</figure>
-</div>
-<div class="small">
-<p><a href="https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf">Cooper &amp; Hsing (2017)</a></p>
-</div>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><a href="https://prezi.com/view/SNTReihW7NEUL99ZUVte/">¿Qué es una base de datos?</a></p>
 </section>
-<section id="recursos-2" class="slide level2">
-<h2>Recursos</h2>
+<section id="la-base-de-datos-del-ifn3" class="slide level2">
+<h2>La base de datos del IFN3</h2>
 
-<img data-src="images/repro-alston.png" class="r-stretch"><p><a href="https://doi.org/10.1002/bes2.1801">Alston &amp; Rick 2021</a></p>
+<img data-src="images/ifn3_relaciones.png" class="r-stretch"><p><a href="../sesiones/bbdd/material/documentador_bdcampo_ifn3_tcm34-282240.pdf">Documentador</a></p>
 </section>
-<section id="alguna-duda" class="slide level2">
-<h2>¿Alguna duda?</h2>
-<ul>
-<li><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></li>
-<li><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></li>
-</ul>
-<p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/logo-jdc.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
-</figure>
-</div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Si usas esta presentación puedes citarla como:</strong></p>
-</div>
-<div class="callout-content">
-<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Reproducibilidad en Ciencia. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
-</div>
-</div>
-</div>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><a href="https://prezi.com/view/puAicrkDBdIEcr864RQg/">¿Cómo se hace una base de datos?</a></p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/logo-ugr.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad</p>
+<p>Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad</p>
 </div>
 </div>
-</section></section>
-
+</section>
     </div>
   </div>
 
@@ -630,7 +451,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'multiplex': {"secret":null,"id":"afafd4e16195a65d","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"72d3651b106351db","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner

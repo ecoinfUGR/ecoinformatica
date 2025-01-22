@@ -4,7 +4,7 @@ format: html
 author: 
   - name: "María Suárez Muñoz"
     orcid: 0000-0003-1765-6885
-    email: maria.suarez.munoz@gmail.com
+    email: bv2sumum@uco.es
     affiliation: Departamento de Ingeniería Forestal, Universidad de Córdoba
 date: 2025-01-23
 sesion: 1
@@ -107,7 +107,7 @@ Veremos cómo las opciones de simbología son diferentes según el tipo de capa:
 
 ![](images/load_csv.png)
 
-Esto es muy práctico en el caso habitual en el que tenemos una lista de puntos con sus coordenadas, como es el caso de la lista de parcelas del Inventario Forestal Nacional (*ifn3_plot_coords_23030.csv*), del que hablaremos más adelante. 
+Esto es muy práctico en el caso habitual en el que tenemos una lista de puntos con sus coordenadas, como es el caso de una lista de parcelas de muestreo (*ifn3_plot_coords_23030.csv*). 
 
 Así, podemos crear una capa vectorial a partir de este tipo de archivos:
 
@@ -274,7 +274,7 @@ Como ejemplo, incorporaremos información sobre el número de árboles observado
 
 ![](images/join.png)
 
-¿Qué pasa cuando queremos incorporar más de un dato a cada elemento de nuestra capa espacial? 
+¿Qué pasa cuando tenemos más de un dato para cada elemento de nuestra capa espacial? 
 
 ## Crear mapa
 

@@ -103,5 +103,20 @@
   },
   "sesiones/programacion/intro_R_jml.qmd": {
     "intro_R_jml.html": "0180ff52"
+  },
+  "sesiones/bbdd/test.qmd": {
+    "test.html": "65315696"
+  },
+  "sesiones/bbdd/bbdd_sesion.qmd": {
+    "bbdd_sesion.html": "da4f8806"
+  },
+  "sesiones/bbdd/bbdd_ejercicio.qmd": {
+    "bbdd_ejercicio.html": "637e132f"
+  },
+  "sesiones/sig/sig_practica_qgis.qmd": {
+    "sig_practica_qgis.html": "db4711a7"
+  },
+  "sesiones/programacion/tidy_text.qmd": {
+    "tidy_text.html": "e132c185"
   }
 }

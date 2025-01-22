@@ -24,16 +24,16 @@
       "/modulos/introduccion.html",
       "/modulos/reproducibilidad.html",
       "/modulos/programacion.html",
-      "/modulos/bbdd.html",
       "/modulos/teledeteccion.html",
       "/modulos/datos_primarios.html",
+      "/modulos/bbdd.html",
       "/modulos/sig.html"
     ]
   },
   {
     "listing": "/modulos/bbdd.html",
     "items": [
-      "/sesiones/bbdd/bbdd.html"
+      "/sesiones/bbdd/bbdd_sesion.html"
     ]
   },
   {
