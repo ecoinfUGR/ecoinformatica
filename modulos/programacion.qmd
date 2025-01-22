@@ -17,6 +17,20 @@ listing:
     sort: [sesion]
     sort-ui: false
     filter-ui: false
+  - id: practicas
+    contents:
+      - ../practicas/pr_prog_manejo_datos.qmd
+    type: table
+    fields: [modulo, practica, title, date]
+    date-format: "ddd, MMM DD"
+    field-display-names:
+      modulo: "Módulo"
+      practica: "Práctica"
+      title: "Nombre"
+      date: "Fecha"
+    sort: [practica]
+    sort-ui: false
+    filter-ui: false
 tbl-colwidths: [10,50,40]
 bibliography: ../assets/references/refs_modulo_programacion.bib
 csl: ../assets/references/ecology.csl
