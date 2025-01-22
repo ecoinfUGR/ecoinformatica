@@ -70,3 +70,7 @@ La entrega inicial del mapa se hará de manera individual, y como en el caso ant
 -   [Visor REDIAM](https://portalrediam.cica.es/VisorRediam/)
 
 -   [Área de descarga de información ambiental en Andalucía](https://portalrediam.cica.es/descargas?path=%2F)
+
+-   [Difusión de información forestal de Andalucía](https://indifo.agenciamedioambienteyagua.es/indicadoresForestales/home)
+
+-   [Visor comparativo](https://portalrediam.cica.es/comparaWMS/)
