@@ -1,0 +1,261 @@
+---
+title: "Práctica Introducción a la programación"
+author: 
+  - name: "[Antonio J. Pérez-Luque](equipo/perez_luque)"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-01-21
+modulo: Introducción a la Programación
+practica: 1
+format: html
+number-sections: true
+number-depth: 4
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+---
+
+# Introducción {.unnumbered}
+
+En esta práctica, vamos a aplicar diferentes conceptos aprendidos en el modulo de [Introducción a la Programación](../modulos/programacion.qmd). Vamos a preparar un conjunto de datos para llevar a cabo un análisis de la productividad forestal estimada con satélite en pinares de repoblación. En 12 parcelas de pinares de repoblación (*Pinus* sp), pertenecientes a 4 especies diferentes (*P. halepensis*, *P. nigra*, *P. pinaster*, *P. sylvestris*) y distribuidas en un gradiente altitudinal (*low*, *medium*, *high*), hemos medido distintas variables climáticas. 
+
+<!---
+Los datos se encuentran organizados en archivos `csv` e incluyen información climática, de productividad primaria neta (NPP), y de índices de verdor (el Índice de vegetación de diferencia normalizada o [NDVI](https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada); y el [EVI](https://en.wikipedia.org/wiki/Enhanced_vegetation_index)). 
+
+--->
+
+# Objetivos
+
+- Aplicar herramientas de programación para importar, limpiar y preparar datos para análisis.
+- Computar algunos estadísticos
+- Visualizar datos mediante gráficos para identificar patrones y diferencias.
+
+## Estructura de los datos 
+
+Los datos brutos están en este [enlace](../assets/ext_data/data_pine/clima.zip) y constan de: 
+
+- **Datos climáticos**. La subcarpeta `/clima` contiene 12 archivos de datos climáticos para las diferentes parcelas. Cada archivo tiene información de temperatura media mensual (`monthly_tmed`), precipitación mensual (`monthly_prec`) y evapotranspiración mensual (`monthly_pet`) para cada parcela (indicada en el nombre del archivo). Asimismo contiene el año y el mes de la observación. 
+
+<!---
+
+- **Productividad primaria neta (NPP)**. Datos de NPP obtenidos a partir de [satélite MODIS](https://modis.gsfc.nasa.gov/data/dataprod/mod17.php) para cada una de las parcelas de pinar que estamos monitorizando. Este dataset contiene las siguientes variables: `year`, `npp` (Kg C /m^2^), `sp_code`: código de la especie (halepensis, nigra, pinaster y sylvestris); `elev_code`: código de la elevación (low, medium, high); y una combinación de ambas (`sp_elev`) que representa el nombre de la parcela. 
+
+- **Índices de vegetación (EVI y NDVI)**. Valores de EVI y NDVI en las parcelas. Este dataset incluye las siguientes variables: `EVI` y `NDVI` (índices de vegetación), `Specie`: especie observada, `date`: fecha de observación (en formato YYYYMMDD), `elev_code`: código de la elevación (low, medium, high), y sp_code: código de la especie (halepensis, nigra, pinaster y sylvestris).
+--->
+
+# Actividades
+
+1. Escribe un bucle que lea los archivos climáticos y los guarde en una lista, pero añadiendo el nombre de cada sitio (obtenido del nombre del archivo). 
+
+```{r clima-bucle}
+#| eval: FALSE
+#| echo: FALSE 
+
+# Cargar librerías necesarias
+library("tidyverse")
+
+# Leer todos los archivos climáticos
+path_clima <- "../assets/ext_data/data_pine/clima"
+archivos_clima <- list.files(path_clima, full.names = TRUE, pattern = "*.csv")
+
+
+clima <- vector(mode = "list", length = length(archivos_clima))
+
+for (i in seq_along(archivos_clima)) {
+  aux <- read_csv(archivos_clima[i]) |> 
+    mutate(sp_elev = basename(archivos_clima[i])) |> 
+    mutate(sp_elev = str_remove_all(sp_elev, ".csv")) |> 
+    mutate(sp_elev = str_remove_all(sp_elev, "clima_"))
+  
+  clima[[i]] <- aux 
+}
+```
+
+2. ¿Podríamos generar un dataframe homogéneo a partir de la lista generada? 
+
+```{r clima-df}
+#| eval: FALSE
+#| echo: FALSE
+ 
+df_clima <- bind_rows(clima)
+```
+
+3. Calcula los valores promedio de temperatura media anual por sitio; y por especie. 
+
+```{r temp}
+#| eval: FALSE
+#| echo: FALSE
+
+df <- df_clima |> 
+  separate(sp_elev, into = c("sp_code", "elev_code"), remove = FALSE)
+
+temp_sitio <- df |> 
+  group_by(sp_elev) |> 
+  summarise(tmed = mean(monthly_tmed, na.rm=TRUE))
+  
+
+temp_sp <- df |> 
+  group_by(sp_code) |> 
+  summarise(tmed = mean(monthly_tmed, na.rm=TRUE))
+
+```
+
+
+4. Calcula los valores promedio (y la desviación estándar) de la precitación acumulada anual por sitio; y por especie. ¿Podrías realizar un gráfico de barras con los promedios de la precipitación? ¿Y añadirle las desviaciones estándar?
+
+
+```{r prec}
+#| eval: FALSE
+#| echo: FALSE
+
+prec_sitio <- df |> 
+  group_by(sp_elev, year) |> 
+  summarise(prec_anual = sum(monthly_prec)) |> 
+  ungroup() |> 
+  group_by(sp_elev) |> 
+  summarise(prec_anual_mean = mean(prec_anual, na.rm=TRUE),
+            prec_anual_sd = sd(prec_anual, na.rm=TRUE))
+  
+
+prec_sp <- df |> 
+  group_by(sp_code, year) |> 
+  summarise(prec_anual = sum(monthly_prec)) |> 
+  ungroup() |> 
+  group_by(sp_code) |> 
+  summarise(prec_anual_mean = mean(prec_anual, na.rm=TRUE),
+            prec_anual_sd = sd(prec_anual, na.rm=TRUE))
+
+```
+
+```{r prec-plot}
+#| eval: FALSE
+#| echo: FALSE
+
+plot_sitio <- prec_sitio |> 
+  ggplot(aes(x=sp_elev, y=prec_anual_mean)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = prec_anual_mean - prec_anual_sd,
+                    ymax = prec_anual_mean + prec_anual_sd), width = .2) 
+  
+
+plot_sp <- prec_sp |> 
+  ggplot(aes(x=sp_code, y=prec_anual_mean)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = prec_anual_mean - prec_anual_sd,
+                    ymax = prec_anual_mean + prec_anual_sd), width = .2) 
+  
+```
+
+
+
+
+<!---
+### Agregar Variables Auxiliares
+## Análisis de Productividad Forestal
+### Calcular Estadísticas Descriptivas para NPP
+
+```{r}
+#| eval: FALSE
+#| echo: FALSE
+# Leer datos de NPP
+npp <- read_csv("data_pine/npp.csv")
+
+# Calcular media y desviación estándar por sitio y especie
+estadisticas_npp <- npp |> 
+  group_by(sitio, especie) |> 
+  summarise(
+    media_npp = mean(NPP, na.rm = TRUE),
+    sd_npp = sd(NPP, na.rm = TRUE)
+  )
+
+# Mostrar resultados
+print(estadisticas_npp)
+```
+
+### Visualizar Comparación de NPP
+
+```{r}
+#| eval: FALSE
+#| echo: FALSE
+ggplot(estadisticas_npp, aes(x = especie, y = media_npp, fill = sitio)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Comparación de NPP entre especies",
+    x = "Especie",
+    y = "Media de NPP"
+  ) +
+  theme_minimal()
+```
+
+## Índices de Verdor
+
+### Limpieza y Preparación de Datos de NDVI
+
+```{r}
+#| eval: FALSE
+#| echo: FALSE
+# Leer datos de NDVI y EVI
+iv_raw <- read_csv("data_pine/iv_raw.csv")
+
+# Limpieza y preparación
+iv_preparado <- iv_raw |> 
+  rename_with(~ str_to_lower(.)) |> 
+  mutate(
+    fecha = as.Date(as.character(fecha), format = "%Y%m%d"),
+    especie = str_remove(especie, "-")
+  ) |> 
+  drop_na()
+
+# Verificar datos
+head(iv_preparado)
+```
+
+### Análisis de NDVI por Sitio
+
+```{r}
+#| eval: FALSE
+#| echo: FALSE
+ndvi_estadisticas <- iv_preparado |> 
+  group_by(sitio, especie, elevacion) |> 
+  summarise(
+    media_ndvi = mean(ndvi, na.rm = TRUE),
+    sd_ndvi = sd(ndvi, na.rm = TRUE)
+  )
+
+# Visualización
+ggplot(ndvi_estadisticas, aes(x = sitio, y = media_ndvi, fill = especie)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Comparación de NDVI entre sitios",
+    x = "Sitio",
+    y = "Media de NDVI"
+  ) +
+  theme_minimal()
+```
+---> 
+
+## Entrega
+
+::: {.callout-important}
+### Material a entregar
+Cada alumno debe entregar una carpeta (en formato comprimido o `.zip`) que contenga:
+
+- El código R utilizado para realizar las actividades.
+- Los datos generados (como tablas de estadísticas descriptivas).
+- Los gráficos solicitados en los ejercicios.
+:::
+
+# Recursos
+
+Para la realización de este ejercicio práctico puedes consultar los materiales del módulo: [Introducción a la Programación](../modulos/programacion.qmd), y además, estos otros:  
+
+- [Documentación oficial de R](https://www.r-project.org/)
+- [Tidyverse](https://www.tidyverse.org/)
+- [ggplot2](https://ggplot2.tidyverse.org/)

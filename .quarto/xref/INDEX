@@ -117,6 +117,16 @@
     "sig_practica_qgis.html": "dcf4a1fa"
   },
   "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
+<<<<<<< HEAD
+    "guion_practica_mapa_biodiversidad_jml.html": "f6be8076"
+  },
+  "sesiones/programacion/tidy_text.qmd": {
+    "tidy_text.html": "219389b8"
+  },
+  "practicas/pr_prog_manejo_datos.qmd": {
+    "pr_prog_manejo_datos.html": "75428008"
+=======
     "guion_practica_mapa_biodiversidad_jml.html": "1e7181a7"
+>>>>>>> origin/main
   }
 }
