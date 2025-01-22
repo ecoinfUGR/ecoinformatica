@@ -8,31 +8,26 @@
     ]
   },
   {
-    "listing": "/modulos/sig.html",
+    "listing": "/modulos/teledeteccion.html",
     "items": [
-      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
-      "/sesiones/sig/sig_practica_qgis.html"
+      "/sesiones/teledeteccion/gee_intro.html"
     ]
   },
   {
-    "listing": "/modulos/introduccion.html",
+    "listing": "/modulos/bbdd.html",
     "items": [
-      "/sesiones/intro/intro_proyecto.html"
+      "/sesiones/bbdd/bbdd_sesion.html"
     ]
   },
   {
-    "listing": "/modulos/programacion.html",
+    "listing": "/modulos/reproducibilidad.html",
     "items": [
-      "/sesiones/programacion/intro_R_jml.html",
-      "/sesiones/programacion/piping.html",
-      "/sesiones/programacion/secuencias_control.html",
-      "/sesiones/programacion/tidy_data.html"
-    ]
-  },
-  {
-    "listing": "/modulos/datos_primarios.html",
-    "items": [
-      "/sesiones/datos_primarios/primary_search_biodiversity.html"
+      "/sesiones/repro/repro_intro_slides.html",
+      "/sesiones/repro/repro_reproducible_documents.html",
+      "/sesiones/repro/repro_reproducible_documents_slides.html",
+      "/sesiones/repro/repro_git.html",
+      "/practicas/pr_repro_documentos_reproducibles.html",
+      "/practicas/pr_repro_control_versiones.html"
     ]
   },
   {
@@ -48,26 +43,32 @@
     ]
   },
   {
-    "listing": "/modulos/reproducibilidad.html",
+    "listing": "/modulos/datos_primarios.html",
     "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html",
-      "/practicas/pr_repro_documentos_reproducibles.html",
-      "/practicas/pr_repro_control_versiones.html"
+      "/sesiones/datos_primarios/primary_search_biodiversity.html"
     ]
   },
   {
-    "listing": "/modulos/bbdd.html",
+    "listing": "/modulos/programacion.html",
     "items": [
-      "/sesiones/bbdd/bbdd_sesion.html"
+      "/sesiones/programacion/intro_R_jml.html",
+      "/sesiones/programacion/piping.html",
+      "/sesiones/programacion/secuencias_control.html",
+      "/sesiones/programacion/tidy_data.html",
+      "/practicas/pr_prog_manejo_datos.html"
     ]
   },
   {
-    "listing": "/modulos/teledeteccion.html",
+    "listing": "/modulos/introduccion.html",
     "items": [
-      "/sesiones/teledeteccion/gee_intro.html"
+      "/sesiones/intro/intro_proyecto.html"
+    ]
+  },
+  {
+    "listing": "/modulos/sig.html",
+    "items": [
+      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
+      "/sesiones/sig/sig_practica_qgis.html"
     ]
   }
 ]
