@@ -104,13 +104,20 @@
   "sesiones/programacion/intro_R_jml.qmd": {
     "intro_R_jml.html": "0180ff52"
   },
+  "sesiones/sig/mapas_vegetacion.qmd": {
+    "mapas_vegetacion.html": "0ebe3de7"
+  },
   "sesiones/bbdd/bbdd_sesion.qmd": {
-    "bbdd_sesion.html": "4147ee67"
+    "bbdd_sesion.html": "6115fab1"
+  },
+  "sesiones/bbdd/bbdd_ejercicio.qmd": {
+    "bbdd_ejercicio.html": "6076da31"
   },
   "sesiones/sig/sig_practica_qgis.qmd": {
-    "sig_practica_qgis.html": "3d4968a2"
+    "sig_practica_qgis.html": "dcf4a1fa"
   },
   "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
+<<<<<<< HEAD
     "guion_practica_mapa_biodiversidad_jml.html": "f6be8076"
   },
   "sesiones/programacion/tidy_text.qmd": {
@@ -118,5 +125,8 @@
   },
   "practicas/pr_prog_manejo_datos.qmd": {
     "pr_prog_manejo_datos.html": "75428008"
+=======
+    "guion_practica_mapa_biodiversidad_jml.html": "1e7181a7"
+>>>>>>> origin/main
   }
 }

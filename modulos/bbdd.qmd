@@ -1,12 +1,14 @@
 ---
 title: "Bases de Datos"
 author: "[María Suárez-Muñoz](equipo/suarez_munoz)"
-date: ""
-modulo_order: 5
+date: "03-02-2025"
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/bbdd/*.qmd
+      - ../sesiones/bbdd/bbdd_sesion.qmd
+      - title: "[¿Qué es una base de datos?](https://prezi.com/view/SNTReihW7NEUL99ZUVte/)" 
+      - title: "[¿Cómo se hace una base de datos?](https://prezi.com/view/puAicrkDBdIEcr864RQg/)" 
+      - ./sesiones/bbdd/bbdd_ejercicio.qmd
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"
@@ -14,13 +16,13 @@ listing:
       sesion: "Sesión"
       title: "Nombre"
       date: "Fecha"
-    sort: [sesion]
+    # sort: "custom-field"
     sort-ui: false
     filter-ui: false
 tbl-colwidths: [10,50,40]
 bibliography: ../assets/references/refs_modulos.bib
 csl: ../assets/references/ecology.csl
-nocite: 
+nocite:
 ---
 
 # Sesiones
@@ -32,11 +34,11 @@ nocite:
 
 ## Objetivo
 
-Para practicar un poco más con la creación y construcción de bases de datos relacionales se propone un ejercicio consistente en crear el esquema entidad-relación de una base de datos sencilla, elaborando y describiendo los pasos necesarios para ello. Para construir la base de datos podéis utilizar el conjunto de datos, el proceso o la información que os resulte más útil e interesante. Podéis pensar en información que estáis recopilando para algún trabajo de clase o vuestro TFM, en vuestra colección de arácnidos, en vuestro perfil de Spotify... Pero si no tenéis algún conjunto de datos que os resulte práctico utilizar podéis utilizar esta descripción:
+Para practicar un poco más con la creación y construcción de bases de datos relacionales se propone un ejercicio consistente en crear el esquema entidad-relación de una base de datos sencilla, elaborando y describiendo los pasos necesarios para ello. Para construir la base de datos podéis utilizar el conjunto de datos, el proceso o la información que os resulte más útil e interesante. Podéis pensar en información que estáis recopilando para algún trabajo de clase o vuestro TFM, en vuestra colección de arácnidos, en vuestro perfil de Spotify... Pero si no tenéis algún conjunto de datos que os resulte práctico, utilizar podéis utilizar esta descripción:
 
-*"Muestreos fitosociológicos: Se diseña un trabajo de campo que consiste en hacer muestreos fitosociológicos en una serie de puntos del territorio. En cada muestreo (caracterizado por un punto), se evalúan la presencia y abundancia de todas las especies vegetales existentes en un radio de xx m desde el centro de la parcela. La presencia de las especies se registra a través de un listado de taxones de Andalucía. Su abundancia se codifica según el criterio de Braun-Blanquet (búscalo en internet si no sabes lo que es). Cada muestreo es realizado por un equipo de personas cuyo número es variable. También es importante tener en cuenta que cada punto puede ser visitado en varias ocasiones".*
+*"Se diseña un trabajo de campo que consiste en realizar transectos periódicos en una serie de zonas del territorio. En cada muestreo (caracterizado por un transecto de 500 m), se registran las especies de aves observadas o escuchadas, así como las condiciones meteorológicas y la hora de realización. La presencia de las especies se registra a través de un listado de taxones de Andalucía. Es importante tener en cuenta que cada muestreo es realizado por un equipo de personas cuyo número es variable y cada transecto es visitado en varias ocasiones (al menos en invierno y en verano)".*
 
-Concretamente os pedimos que elaboréis un diagrama entidad-relación que muestre la estructura de vuestra base de datos. Este diagrama, en forma de imagen o esquema mostrará la estructura de la base de datos. Es probable que al elaborarlo encuentres ambigüedades en la descripción de la base de datos. Tendrás entonces que volver a la descripción y modificarla para mejorarla. Es un proceso iterativo. Identifica las entidades y los atributos importantes. Además, en el caso de que optéis por crear un esquema entidad-relación distinto del caso propuesto será necesario acompañarlo de una descripción literal de vuestra base de datos. Esta descripción en forma de texto deberá explicar en detalle qué información se va a almacenar en la base de datos y qué características tiene. 
+Concretamente os pedimos que elaboréis un diagrama entidad-relación que muestre la estructura de vuestra base de datos. Este diagrama, en forma de imagen o esquema mostrará la estructura de la base de datos. Es probable que al elaborarlo encuentres ambigüedades en la descripción de la base de datos. Tendrás entonces que volver a la descripción y modificarla para mejorarla. Es un proceso iterativo. Identifica las entidades y los atributos importantes. Además, en el caso de que optéis por crear un esquema entidad-relación distinto del caso propuesto será necesario acompañarlo de una descripción literal de vuestra base de datos para que pueda comprender si la base de datos se adecúa a la información. Esta descripción en forma de texto deberá explicar en detalle qué datos se va a almacenar en la base de datos y qué características tienen. 
 
 ## Aspectos a valorar
 
@@ -58,3 +60,4 @@ Como en otros casos, tras la entrega el trabajo entregado podrá ser devuelto co
 
 -   [Acceso a los datos del IFN3](https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/ifn3.html)
 
+- [Documentador del IFN3](../sesiones/bbdd/material/documentador_bdcampo_ifn3_tcm34-282240.pdf)
