@@ -119,5 +119,96 @@
     "title": "Bases de Datos",
     "section": "Evaluación",
     "text": "Evaluación\nComo en otros casos, tras la entrega el trabajo entregado podrá ser devuelto con comentarios orientados a aclarar aspectos o dudas. Tras ello se podrá hacer una segunda entrega que incorpore los aspectos mencionados en la primera evaluación. La segunda evaluación, por lo tanto, consistirá en analizar cómo se han incorporado mejoras o se ha aprendido del proceso."
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#tipos-de-datos",
+    "href": "sesiones/bbdd/bbdd_sesion.html#tipos-de-datos",
+    "title": "Introducción a las bases de datos",
+    "section": "Tipos de datos",
+    "text": "Tipos de datos\n\nDatos de censos poblacionales en áreas y transectos\nDatos de variables abióticas: temperatura, altitud\nRegistros (ubicaciones GPS, coordenadas)\nDatos de uso de suelo, coberturas y vegetación\nObservaciones de poblaciones: especie, número de individuos, fecha de observación, localización\nAnálisis de muestras de suelo, agua o aire\nMaterial audiovisual: fotos, vídeos, audios"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#tipos-de-archivos",
+    "href": "sesiones/bbdd/bbdd_sesion.html#tipos-de-archivos",
+    "title": "Introducción a las bases de datos",
+    "section": "Tipos de archivos",
+    "text": "Tipos de archivos\n\nTablas de datos\nArchivos espaciales\nArchivos de imagen\nAudios\n…\n\n¿Cómo los relacionamos para poder realizar análisis con ellos?"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#inventarios-forestales",
+    "href": "sesiones/bbdd/bbdd_sesion.html#inventarios-forestales",
+    "title": "Introducción a las bases de datos",
+    "section": "Inventarios forestales",
+    "text": "Inventarios forestales\nMuestreo sistemático de una masa forestal que pretende recopilar información sobre, al menos, su composición, estructura y estado.\nDiversos objetivos"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#proceso",
+    "href": "sesiones/bbdd/bbdd_sesion.html#proceso",
+    "title": "Introducción a las bases de datos",
+    "section": "Proceso",
+    "text": "Proceso\n\n\nDefinición de puntos a muestrear\nDelimitación de parcelas\nRegistro de información: características de los árboles, inventario florístico, factores abióticos, estructura de la masa, estado selvícola…"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#inventarios-nacionales",
+    "href": "sesiones/bbdd/bbdd_sesion.html#inventarios-nacionales",
+    "title": "Introducción a las bases de datos",
+    "section": "Inventarios nacionales",
+    "text": "Inventarios nacionales\n\n\n\n\n\n\nInformación homogénea\nPeriodicidad\n\n\nPodemos acceder desde aquí"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_sesion.html#la-base-de-datos-del-ifn3",
+    "href": "sesiones/bbdd/bbdd_sesion.html#la-base-de-datos-del-ifn3",
+    "title": "Introducción a las bases de datos",
+    "section": "La base de datos del IFN3",
+    "text": "La base de datos del IFN3"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html",
+    "title": "Ejercicio de bases de datos",
+    "section": "",
+    "text": "En este ejercicio aprenderemos a trabajar con bases de datos desde R.\nVamos a trabajar con R, Rstudio (ahora llamado posit), y utilizaremos al menos los paquete RSQLite y dplyr."
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#instalar-y-cargar-paquetes",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#instalar-y-cargar-paquetes",
+    "title": "Ejercicio de bases de datos",
+    "section": "Instalar y cargar paquetes",
+    "text": "Instalar y cargar paquetes"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#crear-conexión-con-base-de-datos",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#crear-conexión-con-base-de-datos",
+    "title": "Ejercicio de bases de datos",
+    "section": "Crear conexión con base de datos",
+    "text": "Crear conexión con base de datos"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#montar-base-de-datos",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#montar-base-de-datos",
+    "title": "Ejercicio de bases de datos",
+    "section": "Montar base de datos",
+    "text": "Montar base de datos\n\npath &lt;- \"/Users/maria.suarez.munoz/Library/CloudStorage/GoogleDrive-msuamun@go.ugr.es/My Drive/Docencia/Ecoinformatica_UGR/ecoinformatica_web/sesiones/bbdd/\"\nparcelas &lt;- read.table(paste0(path, \"material/ifn3p18_Convertida_Tabla_PCParcelas.txt\"), sep = \";\", header = TRUE)\nmayores &lt;- read.table(paste0(path, \"material/ifn3p18_Convertida_Tabla_PCMayores.txt\"), sep = \";\", header = TRUE)\nmatorral &lt;- read.table(paste0(path, \"material/ifn3p18_Convertida_Tabla_PCMatorral.txt\"), sep = \";\", header = TRUE)\nregenera &lt;- read.table(paste0(path, \"material/ifn3p18_Convertida_Tabla_PCRegenera.txt\"), sep = \";\", header = TRUE)\narboles &lt;- read.table(paste0(path, \"material/especies_ANEXO12.txt\"), sep = \";\", header = TRUE)\narbustos &lt;- read.table(paste0(path, \"material/especies_ANEXO13.txt\"), sep = \";\", header = TRUE)\n\ndbWriteTable(con, \"parcelas\", parcelas)\ndbWriteTable(con, \"mayores\", mayores)\ndbWriteTable(con, \"matorral\", matorral)\ndbWriteTable(con, \"regenera\", regenera)\ndbWriteTable(con, \"arboles\", arboles)\ndbWriteTable(con, \"arbustos\", arbustos)\n\ndbListTables(con)\ndbListFields(con, \"parcelas\")\ndbReadTable(con, \"parcelas\")"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#realizar-consultas",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#realizar-consultas",
+    "title": "Ejercicio de bases de datos",
+    "section": "Realizar consultas",
+    "text": "Realizar consultas\nPodemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro de todas las encinas muestreadas, y el estadillo al que pertenecen.\n\nquery_1 &lt;- dbSendQuery(con, \"SELECT Estadillo, Especie, Dn1\n                             FROM mayores\n                             WHERE Dn1 &gt; 84\")\ndf_q1 &lt;- dbFetch(query_1)\ndbClearResult(query_1)\n\nO quiero conocer cuál es el diámetro medio de los pinos carrasco.\n\nquery_2 &lt;- dbSendQuery(con, \"SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg\n                             FROM mayores\n                             WHERE Especie = 24;\")\ndf_q2 &lt;- dbFetch(query_2)\n\nY consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#realizar-consultas-sin-usar-lenguaje-sql",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#realizar-consultas-sin-usar-lenguaje-sql",
+    "title": "Ejercicio de bases de datos",
+    "section": "Realizar consultas sin usar lenguaje SQL",
+    "text": "Realizar consultas sin usar lenguaje SQL\nAunque la lógica del SQL sigue aplicando, existen otras formas de tratar nuestros datos como bases de datos, con paquetes que resultan mucho más amigables…\nPor ejemplo, si de nuevo quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…\n\nacompanantes &lt;- mayores %&gt;%\n  left_join(arboles, by = c(\"Especie\" = \"Codigo\")) %&gt;%\n  filter(Especie.y == \"Quercus ilex\") %&gt;%\n  select(Estadillo, Cla, Subclase) %&gt;%\n  distinct() %&gt;%\n  left_join(matorral, by = c(\"Estadillo\" = \"Estadillo\", \"Cla\" = \"Cla\", \"Subclase\" = \"Subclase\")) %&gt;%\n  select(-Fcc, -Hm) %&gt;%\n  left_join(arbustos, by = c(\"Especie\" = \"Codigo\")) %&gt;%\n  rename(Codigo = Especie, Especie = Especie.y)"
+  },
+  {
+    "objectID": "sesiones/bbdd/bbdd_ejercicio.html#cerrar-base-de-datos",
+    "href": "sesiones/bbdd/bbdd_ejercicio.html#cerrar-base-de-datos",
+    "title": "Ejercicio de bases de datos",
+    "section": "Cerrar base de datos",
+    "text": "Cerrar base de datos\n\ndbDisconnect(con)"
   }
 ]

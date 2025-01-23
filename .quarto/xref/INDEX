@@ -22,5 +22,14 @@
   },
   "modulos/bbdd.qmd": {
     "bbdd.html": "80679ee7"
+  },
+  "sesiones/bbdd/bbdd_sesion.qmd": {
+    "bbdd_sesion.html": "7b85ce3e"
+  },
+  "sesiones/bbdd/bbdd_ejercicio.qmd": {
+    "bbdd_ejercicio.html": "8ba2d91f"
+  },
+  "modulos/prueba.qmd": {
+    "prueba.html": "9d980368"
   }
 }

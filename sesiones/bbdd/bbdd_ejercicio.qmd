@@ -44,7 +44,7 @@ crossref:
 
 ## Instalar y cargar paquetes
 
-```{r setup, echo = FALSE}
+```{r setup, echo = FALSE, eval = FALSE}
 # install.packages("RSQLite")
 library(RSQLite)
 # install.packages("dplyr")
@@ -52,13 +52,13 @@ library(dplyr)
 ```
 
 ## Crear conexión con base de datos
-```{r, echo = FALSE}
-# con = dbConnect(RSQLite::SQLite(), dbname = "sql.sqlite")
-# dbListTables(con)
+```{r, echo = FALSE, eval = FALSE}
+con = dbConnect(RSQLite::SQLite(), dbname = "sql.sqlite")
+dbListTables(con)
 ```
 
 ## Montar base de datos
-```{r}
+```{r, eval = FALSE}
 path <- "/Users/maria.suarez.munoz/Library/CloudStorage/GoogleDrive-msuamun@go.ugr.es/My Drive/Docencia/Ecoinformatica_UGR/ecoinformatica_web/sesiones/bbdd/"
 parcelas <- read.table(paste0(path, "material/ifn3p18_Convertida_Tabla_PCParcelas.txt"), sep = ";", header = TRUE)
 mayores <- read.table(paste0(path, "material/ifn3p18_Convertida_Tabla_PCMayores.txt"), sep = ";", header = TRUE)
@@ -67,35 +67,35 @@ regenera <- read.table(paste0(path, "material/ifn3p18_Convertida_Tabla_PCRegener
 arboles <- read.table(paste0(path, "material/especies_ANEXO12.txt"), sep = ";", header = TRUE)
 arbustos <- read.table(paste0(path, "material/especies_ANEXO13.txt"), sep = ";", header = TRUE)
 
-# dbWriteTable(con, "parcelas", parcelas)
-# dbWriteTable(con, "mayores", mayores)
-# dbWriteTable(con, "matorral", matorral)
-# dbWriteTable(con, "regenera", regenera)
-# dbWriteTable(con, "arboles", arboles)
-# dbWriteTable(con, "arbustos", arbustos)
+dbWriteTable(con, "parcelas", parcelas)
+dbWriteTable(con, "mayores", mayores)
+dbWriteTable(con, "matorral", matorral)
+dbWriteTable(con, "regenera", regenera)
+dbWriteTable(con, "arboles", arboles)
+dbWriteTable(con, "arbustos", arbustos)
 
-# dbListTables(con)
-# dbListFields(con, "parcelas")
-# dbReadTable(con, "parcelas")
+dbListTables(con)
+dbListFields(con, "parcelas")
+dbReadTable(con, "parcelas")
 ```
 
 ## Realizar consultas
 
 Podemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro de todas las encinas muestreadas, y el estadillo al que pertenecen.
-```{r}
-# query_1 <- dbSendQuery(con, "SELECT Estadillo, Especie, Dn1 
-#                              FROM mayores 
-#                              WHERE Dn1 > 84")
-# df_q1 <- dbFetch(query_1)
-# dbClearResult(query_1)
+```{r, eval = FALSE}
+query_1 <- dbSendQuery(con, "SELECT Estadillo, Especie, Dn1
+                             FROM mayores
+                             WHERE Dn1 > 84")
+df_q1 <- dbFetch(query_1)
+dbClearResult(query_1)
 ```
 
 O quiero conocer cuál es el diámetro medio de los pinos carrasco. 
-```{r}
-# query_2 <- dbSendQuery(con, "SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg
-#                              FROM mayores
-#                              WHERE Especie = 24;")
-# df_q2 <- dbFetch(query_2)
+```{r, eval = FALSE}
+query_2 <- dbSendQuery(con, "SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg
+                             FROM mayores
+                             WHERE Especie = 24;")
+df_q2 <- dbFetch(query_2)
 ```
 
 Y consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela...
@@ -106,7 +106,7 @@ Aunque la lógica del SQL sigue aplicando, existen otras formas de tratar nuestr
 
 Por ejemplo, si de nuevo quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela...
  
-```{r}
+```{r, eval = FALSE}
 acompanantes <- mayores %>%
   left_join(arboles, by = c("Especie" = "Codigo")) %>%
   filter(Especie.y == "Quercus ilex") %>%
@@ -120,6 +120,6 @@ acompanantes <- mayores %>%
 
 ## Cerrar base de datos
 
-```{r}
-# dbDisconnect(con)
+```{r, eval = FALSE}
+dbDisconnect(con)
 ```
