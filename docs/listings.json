@@ -10,6 +10,7 @@
   {
     "listing": "/modulos/bbdd.html",
     "items": [
+      "/sesiones/bbdd/bbdd_ejercicio.html",
       "/sesiones/bbdd/bbdd_sesion.html"
     ]
   }

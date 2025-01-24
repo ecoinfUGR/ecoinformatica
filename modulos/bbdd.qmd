@@ -8,7 +8,7 @@ listing:
       - ../sesiones/bbdd/bbdd_sesion.qmd
       - title: "[¿Qué es una base de datos?](https://prezi.com/view/SNTReihW7NEUL99ZUVte/)" 
       - title: "[¿Cómo se hace una base de datos?](https://prezi.com/view/puAicrkDBdIEcr864RQg/)" 
-      - ./sesiones/bbdd/bbdd_ejercicio.qmd
+      - ../sesiones/bbdd/bbdd_ejercicio.qmd
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"
