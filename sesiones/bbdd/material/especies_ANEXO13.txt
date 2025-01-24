@@ -1,5 +1,5 @@
 # Especies arbustivas del IFN3;- Generada manualmente Anexo 13;del documentador de bases de datos ifn3.
-Codigo;Especie
+Codigo;Nombre
 0101;Cistus spp.
 0102;Erica spp.
 0103;Otras papilionoideas altas

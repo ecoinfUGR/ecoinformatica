@@ -1,5 +1,5 @@
 # Especies árboreas del IFN3 - Generada manualmente Anexo 12 del documentador de bases de datos ifn3.
-Codigo;Especie
+Codigo;Nombre
 001;Heberdenia bahamensis
 002;Amelanchier ovalis
 003;Frangula alnus
