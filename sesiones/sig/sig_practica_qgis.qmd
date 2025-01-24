@@ -25,6 +25,8 @@ crossref:
 
 - Vamos a trabajar con [qGIS](https://qgis.org/).
 
+- El material utilizado en este manual puede descargarse [aquí](https://drive.google.com/drive/folders/11mlbMz1BmgygXoUMu6r5YuEZIEMDocpR?usp=sharing)
+
 ----------------------
 
 # Flujo de Trabajo

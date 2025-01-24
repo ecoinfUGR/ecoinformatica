@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cerrar-base-de-datos" id="toc-cerrar-base-de-datos" class="nav-link" data-scroll-target="#cerrar-base-de-datos">Cerrar base de datos</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="bbdd_ejercicio.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -252,67 +252,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instalar-y-cargar-paquetes" class="level2">
 <h2 class="anchored" data-anchor-id="instalar-y-cargar-paquetes">Instalar y cargar paquetes</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'RSQLite' was built under R version 4.4.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("RSQLite")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"sesiones/bbdd/material/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="crear-conexión-con-base-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="crear-conexión-con-base-de-datos">Crear conexión con base de datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">=</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="at">dbname =</span> <span class="fu">paste0</span>(path, <span class="st">"sql.sqlite"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="montar-base-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="montar-base-de-datos">Montar base de datos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"/Users/maria.suarez.munoz/Library/CloudStorage/GoogleDrive-msuamun@go.ugr.es/My Drive/Docencia/Ecoinformatica_UGR/ecoinformatica_web/sesiones/bbdd/"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>parcelas <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/ifn3p18_Convertida_Tabla_PCParcelas.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mayores <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/ifn3p18_Convertida_Tabla_PCMayores.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>matorral <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/ifn3p18_Convertida_Tabla_PCMatorral.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>regenera <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/ifn3p18_Convertida_Tabla_PCRegenera.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>arboles <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/especies_ANEXO12.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>arbustos <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"material/especies_ANEXO13.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "parcelas", parcelas)</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "mayores", mayores)</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "matorral", matorral)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "regenera", regenera)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "arboles", arboles)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># dbWriteTable(con, "arbustos", arbustos)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># dbListTables(con)</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># dbListFields(con, "parcelas")</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># dbReadTable(con, "parcelas")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>parcelas <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"ifn3p18_Convertida_Tabla_PCParcelas.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mayores <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"ifn3p18_Convertida_Tabla_PCMayores.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>matorral <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"ifn3p18_Convertida_Tabla_PCMatorral.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>regenera <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"ifn3p18_Convertida_Tabla_PCRegenera.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>arboles <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"especies_ANEXO12.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>arbustos <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(path, <span class="st">"especies_ANEXO13.txt"</span>), <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"parcelas"</span>, parcelas)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"mayores"</span>, mayores)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"matorral"</span>, matorral)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"regenera"</span>, regenera)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"arboles"</span>, arboles)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"arbustos"</span>, arbustos)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListFields</span>(con, <span class="st">"parcelas"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">dbReadTable</span>(con, <span class="st">"parcelas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="realizar-consultas" class="level2">
 <h2 class="anchored" data-anchor-id="realizar-consultas">Realizar consultas</h2>
-<p>Podemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro de todas las encinas muestreadas, y el estadillo al que pertenecen.</p>
+<p>Podemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro medio de todas las encinas muestreadas, y el estadillo al que pertenecen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># query_1 &lt;- dbSendQuery(con, "SELECT Estadillo, Especie, Dn1 </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                              FROM mayores </span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                              WHERE Dn1 &gt; 84")</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df_q1 &lt;- dbFetch(query_1)</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dbClearResult(query_1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query_1 <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT Estadillo, Especie, (Dn1 + Dn2/2) AS Dn_avg</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">                             FROM mayores</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">                             WHERE Dn_avg &gt; 84"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df_q1 <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query_1)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbClearResult</span>(query_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>O quiero conocer cuál es el diámetro medio de los pinos carrasco.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># query_2 &lt;- dbSendQuery(con, "SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                              FROM mayores</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                              WHERE Especie = 24;")</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df_q2 &lt;- dbFetch(query_2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query_2 <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">                             FROM mayores</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">                             WHERE Especie = 24;"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df_q2 <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Y consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…</p>
 </section>
@@ -321,21 +313,21 @@ Attaching package: 'dplyr'</code></pre>
 <p>Aunque la lógica del SQL sigue aplicando, existen otras formas de tratar nuestros datos como bases de datos, con paquetes que resultan mucho más amigables…</p>
 <p>Por ejemplo, si de nuevo quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>acompanantes <span class="ot">&lt;-</span> mayores <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arboles, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Especie.y <span class="sc">==</span> <span class="st">"Quercus ilex"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Estadillo, Cla, Subclase) <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(matorral, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Estadillo"</span> <span class="ot">=</span> <span class="st">"Estadillo"</span>, <span class="st">"Cla"</span> <span class="ot">=</span> <span class="st">"Cla"</span>, <span class="st">"Subclase"</span> <span class="ot">=</span> <span class="st">"Subclase"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Fcc, <span class="sc">-</span>Hm) <span class="sc">%&gt;%</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arbustos, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Codigo =</span> Especie, <span class="at">Especie =</span> Especie.y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>acompanantes <span class="ot">&lt;-</span> mayores <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arboles, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Especie.y <span class="sc">==</span> <span class="st">"Quercus ilex"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Estadillo, Cla, Subclase) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(matorral, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Estadillo"</span> <span class="ot">=</span> <span class="st">"Estadillo"</span>, <span class="st">"Cla"</span> <span class="ot">=</span> <span class="st">"Cla"</span>, <span class="st">"Subclase"</span> <span class="ot">=</span> <span class="st">"Subclase"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Fcc, <span class="sc">-</span>Hm) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arbustos, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Codigo =</span> Especie, <span class="at">Especie =</span> Especie.y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cerrar-base-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="cerrar-base-de-datos">Cerrar base de datos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dbDisconnect(con)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -32,9 +32,7 @@
   },
   {
     "listing": "/modulos/bbdd.html",
-    "items": [
-      "/sesiones/bbdd/bbdd_sesion.html"
-    ]
+    "items": []
   },
   {
     "listing": "/modulos/trabajo_grupal.html",
