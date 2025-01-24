@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="María Suárez Muñoz">
 <meta name="dcterms.date" content="2025-01-23">
 
-<title>Manual de Sistemas de Información Geográfica – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Ciclo de Gestión de los Datos. Ecoinformática - Manual de Sistemas de Información Geográfica</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Manual de Sistemas de Información Geográfica</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -267,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="cargar-capas-ráster">Cargar capas ráster</h3>
 <p>Ahora cargaremos una con información en rejilla (capa ráster). Los más habitual es que las capas ráster estén compuestas por celdas cuadradas, cada una de ellas con un valor numérico asignado. Pero también existen capas ráster con celdas no cuadradas (por ejemplo, hexagonales) y con información no numérica (por ejemplo, combinando archivos donde los valores numéricos de la capa se relacionan con una leyendas que aporta información adicional).</p>
 <p>Como en el caso de los archivos vectoriales, para las capas ráster también existen distintos formatos (.asc, .tif o los algo antiguos .adf). En este caso cargaremos las capas correspondientes a la elevación (<em>modelo_digital_elevaciones.asc</em>) y profundidad de suelo (<em>prof_suelos.tif</em>).</p>
-<p>Podéis encontrar una lista exhaustiva de formatos ráster en este (enlace)[http://www.gdal.org/formats_list.html] de la librería GDAL.</p>
+<p>Podéis encontrar una lista exhaustiva de formatos ráster en este <a href="http://www.gdal.org/formats_list.html">enlace</a> de la librería GDAL.</p>
 <p><img src="images/load_raster_layer.png" class="img-fluid"></p>
 <p>Las dos capas que hemos cargado tienen una diferencia fundamental, y es que una corresponde a una variable continua (la elevación), mientras que la otra representa una variable discreta (una clasificación de la profundidad del suelo en 4 clases). Esto es importante, ya que determina qué tipo de operaciones podremos realizar con ellas.</p>
 </section>
@@ -277,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 <p>En este proyecto pueden ser útiles las capas WMS con la ortofoto del PNOA de máxima actualidad (URL: <em>http://www.ign.es/wms-inspire/pnoa-ma</em>) o la ortofoto del incendio (URL: <em>https://www.juntadeandalucia.es/medioambiente/mapwms/REDIAM_Ortofoto_Lanjaron_RGB_2005?</em>).</p>
 <p>Para crear la conexión al servidor: <strong>Add WMS/WMTS Layer… → New</strong></p>
 <p>Para cargar la capa: <strong>Add WMS/WMTS Layer… → Seleccionar capa → Connect → Seleccionar subcapa → Add</strong></p>
-<p>Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), de la que ya hablaremos más adelante. A nivel nacional el Ministerio para la Transición Ecológical y el Reto Demográfico también ofrece algunos recursos ((ver aquí)[https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad.html]).</p>
+<p>Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), de la que ya hablaremos más adelante. A nivel nacional el Ministerio para la Transición Ecológical y el Reto Demográfico también ofrece algunos recursos (<a href="https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad.html">ver aquí</a>).</p>
 </section>
 <section id="modificar-simbología-de-las-capas" class="level3">
 <h3 class="anchored" data-anchor-id="modificar-simbología-de-las-capas">Modificar simbología de las capas</h3>
@@ -327,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="buffer">Buffer</h3>
 <p>Para distintos procesos nos puede resultar interesante definir unas franjas de cierta anchura a ambos lados de los caminos y carreteras (por ejemplo, para realizar actuaciones de eliminación de materia muerta para disminuir el riesgo de futuros incendios). Esto es lo que se conoce como “buffer”, y puede aplicarse sobre elementos lineales, pero también sobre puntos y polígonos (pensemos, por ejemplo, en la distancia a la que esperamos encontrar ciertas desde árboles individuales o parches de vegetación).</p>
 <p>En este caso vamos a realizar un buffer sobre la red de carreteras afectadas por el fuego. Para ello primero necesitaremos recortar la capa de red viaria con el polígono del incendio (ver sección anterior) y a continuación aplicar la herramienta buffer (<strong>Vector → Geoprocessing Tools → Buffer</strong>).</p>
-<p>Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?</p>
+<p>Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de <a href="https://diccionario.raing.es/es/lema/roza-1">rozas</a>. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?</p>
 </section>
 <section id="reproyectar-capas" class="level3">
 <h3 class="anchored" data-anchor-id="reproyectar-capas">Reproyectar capas</h3>
@@ -469,7 +469,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -501,27 +512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -529,7 +520,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -626,6 +617,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

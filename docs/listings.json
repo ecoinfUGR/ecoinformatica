@@ -68,10 +68,7 @@
   },
   {
     "listing": "/modulos/sig.html",
-    "items": [
-      "/sesiones/sig/guion_practica_mapa_biodiversidad_jml.html",
-      "/sesiones/sig/sig_practica_qgis.html"
-    ]
+    "items": []
   },
   {
     "listing": "/modulos/introduccion.html",
