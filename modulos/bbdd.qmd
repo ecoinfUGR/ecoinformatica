@@ -17,7 +17,7 @@ listing:
     fields: [sesion, title]
     date-format: "ddd, MMM DD"
     field-display-names:
-      sesion: "Sesión"
+      sesion: "Orden"
       title: "Nombre"
       date: "Fecha"
     # sort: "custom-field"
