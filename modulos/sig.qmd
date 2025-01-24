@@ -5,7 +5,7 @@ date: ""
 listing:
   - id: sesiones
     contents:
-      - title: "[Presentacion SIG (PDF)](../sesiones/sig/sig_presentacion_20241202.pdf)" 
+      - title: "[Presentacion SIG (PDF)](../sesiones/sig/sig_presentacion_20250123.pdf)" 
         sesion: 1
       - title: "[Manual de Sistemas de Información Geográfica](../sesiones/sig/sig_practica_qgis.qmd)" 
         sesion: 2

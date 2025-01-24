@@ -25,6 +25,8 @@ crossref:
 
 - Vamos a trabajar con [R](https://www.r-project.org/), Rstudio (ahora llamado [posit](https://posit.co/)), y utilizaremos al menos los paquete [`RSQLite`](https://rsqlite.r-dbi.org/) y [`dplyr`](https://dplyr.tidyverse.org/).
 
+- El material utilizado en este manual puede descargarse aquí.
+
 # Flujo de Trabajo
 
 1. Instalar y cargar paquetes
