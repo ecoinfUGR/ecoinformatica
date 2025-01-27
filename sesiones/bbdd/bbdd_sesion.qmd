@@ -45,11 +45,10 @@ citation: true
 
 **¿Cómo los relacionamos para poder realizar análisis con ellos?**
 
+
 ## Inventarios forestales
 
 Muestreo sistemático de una masa forestal que pretende recopilar información sobre, al menos, su composición, estructura y estado.
-
-**Diversos objetivos**
 
 ## Proceso
 
