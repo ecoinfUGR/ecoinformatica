@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="María Suárez Muñoz">
-<meta name="dcterms.date" content="2025-01-07">
+<meta name="dcterms.date" content="2025-02-03">
 
-<title>Ciclo de Gestión de los Datos. Ecoinformática - Clusterización de variables ambientales</title>
+<title>Clusterización de variables ambientales – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f4c59bf9e04999c218fc371c8b1504fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,11 +124,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Clusterización de variables ambientales</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -180,13 +180,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#creación-de-áreas-homogéneas-mediante-clusterización" id="toc-creación-de-áreas-homogéneas-mediante-clusterización" class="nav-link" data-scroll-target="#creación-de-áreas-homogéneas-mediante-clusterización">Creación de áreas homogéneas mediante clusterización</a>
+  <li><a href="#flujo-de-trabajo" id="toc-flujo-de-trabajo" class="nav-link" data-scroll-target="#flujo-de-trabajo">Flujo de trabajo</a>
   <ul class="collapse">
   <li><a href="#selección-de-variables" id="toc-selección-de-variables" class="nav-link" data-scroll-target="#selección-de-variables">Selección de variables</a></li>
-  <li><a href="#clusterización" id="toc-clusterización" class="nav-link" data-scroll-target="#clusterización">Clusterización</a></li>
+  <li><a href="#preparación-de-los-datos" id="toc-preparación-de-los-datos" class="nav-link" data-scroll-target="#preparación-de-los-datos">Preparación de los datos</a></li>
+  <li><a href="#elección-del-número-óptimo-de-áreas-homogéneas" id="toc-elección-del-número-óptimo-de-áreas-homogéneas" class="nav-link" data-scroll-target="#elección-del-número-óptimo-de-áreas-homogéneas">Elección del número óptimo de áreas homogéneas</a></li>
+  <li><a href="#generación-del-mapa" id="toc-generación-del-mapa" class="nav-link" data-scroll-target="#generación-del-mapa">Generación del mapa</a></li>
+  <li><a href="#evaluación-del-mapa" id="toc-evaluación-del-mapa" class="nav-link" data-scroll-target="#evaluación-del-mapa">Evaluación del mapa</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="clusterizacion.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">María Suárez Muñoz <a href="mailto:maria.suarez.munoz@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-1765-6885" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">María Suárez Muñoz <a href="mailto:bv2sumum@uco.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-1765-6885" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -217,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 7, 2025</p>
+      <p class="date">February 3, 2025</p>
     </div>
   </div>
   
@@ -231,142 +234,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introducción" class="level1 unnumbered">
 <h1 class="unnumbered">Introducción</h1>
-<p>La evaluación y planificación de actuaciones de un área afectada por un incendio forestal puede requerir la integración de multitud de variables en una extensión amplia del territorio. La mera observación de múltiples capas de información puede no ser suficiente a la hora de tomar decisiones. Por ello, es habitual realizar análisis de la información que nos permitan combinarla de alguna manera. Esta combinación puede hacerse de distintas maneras, desde técnicas estadísticas a análisis multicriterio, dependiendo de las fuentes de información que consideremos y el objetivo planteado. En esta sesión exploraremos una de estas opciones, la creación de áreas homogéneas mediante clusterización.</p>
-</section>
-<section id="creación-de-áreas-homogéneas-mediante-clusterización" class="level1">
-<h1>Creación de áreas homogéneas mediante clusterización</h1>
+<p>La evaluación y planificación de actuaciones de un área afectada por un incendio forestal puede requerir la integración de multitud de variables en una extensión amplia del territorio. La mera observación de múltiples capas de información puede no ser suficiente a la hora de tomar decisiones. Por ello, es habitual realizar análisis de la información que nos permitan combinarla. Esta combinación puede hacerse de distintas maneras, desde técnicas estadísticas a análisis multicriterio, dependiendo de las fuentes de información que consideremos y el objetivo planteado. En esta sesión exploraremos una de estas opciones, la creación de áreas homogéneas mediante clusterización.</p>
 <p>La creación de mapas de áreas homogéneas en virtud de distintas variables ambientales es una técnica muy utilizada para planificar actuaciones en el territorio. Esto es especialmente relevante en zonas muy extensas que no pueden ser manejadas sólo aplicando el conocimiento experto.</p>
-<p>La idea clave de estas áreas homogéneas es que, con su creación, disponemos de una espacialización de ciertas variables, que reflejamos en un mapa. En lugar de contemplar el mundo con toda su complejidad, lo vemos sólo con la visión de las variables que hemos definido para generar dicho mapa. Es decir, podemos “leer” el territorio usando esas variables. Por ejemplo, en una zona quemada, en lugar de tener un gradiente continuo de multitud de variables descriptoras (capacidad de regeneración, profundidad del suelo, etc.) tendremos una diferenciación en zonas con características acotadas, como podrían ser “lugares con suelos poco profundos y alta insolación”. De esta forma podemos plantear actuaciones de manejo particularizadas a cada unidad homogénea.</p>
+<p>La idea clave de estas áreas homogéneas es que, con su creación, disponemos de una espacialización de ciertas variables, que reflejamos en un mapa. En lugar de contemplar el mundo con toda su complejidad, lo vemos sólo con la visión de las variables que hemos definido para generar dicho mapa. Es decir, podemos “leer” el territorio usando esas variables.</p>
+<p>Por ejemplo, en una zona quemada, en lugar de tener un gradiente continuo de multitud de variables descriptoras (capacidad de regeneración, profundidad del suelo, etc) tendremos una diferenciación en zonas con características acotadas, como podrían ser “lugares con suelos poco profundos y alta insolación”. De esta forma podemos plantear actuaciones de manejo particularizadas a cada unidad homogénea.</p>
+</section>
+<section id="flujo-de-trabajo" class="level1 unnumbered">
+<h1 class="unnumbered">Flujo de trabajo</h1>
+<p>En esta práctica aplicaremos una clasificación no supervisada basada en el algoritmo k-means, del que puedes leer más <a href="https://www.publichealth.columbia.edu/research/population-health-methods/k-means-cluster-analysis">aquí</a>. Para ello trabajaremos desde <code>R</code> con las capas que hemos generado durante las prácticas con <code>qGIS</code>. El flujo de trabajo será el siguiente:</p>
+<ol type="1">
+<li>Selección de variables</li>
+<li>Preparación de los datos</li>
+<li>Elección del número óptimo de áreas homogéneas</li>
+<li>Generación del mapa</li>
+<li>Evaluación del mapa</li>
+</ol>
 <section id="selección-de-variables" class="level2">
 <h2 class="anchored" data-anchor-id="selección-de-variables">Selección de variables</h2>
 <p>Para la creación del mapa de áreas homogéneas en primer lugar necesitaremos definir qué variables consideramos relevantes para nuestro objetivo. Una vez definidas estas variables podremos combinarlas para generar el mapa. Es habitual que tengamos que repetir el proceso varias veces, iterando sobre distintos conjuntos de variables hasta que demos con una combinación que nos satisfaga.</p>
 <p>¿Qué variables crees que pueden ser útiles para nuestro caso de uso?</p>
 </section>
-<section id="clusterización" class="level2">
-<h2 class="anchored" data-anchor-id="clusterización">Clusterización</h2>
-<p>En esta práctica aplicaremos una clusterización basada en el algoritmo k-means. Para ello trabajaremos desde <code>R</code> con las capas que hemos generado durante las prácticas con <code>qGIS</code>.</p>
+<section id="preparación-de-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="preparación-de-los-datos">Preparación de los datos</h2>
+<p>En este ejercicio utilizaremos el paquete <code>RStoolbox</code> para realizar una clasificación no supervisada. Además utilizaremos el paquete <code>raster</code> para trabajar con las capas ya que <code>RStoolbox</code> utiliza los objetos espaciales característicos de este paquete. Para otros análisis espaciales con <code>R</code> el paquete <code>terra</code> es más adecuado (más moderno, sintáxis más sencillam más intuitivo). Es importante tener cuidado al trabajar con estos dos paquetes de forma simultánea ya que existe cierto solapamiento entre funciones. Por ello si trabajamos con ambos paquetes a la vez se recomienda utilizar la sintaxis <em>paquete::funcion</em> cuando llamamos a una función, asegurándonos de estar usando la correcta.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### CONFIGURACIÓN</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalación y carga de paquetes</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("RStoolbox")</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStoolbox)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>This is version 1.0.0 of RStoolbox</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar paquetes</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("RStoolbox")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStoolbox)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Opciones de configuración</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"..."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: sp</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>terra 1.7.78</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opciones de configuración</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="st">"20250207"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"/Users/maria.suarez.munoz/Library/CloudStorage/GoogleDrive-msuamun@go.ugr.es/My Drive/Docencia/Ecoinformatica_UGR/2024_2025/SIG_qGIS/"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar máscara de la zona a clusterizar</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># mask &lt;- raster(paste0(path, "mask.tif")) # Máscara creada con qGIS</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar capa</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># mask</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mask)</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar capas con las que vamos a trabajar: incidencia/orientación, aridez, temperaturas, precipitaciones</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># capa1 &lt;- raster(paste0(path, "....tif"))</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># capa2 &lt;- raster(paste0(path, "....tif"))</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Apilar capas: la función "stack" del paquete raster crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas "encajen" entre sí, por lo que necesitaremos apilarlas en un stack</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># my_stack &lt;- stack(...)  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Hasta ahora hemos trabajado en <code>qGIS</code> con capas que tenían distintos sistemas de referencia y distintas resoluciones, sin haber tenido problemas por ello. <code>qGIS</code> proyecta al vuelo las capas que no están en el mismo sistema de referencia que nuestro proyecto, aunque como dijimos es más adecuado reproyectar las capas para asegurarnos de que todos los cálculos se hacen correctamente. <code>R</code>, sin embargo, no hace casi nada “under the hood”, sino que nos avisa cuando algo da problemas. Vamos a explorar las capas para ver qué pasa</p>
+<p>En primer lugar cargaremos las capas con las que vamos a trabajar y las exploraremos. Entonces las apilaremos en un mismo <em>stack</em>. La función <em>stack</em> del paquete <code>raster</code> crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas “encajen” entre sí, por lo que necesitaremos apilarlas en un stack.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar capas</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># capa1</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># capa2</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar máscara</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"mascara_23030.tif"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar capas con las que vamos a trabajar: temperaturas, precipitaciones, aridez, aspecto, pendiente</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tmax <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"tmax_1971_2000_23030_clipbyextent.tif"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>tmin <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"tmin_1971_2000_23030_clipbyextent.tif"</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>prec <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"p_1971_2000_23030_clipbyextent.tif"</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>aridez <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"i_aridez_23030.tif"</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>aspecto <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"aspecto_23030.tif"</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pendiente <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"pendiente_en_grados_23030.tif"</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar capas</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>tmax</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>tmin</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>prec</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>aridez</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>aspecto</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>pendiente</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Apilar capas: </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>my_stack <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">stack</span>(tmax, tmin, prec, aridez, aspecto, pendiente)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Al explorar las capas vemos que éstas tienen distintas propiedades. No todas están en el mismo sistema de referencia ni tienen la misma resolución, por lo que necesitamos <em>alinearlas</em>. Dos capas ráster están alineadas cuando están en el mismo sistema de referencia y tienen la misma resolución y el mismo origen. Es decir, que encajan en todos los aspectos. Por tanto, tendremos que <em>reproyectar</em> y <em>remuestrear</em> las capas que no encajan entre sí.</p>
+<p>Hasta ahora hemos trabajado en <code>qGIS</code> con capas que tenían distintos distintas resoluciones y sistemas de referencia, sin haber tenido problemas por ello. <code>qGIS</code> proyecta al vuelo las capas que no están en el mismo sistema de referencia que nuestro proyecto, aunque como dijimos es más adecuado reproyectar las capas para asegurarnos de que todos los cálculos se hacen correctamente. <code>R</code>, sin embargo, no hace casi nada “under the hood”, sino que nos avisa cuando algo da problemas.</p>
+<p>Al explorar las capas hemos visto que éstas tienen distintas propiedades. Aunque sabemos que todas están en el mismo sistema de referencia, no todas tienen el sistema asignado y, además, no tienen la misma resolución y extensión. Esto hace que sus celdas no coincidan, por lo que necesitaremos <em>alinearlas</em>. Dos capas ráster están alineadas cuando están en el mismo sistema de referencia, tienen la misma resolución y el mismo origen. Es decir, que encajan en todos los aspectos. Por tanto, tendremos que asignar el sistema de coordenadas a aquellas capas que no lo tienen (<strong>OJO</strong>: ¡sólo cuando estamos seguros de ello!) y <em>remuestrear</em> las capas para que tengan la misma resolución y origen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproyectar</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># capa1_23030 &lt;- project(capa1, mask)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resamplear: generar nueva capa con la resolución deseada</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># capa1_resampled &lt;- resample(capa1_23030, mask, method = "bilinear")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignar sistema de coordenadas: </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(aspecto) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">'+init=EPSG:23030'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(pendiente) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">'+init=EPSG:23030'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproyectar (no necesario en este caso)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># capa_EPSG_Y &lt;- projectRaster(capa_EPSG_X, mask_EPSG_Y)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Remuestrear: generar nueva capa con la resolución deseada</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>tmax_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(tmax, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>tmin_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(tmin, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>prec_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(prec, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>aridez_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(aridez, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>aspecto_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(aspecto, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>pendiente_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(pendiente, mask, <span class="at">method =</span> <span class="st">"bilinear"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Importante: prestar atención al método utilizado en el remuestreado, el método más adecuado dependerá de la naturaleza de nuestra variable.</p>
+<p>Es importante prestar atención al método utilizado en el remuestreado, ya que el método más adecuado dependerá de la naturaleza de nuestra variable. Una vez reproyectadas y remuestreadas nuestras capas no deberíamos tener problemas para apilarlas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enmascarar</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># capa1_masked &lt;- capa1_resampled * mask</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Apilar capas</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># my_stack &lt;- stack(...)  </span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># names(my_stack) &lt;- c("...")</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(my_stack)</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear brick: La función "brick" requiere que todas las capas provengan del mismo objeto (por ejemplo, un conjunto de bandas espectrales o capas que ya estén apiladas en un stack)</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># my_brick &lt;- brick(my_stack) # Necesario??</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_stack <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">stack</span>(tmax_resampled, tmin_resampled, prec_resampled, aridez_resampled, aspecto_resampled, pendiente_resampled)  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar stack</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>my_stack </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_stack)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignar nombres a capas</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(my_stack) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tmax"</span>, <span class="st">"tmin"</span>, <span class="st">"prec"</span>, <span class="st">"aridez"</span>, <span class="st">"aspecto"</span>, <span class="st">"pendiente"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Una vez construida nuestra pila de variables tenemos que decidir cuántas áreas son adecuadas. …</p>
+<p>Por último, ya que el objetivo es generar un mapa de áreas homogéneas de la zona afectada por el incendio no tiene sentido considerar las zonas fuera del perímetro del mismo. Por ello, antes de proseguir aplicaremos una máscara a nuestro <em>stack</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enmascarar: mi máscara tiene valores 1 en la zona del incendio y no valores en la zona exterior</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>stack_masked <span class="ot">&lt;-</span> my_stack <span class="sc">*</span> mask</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(stack_masked) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tmax"</span>, <span class="st">"tmin"</span>, <span class="st">"prec"</span>, <span class="st">"aridez"</span>, <span class="st">"aspecto"</span>, <span class="st">"pendiente"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stack_masked)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="elección-del-número-óptimo-de-áreas-homogéneas" class="level2">
+<h2 class="anchored" data-anchor-id="elección-del-número-óptimo-de-áreas-homogéneas">Elección del número óptimo de áreas homogéneas</h2>
+<p>Una vez construida nuestra pila de variables tenemos que decidir cuántas áreas son adecuadas. Para ello es habitual realizar la clusterización con distinto número de áreas y evaluar los resultados basándonos en la variabilidad de las áreas resultantes. Para ello calcularemos la suma de cuadrados dentro de cada grupo</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run example unsupervised classifications with different algorithms</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Función que utilizamos: unsuperClass del paquete RStoolbox</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Following N. Aquilue scripts</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Notes: https://www.mailman.columbia.edu/research/population-health-methods/cluster-analysis-using-k-means</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># set.seed(25) # Definir semilla para los procesos aleatorios</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># nClass &lt;- 7</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Hartigan-Wong kmeans algorithm</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># algorithm &lt;- "Hartigan-Wong"</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># classHW &lt;- unsuperClass(my_brick, nClasses=nClass, nStarts=nClass*4, nIter=2000, norm=T, clusterMap=F, algorithm = algorithm) # If Warning: "Quick-TRANSfer stage steps exceeded maximum", better other algorithm</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(classHW$map)</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># classHW; t.classHW &lt;- table(classHW$map[]); t.classHW</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Lloyd kmeans algorithm</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># algorithm &lt;- "Lloyd"</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># classLL &lt;- unsuperClass(my_brick, nClasses=nClass, nStarts=nClass*4, nIter=2000, norm=T, clusterMap=F, algorithm = algorithm)</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(classLL$map)</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># classLL; t.classLL &lt;- table(classLL$map[]); t.classLL</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># MacQueen kmeans algorithm</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># algorithm &lt;- "MacQueen"</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># classMQ &lt;- unsuperClass(my_brick, nClasses=nClass, nStarts=nClass*4, nIter=2000, norm=T, clusterMap=F, algorithm = algorithm)</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(classMQ$map)</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># classMQ; t.classMQ &lt;- table(classMQ$map[]); t.classMQ</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Differences among algorithms? Choose appropriate one:</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>algorithm <span class="ot">&lt;-</span> <span class="st">"MacQueen"</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Choose appropriate number of classes</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co"># wss &lt;- 0 # Initialize total within sum of squares error: wss</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co"># for (i in 1:10) { # Look over 1 to 10 possible clusters</span></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">#   out &lt;- unsuperClass(my_brick, nClasses=i, nStarts=i*4, nIter = 2000, norm=T, clusterMap=F, algorithm = algorithm)</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#   wss[i] &lt;- out$model$tot.withinss # Save the within cluster sum of squares</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(1:10, wss, type = "b", xlab = "Number of Clusters", ylab = "Within groups sum of squares")</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Run and export clustering for optimal number of classes</span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="do">## ** TO BE DEFINE BASED ON PREVIOUS PLOT **</span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>optimal_nclasses <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co"># clust &lt;- unsuperClass(my_brick, </span></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co">#                       nClasses = optimal_nclasses, </span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co">#                       nStarts = optimal_nclasses*4, </span></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="co">#                       nIter=2000, norm=T, clusterMap=F, algorithm = algorithm)</span></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(clust$map)</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="co"># file_name &lt;- paste(date, "areas_homogeneas", optimal_nclasses, "clases", sep = "_")</span></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="co"># terra::writeRaster(clust$map, filename = paste(path, "areas_homogeneas/capas/", file_name, ".tif", sep = ""), overwrite = FALSE)</span></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar características de las zonas</span></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="co"># clust$model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Choose appropriate number of classes</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>) <span class="co"># Definir semilla para obtener resultados reproducibles en procesos aleatorios, si no ejecutamos esta línea cada vez que lancemos el código obtendremos resultados ligeramente distintos.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>wss <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># Inicializar el error de cuadrados totales (total within sum of squares error, wss)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) { <span class="co"># Ejecutar la clusterización con de 1 a 10 número de áreas</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">unsuperClass</span>(stack_masked, <span class="at">nClasses=</span>i, <span class="at">nStarts=</span>i<span class="sc">*</span><span class="dv">4</span>, <span class="at">nIter =</span> <span class="dv">2000</span>, <span class="at">norm=</span>T, <span class="at">clusterMap=</span>F, <span class="at">algorithm =</span> <span class="st">"Hartigan-Wong"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  wss[i] <span class="ot">&lt;-</span> out<span class="sc">$</span>model<span class="sc">$</span>tot.withinss <span class="co"># Guardar el wss de cada iteración</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, wss, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">xlab =</span> <span class="st">"Number of Clusters"</span>, <span class="at">ylab =</span> <span class="st">"Within groups sum of squares"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Basándonos en esta gráfica ¿cuál sería el número de clases óptimo?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nr_optimo <span class="ot">&lt;-</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generación-del-mapa" class="level2">
+<h2 class="anchored" data-anchor-id="generación-del-mapa">Generación del mapa</h2>
+<p>Ya podemos generar el mapa de áreas homogéneas deseado ejecutando la clasificación no supervisada.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>clust <span class="ot">&lt;-</span> <span class="fu">unsuperClass</span>(stack_masked, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nClasses =</span> nr_optimo, <span class="at">nStarts =</span> nr_optimo<span class="sc">*</span><span class="dv">4</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nIter=</span><span class="dv">2000</span>, <span class="at">norm=</span>T, <span class="at">clusterMap=</span>F, <span class="at">algorithm =</span> <span class="st">"Hartigan-Wong"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="evaluación-del-mapa" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación-del-mapa">Evaluación del mapa</h2>
+<p>Por último evaluamos el mapa obtenido y lo exportamos a un archivo ráster que podremos guardar, compartir y abrir en <code>qGIS</code> o cualquier otro SIG.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(clust<span class="sc">$</span>map)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar características de las zonas</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>clust<span class="sc">$</span>model</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(clust<span class="sc">$</span>map, <span class="at">filename =</span> <span class="fu">paste</span>(path, <span class="st">"areas_homogeneas_4_23030.tif"</span>, <span class="at">sep =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -409,18 +407,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -452,15 +439,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/ecoinfUGR\.github\.io\/ecoinformatica\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -557,7 +564,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
