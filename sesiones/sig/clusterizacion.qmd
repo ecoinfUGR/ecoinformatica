@@ -63,7 +63,7 @@ path <- "..."
 
 En primer lugar cargaremos las capas con las que vamos a trabajar y las exploraremos. Entonces las apilaremos en un mismo *stack*. La función *stack* del paquete `raster` crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas "encajen" entre sí, por lo que necesitaremos apilarlas en un stack.
 
-```{r}
+```{r, eval = FALSE}
 # Cargar máscara
 mask <- raster(paste0(path, "mascara_23030.tif"))
 
@@ -123,7 +123,7 @@ names(my_stack) <- c("tmax", "tmin", "prec", "aridez", "aspecto", "pendiente")
 
 Por último, ya que el objetivo es generar un mapa de áreas homogéneas de la zona afectada por el incendio no tiene sentido considerar las zonas fuera del perímetro del mismo. Por ello, antes de proseguir aplicaremos una máscara a nuestro *stack*.
 
-```{r}
+```{r, eval = FALSE}
 # Enmascarar: mi máscara tiene valores 1 en la zona del incendio y no valores en la zona exterior
 stack_masked <- my_stack * mask
 names(stack_masked) <- c("tmax", "tmin", "prec", "aridez", "aspecto", "pendiente")

@@ -186,7 +186,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#crear-conexión-con-base-de-datos" id="toc-crear-conexión-con-base-de-datos" class="nav-link" data-scroll-target="#crear-conexión-con-base-de-datos">Crear conexión con base de datos</a></li>
   <li><a href="#montar-base-de-datos" id="toc-montar-base-de-datos" class="nav-link" data-scroll-target="#montar-base-de-datos">Montar base de datos</a></li>
   <li><a href="#realizar-consultas" id="toc-realizar-consultas" class="nav-link" data-scroll-target="#realizar-consultas">Realizar consultas</a></li>
-  <li><a href="#realizar-consultas-sin-usar-lenguaje-sql" id="toc-realizar-consultas-sin-usar-lenguaje-sql" class="nav-link" data-scroll-target="#realizar-consultas-sin-usar-lenguaje-sql">Realizar consultas sin usar lenguaje SQL</a></li>
   <li><a href="#cerrar-base-de-datos" id="toc-cerrar-base-de-datos" class="nav-link" data-scroll-target="#cerrar-base-de-datos">Cerrar base de datos</a></li>
   </ul></li>
   </ul>
@@ -292,43 +291,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="realizar-consultas" class="level2">
 <h2 class="anchored" data-anchor-id="realizar-consultas">Realizar consultas</h2>
-<p>Podemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro medio de todas las encinas muestreadas, y el estadillo al que pertenecen.</p>
+<p>Una vez creada la base de datos podemos realizar consultas sobre ella aplicando el lenguaje <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>.</p>
+<p>Por ejemplo, quiero conocer cuáles qué especies de árboles se han observado por parcela.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query_1 <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT Estadillo, Especie, (Dn1 + Dn2/2) AS Dn_avg</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">                             FROM mayores</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">                             WHERE Dn_avg &gt; 84"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df_q1 <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query_1)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbClearResult</span>(query_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SELECT DISTINCT Estadillo, Especie</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM mayores"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>coexistentes <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbClearResult</span>(query)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>O quiero conocer cuál es el diámetro medio de los pinos carrasco.</p>
+<p>O quiero extraer el diámetro medio de todas las encinas muestreadas y el estadillo al que pertenecen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query_2 <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">                             FROM mayores</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">                             WHERE Especie = 24;"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df_q2 <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SELECT Estadillo, Especie, (Dn1 + Dn2/2) AS Dn_avg</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM mayores</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE Especie = 45"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>diam_encinas <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dbClearResult</span>(query)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Y consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…</p>
-</section>
-<section id="realizar-consultas-sin-usar-lenguaje-sql" class="level2">
-<h2 class="anchored" data-anchor-id="realizar-consultas-sin-usar-lenguaje-sql">Realizar consultas sin usar lenguaje SQL</h2>
-<p>Aunque la lógica del SQL sigue aplicando, existen otras formas de tratar nuestros datos como bases de datos, con paquetes que resultan mucho más amigables…</p>
+<p>Y también puedo realizar consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SELECT DISTINCT matorral.Especie, arbustos.Nombre</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM matorral</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">      INNER JOIN mayores ON matorral.Estadillo=mayores.Estadillo</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">      INNER JOIN arboles ON mayores.Especie = arboles.Codigo</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">      INNER JOIN arbustos ON matorral.Especie = arbustos.Codigo</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE arboles.Nombre = 'Quercus ilex'"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>acomp_encinas <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(query)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbClearResult</span>(query)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aunque el lenguaje <code>SQL</code> es el más extendida cuando hablamos de bases de datos, existen otras formas de trabajar con bases de datos que mantienen la misma lógica pero utilizan otras sintáxis.</p>
 <p>Por ejemplo, si de nuevo quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>acompanantes <span class="ot">&lt;-</span> mayores <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arboles, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Especie.y <span class="sc">==</span> <span class="st">"Quercus ilex"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Estadillo, Cla, Subclase) <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(matorral, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Estadillo"</span> <span class="ot">=</span> <span class="st">"Estadillo"</span>, <span class="st">"Cla"</span> <span class="ot">=</span> <span class="st">"Cla"</span>, <span class="st">"Subclase"</span> <span class="ot">=</span> <span class="st">"Subclase"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Fcc, <span class="sc">-</span>Hm) <span class="sc">%&gt;%</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arbustos, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Codigo =</span> Especie, <span class="at">Especie =</span> Especie.y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>acomp_encinas_dplyr <span class="ot">&lt;-</span> mayores <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arboles, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Nombre <span class="sc">==</span> <span class="st">"Quercus ilex"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Estadillo) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(matorral, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Estadillo"</span> <span class="ot">=</span> <span class="st">"Estadillo"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(arbustos, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Especie"</span> <span class="ot">=</span> <span class="st">"Codigo"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Especie, Nombre) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Especie))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cerrar-base-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="cerrar-base-de-datos">Cerrar base de datos</h2>
+<p>EL pqeute <code>RSQLite</code> requiere cerrar la conexión con la base de datos cuando terminamos de trabajar con ella.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
