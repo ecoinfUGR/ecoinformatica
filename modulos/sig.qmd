@@ -9,7 +9,7 @@ listing:
         sesion: 1
       - title: "[Manual de Sistemas de Información Geográfica](../sesiones/sig/sig_practica_qgis.qmd)" 
         sesion: 2
-      # - title: "[Creación de áreas homogéneas](../sesiones/sig/clusterizacion.qmd)"
+      - title: "[Creación de áreas homogéneas](../sesiones/sig/clusterizacion.qmd)"
       #   sesion: 3
       - title: "[Creación de un mapa de biodiversidad de Sierra Nevada](../sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd)"
         sesion: 3
