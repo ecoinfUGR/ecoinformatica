@@ -75,45 +75,60 @@ dbReadTable(con, "parcelas")
 
 ## Realizar consultas
 
-Podemos realizar consultas sencillas con SQL. Por ejemplo, quiero extraer el diámetro medio de todas las encinas muestreadas, y el estadillo al que pertenecen.
+Una vez creada la base de datos podemos realizar consultas sobre ella aplicando el lenguaje [SQL](https://en.wikipedia.org/wiki/SQL).
+
+Por ejemplo, quiero conocer cuáles qué especies de árboles se han observado por parcela.
 ```{r, eval = FALSE}
-query_1 <- dbSendQuery(con, "SELECT Estadillo, Especie, (Dn1 + Dn2/2) AS Dn_avg
-                             FROM mayores
-                             WHERE Dn_avg > 84")
-df_q1 <- dbFetch(query_1)
-dbClearResult(query_1)
+query <- dbSendQuery(con, 
+  "SELECT DISTINCT Estadillo, Especie
+  FROM mayores")
+coexistentes <- dbFetch(query)
+dbClearResult(query)
 ```
 
-O quiero conocer cuál es el diámetro medio de los pinos carrasco. 
+O quiero extraer el diámetro medio de todas las encinas muestreadas y el estadillo al que pertenecen.
 ```{r, eval = FALSE}
-query_2 <- dbSendQuery(con, "SELECT Estadillo, (Dn1 + Dn2/2) AS Dn_avg
-                             FROM mayores
-                             WHERE Especie = 24;")
-df_q2 <- dbFetch(query_2)
+query <- dbSendQuery(con, 
+  "SELECT Estadillo, Especie, (Dn1 + Dn2/2) AS Dn_avg
+  FROM mayores
+  WHERE Especie = 45")
+diam_encinas <- dbFetch(query)
+dbClearResult(query)
 ```
 
-Y consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela...
+Y también puedo realizar consultas más complejas. Por ejemplo, quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela.
+```{r, eval = FALSE}
+query <- dbSendQuery(con, 
+    "SELECT DISTINCT matorral.Especie, arbustos.Nombre
+    FROM matorral
+      INNER JOIN mayores ON matorral.Estadillo=mayores.Estadillo
+      INNER JOIN arboles ON mayores.Especie = arboles.Codigo
+      INNER JOIN arbustos ON matorral.Especie = arbustos.Codigo
+    WHERE arboles.Nombre = 'Quercus ilex'")
+acomp_encinas <- dbFetch(query)
+dbClearResult(query)
+```
 
-## Realizar consultas sin usar lenguaje SQL
-
-Aunque la lógica del SQL sigue aplicando, existen otras formas de tratar nuestros datos como bases de datos, con paquetes que resultan mucho más amigables...
+Aunque el lenguaje `SQL` es el más extendida cuando hablamos de bases de datos, existen otras formas de trabajar con bases de datos que mantienen la misma lógica pero utilizan otras sintáxis.
 
 Por ejemplo, si de nuevo quiero conocer cuáles son las especies acompañantes a las encinas adultas en cada parcela...
  
 ```{r, eval = FALSE}
-acompanantes <- mayores %>%
+acomp_encinas_dplyr <- mayores %>%
   left_join(arboles, by = c("Especie" = "Codigo")) %>%
-  filter(Especie.y == "Quercus ilex") %>%
-  select(Estadillo, Cla, Subclase) %>%
+  filter(Nombre == "Quercus ilex") %>%
+  select(Estadillo) %>%
   distinct() %>%
-  left_join(matorral, by = c("Estadillo" = "Estadillo", "Cla" = "Cla", "Subclase" = "Subclase")) %>%
-  select(-Fcc, -Hm) %>%
+  left_join(matorral, by = c("Estadillo" = "Estadillo")) %>%
   left_join(arbustos, by = c("Especie" = "Codigo")) %>%
-  rename(Codigo = Especie, Especie = Especie.y)
+  select(Especie, Nombre) %>%
+  distinct() %>%
+  filter(!is.na(Especie))
 ```
 
 ## Cerrar base de datos
 
+EL pqeute `RSQLite` requiere cerrar la conexión con la base de datos cuando terminamos de trabajar con ella.
 ```{r, eval = FALSE}
 dbDisconnect(con)
 ```
