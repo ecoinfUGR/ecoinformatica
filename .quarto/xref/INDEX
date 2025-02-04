@@ -91,14 +91,5 @@
   },
   "guia_docente.qmd": {
     "guia_docente.html": "c3841890"
-  },
-  "equipo/index.qmd": {
-    "index.html": "c021d16e"
-  },
-  "sesiones/sig/clusterizacion.qmd": {
-    "clusterizacion.html": "46f3f700"
-  },
-  "sesiones/repro/repro_intro_slides.qmd": {
-    "repro_intro_slides.html": "4027c1f1"
   }
 }
