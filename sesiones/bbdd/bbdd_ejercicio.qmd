@@ -25,7 +25,7 @@ crossref:
 
 - Vamos a trabajar con [R](https://www.r-project.org/), Rstudio (ahora llamado [posit](https://posit.co/)), y utilizaremos al menos los paquete [`RSQLite`](https://rsqlite.r-dbi.org/) y [`dplyr`](https://dplyr.tidyverse.org/).
 
-- El material utilizado en este manual puede descargarse aquí.
+- El material utilizado en este manual puede descargarse [aquí](https://drive.google.com/drive/folders/1fLO-eE3Rs6zn6R18h4-MLh78WumYx-sm?usp=sharing).
 
 # Flujo de Trabajo
 
@@ -42,24 +42,22 @@ crossref:
 library(RSQLite)
 # install.packages("dplyr")
 library(dplyr)
-
-path <- "sesiones/bbdd/material/"
 ```
 
 ## Crear conexión con base de datos
 ```{r, , eval = FALSE}
-con = dbConnect(RSQLite::SQLite(), dbname = paste0(path, "sql.sqlite"))
+con = dbConnect(RSQLite::SQLite(), dbname = "material/sql.sqlite")
 dbListTables(con)
 ```
 
 ## Montar base de datos
 ```{r, eval = FALSE}
-parcelas <- read.table(paste0(path, "ifn3p18_Convertida_Tabla_PCParcelas.txt"), sep = ";", header = TRUE)
-mayores <- read.table(paste0(path, "ifn3p18_Convertida_Tabla_PCMayores.txt"), sep = ";", header = TRUE)
-matorral <- read.table(paste0(path, "ifn3p18_Convertida_Tabla_PCMatorral.txt"), sep = ";", header = TRUE)
-regenera <- read.table(paste0(path, "ifn3p18_Convertida_Tabla_PCRegenera.txt"), sep = ";", header = TRUE)
-arboles <- read.table(paste0(path, "especies_ANEXO12.txt"), sep = ";", header = TRUE)
-arbustos <- read.table(paste0(path, "especies_ANEXO13.txt"), sep = ";", header = TRUE)
+parcelas <- read.table("material/ifn3p18_Convertida_Tabla_PCParcelas.txt", sep = ";", header = TRUE)
+mayores <- read.table("material/ifn3p18_Convertida_Tabla_PCMayores.txt", sep = ";", header = TRUE)
+matorral <- read.table("material/ifn3p18_Convertida_Tabla_PCMatorral.txt", sep = ";", header = TRUE)
+regenera <- read.table("material/ifn3p18_Convertida_Tabla_PCRegenera.txt", sep = ";", header = TRUE)
+arboles <- read.table("material/especies_ANEXO12.txt", sep = ";", header = TRUE)
+arbustos <- read.table("material/especies_ANEXO13.txt", sep = ";", header = TRUE)
 
 dbWriteTable(con, "parcelas", parcelas)
 dbWriteTable(con, "mayores", mayores)

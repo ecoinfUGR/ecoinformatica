@@ -73,3 +73,8 @@ Podemos acceder desde [aquí](https://www.miteco.gob.es/es/biodiversidad/servici
 ## La base de datos del IFN3
 
 ![](images/ifn3_relaciones.png)
+
+::: {.callout-tip}
+## Si usas esta presentación puedes citarla como:
+<small>**Suárez Muñoz, M. **(2025). Bases de datos. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Máster Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+:::
