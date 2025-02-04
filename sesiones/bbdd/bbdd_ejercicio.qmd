@@ -45,7 +45,11 @@ library(dplyr)
 ```
 
 ## Crear conexión con base de datos
+<<<<<<< HEAD
 ```{r, eval = FALSE}
+=======
+```{r, , eval = FALSE}
+>>>>>>> 4750df899b4cbeea3bf52f01148cdf2a6ef4c0f5
 con = dbConnect(RSQLite::SQLite(), dbname = "material/sql.sqlite")
 dbListTables(con)
 ```
