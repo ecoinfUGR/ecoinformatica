@@ -56,24 +56,21 @@ En este ejercicio utilizaremos el paquete `RStoolbox` para realizar una clasific
 # install.packages("RStoolbox")
 library(RStoolbox)
 library(raster)
-
-# Opciones de configuración
-path <- "..."
 ```
 
 En primer lugar cargaremos las capas con las que vamos a trabajar y las exploraremos. Entonces las apilaremos en un mismo *stack*. La función *stack* del paquete `raster` crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas "encajen" entre sí, por lo que necesitaremos apilarlas en un stack.
 
 ```{r, eval = FALSE}
 # Cargar máscara
-mask <- raster(paste0(path, "mascara_23030.tif"))
+mask <- raster("material/mascara_23030.tif")
 
 # Cargar capas con las que vamos a trabajar: temperaturas, precipitaciones, aridez, aspecto, pendiente
-tmax <- raster(paste0(path, "tmax_1971_2000_23030_clipbyextent.tif"))
-tmin <- raster(paste0(path, "tmin_1971_2000_23030_clipbyextent.tif"))
-prec <- raster(paste0(path, "p_1971_2000_23030_clipbyextent.tif"))
-aridez <- raster(paste0(path, "i_aridez_23030.tif"))
-aspecto <- raster(paste0(path, "aspecto_23030.tif"))
-pendiente <- raster(paste0(path, "pendiente_en_grados_23030.tif"))
+tmax <- raster("material/tmax_1971_2000_23030_clipbyextent.tif")
+tmin <- raster("material/tmin_1971_2000_23030_clipbyextent.tif")
+prec <- raster("material/p_1971_2000_23030_clipbyextent.tif")
+aridez <- raster("material/i_aridez_23030.tif")
+aspecto <- raster("material/aspecto_23030.tif")
+pendiente <- raster("material/pendiente_en_grados_23030.tif")
 
 # Explorar capas
 tmax

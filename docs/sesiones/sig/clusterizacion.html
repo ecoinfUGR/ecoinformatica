@@ -261,23 +261,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar paquetes</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("RStoolbox")</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStoolbox)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Opciones de configuración</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"..."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En primer lugar cargaremos las capas con las que vamos a trabajar y las exploraremos. Entonces las apilaremos en un mismo <em>stack</em>. La función <em>stack</em> del paquete <code>raster</code> crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas “encajen” entre sí, por lo que necesitaremos apilarlas en un stack.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar máscara</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"mascara_23030.tif"</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar capas con las que vamos a trabajar: temperaturas, precipitaciones, aridez, aspecto, pendiente</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tmax <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"tmax_1971_2000_23030_clipbyextent.tif"</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>tmin <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"tmin_1971_2000_23030_clipbyextent.tif"</span>))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>prec <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"p_1971_2000_23030_clipbyextent.tif"</span>))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>aridez <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"i_aridez_23030.tif"</span>))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>aspecto <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"aspecto_23030.tif"</span>))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pendiente <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="fu">paste0</span>(path, <span class="st">"pendiente_en_grados_23030.tif"</span>))</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar capas</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>tmax</span>
