@@ -1377,7 +1377,7 @@
     "href": "sesiones/bbdd/bbdd_ejercicio.html#crear-conexión-con-base-de-datos",
     "title": "Ejercicio de bases de datos",
     "section": "Crear conexión con base de datos",
-    "text": "Crear conexión con base de datos\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\n\n=======\n\n\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4750df899b4cbeea3bf52f01148cdf2a6ef4c0f5\ncon = dbConnect(RSQLite::SQLite(), dbname = \"material/sql.sqlite\")\ndbListTables(con)"
+    "text": "Crear conexión con base de datos\n\ncon = dbConnect(RSQLite::SQLite(), dbname = \"material/sql.sqlite\")\ndbListTables(con)"
   },
   {
     "objectID": "sesiones/bbdd/bbdd_ejercicio.html#montar-base-de-datos",
