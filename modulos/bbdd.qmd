@@ -5,15 +5,19 @@ date: "03-02-2025"
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/bbdd/bbdd_sesion.qmd
+      - title: "[Introducción a las bases de datos](../sesiones/bbdd/bbdd_sesion.qmd)" 
+        sesion: 1
       - title: "[¿Qué es una base de datos?](https://prezi.com/view/SNTReihW7NEUL99ZUVte/)" 
+        sesion: 2
       - title: "[¿Cómo se hace una base de datos?](https://prezi.com/view/puAicrkDBdIEcr864RQg/)" 
-      - ./sesiones/bbdd/bbdd_ejercicio.qmd
+        sesion: 3
+      - title: "[Ejercicio de bases de datos](../sesiones/bbdd/bbdd_ejercicio.qmd)"
+        sesion: 4
     type: table
-    fields: [sesion, title, date]
+    fields: [sesion, title]
     date-format: "ddd, MMM DD"
     field-display-names:
-      sesion: "Sesión"
+      sesion: "Orden"
       title: "Nombre"
       date: "Fecha"
     # sort: "custom-field"

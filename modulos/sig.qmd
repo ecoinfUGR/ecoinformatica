@@ -5,20 +5,19 @@ date: ""
 listing:
   - id: sesiones
     contents:
-      - file: ../sesiones/sig/sig_presentacion_20241202.pdf
-        title: "[Presentacion SIG (PDF)](../sesiones/sig/sig_presentacion_20241202.pdf)" 
-        date: 2025-01-23
+      - title: "[Presentacion SIG (PDF)](../sesiones/sig/sig_presentacion_20250123.pdf)" 
         sesion: 1
-      - ../sesiones/sig/sig_practica_qgis.qmd # María, 23/01, 24/01, 28/01 
-      - ../sesiones/sig/mapas_vegetacion.qmd # María, 23/01, 24/01, 28/01 
-      # ... Antonio (7/02)
-      - ../sesiones/sig/clusterizacion.qmd # (7/02)
-      - ../sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd
+      - title: "[Manual de Sistemas de Información Geográfica](../sesiones/sig/sig_practica_qgis.qmd)" 
+        sesion: 2
+      - title: "[Creación de áreas homogéneas](../sesiones/sig/clusterizacion.qmd)"
+        sesion: 3
+      - title: "[Creación de un mapa de biodiversidad de Sierra Nevada](../sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd)"
+        sesion: 4
     type: table
-    fields: [sesion, title, date]
+    fields: [sesion, title]
     date-format: "ddd, MMM DD"
     field-display-names:
-      sesion: "Sesión"
+      sesion: "Orden"
       title: "Nombre"
       date: "Fecha"
     # sort: [sesion]

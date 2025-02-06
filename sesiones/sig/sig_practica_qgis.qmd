@@ -25,6 +25,8 @@ crossref:
 
 - Vamos a trabajar con [qGIS](https://qgis.org/).
 
+- El material utilizado en este manual puede descargarse [aquí](https://drive.google.com/drive/folders/11mlbMz1BmgygXoUMu6r5YuEZIEMDocpR?usp=sharing)
+
 ----------------------
 
 # Flujo de Trabajo
@@ -69,7 +71,7 @@ Ahora cargaremos una con información en rejilla (capa ráster). Los más habitu
 
 Como en el caso de los archivos vectoriales, para las capas ráster también existen distintos formatos (.asc, .tif o los algo antiguos .adf). En este caso cargaremos las capas correspondientes a la elevación (*modelo_digital_elevaciones.asc*) y profundidad de suelo (*prof_suelos.tif*).
 
-Podéis encontrar una lista exhaustiva de formatos ráster en este (enlace)[http://www.gdal.org/formats_list.html] de la librería GDAL.
+Podéis encontrar una lista exhaustiva de formatos ráster en este [enlace](http://www.gdal.org/formats_list.html) de la librería GDAL.
 
 ![](images/load_raster_layer.png)
 
@@ -85,7 +87,7 @@ Para crear la conexión al servidor: **Add WMS/WMTS Layer... → New**
 
 Para cargar la capa: **Add WMS/WMTS Layer... → Seleccionar capa → Connect → Seleccionar subcapa → Add** 
 
-Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), de la que ya hablaremos más adelante. A nivel nacional el Ministerio para la Transición Ecológical y el Reto Demográfico también ofrece algunos recursos ((ver aquí)[https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad.html]).
+Existen multitud de fuentes de información espacial que ofrecen capas WMS. En el contexto de Andalucía una buena fuente es la Red de Información Ambiental de Andalucía (REDIAM), de la que ya hablaremos más adelante. A nivel nacional el Ministerio para la Transición Ecológical y el Reto Demográfico también ofrece algunos recursos ([ver aquí](https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad.html)).
 
 ### Modificar simbología de las capas
 
@@ -157,7 +159,7 @@ Para distintos procesos nos puede resultar interesante definir unas franjas de c
 
 En este caso vamos a realizar un buffer sobre la red de carreteras afectadas por el fuego. Para ello primero necesitaremos recortar la capa de red viaria con el polígono del incendio (ver sección anterior) y a continuación aplicar la herramienta buffer (**Vector → Geoprocessing Tools → Buffer**).
 
-Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de (rozas)[https://diccionario.raing.es/es/lema/roza-1]. Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?
+Con lo que hemos aprendido hasta ahora, imagina que tienes que diseñar una actuación sobre la zona afectada por el incendio. La actuación corresponde a la realización de [rozas](https://diccionario.raing.es/es/lema/roza-1). Queremos realizarlas sobre el regenerado pasados unos años tras el incendio, con el objetivo de reducir el riesgo de aparición nuevos incendios. ¿Sabrías decirme cuál será la superficie sobre la que actuar si queremos realizar rozas en toda la superficie que se encuentra a menos de 50 m de caminos?
 
 ### Reproyectar capas
 

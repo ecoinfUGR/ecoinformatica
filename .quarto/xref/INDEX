@@ -25,5 +25,71 @@
   },
   "modulos.qmd": {
     "modulos.html": "5b97119c"
+  },
+  "equipo/suarez_munoz/index.qmd": {
+    "index.html": "56c08396"
+  },
+  "equipo/perez_luque/index.qmd": {
+    "index.html": "9740a9b8"
+  },
+  "equipo/martinez_lopez/index.qmd": {
+    "index.html": "760593e7"
+  },
+  "index.qmd": {
+    "index.html": "130ed988"
+  },
+  "practicas/pr_repro_documentos_reproducibles.qmd": {
+    "pr_repro_documentos_reproducibles.html": "130db83e"
+  },
+  "practicas/pr_repro_control_versiones.qmd": {
+    "pr_repro_control_versiones.html": "168671ac"
+  },
+  "practicas/ejemplos/ejemplo_documento_reproducible/ejemplo_documento_reproducible.Rmd": {
+    "ejemplo_documento_reproducible.html": "5524a231"
+  },
+  "sesiones/intro/intro_proyecto.qmd": {
+    "intro_proyecto.html": "93b8af80"
+  },
+  "sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd": {
+    "guion_practica_mapa_biodiversidad_jml.html": "a9f6a7f2"
+  },
+  "sesiones/repro/repro_reproducible_documents.qmd": {
+    "repro_reproducible_documents.html": "a7bcdf6d"
+  },
+  "sesiones/repro/repro_reproducible_documents_slides.qmd": {
+    "repro_reproducible_documents_slides.html": "115827e6"
+  },
+  "sesiones/repro/repro_git.qmd": {
+    "repro_git.html": "3cf9f693"
+  },
+  "sesiones/programacion/intro_R_jml.qmd": {
+    "intro_R_jml.html": "98152c36"
+  },
+  "sesiones/programacion/piping.qmd": {
+    "piping.html": "f20177b2"
+  },
+  "sesiones/programacion/secuencias_control.qmd": {
+    "secuencias_control.html": "59972db4"
+  },
+  "sesiones/datos_primarios/primary_search_biodiversity.qmd": {
+    "primary_search_biodiversity.html": "417a8db8"
+  },
+  "sesiones/teledeteccion/gee_intro.qmd": {
+    "gee_intro.html": "f65e8b3e"
+  },
+  "modulos/introduccion.qmd": {
+    "introduccion.html": "f69c8f41"
+  },
+  "modulos/datos_primarios.qmd": {
+    "datos_primarios.html": "e2087552"
+  },
+  "modulos/reproducibilidad.qmd": {
+    "reproducibilidad.html": "246b9b62"
+  },
+  "modulos/teledeteccion.qmd": {
+    "teledeteccion.html": "f164c38c"
+  },
+  "guia_docente.qmd": {
+    "guia_docente.html": "c3841890"
   }
 }
