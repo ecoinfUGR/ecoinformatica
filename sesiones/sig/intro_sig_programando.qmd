@@ -36,6 +36,29 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Introducción
+
+::: small
+- Paquetes a usar 
+
+```{r}
+library(sf) # +++
+library(terra) # +++
+library(raster) # +
+library(stars) # ++
+library(ggspatial)
+library(maps)
+
+library(tidyverse)
+library(here)
+
+```
+ 
+
+- Material en este [**enlace**](../../assets/ext_data/mat_sig.zip)
+
+:::
+
 # Tipos de Datos Espaciales
 
 ## Datos Vectoriales 
@@ -182,7 +205,9 @@ box(col = 'grey')
 
 ### Simple feature geometries 
 
+::: small
 - La representación en fomato texto se conoce como *Well-Known Text* (**[WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)**)
+:::
 
 ```
 MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5 3, 4.5 2, 2.5 2)), ((3 7, 4 7, 5 8, 3 9, 2 8, 3 7)))
@@ -193,7 +218,7 @@ MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5
 ---
 
 ### Simple feature geometries
-- Importacia de las geometrías **válidas**
+- **Validez** de la geometría 
 
 ::: small
 
@@ -212,13 +237,13 @@ MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5
 
 ::: {.panel-tabset}
 ## Ejemplo 
-```{r, echo=FALSE}
+```{r}
+#| code-fold: true
 
 po_invalid <- st_polygon(list(
   rbind(c(2, 1), c(3, 1), c(5, 2), c(6, 3), c(5, 3), 
-        c(4, 4), c(3, 4), c(1, 3), c(2, 1)),  # Contorno exterior
-  
-  rbind(c(2.5, 2), c(3.5, 3), c(4, 3), c(5.0, 3), c(6, 3), c(4.0, 2), c(2, 1), c(2.5, 2))  # Agujero incorrecto
+        c(4, 4), c(3, 4), c(1, 3), c(2, 1)),
+  rbind(c(2.5, 2), c(3.5, 3), c(4, 3), c(5.0, 3), c(6, 3), c(4.0, 2), c(2, 1), c(2.5, 2))  
 ))
 
 plot(po_invalid , border = 'black', col = "blue", lwd = 2)
@@ -235,9 +260,10 @@ st_is_valid(po_invalid)
 po_valid <- st_make_valid(po_invalid)
 ```
 
-## Convertir
+## Visualizar
 
-```{r, echo=FALSE}
+```{r}
+#| code-fold: true
 plot(po_valid , border = 'black', col = "green", lwd = 2)
 ```
 
@@ -246,7 +272,8 @@ plot(po_valid , border = 'black', col = "green", lwd = 2)
 ## Formatos de datos vectoriales más comúnes 
 ::: small
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
 library(knitr)
 library(kableExtra)
 geo_formats <- data.frame(
@@ -259,7 +286,7 @@ extension = c(".shp", ".csv", ".gpx", ".kml; .kmz", ".gml, .xml", ".geojson; .js
   paquetes = c("rgdal, sf, maptools, raster", "utils, sf, tidyverse", "plotKML, XML, maptools", 
                     "rgdal, XML, sf", "XML, multiplex", "geojsonio, rgdal, geojsonR, rjson", 
                     "OpenStreetMap, osmdata, tmaptools", "rgdal, sp, SDMTools",
-                    "raster", "raster, rgdal", "raster", "lidR, rLiDAR", "ncdf4")
+                    "raster, terra", "raster, terra, rgdal", "raster, terra", "lidR, rLiDAR", "ncdf4")
 )
 
 
@@ -285,6 +312,57 @@ Fuentes: Royé, D & Serrano, R (2019). [Lovelace et al. (2022)](https://r.geocom
   - propiedades derivadas de la geometría
   - no derivadas de la geometría
   
+  
+## Atributos (I) 
+
+![Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/intro-vector-data-r)](images/i_attributes.png){fig-align="center" width=60%}
+
+## Atributos: derivados de geometría
+:::: {.columns}
+
+::: {.column width="65%"}
+
+```{r}
+#| code-fold: true
+#| code-summary: "Mostrar el código"
+#| fig-height: 8
+#| fig-width: 9 
+#| out-width: 100%
+
+library(maps)
+
+spain <- 
+  maps::map(fill = TRUE, 
+            plot = FALSE) |>
+  st_as_sf() |>
+  dplyr::filter(ID == "Spain")
+
+spain |> 
+  st_geometry() |> 
+  plot(graticule = TRUE, axis=TRUE) 
+```
+
+:::
+
+::: {.column width="35%"}
+
+- Área 
+
+```{r}
+sf::st_area(spain)
+```
+
+
+- Perímetro
+```{r}
+sf::st_perimeter(spain)
+```
+
+::: 
+
+::: 
+
+
 ## Importar datos Vectoriales 
 
 paquete **`sf`** 
@@ -345,202 +423,860 @@ class(sn_sf)
 ::: 
 
 
+## Importar datos vectoriales: Shapefiles 
 
-
-
-
-
-
-
-
-## Raster 
-
-...
-
-## Sistemas de Coordenadas 
-
-# Operaciones básicas con vectores 
-
-## Paquetes en R 
-
---- 
-
-### Bounding box
 ::: small
+- Formato propietario mas extendido 
+- Mínimo 3 archivos:
+  - **`.shp`**: contiene la geometría 
+  - **`.shx`**: indexa las geometrías
+  - **`.dbf`**: almacena los atributos en formato tabular 
+  - Otros:
+    - `.prj`: proyección
+    - `.sbn`, `.sbx`: índice espacial de las geometrías
+    - `.sph.xml`: metadatos geospaciales 
+    
+::: 
 
-:::: {.columns}
+## Importar datos vectoriales: Shapefiles 
 
-::: {.column width="50%"}
+```{r}
+library(sf)
+library(here)
+sn <- st_read(here::here("assets/ext_data/geoinfo/sn_wdpa.shp"))
+```
+
+## Importar datos vectoriales: Shapefiles 
+
+::: small
+```{r}
+sn
+```
+::: 
+
+## Visualizar 
+
+```{r}
+plot(sn)
+```
+
+## Visualizar 
 
 ```{r}
 #| code-fold: true
-#| code-summary: "Mostrar el código"
-#| fig-height: 8
-#| fig-width: 9 
-#| out-width: 100%
-
-
-library(maps)
-
-pib <- 
-  maps::map(fill = TRUE, 
-            plot = FALSE) |>
-  st_as_sf() |>
-  dplyr::filter(ID %in% 
-                  c("Spain", "Portugal"))
-
-pib |> 
-  st_geometry() |> 
-  plot(graticule = TRUE, axis=TRUE) 
-pib |> 
-  st_bbox() |> 
-  st_as_sfc() |> 
-  plot(add = TRUE, border = "blue")
+plot(sn["NAME"], col=NA, border= "blue", main="", axes = TRUE)
 ```
 
 
+## Convertir a objetos spaciales 
+::: small
+- Importar un csv con las coordenadas y convertirlo a un objeto espacial
+```{r}
+library(tidyverse)
+ifn_sn <- read_csv(here("assets/ext_data/ifn_sn_geo.csv"))
+
+head(ifn_sn)  
+```
 :::
 
-::: {.column width="50%"}
-
-Rectángulo mínimo que delimita una geometría espacial mediante sus **coordenadas extremas** (xmin, ymin, xmax, ymax).
+## Convertir a objetos spaciales
 
 ```{r}
-sf::st_bbox(pib)
+ifn_sn_geo <- st_as_sf(ifn_sn, 
+                       coords = c("x", "y"), 
+                       crs = 23030)
+
+plot(st_geometry(ifn_sn_geo), pch=19, col="black", cex=0.5)
+sn |> st_transform(23030) |> 
+  plot(col = "NA", add = TRUE)
 ```
 
-Convertir a poligono
+--- 
+
+
+## Kml 
+
+::: small 
+- [Senderos Parques Nacionales](https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac)
+
+::: {.panel-tabset}
+## Importar 
+
+```{r}
+url <- "https://centrodedescargas.cnig.es/CentroDescargasRWS/rest/descargarArchivo/usuarioMovil/9780431"
+
+download.file(
+  url = url,
+  destfile = here::here("assets/ext_data/geoinfo/sendero.kml")
+)
+
+sendero <- read_sf(here::here("assets/ext_data/geoinfo/sendero.kml"))
+```
+
+## Visualizar 
+
+```{r}
+#| code-fold: true
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: "center" 
+sendero |> 
+  st_geometry() |> 
+  plot(graticule = TRUE, axes=TRUE) 
+```
 
 ```{r}
 #| eval: FALSE
+#| echo: FALSE
+library(ggspatial)
+library(ggplot2)
 
-pib_bb <- pib |> 
-  st_bbox() |> 
-  st_as_sfc()
+ggplot() +
+  geom_sf(data = sendero, color = "blue", size = 1) +
+  annotation_north_arrow(location = "topleft",
+                         width = unit(1.1, "cm")) + 
+  annotation_scale(location = "br", width_hint = 0.3) + 
+  theme_bw() + 
+  ggtitle(stringr::str_wrap(sendero$Name, width = 40))
 
 ```
-
-:::
-
-::::
 
 ::: 
 
-
-
-
-
---- 
-
-### Métricas: Área 
-
-```{r}
-sf::st_area(pib)
-```
-
-::: {.callout-warning}
-
-## ¿Porqué aparecen dos valores para el área? 
-::: small 
-```{r}
-pib
-```
-:::
-
 ::: 
 
-::: small 
-- ¿Y si las quiero en km$^2$? 
-```{r}
-library(units)
-pib |> 
-  sf::st_area() |> 
-  units::set_units("km^2")
-```
-::: 
---- 
-
-### Métricas: Perímetro
+## Importar datos vectoriales: GPX
 
 ::: small
-Calcula el perímetro de Portugal
-::: 
-```{r}
-por <- pib |> 
-  dplyr::filter(ID == "Portugal")
-
-sf::st_perimeter(por) |> 
-  set_units("km")
-```
-
---- 
-
-### Métricas: Distancia
-
-::: small
-Ejemplo: Tenemos una parcela en un pinar de repoblación, en la que estamos evaluando la cantidad de semillas de Quercíneas que pueden llegar dispersadas por el arrendajo. Si tenemos una matrix de paisaje conformada por diferentes manchas de encinar y robledal, y suponiendo que las diferentes manchas de bosque de quercíneas tienen la misma cantidad de propágulos y la misma probabilidad de ser visitadas por los arrendajos, ¿Quien tiene mas probabilidad de colonizar el pinar de repoblación? 
-::: 
+- [Sendero Sulayr](https://portal.dipgra.es/es/rutas/gr-240-sendero-sulayr) 
 
 ```{r}
-#| echo=FALSE
-library(sf)
-library(dplyr)
+#| message: true
+#| warning: true 
 
-# Crear polígonos irregulares distribuidos más aleatoriamente
-encinar_1 <- st_polygon(list(rbind(c(1,5), c(2.3,4.2), c(3.2,5.6), c(3,7), c(2.1,7.5), c(1.3,7), c(0.7,5.8), c(1,5))))
-encinar_2 <- st_polygon(list(rbind(c(7,2), c(8.5,1.1), c(9.6,2.3), c(9.2,3.9), c(8.4,4.4), c(7.6,4.1), c(7.1,2.8), c(7,2))))
-robledal_1 <- st_polygon(list(rbind(c(3,8), c(4.7,7.1), c(5.4,8.5), c(5.1,9.6), c(4.3,10.3), c(3.5,9.9), c(3.1,8.8), c(3,8))))
-robledal_2 <- st_polygon(list(rbind(c(8,6), c(9.9,5.0), c(10.8,7.1), c(10.2,8.5), c(9.1,9.3), c(8.2,7.8), c(8,6))))
-pinar <- st_polygon(list(rbind(c(4,4), c(6.1,2.8), c(7,5), c(6.5,6.5), c(5.6,6.0), c(4.8,4.6), c(4,4))))
+url <- "https://cdn.dipgra.es/my-media-files-bucket/documents/1461659948SulayrCompleto.gpx"
 
-
-manchas <- st_sf(
-  nombre = c("Encinar A", "Encinar B", "Robledal A", "Robledal B", "Pinar"),
-  tipo = c("Encinar", "Encinar", "Robledal", "Robledal", "Pinar"),
-  geometry = st_sfc(encinar_1, encinar_2, robledal_1, robledal_2, pinar),
-  colores = c("darkgreen", "darkgreen", "gold", "gold", "green"),
-  crs = 4326 
+download.file(
+  url = url,
+  destfile = here::here("assets/ext_data/geoinfo/sulary.gpx")
 )
 
-manchas <- st_transform(manchas, 23030)
-
-plot(manchas["tipo"], col = manchas$colores, graticule = TRUE, axes = TRUE)
-legend("bottomleft", legend =  unique(manchas$tipo), 
-       fill = unique(manchas$colores), title = "Tipo de Manchas")
-
+sulayr <- read_sf(here::here("assets/ext_data/geoinfo/sulary.gpx"))
 ```
 
-##
+::: {.callout-important}
+
+### ¿Qué nos está adviertiendo con este *warning*?
+
+:::
+
+::: 
+
+
+## Importar datos vectoriales: Capas disponibles
+::: small
+- Algunos objetos espaciales pueden contener varias capas
+- Explorar las capas existentes con `st_layers` 
+
+
+::: {.panel-tabset}
+### Capas 
+```{r}
+st_layers(here("assets/ext_data/geoinfo/sulary.gpx"))
+```
+
+### Lectura 
+```{r}
+sulayr_ruta <- read_sf(here("assets/ext_data/geoinfo/sulary.gpx"), 
+                       layer = "tracks")
+
+
+sulayr_puntos <- read_sf(here("assets/ext_data/geoinfo/sulary.gpx"), 
+                       layer = "waypoints")
+```
+
+### Visualización
 
 ```{r}
-pinar_geom <- 
-  manchas |> filter(tipo == "Pinar") |> st_geometry()
+#| code-fold: true
+#| echo: false
+#| fig-height: 4
+library(ggplot2)
+ggplot() +
+  geom_sf(data = sulayr_ruta, color = "blue", size = 1) +
+  geom_sf(data = sulayr_puntos, color = "black") +
+  theme_bw()
+```
 
-# Calcular la distancia desde encinares y robledales al pinar
-distancias <- manchas |> 
-  filter(tipo %in% c("Encinar", "Robledal")) |> 
-  mutate(distancia_pinar = st_distance(geometry, pinar_geom))
 
-# Mostrar la tabla con las distancias
-distancias |> 
+```{r}
+#| echo: false
+#| eval: false 
+# Tello elev 
+url <- "https://cdn.dipgra.es/my-media-files-bucket/documents/Etapa_04_GR_240.GPX"
+
+download.file(
+  url = tello,
+  destfile = here::here("assets/ext_data/geoinfo/sulary_tello.gpx")
+)
+
+sulayr_tello <- read_sf(here("assets/ext_data/geoinfo/sulary_tello.gpx"))
+st_layers(sulayr_tello)
+
+sulayr_tello_elev <- read_sf(here("assets/ext_data/geoinfo/sulary_tello.gpx"), 
+                        layer = "track_points")
+
+sulayr_tello_elev |> 
   st_drop_geometry() |> 
-  print()
+  ggplot(
+    aes(x = track_seg_point_id, y = ele)
+  ) + 
+  geom_line()
+```
+
+::: 
+
+::: 
+
+
+
+## Ráster 
+
+![Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r)](images/i_raster.png){fig-align="center" width=60%}
+
+## Ráster
+
+::: {.panel-tabset}
+### Crear un ráster
+```{r}
+m <- matrix(c(1, 2, 3, 4, 2, NA, 2, 2, 3, 3, 3, 1), 
+            ncol = 4, nrow = 3, byrow = TRUE)
+
+m 
+```
+
+### `terra`
+```{r}
+library(terra)
+r <- terra::rast(m)
+plot(r)
+```
+
+### `raster`
+```{r}
+library(raster)
+ra <- raster::raster(m)
+plot(ra)
+```
+
+::: 
+
+## Ráster
+
+::: {.panel-tabset}
+
+### `terra`
+```{r}
+r
+```
+
+### `raster`
+```{r}
+ra
+```
+
+::: 
+
+## Componentes de un ráster
+::: small
+| Componente   | Descripción |
+|-------------|------------|
+| **Dimensiones (`dim()`)** | Número de filas, columnas y bandas. |
+| **Extensión (`ext()`)** | Coordenadas mínimas y máximas (`xmin, xmax, ymin, ymax`). |
+| **Resolución (`res()`)** | Tamaño de cada celda en unidades espaciales. |
+| **Número de Bandas (`nlyr()`)** | Cantidad de capas o bandas en el raster (multibanda o singleband). |
+| **Sistema de Referencia (`crs()`)** | Código EPSG o Proyección (WGS84, UTM, etc.). |
+| **Valores (`values()`)** | Datos almacenados en cada celda (elevación, temperatura, NDVI, etc.). |
+::: 
+
+## Extensión 
+
+![Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r)](images/i_raster_ext.png){fig-align="center" width=80%}
+
+
+## Resolución ráster 
+- Tamaño de cada celda
+- Nivel de detalle:
+  - Alta resolución: Celdas pequeñas, más detalle
+  - Baja resolución: Celdas grandes, menos detalle
+- Cálculo: 
+$$ resolución = \frac{x_{max} - x_{min}}{n_{columnas}}, \frac{y_{max} - y_{min}}{n_{filas}} $$ 
+
+---
+
+**Extensión - Resolución - Sistema de Coordenadas** 
+
+![Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r)](images/i_raster_res.png){fig-align="center" width=80%}
+
+
+## Ejemplo Ráster 
+
+::: {.panel-tabset}
+## Metadatos  
+```{r}
+library(terra)
+my_rast <- terra::rast(here::here("assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"))
+my_rast
+```
+
+## Visualización
+```{r}
+#| echo: false
+plot(my_rast)
+```
+
+::: 
+
+## Formatos ráster más comunes
+
+```{r}
+#| echo: false
+fr <- geo_formats |> dplyr::filter(tipo == "Ráster") |> 
+  dplyr::select(-tipo)
+
+kable(fr, escape = FALSE) |> 
+  kableExtra::kable_classic(c("striped", "hover", "condensed", "responsive")) 
 ```
 
 
 
+## Sistemas de Referencia de Coordenadas 
+::: small 
+- Datos espaciales = datos + CRS
+- Modelo matemático que conecta los datos con la superficie de la Tierra
+- CRS le dice al software (QGIS, R, ...) en que espacio geográfico está la información, y qué metodo usar para proyectar la información sobre el espacio geográfico
+::: 
+
+
+## Sistemas de Referencia de Coordenadas 
+::: small 
+**Estándares** para compartir información CRS
+
+- [**`proj`**](https://proj.org/en/stable/):
+
+```{r}
+#| echo: false
+raster::projection(sn)
+```
+
+- [**`EPSG`**](https://spatialreference.org/ref/epsg/):
+
+```{r}
+#| echo: false
+st_crs(sn)
+```
+::: 
+
+## Sistemas de Referencia de Coordenadas
+
+- Comprobar proyección  
+
+::: {.panel-tabset}
+### `raster`
+```{r}
+tmin_ra <- raster::raster((here::here("assets/ext_data/geoinfo/tmin_1971_2000_3042.tif")))
+
+raster::projection(tmin_ra)
+
+```
+
+### `terra`
+```{r}
+
+tmin <- terra::rast((here::here("assets/ext_data/geoinfo/tmin_1971_2000_3042.tif")))
+
+terra::crs(tmin)
+
+```
+
+::: 
+
+
+## Sistemas de Referencia de Coordenadas
+
+- Transformar (e.g. `EPSG:4326`) 
+
+::: {.panel-tabset}
+### `raster`
+```{r}
+tmin_ra_4326 <- raster::projectRaster(tmin_ra, 
+                                      crs = "+proj=longlat +datum=WGS84")
+
+```
+
+### `terra`
+```{r}
+tmin_4326 <- terra::project(tmin, "EPSG:4326")
+```
+
+::: 
+
+## Sistemas de Referencia de Coordenadas
+
+- Conversión vectorial
+
+```{r}
+# Datos del inventario forestal 
+ifn_sn_geo <- st_as_sf(ifn_sn, coords = c("x", "y"), crs = 23030)
+
+# st_crs(ifn_sn_geo)
+
+ifn_sn_geo_4326 <- sf::st_transform(ifn_sn_geo, 4326)
+
+```
+
+
+## Consultar metadatos Ráster
+::: small
+- Número de celdas 
+
+```{r}
+ncell(my_rast)
+```
+
+- Dimensiones
+
+```{r}
+dim(my_rast)
+```
+
+- Resolución
+
+```{r}
+res(my_rast)
+```
+
+- Extensión espacial
+
+```{r}
+ext(my_rast)
+```
+
+::: 
+
+## Stacks   
+
+```{r}
+#| echo: false
+# (C) 2019, Edzer Pebesma, CC-BY-SA
+set.seed(1331)
+library(stars) |> suppressPackageStartupMessages()
+library(colorspace)
+tif <- system.file("tif/L7_ETMs.tif", package = "stars")
+r <- read_stars(tif)
+
+nrow <- 5
+ncol <- 8
+m <- r[[1]][1:nrow,1:ncol,1]
+dim(m) <- c(x = nrow, y = ncol) # named dim
+s <- st_as_stars(m)
+# s
+attr(s, "dimensions")[[1]]$delta = 3
+attr(s, "dimensions")[[2]]$delta = -.5
+attr(attr(s, "dimensions"), "raster")$affine = c(-1.2, 0.0)
+
+plt <- function(x, yoffset = 0, add, li = TRUE) {
+    attr(x, "dimensions")[[2]]$offset = attr(x, "dimensions")[[2]]$offset + yoffset
+    l <- st_as_sf(x, as_points = FALSE)
+    pal <- sf.colors(10)
+    if (li)
+        pal <- lighten(pal, 0.3 + rnorm(1, 0, 0.1))
+    if (! add)
+        plot(l, axes = FALSE, breaks = "equal", pal = pal, reset = FALSE, border = grey(.75), key.pos = NULL, main = NULL, xlab = "time")
+    else
+        plot(l, axes = TRUE, breaks = "equal", pal = pal, add = TRUE, border = grey(.75))
+    u <- st_union(l)
+    # print(u)
+    plot(st_geometry(u), add = TRUE, col = NA, border = 'black', lwd = 2.5)
+}
+
+pl <- function(s, x, y, add = TRUE, randomize = FALSE) {
+  attr(s, "dimensions")[[1]]$offset = x
+  attr(s, "dimensions")[[2]]$offset = y
+  m <- r[[1]][y + 1:nrow,x + 1:ncol,1]
+  if (randomize)
+    m <- m[sample(y + 1:nrow),x + 1:ncol]
+  dim(m) = c(x = nrow, y = ncol) # named dim
+  s[[1]] = m
+  plt(s, 0, add)
+  plt(s, 1, TRUE)
+  plt(s, 2, TRUE)
+  plt(s, 3, TRUE)
+  plt(s, 4, TRUE)
+  plt(s, 5, TRUE)
+  plt(s, 6, TRUE)
+  plt(s, 7, TRUE)
+  plt(s, 8, TRUE, FALSE)
+}
+
+plot.new()
+par(mar = rep(0.5,4))
+plot.window(xlim = c(-12,15), ylim = c(-5,10), asp=1)
+pl(s, 0, 0)
+# box()
+text(-10, 0, "time", srt = -90, col = 'black')
+text(-5,  6.5, "latitude", srt = 25, col = 'black')
+text( 5,  8.5, "longitude", srt = 0, col = 'black')
+```
+
+::: small
+Fuente: [Pebesma & Bivand (2025)](https://r-spatial.org/book/)
+::: 
+
+## Data cubes 
+
+```{r}
+#| echo: false
+# (C) 2021, Jonathan Bahlmann, CC-BY-SA
+# https://github.com/Open-EO/openeo.org/tree/master/documentation/1.0/datacubes/.scripts
+# based on work by Edzer Pebesma, 2019, here: https://gist.github.com/edzer/5f1b0faa3e93073784e01d5a4bb60eca
+
+# plotting runs via a dummy stars object with x, y dimensions (no bands)
+# to not be overly dependent on an input image, time steps and bands
+# are displayed by replacing the matrix contained in the dummy stars object
+# every time something is plotted
+
+# packages, read input ----
+set.seed(1331)
+library(stars)
+library(colorspace) |> suppressPackageStartupMessages()
+library(scales) |> suppressPackageStartupMessages()
+
+# make color palettes ----
+blues <- sequential_hcl(n = 20, h1 = 211, c1 = 80, l1 = 40, l2 = 100, p1 = 2)
+greens <- sequential_hcl(n = 20, h1 = 134, c1 = 80, l1 = 40, l2 = 100, p1 = 2)
+reds <- sequential_hcl(n = 20, h1 = 360, c1 = 80, l1 = 40, l2 = 100, p1 = 2)
+purples <- sequential_hcl(n = 20, h1 = 299, c1 = 80, l1 = 40, l2 = 100, p1 = 2)
+greys <- sequential_hcl(n = 20, h1 = 0, c1 = 0, l1 = 40, l2 = 100, p1 = 2)
 
 
 
+# matrices from raster ----
+# make input matrices from an actual raster image
+input <- read_stars(here::here("assets/ext_data/iceland_delta_cutout_2.tif")) # this raster needs approx 6x7 format
+# if the input raster is changed, every image where a pixel value is written as text needs to be checked and corrected accordingly
+input <- input[,,,1:4]
+warped <- st_warp(input, crs = st_crs(input), cellsize = 200) # warp to approx. 6x7 pixel
+
+# these are only needed for resampling
+warped_highres <- st_warp(warped, crs = st_crs(warped), cellsize = 100) # with different input, cellsize must be adapted
+# this is a bit of a trick, because 3:4 is different format than 6:7
+# when downsampling, the raster of origin isn't so important anyway
+warped_lowres <- st_warp(warped_highres[,1:11,,], crs = st_crs(warped), cellsize = 390)
+# plot(warped_lowres)
+# image(warped[,,,1], text_values = TRUE)
+
+t1 <- floor(matrix(runif(42, -30, 150), ncol = 7)) # create timesteps 2 and 3 randomly
+t2 <- floor(matrix(runif(42, -250, 50), ncol = 7))
+
+# create dummy stars object ----
+make_dummy_stars <- function(x, y, d1, d2, aff) {
+  m = warped_highres[[1]][1:x,1:y,1] # underlying raster doesn't matter because it's just dummy construct
+  dim(m) = c(x = x, y = y) # named dim
+  dummy = st_as_stars(m)
+  attr(dummy, "dimensions")[[1]]$delta = d1
+  attr(dummy, "dimensions")[[2]]$delta = d2
+  attr(attr(dummy, "dimensions"), "raster")$affine = c(aff, 0.0)
+  return(dummy)
+}
+
+s <- make_dummy_stars(6, 7, 2.5, -.5714286, -1.14) # mainly used, perspective
+f <- make_dummy_stars(6, 7, 1, 1, 0) # flat
+highres <- make_dummy_stars(12, 14, 1.25, -.2857143, -.57) # for resampling
+lowres <- make_dummy_stars(3, 4, 5, -1, -2) # for resampling
+
+# matrices from image ----
+make_matrix <- function(image, band, n = 42, ncol = 7, t = 0) {
+  # this is based on an input image with >= 4 input bands
+  # n is meant to cut off NAs, ncol is y, t is random matrix for time difference
+  return(matrix(image[,,,band][[1]][1:n], ncol = ncol) - t)
+  # before: b3 <- matrix(warped[,,,1][[1]][1:42], ncol = 7) - t2
+}
+
+# now use function: 
+b1 <- make_matrix(warped, 1)
+b2 <- make_matrix(warped, 1, t = t1)
+b3 <- make_matrix(warped, 1, t = t2)
+g1 <- make_matrix(warped, 2)
+g2 <- make_matrix(warped, 2, t = t1)
+g3 <- make_matrix(warped, 2, t = t2)
+r1 <- make_matrix(warped, 3)
+r2 <- make_matrix(warped, 3, t = t1)
+r3 <- make_matrix(warped, 3, t = t2)
+n1 <- make_matrix(warped, 4)
+n2 <- make_matrix(warped, 4, t = t1)
+n3 <- make_matrix(warped, 4, t = t2)
+
+# plot functions ----
+plt <- function(x, yoffset = 0, add, li = TRUE, pal, print_geom = TRUE, border = .75, breaks = "equal") {
+  # pal is color palette
+  attr(x, "dimensions")[[2]]$offset = attr(x, "dimensions")[[2]]$offset + yoffset 
+  l = st_as_sf(x, as_points = FALSE)
+  if (li)
+    pal <- lighten(pal, 0.2) # + rnorm(1, 0, 0.1))
+  if (! add)
+    plot(l, axes = FALSE, breaks = breaks, pal = pal, reset = FALSE, border = grey(border), key.pos = NULL, main = NULL, xlab = "time")
+  else
+    plot(l, axes = TRUE, breaks = breaks, pal = pal, add = TRUE, border = grey(border))
+  u <- st_union(l)
+  # print(u)
+  if(print_geom) {
+    plot(st_geometry(u), add = TRUE, col = NA, border = 'black', lwd = 2.5)
+  } else {
+    # not print geometry
+  }
+}
+
+pl_stack <- function(s, x, y, add = TRUE, nrM, imgY = 7, inner = 1) {
+  # nrM is the timestep {1, 2, 3}, cause this function
+  # prints all 4 bands at once
+  attr(s, "dimensions")[[1]]$offset = x
+  attr(s, "dimensions")[[2]]$offset = y
+  # m <- r[[1]][y + 1:nrow,x + 1:ncol,1]
+  m <- eval(parse(text=paste0("n", nrM)))
+  s[[1]] <- m[,c(imgY:1)] # turn around to have same orientation as flat plot
+  plt(s, 0, TRUE,  pal = purples)
+  m <- eval(parse(text=paste0("r", nrM)))
+  s[[1]] <- m[,c(imgY:1)]
+  plt(s, 1*inner, TRUE,  pal = reds)
+  m <- eval(parse(text=paste0("g", nrM)))
+  s[[1]] <- m[,c(imgY:1)]
+  plt(s, 2*inner, TRUE,  pal = greens)
+  m <- eval(parse(text=paste0("b", nrM)))
+  s[[1]] <- m[,c(imgY:1)]
+  plt(s, 3*inner, TRUE, pal = blues) # li FALSE deleted
+}
+
+# flat plot function
+# prints any dummy stars with any single matrix to position
+pl <- function(s, x, y, add = TRUE, randomize = FALSE, pal, m, print_geom = TRUE, border = .75, breaks = "equal") {
+  # m is matrix to replace image with
+  # m <- t(m)
+  attr(s, "dimensions")[[1]]$offset = x
+  attr(s, "dimensions")[[2]]$offset = y
+  # print(m)
+  s[[1]] <- m
+  plt(s, 0, add = TRUE, pal = pal, print_geom = print_geom, border = border, breaks = breaks)
+  #plot(s, text_values = TRUE)
+}
+
+print_segments <- function(x, y, seg, by = 1, lwd = 4, col = "black") {
+  seg <- seg * by
+  seg[,1] <- seg[,1] + x
+  seg[,3] <- seg[,3] + x
+  seg[,2] <- seg[,2] + y
+  seg[,4] <- seg[,4] + y
+  segments(seg[,1], seg[,2], seg[,3], seg[,4], lwd = lwd, col = col)
+}
+
+# time series ----
+
+# from: cube1_ts_6x7_bigger.png
+offset = 26
+plot.new()
+#par(mar = c(3, 2, 7, 2))
+par(mar = c(0, 0, 0, 0))
+#plot.window(xlim = c(10, 50), ylim = c(-3, 10), asp = 1)
+plot.window(xlim = c(-15, 75), ylim = c(-3, 10), asp = 1)
+pl_stack(s, 0, 0, nrM = 3)
+pl_stack(s, offset, 0, nrM = 2)
+pl_stack(s, 2 * offset, 0, nrM = 1)
+# po <- matrix(c(0,-8,7,0,15,3.5,  0,1,1,5,5,14), ncol = 2)
+heads <- matrix(c(3.5, 3.5 + offset, 3.5 + 2*offset, 14,14,14), ncol = 2)
+points(heads, pch = 16) # 4 or 16
+segments(c(-8, 7, 0, 15), c(-1,-1,3,3), 3.5, 14) # first stack pyramid
+segments(c(-8, 7, 0, 15) + offset, c(-1,-1,3,3), 3.5 + offset, 14) # second stack pyramid
+segments(c(-8, 7, 0, 15) + 2*offset, c(-1,-1,3,3), 3.5 + 2*offset, 14) # third stack pyramid
+arrows(-13, 14, 72, 14, angle = 20, lwd = 2)  # timeline
+text(7.5, 3.8, "x", col = "black")
+text(-10, -2.5, "bands", srt = 90, col = "black")
+text(-4.5, 1.8, "y", srt = 27.5, col = "black")
+y <- 15.8
+text(69, y, "time", col = "black")
+text(3.5, y, "2020-10-01", col = "black")
+text(3.5 + offset, y, "2020-10-13", col = "black")
+text(3.5 + 2*offset, y, "2020-10-25", col = "black")
+```
 
 
-## Operaciones básicas con raster 
+
+--- 
+ 
+![Source: [Pebesma & Bivand (2025)](https://r-spatial.org/book/)](images/i_data_cube.png){fig-align="center" width=80%}
 
 
+```{r}
+#| echo: false
+#| eval: false
+# flat ----
+xlabels <- seq(attr(warped, "dimensions")[[1]]$offset + attr(warped, "dimensions")[[1]]$delta / 2, length.out = attr(warped, "dimensions")[[1]]$to, by = attr(warped, "dimensions")[[1]]$delta)
+ylabels <- seq(attr(warped, "dimensions")[[2]]$offset + attr(warped, "dimensions")[[2]]$delta / 2, length.out = attr(warped, "dimensions")[[2]]$to, by = attr(warped, "dimensions")[[2]]$delta)
 
-## Recursos
+print_labels <- function(x, y, off, lab, horizontal, cex = 1) {
+  if(horizontal) { # x
+    for(i in 0:(length(lab)-1)) {
+      text(x + i*off, y, lab[i+1], cex = cex, srt = 90)
+    }
+  } else { # y
+    lab <- lab[length(lab):0]
+    for(i in 0:(length(lab)-1)) {
+      text(x, y + i*off, lab[i+1], cex = cex)
+    }
+  }
+}
 
-- Royé, D & Serrano, R (2019). Introducción a los SIG con R. Universidad de Zaragoza.
+# before: width=1000, xlim(-2, 33), date labels x=31
+plot.new()
+# par(mar = c(0,0,0,0))
+par(mar = c(3,0,0,0))
+plot.window(xlim = c(-2, 40), ylim = c(0, 25), asp = 1)
+pl(f, 7, 0, pal = blues, m = b1)
+pl(f, 7, 10, pal = blues, m = b2)
+pl(f, 7, 20, pal = blues, m = b3)
+pl(f, 14, 0, pal = greens, m = g1)
+pl(f, 14, 10, pal = greens, m = g2)
+pl(f, 14, 20, pal = greens, m = g3)
+pl(f, 21, 0, pal = reds, m = r1)
+pl(f, 21, 10, pal = reds, m = r2)
+pl(f, 21, 20, pal = reds, m = r3)
+pl(f, 28, 0, pal = purples, m = n1)
+pl(f, 28, 10, pal = purples, m = n2)
+pl(f, 28, 20, pal = purples, m = n3)
+print_labels(28.5, -2, 1, xlabels, horizontal = TRUE, cex = 0.7)
+print_labels(36, 0.5, 1, ylabels, horizontal = FALSE, cex = 0.7)
+# arrows(6, 27, 6, 0, angle = 20, lwd = 2)
+# text(5, 14, "time", srt = 90, col = "black")
+text(10, 28, "blue", col = "black")
+text(17, 28, "green", col = "black")
+text(24, 28, "red", col = "black")
+text(31, 28, "nir", col = "black")
+text(3, 23.5, "2020-10-01", col = "black")
+text(3, 13.5, "2020-10-13", col = "black")
+text(3, 3.5, "2020-10-25", col = "black")
+```
+
+---
+
+![Source: [Pebesma & Bivand (2025)](https://r-spatial.org/book/)](images/i_data_cube_filter.png){fig-align="center" width=60%}
+
+
+```{r}
+#| echo: false
+#| eval: false
+# filter ----
+# mask <- matrix(c(rep(NA, 26), 1,NA,1,NA,1,1,1, rep(NA, 9)), ncol = 7)
+mask <- matrix(c(NA,NA,NA,NA,NA,NA,
+                 NA,NA,NA,NA,NA,NA,
+                 NA,NA,NA, 1, 1, 1,
+                 NA,NA, 1, 1, 1,NA,
+                 NA,NA,NA, 1, 1,NA,
+                 NA,NA,NA,NA,NA,NA,
+                 NA,NA,NA,NA,NA,NA), ncol = 7)
+
+print_grid <- function(x, y) {
+  pl(f, 0+x, 0+y, pal = blues, m = b1)
+  pl(f, 0+x, 10+y, pal = blues, m = b2)
+  pl(f, 0+x, 20+y, pal = blues, m = b3)
+  pl(f, 7+x, 0+y, pal = greens, m = g1)
+  pl(f, 7+x, 10+y, pal = greens, m = g2)
+  pl(f, 7+x, 20+y, pal = greens, m = g3)
+  pl(f, 14+x, 0+y, pal = reds, m = r1)
+  pl(f, 14+x, 10+y, pal = reds, m = r2)
+  pl(f, 14+x, 20+y, pal = reds, m = r3)
+  pl(f, 21+x, 0+y, pal = purples, m = n1)
+  pl(f, 21+x, 10+y, pal = purples, m = n2)
+  pl(f, 21+x, 20+y, pal = purples, m = n3)
+}
+print_alpha_grid <- function(x,y, alp = 0.2, geom = FALSE) {
+  pl(f, 0+x, 0+y, pal = alpha(blues, alp), print_geom = geom,  m = b1, border = 1)
+  pl(f, 0+x, 10+y, pal = alpha(blues, alp), print_geom = geom,  m = b2, border = 1)
+  pl(f, 0+x, 20+y, pal = alpha(blues, alp), print_geom = geom,  m = b3, border = 1)
+  pl(f, 7+x, 0+y, pal = alpha(greens, alp), print_geom = geom,  m = g1, border = 1)
+  pl(f, 7+x, 10+y, pal = alpha(greens, alp), print_geom = geom,  m = g2, border = 1)
+  pl(f, 7+x, 20+y, pal = alpha(greens, alp), print_geom = geom,  m = g3, border = 1)
+  pl(f, 14+x, 0+y, pal = alpha(reds, alp), print_geom = geom,  m = r1, border = 1)
+  pl(f, 14+x, 10+y, pal = alpha(reds, alp), print_geom = geom,  m = r2, border = 1)
+  pl(f, 14+x, 20+y, pal = alpha(reds, alp), print_geom = geom,  m = r3, border = 1)
+  pl(f, 21+x, 0+y, pal = alpha(purples, alp), print_geom = geom,  m = n1, border = 1)
+  pl(f, 21+x, 10+y, pal = alpha(purples, alp), print_geom = geom,  m = n2, border = 1)
+  invisible(pl(f, 21+x, 20+y, pal = alpha(purples, alp), print_geom = geom,  m = n3, border = 1))
+}
+
+print_grid_filter <- function(x, y) {
+  pl(f, 0+x, 0+y, pal = blues, m = matrix(b1[mask == TRUE], ncol = 7))
+  pl(f, 0+x, 10+y, pal = blues, m = matrix(b2[mask == TRUE], ncol = 7))
+  pl(f, 0+x, 20+y, pal = blues, m = matrix(b3[mask == TRUE], ncol = 7))
+  pl(f, 7+x, 0+y, pal = greens, m = matrix(g1[mask == TRUE], ncol = 7))
+  pl(f, 7+x, 10+y, pal = greens, m = matrix(g2[mask == TRUE], ncol = 7))
+  pl(f, 7+x, 20+y, pal = greens, m = matrix(g3[mask == TRUE], ncol = 7))
+  pl(f, 14+x, 0+y, pal = reds, m = matrix(r1[mask == TRUE], ncol = 7))
+  pl(f, 14+x, 10+y, pal = reds, m = matrix(r2[mask == TRUE], ncol = 7))
+  pl(f, 14+x, 20+y, pal = reds, m = matrix(r3[mask == TRUE], ncol = 7))
+  pl(f, 21+x, 0+y, pal = purples, m = matrix(n1[mask == TRUE], ncol = 7))
+  pl(f, 21+x, 10+y, pal = purples, m = matrix(n2[mask == TRUE], ncol = 7))
+  pl(f, 21+x, 20+y, pal = purples, m = matrix(n3[mask == TRUE], ncol = 7))
+}
+
+print_grid_time_filter <- function(x, y) { # 3x1, 28x7
+  pl(f, 0+x, 10+y, pal = blues, m = b3)
+  pl(f, 7+x, 10+y, pal = greens, m = g3)
+  pl(f, 14+x, 10+y, pal = reds, m = r3)
+  pl(f, 21+x, 10+y, pal = purples, m = n3)
+}
+
+print_grid_bands_filter <- function(x, y, pal = greys) { # 1x3 6x27
+  pl(f, 0+x, 0+y, pal = pal, m = n1)
+  pl(f, 0+x, 10+y, pal = pal, m = n2)
+  pl(f, 0+x, 20+y, pal = pal, m = n3)
+}
+
+# build exactly like reduce
+plot.new()
+par(mar = c(3,3,3,3))
+x <- 120
+y <- 100
+down <- 0
+plot.window(xlim = c(0, x), ylim = c(0, y), asp = 1)
+print_grid(x/2-28/2,y-27)
+print_alpha_grid((x/3-28)/2, 0-down) # alpha grid
+print_grid_time_filter((x/3-28)/2, -10-down) # select 3rd
+print_alpha_grid(x/3+((x/3-6)/2) -10.5, 0-down) # alpha grid
+print_grid_bands_filter(x/3+((x/3-12.4)), 0-down, pal = purples)
+print_alpha_grid(2*(x/3)+((x/3-28)/2), 0-down) # alpha grid
+print_grid_filter(2*(x/3)+((x/3-28)/2), 0-down)
+text(3, 13.5-down, "time", srt = 90, col = "black")
+text(43, 13.5-down, "time", srt = 90, col = "black")
+text(83, 13.5-down, "time", srt = 90, col = "black")
+text(20, 30, "bands", col = "black")
+text(60, 30, "bands", col = "black")
+text(100, 30, "bands", col = "black")
+arrows(x/2-28/2,y-30, x/6,32, angle = 20, lwd = 2)
+arrows(x/2,y-30, x/2,32, angle = 20, lwd = 2)
+arrows(x/2+28/2,y-30, 100, 32, angle = 20, lwd = 2)
+# points(seq(1,120,10), seq(1,120,10))
+text(28.5,49, "filter temporally", srt = 55.5, col = "black", cex = 0.8)
+text(57,49, "filter bands", srt = 90, col = "black", cex = 0.8)
+text(91.5,49, "filter spatially", srt = -55.5, col = "black", cex = 0.8)
+print_labels(x = x/2-28/2 + 3, y = y+4, off = 7, lab = c("blue", "green", "red", "nir"),
+             horizontal = TRUE, cex = 0.6)
+print_labels(x = x/2-28/2 - 9, y = y-23, off = 10, lab = c("2020-10-01", "2020-10-13", "2020-10-25"),
+             horizontal = FALSE, cex = 0.6)
+print_labels(x = x/2-28/2 + 21.5, y = y-30, off = 1, lab = xlabels,
+             horizontal = TRUE, cex = 0.3)
+print_labels(x = x/2-28/2 + 30, y = y-26.5, off = 1, lab = ylabels,
+             horizontal = FALSE, cex = 0.3)
+```
+
 
 ## ¿Alguna duda? 
 

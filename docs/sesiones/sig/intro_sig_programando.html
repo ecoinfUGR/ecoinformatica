@@ -212,6 +212,27 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 
   <p class="date">2025-02-07</p>
+</section><section id="introducción" class="title-slide slide level1 center"><h1>Introducción</h1>
+<div class="small">
+<ul>
+<li>Paquetes a usar</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf) <span class="co"># +++</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(terra) <span class="co"># +++</span></span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(raster) <span class="co"># +</span></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(stars) <span class="co"># ++</span></span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(maps)</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-9"><a></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Material en este <a href="../../assets/ext_data/mat_sig.zip"><strong>enlace</strong></a>
+</li>
+</ul>
+</div>
 </section><section><section id="tipos-de-datos-espaciales" class="title-slide slide level1 center"><h1>Tipos de Datos Espaciales</h1>
 
 </section><section id="datos-vectoriales" class="slide level2"><h2>Datos Vectoriales</h2>
@@ -223,7 +244,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -232,18 +253,18 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <p>Fuente: <a href="https://r-spatial.org/book/03-Geometries.html">Pebesma &amp; Bivand (2025). Spatial Data Science</a></p>
 </div>
 </section><section class="slide level2"><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>ls <span class="ot">&lt;-</span> <span class="fu">st_multipoint</span>(</span>
-<span id="cb1-2"><a></a>  <span class="fu">rbind</span>(</span>
-<span id="cb1-3"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb1-4"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
-<span id="cb1-5"><a></a>    <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>),</span>
-<span id="cb1-6"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb1-7"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb1-8"><a></a>  )</span>
-<span id="cb1-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>ls <span class="ot">&lt;-</span> <span class="fu">st_multipoint</span>(</span>
+<span id="cb2-2"><a></a>  <span class="fu">rbind</span>(</span>
+<span id="cb2-3"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb2-4"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb2-5"><a></a>    <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>),</span>
+<span id="cb2-6"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb2-7"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb2-8"><a></a>  )</span>
+<span id="cb2-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">st_coordinates</span>(ls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">st_coordinates</span>(ls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     X Y L1
 [1,] 1 1  1
@@ -262,17 +283,17 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>po <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(</span>
-<span id="cb4-2"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>), </span>
-<span id="cb4-3"><a></a>        <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)),</span>
-<span id="cb4-4"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>))</span>
-<span id="cb4-5"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>po <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(</span>
+<span id="cb5-2"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>), </span>
+<span id="cb5-3"><a></a>        <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)),</span>
+<span id="cb5-4"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>))</span>
+<span id="cb5-5"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">st_coordinates</span>(po)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">st_coordinates</span>(po)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        X Y L1 L2
  [1,] 2.0 1  1  1
@@ -297,7 +318,7 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -347,9 +368,11 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </ul>
 </div>
 </section><section class="slide level2"><h3 id="simple-feature-geometries-2">Simple feature geometries</h3>
+<div class="small">
 <ul>
 <li>La representación en fomato texto se conoce como <em>Well-Known Text</em> (<strong><a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a></strong>)</li>
 </ul>
+</div>
 <pre><code>MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5 3, 4.5 2, 2.5 2)), ((3 7, 4 7, 5 8, 3 9, 2 8, 3 7)))</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="images/i_wkt.png" style="width:60.0%"></p>
@@ -357,8 +380,8 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 </section><section class="slide level2"><h3 id="simple-feature-geometries-3">Simple feature geometries</h3>
 <ul>
-<li>Importacia de las geometrías <strong>válidas</strong>
-</li>
+<li>
+<strong>Validez</strong> de la geometría</li>
 </ul>
 <div class="small">
 <ul>
@@ -380,14 +403,21 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <ul id="tabset-2" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-2-1">Ejemplo</a></li>
 <li><a href="#tabset-2-2">Válido?</a></li>
-<li><a href="#tabset-2-3">Convertir</a></li>
+<li><a href="#tabset-2-3">Visualizar</a></li>
 </ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>po_invalid <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(</span>
+<span id="cb9-2"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>), </span>
+<span id="cb9-3"><a></a>        <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)),</span>
+<span id="cb9-4"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">5.0</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>))  </span>
+<span id="cb9-5"><a></a>))</span>
+<span id="cb9-6"><a></a></span>
+<span id="cb9-7"><a></a><span class="fu">plot</span>(po_invalid , <span class="at">border =</span> <span class="st">'black'</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -395,8 +425,8 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(sf)</span>
-<span id="cb8-2"><a></a><span class="fu">st_is_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb10-2"><a></a><span class="fu">st_is_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -405,14 +435,15 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <li>Convertir a válido</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>po_valid <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>po_valid <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">plot</span>(po_valid , <span class="at">border =</span> <span class="st">'black'</span>, <span class="at">col =</span> <span class="st">"green"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -486,7 +517,54 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <li>no derivadas de la geometría</li>
 </ul>
 </li>
-</ul></section><section id="importar-datos-vectoriales" class="slide level2"><h2>Importar datos Vectoriales</h2>
+</ul></section><section id="atributos-i" class="slide level2"><h2>Atributos (I)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_attributes.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/intro-vector-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="atributos-derivados-de-geometría" class="slide level2"><h2>Atributos: derivados de geometría</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<details class="code-fold"><summary>Mostrar el código</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(maps)</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>spain <span class="ot">&lt;-</span> </span>
+<span id="cb14-4"><a></a>  maps<span class="sc">::</span><span class="fu">map</span>(<span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-5"><a></a>            <span class="at">plot =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">==</span> <span class="st">"Spain"</span>)</span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>spain <span class="sc">|&gt;</span> </span>
+<span id="cb14-10"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-11"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axis=</span><span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<ul>
+<li>Área</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>sf<span class="sc">::</span><span class="fu">st_area</span>(spain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>499032425530 [m^2]</code></pre>
+</div>
+</div>
+<ul>
+<li>Perímetro</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>sf<span class="sc">::</span><span class="fu">st_perimeter</span>(spain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4475676 [m]</code></pre>
+</div>
+</div>
+</div></div>
+</section><section id="importar-datos-vectoriales" class="slide level2"><h2>Importar datos Vectoriales</h2>
 <p>paquete <strong><code>sf</code></strong></p>
 <ul>
 <li>
@@ -567,9 +645,9 @@ Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="q
 <div id="tabset-3-1">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(sf)</span>
-<span id="cb11-2"><a></a><span class="fu">library</span>(here)</span>
-<span id="cb11-3"><a></a>sn_st <span class="ot">&lt;-</span> <span class="fu">st_read</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb19-2"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb19-3"><a></a>sn_st <span class="ot">&lt;-</span> <span class="fu">st_read</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `sn_wdpa' from data source 
   `/Users/ajpelu/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica/assets/ext_data/geoinfo/sn_wdpa.shp' 
@@ -585,19 +663,19 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>sn_sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>sn_sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">class</span>(sn_st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">class</span>(sn_st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sf"         "data.frame"</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">class</span>(sn_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">class</span>(sn_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sf"         "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
@@ -605,160 +683,666 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div>
 </div>
-</section><section id="raster" class="slide level2"><h2>Raster</h2>
-<p>…</p>
-</section><section id="sistemas-de-coordenadas" class="slide level2"><h2>Sistemas de Coordenadas</h2>
-</section></section><section><section id="operaciones-básicas-con-vectores" class="title-slide slide level1 center"><h1>Operaciones básicas con vectores</h1>
-
-</section><section id="paquetes-en-r" class="slide level2"><h2>Paquetes en R</h2>
-</section><section class="slide level2"><h3 id="bounding-box">Bounding box</h3>
+</section><section id="importar-datos-vectoriales-shapefiles" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
 <div class="small">
-<div class="columns">
-<div class="column" style="width:50%;">
+<ul>
+<li>Formato propietario mas extendido</li>
+<li>Mínimo 3 archivos:
+<ul>
+<li>
+<strong><code>.shp</code></strong>: contiene la geometría</li>
+<li>
+<strong><code>.shx</code></strong>: indexa las geometrías</li>
+<li>
+<strong><code>.dbf</code></strong>: almacena los atributos en formato tabular</li>
+<li>Otros:
+<ul>
+<li>
+<code>.prj</code>: proyección</li>
+<li>
+<code>.sbn</code>, <code>.sbx</code>: índice espacial de las geometrías</li>
+<li>
+<code>.sph.xml</code>: metadatos geospaciales</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="importar-datos-vectoriales-shapefiles-1" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
 <div class="cell">
-<details class="code-fold"><summary>Mostrar el código</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(maps)</span>
-<span id="cb18-2"><a></a></span>
-<span id="cb18-3"><a></a>pib <span class="ot">&lt;-</span> </span>
-<span id="cb18-4"><a></a>  maps<span class="sc">::</span><span class="fu">map</span>(<span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb18-5"><a></a>            <span class="at">plot =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-6"><a></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
-<span id="cb18-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">%in%</span> </span>
-<span id="cb18-8"><a></a>                  <span class="fu">c</span>(<span class="st">"Spain"</span>, <span class="st">"Portugal"</span>))</span>
-<span id="cb18-9"><a></a></span>
-<span id="cb18-10"><a></a>pib <span class="sc">|&gt;</span> </span>
-<span id="cb18-11"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb18-12"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axis=</span><span class="cn">TRUE</span>) </span>
-<span id="cb18-13"><a></a>pib <span class="sc">|&gt;</span> </span>
-<span id="cb18-14"><a></a>  <span class="fu">st_bbox</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb18-15"><a></a>  <span class="fu">st_as_sfc</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb18-16"><a></a>  <span class="fu">plot</span>(<span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb26-2"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb26-3"><a></a>sn <span class="ot">&lt;-</span> <span class="fu">st_read</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `sn_wdpa' from data source 
+  `/Users/ajpelu/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica/assets/ext_data/geoinfo/sn_wdpa.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 1 feature and 28 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -3.643279 ymin: 36.91291 xmax: -2.588546 ymax: 37.25318
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-shapefiles-2" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>sn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 28 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -3.643279 ymin: 36.91291 xmax: -2.588546 ymax: 37.25318
+Geodetic CRS:  WGS 84
+     WDPAID   WDPA_PI PA_DEF          NAME       ORIG_NA
+1 555588878 555588878      1 Sierra Nevada Sierra Nevada
+                                           DESIG     DESIG_E  DESIG_T IUCN_CA
+1 Zona de Importancia Comunitaria ZIC (ZEPA/ZEC) Natura 2000 National      IV
+         INT_CRI MARINE REP_M_A REP_ARE        NO_TAKE NO_TK_A     STATUS
+1 Not Applicable      0       0 1722.38 Not Applicable       0 Designated
+  STATUS_                                GOV_TYP      OWN_TYP
+1    1992 Federal or national ministry or agency Not Reported
+             MANG_AU      MANG_PL          VERIF METADAT      SUB_LOC PARENT_
+1 Junta de Andalucía Not Reported State Verified    2013 Not Reported     ESP
+  ISO3        SUPP_IN        CONS_OB                       geometry
+1  ESP Not Applicable Not Applicable POLYGON ((-3.384833 36.9406...</code></pre>
+</div>
+</div>
+</div>
+</section><section id="visualizar-1" class="slide level2"><h2>Visualizar</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">plot</span>(sn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
 <div>
-<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<p>Rectángulo mínimo que delimita una geometría espacial mediante sus <strong>coordenadas extremas</strong> (xmin, ymin, xmax, ymax).</p>
+</section><section id="visualizar-2" class="slide level2"><h2>Visualizar</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>sf<span class="sc">::</span><span class="fu">st_bbox</span>(pib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     xmin      ymin      xmax      ymax 
--9.479736 36.025928  4.322070 43.764549 </code></pre>
-</div>
-</div>
-<p>Convertir a poligono</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>pib_bb <span class="ot">&lt;-</span> pib <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a></a>  <span class="fu">st_bbox</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-3"><a></a>  <span class="fu">st_as_sfc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-</div>
-</section><section class="slide level2"><h3 id="métricas-área">Métricas: Área</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>sf<span class="sc">::</span><span class="fu">st_area</span>(pib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Units: [m^2]
-[1] 499032425530  87850920379</code></pre>
-</div>
-</div>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>¿Porqué aparecen dos valores para el área?</strong></p>
-</div>
-<div class="callout-content">
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>pib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 2 features and 1 field
-Geometry type: MULTIPOLYGON
-Dimension:     XY
-Bounding box:  xmin: -9.479736 ymin: 36.02593 xmax: 4.32207 ymax: 43.76455
-Geodetic CRS:  +proj=longlat +ellps=clrk66 +no_defs +type=crs
-               ID                           geom
-Spain       Spain MULTIPOLYGON (((1.593945 38...
-Portugal Portugal MULTIPOLYGON (((-7.406153 3...</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="small">
-<ul>
-<li>¿Y si las quiero en km<span class="math inline">\(^2\)</span>?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(units)</span>
-<span id="cb26-2"><a></a>pib <span class="sc">|&gt;</span> </span>
-<span id="cb26-3"><a></a>  sf<span class="sc">::</span><span class="fu">st_area</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb26-4"><a></a>  units<span class="sc">::</span><span class="fu">set_units</span>(<span class="st">"km^2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Units: [km^2]
-[1] 499032.43  87850.92</code></pre>
-</div>
-</div>
-</div>
-</section><section class="slide level2"><h3 id="métricas-perímetro">Métricas: Perímetro</h3>
-<div class="small">
-<p>Calcula el perímetro de Portugal</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>por <span class="ot">&lt;-</span> pib <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">==</span> <span class="st">"Portugal"</span>)</span>
-<span id="cb28-3"><a></a></span>
-<span id="cb28-4"><a></a>sf<span class="sc">::</span><span class="fu">st_perimeter</span>(por) <span class="sc">|&gt;</span> </span>
-<span id="cb28-5"><a></a>  <span class="fu">set_units</span>(<span class="st">"km"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1891.562 [km]</code></pre>
-</div>
-</div>
-</section><section class="slide level2"><h3 id="métricas-distancia">Métricas: Distancia</h3>
-<div class="small">
-<p>Ejemplo: Tenemos una parcela en un pinar de repoblación, en la que estamos evaluando la cantidad de semillas de Quercíneas que pueden llegar dispersadas por el arrendajo. Si tenemos una matrix de paisaje conformada por diferentes manchas de encinar y robledal, y suponiendo que las diferentes manchas de bosque de quercíneas tienen la misma cantidad de propágulos y la misma probabilidad de ser visitadas por los arrendajos, ¿Quien tiene mas probabilidad de colonizar el pinar de repoblación?</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">plot</span>(sn[<span class="st">"NAME"</span>], <span class="at">col=</span><span class="cn">NA</span>, <span class="at">border=</span> <span class="st">"blue"</span>, <span class="at">main=</span><span class="st">""</span>, <span class="at">axes =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="section" class="slide level2"><h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>pinar_geom <span class="ot">&lt;-</span> </span>
-<span id="cb30-2"><a></a>  manchas <span class="sc">|&gt;</span> <span class="fu">filter</span>(tipo <span class="sc">==</span> <span class="st">"Pinar"</span>) <span class="sc">|&gt;</span> <span class="fu">st_geometry</span>()</span>
-<span id="cb30-3"><a></a></span>
-<span id="cb30-4"><a></a><span class="co"># Calcular la distancia desde encinares y robledales al pinar</span></span>
-<span id="cb30-5"><a></a>distancias <span class="ot">&lt;-</span> manchas <span class="sc">|&gt;</span> </span>
-<span id="cb30-6"><a></a>  <span class="fu">filter</span>(tipo <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Encinar"</span>, <span class="st">"Robledal"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb30-7"><a></a>  <span class="fu">mutate</span>(<span class="at">distancia_pinar =</span> <span class="fu">st_distance</span>(geometry, pinar_geom))</span>
-<span id="cb30-8"><a></a></span>
-<span id="cb30-9"><a></a><span class="co"># Mostrar la tabla con las distancias</span></span>
-<span id="cb30-10"><a></a>distancias <span class="sc">|&gt;</span> </span>
-<span id="cb30-11"><a></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb30-12"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      nombre     tipo   colores distancia_pinar
-1  Encinar A  Encinar darkgreen    171639.7 [m]
-2  Encinar B  Encinar darkgreen    101197.6 [m]
-3 Robledal A Robledal      gold    158715.4 [m]
-4 Robledal B Robledal      gold    142413.1 [m]</code></pre>
-</div>
-</div>
-</section><section id="operaciones-básicas-con-raster" class="slide level2"><h2>Operaciones básicas con raster</h2>
-</section><section id="recursos" class="slide level2"><h2>Recursos</h2>
+</section><section id="convertir-a-objetos-spaciales" class="slide level2"><h2>Convertir a objetos spaciales</h2>
+<div class="small">
 <ul>
-<li>Royé, D &amp; Serrano, R (2019). Introducción a los SIG con R. Universidad de Zaragoza.</li>
-</ul></section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
+<li>Importar un csv con las coordenadas y convertirlo a un objeto espacial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-2"><a></a>ifn_sn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/ifn_sn_geo.csv"</span>))</span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a><span class="fu">head</span>(ifn_sn)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+        x        y   crs id_unique_code    version province_code
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;        
+1 507000. 4112000. 23030 04_0792_NN_A3C_xx ifn3    04           
+2 507000. 4112000. 23030 04_0792_xx_A3E_xx ifn3    04           
+3 510000. 4111000. 23030 04_0794_xx_A4_xx  ifn3    04           
+4 506000. 4110000. 23030 04_0795_NN_A1_xx  ifn3    04           
+5 507000. 4110000. 23030 04_0796_NN_A1_xx  ifn3    04           
+6 508000. 4110000. 23030 04_0797_NN_A1_xx  ifn3    04           
+# ℹ 2 more variables: province_name_original &lt;chr&gt;, plot &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="convertir-a-objetos-spaciales-1" class="slide level2"><h2>Convertir a objetos spaciales</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>ifn_sn_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(ifn_sn, </span>
+<span id="cb34-2"><a></a>                       <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb34-3"><a></a>                       <span class="at">crs =</span> <span class="dv">23030</span>)</span>
+<span id="cb34-4"><a></a></span>
+<span id="cb34-5"><a></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(ifn_sn_geo), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span><span class="fl">0.5</span>)</span>
+<span id="cb34-6"><a></a>sn <span class="sc">|&gt;</span> <span class="fu">st_transform</span>(<span class="dv">23030</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb34-7"><a></a>  <span class="fu">plot</span>(<span class="at">col =</span> <span class="st">"NA"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="kml" class="slide level2"><h2>Kml</h2>
+<div class="small">
+<ul>
+<li><a href="https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac">Senderos Parques Nacionales</a></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-4-1">Importar</a></li>
+<li><a href="#tabset-4-2">Visualizar</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://centrodedescargas.cnig.es/CentroDescargasRWS/rest/descargarArchivo/usuarioMovil/9780431"</span></span>
+<span id="cb35-2"><a></a></span>
+<span id="cb35-3"><a></a><span class="fu">download.file</span>(</span>
+<span id="cb35-4"><a></a>  <span class="at">url =</span> url,</span>
+<span id="cb35-5"><a></a>  <span class="at">destfile =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sendero.kml"</span>)</span>
+<span id="cb35-6"><a></a>)</span>
+<span id="cb35-7"><a></a></span>
+<span id="cb35-8"><a></a>sendero <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sendero.kml"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>sendero <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axes=</span><span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-gpx" class="slide level2"><h2>Importar datos vectoriales: GPX</h2>
+<div class="small">
+<ul>
+<li><a href="https://portal.dipgra.es/es/rutas/gr-240-sendero-sulayr">Sendero Sulayr</a></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://cdn.dipgra.es/my-media-files-bucket/documents/1461659948SulayrCompleto.gpx"</span></span>
+<span id="cb37-2"><a></a></span>
+<span id="cb37-3"><a></a><span class="fu">download.file</span>(</span>
+<span id="cb37-4"><a></a>  <span class="at">url =</span> url,</span>
+<span id="cb37-5"><a></a>  <span class="at">destfile =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>)</span>
+<span id="cb37-6"><a></a>)</span>
+<span id="cb37-7"><a></a></span>
+<span id="cb37-8"><a></a>sulayr <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in CPL_read_ogr(dsn, layer, query, as.character(options), quiet, :
+automatically selected the first layer in a data source containing more than
+one.</code></pre>
+</div>
+</div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>¿Qué nos está adviertiendo con este <em>warning</em>?</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-capas-disponibles" class="slide level2"><h2>Importar datos vectoriales: Capas disponibles</h2>
+<div class="small">
+<ul>
+<li>Algunos objetos espaciales pueden contener varias capas</li>
+<li>Explorar las capas existentes con <code>st_layers</code>
+</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-5-1">Capas</a></li>
+<li><a href="#tabset-5-2">Lectura</a></li>
+<li><a href="#tabset-5-3">Visualización</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">st_layers</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Driver: GPX 
+Available layers:
+    layer_name     geometry_type features fields crs_name
+1    waypoints             Point       34     24   WGS 84
+2       routes       Line String        0     12   WGS 84
+3       tracks Multi Line String        1     13   WGS 84
+4 route_points             Point        0     25   WGS 84
+5 track_points             Point    11759     26   WGS 84</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>sulayr_ruta <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>), </span>
+<span id="cb41-2"><a></a>                       <span class="at">layer =</span> <span class="st">"tracks"</span>)</span>
+<span id="cb41-3"><a></a></span>
+<span id="cb41-4"><a></a></span>
+<span id="cb41-5"><a></a>sulayr_puntos <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>), </span>
+<span id="cb41-6"><a></a>                       <span class="at">layer =</span> <span class="st">"waypoints"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ráster" class="slide level2"><h2>Ráster</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="ráster-1" class="slide level2"><h2>Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-6-1">Crear un ráster</a></li>
+<li><a href="#tabset-6-2"><code>terra</code></a></li>
+<li><a href="#tabset-6-3"><code>raster</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>), </span>
+<span id="cb42-2"><a></a>            <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb42-3"><a></a></span>
+<span id="cb42-4"><a></a>m </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    2   NA    2    2
+[3,]    3    3    3    1</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">library</span>(terra)</span>
+<span id="cb44-2"><a></a>r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(m)</span>
+<span id="cb44-3"><a></a><span class="fu">plot</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">library</span>(raster)</span>
+<span id="cb45-2"><a></a>ra <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">raster</span>(m)</span>
+<span id="cb45-3"><a></a><span class="fu">plot</span>(ra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ráster-2" class="slide level2"><h2>Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-7-1"><code>terra</code></a></li>
+<li><a href="#tabset-7-2"><code>raster</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 3, 4, 1  (nrow, ncol, nlyr)
+resolution  : 1, 1  (x, y)
+extent      : 0, 4, 0, 3  (xmin, xmax, ymin, ymax)
+coord. ref. :  
+source(s)   : memory
+name        : lyr.1 
+min value   :     1 
+max value   :     4 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>ra</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class      : RasterLayer 
+dimensions : 3, 4, 12  (nrow, ncol, ncell)
+resolution : 0.25, 0.3333333  (x, y)
+extent     : 0, 1, 0, 1  (xmin, xmax, ymin, ymax)
+crs        : NA 
+source     : memory
+names      : layer 
+values     : 1, 4  (min, max)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="componentes-de-un-ráster" class="slide level2"><h2>Componentes de un ráster</h2>
+<div class="small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 48%">
+</colgroup>
+<thead><tr class="header">
+<th>Componente</th>
+<th>Descripción</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Dimensiones (<code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code>)</strong></td>
+<td>Número de filas, columnas y bandas.</td>
+</tr>
+<tr class="even">
+<td><strong>Extensión (<code>ext()</code>)</strong></td>
+<td>Coordenadas mínimas y máximas (<code>xmin, xmax, ymin, ymax</code>).</td>
+</tr>
+<tr class="odd">
+<td><strong>Resolución (<code>res()</code>)</strong></td>
+<td>Tamaño de cada celda en unidades espaciales.</td>
+</tr>
+<tr class="even">
+<td><strong>Número de Bandas (<code>nlyr()</code>)</strong></td>
+<td>Cantidad de capas o bandas en el raster (multibanda o singleband).</td>
+</tr>
+<tr class="odd">
+<td><strong>Sistema de Referencia (<code>crs()</code>)</strong></td>
+<td>Código EPSG o Proyección (WGS84, UTM, etc.).</td>
+</tr>
+<tr class="even">
+<td><strong>Valores (<code>values()</code>)</strong></td>
+<td>Datos almacenados en cada celda (elevación, temperatura, NDVI, etc.).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section><section id="extensión" class="slide level2"><h2>Extensión</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster_ext.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="resolución-ráster" class="slide level2"><h2>Resolución ráster</h2>
+<ul>
+<li>Tamaño de cada celda</li>
+<li>Nivel de detalle:
+<ul>
+<li>Alta resolución: Celdas pequeñas, más detalle</li>
+<li>Baja resolución: Celdas grandes, menos detalle</li>
+</ul>
+</li>
+<li>Cálculo: <span class="math display">\[ resolución = \frac{x_{max} - x_{min}}{n_{columnas}}, \frac{y_{max} - y_{min}}{n_{filas}} \]</span>
+</li>
+</ul></section><section class="slide level2"><p><strong>Extensión - Resolución - Sistema de Coordenadas</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster_res.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="ejemplo-ráster" class="slide level2"><h2>Ejemplo Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-8-1">Metadatos</a></li>
+<li><a href="#tabset-8-2">Visualización</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">library</span>(terra)</span>
+<span id="cb50-2"><a></a>my_rast <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>))</span>
+<span id="cb50-3"><a></a>my_rast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 453, 364, 1  (nrow, ncol, nlyr)
+resolution  : 100, 100  (x, y)
+extent      : 437414, 473814, 4071295, 4116595  (xmin, xmax, ymin, ymax)
+coord. ref. : ETRS89 / UTM zone 30N 
+source      : tmin_1971_2000_3042.tif 
+name        : tmin_1971_2000 
+min value   :      -1.647195 
+max value   :      12.123637 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="formatos-ráster-más-comunes" class="slide level2"><h2>Formatos ráster más comunes</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic lightable-striped lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">formato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">extension</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">paquetes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Esri grid</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">rgdal, sp, SDMTools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GeoTiff</td>
+<td style="text-align: left;">.tif, .tiff, .ovr</td>
+<td style="text-align: left;">raster, terra</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASCII</td>
+<td style="text-align: left;">.asc, .txt</td>
+<td style="text-align: left;">raster, terra, rgdal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IMG</td>
+<td style="text-align: left;">.img</td>
+<td style="text-align: left;">raster, terra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<div class="small">
+<ul>
+<li>Datos espaciales = datos + CRS</li>
+<li>Modelo matemático que conecta los datos con la superficie de la Tierra</li>
+<li>CRS le dice al software (QGIS, R, …) en que espacio geográfico está la información, y qué metodo usar para proyectar la información sobre el espacio geográfico</li>
+</ul>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-1" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<div class="small">
+<p><strong>Estándares</strong> para compartir información CRS</p>
+<ul>
+<li>
+<a href="https://proj.org/en/stable/"><strong><code>proj</code></strong></a>:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "+proj=longlat +datum=WGS84 +no_defs"</code></pre>
+</div>
+</div>
+<ul>
+<li>
+<a href="https://spatialreference.org/ref/epsg/"><strong><code>EPSG</code></strong></a>:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Coordinate Reference System:
+  User input: WGS 84 
+  wkt:
+GEOGCRS["WGS 84",
+    DATUM["World Geodetic System 1984",
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["latitude",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["longitude",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    ID["EPSG",4326]]</code></pre>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-2" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Comprobar proyección</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-9-1"><code>raster</code></a></li>
+<li><a href="#tabset-9-2"><code>terra</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>tmin_ra <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">raster</span>((here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>)))</span>
+<span id="cb54-2"><a></a></span>
+<span id="cb54-3"><a></a>raster<span class="sc">::</span><span class="fu">projection</span>(tmin_ra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>tmin <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>((here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>)))</span>
+<span id="cb56-2"><a></a></span>
+<span id="cb56-3"><a></a>terra<span class="sc">::</span><span class="fu">crs</span>(tmin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "PROJCRS[\"ETRS89 / UTM zone 30N\",\n    BASEGEOGCRS[\"ETRS89\",\n        DATUM[\"European Terrestrial Reference System 1989\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]],\n            ID[\"EPSG\",6258]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433,\n                ID[\"EPSG\",9122]]]],\n    CONVERSION[\"Transverse Mercator\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-3,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"easting\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1,\n                ID[\"EPSG\",9001]]],\n        AXIS[\"northing\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1,\n                ID[\"EPSG\",9001]]]]"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-3" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Transformar (e.g.&nbsp;<code>EPSG:4326</code>)</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-10-1"><code>raster</code></a></li>
+<li><a href="#tabset-10-2"><code>terra</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>tmin_ra_4326 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">projectRaster</span>(tmin_ra, </span>
+<span id="cb58-2"><a></a>                                      <span class="at">crs =</span> <span class="st">"+proj=longlat +datum=WGS84"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-10-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>tmin_4326 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(tmin, <span class="st">"EPSG:4326"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-4" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Conversión vectorial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># Datos del inventario forestal </span></span>
+<span id="cb60-2"><a></a>ifn_sn_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(ifn_sn, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> <span class="dv">23030</span>)</span>
+<span id="cb60-3"><a></a></span>
+<span id="cb60-4"><a></a><span class="co"># st_crs(ifn_sn_geo)</span></span>
+<span id="cb60-5"><a></a></span>
+<span id="cb60-6"><a></a>ifn_sn_geo_4326 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_transform</span>(ifn_sn_geo, <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="consultar-metadatos-ráster" class="slide level2"><h2>Consultar metadatos Ráster</h2>
+<div class="small">
+<ul>
+<li>Número de celdas</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="fu">ncell</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 164892</code></pre>
+</div>
+</div>
+<ul>
+<li>Dimensiones</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">dim</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 453 364   1</code></pre>
+</div>
+</div>
+<ul>
+<li>Resolución</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">res</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100 100</code></pre>
+</div>
+</div>
+<ul>
+<li>Extensión espacial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="fu">ext</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>SpatExtent : 437414.020914246, 473814.020914246, 4071295.34996962, 4116595.34996962 (xmin, xmax, ymin, ymax)</code></pre>
+</div>
+</div>
+</div>
+</section><section id="stacks" class="slide level2"><h2>Stacks</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-53-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="small">
+<p>Fuente: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></p>
+</div>
+</section><section id="data-cubes" class="slide level2"><h2>Data cubes</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_data_cube.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></figcaption></figure>
+</div>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_data_cube_filter.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></figcaption></figure>
+</div>
+</section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
 <ul>
 <li><p><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></p></li>
 <li><p><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></p></li>
