@@ -13,6 +13,8 @@ listing:
         sesion: 3
       - title: "[Creación de un mapa de biodiversidad de Sierra Nevada](../sesiones/sig/guion_practica_mapa_biodiversidad_jml.qmd)"
         sesion: 4
+      - title: "[Introducción a los SIG en R](../sesiones/sig/intro_sig_programando.qmd)"
+        sesion: 5
     type: table
     fields: [sesion, title]
     date-format: "ddd, MMM DD"

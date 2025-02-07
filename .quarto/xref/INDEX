@@ -94,5 +94,8 @@
   },
   "sesiones/sig/intro_sig_programando.qmd": {
     "intro_sig_programando.html": "b0cc658b"
+  },
+  "sesiones/sig/clusterizacion.qmd": {
+    "clusterizacion.html": "cb49eb8e"
   }
 }
