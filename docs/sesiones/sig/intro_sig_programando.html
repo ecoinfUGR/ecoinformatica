@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="author" content="Antonio J. Pérez-Luque">
+<meta name="dcterms.date" content="2025-02-07">
+<title>Ciclo de Gestión de los Datos. Ecoinformática – Introducción a los SIG en R</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
+  </style>
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ee917d3ac312f7388ce82e656a56ad5d.css">
+<link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Introducción a los SIG en R</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Antonio J. Pérez-Luque <a href="https://orcid.org/0000-0002-1747-0469" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+          </p>
+    </div>
+</div>
+
+  <p class="date">2025-02-07</p>
+</section><section id="introducción" class="title-slide slide level1 center"><h1>Introducción</h1>
+<div class="small">
+<ul>
+<li>Paquetes a usar</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf) <span class="co"># +++</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(terra) <span class="co"># +++</span></span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(raster) <span class="co"># +</span></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(stars) <span class="co"># ++</span></span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(maps)</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-9"><a></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Material en este <a href="../../assets/ext_data/mat_sig.zip"><strong>enlace</strong></a>
+</li>
+</ul>
+</div>
+</section><section><section id="tipos-de-datos-espaciales" class="title-slide slide level1 center"><h1>Tipos de Datos Espaciales</h1>
+
+</section><section id="datos-vectoriales" class="slide level2"><h2>Datos Vectoriales</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_vectorial.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/intro-vector-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="the-big-7" class="slide level2"><h2><a href="https://r-spatial.org/book/03-Geometries.html">The big 7</a></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="small">
+<p>Fuente: <a href="https://r-spatial.org/book/03-Geometries.html">Pebesma &amp; Bivand (2025). Spatial Data Science</a></p>
+</div>
+</section><section class="slide level2"><div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>ls <span class="ot">&lt;-</span> <span class="fu">st_multipoint</span>(</span>
+<span id="cb2-2"><a></a>  <span class="fu">rbind</span>(</span>
+<span id="cb2-3"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb2-4"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb2-5"><a></a>    <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>),</span>
+<span id="cb2-6"><a></a>    <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb2-7"><a></a>    <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb2-8"><a></a>  )</span>
+<span id="cb2-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">st_coordinates</span>(ls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     X Y L1
+[1,] 1 1  1
+[2,] 2 2  1
+[3,] 3 1  1
+[4,] 2 3  1
+[5,] 1 4  1</code></pre>
+</div>
+</div>
+</section><section class="slide level2"><div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">POLYGON</a></li>
+<li><a href="#tabset-1-2">Coord.</a></li>
+<li><a href="#tabset-1-3">Representación</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>po <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(</span>
+<span id="cb5-2"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>), </span>
+<span id="cb5-3"><a></a>        <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)),</span>
+<span id="cb5-4"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>))</span>
+<span id="cb5-5"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">st_coordinates</span>(po)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        X Y L1 L2
+ [1,] 2.0 1  1  1
+ [2,] 3.0 1  1  1
+ [3,] 5.0 2  1  1
+ [4,] 6.0 3  1  1
+ [5,] 5.0 3  1  1
+ [6,] 4.0 4  1  1
+ [7,] 3.0 4  1  1
+ [8,] 1.0 3  1  1
+ [9,] 2.0 1  1  1
+[10,] 2.5 2  2  1
+[11,] 3.5 3  2  1
+[12,] 4.5 3  2  1
+[13,] 4.5 2  2  1
+[14,] 2.5 2  2  1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><h3 id="simple-feature-geometries">Simple feature geometries</h3>
+<ul>
+<li>Es un estándar (<a href="https://www.iso.org/standard/40114.html">ISO 19125-1:2004</a>)</li>
+<li>Forma de describir las <strong>geometrías</strong> de los objetos espaciales</li>
+<li>
+<strong>features</strong>: elementos que tienen una geometría y atributos adicionales que pueden incluir etiquetas descriptivas y/o valores que los cuantifican</li>
+<li>
+<strong>simple</strong> se refiere a que las líneas y polígonos se pueden representar como secuencias de puntos conectados</li>
+</ul></section><section class="slide level2"><h3 id="simple-feature-geometries-1">Simple feature geometries</h3>
+<div class="small">
+<ul>
+<li>Cada punto tiene al menos dos coordenadas <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>
+</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Generalmente van en ese orden</li>
+<li>Si son coord. elipsoidales puede ser <code>longitud</code> y <code>latitud</code>. Ojo en <code>EPSG:4326</code> el primer eje es la <code>latitud</code>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul>
+<li>Coordenadas separadas por <strong>espacios</strong>: <code>(0 1)</code>
+</li>
+<li>Puntos separados por <strong>comas</strong>: <code>((1 1), (2 2))</code>
+</li>
+<li>Conjuntos agrupados por paréntesis <code>()</code> y separados por <code>,</code>
+</li>
+<li>Los polígonos tienen un anillo externo y ninguno o varios anillos internos (<code>holes</code>)</li>
+</ul>
+</div>
+</section><section class="slide level2"><h3 id="simple-feature-geometries-2">Simple feature geometries</h3>
+<div class="small">
+<ul>
+<li>La representación en fomato texto se conoce como <em>Well-Known Text</em> (<strong><a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a></strong>)</li>
+</ul>
+</div>
+<pre><code>MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5 3, 4.5 2, 2.5 2)), ((3 7, 4 7, 5 8, 3 9, 2 8, 3 7)))</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_wkt.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Wikipedia</a></figcaption></figure>
+</div>
+</section><section class="slide level2"><h3 id="simple-feature-geometries-3">Simple feature geometries</h3>
+<ul>
+<li>
+<strong>Validez</strong> de la geometría</li>
+</ul>
+<div class="small">
+<ul>
+<li>
+<code>LINESTRING</code> simples: cuando no intersectan</li>
+<li>
+<code>POLYGON</code> y <code>MULTIPOLYGON</code>:
+<ul>
+<li>anillos de los polígonos están cerrados (el último punto es igual al primero)</li>
+<li>Los anillos internos están dentro de su anillo exterior</li>
+<li>Los anillos internos de los polígonos tocan el anillo exterior como máximo en un solo punto, no a lo largo de una línea</li>
+<li>Convención: anillo externo (antihorario); anillo interno (horario)</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section class="slide level2"><h3 id="geometrías-válidas">¿Geometrías válidas?</h3>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">Ejemplo</a></li>
+<li><a href="#tabset-2-2">Válido?</a></li>
+<li><a href="#tabset-2-3">Visualizar</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>po_invalid <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(</span>
+<span id="cb9-2"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>), </span>
+<span id="cb9-3"><a></a>        <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)),</span>
+<span id="cb9-4"><a></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">5.0</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="dv">2</span>))  </span>
+<span id="cb9-5"><a></a>))</span>
+<span id="cb9-6"><a></a></span>
+<span id="cb9-7"><a></a><span class="fu">plot</span>(po_invalid , <span class="at">border =</span> <span class="st">'black'</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb10-2"><a></a><span class="fu">st_is_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<ul>
+<li>Convertir a válido</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>po_valid <span class="ot">&lt;-</span> <span class="fu">st_make_valid</span>(po_invalid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">plot</span>(po_valid , <span class="at">border =</span> <span class="st">'black'</span>, <span class="at">col =</span> <span class="st">"green"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="formatos-de-datos-vectoriales-más-comúnes" class="slide level2"><h2>Formatos de datos vectoriales más comúnes</h2>
+<div class="small">
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic lightable-striped lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">formato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">extension</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">paquetes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Esri shapefile</td>
+<td style="text-align: left;">.shp</td>
+<td style="text-align: left;">rgdal, sf, maptools, raster</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CSV / GeoCSV</td>
+<td style="text-align: left;">.csv</td>
+<td style="text-align: left;">utils, sf, tidyverse</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GPX</td>
+<td style="text-align: left;">.gpx</td>
+<td style="text-align: left;">plotKML, XML, maptools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KML / KMZ</td>
+<td style="text-align: left;">.kml; .kmz</td>
+<td style="text-align: left;">rgdal, XML, sf</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GML / XML</td>
+<td style="text-align: left;">.gml, .xml</td>
+<td style="text-align: left;">XML, multiplex</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GeoJSON</td>
+<td style="text-align: left;">.geojson; .json</td>
+<td style="text-align: left;">geojsonio, rgdal, geojsonR, rjson</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OpenStreetMap</td>
+<td style="text-align: left;">.osm</td>
+<td style="text-align: left;">OpenStreetMap, osmdata, tmaptools</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Fuentes: Royé, D &amp; Serrano, R (2019). <a href="https://r.geocompx.org/read-write">Lovelace et al.&nbsp;(2022)</a></p>
+</div>
+<!--
+- ESRI: mínimo tres (.shp = geometría, .shx = índice de los objetos, .dbf= atributos)
+- CSV: contiene un campo WKT 
+- 
+-->
+</section><section id="atributos" class="slide level2"><h2>Atributos</h2>
+<ul>
+<li>Propiedades del objeto espacial que no describen su geometría</li>
+<li>Tipos:
+<ul>
+<li>propiedades derivadas de la geometría</li>
+<li>no derivadas de la geometría</li>
+</ul>
+</li>
+</ul></section><section id="atributos-i" class="slide level2"><h2>Atributos (I)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_attributes.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/intro-vector-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="atributos-derivados-de-geometría" class="slide level2"><h2>Atributos: derivados de geometría</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<details class="code-fold"><summary>Mostrar el código</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(maps)</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>spain <span class="ot">&lt;-</span> </span>
+<span id="cb14-4"><a></a>  maps<span class="sc">::</span><span class="fu">map</span>(<span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-5"><a></a>            <span class="at">plot =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">==</span> <span class="st">"Spain"</span>)</span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>spain <span class="sc">|&gt;</span> </span>
+<span id="cb14-10"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-11"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axis=</span><span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<ul>
+<li>Área</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>sf<span class="sc">::</span><span class="fu">st_area</span>(spain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>499032425530 [m^2]</code></pre>
+</div>
+</div>
+<ul>
+<li>Perímetro</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>sf<span class="sc">::</span><span class="fu">st_perimeter</span>(spain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4475676 [m]</code></pre>
+</div>
+</div>
+</div></div>
+</section><section id="importar-datos-vectoriales" class="slide level2"><h2>Importar datos Vectoriales</h2>
+<p>paquete <strong><code>sf</code></strong></p>
+<ul>
+<li>
+<code>st_read()</code>
+<ul>
+<li>Función completa para leer archivos espaciales</li>
+<li>Permite controlar más parámetros, e.g.&nbsp;<code>quiet = TRUE</code> para suprimir mensajes</li>
+</ul>
+</li>
+<li>
+<code>read_sf()</code>
+<ul>
+<li>Versión simplificada de <code>st_read()</code>
+</li>
+<li>Más amigable para <code>tidyverse</code>. Devuelve un <code>sf</code> tibble</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><div class="small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead><tr class="header">
+<th>Característica</th>
+<th><code>st_read()</code></th>
+<th><code>read_sf()</code></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funcionalidad</strong></td>
+<td>Control total sobre la lectura de datos espaciales</td>
+<td>Versión simplificada, orientada a <code>tidyverse</code>
+</td>
+</tr>
+<tr class="even">
+<td><strong>Tipo de salida</strong></td>
+<td>
+<code>sf</code> + <code>data.frame</code>
+</td>
+<td>
+<code>sf</code> + <code>tibble</code>
+</td>
+</tr>
+<tr class="odd">
+<td><strong>Salida en consola</strong></td>
+<td>Muestra más metadatos (CRS, número de geometrías)</td>
+<td>Mensajes mínimos</td>
+</tr>
+<tr class="even">
+<td><strong>Parámetros disponibles</strong></td>
+<td>Mayor flexibilidad (<code>quiet = TRUE</code>, <code>layer</code>, <code>stringsAsFactors</code>)</td>
+<td>Menos opciones de configuración</td>
+</tr>
+<tr class="odd">
+<td><strong>Conversión de texto</strong></td>
+<td>Puede controlar <code>stringsAsFactors</code>
+</td>
+<td>Usa caracteres (<code>character</code>) por defecto</td>
+</tr>
+<tr class="even">
+<td><strong>Rendimiento</strong></td>
+<td>Más lento por el procesamiento extra de metadatos</td>
+<td>Más rápido, ideal para grandes volúmenes de datos</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section><section id="importar-datos-vectoriales-1" class="slide level2"><h2>Importar datos vectoriales</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-3-1"><code>st_read</code></a></li>
+<li><a href="#tabset-3-2"><code>read_sf</code></a></li>
+<li><a href="#tabset-3-3">Comparación</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb19-2"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb19-3"><a></a>sn_st <span class="ot">&lt;-</span> <span class="fu">st_read</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `sn_wdpa' from data source 
+  `/Users/ajpelu/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica/assets/ext_data/geoinfo/sn_wdpa.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 1 feature and 28 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -3.643279 ymin: 36.91291 xmax: -2.588546 ymax: 37.25318
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>sn_sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">class</span>(sn_st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sf"         "data.frame"</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">class</span>(sn_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sf"         "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-shapefiles" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
+<div class="small">
+<ul>
+<li>Formato propietario mas extendido</li>
+<li>Mínimo 3 archivos:
+<ul>
+<li>
+<strong><code>.shp</code></strong>: contiene la geometría</li>
+<li>
+<strong><code>.shx</code></strong>: indexa las geometrías</li>
+<li>
+<strong><code>.dbf</code></strong>: almacena los atributos en formato tabular</li>
+<li>Otros:
+<ul>
+<li>
+<code>.prj</code>: proyección</li>
+<li>
+<code>.sbn</code>, <code>.sbx</code>: índice espacial de las geometrías</li>
+<li>
+<code>.sph.xml</code>: metadatos geospaciales</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="importar-datos-vectoriales-shapefiles-1" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb26-2"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb26-3"><a></a>sn <span class="ot">&lt;-</span> <span class="fu">st_read</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sn_wdpa.shp"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `sn_wdpa' from data source 
+  `/Users/ajpelu/Library/CloudStorage/GoogleDrive-ajperez@go.ugr.es/My Drive/_docencia/ecoinformatica/ecoinformatica_web/ecoinformatica/assets/ext_data/geoinfo/sn_wdpa.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 1 feature and 28 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -3.643279 ymin: 36.91291 xmax: -2.588546 ymax: 37.25318
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-shapefiles-2" class="slide level2"><h2>Importar datos vectoriales: Shapefiles</h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>sn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 28 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -3.643279 ymin: 36.91291 xmax: -2.588546 ymax: 37.25318
+Geodetic CRS:  WGS 84
+     WDPAID   WDPA_PI PA_DEF          NAME       ORIG_NA
+1 555588878 555588878      1 Sierra Nevada Sierra Nevada
+                                           DESIG     DESIG_E  DESIG_T IUCN_CA
+1 Zona de Importancia Comunitaria ZIC (ZEPA/ZEC) Natura 2000 National      IV
+         INT_CRI MARINE REP_M_A REP_ARE        NO_TAKE NO_TK_A     STATUS
+1 Not Applicable      0       0 1722.38 Not Applicable       0 Designated
+  STATUS_                                GOV_TYP      OWN_TYP
+1    1992 Federal or national ministry or agency Not Reported
+             MANG_AU      MANG_PL          VERIF METADAT      SUB_LOC PARENT_
+1 Junta de Andalucía Not Reported State Verified    2013 Not Reported     ESP
+  ISO3        SUPP_IN        CONS_OB                       geometry
+1  ESP Not Applicable Not Applicable POLYGON ((-3.384833 36.9406...</code></pre>
+</div>
+</div>
+</div>
+</section><section id="visualizar-1" class="slide level2"><h2>Visualizar</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">plot</span>(sn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="visualizar-2" class="slide level2"><h2>Visualizar</h2>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">plot</span>(sn[<span class="st">"NAME"</span>], <span class="at">col=</span><span class="cn">NA</span>, <span class="at">border=</span> <span class="st">"blue"</span>, <span class="at">main=</span><span class="st">""</span>, <span class="at">axes =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="convertir-a-objetos-spaciales" class="slide level2"><h2>Convertir a objetos spaciales</h2>
+<div class="small">
+<ul>
+<li>Importar un csv con las coordenadas y convertirlo a un objeto espacial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-2"><a></a>ifn_sn <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/ifn_sn_geo.csv"</span>))</span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a><span class="fu">head</span>(ifn_sn)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+        x        y   crs id_unique_code    version province_code
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;        
+1 507000. 4112000. 23030 04_0792_NN_A3C_xx ifn3    04           
+2 507000. 4112000. 23030 04_0792_xx_A3E_xx ifn3    04           
+3 510000. 4111000. 23030 04_0794_xx_A4_xx  ifn3    04           
+4 506000. 4110000. 23030 04_0795_NN_A1_xx  ifn3    04           
+5 507000. 4110000. 23030 04_0796_NN_A1_xx  ifn3    04           
+6 508000. 4110000. 23030 04_0797_NN_A1_xx  ifn3    04           
+# ℹ 2 more variables: province_name_original &lt;chr&gt;, plot &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+</section><section id="convertir-a-objetos-spaciales-1" class="slide level2"><h2>Convertir a objetos spaciales</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>ifn_sn_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(ifn_sn, </span>
+<span id="cb34-2"><a></a>                       <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb34-3"><a></a>                       <span class="at">crs =</span> <span class="dv">23030</span>)</span>
+<span id="cb34-4"><a></a></span>
+<span id="cb34-5"><a></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(ifn_sn_geo), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span><span class="fl">0.5</span>)</span>
+<span id="cb34-6"><a></a>sn <span class="sc">|&gt;</span> <span class="fu">st_transform</span>(<span class="dv">23030</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb34-7"><a></a>  <span class="fu">plot</span>(<span class="at">col =</span> <span class="st">"NA"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="kml" class="slide level2"><h2>Kml</h2>
+<div class="small">
+<ul>
+<li><a href="https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac">Senderos Parques Nacionales</a></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-4-1">Importar</a></li>
+<li><a href="#tabset-4-2">Visualizar</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://centrodedescargas.cnig.es/CentroDescargasRWS/rest/descargarArchivo/usuarioMovil/9780431"</span></span>
+<span id="cb35-2"><a></a></span>
+<span id="cb35-3"><a></a><span class="fu">download.file</span>(</span>
+<span id="cb35-4"><a></a>  <span class="at">url =</span> url,</span>
+<span id="cb35-5"><a></a>  <span class="at">destfile =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sendero.kml"</span>)</span>
+<span id="cb35-6"><a></a>)</span>
+<span id="cb35-7"><a></a></span>
+<span id="cb35-8"><a></a>sendero <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sendero.kml"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>sendero <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axes=</span><span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-gpx" class="slide level2"><h2>Importar datos vectoriales: GPX</h2>
+<div class="small">
+<ul>
+<li><a href="https://portal.dipgra.es/es/rutas/gr-240-sendero-sulayr">Sendero Sulayr</a></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://cdn.dipgra.es/my-media-files-bucket/documents/1461659948SulayrCompleto.gpx"</span></span>
+<span id="cb37-2"><a></a></span>
+<span id="cb37-3"><a></a><span class="fu">download.file</span>(</span>
+<span id="cb37-4"><a></a>  <span class="at">url =</span> url,</span>
+<span id="cb37-5"><a></a>  <span class="at">destfile =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>)</span>
+<span id="cb37-6"><a></a>)</span>
+<span id="cb37-7"><a></a></span>
+<span id="cb37-8"><a></a>sulayr <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in CPL_read_ogr(dsn, layer, query, as.character(options), quiet, :
+automatically selected the first layer in a data source containing more than
+one.</code></pre>
+</div>
+</div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>¿Qué nos está adviertiendo con este <em>warning</em>?</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</section><section id="importar-datos-vectoriales-capas-disponibles" class="slide level2"><h2>Importar datos vectoriales: Capas disponibles</h2>
+<div class="small">
+<ul>
+<li>Algunos objetos espaciales pueden contener varias capas</li>
+<li>Explorar las capas existentes con <code>st_layers</code>
+</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-5-1">Capas</a></li>
+<li><a href="#tabset-5-2">Lectura</a></li>
+<li><a href="#tabset-5-3">Visualización</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">st_layers</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Driver: GPX 
+Available layers:
+    layer_name     geometry_type features fields crs_name
+1    waypoints             Point       34     24   WGS 84
+2       routes       Line String        0     12   WGS 84
+3       tracks Multi Line String        1     13   WGS 84
+4 route_points             Point        0     25   WGS 84
+5 track_points             Point    11759     26   WGS 84</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>sulayr_ruta <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>), </span>
+<span id="cb41-2"><a></a>                       <span class="at">layer =</span> <span class="st">"tracks"</span>)</span>
+<span id="cb41-3"><a></a></span>
+<span id="cb41-4"><a></a></span>
+<span id="cb41-5"><a></a>sulayr_puntos <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/sulary.gpx"</span>), </span>
+<span id="cb41-6"><a></a>                       <span class="at">layer =</span> <span class="st">"waypoints"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ráster" class="slide level2"><h2>Ráster</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="ráster-1" class="slide level2"><h2>Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-6-1">Crear un ráster</a></li>
+<li><a href="#tabset-6-2"><code>terra</code></a></li>
+<li><a href="#tabset-6-3"><code>raster</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>), </span>
+<span id="cb42-2"><a></a>            <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb42-3"><a></a></span>
+<span id="cb42-4"><a></a>m </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    2   NA    2    2
+[3,]    3    3    3    1</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">library</span>(terra)</span>
+<span id="cb44-2"><a></a>r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(m)</span>
+<span id="cb44-3"><a></a><span class="fu">plot</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">library</span>(raster)</span>
+<span id="cb45-2"><a></a>ra <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">raster</span>(m)</span>
+<span id="cb45-3"><a></a><span class="fu">plot</span>(ra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ráster-2" class="slide level2"><h2>Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-7-1"><code>terra</code></a></li>
+<li><a href="#tabset-7-2"><code>raster</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 3, 4, 1  (nrow, ncol, nlyr)
+resolution  : 1, 1  (x, y)
+extent      : 0, 4, 0, 3  (xmin, xmax, ymin, ymax)
+coord. ref. :  
+source(s)   : memory
+name        : lyr.1 
+min value   :     1 
+max value   :     4 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>ra</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class      : RasterLayer 
+dimensions : 3, 4, 12  (nrow, ncol, ncell)
+resolution : 0.25, 0.3333333  (x, y)
+extent     : 0, 1, 0, 1  (xmin, xmax, ymin, ymax)
+crs        : NA 
+source     : memory
+names      : layer 
+values     : 1, 4  (min, max)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="componentes-de-un-ráster" class="slide level2"><h2>Componentes de un ráster</h2>
+<div class="small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 48%">
+</colgroup>
+<thead><tr class="header">
+<th>Componente</th>
+<th>Descripción</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Dimensiones (<code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code>)</strong></td>
+<td>Número de filas, columnas y bandas.</td>
+</tr>
+<tr class="even">
+<td><strong>Extensión (<code>ext()</code>)</strong></td>
+<td>Coordenadas mínimas y máximas (<code>xmin, xmax, ymin, ymax</code>).</td>
+</tr>
+<tr class="odd">
+<td><strong>Resolución (<code>res()</code>)</strong></td>
+<td>Tamaño de cada celda en unidades espaciales.</td>
+</tr>
+<tr class="even">
+<td><strong>Número de Bandas (<code>nlyr()</code>)</strong></td>
+<td>Cantidad de capas o bandas en el raster (multibanda o singleband).</td>
+</tr>
+<tr class="odd">
+<td><strong>Sistema de Referencia (<code>crs()</code>)</strong></td>
+<td>Código EPSG o Proyección (WGS84, UTM, etc.).</td>
+</tr>
+<tr class="even">
+<td><strong>Valores (<code>values()</code>)</strong></td>
+<td>Datos almacenados en cada celda (elevación, temperatura, NDVI, etc.).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section><section id="extensión" class="slide level2"><h2>Extensión</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster_ext.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="resolución-ráster" class="slide level2"><h2>Resolución ráster</h2>
+<ul>
+<li>Tamaño de cada celda</li>
+<li>Nivel de detalle:
+<ul>
+<li>Alta resolución: Celdas pequeñas, más detalle</li>
+<li>Baja resolución: Celdas grandes, menos detalle</li>
+</ul>
+</li>
+<li>Cálculo: <span class="math display">\[ resolución = \frac{x_{max} - x_{min}}{n_{columnas}}, \frac{y_{max} - y_{min}}{n_{filas}} \]</span>
+</li>
+</ul></section><section class="slide level2"><p><strong>Extensión - Resolución - Sistema de Coordenadas</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_raster_res.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/introduction-working-raster-data-r">NEON</a></figcaption></figure>
+</div>
+</section><section id="ejemplo-ráster" class="slide level2"><h2>Ejemplo Ráster</h2>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-8-1">Metadatos</a></li>
+<li><a href="#tabset-8-2">Visualización</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">library</span>(terra)</span>
+<span id="cb50-2"><a></a>my_rast <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>))</span>
+<span id="cb50-3"><a></a>my_rast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 453, 364, 1  (nrow, ncol, nlyr)
+resolution  : 100, 100  (x, y)
+extent      : 437414, 473814, 4071295, 4116595  (xmin, xmax, ymin, ymax)
+coord. ref. : ETRS89 / UTM zone 30N 
+source      : tmin_1971_2000_3042.tif 
+name        : tmin_1971_2000 
+min value   :      -1.647195 
+max value   :      12.123637 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="formatos-ráster-más-comunes" class="slide level2"><h2>Formatos ráster más comunes</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic lightable-striped lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">formato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">extension</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">paquetes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Esri grid</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">rgdal, sp, SDMTools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GeoTiff</td>
+<td style="text-align: left;">.tif, .tiff, .ovr</td>
+<td style="text-align: left;">raster, terra</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASCII</td>
+<td style="text-align: left;">.asc, .txt</td>
+<td style="text-align: left;">raster, terra, rgdal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IMG</td>
+<td style="text-align: left;">.img</td>
+<td style="text-align: left;">raster, terra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<div class="small">
+<ul>
+<li>Datos espaciales = datos + CRS</li>
+<li>Modelo matemático que conecta los datos con la superficie de la Tierra</li>
+<li>CRS le dice al software (QGIS, R, …) en que espacio geográfico está la información, y qué metodo usar para proyectar la información sobre el espacio geográfico</li>
+</ul>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-1" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<div class="small">
+<p><strong>Estándares</strong> para compartir información CRS</p>
+<ul>
+<li>
+<a href="https://proj.org/en/stable/"><strong><code>proj</code></strong></a>:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "+proj=longlat +datum=WGS84 +no_defs"</code></pre>
+</div>
+</div>
+<ul>
+<li>
+<a href="https://spatialreference.org/ref/epsg/"><strong><code>EPSG</code></strong></a>:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Coordinate Reference System:
+  User input: WGS 84 
+  wkt:
+GEOGCRS["WGS 84",
+    DATUM["World Geodetic System 1984",
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["latitude",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["longitude",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    ID["EPSG",4326]]</code></pre>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-2" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Comprobar proyección</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-9-1"><code>raster</code></a></li>
+<li><a href="#tabset-9-2"><code>terra</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>tmin_ra <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">raster</span>((here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>)))</span>
+<span id="cb54-2"><a></a></span>
+<span id="cb54-3"><a></a>raster<span class="sc">::</span><span class="fu">projection</span>(tmin_ra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>tmin <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>((here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>)))</span>
+<span id="cb56-2"><a></a></span>
+<span id="cb56-3"><a></a>terra<span class="sc">::</span><span class="fu">crs</span>(tmin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "PROJCRS[\"ETRS89 / UTM zone 30N\",\n    BASEGEOGCRS[\"ETRS89\",\n        DATUM[\"European Terrestrial Reference System 1989\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]],\n            ID[\"EPSG\",6258]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433,\n                ID[\"EPSG\",9122]]]],\n    CONVERSION[\"Transverse Mercator\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-3,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"easting\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1,\n                ID[\"EPSG\",9001]]],\n        AXIS[\"northing\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1,\n                ID[\"EPSG\",9001]]]]"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-3" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Transformar (e.g.&nbsp;<code>EPSG:4326</code>)</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-10-1"><code>raster</code></a></li>
+<li><a href="#tabset-10-2"><code>terra</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>tmin_ra_4326 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">projectRaster</span>(tmin_ra, </span>
+<span id="cb58-2"><a></a>                                      <span class="at">crs =</span> <span class="st">"+proj=longlat +datum=WGS84"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-10-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>tmin_4326 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(tmin, <span class="st">"EPSG:4326"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="sistemas-de-referencia-de-coordenadas-4" class="slide level2"><h2>Sistemas de Referencia de Coordenadas</h2>
+<ul>
+<li>Conversión vectorial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># Datos del inventario forestal </span></span>
+<span id="cb60-2"><a></a>ifn_sn_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(ifn_sn, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> <span class="dv">23030</span>)</span>
+<span id="cb60-3"><a></a></span>
+<span id="cb60-4"><a></a><span class="co"># st_crs(ifn_sn_geo)</span></span>
+<span id="cb60-5"><a></a></span>
+<span id="cb60-6"><a></a>ifn_sn_geo_4326 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_transform</span>(ifn_sn_geo, <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="consultar-metadatos-ráster" class="slide level2"><h2>Consultar metadatos Ráster</h2>
+<div class="small">
+<ul>
+<li>Número de celdas</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="fu">ncell</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 164892</code></pre>
+</div>
+</div>
+<ul>
+<li>Dimensiones</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">dim</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 453 364   1</code></pre>
+</div>
+</div>
+<ul>
+<li>Resolución</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">res</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100 100</code></pre>
+</div>
+</div>
+<ul>
+<li>Extensión espacial</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="fu">ext</span>(my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>SpatExtent : 437414.020914246, 473814.020914246, 4071295.34996962, 4116595.34996962 (xmin, xmax, ymin, ymax)</code></pre>
+</div>
+</div>
+</div>
+</section><section id="stacks" class="slide level2"><h2>Stacks</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-53-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="small">
+<p>Fuente: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></p>
+</div>
+</section><section id="data-cubes" class="slide level2"><h2>Data cubes</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_data_cube.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></figcaption></figure>
+</div>
+</section><section class="slide level2"><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/i_data_cube_filter.png" style="width:60.0%"></p>
+<figcaption>Source: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></figcaption></figure>
+</div>
+</section><section id="alguna-duda" class="slide level2"><h2>¿Alguna duda?</h2>
+<ul>
+<li><p><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/ajpelu.bsky.social">ajpelu.bsky.social</a></p></li>
+<li><p><a href="mailto:%20antonio.perez@inia.csic.es">antonio.perez@inia.csic.es</a></p></li>
+</ul>
+<p><small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../../assets/images/logo-jdc.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+</figure>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Si usas esta presentación puedes citarla como:</strong></p>
+</div>
+<div class="callout-content">
+<p><small><strong>Pérez-Luque, A.J. </strong>(2025). Introducción a los SIG con R. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. <a href="https://ecoinfugr.github.io/ecoinformatica/">https://ecoinfugr.github.io/ecoinformatica/</a> </small></p>
+</div>
+</div>
+</div>
+
+
+</section></section>
+</div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../assets/images/logo-ugr.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+
+
+</body></html>

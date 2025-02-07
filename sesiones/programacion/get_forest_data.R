@@ -54,8 +54,27 @@ ggplot(ifn_plots) +
   geom_sf(data = sn, fill = "transparent", color = "black")
 
 
+sn_plots_geo <- ifn_plots |>
+  st_filter(sn) |>
+  st_transform(crs = 23030)
+
+# sn_ifn_csv <- sn_plots_geo |>
+#   st_coordinates() |>
+#   as.data.frame() |>
+#   rename(x = X, y = Y) |>
+#   bind_cols(sn_plots_geo) |>
+#   st_drop_geometry() |>
+#   dplyr::select(-geometry)
+#
+# write_csv(sn_ifn_csv, here("assets/ext_data/ifn_sn_geo.csv"))
+#
+#
+
+
+
 sn_plots <- ifn_plots |>
-  st_filter(sn) |>  create_filter_list()
+  st_filter(sn) |>
+  st_transform(crs = 23030) |>  create_filter_list()
 
 sn_plots <- st_drop_geometry(sn_plots)
 
@@ -76,6 +95,10 @@ ifn_data <- ifn_to_tibble(
   filter_list = sn_plots,
   folder = ifn_folder
 )
+
+
+
+
 
 sn_tree <- ifn_data |>
   inventory_as_sf() |>
