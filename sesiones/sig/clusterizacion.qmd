@@ -55,6 +55,7 @@ En este ejercicio utilizaremos el paquete `RStoolbox` para realizar una clasific
 # Instalar y cargar paquetes
 # install.packages("RStoolbox")
 library(RStoolbox)
+# install.packages("raster")
 library(raster)
 ```
 
@@ -62,15 +63,15 @@ En primer lugar cargaremos las capas con las que vamos a trabajar y las explorar
 
 ```{r, eval = FALSE}
 # Cargar máscara
-mask <- raster("material/mascara_23030.tif")
+mask <- raster("capas_resultantes/mascara_23030.tif")
 
 # Cargar capas con las que vamos a trabajar: temperaturas, precipitaciones, aridez, aspecto, pendiente
-tmax <- raster("material/tmax_1971_2000_23030_clipbyextent.tif")
-tmin <- raster("material/tmin_1971_2000_23030_clipbyextent.tif")
-prec <- raster("material/p_1971_2000_23030_clipbyextent.tif")
-aridez <- raster("material/i_aridez_23030.tif")
-aspecto <- raster("material/aspecto_23030.tif")
-pendiente <- raster("material/pendiente_en_grados_23030.tif")
+tmax <- raster("capas_resultantes/tmax_1971_2000_23030_clipbyextent.tif")
+tmin <- raster("capas_resultantes/tmin_1971_2000_23030_clipbyextent.tif")
+prec <- raster("capas_resultantes/p_1971_2000_23030_clipbyextent.tif")
+aridez <- raster("capas_resultantes/i_aridez_23030.tif")
+aspecto <- raster("capas_resultantes/aspecto_23030.tif")
+pendiente <- raster("capas_resultantes/pendiente_en_grados_23030.tif")
 
 # Explorar capas
 tmax
@@ -135,7 +136,7 @@ Una vez construida nuestra pila de variables tenemos que decidir cuántas áreas
 ## Choose appropriate number of classes
 set.seed(25) # Definir semilla para obtener resultados reproducibles en procesos aleatorios, si no ejecutamos esta línea cada vez que lancemos el código obtendremos resultados ligeramente distintos.
 
-wss <- 0 # Inicializar el error de cuadrados totales (total within sum of squares error, wss)
+wss <- numeric(10) # Inicializar el error de cuadrados totales (total within sum of squares error, wss)
 for (i in 1:10) { # Ejecutar la clusterización con de 1 a 10 número de áreas
   out <- unsuperClass(stack_masked, nClasses=i, nStarts=i*4, nIter = 2000, norm=T, clusterMap=F, algorithm = "Hartigan-Wong")
   wss[i] <- out$model$tot.withinss # Guardar el wss de cada iteración
@@ -169,5 +170,5 @@ plot(clust$map)
 # Explorar características de las zonas
 clust$model
 
-writeRaster(clust$map, filename = paste(path, "areas_homogeneas_4_23030.tif", sep = ""))
+writeRaster(clust$map, filename = "capas_resultantes/areas_homogeneas_4_23030.tif")
 ```
