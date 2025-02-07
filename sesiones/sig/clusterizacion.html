@@ -261,20 +261,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar paquetes</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("RStoolbox")</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStoolbox)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("raster")</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En primer lugar cargaremos las capas con las que vamos a trabajar y las exploraremos. Entonces las apilaremos en un mismo <em>stack</em>. La función <em>stack</em> del paquete <code>raster</code> crea una pila de rásters proveniente de distintos archivos. El algoritmo k-means requiere que todas las capas “encajen” entre sí, por lo que necesitaremos apilarlas en un stack.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar máscara</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/mascara_23030.tif"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/mascara_23030.tif"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar capas con las que vamos a trabajar: temperaturas, precipitaciones, aridez, aspecto, pendiente</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tmax <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/tmax_1971_2000_23030_clipbyextent.tif"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>tmin <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/tmin_1971_2000_23030_clipbyextent.tif"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>prec <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/p_1971_2000_23030_clipbyextent.tif"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>aridez <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/i_aridez_23030.tif"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>aspecto <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/aspecto_23030.tif"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pendiente <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"material/pendiente_en_grados_23030.tif"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tmax <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/tmax_1971_2000_23030_clipbyextent.tif"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>tmin <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/tmin_1971_2000_23030_clipbyextent.tif"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>prec <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/p_1971_2000_23030_clipbyextent.tif"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>aridez <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/i_aridez_23030.tif"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>aspecto <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/aspecto_23030.tif"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pendiente <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">"capas_resultantes/pendiente_en_grados_23030.tif"</span>)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar capas</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>tmax</span>
@@ -331,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Choose appropriate number of classes</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>) <span class="co"># Definir semilla para obtener resultados reproducibles en procesos aleatorios, si no ejecutamos esta línea cada vez que lancemos el código obtendremos resultados ligeramente distintos.</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>wss <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># Inicializar el error de cuadrados totales (total within sum of squares error, wss)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>wss <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span>) <span class="co"># Inicializar el error de cuadrados totales (total within sum of squares error, wss)</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) { <span class="co"># Ejecutar la clusterización con de 1 a 10 número de áreas</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">unsuperClass</span>(stack_masked, <span class="at">nClasses=</span>i, <span class="at">nStarts=</span>i<span class="sc">*</span><span class="dv">4</span>, <span class="at">nIter =</span> <span class="dv">2000</span>, <span class="at">norm=</span>T, <span class="at">clusterMap=</span>F, <span class="at">algorithm =</span> <span class="st">"Hartigan-Wong"</span>)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  wss[i] <span class="ot">&lt;-</span> out<span class="sc">$</span>model<span class="sc">$</span>tot.withinss <span class="co"># Guardar el wss de cada iteración</span></span>
@@ -361,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorar características de las zonas</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>clust<span class="sc">$</span>model</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(clust<span class="sc">$</span>map, <span class="at">filename =</span> <span class="fu">paste</span>(path, <span class="st">"areas_homogeneas_4_23030.tif"</span>, <span class="at">sep =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(clust<span class="sc">$</span>map, <span class="at">filename =</span> <span class="st">"capas_resultantes/areas_homogeneas_4_23030.tif"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
