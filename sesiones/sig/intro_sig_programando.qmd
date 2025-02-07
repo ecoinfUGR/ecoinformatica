@@ -1,0 +1,561 @@
+---
+title: "Introducción a los SIG en R" 
+author: 
+  - name: "Antonio J. Pérez-Luque"
+    orcid: 0000-0002-1747-0469
+    email: antonio.perez@inia.csic.es
+    affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
+date: 2025-02-07
+sesion: 5
+format: 
+  revealjs:
+    auto-stretch: false 
+    logo: "../../assets/images/logo-ugr.png"
+    footer: Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad
+    theme: [default, "../../custom_theme.scss"] 
+    transition: fade
+    background-transition: fade
+    highlight-style: a11y
+    code-block-background: true
+    code-link: true
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+execute:
+  echo: true     
+  eval: true     
+  output: true   
+  include: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Tipos de Datos Espaciales
+
+## Datos Vectoriales 
+
+![Source: [NEON](https://www.neonscience.org/resources/learning-hub/tutorials/intro-vector-data-r)](images/i_vectorial.png){fig-align="center" width=60%}
+--- 
+
+## [The big 7](https://r-spatial.org/book/03-Geometries.html)
+
+```{r, echo=FALSE}
+library(sf) |> suppressPackageStartupMessages()
+par(mfrow = c(2,4))
+par(mar = c(1,1,1.2,1))
+
+# 1 POINT
+p <- st_point(0:1)
+plot(p, pch = 16, col = 'blue', cex = 4)
+title("POINT")
+box(col = 'grey')
+
+# 2 MULTIPOINT
+mp <- st_multipoint(rbind(c(1,1), c(2, 2), c(3, 1), c(2, 3), c(1,4)))
+plot(mp, pch = 16, col = 'purple', cex = 3)
+title("MULTIPOINT")
+box(col = 'grey')
+
+# 3 LINESTRING
+ls <- st_linestring(rbind(c(1,1), c(5,5), c(5, 6), c(4, 6), c(3, 4), c(2, 3)))
+plot(ls, lwd = 2, col = "blue")
+title("LINESTRING")
+box(col = 'grey')
+
+# 4 MULTILINESTRING
+mls <- st_multilinestring(list(
+  rbind(c(1,1), c(5,5), c(5, 6), c(4, 6), c(3, 4), c(2, 3)),
+  rbind(c(3,0), c(4,1), c(2,1))))
+plot(mls, lwd = 2, col = 'purple')
+title("MULTILINESTRING")
+box(col = 'grey')
+
+# 5 POLYGON
+po <- st_polygon(list(rbind(c(2,1), c(3,1), c(5,2), c(6,3), c(5,3), c(4,4), c(3,4), c(1,3), c(2,1)),
+    rbind(c(2.5,2), c(3.5,3), c(4.5,3), c(4.5,2), c(2.5,2))))
+plot(po, border = 'black', col = "#ff8888", lwd = 2)
+title("POLYGON")
+box(col = 'grey')
+
+# 6 MULTIPOLYGON
+mpo <- st_multipolygon(list(
+    list(rbind(c(2,1), c(3,1), c(5,2), c(6,3), c(5,3), c(4,4), c(3,4), c(1,3), c(2,1)),
+        rbind(c(2.5,2), c(3.5,3), c(4.5,3), c(4.5,2), c(2.5,2))),
+    list(rbind(c(3,7), c(4,7), c(5,8), c(3,9), c(2,8), c(3,7)))))
+plot(mpo, border = 'black', col = "purple", lwd = 2)
+title("MULTIPOLYGON")
+box(col = 'grey')
+
+# 7 GEOMETRYCOLLECTION
+gc <- st_geometrycollection(list(po, ls + c(0,5), st_point(c(2,5)), st_point(c(5,4))))
+plot(gc, border = 'black', col = c("green"), pch = c(16, 17), lwd = 2)
+title("GEOMETRYCOLLECTION")
+box(col = 'grey')
+```
+
+::: small
+Fuente: [Pebesma & Bivand (2025). Spatial Data Science](https://r-spatial.org/book/03-Geometries.html)
+:::
+
+--- 
+
+
+```{r}
+ls <- st_multipoint(
+  rbind(
+    c(1, 1),
+    c(2, 2),
+    c(3, 1),
+    c(2, 3),
+    c(1, 4)
+  )
+)
+
+```
+
+
+```{r}
+st_coordinates(ls)
+```
+
+--- 
+
+::: {.panel-tabset}
+
+### POLYGON
+```{r}
+po <- st_polygon(list(
+  rbind(c(2, 1), c(3, 1), c(5, 2), c(6, 3), c(5, 3), 
+        c(4, 4), c(3, 4), c(1, 3), c(2, 1)),
+  rbind(c(2.5, 2), c(3.5, 3), c(4.5, 3), c(4.5, 2), c(2.5, 2))
+))
+```
+
+### Coord.
+::: small
+```{r}
+st_coordinates(po)
+```
+:::
+
+### Representación
+
+```{r, echo=FALSE}
+plot(po, border = 'black', col = "blue", lwd = 2)
+box(col = 'grey')
+```
+
+::: 
+
+--- 
+
+### Simple feature geometries 
+
+- Es un estándar ([ISO 19125-1:2004](https://www.iso.org/standard/40114.html))
+- Forma de describir las **geometrías** de los objetos espaciales
+- **features**: elementos que tienen una geometría y atributos adicionales que pueden incluir etiquetas descriptivas y/o valores que los cuantifican
+- **simple** se refiere a que las líneas y polígonos se pueden representar como secuencias de puntos conectados
+--- 
+
+### Simple feature geometries 
+::: small
+- Cada punto tiene al menos dos coordenadas $x$ e $y$
+
+::: {.callout-note}
+- Generalmente van en ese orden
+- Si son coord. elipsoidales puede ser `longitud` y `latitud`. Ojo en `EPSG:4326` el primer eje es la `latitud`
+::: 
+- Coordenadas separadas por **espacios**: `(0 1)`
+- Puntos separados por **comas**: `((1 1), (2 2))`
+- Conjuntos agrupados por paréntesis `()` y separados por `,`
+- Los polígonos tienen un anillo externo y ninguno o varios anillos internos (`holes`)
+
+::: 
+
+---
+
+### Simple feature geometries 
+
+- La representación en fomato texto se conoce como *Well-Known Text* (**[WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)**)
+
+```
+MULTIPOLYGON (((2 1, 3 1, 5 2, 6 3, 5 3, 4 4, 3 4, 1 3, 2 1), (2.5 2, 3.5 3, 4.5 3, 4.5 2, 2.5 2)), ((3 7, 4 7, 5 8, 3 9, 2 8, 3 7)))
+```
+
+![Source: [Wikipedia](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)](images/i_wkt.png){fig-align="center" width=60%}
+
+---
+
+### Simple feature geometries
+- Importacia de las geometrías **válidas**
+
+::: small
+
+- `LINESTRING` simples: cuando no intersectan
+- `POLYGON` y `MULTIPOLYGON`: 
+  - anillos de los polígonos están cerrados (el último punto es igual al primero)
+  - Los anillos internos están dentro de su anillo exterior
+  - Los anillos internos de los polígonos tocan el anillo exterior como máximo en un solo punto, no a lo largo de una línea
+  - Convención: anillo externo (antihorario); anillo interno (horario)
+
+::: 
+
+---
+
+### ¿Geometrías válidas?
+
+::: {.panel-tabset}
+## Ejemplo 
+```{r, echo=FALSE}
+
+po_invalid <- st_polygon(list(
+  rbind(c(2, 1), c(3, 1), c(5, 2), c(6, 3), c(5, 3), 
+        c(4, 4), c(3, 4), c(1, 3), c(2, 1)),  # Contorno exterior
+  
+  rbind(c(2.5, 2), c(3.5, 3), c(4, 3), c(5.0, 3), c(6, 3), c(4.0, 2), c(2, 1), c(2.5, 2))  # Agujero incorrecto
+))
+
+plot(po_invalid , border = 'black', col = "blue", lwd = 2)
+```
+
+## Válido?
+```{r}
+library(sf)
+st_is_valid(po_invalid)
+```
+
+- Convertir a válido 
+```{r}
+po_valid <- st_make_valid(po_invalid)
+```
+
+## Convertir
+
+```{r, echo=FALSE}
+plot(po_valid , border = 'black', col = "green", lwd = 2)
+```
+
+:::
+
+## Formatos de datos vectoriales más comúnes 
+::: small
+
+```{r, echo=FALSE}
+library(knitr)
+library(kableExtra)
+geo_formats <- data.frame(
+  formato = c("Esri shapefile", "CSV / GeoCSV", "GPX", "KML / KMZ", "GML / XML", "GeoJSON", "OpenStreetMap", "Esri grid",
+              "GeoTiff", "ASCII", "IMG", "LiDAR", "NetCDF"),
+extension = c(".shp", ".csv", ".gpx", ".kml; .kmz", ".gml, .xml", ".geojson; .json", ".osm", "", 
+                ".tif, .tiff, .ovr", ".asc, .txt", ".img", ".las, .lasdm, .laz", ".nc"),
+  tipo = c("Vectorial", "Vectorial", "Vectorial", "Vectorial", "Vectorial", "Vectorial", "Vectorial", "Ráster",
+           "Ráster", "Ráster", "Ráster", "LiDAR", "Multidimensional"),
+  paquetes = c("rgdal, sf, maptools, raster", "utils, sf, tidyverse", "plotKML, XML, maptools", 
+                    "rgdal, XML, sf", "XML, multiplex", "geojsonio, rgdal, geojsonR, rjson", 
+                    "OpenStreetMap, osmdata, tmaptools", "rgdal, sp, SDMTools",
+                    "raster", "raster, rgdal", "raster", "lidR, rLiDAR", "ncdf4")
+)
+
+
+v <- geo_formats |> dplyr::filter(tipo == "Vectorial") |> 
+  dplyr::select(-tipo)
+
+kable(v, escape = FALSE) |> 
+  kableExtra::kable_classic(c("striped", "hover", "condensed", "responsive")) 
+```
+
+Fuentes: Royé, D & Serrano, R (2019). [Lovelace et al. (2022)](https://r.geocompx.org/read-write)
+::: 
+
+<!--
+- ESRI: mínimo tres (.shp = geometría, .shx = índice de los objetos, .dbf= atributos)
+- CSV: contiene un campo WKT 
+- 
+--> 
+
+## Atributos 
+- Propiedades del objeto espacial que no describen su geometría
+- Tipos: 
+  - propiedades derivadas de la geometría
+  - no derivadas de la geometría
+  
+## Importar datos Vectoriales 
+
+paquete **`sf`** 
+
+- `st_read()`
+  - Función completa para leer archivos espaciales
+  - Permite controlar más parámetros, e.g. `quiet = TRUE` para suprimir mensajes
+
+- `read_sf()`
+  - Versión simplificada de `st_read()` 
+  - Más amigable para `tidyverse`. Devuelve un `sf` tibble 
+
+--- 
+
+::: small
+| Característica       | `st_read()`                           | `read_sf()`                          |
+|----------------------|--------------------------------|--------------------------------|
+| **Funcionalidad**    | Control total sobre la lectura de datos espaciales | Versión simplificada, orientada a `tidyverse` |
+| **Tipo de salida**   | `sf` + `data.frame` | `sf` + `tibble` |
+| **Salida en consola** | Muestra más metadatos (CRS, número de geometrías) | Mensajes mínimos |
+| **Parámetros disponibles** | Mayor flexibilidad (`quiet = TRUE`, `layer`, `stringsAsFactors`) | Menos opciones de configuración |
+| **Conversión de texto** | Puede controlar `stringsAsFactors` | Usa caracteres (`character`) por defecto |
+| **Rendimiento**      | Más lento por el procesamiento extra de metadatos | Más rápido, ideal para grandes volúmenes de datos |
+
+::: 
+
+## Importar datos vectoriales 
+
+::: {.panel-tabset}
+### `st_read`
+
+::: small
+```{r}
+library(sf)
+library(here)
+sn_st <- st_read(here::here("assets/ext_data/geoinfo/sn_wdpa.shp"))
+```
+
+::: 
+
+### `read_sf`
+```{r}
+sn_sf <- read_sf(here::here("assets/ext_data/geoinfo/sn_wdpa.shp"))
+```
+
+### Comparación
+
+```{r}
+class(sn_st)
+```
+
+<br>
+
+```{r}
+class(sn_sf)
+```
+
+::: 
+
+
+
+
+
+
+
+
+
+
+## Raster 
+
+...
+
+## Sistemas de Coordenadas 
+
+# Operaciones básicas con vectores 
+
+## Paquetes en R 
+
+--- 
+
+### Bounding box
+::: small
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+#| code-summary: "Mostrar el código"
+#| fig-height: 8
+#| fig-width: 9 
+#| out-width: 100%
+
+
+library(maps)
+
+pib <- 
+  maps::map(fill = TRUE, 
+            plot = FALSE) |>
+  st_as_sf() |>
+  dplyr::filter(ID %in% 
+                  c("Spain", "Portugal"))
+
+pib |> 
+  st_geometry() |> 
+  plot(graticule = TRUE, axis=TRUE) 
+pib |> 
+  st_bbox() |> 
+  st_as_sfc() |> 
+  plot(add = TRUE, border = "blue")
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+Rectángulo mínimo que delimita una geometría espacial mediante sus **coordenadas extremas** (xmin, ymin, xmax, ymax).
+
+```{r}
+sf::st_bbox(pib)
+```
+
+Convertir a poligono
+
+```{r}
+#| eval: FALSE
+
+pib_bb <- pib |> 
+  st_bbox() |> 
+  st_as_sfc()
+
+```
+
+:::
+
+::::
+
+::: 
+
+
+
+
+
+--- 
+
+### Métricas: Área 
+
+```{r}
+sf::st_area(pib)
+```
+
+::: {.callout-warning}
+
+## ¿Porqué aparecen dos valores para el área? 
+::: small 
+```{r}
+pib
+```
+:::
+
+::: 
+
+::: small 
+- ¿Y si las quiero en km$^2$? 
+```{r}
+library(units)
+pib |> 
+  sf::st_area() |> 
+  units::set_units("km^2")
+```
+::: 
+--- 
+
+### Métricas: Perímetro
+
+::: small
+Calcula el perímetro de Portugal
+::: 
+```{r}
+por <- pib |> 
+  dplyr::filter(ID == "Portugal")
+
+sf::st_perimeter(por) |> 
+  set_units("km")
+```
+
+--- 
+
+### Métricas: Distancia
+
+::: small
+Ejemplo: Tenemos una parcela en un pinar de repoblación, en la que estamos evaluando la cantidad de semillas de Quercíneas que pueden llegar dispersadas por el arrendajo. Si tenemos una matrix de paisaje conformada por diferentes manchas de encinar y robledal, y suponiendo que las diferentes manchas de bosque de quercíneas tienen la misma cantidad de propágulos y la misma probabilidad de ser visitadas por los arrendajos, ¿Quien tiene mas probabilidad de colonizar el pinar de repoblación? 
+::: 
+
+```{r}
+#| echo=FALSE
+library(sf)
+library(dplyr)
+
+# Crear polígonos irregulares distribuidos más aleatoriamente
+encinar_1 <- st_polygon(list(rbind(c(1,5), c(2.3,4.2), c(3.2,5.6), c(3,7), c(2.1,7.5), c(1.3,7), c(0.7,5.8), c(1,5))))
+encinar_2 <- st_polygon(list(rbind(c(7,2), c(8.5,1.1), c(9.6,2.3), c(9.2,3.9), c(8.4,4.4), c(7.6,4.1), c(7.1,2.8), c(7,2))))
+robledal_1 <- st_polygon(list(rbind(c(3,8), c(4.7,7.1), c(5.4,8.5), c(5.1,9.6), c(4.3,10.3), c(3.5,9.9), c(3.1,8.8), c(3,8))))
+robledal_2 <- st_polygon(list(rbind(c(8,6), c(9.9,5.0), c(10.8,7.1), c(10.2,8.5), c(9.1,9.3), c(8.2,7.8), c(8,6))))
+pinar <- st_polygon(list(rbind(c(4,4), c(6.1,2.8), c(7,5), c(6.5,6.5), c(5.6,6.0), c(4.8,4.6), c(4,4))))
+
+
+manchas <- st_sf(
+  nombre = c("Encinar A", "Encinar B", "Robledal A", "Robledal B", "Pinar"),
+  tipo = c("Encinar", "Encinar", "Robledal", "Robledal", "Pinar"),
+  geometry = st_sfc(encinar_1, encinar_2, robledal_1, robledal_2, pinar),
+  colores = c("darkgreen", "darkgreen", "gold", "gold", "green"),
+  crs = 4326 
+)
+
+manchas <- st_transform(manchas, 23030)
+
+plot(manchas["tipo"], col = manchas$colores, graticule = TRUE, axes = TRUE)
+legend("bottomleft", legend =  unique(manchas$tipo), 
+       fill = unique(manchas$colores), title = "Tipo de Manchas")
+
+```
+
+##
+
+```{r}
+pinar_geom <- 
+  manchas |> filter(tipo == "Pinar") |> st_geometry()
+
+# Calcular la distancia desde encinares y robledales al pinar
+distancias <- manchas |> 
+  filter(tipo %in% c("Encinar", "Robledal")) |> 
+  mutate(distancia_pinar = st_distance(geometry, pinar_geom))
+
+# Mostrar la tabla con las distancias
+distancias |> 
+  st_drop_geometry() |> 
+  print()
+```
+
+
+
+
+
+
+
+
+## Operaciones básicas con raster 
+
+
+
+## Recursos
+
+- Royé, D & Serrano, R (2019). Introducción a los SIG con R. Universidad de Zaragoza.
+
+## ¿Alguna duda? 
+
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
+
+
+- [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
+
+
+<small>Ayuda JDC2022-050056-I financiada por MCIN/AEI /10.13039/501100011033 y por la Unión Europea NextGenerationEU/PRTR</small>
+
+![](../../assets/images/logo-jdc.png){fig-align="center" width=40%}
+
+
+::: {.callout-tip}
+## Si usas esta presentación puedes citarla como:
+<small>**Pérez-Luque, A.J. **(2025). Introducción a los SIG con R. Material Docente de la Asignatura: Ciclo de Gestión de los Datos. Master Universitario en Conservación, Gestión y Restauración de la Biodiversidad. Universidad de Granada. [https://ecoinfugr.github.io/ecoinformatica/](https://ecoinfugr.github.io/ecoinformatica/) </small>
+:::

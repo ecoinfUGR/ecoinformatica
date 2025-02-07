@@ -91,5 +91,8 @@
   },
   "guia_docente.qmd": {
     "guia_docente.html": "c3841890"
+  },
+  "sesiones/sig/intro_sig_programando.qmd": {
+    "intro_sig_programando.html": "b0cc658b"
   }
 }
