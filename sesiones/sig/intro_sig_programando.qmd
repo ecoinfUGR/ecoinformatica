@@ -497,10 +497,10 @@ sn |> st_transform(23030) |>
 ## Kml 
 
 ::: small 
-- [Senderos Parques Nacionales](https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac)
-
 ::: {.panel-tabset}
 ## Importar 
+- [Senderos Parques Nacionales](https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac)
+
 
 ```{r}
 url <- "https://centrodedescargas.cnig.es/CentroDescargasRWS/rest/descargarArchivo/usuarioMovil/9780431"
@@ -616,12 +616,13 @@ ggplot() +
 url <- "https://cdn.dipgra.es/my-media-files-bucket/documents/Etapa_04_GR_240.GPX"
 
 download.file(
-  url = tello,
+  url = url,
   destfile = here::here("assets/ext_data/geoinfo/sulary_tello.gpx")
 )
 
+st_layers(here("assets/ext_data/geoinfo/sulary_tello.gpx"))
+
 sulayr_tello <- read_sf(here("assets/ext_data/geoinfo/sulary_tello.gpx"))
-st_layers(sulayr_tello)
 
 sulayr_tello_elev <- read_sf(here("assets/ext_data/geoinfo/sulary_tello.gpx"), 
                         layer = "track_points")
@@ -1277,6 +1278,379 @@ print_labels(x = x/2-28/2 + 30, y = y-26.5, off = 1, lab = ylabels,
              horizontal = FALSE, cex = 0.3)
 ```
 
+
+# Operaciones básicas con vectores 
+
+--- 
+
+### Bounding box
+::: small
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+#| code-summary: "Mostrar el código"
+#| fig-height: 8
+#| fig-width: 9 
+#| out-width: 100%
+
+
+library(maps)
+
+pib <- 
+  maps::map(fill = TRUE, 
+            plot = FALSE) |>
+  st_as_sf() |>
+  dplyr::filter(ID %in% 
+                  c("Spain", "Portugal"))
+
+pib |> 
+  st_geometry() |> 
+  plot(graticule = TRUE, axis=TRUE) 
+pib |> 
+  st_bbox() |> 
+  st_as_sfc() |> 
+  plot(add = TRUE, border = "blue")
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+Rectángulo mínimo que delimita una geometría espacial mediante sus **coordenadas extremas** (xmin, ymin, xmax, ymax).
+
+```{r}
+sf::st_bbox(pib)
+```
+
+Convertir a poligono
+
+```{r}
+#| eval: FALSE
+
+pib_bb <- pib |> 
+  st_bbox() |> 
+  st_as_sfc()
+
+```
+
+:::
+
+::::
+
+::: 
+
+
+
+
+
+--- 
+
+### Métricas: Área 
+
+```{r}
+sf::st_area(pib)
+```
+
+::: {.callout-warning}
+
+## ¿Porqué aparecen dos valores para el área? 
+::: small 
+```{r}
+pib
+```
+:::
+
+::: 
+
+::: small 
+- ¿Y si las quiero en km$^2$? 
+```{r}
+library(units)
+pib |> 
+  sf::st_area() |> 
+  units::set_units("km^2")
+```
+::: 
+--- 
+
+### Métricas: Perímetro
+
+::: small
+Calcula el perímetro de Portugal
+::: 
+```{r}
+por <- pib |> 
+  dplyr::filter(ID == "Portugal")
+
+sf::st_perimeter(por) |> 
+  set_units("km")
+```
+
+--- 
+
+### Métricas: Distancia
+
+::: small
+Ejemplo: Tenemos una parcela en un pinar de repoblación, en la que estamos evaluando la cantidad de semillas de Quercíneas que pueden llegar dispersadas por el arrendajo. Si tenemos una matrix de paisaje conformada por diferentes manchas de encinar y robledal, y suponiendo que las diferentes manchas de bosque de quercíneas tienen la misma cantidad de propágulos y la misma probabilidad de ser visitadas por los arrendajos, ¿Quien tiene mas probabilidad de colonizar el pinar de repoblación? 
+::: 
+
+--- 
+
+```{r}
+#| code-fold: true
+library(sf)
+library(dplyr)
+
+# Crear polígonos irregulares distribuidos más aleatoriamente
+encinar_1 <- st_polygon(list(rbind(c(1,5), c(2.3,4.2), c(3.2,5.6), c(3,7), c(2.1,7.5), c(1.3,7), c(0.7,5.8), c(1,5))))
+encinar_2 <- st_polygon(list(rbind(c(7,2), c(8.5,1.1), c(9.6,2.3), c(9.2,3.9), c(8.4,4.4), c(7.6,4.1), c(7.1,2.8), c(7,2))))
+robledal_1 <- st_polygon(list(rbind(c(3,8), c(4.7,7.1), c(5.4,8.5), c(5.1,9.6), c(4.3,10.3), c(3.5,9.9), c(3.1,8.8), c(3,8))))
+robledal_2 <- st_polygon(list(rbind(c(8,6), c(9.9,5.0), c(10.8,7.1), c(10.2,8.5), c(9.1,9.3), c(8.2,7.8), c(8,6))))
+pinar <- st_polygon(list(rbind(c(4,4), c(6.1,2.8), c(7,5), c(6.5,6.5), c(5.6,6.0), c(4.8,4.6), c(4,4))))
+
+
+manchas <- st_sf(
+  nombre = c("Encinar A", "Encinar B", "Robledal A", "Robledal B", "Pinar"),
+  tipo = c("Encinar", "Encinar", "Robledal", "Robledal", "Pinar"),
+  geometry = st_sfc(encinar_1, encinar_2, robledal_1, robledal_2, pinar),
+  colores = c("darkgreen", "darkgreen", "gold", "gold", "green"),
+  crs = 4326 
+)
+
+manchas <- st_transform(manchas, 23030)
+
+plot(manchas["tipo"], col = manchas$colores, graticule = TRUE, axes = TRUE)
+legend("bottomleft", legend =  unique(manchas$tipo), 
+       fill = unique(manchas$colores), title = "Tipo de Manchas")
+
+```
+
+##
+
+```{r}
+pinar_geom <- 
+  manchas |> filter(tipo == "Pinar") |> st_geometry()
+
+# Calcular la distancia desde encinares y robledales al pinar
+distancias <- manchas |> 
+  filter(tipo %in% c("Encinar", "Robledal")) |> 
+  mutate(distancia_pinar = st_distance(geometry, pinar_geom))
+
+# Mostrar la tabla con las distancias
+distancias |> 
+  st_drop_geometry() |> 
+  print()
+```
+
+--- 
+
+### Calcular los centroides 
+
+```{r}
+centroides <- st_centroid(manchas)
+centroides
+```
+
+--- 
+
+```{r}
+ggplot() +
+  geom_sf(data = manchas, aes(fill = tipo)) +
+  geom_sf(data = centroides) 
+```
+
+## Selección espacial
+
+::: small
+¿Qué parcelas del Inventario forestal puedo usar para evaluar el estado de la vegetación en la zona del incendio de Lanjarón? 
+
+::: 
+
+```{r}
+incendio <- read_sf(here::here("assets/ext_data/geoinfo/lanjaron_fire.shp"))
+
+ifn_incendio <- ifn_sn_geo |> 
+  st_transform(3042) |> 
+  st_filter(incendio)
+```
+
+## Selección espacial
+
+```{r}
+ggplot() +
+  geom_sf(data = incendio, fill=NA) + 
+  geom_sf(data = ifn_incendio) 
+ 
+```
+
+
+
+--- 
+### Unión de atributos 
+
+::: small
+- Permite unir tablas de atributos a los objetos espaciales.
+- Tienen que compartir una clave común 
+
+- Ejemplo: Representa la riqueza de cada parcela forestal en Sierra Nevada 
+
+::: {.panel-tabset}
+## Calcula atributos forestales 
+```{r}
+library(tidyverse)
+d <- read_csv(here::here("assets/ext_data/ifn_sn_tree.csv"))
+
+# Calcular abundancia de individuos en cada plot 
+ab_ifn <- d |> 
+  group_by(plot) |> 
+  count() 
+
+# Calcular riqueza de especies en cada plot  
+riqueza_ifn <- d |> 
+  group_by(plot) |> 
+  summarise(riqueza = n_distinct(specie))
+```
+
+## Unión de datos
+```{r}
+ifn_sn_geo_riqueza <- ifn_sn_geo |> 
+  inner_join(ab_ifn, by = c("plot" = "plot")) |> 
+  inner_join(riqueza_ifn, by = c("plot" = "plot"))
+```
+
+::: 
+
+:::
+
+## Unión de atributos: visualización 
+
+```{r}
+#| code-fold: true
+library(ggspatial)
+
+ggplot() +
+  geom_sf(data = sn, color = "blue", size = 1) +
+  geom_sf(data = ifn_sn_geo_riqueza, aes(size = riqueza)) +
+  annotation_north_arrow(location = "topleft",
+                         width = unit(1, "cm")) +
+  annotation_scale(location = "br", width_hint = 0.3) + 
+  theme_bw() + 
+  ggtitle("Parcelas del Inventario Nacional Forestal (IFN3) en Sierra Nevada")
+
+```
+
+
+
+## (Extra) Uniones de datos tabulares 
+
+![Source: [R for Data Science (2ed)](https://r4ds.hadley.nz/joins.html)](images/i_venn.png){fig-align="center" width=80%}
+
+## Visualización de mapas 
+::: small
+Elementos **básicos** de un mapa
+
+- **Escala**: Establece la relación entre las distancias en el mapa y las distancias reales en el terreno
+- **Simbología y Leyenda**: Define los símbolos, colores y estilos utilizados para representar los elementos geográficos, permitiendo al usuario interpretar correctamente la información presentada
+- **Flecha de Norte** (Rosa de los Vientos): Indica la orientación del mapa, ayudando al lector a comprender la dirección de los elementos geográficos
+- **Cuadrícula de Coordenadas**: Proporciona un sistema de referencia que facilita la localización precisa de puntos en el mapa, mostrando líneas y etiquetas de coordenadas 
+- **Mapa de Ubicación**: Ofrece una vista general que sitúa el área de estudio dentro de un contexto geográfico más amplio, ayudando al lector a comprender su ubicación relativa
+
+::: 
+
+
+## Visualización de mapas
+:::small 
+```{r}
+#| code-fold: true
+library(ggspatial)
+
+mapa<- ggplot() +
+  geom_sf(data = sn, color = "blue", size = 1) +
+  geom_sf(data = ifn_sn_geo) +
+  annotation_north_arrow(location = "topleft",
+                         width = unit(1, "cm")) +
+  annotation_scale(location = "br", width_hint = 0.3) + 
+  theme_bw() + 
+  ggtitle("Parcelas del Inventario Nacional Forestal (IFN3) en Sierra Nevada")
+mapa
+```
+
+::: 
+
+## Visualización de mapas
+
+::: small
+```{r}
+#| code-fold: true
+mapa_general <- ggplot() + 
+  geom_sf(data = pib, fill="gray") +
+  geom_sf(data = sn, fill="black", color=NA) + 
+  theme_minimal() +
+  theme(
+    panel.background = element_blank(),   
+    plot.background = element_blank(),
+    panel.grid = element_blank(),
+    axis.text = element_blank()
+  )
+
+mapa_general
+```
+::: 
+
+## Visualización de mapas
+
+:::small
+```{r}
+library(cowplot)
+
+ggdraw() + 
+  draw_plot(mapa) + 
+  draw_plot(mapa_general, 
+            x = 0.73, y = 0.625, 
+            width = 0.28, height = 0.28)
+
+```
+
+:::
+
+## Operaciones básicas con raster
+
+::: small 
+::: {.panel-tabset}
+
+## Crop 
+```{r}
+tmin <- terra::rast((here::here("assets/ext_data/geoinfo/tmin_1971_2000_3042.tif")))
+```
+
+```{r}
+tmin_crop <- terra::crop(tmin, incendio)
+plot(tmin_crop)
+plot(incendio, add = TRUE, colorr=NA)
+```
+
+## Mask 
+```{r}
+tmin_mask <- terra::mask(tmin, incendio)
+plot(tmin_mask)
+plot(incendio, add = TRUE, colorr=NA)
+```
+
+
+## Crop & Mask
+```{r}
+tmin_mask_cropped <- terra::mask(tmin_crop, incendio)
+plot(tmin_mask_cropped)
+plot(incendio, add = TRUE, colorr=NA)
+```
+::: 
+
+::: 
 
 ## ¿Alguna duda? 
 
