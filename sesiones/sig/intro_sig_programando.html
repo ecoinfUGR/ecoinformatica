@@ -867,13 +867,13 @@ Geodetic CRS:  WGS 84
 <section id="kml" class="slide level2">
 <h2>Kml</h2>
 <div class="small">
-<ul>
-<li><a href="https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac">Senderos Parques Nacionales</a></li>
-</ul>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Importar</a></li><li><a href="#tabset-4-2">Visualizar</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
+<ul>
+<li><a href="https://centrodedescargas.cnig.es/CentroDescargas/loadParquesNac">Senderos Parques Nacionales</a></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://centrodedescargas.cnig.es/CentroDescargasRWS/rest/descargarArchivo/usuarioMovil/9780431"</span></span>
 <span id="cb35-2"><a></a></span>
@@ -1440,6 +1440,486 @@ GEOGCRS["WGS 84",
 <p><img data-src="images/i_data_cube_filter.png" style="width:60.0%"></p>
 <figcaption>Source: <a href="https://r-spatial.org/book/">Pebesma &amp; Bivand (2025)</a></figcaption>
 </figure>
+</div>
+</section></section>
+<section>
+<section id="operaciones-básicas-con-vectores" class="title-slide slide level1 center">
+<h1>Operaciones básicas con vectores</h1>
+
+</section>
+<section class="slide level2">
+
+<h3 id="bounding-box">Bounding box</h3>
+<div class="small">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar el código</summary>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="fu">library</span>(maps)</span>
+<span id="cb69-2"><a></a></span>
+<span id="cb69-3"><a></a>pib <span class="ot">&lt;-</span> </span>
+<span id="cb69-4"><a></a>  maps<span class="sc">::</span><span class="fu">map</span>(<span class="at">fill =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb69-5"><a></a>            <span class="at">plot =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb69-6"><a></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
+<span id="cb69-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">%in%</span> </span>
+<span id="cb69-8"><a></a>                  <span class="fu">c</span>(<span class="st">"Spain"</span>, <span class="st">"Portugal"</span>))</span>
+<span id="cb69-9"><a></a></span>
+<span id="cb69-10"><a></a>pib <span class="sc">|&gt;</span> </span>
+<span id="cb69-11"><a></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb69-12"><a></a>  <span class="fu">plot</span>(<span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axis=</span><span class="cn">TRUE</span>) </span>
+<span id="cb69-13"><a></a>pib <span class="sc">|&gt;</span> </span>
+<span id="cb69-14"><a></a>  <span class="fu">st_bbox</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb69-15"><a></a>  <span class="fu">st_as_sfc</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb69-16"><a></a>  <span class="fu">plot</span>(<span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-57-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Rectángulo mínimo que delimita una geometría espacial mediante sus <strong>coordenadas extremas</strong> (xmin, ymin, xmax, ymax).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a>sf<span class="sc">::</span><span class="fu">st_bbox</span>(pib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     xmin      ymin      xmax      ymax 
+-9.479736 36.025928  4.322070 43.764549 </code></pre>
+</div>
+</div>
+<p>Convertir a poligono</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>pib_bb <span class="ot">&lt;-</span> pib <span class="sc">|&gt;</span> </span>
+<span id="cb72-2"><a></a>  <span class="fu">st_bbox</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb72-3"><a></a>  <span class="fu">st_as_sfc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="métricas-área">Métricas: Área</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>sf<span class="sc">::</span><span class="fu">st_area</span>(pib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Units: [m^2]
+[1] 499032425530  87850920379</code></pre>
+</div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>¿Porqué aparecen dos valores para el área?</strong></p>
+</div>
+<div class="callout-content">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>pib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 2 features and 1 field
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -9.479736 ymin: 36.02593 xmax: 4.32207 ymax: 43.76455
+Geodetic CRS:  +proj=longlat +ellps=clrk66 +no_defs +type=crs
+               ID                           geom
+Spain       Spain MULTIPOLYGON (((1.593945 38...
+Portugal Portugal MULTIPOLYGON (((-7.406153 3...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="small">
+<ul>
+<li>¿Y si las quiero en km<span class="math inline">\(^2\)</span>?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="fu">library</span>(units)</span>
+<span id="cb77-2"><a></a>pib <span class="sc">|&gt;</span> </span>
+<span id="cb77-3"><a></a>  sf<span class="sc">::</span><span class="fu">st_area</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb77-4"><a></a>  units<span class="sc">::</span><span class="fu">set_units</span>(<span class="st">"km^2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Units: [km^2]
+[1] 499032.43  87850.92</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="métricas-perímetro">Métricas: Perímetro</h3>
+<div class="small">
+<p>Calcula el perímetro de Portugal</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a>por <span class="ot">&lt;-</span> pib <span class="sc">|&gt;</span> </span>
+<span id="cb79-2"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(ID <span class="sc">==</span> <span class="st">"Portugal"</span>)</span>
+<span id="cb79-3"><a></a></span>
+<span id="cb79-4"><a></a>sf<span class="sc">::</span><span class="fu">st_perimeter</span>(por) <span class="sc">|&gt;</span> </span>
+<span id="cb79-5"><a></a>  <span class="fu">set_units</span>(<span class="st">"km"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1891.562 [km]</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="métricas-distancia">Métricas: Distancia</h3>
+<div class="small">
+<p>Ejemplo: Tenemos una parcela en un pinar de repoblación, en la que estamos evaluando la cantidad de semillas de Quercíneas que pueden llegar dispersadas por el arrendajo. Si tenemos una matrix de paisaje conformada por diferentes manchas de encinar y robledal, y suponiendo que las diferentes manchas de bosque de quercíneas tienen la misma cantidad de propágulos y la misma probabilidad de ser visitadas por los arrendajos, ¿Quien tiene mas probabilidad de colonizar el pinar de repoblación?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb81-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb81-3"><a></a></span>
+<span id="cb81-4"><a></a><span class="co"># Crear polígonos irregulares distribuidos más aleatoriamente</span></span>
+<span id="cb81-5"><a></a>encinar_1 <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="fu">c</span>(<span class="fl">2.3</span>,<span class="fl">4.2</span>), <span class="fu">c</span>(<span class="fl">3.2</span>,<span class="fl">5.6</span>), <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">7</span>), <span class="fu">c</span>(<span class="fl">2.1</span>,<span class="fl">7.5</span>), <span class="fu">c</span>(<span class="fl">1.3</span>,<span class="dv">7</span>), <span class="fu">c</span>(<span class="fl">0.7</span>,<span class="fl">5.8</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))))</span>
+<span id="cb81-6"><a></a>encinar_2 <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="fl">8.5</span>,<span class="fl">1.1</span>), <span class="fu">c</span>(<span class="fl">9.6</span>,<span class="fl">2.3</span>), <span class="fu">c</span>(<span class="fl">9.2</span>,<span class="fl">3.9</span>), <span class="fu">c</span>(<span class="fl">8.4</span>,<span class="fl">4.4</span>), <span class="fu">c</span>(<span class="fl">7.6</span>,<span class="fl">4.1</span>), <span class="fu">c</span>(<span class="fl">7.1</span>,<span class="fl">2.8</span>), <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>))))</span>
+<span id="cb81-7"><a></a>robledal_1 <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">8</span>), <span class="fu">c</span>(<span class="fl">4.7</span>,<span class="fl">7.1</span>), <span class="fu">c</span>(<span class="fl">5.4</span>,<span class="fl">8.5</span>), <span class="fu">c</span>(<span class="fl">5.1</span>,<span class="fl">9.6</span>), <span class="fu">c</span>(<span class="fl">4.3</span>,<span class="fl">10.3</span>), <span class="fu">c</span>(<span class="fl">3.5</span>,<span class="fl">9.9</span>), <span class="fu">c</span>(<span class="fl">3.1</span>,<span class="fl">8.8</span>), <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">8</span>))))</span>
+<span id="cb81-8"><a></a>robledal_2 <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">6</span>), <span class="fu">c</span>(<span class="fl">9.9</span>,<span class="fl">5.0</span>), <span class="fu">c</span>(<span class="fl">10.8</span>,<span class="fl">7.1</span>), <span class="fu">c</span>(<span class="fl">10.2</span>,<span class="fl">8.5</span>), <span class="fu">c</span>(<span class="fl">9.1</span>,<span class="fl">9.3</span>), <span class="fu">c</span>(<span class="fl">8.2</span>,<span class="fl">7.8</span>), <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">6</span>))))</span>
+<span id="cb81-9"><a></a>pinar <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>), <span class="fu">c</span>(<span class="fl">6.1</span>,<span class="fl">2.8</span>), <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">5</span>), <span class="fu">c</span>(<span class="fl">6.5</span>,<span class="fl">6.5</span>), <span class="fu">c</span>(<span class="fl">5.6</span>,<span class="fl">6.0</span>), <span class="fu">c</span>(<span class="fl">4.8</span>,<span class="fl">4.6</span>), <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))))</span>
+<span id="cb81-10"><a></a></span>
+<span id="cb81-11"><a></a></span>
+<span id="cb81-12"><a></a>manchas <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(</span>
+<span id="cb81-13"><a></a>  <span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"Encinar A"</span>, <span class="st">"Encinar B"</span>, <span class="st">"Robledal A"</span>, <span class="st">"Robledal B"</span>, <span class="st">"Pinar"</span>),</span>
+<span id="cb81-14"><a></a>  <span class="at">tipo =</span> <span class="fu">c</span>(<span class="st">"Encinar"</span>, <span class="st">"Encinar"</span>, <span class="st">"Robledal"</span>, <span class="st">"Robledal"</span>, <span class="st">"Pinar"</span>),</span>
+<span id="cb81-15"><a></a>  <span class="at">geometry =</span> <span class="fu">st_sfc</span>(encinar_1, encinar_2, robledal_1, robledal_2, pinar),</span>
+<span id="cb81-16"><a></a>  <span class="at">colores =</span> <span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"darkgreen"</span>, <span class="st">"gold"</span>, <span class="st">"gold"</span>, <span class="st">"green"</span>),</span>
+<span id="cb81-17"><a></a>  <span class="at">crs =</span> <span class="dv">4326</span> </span>
+<span id="cb81-18"><a></a>)</span>
+<span id="cb81-19"><a></a></span>
+<span id="cb81-20"><a></a>manchas <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(manchas, <span class="dv">23030</span>)</span>
+<span id="cb81-21"><a></a></span>
+<span id="cb81-22"><a></a><span class="fu">plot</span>(manchas[<span class="st">"tipo"</span>], <span class="at">col =</span> manchas<span class="sc">$</span>colores, <span class="at">graticule =</span> <span class="cn">TRUE</span>, <span class="at">axes =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-23"><a></a><span class="fu">legend</span>(<span class="st">"bottomleft"</span>, <span class="at">legend =</span>  <span class="fu">unique</span>(manchas<span class="sc">$</span>tipo), </span>
+<span id="cb81-24"><a></a>       <span class="at">fill =</span> <span class="fu">unique</span>(manchas<span class="sc">$</span>colores), <span class="at">title =</span> <span class="st">"Tipo de Manchas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>pinar_geom <span class="ot">&lt;-</span> </span>
+<span id="cb82-2"><a></a>  manchas <span class="sc">|&gt;</span> <span class="fu">filter</span>(tipo <span class="sc">==</span> <span class="st">"Pinar"</span>) <span class="sc">|&gt;</span> <span class="fu">st_geometry</span>()</span>
+<span id="cb82-3"><a></a></span>
+<span id="cb82-4"><a></a><span class="co"># Calcular la distancia desde encinares y robledales al pinar</span></span>
+<span id="cb82-5"><a></a>distancias <span class="ot">&lt;-</span> manchas <span class="sc">|&gt;</span> </span>
+<span id="cb82-6"><a></a>  <span class="fu">filter</span>(tipo <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Encinar"</span>, <span class="st">"Robledal"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb82-7"><a></a>  <span class="fu">mutate</span>(<span class="at">distancia_pinar =</span> <span class="fu">st_distance</span>(geometry, pinar_geom))</span>
+<span id="cb82-8"><a></a></span>
+<span id="cb82-9"><a></a><span class="co"># Mostrar la tabla con las distancias</span></span>
+<span id="cb82-10"><a></a>distancias <span class="sc">|&gt;</span> </span>
+<span id="cb82-11"><a></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb82-12"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      nombre     tipo   colores distancia_pinar
+1  Encinar A  Encinar darkgreen    171639.7 [m]
+2  Encinar B  Encinar darkgreen    101197.6 [m]
+3 Robledal A Robledal      gold    158715.4 [m]
+4 Robledal B Robledal      gold    142413.1 [m]</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="calcular-los-centroides">Calcular los centroides</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a>centroides <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(manchas)</span>
+<span id="cb84-2"><a></a>centroides</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 5 features and 3 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 1056093 ymin: 312472.9 xmax: 1875675 ymax: 970443.5
+Projected CRS: ED50 / UTM zone 30N
+      nombre     tipo   colores                 geometry
+1  Encinar A  Encinar darkgreen POINT (1056093 654811.1)
+2  Encinar B  Encinar darkgreen POINT (1764113 312472.9)
+3 Robledal A Robledal      gold POINT (1295830 970443.5)
+4 Robledal B Robledal      gold POINT (1875675 801768.1)
+5      Pinar    Pinar     green POINT (1478019 512249.9)</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb86-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> manchas, <span class="fu">aes</span>(<span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
+<span id="cb86-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> centroides) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selección-espacial" class="slide level2">
+<h2>Selección espacial</h2>
+<div class="small">
+<p>¿Qué parcelas del Inventario forestal puedo usar para evaluar el estado de la vegetación en la zona del incendio de Lanjarón?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>incendio <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/lanjaron_fire.shp"</span>))</span>
+<span id="cb87-2"><a></a></span>
+<span id="cb87-3"><a></a>ifn_incendio <span class="ot">&lt;-</span> ifn_sn_geo <span class="sc">|&gt;</span> </span>
+<span id="cb87-4"><a></a>  <span class="fu">st_transform</span>(<span class="dv">3042</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb87-5"><a></a>  <span class="fu">st_filter</span>(incendio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="selección-espacial-1" class="slide level2">
+<h2>Selección espacial</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb88-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> incendio, <span class="at">fill=</span><span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb88-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ifn_incendio) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-69-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="unión-de-atributos">Unión de atributos</h3>
+<div class="small">
+<ul>
+<li><p>Permite unir tablas de atributos a los objetos espaciales.</p></li>
+<li><p>Tienen que compartir una clave común</p></li>
+<li><p>Ejemplo: Representa la riqueza de cada parcela forestal en Sierra Nevada</p></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Calcula atributos forestales</a></li><li><a href="#tabset-11-2">Unión de datos</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb89-2"><a></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/ifn_sn_tree.csv"</span>))</span>
+<span id="cb89-3"><a></a></span>
+<span id="cb89-4"><a></a><span class="co"># Calcular abundancia de individuos en cada plot </span></span>
+<span id="cb89-5"><a></a>ab_ifn <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb89-6"><a></a>  <span class="fu">group_by</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb89-7"><a></a>  <span class="fu">count</span>() </span>
+<span id="cb89-8"><a></a></span>
+<span id="cb89-9"><a></a><span class="co"># Calcular riqueza de especies en cada plot  </span></span>
+<span id="cb89-10"><a></a>riqueza_ifn <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb89-11"><a></a>  <span class="fu">group_by</span>(plot) <span class="sc">|&gt;</span> </span>
+<span id="cb89-12"><a></a>  <span class="fu">summarise</span>(<span class="at">riqueza =</span> <span class="fu">n_distinct</span>(specie))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-11-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a>ifn_sn_geo_riqueza <span class="ot">&lt;-</span> ifn_sn_geo <span class="sc">|&gt;</span> </span>
+<span id="cb90-2"><a></a>  <span class="fu">inner_join</span>(ab_ifn, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"plot"</span> <span class="ot">=</span> <span class="st">"plot"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb90-3"><a></a>  <span class="fu">inner_join</span>(riqueza_ifn, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"plot"</span> <span class="ot">=</span> <span class="st">"plot"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="unión-de-atributos-visualización" class="slide level2">
+<h2>Unión de atributos: visualización</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb91-2"><a></a></span>
+<span id="cb91-3"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb91-4"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> sn, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb91-5"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ifn_sn_geo_riqueza, <span class="fu">aes</span>(<span class="at">size =</span> riqueza)) <span class="sc">+</span></span>
+<span id="cb91-6"><a></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"topleft"</span>,</span>
+<span id="cb91-7"><a></a>                         <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"cm"</span>)) <span class="sc">+</span></span>
+<span id="cb91-8"><a></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"br"</span>, <span class="at">width_hint =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb91-9"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb91-10"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Parcelas del Inventario Nacional Forestal (IFN3) en Sierra Nevada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-72-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="extra-uniones-de-datos-tabulares" class="slide level2">
+<h2>(Extra) Uniones de datos tabulares</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/i_venn.png" style="width:80.0%"></p>
+<figcaption>Source: <a href="https://r4ds.hadley.nz/joins.html">R for Data Science (2ed)</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="visualización-de-mapas" class="slide level2">
+<h2>Visualización de mapas</h2>
+<div class="small">
+<p>Elementos <strong>básicos</strong> de un mapa</p>
+<ul>
+<li><strong>Escala</strong>: Establece la relación entre las distancias en el mapa y las distancias reales en el terreno</li>
+<li><strong>Simbología y Leyenda</strong>: Define los símbolos, colores y estilos utilizados para representar los elementos geográficos, permitiendo al usuario interpretar correctamente la información presentada</li>
+<li><strong>Flecha de Norte</strong> (Rosa de los Vientos): Indica la orientación del mapa, ayudando al lector a comprender la dirección de los elementos geográficos</li>
+<li><strong>Cuadrícula de Coordenadas</strong>: Proporciona un sistema de referencia que facilita la localización precisa de puntos en el mapa, mostrando líneas y etiquetas de coordenadas</li>
+<li><strong>Mapa de Ubicación</strong>: Ofrece una vista general que sitúa el área de estudio dentro de un contexto geográfico más amplio, ayudando al lector a comprender su ubicación relativa</li>
+</ul>
+</div>
+</section>
+<section id="visualización-de-mapas-1" class="slide level2">
+<h2>Visualización de mapas</h2>
+<div class="small">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb92-2"><a></a></span>
+<span id="cb92-3"><a></a>mapa<span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb92-4"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> sn, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb92-5"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ifn_sn_geo) <span class="sc">+</span></span>
+<span id="cb92-6"><a></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"topleft"</span>,</span>
+<span id="cb92-7"><a></a>                         <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"cm"</span>)) <span class="sc">+</span></span>
+<span id="cb92-8"><a></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"br"</span>, <span class="at">width_hint =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb92-9"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb92-10"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Parcelas del Inventario Nacional Forestal (IFN3) en Sierra Nevada"</span>)</span>
+<span id="cb92-11"><a></a>mapa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-73-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualización-de-mapas-2" class="slide level2">
+<h2>Visualización de mapas</h2>
+<div class="small">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>mapa_general <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb93-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> pib, <span class="at">fill=</span><span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb93-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> sn, <span class="at">fill=</span><span class="st">"black"</span>, <span class="at">color=</span><span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb93-4"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb93-5"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb93-6"><a></a>    <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),   </span>
+<span id="cb93-7"><a></a>    <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb93-8"><a></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb93-9"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb93-10"><a></a>  )</span>
+<span id="cb93-11"><a></a></span>
+<span id="cb93-12"><a></a>mapa_general</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-74-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualización-de-mapas-3" class="slide level2">
+<h2>Visualización de mapas</h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb94-2"><a></a></span>
+<span id="cb94-3"><a></a><span class="fu">ggdraw</span>() <span class="sc">+</span> </span>
+<span id="cb94-4"><a></a>  <span class="fu">draw_plot</span>(mapa) <span class="sc">+</span> </span>
+<span id="cb94-5"><a></a>  <span class="fu">draw_plot</span>(mapa_general, </span>
+<span id="cb94-6"><a></a>            <span class="at">x =</span> <span class="fl">0.73</span>, <span class="at">y =</span> <span class="fl">0.625</span>, </span>
+<span id="cb94-7"><a></a>            <span class="at">width =</span> <span class="fl">0.28</span>, <span class="at">height =</span> <span class="fl">0.28</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-75-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="operaciones-básicas-con-raster" class="slide level2">
+<h2>Operaciones básicas con raster</h2>
+<div class="small">
+<div class="panel-tabset">
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Crop</a></li><li><a href="#tabset-12-2">Mask</a></li><li><a href="#tabset-12-3">Crop &amp; Mask</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a>tmin <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>((here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"assets/ext_data/geoinfo/tmin_1971_2000_3042.tif"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a>tmin_crop <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crop</span>(tmin, incendio)</span>
+<span id="cb96-2"><a></a><span class="fu">plot</span>(tmin_crop)</span>
+<span id="cb96-3"><a></a><span class="fu">plot</span>(incendio, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">colorr=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-77-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-12-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a>tmin_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(tmin, incendio)</span>
+<span id="cb97-2"><a></a><span class="fu">plot</span>(tmin_mask)</span>
+<span id="cb97-3"><a></a><span class="fu">plot</span>(incendio, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">colorr=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-78-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-12-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a>tmin_mask_cropped <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(tmin_crop, incendio)</span>
+<span id="cb98-2"><a></a><span class="fu">plot</span>(tmin_mask_cropped)</span>
+<span id="cb98-3"><a></a><span class="fu">plot</span>(incendio, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">colorr=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="intro_sig_programando_files/figure-revealjs/unnamed-chunk-79-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="alguna-duda" class="slide level2">
