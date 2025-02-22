@@ -1,0 +1,92 @@
+---
+title: "Registro y primeros pasos en Google Earth Engine"
+format:
+  html:
+    code-overflow: wrap
+number-sections: false
+number-depth: 4
+date: 2025-03-10
+sesion: 2
+author: 
+  - name: "Javier Martínez-López"
+    orcid: 0000-0002-0825-7252
+    email: javier.martinez@ugr.es
+    affiliation: Departamento de Ecología, Universidad de Granada
+crossref:
+  fig-title: Figura     # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: .     # (default is ":")
+  fig-prefix: Figura
+  tbl-prefix: Tabla
+  ref-hyperlink: true
+  sec-prefix: ""
+  sec-labels: alpha
+---
+
+# I. Sigue estos pasos para crear tu cuenta en *Google Earth Engine* (GEE), así como un proyecto en la nube:
+
+**(1)** Entra en la página web de [GEE](https://earthengine.google.com/) y haz clic en 'Get Started'. Usa tu cuenta personal de Gmail (**no la go.ugr.es**).
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee1.png)
+
+**(2)** Registra un proyecto en la nube con licencia no-comercial. 
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee2.png)
+
+**(3)** Elige un plan gratuito con fines académicos o de investigación. 
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee3.png)
+
+**(4)** Crea un nuevo proyecto con el nombre por defecto. 
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee4.png)
+
+**(5)** Elige un país y acepta los términos de servicio. 
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee5.png)
+
+**(6)** Confirma la información de tu proyecto. 
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee6.png)
+
+# II. Explora el editor de código
+
+**(1)** La primera vez que accedes al [editor de código](https://code.earthengine.google.com/), verás un tutorial introductorio al editor de texto de JavaScript. Pulsa 'Siguiente'.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee8.png)
+
+**(2)** Panel izquierdo:
+
++ Repositorios y scripts
++ Documentación
++ Gestor y lista de assets
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee9.png)
+
+**(3)** Panel de código.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee10.png)
+
+**(4)** Panel derecho:
+
++ Inspector
++ Consola
++ Tareas
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee11.png)
+
+**(5)** Mapas, gráficos y editor de geometrías.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee12.png)
+
+**(6)** Barra de búsqueda: lugares y catálogo  de datos.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee13.png)
+
+**(7)** Proyecto en la nube.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee14.png)
+
+**(8)** Manos a la obra y ayuda.
+
+![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee15.png)
