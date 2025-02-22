@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Javier Martínez-López">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>Calendario Clases curso 2024 / 2025 – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Registro y primeros pasos en Google Earth Engine – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,21 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ab90058900f5aeb328ad71ad3665df5a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4f708f20aeee796e0cb0fb5b1ccd8bfe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -65,10 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/calendar-binding-0.3.4/calendar.js"></script>
-<link href="site_libs/bttn-0.2.4/bttn.min.css" rel="stylesheet">
 
 
 </head>
@@ -80,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
     </a>
   </div>
@@ -95,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./calendario.html">Calendario</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Registro y primeros pasos en Google Earth Engine</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -109,31 +107,31 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calendario.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../calendario.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendario</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modulos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Módulos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./equipo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../equipo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profesores</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guia_docente.html" class="sidebar-item-text sidebar-link">
+  <a href="../../guia_docente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía Docente</span></a>
   </div>
 </li>
@@ -142,22 +140,48 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" id="toc-i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" class="nav-link active" data-scroll-target="#i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube">I. Sigue estos pasos para crear tu cuenta en <em>Google Earth Engine</em> (GEE), así como un proyecto en la nube:</a></li>
+  <li><a href="#ii.-explora-el-editor-de-código" id="toc-ii.-explora-el-editor-de-código" class="nav-link" data-scroll-target="#ii.-explora-el-editor-de-código">II. Explora el editor de código</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Calendario Clases curso 2024 / 2025</h1>
+<h1 class="title">Registro y primeros pasos en Google Earth Engine</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Javier Martínez-López <a href="mailto:javier.martinez@ugr.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-0825-7252" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departamento de Ecología, Universidad de Granada
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 10, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -167,29 +191,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell">
-<div class="cell-output-display">
-<div class="toastui-calendar calendar html-widget html-fill-item" style="width:100%;height:600px;">
-<div id="htmlwidget-fbf22c6fda458b23b7b2_menu">
-<span id="htmlwidget-fbf22c6fda458b23b7b2_menu_navi">
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-fbf22c6fda458b23b7b2_today">Today</button>
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-fbf22c6fda458b23b7b2_prev">
-<i class="fa fa-chevron-left"></i>
-</button>
-<button type="button" class="btn bttn-no-outline action-button" id="htmlwidget-fbf22c6fda458b23b7b2_next">
-<i class="fa fa-chevron-right"></i>
-</button>
-</span>
-<span id="htmlwidget-fbf22c6fda458b23b7b2_renderRange" class="render-range"></span>
-</div>
-<br>
-<div id="htmlwidget-fbf22c6fda458b23b7b2" style="width:100%;height:600px;" class="calendar html-widget" width="100%" height="600px"></div>
-</div>
-<script type="application/json" data-for="htmlwidget-fbf22c6fda458b23b7b2">{"x":{"options":{"defaultView":"month","useDetailPopup":true,"useFormPopup":false,"isReadOnly":true,"usageStatistics":false,"month":{"startDayOfWeek":1}},"schedules":[{"category":"time","dueDateClass":"","id":"schedule28bbaa29a0269fe598993cbe","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la asignatura  ","recurrenceRule":"","start":"2024-12-17T15:00:00Z","end":"2024-12-17T17:00:00Z","location":"ETSIE A02","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduled3f47e217b991f5b1f9f68c7","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Proyecto y Flujo de Trabajo  ","recurrenceRule":"","start":"2025-01-07T17:00:00Z","end":"2025-01-07T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulebcd75cc8de30b1d15b5749d2","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Reproducibilidad (I)  ","recurrenceRule":"","start":"2025-01-08T17:00:00Z","end":"2025-01-08T19:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulee8221b62a456ef3187f5c6a9","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Reproducibilidad (II)  ","recurrenceRule":"","start":"2025-01-09T17:00:00Z","end":"2025-01-09T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulee30a28471ab249ad394ac727","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (I)  ","recurrenceRule":"","start":"2025-01-10T17:00:00Z","end":"2025-01-10T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule1b3e767f784827d865a55433","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (II)  ","recurrenceRule":"","start":"2025-01-14T17:00:00Z","end":"2025-01-14T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulea3dfd02baba8619e81a2c675","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (III)  ","recurrenceRule":"","start":"2025-01-15T17:00:00Z","end":"2025-01-15T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule16051d28beb39b618c391630","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a la programación (IV)  ","recurrenceRule":"","start":"2025-01-17T17:00:00Z","end":"2025-01-17T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule31a5322e1a1b6bccd89cd97e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Control de versiones  ","recurrenceRule":"","start":"2025-01-20T17:00:00Z","end":"2025-01-20T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulec713311ca6514bbaa2a9ab22","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Control de versiones  ","recurrenceRule":"","start":"2025-01-21T17:00:00Z","end":"2025-01-21T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule56944436f62fe63908a4a6d7","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los SIG  ","recurrenceRule":"","start":"2025-01-23T17:00:00Z","end":"2025-01-23T19:00:00Z","location":"Aula 007 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule4e5b6fb60be255795587fe01","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG con qGIS (I): usos y coberturas  ","recurrenceRule":"","start":"2025-01-24T17:00:00Z","end":"2025-01-24T19:00:00Z","location":"Aula 007 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduled6cc71dc60183ce86c8fbe99","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG con qGIS (II): HIC  ","recurrenceRule":"","start":"2025-01-28T17:00:00Z","end":"2025-01-28T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule26b7f5bf8dee103848033da5","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Trabajos en Grupo (feedback)  ","recurrenceRule":"","start":"2025-02-03T17:00:00Z","end":"2025-02-03T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule6b43c3acc326765bdbc245cc","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Bases de datos (I)  ","recurrenceRule":"","start":"2025-02-04T17:00:00Z","end":"2025-02-04T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule4736a498d289cb4fce4b3a91","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Bases de datos (II)  ","recurrenceRule":"","start":"2025-02-06T17:00:00Z","end":"2025-02-06T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulecb3149aba7efffc947472c22","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG programando (I)  ","recurrenceRule":"","start":"2025-02-07T17:00:00Z","end":"2025-02-07T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule55bb523c41d7c712cde3d32b","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión SIG programando (II)  ","recurrenceRule":"","start":"2025-02-11T17:00:00Z","end":"2025-02-11T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule9fd60bb56e6ca93c14b9ca0c","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los datos LIDAR (I)  ","recurrenceRule":"","start":"2025-02-13T17:00:00Z","end":"2025-02-13T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule0aace04d7fe6d56e8fc0d966","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Introducción a los datos LIDAR (II)  ","recurrenceRule":"","start":"2025-02-14T17:00:00Z","end":"2025-02-14T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule055a9a7594fd32a92b7c05b7","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Generación de mapa de diversidad (I)  ","recurrenceRule":"","start":"2025-02-17T17:00:00Z","end":"2025-02-17T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule8b6cd2fbb04d916d597f81ab","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Generación de mapa de diversidad (II)  ","recurrenceRule":"","start":"2025-02-18T17:00:00Z","end":"2025-02-18T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule523dd7460b23d467a2fbad2f","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Publicación de resultados: mapas en web  ","recurrenceRule":"","start":"2025-02-19T17:00:00Z","end":"2025-02-19T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulebe5dce3cfb447cfd42da241e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (I)  ","recurrenceRule":"","start":"2025-03-03T17:00:00Z","end":"2025-03-03T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule80c50c80ac61614093adf218","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (II)  ","recurrenceRule":"","start":"2025-03-04T17:00:00Z","end":"2025-03-04T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"scheduleb1cae1f10a7f066029b5ac30","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Datos primarios e integración (III)  ","recurrenceRule":"","start":"2025-03-06T17:00:00Z","end":"2025-03-06T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule049e5c1dd2ca9c35da8a0bce","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (I)  ","recurrenceRule":"","start":"2025-03-10T17:00:00Z","end":"2025-03-10T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedule2a33f51a02a9d7441f4a122e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (II)  ","recurrenceRule":"","start":"2025-03-12T17:00:00Z","end":"2025-03-12T19:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulec3c67add01fa9091ba47e3df","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Funcionamiento y tendencias de la vegetación (III)  ","recurrenceRule":"","start":"2025-03-14T09:00:00Z","end":"2025-03-14T11:00:00Z","location":"Aula 003 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""},{"category":"time","dueDateClass":"","id":"schedulec2275a0a37ac9c617664574e","calendarId":"1","title":"Clase Ciclo Gestión de Datos","body":"Sesión Presentación de resultados del trabajo  ","recurrenceRule":"","start":"2025-04-22T06:00:00Z","end":"2025-04-22T08:00:00Z","location":"Aula OS1 Informática. Facultad de Ciencias","backgroundColor":"#5e7a97","color":"","borderColor":""}],"navigation":true,"defaultDate":"2025-01-06","events":[],"navigationOptions":{"today_label":"Today","prev_label":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\" class=\"phosphor-svg\" height=\"1.33em\" fill=\"currentColor\" style=\"vertical-align:-0.25em;\">\n  <path d=\"M164.24,203.76a6,6,0,1,1-8.48,8.48l-80-80a6,6,0,0,1,0-8.48l80-80a6,6,0,0,1,8.48,8.48L88.49,128Z\"><\/path>\n  <title>caret-left-light<\/title>\n<\/svg>","next_label":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\" class=\"phosphor-svg\" height=\"1.33em\" fill=\"currentColor\" style=\"vertical-align:-0.25em;\">\n  <path d=\"M180.24,132.24l-80,80a6,6,0,0,1-8.48-8.48L167.51,128,91.76,52.24a6,6,0,0,1,8.48-8.48l80,80A6,6,0,0,1,180.24,132.24Z\"><\/path>\n  <title>caret-right-light<\/title>\n<\/svg>","class":" bttn-bordered bttn-sm bttn-primary","fmt_date":"YYYY-MM-DD","sep_date":" ~ "}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
+<section id="i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" class="level1">
+<h1>I. Sigue estos pasos para crear tu cuenta en <em>Google Earth Engine</em> (GEE), así como un proyecto en la nube:</h1>
+<p><strong>(1)</strong> Entra en la página web de <a href="https://earthengine.google.com/">GEE</a> y haz clic en ‘Get Started’. Usa tu cuenta personal de Gmail (<strong>no la go.ugr.es</strong>).</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee1.png" class="img-fluid"></p>
+<p><strong>(2)</strong> Registra un proyecto en la nube con licencia no-comercial.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee2.png" class="img-fluid"></p>
+<p><strong>(3)</strong> Elige un plan gratuito con fines académicos o de investigación.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee3.png" class="img-fluid"></p>
+<p><strong>(4)</strong> Crea un nuevo proyecto con el nombre por defecto.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee4.png" class="img-fluid"></p>
+<p><strong>(5)</strong> Elige un país y acepta los términos de servicio.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee5.png" class="img-fluid"></p>
+<p><strong>(6)</strong> Confirma la información de tu proyecto.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee6.png" class="img-fluid"></p>
+</section>
+<section id="ii.-explora-el-editor-de-código" class="level1">
+<h1>II. Explora el editor de código</h1>
+<p><strong>(1)</strong> La primera vez que accedes al <a href="https://code.earthengine.google.com/">editor de código</a>, verás un tutorial introductorio al editor de texto de JavaScript. Pulsa ‘Siguiente’.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee8.png" class="img-fluid"></p>
+<p><strong>(2)</strong> Panel izquierdo:</p>
+<ul>
+<li>Repositorios y scripts</li>
+<li>Documentación</li>
+<li>Gestor y lista de assets</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee9.png" class="img-fluid"></p>
+<p><strong>(3)</strong> Panel de código.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee10.png" class="img-fluid"></p>
+<p><strong>(4)</strong> Panel derecho:</p>
+<ul>
+<li>Inspector</li>
+<li>Consola</li>
+<li>Tareas</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee11.png" class="img-fluid"></p>
+<p><strong>(5)</strong> Mapas, gráficos y editor de geometrías.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee12.png" class="img-fluid"></p>
+<p><strong>(6)</strong> Barra de búsqueda: lugares y catálogo de datos.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee13.png" class="img-fluid"></p>
+<p><strong>(7)</strong> Proyecto en la nube.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee14.png" class="img-fluid"></p>
+<p><strong>(8)</strong> Manos a la obra y ayuda.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee15.png" class="img-fluid"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

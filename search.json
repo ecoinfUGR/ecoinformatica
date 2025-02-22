@@ -1528,6 +1528,13 @@
     "text": "Cerrar base de datos\nEL pqeute RSQLite requiere cerrar la conexión con la base de datos cuando terminamos de trabajar con ella.\n\ndbDisconnect(con)"
   },
   {
+    "objectID": "sesiones/teledeteccion/register_GEE_jml.html",
+    "href": "sesiones/teledeteccion/register_GEE_jml.html",
+    "title": "Registro y primeros pasos en Google Earth Engine",
+    "section": "",
+    "text": "I. Sigue estos pasos para crear tu cuenta en Google Earth Engine (GEE), así como un proyecto en la nube:\n(1) Entra en la página web de GEE y haz clic en ‘Get Started’. Usa tu cuenta personal de Gmail (no la go.ugr.es).\n\n(2) Registra un proyecto en la nube con licencia no-comercial.\n\n(3) Elige un plan gratuito con fines académicos o de investigación.\n\n(4) Crea un nuevo proyecto con el nombre por defecto.\n\n(5) Elige un país y acepta los términos de servicio.\n\n(6) Confirma la información de tu proyecto.\n\n\n\nII. Explora el editor de código\n(1) La primera vez que accedes al editor de código, verás un tutorial introductorio al editor de texto de JavaScript. Pulsa ‘Siguiente’.\n\n(2) Panel izquierdo:\n\nRepositorios y scripts\nDocumentación\nGestor y lista de assets\n\n\n(3) Panel de código.\n\n(4) Panel derecho:\n\nInspector\nConsola\nTareas\n\n\n(5) Mapas, gráficos y editor de geometrías.\n\n(6) Barra de búsqueda: lugares y catálogo de datos.\n\n(7) Proyecto en la nube.\n\n(8) Manos a la obra y ayuda."
+  },
+  {
     "objectID": "sesiones/programacion/intro_R_jml.html",
     "href": "sesiones/programacion/intro_R_jml.html",
     "title": "Primeros pasos con R",
@@ -2259,7 +2266,7 @@
     "href": "modulos/teledeteccion.html",
     "title": "Teledetección",
     "section": "",
-    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n \n\n\ngee_intro\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Sesión\n\n\nNombre\n\n\nFecha\n\n\n\n\n\n\n2\n\n\nRegistro y primeros pasos en Google Earth Engine\n\n\nMon, Mar 10\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "modulos/teledeteccion.html#recursos",
