@@ -97,5 +97,11 @@
   },
   "sesiones/sig/clusterizacion.qmd": {
     "clusterizacion.html": "cb49eb8e"
+  },
+  "sesiones/teledeteccion/register_GEE_jml.qmd": {
+    "register_GEE_jml.html": "8bc87230"
+  },
+  "assets/ext_data/geoinfo/lanjaron_fire.qmd": {
+    "lanjaron_fire.html": "b0100fe6"
   }
 }

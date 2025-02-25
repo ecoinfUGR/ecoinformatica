@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Javier Martínez-López">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>María Suárez Muñoz – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<title>Registro y primeros pasos en Google Earth Engine – Ciclo de Gestión de los Datos. Ecoinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,15 +34,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2ff3abc535de8b4b0059b81a8dc64fda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f4b6f92e64eac3e391232c9e7d5a2e62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,14 +93,14 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">María Suárez Muñoz</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Registro y primeros pasos en Google Earth Engine</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -141,69 +140,103 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" id="toc-i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" class="nav-link active" data-scroll-target="#i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube">I. Sigue estos pasos para crear tu cuenta en <em>Google Earth Engine</em> (GEE), así como un proyecto en la nube:</a></li>
+  <li><a href="#ii.-explora-el-editor-de-código" id="toc-ii.-explora-el-editor-de-código" class="nav-link" data-scroll-target="#ii.-explora-el-editor-de-código">II. Explora el editor de código</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-<hr>
-<div class="quarto-about-trestles column-page-right">
-  <div class="about-entity">
-    <img src="avatar_suarez_munoz.jpg" class="about-image
-  round " style="height: 20em; width: 20em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">María Suárez Muñoz</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Bases de Datos</div>
-    <div class="quarto-category">Sistemas de Información Geográfica</div>
+<h1 class="title">Registro y primeros pasos en Google Earth Engine</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Javier Martínez-López <a href="mailto:javier.martinez@ugr.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-0825-7252" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departamento de Ecología, Universidad de Granada
+          </p>
+      </div>
   </div>
-<div class="quarto-title-meta column-page-right">
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 10, 2025</p>
+    </div>
   </div>
+  
+    
+  </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="mailto:msuamun@ugr.es" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://orcid.org/0000-0003-1765-6885" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="ai  ai-orcid"></i> ORCID</span>
-  </a>
-  <a href="https://www.researchgate.net/profile/Maria-Suarez-Munoz" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="fa-solid fa-globe" aria-label="globe"></i> Personal web</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="person-profile">
-<section id="módulos" class="level2">
-<h2 data-anchor-id="módulos">Módulos</h2>
-<ul>
-<li><a href="../../modulos/introduccion.html">Introducción a la Asignatura</a></li>
-<li><a href="../../modulos/bbdd.html">Bases de Datos</a></li>
-<li><a href="../../modulos/sig.html">Sistemas de Información Geográfica</a></li>
-</ul>
+
+
+<section id="i.-sigue-estos-pasos-para-crear-tu-cuenta-en-google-earth-engine-gee-así-como-un-proyecto-en-la-nube" class="level1">
+<h1>I. Sigue estos pasos para crear tu cuenta en <em>Google Earth Engine</em> (GEE), así como un proyecto en la nube:</h1>
+<p><strong>(1)</strong> Entra en la página web de <a href="https://earthengine.google.com/">GEE</a> y haz clic en ‘Get Started’. Usa tu cuenta personal de Gmail (<strong>no la go.ugr.es</strong>).</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee1.png" class="img-fluid"></p>
+<p><strong>(2)</strong> Registra un proyecto en la nube con licencia no-comercial.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee2.png" class="img-fluid"></p>
+<p><strong>(3)</strong> Elige un plan gratuito con fines académicos o de investigación.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee3.png" class="img-fluid"></p>
+<p><strong>(4)</strong> Crea un nuevo proyecto con el nombre por defecto.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee4.png" class="img-fluid"></p>
+<p><strong>(5)</strong> Elige un país y acepta los términos de servicio.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee5.png" class="img-fluid"></p>
+<p><strong>(6)</strong> Confirma la información de tu proyecto.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee6.png" class="img-fluid"></p>
 </section>
-<section id="contacto" class="level2">
-<h2 data-anchor-id="contacto">Contacto</h2>
+<section id="ii.-explora-el-editor-de-código" class="level1">
+<h1>II. Explora el editor de código</h1>
+<p><strong>(1)</strong> La primera vez que accedes al <a href="https://code.earthengine.google.com/">editor de código</a>, verás un tutorial introductorio al editor de texto de JavaScript. Pulsa ‘Siguiente’.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee8.png" class="img-fluid"></p>
+<p><strong>(2)</strong> Panel izquierdo:</p>
 <ul>
-<li>Departamento de Ingeniería Forestal. Universidad de Córdoba</li>
+<li>Repositorios y scripts</li>
+<li>Documentación</li>
+<li>Gestor y lista de assets</li>
 </ul>
-</section>
-<section id="tutorías" class="level2">
-<h2 data-anchor-id="tutorías">Tutorías</h2>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee9.png" class="img-fluid"></p>
+<p><strong>(3)</strong> Panel de código.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee10.png" class="img-fluid"></p>
+<p><strong>(4)</strong> Panel derecho:</p>
 <ul>
-<li>Lunes 10:00 - 13:00</li>
+<li>Inspector</li>
+<li>Consola</li>
+<li>Tareas</li>
 </ul>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee11.png" class="img-fluid"></p>
+<p><strong>(5)</strong> Mapas, gráficos y editor de geometrías.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee12.png" class="img-fluid"></p>
+<p><strong>(6)</strong> Barra de búsqueda: lugares y catálogo de datos.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee13.png" class="img-fluid"></p>
+<p><strong>(7)</strong> Proyecto en la nube.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee14.png" class="img-fluid"></p>
+<p><strong>(8)</strong> Manos a la obra y ayuda.</p>
+<p><img src="https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/gee15.png" class="img-fluid"></p>
+
+
 </section>
-</div></div>
-</div>
-
-
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -226,6 +259,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
