@@ -12,7 +12,7 @@ about:
   links:
     - icon: envelope
       text: Email
-      href: javier.martinez@ugr.es
+      href: mailto:javier.martinez@ugr.es
     - text: "{{< ai orcid >}} ORCID"
       href: https://orcid.org/0000-0002-0825-7252
     - text: "{{< fa globe >}} Personal web"
