@@ -3,12 +3,13 @@ title: "Creación de un mapa de biodiversidad de Sierra Nevada"
 format:
   html:
     code-overflow: wrap
+    code-link: true
 number-sections: false
 number-depth: 4
 date: 2025-02-17
 sesion: 3
 author: 
-  - name: "Javier Martínez-López"
+  - name: "Javier Martínez-López (adaptado de Francisco Javier Bonet)"
     orcid: 0000-0002-0825-7252
     email: javier.martinez@ugr.es
     affiliation: Departamento de Ecología, Universidad de Granada
@@ -99,7 +100,7 @@ Pasos para descargar manual la base de datos de especies en GBIF desde el portal
 
 Los datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS.
 
-[Aquí](https://drive.google.com/file/d/1SsLrERuUbi1_vm6lxpHS-SyJkf6LIk5-/view?usp=sharing) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
+[Aquí](https://drive.google.com/file/d/1SsLrERuUbi1_vm6lxpHS-SyJkf6LIk5-/view?usp=sharing) puedes descargar el archivo  con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
 
 ![](https://raw.githubusercontent.com/javimarlop/datasets/master/pictures/puntos.png)
 
@@ -125,15 +126,15 @@ Para ello seguiremos el siguiente **flujo de trabajo** (ya descrito a grandes ra
 
 4. Asignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.
 
-5. Calcular el número de individuos por especie y por cuadrícula.
+5. Calculamos el número de individuos por especie y por cuadrícula.
 
-6. Calcular el número total de individuos por cuadrícula.
+6. Calculamos el número total de individuos por cuadrícula.
 
-7. Calcular la proporción de individuos (*pi*) por especie y por cuadrícula.
+7. Calculamos la proporción de individuos (*pi*) por especie y por cuadrícula.
 
-8. Calcular el *log2 pi* por especie y por cuadrícula.
+8. Calculamos el *log2 pi* por especie y por cuadrícula.
 
-9. Calcular H por cuadrícula.
+9. Calculamos H por cuadrícula.
 
 10. Exportamos la capa de la malla obtenida a un fichero de formas para visualizarlo en QGIS.
 
@@ -177,7 +178,7 @@ grid_250m_sf <- st_sf(geometry = grid_250m)
 # Añadimos un campo llamado id_250 a la malla. Le incluimos valores secuenciales desde 1.
 grid_250m_sf$id_250 <- seq(1, 55125, by = 1)
 
-# Asignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial.
+# Asignamos a cada punto de presencia el código del cuadrado de la malla en el que está. Unión espacial (comparar!).
 presencias_x_grid <- st_join(presencias_geo_23030, left = FALSE, grid_250m_sf)
 
 # Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. 
@@ -186,10 +187,10 @@ bio <- as.data.frame(presencias_x_grid)
 
 bio <- bio[c('id_250', 'scientificName')]
 
-# Calcular el número de individuos por especie y por cuadrícula (num_ind_sp_cuad)
+# Calcular el número de individuos por especie y por cuadrícula (num_ind_sp_cuad): ahora en el df las cuadrículas aparecen tantas veces como especies distintas contienen y llevan asociado el número de individuos encontrados.
 
 T_num_ind_sp_cuad <- bio %>%    #create a new data table of the aggregated data
-  group_by(id_250, scientificName) %>%    #group the calculations by id_250 + scientificName
+  group_by(id_250, scientificName) %>%    #group the calculations by id_250 & scientificName
   summarize(`num_ind_sp_cuad` = length(scientificName))
 
 # Calcular el número total de individuos por cuadrícula.
@@ -207,7 +208,7 @@ T_num_ind_sp_cuad_mas_num_ind_cuad <- merge(T_num_ind_sp_cuad, T_num_ind_cuad)
 T_num_ind_sp_cuad_mas_num_ind_cuad$pi <- T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_sp_cuad /
   T_num_ind_sp_cuad_mas_num_ind_cuad$num_ind_cuad
 
-# Calcular el log2 pi por especie y por cuadrícula.
+# Calcular pi * log2(pi) por especie y por cuadrícula.
 
 T_num_ind_sp_cuad_mas_num_ind_cuad$lnpi_pi<-log2(T_num_ind_sp_cuad_mas_num_ind_cuad$pi)*T_num_ind_sp_cuad_mas_num_ind_cuad$pi
 
