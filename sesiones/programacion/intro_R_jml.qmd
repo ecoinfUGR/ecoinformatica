@@ -1,6 +1,9 @@
 ---
 title: "Primeros pasos con R"
-format: html
+format:
+  html:
+    code-overflow: wrap
+    code-link: true
 number-sections: false
 number-depth: 4
 date: 2025-01-10
