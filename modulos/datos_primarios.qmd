@@ -6,7 +6,18 @@ modulo_order: 7
 listing:
   - id: sesiones
     contents:
-      - ../sesiones/datos_primarios/*.qmd
+      - title: "[Importancia de los datos primarios](../sesiones/datos_primarios/datos_primarios_intro_2025.pdf)" 
+        sesion: 1
+        date: 2025-03-03
+      - title: "[Documentación de los datos](../sesiones/datos_primarios/datos_primarios_metadatos_2025.pdf)" 
+        sesion: 2
+        date: 2025-03-04
+      - title: "[Calidad de los datos](../sesiones/datos_primarios/datos_primarios_calidad_datos_2025.pdf)" 
+        sesion: 3
+        date: 2025-03-06
+      - title: "[Búsqueda de Datos primarios de Biodiversidad](../sesiones/datos_primarios/primary_search_biodiversity.qmd)"
+        sesion: 4
+        date: 2025-03-06
     type: table
     fields: [sesion, title, date]
     date-format: "ddd, MMM DD"
@@ -18,7 +29,7 @@ listing:
     sort-ui: false
     filter-ui: false
 tbl-colwidths: [10,50,40]
-bibliography: ../assets/references/refs_modulos.bib
+bibliography: ../assets/references/refs_modulo_primary_data.bib
 csl: ../assets/references/ecology.csl
 nocite: |
   @*
@@ -29,9 +40,21 @@ nocite: |
 ::: {#sesiones}
 :::
 
-# Ejercicios prácticos 
 
 ## Recursos 
+
+
+- [Introducción a GBIF](https://docs.gbif.org/course-introduction-to-gbif/es/)
+
+- [Página web del Nodo Español de GBIF con recursos formativos](https://elearning.gbif.es/)
+
+- [Taller Online Calidad en Bases de Datos de Biodiversidad. Unidad de Coordinación GBIF-ES.](https://www.gbif.es/talleres/calidad-de-datos-biodiversidad-online/)
+
+- [Recopilación de software para Limpieza y Calidad de datos](https://biodiversidad.co/recursos/calidad-de-datos)
+
+- [Conceptos básicos de Calidad de Datos](https://www.gbif.es/talleres/ii-taller-publicacion-datos-biodiversidad/). II Taller GBIF.ES: Publicación de datos de biodiversidad en GBIF y en revistas científicas. P. Zermoglio. 
+
+- [Herramientas útiles para la calidad y limpieza de datos](https://www.gbif.es/talleres/calidad-de-datos-biodiversidad-online/). Taller Online Calidad en Bases de Datos de Biodiversidad. Unidad de Coordinación GBIF-ES. Katia Cezón-García 
 
 
 # Bibliografía complementaria 

@@ -5,7 +5,7 @@ author:
     orcid: 0000-0002-1747-0469
     email: antonio.perez@inia.csic.es
     affiliation: Instituto de Ciencias Forestales (CIFOR) | INIA-CSIC (Madrid)
-date: 2025-03-04
+date: 2025-03-06
 sesion: 2
 format: 
   revealjs:
@@ -36,7 +36,7 @@ crossref:
 
 -   Realiza una búsqueda por el nombre de un taxon, *e.g.* *Quercus pyrenaica*, en la barra de búsqueda y clica en el botón de búsqueda
 
-![[GBIF.es](http://datos.gbif.es)](images/portal-datos.png)
+![](images/portal-datos.png){fig-align="center" width=70%}
 
 ## Resultados
 
@@ -238,7 +238,8 @@ Los resultados de la búsqueda se filtran ahora por defecto para excluir los reg
 
 ## ¿Alguna duda?
 
-- [@ajpelu](https://twitter.com/ajpelu)
+- {{< fa brands bluesky >}} [ajpelu.bsky.social](https://bsky.app/profile/ajpelu.bsky.social)
+
 - [antonio.perez@inia.csic.es](mailto: antonio.perez@inia.csic.es)
 
 
