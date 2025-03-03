@@ -1,7 +1,11 @@
 [
   {
-    "listing": "/modulos/bbdd.html",
-    "items": []
+    "listing": "/equipo/index.html",
+    "items": [
+      "/equipo/martinez_lopez/index.html",
+      "/equipo/perez_luque/index.html",
+      "/equipo/suarez_munoz/index.html"
+    ]
   },
   {
     "listing": "/modulos/reproducibilidad.html",
@@ -15,35 +19,17 @@
     ]
   },
   {
-    "listing": "/modulos/datos_primarios.html",
-    "items": [
-      "/sesiones/datos_primarios/primary_search_biodiversity.html"
-    ]
+    "listing": "/modulos/bbdd.html",
+    "items": []
+  },
+  {
+    "listing": "/modulos/sig.html",
+    "items": []
   },
   {
     "listing": "/modulos/introduccion.html",
     "items": [
       "/sesiones/intro/intro_proyecto.html"
-    ]
-  },
-  {
-    "listing": "/equipo/index.html",
-    "items": [
-      "/equipo/martinez_lopez/index.html",
-      "/equipo/perez_luque/index.html",
-      "/equipo/suarez_munoz/index.html"
-    ]
-  },
-  {
-    "listing": "/modulos.html",
-    "items": [
-      "/modulos/introduccion.html",
-      "/modulos/reproducibilidad.html",
-      "/modulos/programacion.html",
-      "/modulos/teledeteccion.html",
-      "/modulos/datos_primarios.html",
-      "/modulos/bbdd.html",
-      "/modulos/sig.html"
     ]
   },
   {
@@ -57,13 +43,25 @@
     ]
   },
   {
-    "listing": "/modulos/sig.html",
-    "items": []
-  },
-  {
     "listing": "/modulos/teledeteccion.html",
     "items": [
       "/sesiones/teledeteccion/register_GEE_jml.html"
+    ]
+  },
+  {
+    "listing": "/modulos/datos_primarios.html",
+    "items": []
+  },
+  {
+    "listing": "/modulos.html",
+    "items": [
+      "/modulos/introduccion.html",
+      "/modulos/reproducibilidad.html",
+      "/modulos/programacion.html",
+      "/modulos/teledeteccion.html",
+      "/modulos/datos_primarios.html",
+      "/modulos/bbdd.html",
+      "/modulos/sig.html"
     ]
   }
 ]
