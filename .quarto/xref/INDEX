@@ -103,5 +103,14 @@
   },
   "assets/ext_data/geoinfo/lanjaron_fire.qmd": {
     "lanjaron_fire.html": "b0100fe6"
+  },
+  "sesiones/teledeteccion/intro_gee_ndvi_jml.qmd": {
+    "intro_gee_ndvi_jml.html": "82292b27"
+  },
+  "sesiones/teledeteccion/mk_r_ndvi.qmd": {
+    "mk_r_ndvi.html": "7cbc9175"
+  },
+  "sesiones/teledeteccion/NBR_GEE_jml.qmd": {
+    "NBR_GEE_jml.html": "5a4ff961"
   }
 }

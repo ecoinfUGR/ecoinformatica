@@ -59,7 +59,10 @@
   {
     "listing": "/modulos/teledeteccion.html",
     "items": [
-      "/sesiones/teledeteccion/gee_intro.html"
+      "/sesiones/teledeteccion/register_GEE_jml.html",
+      "/sesiones/teledeteccion/intro_gee_ndvi_jml.html",
+      "/sesiones/teledeteccion/NBR_GEE_jml.html",
+      "/sesiones/teledeteccion/mk_r_ndvi.html"
     ]
   },
   {

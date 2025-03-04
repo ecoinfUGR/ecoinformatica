@@ -6,7 +6,7 @@ format:
 number-sections: false
 number-depth: 4
 date: 2025-03-10
-sesion: 2
+sesion: 1
 author: 
   - name: "Javier Martínez-López"
     orcid: 0000-0002-0825-7252

@@ -7,7 +7,7 @@ number-sections: false
 number-depth: 4
 date: 2025-03-10
 highlight-style: github
-sesion: 3
+sesion: 2
 author: 
   - name: "Javier Martínez-López"
     orcid: 0000-0002-0825-7252
