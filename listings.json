@@ -1,35 +1,27 @@
 [
   {
-    "listing": "/equipo/index.html",
+    "listing": "/modulos.html",
     "items": [
-      "/equipo/martinez_lopez/index.html",
-      "/equipo/perez_luque/index.html",
-      "/equipo/suarez_munoz/index.html"
+      "/modulos/introduccion.html",
+      "/modulos/reproducibilidad.html",
+      "/modulos/programacion.html",
+      "/modulos/teledeteccion.html",
+      "/modulos/datos_primarios.html",
+      "/modulos/bbdd.html",
+      "/modulos/sig.html"
     ]
   },
   {
-    "listing": "/modulos/reproducibilidad.html",
-    "items": [
-      "/sesiones/repro/repro_intro_slides.html",
-      "/sesiones/repro/repro_reproducible_documents.html",
-      "/sesiones/repro/repro_reproducible_documents_slides.html",
-      "/sesiones/repro/repro_git.html",
-      "/practicas/pr_repro_documentos_reproducibles.html",
-      "/practicas/pr_repro_control_versiones.html"
-    ]
-  },
-  {
-    "listing": "/modulos/bbdd.html",
+    "listing": "/modulos/datos_primarios.html",
     "items": []
   },
   {
-    "listing": "/modulos/sig.html",
-    "items": []
-  },
-  {
-    "listing": "/modulos/introduccion.html",
+    "listing": "/modulos/teledeteccion.html",
     "items": [
-      "/sesiones/intro/intro_proyecto.html"
+      "/sesiones/teledeteccion/register_GEE_jml.html",
+      "/sesiones/teledeteccion/intro_gee_ndvi_jml.html",
+      "/sesiones/teledeteccion/NBR_GEE_jml.html",
+      "/sesiones/teledeteccion/mk_r_ndvi.html"
     ]
   },
   {
@@ -43,25 +35,36 @@
     ]
   },
   {
-    "listing": "/modulos/teledeteccion.html",
+    "listing": "/modulos/introduccion.html",
     "items": [
-      "/sesiones/teledeteccion/register_GEE_jml.html"
+      "/sesiones/intro/intro_proyecto.html"
     ]
   },
   {
-    "listing": "/modulos/datos_primarios.html",
+    "listing": "/modulos/sig.html",
     "items": []
   },
   {
-    "listing": "/modulos.html",
+    "listing": "/modulos/bbdd.html",
+    "items": []
+  },
+  {
+    "listing": "/modulos/reproducibilidad.html",
     "items": [
-      "/modulos/introduccion.html",
-      "/modulos/reproducibilidad.html",
-      "/modulos/programacion.html",
-      "/modulos/teledeteccion.html",
-      "/modulos/datos_primarios.html",
-      "/modulos/bbdd.html",
-      "/modulos/sig.html"
+      "/sesiones/repro/repro_intro_slides.html",
+      "/sesiones/repro/repro_reproducible_documents.html",
+      "/sesiones/repro/repro_reproducible_documents_slides.html",
+      "/sesiones/repro/repro_git.html",
+      "/practicas/pr_repro_documentos_reproducibles.html",
+      "/practicas/pr_repro_control_versiones.html"
+    ]
+  },
+  {
+    "listing": "/equipo/index.html",
+    "items": [
+      "/equipo/martinez_lopez/index.html",
+      "/equipo/perez_luque/index.html",
+      "/equipo/suarez_munoz/index.html"
     ]
   }
 ]

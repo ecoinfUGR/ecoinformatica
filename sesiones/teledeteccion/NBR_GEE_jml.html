@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Javier Martínez-López">
+<meta name="dcterms.date" content="2025-03-12">
+
+<title>Estudio de un área incendiada con Google Earth Engine – Ciclo de Gestión de los Datos. Ecoinformática</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-290c89ccd0e29cad49b1f1c3f2084139.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ciclo de Gestión de los Datos. Ecoinformática</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="https://github.com/ecoinfugr/" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Estudio de un área incendiada con Google Earth Engine</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../calendario.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calendario</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modulos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Módulos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../equipo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profesores</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../guia_docente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guía Docente</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#flujo-de-trabajo-en-gee" id="toc-flujo-de-trabajo-en-gee" class="nav-link active" data-scroll-target="#flujo-de-trabajo-en-gee">Flujo de trabajo en GEE:</a>
+  <ul class="collapse">
+  <li><a href="#área-de-estudio" id="toc-área-de-estudio" class="nav-link" data-scroll-target="#área-de-estudio"><strong>1. Área de estudio</strong></a></li>
+  <li><a href="#filtros-de-imágenes-satelitales" id="toc-filtros-de-imágenes-satelitales" class="nav-link" data-scroll-target="#filtros-de-imágenes-satelitales"><strong>2. Filtros de imágenes satelitales</strong></a></li>
+  <li><a href="#carga-de-imágenes-landsat-5" id="toc-carga-de-imágenes-landsat-5" class="nav-link" data-scroll-target="#carga-de-imágenes-landsat-5"><strong>3. Carga de imágenes Landsat-5</strong></a></li>
+  <li><a href="#cálculo-de-índices-espectrales" id="toc-cálculo-de-índices-espectrales" class="nav-link" data-scroll-target="#cálculo-de-índices-espectrales"><strong>4. Cálculo de índices espectrales</strong></a></li>
+  <li><a href="#cálculo-de-valores-pre-incendio-y-post-incendio" id="toc-cálculo-de-valores-pre-incendio-y-post-incendio" class="nav-link" data-scroll-target="#cálculo-de-valores-pre-incendio-y-post-incendio"><strong>5. Cálculo de valores pre-incendio y post-incendio</strong></a></li>
+  <li><a href="#cálculo-del-δnbr-cambio-en-nbr" id="toc-cálculo-del-δnbr-cambio-en-nbr" class="nav-link" data-scroll-target="#cálculo-del-δnbr-cambio-en-nbr"><strong>6. Cálculo del ΔNBR (cambio en NBR)</strong></a></li>
+  <li><a href="#visualización-en-el-mapa" id="toc-visualización-en-el-mapa" class="nav-link" data-scroll-target="#visualización-en-el-mapa"><strong>7. Visualización en el mapa</strong></a></li>
+  <li><a href="#gráfica-de-evolución-del-ndvi" id="toc-gráfica-de-evolución-del-ndvi" class="nav-link" data-scroll-target="#gráfica-de-evolución-del-ndvi"><strong>8. Gráfica de evolución del NDVI</strong></a></li>
+  <li><a href="#exportación-de-datos" id="toc-exportación-de-datos" class="nav-link" data-scroll-target="#exportación-de-datos"><strong>9. Exportación de datos</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Estudio de un área incendiada con Google Earth Engine</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Javier Martínez-López <a href="mailto:javier.martinez@ugr.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-0825-7252" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departamento de Ecología, Universidad de Granada
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 12, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ul>
+<li><p>Esta sesión en <strong>Google Earth Engine (GEE)</strong> analiza un incendio forestal en la región de <strong>Sierra Nevada, España</strong>, utilizando imágenes satelitales de <strong>Landsat 5</strong> para evaluar el impacto del fuego.</p></li>
+<li><p>Se calculan índices tales como el <strong>NDVI</strong> (Índice de Diferencias Normalizadas de la Vegetación) y <strong>dNBR</strong> (diferencia en el Índice de zonas quemadas normalizado antes y después del incendio).</p></li>
+<li><p>Este tipo de análisis se aplica para la evaluación y monitorización de incendios forestales mediante análisis de imágenes satelitales.</p></li>
+<li><p>Los mapas de severidad de zonas quemadas pueden ayudar a elaborar planes de rehabilitación y restauración tras el incendio.</p>
+<ul>
+<li>Se pueden utilizar para estimar también la probabilidad de futuros impactos aguas abajo debido a inundaciones, deslizamientos de tierra y erosión del suelo.</li>
+</ul></li>
+</ul>
+<section id="flujo-de-trabajo-en-gee" class="level2">
+<h2 class="anchored" data-anchor-id="flujo-de-trabajo-en-gee">Flujo de trabajo en GEE:</h2>
+<section id="área-de-estudio" class="level3">
+<h3 class="anchored" data-anchor-id="área-de-estudio"><strong>1. Área de estudio</strong></h3>
+<p><strong>Subimos la capa en formato shapefile con el <a href="https://drive.google.com/drive/folders/1hJ7PBJXtFiYq_tobfrNlGfUoHDMN0ByQ?usp=sharing">área del incendio</a></strong> como un <code>Asset</code> de GEE.</p>
+<p><img src="images/upload_shp.png" class="img-fluid"></p>
+<p><strong>Configuramos el mapa base en modo híbrido</strong>, lo muestra una combinación de imágenes satelitales y etiquetas de carreteras y núcleos de población.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Set map options to 'HYBRID'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">setOptions</span>(<span class="st">'HYBRID'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cargamos el <strong>perímetro oficial del incendio</strong> desde una colección vectorial (<code>FeatureCollection</code>).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Official perimeter of the fire</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> fire <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">'projects/ee-ugr-default-project/assets/lanjaron_fire_perimeter'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Has puesto el nombre de tu proyecto?</p>
+</div>
+</div>
+<p>Cargamos también el área del <strong>Parque Natural de Sierra Nevada (PNSN)</strong> desde una base de datos de áreas protegidas (<code>WDPA</code>), filtrando por su ID (<a href="https://www.protectedplanet.net/555722086">WDPAID</a>).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> snev <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">'WCMC/WDPA/current/polygons'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>             <span class="op">.</span><span class="fu">filter</span>(ee<span class="op">.</span><span class="at">Filter</span><span class="op">.</span><span class="fu">eq</span>(<span class="st">'WDPAID'</span><span class="op">,</span> <span class="dv">555722086</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Definimos una <strong>pequeña área quemada</strong> como un polígono (<code>ee.Geometry.Polygon</code>), que será usada para analizar la evolución temporal del <strong>NDVI</strong>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Burned area to plot temporal evolution of NDVI</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> Ejemplo_Area_quemada <span class="op">=</span> ee<span class="op">.</span><span class="at">Geometry</span><span class="op">.</span><span class="fu">Polygon</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        [[[<span class="op">-</span><span class="fl">3.4673145342930822</span><span class="op">,</span> <span class="fl">36.96583376884777</span>]<span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>          [<span class="op">-</span><span class="fl">3.4673145342930822</span><span class="op">,</span> <span class="fl">36.9645993507799</span>]<span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>          [<span class="op">-</span><span class="fl">3.464353375540641</span><span class="op">,</span> <span class="fl">36.9645993507799</span>]<span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          [<span class="op">-</span><span class="fl">3.464353375540641</span><span class="op">,</span> <span class="fl">36.96583376884777</span>]]])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Centramos el mapa en el área del incendio</strong> con un nivel de zoom de 12.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Center map on Sierra Nevada</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">centerObject</span>(fire<span class="op">,</span> <span class="dv">12</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Visualizamos el área de estudio</strong> en el contexto del PNSN.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(snev<span class="op">,</span>{}<span class="op">,</span><span class="st">'Perímetro del PNSN'</span>)<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(fire<span class="op">,</span>{}<span class="op">,</span><span class="st">'Perímetro del incendio'</span>)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="filtros-de-imágenes-satelitales" class="level3">
+<h3 class="anchored" data-anchor-id="filtros-de-imágenes-satelitales"><strong>2. Filtros de imágenes satelitales</strong></h3>
+<p><strong>Filtramos imágenes entre julio y octubre</strong> para evitar la influencia de la nieve en los índices de vegetación.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Filter by months (From July to October to avoid snow periods)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> months <span class="op">=</span> ee<span class="op">.</span><span class="at">Filter</span><span class="op">.</span><span class="fu">calendarRange</span>(<span class="dv">7</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="st">'month'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Definimos un <strong>umbral de cobertura nubosa máxima del 20%</strong> para seleccionar imágenes con menos interferencia de nubes.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Cloud cover threshold</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> cloudCover <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="carga-de-imágenes-landsat-5" class="level3">
+<h3 class="anchored" data-anchor-id="carga-de-imágenes-landsat-5"><strong>3. Carga de imágenes Landsat-5</strong></h3>
+<p><strong>Cargamos imágenes de Landsat 5</strong> (<code>LANDSAT/LT05/C02/T1_L2</code>) entre <strong>1984 y 2012</strong>, filtrando por:</p>
+<ul>
+<li>Región del incendio (<code>fire</code>)</li>
+<li>Fecha de adquisición</li>
+<li>Cobertura nubosa (<code>CLOUD_COVER</code>)</li>
+<li>Rango de meses (julio-octubre)</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> Landsat5 <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'LANDSAT/LT05/C02/T1_L2'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span><span class="fu">filterBounds</span>(fire)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'1984-10-01'</span><span class="op">,</span> <span class="st">'2012-06-01'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'CLOUD_COVER'</span><span class="op">,</span> <span class="st">'less_than'</span><span class="op">,</span> cloudCover)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span><span class="fu">filter</span>(months)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cálculo-de-índices-espectrales" class="level3">
+<h3 class="anchored" data-anchor-id="cálculo-de-índices-espectrales"><strong>4. Cálculo de índices espectrales</strong></h3>
+<p>Generamos una función para calcular el <strong>índice normalizado de zonas quemadas (NBR)</strong>:</p>
+<p><span class="math display">\[NBR=(SR_{B4}−SR_{B7})/(SR_{B4}+SR_{B7})\]</span></p>
+<ul>
+<li>El <strong>NBR</strong> es un índice diseñado para resaltar las áreas quemadas en zonas de grandes incendios.</li>
+<li>Las bandas <span class="math inline">\(SR_{B4}\)</span> (infrarrojo cercano - NIR) y <span class="math inline">\(SR_{B7}\)</span> (infrarrojo de onda corta 2 - SWIR2) se usan para detectar áreas quemadas (ver documentación asociada a las <a href="https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1_L2#bands">bandas de L5</a>).</li>
+<li>Las zonas quemadas recientemente muestran una baja reflectancia en el <strong>NIR</strong> y una alta reflectancia en el <strong>SWIR</strong>:
+<ul>
+<li>Un valor alto de NBR indica una vegetación sana.</li>
+<li>Un valor bajo indica terreno desnudo y zonas quemadas recientemente.</li>
+<li>Las zonas no quemadas suelen tener valores cercanos a cero.</li>
+</ul></li>
+</ul>
+<p><img src="https://un-spider.org/sites/default/files/Spectral_responses.jpg" class="img-fluid"></p>
+<ul>
+<li>El resultado se añade como una nueva banda.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> addNBR <span class="op">=</span> <span class="kw">function</span>(image) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> NBR <span class="op">=</span> image<span class="op">.</span><span class="fu">normalizedDifference</span>([<span class="st">'SR_B4'</span><span class="op">,</span> <span class="st">'SR_B7'</span>])<span class="op">.</span><span class="fu">rename</span>(<span class="st">'NBR'</span>)<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> image<span class="op">.</span><span class="fu">addBands</span>(NBR)<span class="op">.</span><span class="fu">copyProperties</span>(image<span class="op">,</span> [<span class="st">'system:time_start'</span>])<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Generamos una función para calcular el <strong>índice de diferencias normalizadas de la vegetación (NDVI)</strong>:</p>
+<p><span class="math display">\[NDVI = (SR_{B4} − SR_{B3}) / (SR_{B4} + SR_{B3})\]</span></p>
+<p>Las bandas <span class="math inline">\(SR_{B4}\)</span> (infrarrojo cercano) y <span class="math inline">\(SR_{B3}\)</span> (rojo) se usan para analizar la vegetación.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> addNDVI <span class="op">=</span> <span class="kw">function</span>(image) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> NDVI <span class="op">=</span> image<span class="op">.</span><span class="fu">normalizedDifference</span>([<span class="st">'SR_B4'</span><span class="op">,</span><span class="st">'SR_B3'</span>])<span class="op">.</span><span class="fu">rename</span>(<span class="st">'NDVI'</span>)<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> image<span class="op">.</span><span class="fu">addBands</span>(NDVI)<span class="op">.</span><span class="fu">copyProperties</span>(image<span class="op">,</span> [<span class="st">'system:time_start'</span>])<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aplicamos las funciones de NDVI y NBR a la colección de imágenes de Landsat 5.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> col_landsat_NDVI <span class="op">=</span> Landsat5<span class="op">.</span><span class="fu">map</span>(addNDVI)<span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> col_landsat_NBR <span class="op">=</span> col_landsat_NDVI<span class="op">.</span><span class="fu">map</span>(addNBR)<span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'col_landsat_NBR'</span><span class="op">,</span>col_landsat_NBR)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cálculo-de-valores-pre-incendio-y-post-incendio" class="level3">
+<h3 class="anchored" data-anchor-id="cálculo-de-valores-pre-incendio-y-post-incendio"><strong>5. Cálculo de valores pre-incendio y post-incendio</strong></h3>
+<p><strong>Filtramos imágenes previas al incendio</strong> (<code>2004-2005</code>) y calculamos la <code>mediana</code> de NDVI y NBR.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> prefire_col <span class="op">=</span> col_landsat_NBR<span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2004-09-19'</span><span class="op">,</span> <span class="st">'2005-09-20'</span>)<span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Mostrar la cantidad de imágenes en la colección</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Número de imágenes en la colección pre-incendio:'</span><span class="op">,</span> prefire_col<span class="op">.</span><span class="fu">size</span>())<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">// print('Descripción de la primera imagen de la colección pre-incendio:',prefire_col.first())</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> prefire <span class="op">=</span> prefire_col<span class="op">.</span><span class="fu">median</span>()<span class="op">.</span><span class="fu">clip</span>(fire)<span class="op">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Imagen con la mediana del periodo pre-incendio (para todas las bandas):'</span><span class="op">,</span>prefire)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Filtramos imágenes después del incendio</strong> (<code>2005-2006</code>) calculamos la <code>mediana</code> de NDVI y NBR.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> postfire_col <span class="op">=</span> col_landsat_NBR<span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2005-10-01'</span><span class="op">,</span> <span class="st">'2006-09-30'</span>)<span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Número de imágenes en la colección post_fire:'</span><span class="op">,</span> postfire_col<span class="op">.</span><span class="fu">size</span>())<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> postfire <span class="op">=</span> postfire_col<span class="op">.</span><span class="fu">median</span>()<span class="op">.</span><span class="fu">clip</span>(fire)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cálculo-del-δnbr-cambio-en-nbr" class="level3">
+<h3 class="anchored" data-anchor-id="cálculo-del-δnbr-cambio-en-nbr"><strong>6. Cálculo del ΔNBR (cambio en NBR)</strong></h3>
+<p><strong>Calculamos el cambio en NBR</strong> (indicador de severidad del incendio).</p>
+<ul>
+<li>La diferencia entre el NBR anterior y posterior al incendio obtenido a partir de las imágenes se utiliza para calcular el delta NBR (dNBR o ∆NBR), que puede utilizarse para estimar la gravedad del incendio.
+<ul>
+<li>Un valor más alto de dNBR indica un daño más severo, mientras que las zonas con valores negativos de dNBR pueden indicar un rebrote tras un incendio.</li>
+</ul></li>
+<li>Los valores del dNBR pueden variar de un caso a otro, por lo que, si es posible, la interpretación en casos concretos también debe realizarse mediante una evaluación sobre el terreno para obtener los mejores resultados.</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dNBR <span class="op">=</span> prefire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NBR'</span>)<span class="op">.</span><span class="fu">subtract</span>(postfire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NBR'</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rampas de color</strong> para el dNBR y el NDVI.</p>
+<ul>
+<li>El <strong>Servicio Geológico de Estados Unidos</strong> (<a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine">USGS</a>) ha propuesto una tabla de clasificación para interpretar la severidad de los incendios de acuerdo a la siguiente escala de colores e intensidades:</li>
+</ul>
+<p><img src="https://un-spider.org/sites/default/files/table+legend.PNG" class="img-fluid"></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Primero calculamos los valores mínimo y máximo de dNBR dentro del área del incendio.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> vmin_dNBR <span class="op">=</span> dNBR<span class="op">.</span><span class="fu">reduceRegion</span>(ee<span class="op">.</span><span class="at">Reducer</span><span class="op">.</span><span class="fu">min</span>()<span class="op">,</span> fire<span class="op">,</span> <span class="dv">30</span>)<span class="op">.</span><span class="fu">get</span>(<span class="st">"NBR"</span>)<span class="op">.</span><span class="fu">getInfo</span>()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Min. dNBR value: '</span> <span class="op">+</span> vmin_dNBR)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> vmax_dNBR <span class="op">=</span> dNBR<span class="op">.</span><span class="fu">reduceRegion</span>(ee<span class="op">.</span><span class="at">Reducer</span><span class="op">.</span><span class="fu">max</span>()<span class="op">,</span> fire<span class="op">,</span> <span class="dv">30</span>)<span class="op">.</span><span class="fu">get</span>(<span class="st">"NBR"</span>)<span class="op">.</span><span class="fu">getInfo</span>()</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Max. dNBR value: '</span> <span class="op">+</span> vmax_dNBR)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Example color ramp for dNBR</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> vis_dNBR <span class="op">=</span> {<span class="st">"min"</span><span class="op">:</span> vmin_dNBR<span class="op">,</span> <span class="st">"max"</span><span class="op">:</span> vmax_dNBR<span class="op">,</span> <span class="st">"palette"</span><span class="op">:</span> [<span class="st">"white"</span><span class="op">,</span> <span class="st">"yellow"</span><span class="op">,</span> <span class="st">"red"</span>]}</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Official style of discrete intervals to apply to the image.</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">// Source: https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sld_intervals <span class="op">=</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">'&lt;RasterSymbolizer&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;ColorMap type="intervals" extended="false" &gt;'</span> <span class="op">+</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#ffffff" quantity="-500" label="-500"/&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#7a8737" quantity="-250" label="-250" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#acbe4d" quantity="-100" label="-100" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#0ae042" quantity="100" label="100" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#fff70b" quantity="270" label="270" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#ffaf38" quantity="440" label="440" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#ff641b" quantity="660" label="660" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;ColorMapEntry color="#a41fd6" quantity="2000" label="2000" /&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;/ColorMap&gt;'</span> <span class="op">+</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">'&lt;/RasterSymbolizer&gt;'</span><span class="op">;</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a><span class="co">// NDVI color ramp</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> ndviPalette <span class="op">=</span> {<span class="st">"min"</span><span class="op">:</span> <span class="op">-</span><span class="fl">0.2</span><span class="op">,</span> <span class="st">"max"</span><span class="op">:</span> <span class="fl">0.6</span><span class="op">,</span> <span class="st">"palette"</span><span class="op">:</span> [<span class="st">'FFFFFF'</span><span class="op">,</span> <span class="st">'CE7E45'</span><span class="op">,</span> <span class="st">'DF923D'</span><span class="op">,</span> <span class="st">'F1B555'</span><span class="op">,</span> <span class="st">'FCD163'</span><span class="op">,</span> <span class="st">'99B718'</span><span class="op">,</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>               <span class="st">'74A901'</span><span class="op">,</span> <span class="st">'66A000'</span><span class="op">,</span> <span class="st">'529400'</span><span class="op">,</span> <span class="st">'3E8601'</span><span class="op">,</span> <span class="st">'207401'</span><span class="op">,</span> <span class="st">'056201'</span><span class="op">,</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>               <span class="st">'004C00'</span><span class="op">,</span> <span class="st">'023B01'</span><span class="op">,</span> <span class="st">'012E01'</span><span class="op">,</span> <span class="st">'011D01'</span><span class="op">,</span> <span class="st">'011301'</span>]}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="visualización-en-el-mapa" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-en-el-mapa"><strong>7. Visualización en el mapa</strong></h3>
+<p>Añadimos al mapa:</p>
+<ul>
+<li><strong>dNBR clasificado</strong> con una paleta de colores.</li>
+<li><strong>dNBR con una rampa de color continua</strong>.</li>
+<li><strong>NDVI pre-incendio y post-incendio</strong> con una escala de colores.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(dNBR<span class="op">.</span><span class="fu">multiply</span>(<span class="dv">1000</span>)<span class="op">.</span><span class="fu">sldStyle</span>(sld_intervals)<span class="op">,</span> {}<span class="op">,</span> <span class="st">'dNBR classified'</span>)<span class="op">;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(Ejemplo_Area_quemada<span class="op">,</span>{}<span class="op">,</span><span class="st">'Ejemplo de área quemada'</span>)<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(dNBR<span class="op">,</span> vis_dNBR<span class="op">,</span> <span class="st">'dNBR color ramp'</span>)<span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(postfire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NDVI'</span>)<span class="op">,</span> ndviPalette<span class="op">,</span> <span class="st">'Median postfire NDVI'</span>)<span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(prefire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NDVI'</span>)<span class="op">,</span> ndviPalette<span class="op">,</span> <span class="st">'Median prefire NDVI'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="gráfica-de-evolución-del-ndvi" class="level3">
+<h3 class="anchored" data-anchor-id="gráfica-de-evolución-del-ndvi"><strong>8. Gráfica de evolución del NDVI</strong></h3>
+<p>Generamos un gráfico del <strong>NDVI medio</strong> para la <strong>zona quemada de ejemplo</strong> a lo largo de <strong>toda la serie temporal</strong>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  ui<span class="op">.</span><span class="at">Chart</span><span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">seriesByRegion</span>({</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">imageCollection</span><span class="op">:</span> col_landsat_NBR<span class="op">.</span><span class="fu">select</span>(<span class="st">'NDVI'</span>)<span class="op">,</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">regions</span><span class="op">:</span> Ejemplo_Area_quemada<span class="op">,</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reducer</span><span class="op">:</span> ee<span class="op">.</span><span class="at">Reducer</span><span class="op">.</span><span class="fu">mean</span>()<span class="op">,</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xProperty</span><span class="op">:</span><span class="st">'system:time_start'</span><span class="op">,</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">seriesProperty</span><span class="op">:</span> <span class="st">'NDVI'</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">setOptions</span>({</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'NDVI Lanjaron'</span><span class="op">,</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">vAxis</span><span class="op">:</span> {<span class="dt">title</span><span class="op">:</span><span class="st">'NDVI'</span>}<span class="op">,</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hAxis</span><span class="op">:</span> {<span class="dt">title</span><span class="op">:</span><span class="st">'Fechas'</span>}<span class="op">,</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">curveType</span><span class="op">:</span> <span class="st">'line'</span><span class="op">,</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">pointSize</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">lineWidth</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exportación-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="exportación-de-datos"><strong>9. Exportación de datos</strong></h3>
+<p><strong>Exportamos a Google Drive</strong> el dNBR, NDVI pre y post incendio:</p>
+<section id="dnbr" class="level4">
+<h4 class="anchored" data-anchor-id="dnbr">dNBR</h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Export<span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">toDrive</span>({</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span> dNBR<span class="op">,</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">description</span><span class="op">:</span> <span class="st">'Export_Delta_NBR'</span><span class="op">,</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">folder</span><span class="op">:</span> <span class="st">'GEE_ECOINF'</span><span class="op">,</span> </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileNamePrefix</span><span class="op">:</span> <span class="st">'Delta_NBR'</span><span class="op">,</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">region</span><span class="op">:</span> fire<span class="op">.</span><span class="fu">geometry</span>()<span class="op">,</span> </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">maxPixels</span><span class="op">:</span> <span class="fl">1e13</span><span class="op">,</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileFormat</span><span class="op">:</span> <span class="st">'GeoTIFF'</span><span class="op">,</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">crs</span><span class="op">:</span> <span class="st">'EPSG:23030'</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ndvi-pre-incendio" class="level4">
+<h4 class="anchored" data-anchor-id="ndvi-pre-incendio">NDVI Pre-incendio</h4>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Export<span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">toDrive</span>({</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span> prefire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NDVI'</span>)<span class="op">,</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">description</span><span class="op">:</span> <span class="st">'Export_prefire_NDVI'</span><span class="op">,</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">folder</span><span class="op">:</span> <span class="st">'GEE_ECOINF'</span><span class="op">,</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileNamePrefix</span><span class="op">:</span> <span class="st">'prefire_NDVI'</span><span class="op">,</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">region</span><span class="op">:</span> fire<span class="op">.</span><span class="fu">geometry</span>()<span class="op">,</span> </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">maxPixels</span><span class="op">:</span> <span class="fl">1e13</span><span class="op">,</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileFormat</span><span class="op">:</span> <span class="st">'GeoTIFF'</span><span class="op">,</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">crs</span><span class="op">:</span> <span class="st">'EPSG:23030'</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ndvi-post-incendio" class="level4">
+<h4 class="anchored" data-anchor-id="ndvi-post-incendio">NDVI Post-incendio</h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Export<span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">toDrive</span>({</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span> postfire<span class="op">.</span><span class="fu">select</span>(<span class="st">'NDVI'</span>)<span class="op">,</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">description</span><span class="op">:</span> <span class="st">'Export_postfire_NDVI'</span><span class="op">,</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">folder</span><span class="op">:</span> <span class="st">'GEE_ECOINF'</span><span class="op">,</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileNamePrefix</span><span class="op">:</span> <span class="st">'postfire_NDVI'</span><span class="op">,</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">region</span><span class="op">:</span> fire<span class="op">.</span><span class="fu">geometry</span>()<span class="op">,</span> </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">maxPixels</span><span class="op">:</span> <span class="fl">1e13</span><span class="op">,</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fileFormat</span><span class="op">:</span> <span class="st">'GeoTIFF'</span><span class="op">,</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">crs</span><span class="op">:</span> <span class="st">'EPSG:23030'</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ecoinfUGR\.github\.io\/ecoinformatica\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
