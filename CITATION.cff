@@ -64,6 +64,8 @@ preferred-citation:
     - given-names: Javier
       family-names: Martínez-López
   doi: 10.5281/zenodo.15748046
-  url: https://doi.org/10.5281/zenodo.15748046
+  url: 
+    - https://ecoinfugr.github.io/ecoinformatica/
+    - https://doi.org/10.5281/zenodo.15748046
   version: 2024-2025
   date-released: '2025-06-25'
