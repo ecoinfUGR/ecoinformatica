@@ -1,0 +1,53 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Ciclo de Gestión de los Datos. Ecoinformática. Material
+  Docente 2024-2025
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Antonio J.
+    family-names: Pérez-Luque
+    orcid: 'https://orcid.org/0000-0002-1747-0469'
+    affiliation: Institute of Forest Sciences. INIA-CSIC
+  - given-names: María
+    family-names: Suárez-Muñoz
+    affiliation: University of Cordoba
+    orcid: 'https://orcid.org/0000-0003-1765-6885'
+  - given-names: Javier
+    family-names: Martínez-López
+    affiliation: University of Granada
+    orcid: 'https://orcid.org/0000-0002-0825-7252'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.15748046
+  - type: url
+    value: 'https://ecoinfugr.github.io/ecoinformatica/'
+repository-code: 'https://github.com/ecoinfUGR/ecoinformatica'
+url: 'https://ecoinfugr.github.io/ecoinformatica/'
+abstract: >-
+  This webpage provides the teaching materials for the
+  course Data-Management Cycle: Ecoinformatics (Ciclo de
+  Gestión de los Datos. Ecoinformática), part of the
+  official Master’s degree in Conservation, Management, and
+  Restoration of Biodiversity at the University of Granada.
+  The content corresponds to the 2024–2025 academic year.
+keywords:
+  - ecoinformatics
+  - control version
+  - databases
+  - teaching materials
+  - remote sensing
+  - gis
+  - R
+  - python
+  - Google Earth Engine
+  - 'Data Paper '
+  - Biodiversity Information sources
+license: CC-BY-NC-4.0
+version: 2024-2025
+date-released: '2025-06-25'
