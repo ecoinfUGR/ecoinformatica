@@ -4,7 +4,9 @@
 cff-version: 1.2.0
 title: >-
   Ciclo de Gestión de los Datos. Ecoinformática. Material
-  Docente 2024-2025
+  Docente 2024-2025. Master Universitario en Conservación
+  Gestión y Restauración de la Biodiversidad. Universidad 
+  de Granada
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -55,7 +57,9 @@ preferred-citation:
   type: software
   title: >-
     Ciclo de Gestión de los Datos. Ecoinformática. Material
-    Docente 2024-2025
+    Docente 2024-2025. Master Universitario en Conservación
+    Gestión y Restauración de la Biodiversidad. Universidad 
+    de Granada
   authors:
     - given-names: Antonio J.
       family-names: Pérez-Luque
@@ -64,8 +68,6 @@ preferred-citation:
     - given-names: Javier
       family-names: Martínez-López
   doi: 10.5281/zenodo.15748046
-  url: 
-    - https://ecoinfugr.github.io/ecoinformatica/
-    - https://doi.org/10.5281/zenodo.15748046
+  url: https://ecoinfugr.github.io/ecoinformatica/ https://doi.org/10.5281/zenodo.15748046 
   version: 2024-2025
   date-released: '2025-06-25'
