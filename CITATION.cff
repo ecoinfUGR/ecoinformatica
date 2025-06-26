@@ -51,3 +51,19 @@ keywords:
 license: CC-BY-NC-4.0
 version: 2024-2025
 date-released: '2025-06-25'
+preferred-citation:
+  type: software
+  title: >-
+    Ciclo de Gestión de los Datos. Ecoinformática. Material
+    Docente 2024-2025
+  authors:
+    - given-names: Antonio J.
+      family-names: Pérez-Luque
+    - given-names: María
+      family-names: Suárez-Muñoz
+    - given-names: Javier
+      family-names: Martínez-López
+  doi: 10.5281/zenodo.15748046
+  url: https://doi.org/10.5281/zenodo.15748046
+  version: 2024-2025
+  date-released: '2025-06-25'
